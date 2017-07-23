@@ -2,6 +2,8 @@ package Actors;
 
 import java.util.Hashtable;
 import java.util.concurrent.TimeUnit;
+
+import org.ini4j.Wini;
 import org.openqa.selenium.By;
 
 
@@ -9,6 +11,7 @@ public class HBDirector extends Agent{
 	
 	 private Hashtable<String, String> gVariableHash;
 	 private Hashtable<String, String> gCCDXPathHash;
+	 public Wini inic;
 	 private String supUserName, supPassword;
 	
 
@@ -16,9 +19,9 @@ public class HBDirector extends Agent{
 		super();
 		gVariableHash = AllEntities.gVariableHash;
 		gCCDXPathHash = AllEntities.gCCDXPathHash;
-		supUserName = gVariableHash.get("supUserName");
-		supPassword = gVariableHash.get("supPassword");
-		
+		inic= AllEntities.wini;
+		supUserName = inic.get("Supervisor", "supUserName");
+		supPassword = inic.get("Supervisor", "supPassword");
 		username = supUserName;
 		log.info("supUserName ==> " + supUserName);
 
