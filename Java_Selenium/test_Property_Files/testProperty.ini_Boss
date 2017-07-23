@@ -1,0 +1,23 @@
+## BOSS Report XPath property name and value
+bossXPathMax=10
+
+bossXPath1.name=username
+bossXPath1.value=.//*[@id='UserName']
+bossXPath2.name=password
+bossXPath2.value=.//*[@id='Password']
+bossXPath3.name=btnLogIn
+bossXPath3.value=.//*[@id='m5-logon-form']/form/div/fieldset/p/input
+bossXPath4.name=linkTeam
+bossXPath4.value=.//*[@id='menu']/li[2]/a
+bossXPath5.name=btnAddNewReport
+bossXPath5.value=.//*[@id='RecurringReportsNewReportButton']
+bossXPath6.name=linkCCReport
+bossXPath6.value=.//*[@id='menu']/li[2]/div/div[3]/ul/li[2]/a
+bossXPath7.name=a
+bossXPath7.value=a
+bossXPath8.name=a
+bossXPath8.value=a
+bossXPath9.name=a
+bossXPath9.value=a
+bossXPath10.name=a
+bossXPath10.value=a

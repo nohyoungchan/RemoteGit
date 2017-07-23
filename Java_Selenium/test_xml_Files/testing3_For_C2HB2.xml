@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test HB Suite" verbose="1">
+  <parameter name="qT1" value="10"></parameter> 
+  <parameter name="rT1" value="10"></parameter>          
+  <parameter name="tT1" value="10"></parameter>
+  <parameter name="wT1" value="10"></parameter>
+  <parameter name="rT2" value="10"></parameter>
+  <parameter name="tT2" value="10"></parameter> 
+  <parameter name="wT2" value="10"></parameter> 
+  <parameter name="waitUntilOneAm" value="no"></parameter>  <!--## yes: waits until 1 am tomorrow, no: starts immediately ##-->
+  <parameter name="tearDownOrNot" value="yes"></parameter>  <!--## yes: close all WebBrowsers, no: Don't close ##-->
+   <parameter name="usePhantomJS" value="no"></parameter>  <!--## yes: use PhantomeJS for WebDriver, no: Don't use it. ##-->
+  
+  <test name="VoiceACD Scenarios"> <!--### This is VoiceACD scenarios ### -->
+	  
+    <classes>
+	  <class name="HBTestesNG.TestCases.Test_Initiate">
+	  </class>
+	  
+      <class name="HBTestesNG.TestCases.Test_VoiceACD_Basic">
+        <methods>   	
+          <exclude name="VoiceACD_NoQ_Answer" />     
+          <exclude name="VoiceACD_Q_Answer" />     	
+          <exclude name="VoiceACD_NoQ_Answer_NoWrapTime" />       	 
+        </methods>
+      </class>
+       
+       <class name="HBTestesNG.TestCases.Test_VoiceACD_Transfer">
+        <methods>  
+          <exclude name="VoiceACD_BTransfer_ToExt_SameGroup" />       	 
+          <exclude name="VoiceACD_BTransfer_ToExt_DifferentGroup" /> 
+          <exclude name="VoiceACD_BTransfer_ToExternal" />
+          <exclude name="VoiceACD_BTransfer_ToIRN_SameGroup" /> 
+          <exclude name="VoiceACD_BTransfer_ToIRN_DifferentGroup" /> 
+          <exclude name="VoiceACD_BTransfer_ToIRN_AQ" />        	 
+          <exclude name="VoiceACD_CTransfer_ToExt_SameGroup" />
+          <exclude name="VoiceACD_CTransfer_ToExt_DifferentGroup" /> 
+          <exclude name="VoiceACD_CTransfer_ToExternal" />
+          <exclude name="VoiceACD_CTransfer_ToIRN_SameGroup" /> 
+          <exclude name="VoiceACD_CTransfer_ToIRN_DifferentGroup" />       
+        </methods>
+       </class>
+       
+       <class name="HBTestesNG.TestCases.Test_VoiceACD_Transfer_WrapTimeZero">
+        <methods>  
+          <exclude name="VoiceACD_BTransfer_ToExt_SameGroup" />       	 
+          <exclude name="VoiceACD_BTransfer_ToExt_DifferentGroup" /> 
+          <exclude name="VoiceACD_BTransfer_ToExternal" />
+          <exclude name="VoiceACD_BTransfer_ToIRN_SameGroup" /> 
+          <exclude name="VoiceACD_BTransfer_ToIRN_DifferentGroup" />         	 
+          <exclude name="VoiceACD_CTransfer_ToExt_SameGroup" />
+          <exclude name="VoiceACD_CTransfer_ToExt_DifferentGroup" /> 
+          <exclude name="VoiceACD_CTransfer_ToExternal" /> 
+          <exclude name="VoiceACD_CTransfer_ToIRN_SameGroup" /> 
+          <exclude name="VoiceACD_CTransfer_ToIRN_DifferentGroup" />      
+        </methods>
+       </class>
+       
+       <class name="HBTestesNG.TestCases.Test_VoiceACD_Conference">
+       <methods>      
+      	  <exclude name="VoiceACD_CConference_ToExt_DifferentGroup" />
+          <exclude name="VoiceACD_CConference_ToExt_SameGroup" /> 
+          <exclude name="VoiceACD_CConference_ToIRN_DifferentGroup" /> 
+          <exclude name="VoiceACD_CConference_ToIRN_SameGroup" />  <!--# Not supported except PCM/Physical Phone # -->
+          <exclude name="VoiceACD_CConference_ToExternal" />        
+        </methods>
+       </class>
+       
+       <class name="HBTestesNG.TestCases.Test_VoiceACD_Conference_WrapTimeZero">
+       	 <methods>      
+      	  <exclude name="VoiceACD_CConference_ToExt_DifferentGroup" />
+          <exclude name="VoiceACD_CConference_ToExt_SameGroup" /> 
+          <exclude name="VoiceACD_CConference_ToIRN_DifferentGroup" /> 
+          <exclude name="VoiceACD_CConference_ToIRN_SameGroup" /> <!--# Not supported except PCM/Physical Phone # -->
+          <exclude name="VoiceACD_CConference_ToExternal" />        
+        </methods>
+       </class>
+       
+       <class name="HBTestesNG.TestCases.Test_VoiceNACD_Transfer">
+        <methods>  
+          <exclude name="VoiceNACD_BTransfer_ToExt_SameGroup" />       	 
+          <exclude name="VoiceNACD_BTransfer_ToExt_DifferentGroup" /> 
+          <exclude name="VoiceNACD_BTransfer_ToExternal" />
+          <exclude name="VoiceNACD_BTransfer_ToIRN_SameGroup" /> 
+          <exclude name="VoiceNACD_BTransfer_ToIRN_DifferentGroup" /> 
+          <exclude name="VoiceNACD_BTransfer_ToIRN_AQ" />        	 
+          <exclude name="VoiceNACD_CTransfer_ToExt_SameGroup" />
+          <exclude name="VoiceNACD_CTransfer_ToExt_DifferentGroup" /> 
+          <exclude name="VoiceNACD_CTransfer_ToExternal" />
+          <exclude name="VoiceNACD_CTransfer_ToIRN_SameGroup" /> 
+          <exclude name="VoiceNACD_CTransfer_ToIRN_DifferentGroup" />       
+        </methods>
+       </class>
+       
+       <class name="HBTestesNG.TestCases.Test_VoiceNACD_Conference">
+        <methods>      
+      	  <exclude name="VoiceNACD_CConference_ToExt_DifferentGroup" />
+          <exclude name="VoiceNACD_CConference_ToExt_SameGroup" /> 
+          <exclude name="VoiceNACD_CConference_ToIRN_DifferentGroup" /> 
+          <exclude name="VoiceNACD_CConference_ToIRN_SameGroup" />  <!--# Not supported except PCM/Physical Phone # -->
+          <exclude name="VoiceNACD_CConference_ToExternal" />         
+        </methods>
+       </class>
+       
+       <class name="HBTestesNG.TestCases.Test_VoiceAQ_Transfer">
+        <methods>  
+          <exclude name="VoiceAQ_BTransfer_ToExt_SameGroup" />       	 
+          <exclude name="VoiceAQ_BTransfer_ToExt_DifferentGroup" /> 
+          <exclude name="VoiceAQ_BTransfer_ToExternal" />
+          <exclude name="VoiceAQ_BTransfer_ToIRN_SameGroup" /> 
+          <exclude name="VoiceAQ_BTransfer_ToIRN_DifferentGroup" /> 
+          <exclude name="VoiceAQ_BTransfer_ToIRN_AQ" />        	 
+          <exclude name="VoiceAQ_CTransfer_ToExt_SameGroup" />
+          <exclude name="VoiceAQ_CTransfer_ToExt_DifferentGroup" /> 
+          <exclude name="VoiceAQ_CTransfer_ToExternal" />
+          <exclude name="VoiceAQ_CTransfer_ToIRN_SameGroup" /> 
+          <exclude name="VoiceAQ_CTransfer_ToIRN_DifferentGroup" />       
+        </methods>
+       </class>
+       
+       <class name="HBTestesNG.TestCases.Test_VoiceAQ_Conference">
+       <methods>      
+      	  <exclude name="VoiceAQ_CConference_ToExt_DifferentGroup" />
+          <exclude name="VoiceAQ_CConference_ToExt_SameGroup" /> 
+          <exclude name="VoiceAQ_CConference_ToIRN_DifferentGroup" /> 
+          <exclude name="VoiceAQ_CConference_ToIRN_SameGroup" />  <!--# Not supported except PCM/Physical Phone # -->
+          <exclude name="VoiceAQ_CConference_ToExternal" />        
+        </methods>
+       </class>
+       
+       <class name="HBTestesNG.TestCases.Test_VoiceScript_Transfer">
+        <methods>  
+          <exclude name="VoiceScript_BTransfer_ToExt_SameGroup" />       	 
+          <exclude name="VoiceScript_BTransfer_ToExt_DifferentGroup" /> 
+          <exclude name="VoiceScript_BTransfer_ToExternal" />
+          <exclude name="VoiceScript_BTransfer_ToIRN_SameGroup" /> 
+          <exclude name="VoiceScript_BTransfer_ToIRN_DifferentGroup" /> 
+          <exclude name="VoiceScript_BTransfer_ToIRN_AQ" />        	 
+          <exclude name="VoiceScript_CTransfer_ToExt_SameGroup" />
+          <exclude name="VoiceScript_CTransfer_ToExt_DifferentGroup" /> 
+          <exclude name="VoiceScript_CTransfer_ToExternal" />
+          <exclude name="VoiceScript_CTransfer_ToIRN_SameGroup" /> 
+          <exclude name="VoiceScript_CTransfer_ToIRN_DifferentGroup" />       
+        </methods>
+       </class>
+       
+       <class name="HBTestesNG.TestCases.Test_VoiceScript_Conference">
+       <methods>      
+      	  <exclude name="VoiceScript_CConference_ToExt_DifferentGroup" />
+          <exclude name="VoiceScript_CConference_ToExt_SameGroup" /> 
+          <exclude name="VoiceScript_CConference_ToIRN_DifferentGroup" /> 
+          <exclude name="VoiceScript_CConference_ToIRN_SameGroup" />  <!--# Not supported except PCM/Physical Phone # -->
+          <exclude name="VoiceScript_CConference_ToExternal" />        
+        </methods>
+       </class>
+       
+      <class name="HBTestesNG.TestCases.Test_VoiceACD_OverInterflow">
+       <methods>         
+          <exclude name="VoiceACD_Q_Overflow_R_Ans_1stGroup" />
+          <exclude name="VoiceACD_Q_Overflow_R_Ans_2ndGroup" /> 
+          <exclude name="VoiceACD_R_Q_Overflow_Q_R_Ans_2ndGroup" /> 
+          <exclude name="VoiceACD_R_Q_Overflow_R_Ans_2ndGroup" />  
+          <exclude name="VoiceACD_Q_OverInterflow_Q_R_Ans_3rdGroup" />
+        </methods>
+       </class>
+       
+       <class name="HBTestesNG.TestCases.Test_Chat_All">
+       <methods>      
+      	  <include name="Chat_NoQ_Answer" />
+          <exclude name="Chat_NoQ_Answer_NoWrapTime" /> 
+          <include name="Chat_Q_Answer" /> 
+          <exclude name="Chat_Queue_Abandon" />  
+          <exclude name="Chat_Ring_Abandon" />      
+          <exclude name="Chat_Q_Overflow_R_Ans_1stGroup" />
+          <exclude name="Chat_Q_Overflow_R_Ans_2ndGroup" /> 
+          <exclude name="Chat_R_Q_Overflow_Q_R_Ans_2ndGroup" /> 
+          <exclude name="Chat_R_Q_Overflow_R_Ans_2ndGroup" />  
+          <exclude name="Chat_Q_OverInterflow_Q_R_Ans_3rdGroup" /> 
+          <exclude name="Chat_BTransfer_ToExt_SameGroup" />   
+        </methods>
+       </class>
+       
+       <class name="HBTestesNG.TestCases.Test_Email_All">
+        <methods>      
+      	  <exclude name="Email_NoQ_Answer" />
+          <exclude name="Email_NoQ_Answer_NoWrapTime" /> 
+          <exclude name="Email_Q_Answer" />     
+          <exclude name="Email_Q_Overflow_R_Ans_1stGroup" />
+          <exclude name="Email_Q_Overflow_R_Ans_2ndGroup" /> 
+          <exclude name="Email_R_Q_Overflow_Q_R_Ans_2ndGroup" /> 
+          <exclude name="Email_R_Q_Overflow_R_Ans_2ndGroup" />  
+          <exclude name="Email_Q_OverInterflow_Q_R_Ans_3rdGroup" /> 
+          <exclude name="Email_BTransfer_ToExt_SameGroup" />   
+         </methods>
+       </class>
+                                         
+        <class name="HBTestesNG.TestCases.Test_VoiceOACD_ByAbandon_Conference_WrapTimeZero">
+       	 <methods>      
+      	  <exclude name="VoiceOACD_ByAbandon_CConference_ToExt_DifferentGroup" />
+          <exclude name="VoiceOACD_ByAbandon_CConference_ToExt_SameGroup" /> 
+          <exclude name="VoiceOACD_ByAbandon_CConference_ToIRN_DifferentGroup" /> 
+          <exclude name="VoiceOACD_ByAbandon_CConference_ToIRN_SameGroup" /> <!--# Not supported except PCM/Physical Phone # -->
+          <exclude name="VoiceOACD_ByAbandon_CConference_ToExternal" />        
+        </methods>
+       </class>
+       
+    </classes>
+  </test>
+</suite> 

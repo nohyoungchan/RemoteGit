@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test HB Suite" verbose="1">
+   
+  <test name="VoiceACD Scenarios"> <!--### This is VoiceACD scenarios ### -->
+  	  
+    <classes>
+	  <class name="HBTestesNG.TestCases.Test_Initiate">
+	  </class>
+      <class name="HBTestesNG.TestCases.Test_VoiceACD_Basic">
+        <methods>
+             <parameter name="ringTime" value="10"></parameter>
+             <parameter name="talkTime" value="10"></parameter>
+             <parameter name="wrapTime" value="10"></parameter>       	
+          <include name="VoiceACD_NoQ_Answer" />   
+          	 <parameter name="queueTime" value="10"></parameter>          
+          	 <parameter name="ringTime" value="10"></parameter>
+             <parameter name="talkTime" value="10"></parameter>
+             <parameter name="wrapTime" value="10"></parameter>   
+          <include name="VoiceACD_Q_Answer" />   
+          	 <parameter name="ringTime" value="10"></parameter>
+             <parameter name="talkTime" value="10"></parameter>     	
+          <include name="VoiceACD_NoQ_Answer_NoWrapTime" />        	 
+        </methods>
+      </class>
+       
+       <class name="HBTestesNG.TestCases.Test_VoiceACD_Transfer">
+        <methods>  
+             <parameter name="rT1" value="10"></parameter>          
+          	 <parameter name="tT1" value="10"></parameter>
+             <parameter name="rT2" value="10"></parameter>
+             <parameter name="tT2" value="10"></parameter> 
+             <parameter name="wT2" value="10"></parameter> 
+          <include name="VoiceACD_BTransfer_ToExt_SameGroup" />       	 
+          	 <parameter name="rT1" value="10"></parameter>          
+          	 <parameter name="tT1" value="10"></parameter>
+             <parameter name="rT2" value="10"></parameter>
+             <parameter name="tT2" value="10"></parameter> 
+          <include name="VoiceACD_BTransfer_ToExt_DifferentGroup" /> 
+             <parameter name="rT1" value="10"></parameter>          
+          	 <parameter name="tT1" value="10"></parameter>
+             <parameter name="rT2" value="10"></parameter>
+             <parameter name="tT2" value="10"></parameter> 
+             <parameter name="wT2" value="10"></parameter> 
+          <include name="VoiceACD_BTransfer_ToIRN_SameGroup" /> 
+          	 <parameter name="rT1" value="10"></parameter>          
+          	 <parameter name="tT1" value="10"></parameter>
+             <parameter name="rT2" value="10"></parameter>
+             <parameter name="tT2" value="10"></parameter> 
+             <parameter name="wT2" value="10"></parameter> 
+          <include name="VoiceACD_BTransfer_ToIRN_DifferentGroup" />         	 
+          	 <parameter name="rT1" value="10"></parameter>          
+          	 <parameter name="tT1" value="10"></parameter>
+             <parameter name="rT2" value="10"></parameter>
+             <parameter name="tT2" value="10"></parameter> 
+             <parameter name="wT2" value="10"></parameter> 
+          <include name="VoiceACD_CTransfer_ToExt_SameGroup" />
+             <parameter name="rT1" value="10"></parameter>          
+          	 <parameter name="tT1" value="10"></parameter>
+             <parameter name="rT2" value="10"></parameter>
+             <parameter name="tT2" value="10"></parameter> 
+          <include name="VoiceACD_CTransfer_ToExt_DifferentGroup" /> 
+             <parameter name="rT1" value="10"></parameter>          
+          	 <parameter name="tT1" value="10"></parameter>
+             <parameter name="rT2" value="10"></parameter>
+             <parameter name="tT2" value="10"></parameter> 
+             <parameter name="wT2" value="10"></parameter> 
+          <include name="VoiceACD_BTransfer_ToIRN_SameGroup" /> 
+          	 <parameter name="rT1" value="10"></parameter>          
+          	 <parameter name="tT1" value="10"></parameter>
+             <parameter name="rT2" value="10"></parameter>
+             <parameter name="tT2" value="10"></parameter> 
+             <parameter name="wT2" value="10"></parameter> 
+          <include name="VoiceACD_BTransfer_ToIRN_DifferentGroup" />         
+        </methods>
+       </class>
+       
+       <class name="HBTestesNG.TestCases.Test_VoiceACD_Transfer_WrapTimeZero">
+          <methods>  
+             <parameter name="rT1" value="10"></parameter>          
+          	 <parameter name="tT1" value="10"></parameter>
+             <parameter name="rT2" value="10"></parameter>
+             <parameter name="tT2" value="10"></parameter> 
+             <parameter name="wT2" value="10"></parameter> 
+          <include name="VoiceACD_BTransfer_ToExt_SameGroup" />       	 
+          	 <parameter name="rT1" value="10"></parameter>          
+          	 <parameter name="tT1" value="10"></parameter>
+             <parameter name="rT2" value="10"></parameter>
+             <parameter name="tT2" value="10"></parameter> 
+          <include name="VoiceACD_BTransfer_ToExt_DifferentGroup" /> 
+             <parameter name="rT1" value="10"></parameter>          
+          	 <parameter name="tT1" value="10"></parameter>
+             <parameter name="rT2" value="10"></parameter>
+             <parameter name="tT2" value="10"></parameter> 
+             <parameter name="wT2" value="10"></parameter> 
+          <include name="VoiceACD_BTransfer_ToIRN_SameGroup" /> 
+          	 <parameter name="rT1" value="10"></parameter>          
+          	 <parameter name="tT1" value="10"></parameter>
+             <parameter name="rT2" value="10"></parameter>
+             <parameter name="tT2" value="10"></parameter> 
+             <parameter name="wT2" value="10"></parameter> 
+          <include name="VoiceACD_BTransfer_ToIRN_DifferentGroup" />         	 
+          	 <parameter name="rT1" value="10"></parameter>          
+          	 <parameter name="tT1" value="10"></parameter>
+             <parameter name="rT2" value="10"></parameter>
+             <parameter name="tT2" value="10"></parameter> 
+             <parameter name="wT2" value="10"></parameter> 
+          <include name="VoiceACD_CTransfer_ToExt_SameGroup" />
+             <parameter name="rT1" value="10"></parameter>          
+          	 <parameter name="tT1" value="10"></parameter>
+             <parameter name="rT2" value="10"></parameter>
+             <parameter name="tT2" value="10"></parameter> 
+          <include name="VoiceACD_CTransfer_ToExt_DifferentGroup" /> 
+             <parameter name="rT1" value="10"></parameter>          
+          	 <parameter name="tT1" value="10"></parameter>
+             <parameter name="rT2" value="10"></parameter>
+             <parameter name="tT2" value="10"></parameter> 
+             <parameter name="wT2" value="10"></parameter> 
+          <include name="VoiceACD_BTransfer_ToIRN_SameGroup" /> 
+          	 <parameter name="rT1" value="10"></parameter>          
+          	 <parameter name="tT1" value="10"></parameter>
+             <parameter name="rT2" value="10"></parameter>
+             <parameter name="tT2" value="10"></parameter> 
+             <parameter name="wT2" value="10"></parameter> 
+          <include name="VoiceACD_BTransfer_ToIRN_DifferentGroup" />         
+        </methods>
+       </class>
+       
+       <class name="HBTestesNG.TestCases.Test_VoiceACD_Conference">
+       <methods>      
+      	     <parameter name="rT1" value="10"></parameter>          
+          	 <parameter name="tT1" value="10"></parameter>
+             <parameter name="rT2" value="10"></parameter>
+             <parameter name="tT2" value="10"></parameter>
+      	 <include name="VoiceACD_CConference_ToExt_DifferentGroup" />
+             <parameter name="rT1" value="10"></parameter>          
+          	 <parameter name="tT1" value="10"></parameter>
+             <parameter name="rT2" value="10"></parameter>
+             <parameter name="tT2" value="10"></parameter> 
+             <parameter name="wT2" value="10"></parameter>
+          <include name="VoiceACD_CConference_ToExt_SameGroup" /> 
+             <parameter name="rT1" value="10"></parameter>          
+          	 <parameter name="tT1" value="10"></parameter>
+             <parameter name="rT2" value="10"></parameter>
+             <parameter name="tT2" value="10"></parameter> 
+             <parameter name="wT2" value="10"></parameter> 
+          <include name="VoiceACD_CConference_ToIRN_DifferentGroup" /> 
+          	 <parameter name="rT1" value="10"></parameter>          
+          	 <parameter name="tT1" value="10"></parameter>
+             <parameter name="rT2" value="10"></parameter>
+             <parameter name="tT2" value="10"></parameter> 
+             <parameter name="wT2" value="10"></parameter> 
+          <include name="VoiceACD_CConference_ToIRN_SameGroup" />         
+        </methods>
+       </class>
+       
+       <class name="HBTestesNG.TestCases.Test_VoiceACD_Conference_WrapTimeZero">
+       	 <methods>      
+      	     <parameter name="rT1" value="10"></parameter>          
+          	 <parameter name="tT1" value="10"></parameter>
+             <parameter name="rT2" value="10"></parameter>
+             <parameter name="tT2" value="10"></parameter>
+      	 <include name="VoiceACD_CConference_ToExt_DifferentGroup" />
+             <parameter name="rT1" value="10"></parameter>          
+          	 <parameter name="tT1" value="10"></parameter>
+             <parameter name="rT2" value="10"></parameter>
+             <parameter name="tT2" value="10"></parameter> 
+             <parameter name="wT2" value="10"></parameter>
+          <include name="VoiceACD_CConference_ToExt_SameGroup" /> 
+             <parameter name="rT1" value="10"></parameter>          
+          	 <parameter name="tT1" value="10"></parameter>
+             <parameter name="rT2" value="10"></parameter>
+             <parameter name="tT2" value="10"></parameter> 
+             <parameter name="wT2" value="10"></parameter> 
+          <include name="VoiceACD_CConference_ToIRN_DifferentGroup" /> 
+          	 <parameter name="rT1" value="10"></parameter>          
+          	 <parameter name="tT1" value="10"></parameter>
+             <parameter name="rT2" value="10"></parameter>
+             <parameter name="tT2" value="10"></parameter> 
+             <parameter name="wT2" value="10"></parameter> 
+          <include name="VoiceACD_CConference_ToIRN_SameGroup" />         
+        </methods>
+       </class>
+       
+       <class name="HBTestesNG.TestCases.Test_VoiceNACD_Transfer">
+        <methods>  
+             <parameter name="rT1" value="10"></parameter>          
+          	 <parameter name="tT1" value="10"></parameter>
+             <parameter name="rT2" value="10"></parameter>
+             <parameter name="tT2" value="10"></parameter> 
+             <parameter name="wT2" value="10"></parameter> 
+          <include name="VoiceNACD_BTransfer_ToExt_SameGroup" />       	 
+          	 <parameter name="rT1" value="10"></parameter>          
+          	 <parameter name="tT1" value="10"></parameter>
+             <parameter name="rT2" value="10"></parameter>
+             <parameter name="tT2" value="10"></parameter> 
+          <include name="VoiceNACD_BTransfer_ToExt_DifferentGroup" /> 
+             <parameter name="rT1" value="10"></parameter>          
+          	 <parameter name="tT1" value="10"></parameter>
+             <parameter name="rT2" value="10"></parameter>
+             <parameter name="tT2" value="10"></parameter> 
+             <parameter name="wT2" value="10"></parameter> 
+          <include name="VoiceNACD_BTransfer_ToIRN_SameGroup" /> 
+          	 <parameter name="rT1" value="10"></parameter>          
+          	 <parameter name="tT1" value="10"></parameter>
+             <parameter name="rT2" value="10"></parameter>
+             <parameter name="tT2" value="10"></parameter> 
+             <parameter name="wT2" value="10"></parameter> 
+          <include name="VoiceNACD_BTransfer_ToIRN_DifferentGroup" />         	 
+          	 <parameter name="rT1" value="10"></parameter>          
+          	 <parameter name="tT1" value="10"></parameter>
+             <parameter name="rT2" value="10"></parameter>
+             <parameter name="tT2" value="10"></parameter> 
+             <parameter name="wT2" value="10"></parameter> 
+          <include name="VoiceNACD_CTransfer_ToExt_SameGroup" />
+             <parameter name="rT1" value="10"></parameter>          
+          	 <parameter name="tT1" value="10"></parameter>
+             <parameter name="rT2" value="10"></parameter>
+             <parameter name="tT2" value="10"></parameter> 
+          <include name="VoiceNACD_CTransfer_ToExt_DifferentGroup" /> 
+             <parameter name="rT1" value="10"></parameter>          
+          	 <parameter name="tT1" value="10"></parameter>
+             <parameter name="rT2" value="10"></parameter>
+             <parameter name="tT2" value="10"></parameter> 
+             <parameter name="wT2" value="10"></parameter> 
+          <include name="VoiceNACD_BTransfer_ToIRN_SameGroup" /> 
+          	 <parameter name="rT1" value="10"></parameter>          
+          	 <parameter name="tT1" value="10"></parameter>
+             <parameter name="rT2" value="10"></parameter>
+             <parameter name="tT2" value="10"></parameter> 
+             <parameter name="wT2" value="10"></parameter> 
+          <include name="VoiceNACD_BTransfer_ToIRN_DifferentGroup" />         
+        </methods>
+       </class>
+       
+       <class name="HBTestesNG.TestCases.Test_VoiceNACD_Conference">
+        <methods>      
+      	     <parameter name="rT1" value="10"></parameter>          
+          	 <parameter name="tT1" value="10"></parameter>
+             <parameter name="rT2" value="10"></parameter>
+             <parameter name="tT2" value="10"></parameter>
+      	 <include name="VoiceNACD_CConference_ToExt_DifferentGroup" />
+             <parameter name="rT1" value="10"></parameter>          
+          	 <parameter name="tT1" value="10"></parameter>
+             <parameter name="rT2" value="10"></parameter>
+             <parameter name="tT2" value="10"></parameter> 
+             <parameter name="wT2" value="10"></parameter>
+          <include name="VoiceNACD_CConference_ToExt_SameGroup" /> 
+             <parameter name="rT1" value="10"></parameter>          
+          	 <parameter name="tT1" value="10"></parameter>
+             <parameter name="rT2" value="10"></parameter>
+             <parameter name="tT2" value="10"></parameter> 
+             <parameter name="wT2" value="10"></parameter> 
+          <include name="VoiceNACD_CConference_ToIRN_DifferentGroup" /> 
+          	 <parameter name="rT1" value="10"></parameter>          
+          	 <parameter name="tT1" value="10"></parameter>
+             <parameter name="rT2" value="10"></parameter>
+             <parameter name="tT2" value="10"></parameter> 
+             <parameter name="wT2" value="10"></parameter> 
+          <include name="VoiceNACD_CConference_ToIRN_SameGroup" />         
+        </methods>
+       </class>
+       
+    </classes>
+  </test>
+</suite> 

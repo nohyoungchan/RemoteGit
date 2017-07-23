@@ -1,0 +1,7 @@
+<suite name="Suite of suites">
+    <suite-files>
+    	<suite-file path="./test_xml_Files/testing1.xml"></suite-file>-->
+        <!--<suite-file path="./test_xml_Files/testing6_Director_Agent.xml"></suite-file>-->
+
+    </suite-files>
+</suite>

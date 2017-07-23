@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CreatingEntities" verbose="1">
+  <test name="Creating CCDirector Entities"> <!--### This is Director scenarios ### -->	  
+    <classes>
+	  <class name="TestCases.Test_Prepare">
+	  </class>
+	        
+      <class name="TestCases.Test_HBDirector">
+        <methods>   	
+          <include name="CCDirector_CreateAgents" /> 
+          <exclude name="CCDirector_UpdateAgents" /> 
+          <exclude name="CCDirector_CreateSupervisors" /> 	 
+        </methods>
+      </class>  
+    </classes>
+  </test>
+</suite> 

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test HB Suite" verbose="1">
+  <parameter name="qT1" value="10"></parameter> 
+  <parameter name="rT1" value="10"></parameter>          
+  <parameter name="tT1" value="10"></parameter>
+  <parameter name="wT1" value="10"></parameter>
+  <parameter name="rT2" value="10"></parameter>
+  <parameter name="tT2" value="10"></parameter> 
+  <parameter name="wT2" value="10"></parameter> 
+  <parameter name="waitUntilOneAm" value="no"></parameter>  <!--## yes: waits until 1 am tomorrow, no: starts immediately ##-->
+  <parameter name="tearDownOrNot" value="yes"></parameter>  <!--## yes: close all WebBrowsers, no: Don't close ##-->
+  
+  <test name="VoiceACD Scenarios"> <!--### This is VoiceACD scenarios ### -->
+	  
+      <classes>
+	  <class name="HBTestesNG.TestCases.Test_Initiate">
+	  </class>
+
+      <class name="HBTestesNG.TestCases.Test_CCDirector">
+        <methods>   	
+          <exclude name="CCDirector_CreateAgents" /> 
+          <exclude name="CCDirector_CreateAgents_UsingINI" /> 
+          <exclude name="CCDirector_UpdateAgents" /> 
+          <exclude name="CCDirector_CopyIRNs" />
+          <include name="CCDirector_Service" />  	 
+        </methods>
+      </class>
+
+    </classes>
+  </test>
+</suite> 

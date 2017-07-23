@@ -1,0 +1,445 @@
+2017-07-19 13:50:19  INFO [main] (Agent.java:81)- @ WebDriver=> chrome
+2017-07-19 13:50:19  INFO [main] (Agent.java:181)- 
+@ #### Opening Chrome ####
+2017-07-19 13:50:22  INFO [main] (AllActors.java:288)- supervisors1=>young2@yc2.com: Shoreadmin1
+2017-07-19 13:50:22  INFO [main] (TestCaseObject.java:105)- 
+
+###################################################
+2017-07-19 13:50:22  INFO [main] (TestCaseObject.java:106)- ###################################################
+2017-07-19 13:50:22  INFO [main] (TestCaseObject.java:107)- ###########  Starting a Test Suite ################
+2017-07-19 13:50:22  INFO [main] (TestCaseObject.java:108)- ###################################################
+2017-07-19 13:50:22  INFO [main] (TestCaseObject.java:109)- ###################################################
+2017-07-19 13:50:22  INFO [main] (Test_Initiate.java:29)- I am here 0
+2017-07-19 13:50:22  INFO [main] (Agent.java:749)- 
+@(HBDirector) young2@yc2.com => minimizing Browser
+2017-07-19 13:50:22  INFO [main] (Agent.java:720)- 
+@(HBDirector) young2@yc2.com => Setting size to: W(10), H(10), X(10), Y(700)
+2017-07-19 13:50:25  INFO [main] (Agent.java:727)- I am here setting size
+2017-07-19 13:50:25  INFO [main] (TestObject.java:48)- * Wait : 3 seconds.
+2017-07-19 13:50:28  INFO [main] (Test_Initiate.java:36)- I am here 1
+2017-07-19 13:50:28  INFO [main] (Agent.java:749)- 
+@(CustomerChat) Customer1 => minimizing Browser
+2017-07-19 13:50:28  INFO [main] (Agent.java:720)- 
+@(CustomerChat) Customer1 => Setting size to: W(10), H(10), X(10), Y(700)
+2017-07-19 13:50:31  INFO [main] (Agent.java:727)- I am here setting size
+2017-07-19 13:50:31  INFO [main] (TestObject.java:48)- * Wait : 3 seconds.
+2017-07-19 13:50:34  INFO [main] (Test_Initiate.java:43)- I am here 2
+2017-07-19 13:50:34  INFO [main] (Test_Initiate.java:50)- I am here 3
+2017-07-19 13:50:34  INFO [main] (CustomerCMWin.java:22)- 
+@(CustomerVoice) young6wb2 #### Opening firefox ####
+2017-07-19 13:50:34  INFO [main] (CustomerCMWin.java:29)- 
+@(CustomerVoice) young6wb2 #### Go to Login Page ####
+2017-07-19 13:50:34  INFO [main] (Agent.java:740)- 
+@(CustomerVoice) young6wb2 => Maximizing Browser
+2017-07-19 13:50:35  INFO [main] (CustomerCMWin.java:34)- 
+@(CustomerVoice) young6wb2 #### Adding username -> password -> Submit ####
+2017-07-19 13:50:40  INFO [main] (CustomerCMWin.java:43)- I am here at cmwin1
+2017-07-19 13:50:40  INFO [main] (TestObject.java:48)- * Wait : 3 seconds.
+2017-07-19 13:50:43  INFO [main] (Agent.java:749)- 
+@(CustomerVoice) young6wb2 => minimizing Browser
+2017-07-19 13:50:43  INFO [main] (Agent.java:720)- 
+@(CustomerVoice) young6wb2 => Setting size to: W(10), H(10), X(10), Y(700)
+2017-07-19 13:50:45  INFO [main] (Agent.java:727)- I am here setting size
+2017-07-19 13:50:45  INFO [main] (Test_Initiate.java:59)- I am here 4
+2017-07-19 13:50:45  INFO [main] (AgentHB.java:133)- 
+@(WebAgent) young2@yc2.com #### Go to Login Page ####
+2017-07-19 13:50:45  INFO [main] (Agent.java:995)- 
+@(WebAgent) young2@yc2.com => Collecting current dimension and point
+2017-07-19 13:50:47  INFO [main] (Agent.java:740)- 
+@(WebAgent) young2@yc2.com => Maximizing Browser
+2017-07-19 13:50:50  INFO [main] (Agent.java:887)- 
+@(WebAgent) young2@yc2.com => logIntoWebAgent_PreCondition
+2017-07-19 13:50:50  INFO [main] (Agent.java:783)- # waitUntilClickable => webAgentUserNameTxtBox : for(sec) => 60
+2017-07-19 13:50:50  INFO [main] (Agent.java:818)- XPath is : .//*[@id='username']
+2017-07-19 13:50:50  INFO [main] (Agent.java:893)- 
+@(WebAgent) young2@yc2.com => logIntoWebAgent_PreCondition: Success
+2017-07-19 13:50:50  INFO [main] (AgentHB.java:151)- 
+@(WebAgent) young2@yc2.com #### Adding username -> password -> Submit ####
+2017-07-19 13:50:55  INFO [main] (Agent.java:887)- 
+@(WebAgent) young2@yc2.com => logIntoWebAgent_PostCondition
+2017-07-19 13:50:55  INFO [main] (Agent.java:783)- # waitUntilClickable => btnResume : for(sec) => 60
+2017-07-19 13:50:55  INFO [main] (Agent.java:818)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2017-07-19 13:50:55  INFO [main] (Agent.java:893)- 
+@(WebAgent) young2@yc2.com => logIntoWebAgent_PostCondition: Success
+2017-07-19 13:50:55  INFO [main] (Agent.java:1005)- 
+@(WebAgent) young2@yc2.com => Restoring previous dimension and point
+2017-07-19 13:50:55  INFO [main] (Agent.java:720)- 
+@(WebAgent) young2@yc2.com => Setting size to: W(1000), H(300), X(5), Y(5)
+2017-07-19 13:50:57  INFO [main] (Agent.java:727)- I am here setting size
+2017-07-19 13:50:57  INFO [main] (AgentHB.java:133)- 
+@(WebAgent) young3@yc2.com #### Go to Login Page ####
+2017-07-19 13:50:57  INFO [main] (Agent.java:995)- 
+@(WebAgent) young3@yc2.com => Collecting current dimension and point
+2017-07-19 13:50:59  INFO [main] (Agent.java:740)- 
+@(WebAgent) young3@yc2.com => Maximizing Browser
+2017-07-19 13:51:02  INFO [main] (Agent.java:887)- 
+@(WebAgent) young3@yc2.com => logIntoWebAgent_PreCondition
+2017-07-19 13:51:02  INFO [main] (Agent.java:783)- # waitUntilClickable => webAgentUserNameTxtBox : for(sec) => 60
+2017-07-19 13:51:02  INFO [main] (Agent.java:818)- XPath is : .//*[@id='username']
+2017-07-19 13:51:02  INFO [main] (Agent.java:893)- 
+@(WebAgent) young3@yc2.com => logIntoWebAgent_PreCondition: Success
+2017-07-19 13:51:02  INFO [main] (AgentHB.java:151)- 
+@(WebAgent) young3@yc2.com #### Adding username -> password -> Submit ####
+2017-07-19 13:51:07  INFO [main] (Agent.java:887)- 
+@(WebAgent) young3@yc2.com => logIntoWebAgent_PostCondition
+2017-07-19 13:51:07  INFO [main] (Agent.java:783)- # waitUntilClickable => btnResume : for(sec) => 60
+2017-07-19 13:51:07  INFO [main] (Agent.java:818)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2017-07-19 13:51:07  INFO [main] (Agent.java:893)- 
+@(WebAgent) young3@yc2.com => logIntoWebAgent_PostCondition: Success
+2017-07-19 13:51:07  INFO [main] (Agent.java:1005)- 
+@(WebAgent) young3@yc2.com => Restoring previous dimension and point
+2017-07-19 13:51:08  INFO [main] (Agent.java:720)- 
+@(WebAgent) young3@yc2.com => Setting size to: W(1000), H(300), X(25), Y(55)
+2017-07-19 13:51:10  INFO [main] (Agent.java:727)- I am here setting size
+2017-07-19 13:51:10  INFO [main] (AgentHB.java:133)- 
+@(WebAgent) young4@yc2.com #### Go to Login Page ####
+2017-07-19 13:51:10  INFO [main] (Agent.java:995)- 
+@(WebAgent) young4@yc2.com => Collecting current dimension and point
+2017-07-19 13:51:11  INFO [main] (Agent.java:740)- 
+@(WebAgent) young4@yc2.com => Maximizing Browser
+2017-07-19 13:51:14  INFO [main] (Agent.java:887)- 
+@(WebAgent) young4@yc2.com => logIntoWebAgent_PreCondition
+2017-07-19 13:51:14  INFO [main] (Agent.java:783)- # waitUntilClickable => webAgentUserNameTxtBox : for(sec) => 60
+2017-07-19 13:51:14  INFO [main] (Agent.java:818)- XPath is : .//*[@id='username']
+2017-07-19 13:51:14  INFO [main] (Agent.java:893)- 
+@(WebAgent) young4@yc2.com => logIntoWebAgent_PreCondition: Success
+2017-07-19 13:51:14  INFO [main] (AgentHB.java:151)- 
+@(WebAgent) young4@yc2.com #### Adding username -> password -> Submit ####
+2017-07-19 13:51:20  INFO [main] (Agent.java:887)- 
+@(WebAgent) young4@yc2.com => logIntoWebAgent_PostCondition
+2017-07-19 13:51:20  INFO [main] (Agent.java:783)- # waitUntilClickable => btnResume : for(sec) => 60
+2017-07-19 13:51:20  INFO [main] (Agent.java:818)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2017-07-19 13:51:20  INFO [main] (Agent.java:893)- 
+@(WebAgent) young4@yc2.com => logIntoWebAgent_PostCondition: Success
+2017-07-19 13:51:20  INFO [main] (Agent.java:1005)- 
+@(WebAgent) young4@yc2.com => Restoring previous dimension and point
+2017-07-19 13:51:20  INFO [main] (Agent.java:720)- 
+@(WebAgent) young4@yc2.com => Setting size to: W(1000), H(300), X(45), Y(105)
+2017-07-19 13:51:22  INFO [main] (Agent.java:727)- I am here setting size
+2017-07-19 13:51:22  INFO [main] (Test_Initiate.java:75)- I am here 5
+2017-07-19 13:51:22  INFO [main] (AgentHBDirector.java:465)- 
+@(HBDirector) young2@yc2.com : PrepareTest 
+2017-07-19 13:51:22  INFO [main] (Agent.java:740)- 
+@(HBDirector) young2@yc2.com => Maximizing Browser
+2017-07-19 13:51:22  INFO [main] (AgentHBDirector.java:27)- 
+@(HBDirector) young2@yc2.com #### Go to Login Page ####
+2017-07-19 13:51:22  INFO [main] (AgentHBDirector.java:31)- 
+@(HBDirector) young2@yc2.com #### Adding username -> password -> Submit ####
+2017-07-19 13:51:25  INFO [main] (Agent.java:964)- 
+@(HBDirector) young2@yc2.com:0: Wait for ID: mainTitle
+2017-07-19 13:51:26  INFO [main] (Agent.java:968)- 
+@(HBDirector) young2@yc2.com: MainTitleID text is  
+2017-07-19 13:51:28  INFO [main] (Agent.java:964)- 
+@(HBDirector) young2@yc2.com:1: Wait for ID: mainTitle
+2017-07-19 13:51:28  INFO [main] (Agent.java:968)- 
+@(HBDirector) young2@yc2.com: MainTitleID text is  Favorites : Agents
+2017-07-19 13:51:30  INFO [main] (AgentHBDirector.java:49)- 
+@(HBDirector) young2@yc2.com opens HB Director https://ccdirector2.shoretel.com/cc_admin/#page=service
+2017-07-19 13:51:30  INFO [main] (Agent.java:964)- 
+@(HBDirector) young2@yc2.com:0: Wait for ID: mainTitle
+2017-07-19 13:51:30  INFO [main] (Agent.java:968)- 
+@(HBDirector) young2@yc2.com: MainTitleID text is  Favorites : Agents
+2017-07-19 13:51:32  INFO [main] (Agent.java:964)- 
+@(HBDirector) young2@yc2.com:1: Wait for ID: mainTitle
+2017-07-19 13:51:32  INFO [main] (Agent.java:968)- 
+@(HBDirector) young2@yc2.com: MainTitleID text is  Favorites : Services
+2017-07-19 13:51:46  INFO [main] (AgentHBDirector.java:176)- 
+@(HBDirector) young2@yc2.com : Check if the following is enabled ==> .//*[@id='min_time_before_abnd']
+2017-07-19 13:51:46  INFO [main] (AgentHBDirector.java:180)- I am here enabled  => true
+2017-07-19 13:51:46  INFO [main] (AgentHBDirector.java:182)- 
+@(HBDirector) young2@yc2.com : .//*[@id='min_time_before_abnd']is enabled? => false
+2017-07-19 13:51:46  INFO [main] (AgentHBDirector.java:511)- 
+@(HBDirector) young2@yc2.com : Abandon Callback is already disabled. 
+2017-07-19 13:51:54  INFO [main] (AgentHBDirector.java:49)- 
+@(HBDirector) young2@yc2.com opens HB Director https://ccdirector2.shoretel.com/cc_admin/#page=irn
+2017-07-19 13:51:54  INFO [main] (Agent.java:964)- 
+@(HBDirector) young2@yc2.com:0: Wait for ID: mainTitle
+2017-07-19 13:51:54  INFO [main] (Agent.java:968)- 
+@(HBDirector) young2@yc2.com: MainTitleID text is  Favorites : Services
+2017-07-19 13:51:56  INFO [main] (Agent.java:964)- 
+@(HBDirector) young2@yc2.com:1: Wait for ID: mainTitle
+2017-07-19 13:51:56  INFO [main] (Agent.java:968)- 
+@(HBDirector) young2@yc2.com: MainTitleID text is  Favorites : IRN
+2017-07-19 13:51:58  INFO [main] (Agent.java:1024)- ### select from combobox=> dest_type with value Script
+2017-07-19 13:51:58  INFO [main] (Agent.java:1024)- ### select from combobox=> dest_type with value Service
+2017-07-19 13:51:58  INFO [main] (Agent.java:1024)- ### select from combobox=> srv_dest with value Service1_YC2
+2017-07-19 13:52:07  INFO [main] (AgentHBDirector.java:436)- 
+@(Super)young2@yc2.com: Log out HB-Director
+2017-07-19 13:52:09  INFO [main] (Agent.java:323)- @young2@yc2.com:0: Wait for : .//*[@id='logoutLink']
+2017-07-19 13:52:09  INFO [main] (Agent.java:453)- XPath=> .//*[@id='logoutLink'] : exists
+2017-07-19 13:52:09  INFO [main] (Agent.java:350)- @young2@yc2.com: Clicked=> .//*[@id='logoutLink']
+2017-07-19 13:52:11  INFO [main] (Agent.java:749)- 
+@(HBDirector) young2@yc2.com => minimizing Browser
+2017-07-19 13:52:11  INFO [main] (Agent.java:720)- 
+@(HBDirector) young2@yc2.com => Setting size to: W(10), H(10), X(10), Y(700)
+2017-07-19 13:52:13  INFO [main] (Agent.java:727)- I am here setting size
+2017-07-19 13:52:13  INFO [main] (Agent.java:749)- 
+@(HBDirector) young2@yc2.com => minimizing Browser
+2017-07-19 13:52:13  INFO [main] (Agent.java:720)- 
+@(HBDirector) young2@yc2.com => Setting size to: W(10), H(10), X(10), Y(700)
+2017-07-19 13:52:15  INFO [main] (Agent.java:727)- I am here setting size
+2017-07-19 13:52:15  INFO [main] (Test_Initiate.java:80)- I am here 6
+2017-07-19 13:52:15  INFO [main] (Test_Chat_All.java:26)- * Before Class: Test_Chat_All
+2017-07-19 13:52:15  INFO [main] (TestCaseObject.java:40)- * Initializing all variables
+2017-07-19 13:52:15  INFO [main] (TestCaseObject.java:163)- 
+
+
+****************************************************************************************
+2017-07-19 13:52:15  INFO [main] (TestCaseObject.java:164)- ****************************************************************************************
+2017-07-19 13:52:15  INFO [main] (TestCaseObject.java:165)- $$$$$$$$$$$$$$$$$$$$$  Chat->Q->Answered $$$$$$$$$$$$$$$$$$$$$$$$$
+2017-07-19 13:52:15  INFO [main] (TestCaseObject.java:166)- ****************************************************************************************
+2017-07-19 13:52:15  INFO [main] (TestCaseObject.java:167)- ****************************************************************************************
+2017-07-19 13:52:15  INFO [main] (AgentHB.java:213)- 
+@(WebAgent) young2@yc2.com #### Release agent. ####
+2017-07-19 13:52:17  INFO [main] (AgentHB.java:229)- 
+@(WebAgent) young2@yc2.com #### Agent is idle=>Click release button ####
+2017-07-19 13:52:17  INFO [main] (Agent.java:783)- # waitUntilClickable => btnResume : for(sec) => 30
+2017-07-19 13:52:17  INFO [main] (Agent.java:818)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2017-07-19 13:52:17  INFO [main] (Agent.java:926)- 
+@(WebAgent) young2@yc2.com Clicked=> btnResume
+2017-07-19 13:52:22  INFO [main] (AgentHB.java:248)- 
+@(WebAgent) young3@yc2.com #### Release agent. ####
+2017-07-19 13:52:22  INFO [main] (Agent.java:740)- 
+@(WebAgent) young3@yc2.com => Maximizing Browser
+2017-07-19 13:52:22  INFO [main] (AgentHB.java:308)- 
+@(WebAgent) young3@yc2.com #### Resume agent. ####
+2017-07-19 13:52:22  INFO [main] (Agent.java:887)- 
+@(WebAgent) young3@yc2.com => resumeAgent_PreCondition
+2017-07-19 13:52:22  INFO [main] (Agent.java:783)- # waitUntilClickable => btnResume : for(sec) => 60
+2017-07-19 13:52:22  INFO [main] (Agent.java:818)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2017-07-19 13:52:22  INFO [main] (Agent.java:893)- 
+@(WebAgent) young3@yc2.com => resumeAgent_PreCondition: Success
+2017-07-19 13:52:24  INFO [main] (AgentHB.java:329)- 
+@(WebAgent) young3@yc2.com: State=> Idle
+2017-07-19 13:52:24  INFO [main] (Agent.java:749)- 
+@(WebAgent) young3@yc2.com => minimizing Browser
+2017-07-19 13:52:24  INFO [main] (Agent.java:720)- 
+@(WebAgent) young3@yc2.com => Setting size to: W(10), H(10), X(10), Y(700)
+2017-07-19 13:52:26  INFO [main] (Agent.java:727)- I am here setting size
+2017-07-19 13:52:27  INFO [main] (Agent.java:783)- # waitUntilClickable => btnReleaseCodeSelect : for(sec) => 30
+2017-07-19 13:52:37 ERROR [main] (Agent.java:824)- 
+@(WebAgent) young3@yc2.com => NoSuchElement on waitUntilClickable
+2017-07-19 13:52:37 ERROR [main] (Agent.java:825)- XPath is : .//*[@id='header']//*[@class='btn dropdown-toggel']
+2017-07-19 13:52:37  INFO [main] (Agent.java:929)- 
+@(WebAgent) young3@yc2.com=>@@ Fail to Click since => btnReleaseCodeSelect is not ready
+2017-07-19 13:52:40  INFO [main] (Agent.java:783)- # waitUntilClickable => btnReleaseCodeSelect : for(sec) => 30
+2017-07-19 13:52:50 ERROR [main] (Agent.java:824)- 
+@(WebAgent) young3@yc2.com => NoSuchElement on waitUntilClickable
+2017-07-19 13:52:50 ERROR [main] (Agent.java:825)- XPath is : .//*[@id='header']//*[@class='btn dropdown-toggel']
+2017-07-19 13:52:50  INFO [main] (Agent.java:929)- 
+@(WebAgent) young3@yc2.com=>@@ Fail to Click since => btnReleaseCodeSelect is not ready
+2017-07-19 13:52:53  INFO [main] (Agent.java:783)- # waitUntilClickable => btnReleaseCodeSelect : for(sec) => 30
+2017-07-19 13:53:03 ERROR [main] (Agent.java:824)- 
+@(WebAgent) young3@yc2.com => NoSuchElement on waitUntilClickable
+2017-07-19 13:53:03 ERROR [main] (Agent.java:825)- XPath is : .//*[@id='header']//*[@class='btn dropdown-toggel']
+2017-07-19 13:53:03  INFO [main] (Agent.java:929)- 
+@(WebAgent) young3@yc2.com=>@@ Fail to Click since => btnReleaseCodeSelect is not ready
+2017-07-19 13:53:06  INFO [main] (Agent.java:783)- # waitUntilClickable => btnReleaseCodeSelect : for(sec) => 30
+2017-07-19 13:53:16 ERROR [main] (Agent.java:824)- 
+@(WebAgent) young3@yc2.com => NoSuchElement on waitUntilClickable
+2017-07-19 13:53:16 ERROR [main] (Agent.java:825)- XPath is : .//*[@id='header']//*[@class='btn dropdown-toggel']
+2017-07-19 13:53:16  INFO [main] (Agent.java:929)- 
+@(WebAgent) young3@yc2.com=>@@ Fail to Click since => btnReleaseCodeSelect is not ready
+2017-07-19 13:53:19 ERROR [main] (Agent.java:951)- 
+@(WebAgent) young3@yc2.com =>@@@@ Exception on btnReleaseCodeSelect java.lang.Exception
+2017-07-19 13:53:19  INFO [main] (AgentHB.java:270)- I am handling General exception=>java.lang.Exception
+2017-07-19 13:53:19  INFO [main] (AgentHB.java:278)- 
+@(WebAgent) young4@yc2.com #### Release agent. ####
+2017-07-19 13:53:19  INFO [main] (AgentHB.java:308)- 
+@(WebAgent) young4@yc2.com #### Resume agent. ####
+2017-07-19 13:53:19  INFO [main] (Agent.java:740)- 
+@(WebAgent) young4@yc2.com => Maximizing Browser
+2017-07-19 13:53:19  INFO [main] (Agent.java:887)- 
+@(WebAgent) young4@yc2.com => resumeAgent_PreCondition
+2017-07-19 13:53:19  INFO [main] (Agent.java:783)- # waitUntilClickable => btnResume : for(sec) => 60
+2017-07-19 13:53:19  INFO [main] (Agent.java:818)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2017-07-19 13:53:19  INFO [main] (Agent.java:893)- 
+@(WebAgent) young4@yc2.com => resumeAgent_PreCondition: Success
+2017-07-19 13:53:21  INFO [main] (AgentHB.java:329)- 
+@(WebAgent) young4@yc2.com: State=> Idle
+2017-07-19 13:53:21  INFO [main] (Agent.java:749)- 
+@(WebAgent) young4@yc2.com => minimizing Browser
+2017-07-19 13:53:21  INFO [main] (Agent.java:720)- 
+@(WebAgent) young4@yc2.com => Setting size to: W(10), H(10), X(10), Y(700)
+2017-07-19 13:53:23  INFO [main] (Agent.java:727)- I am here setting size
+2017-07-19 13:53:24  INFO [main] (Agent.java:783)- # waitUntilClickable => btnReleaseCodeSelect : for(sec) => 30
+2017-07-19 13:53:34 ERROR [main] (Agent.java:824)- 
+@(WebAgent) young4@yc2.com => NoSuchElement on waitUntilClickable
+2017-07-19 13:53:34 ERROR [main] (Agent.java:825)- XPath is : .//*[@id='header']//*[@class='btn dropdown-toggel']
+2017-07-19 13:53:34  INFO [main] (Agent.java:929)- 
+@(WebAgent) young4@yc2.com=>@@ Fail to Click since => btnReleaseCodeSelect is not ready
+2017-07-19 13:53:37  INFO [main] (Agent.java:783)- # waitUntilClickable => btnReleaseCodeSelect : for(sec) => 30
+2017-07-19 13:53:47 ERROR [main] (Agent.java:824)- 
+@(WebAgent) young4@yc2.com => NoSuchElement on waitUntilClickable
+2017-07-19 13:53:47 ERROR [main] (Agent.java:825)- XPath is : .//*[@id='header']//*[@class='btn dropdown-toggel']
+2017-07-19 13:53:47  INFO [main] (Agent.java:929)- 
+@(WebAgent) young4@yc2.com=>@@ Fail to Click since => btnReleaseCodeSelect is not ready
+2017-07-19 13:53:50  INFO [main] (Agent.java:783)- # waitUntilClickable => btnReleaseCodeSelect : for(sec) => 30
+2017-07-19 13:54:01 ERROR [main] (Agent.java:824)- 
+@(WebAgent) young4@yc2.com => NoSuchElement on waitUntilClickable
+2017-07-19 13:54:01 ERROR [main] (Agent.java:825)- XPath is : .//*[@id='header']//*[@class='btn dropdown-toggel']
+2017-07-19 13:54:01  INFO [main] (Agent.java:929)- 
+@(WebAgent) young4@yc2.com=>@@ Fail to Click since => btnReleaseCodeSelect is not ready
+2017-07-19 13:54:04  INFO [main] (Agent.java:783)- # waitUntilClickable => btnReleaseCodeSelect : for(sec) => 30
+2017-07-19 13:54:14 ERROR [main] (Agent.java:824)- 
+@(WebAgent) young4@yc2.com => NoSuchElement on waitUntilClickable
+2017-07-19 13:54:14 ERROR [main] (Agent.java:825)- XPath is : .//*[@id='header']//*[@class='btn dropdown-toggel']
+2017-07-19 13:54:14  INFO [main] (Agent.java:929)- 
+@(WebAgent) young4@yc2.com=>@@ Fail to Click since => btnReleaseCodeSelect is not ready
+2017-07-19 13:54:17 ERROR [main] (Agent.java:951)- 
+@(WebAgent) young4@yc2.com =>@@@@ Exception on btnReleaseCodeSelect java.lang.Exception
+2017-07-19 13:54:17  INFO [main] (AgentHB.java:297)- I am handling General exception=>java.lang.Exception
+2017-07-19 13:54:17  INFO [main] (CustomerChat.java:20)- 
+@(CustomerChat) Customer1 #### Start Chat####
+2017-07-19 13:54:17  INFO [main] (Agent.java:740)- 
+@(CustomerChat) Customer1 => Maximizing Browser
+2017-07-19 13:54:20  INFO [main] (Agent.java:887)- 
+@(CustomerChat) Customer1 => startChat_PreCondition
+2017-07-19 13:54:20  INFO [main] (Agent.java:783)- # waitUntilClickable => chatCustomerNameTxtBox : for(sec) => 60
+2017-07-19 13:54:20  INFO [main] (Agent.java:818)- XPath is : .//*[@id='chatloginname']
+2017-07-19 13:54:20  INFO [main] (Agent.java:893)- 
+@(CustomerChat) Customer1 => startChat_PreCondition: Success
+2017-07-19 13:54:20  INFO [main] (Agent.java:783)- # waitUntilClickable => chatCustomerNameTxtBox : for(sec) => 60
+2017-07-19 13:54:20  INFO [main] (Agent.java:818)- XPath is : .//*[@id='chatloginname']
+2017-07-19 13:54:20  INFO [main] (Agent.java:586)- 
+@(CustomerChat) Customer1 Entered=> Customer1 at chatCustomerNameTxtBox
+2017-07-19 13:54:20  INFO [main] (Agent.java:783)- # waitUntilClickable => chatConnectBtn : for(sec) => 30
+2017-07-19 13:54:20  INFO [main] (Agent.java:818)- XPath is : .//*[@id='chatloginbutton']
+2017-07-19 13:54:20  INFO [main] (Agent.java:926)- 
+@(CustomerChat) Customer1 Clicked=> chatConnectBtn
+2017-07-19 13:54:20  INFO [main] (CustomerChat.java:36)- 
+@(CustomerChat) Customer1 : Chat Started=> ST
+2017-07-19 13:54:20  INFO [main] (Agent.java:749)- 
+@(CustomerChat) Customer1 => minimizing Browser
+2017-07-19 13:54:20  INFO [main] (Agent.java:720)- 
+@(CustomerChat) Customer1 => Setting size to: W(10), H(10), X(10), Y(700)
+2017-07-19 13:54:22  INFO [main] (Agent.java:727)- I am here setting size
+2017-07-19 13:54:22  INFO [main] (TestObject.java:53)- * Wait: Queue : 10 seconds.
+2017-07-19 13:54:32  INFO [main] (AgentHB.java:308)- 
+@(WebAgent) young2@yc2.com #### Resume agent. ####
+2017-07-19 13:54:32  INFO [main] (Agent.java:740)- 
+@(WebAgent) young2@yc2.com => Maximizing Browser
+2017-07-19 13:54:32  INFO [main] (Agent.java:887)- 
+@(WebAgent) young2@yc2.com => resumeAgent_PreCondition
+2017-07-19 13:54:32  INFO [main] (Agent.java:783)- # waitUntilClickable => btnResume : for(sec) => 60
+2017-07-19 13:54:32  INFO [main] (Agent.java:818)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2017-07-19 13:54:32  INFO [main] (Agent.java:893)- 
+@(WebAgent) young2@yc2.com => resumeAgent_PreCondition: Success
+2017-07-19 13:54:34  INFO [main] (AgentHB.java:325)- 
+@(WebAgent) young2@yc2.com #### Agent is released=>Click resume button ####
+2017-07-19 13:54:34  INFO [main] (Agent.java:783)- # waitUntilClickable => btnResume : for(sec) => 30
+2017-07-19 13:54:34  INFO [main] (Agent.java:818)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2017-07-19 13:54:34  INFO [main] (Agent.java:926)- 
+@(WebAgent) young2@yc2.com Clicked=> btnResume
+2017-07-19 13:54:36  INFO [main] (Agent.java:749)- 
+@(WebAgent) young2@yc2.com => minimizing Browser
+2017-07-19 13:54:36  INFO [main] (Agent.java:720)- 
+@(WebAgent) young2@yc2.com => Setting size to: W(10), H(10), X(10), Y(700)
+2017-07-19 13:54:38  INFO [main] (Agent.java:727)- I am here setting size
+2017-07-19 13:54:38  INFO [main] (AgentHB.java:358)- 
+@(WebAgent) young2@yc2.com #### Click Answer button ####
+2017-07-19 13:54:38  INFO [main] (Agent.java:740)- 
+@(WebAgent) young2@yc2.com => Maximizing Browser
+2017-07-19 13:54:38  INFO [main] (Agent.java:676)- @young2@yc2.com: Ring : 10 seconds.
+2017-07-19 13:54:48  INFO [main] (Agent.java:783)- # waitUntilClickable => btnAnswer : for(sec) => 30
+2017-07-19 13:54:59 ERROR [main] (Agent.java:824)- 
+@(WebAgent) young2@yc2.com => NoSuchElement on waitUntilClickable
+2017-07-19 13:54:59 ERROR [main] (Agent.java:825)- XPath is : .//*[@id='sidebar']/div/div[2]/span[1]/div[2]/ul/li/div[2]/div[3]
+2017-07-19 13:54:59  INFO [main] (Agent.java:929)- 
+@(WebAgent) young2@yc2.com=>@@ Fail to Click since => btnAnswer is not ready
+2017-07-19 13:55:02  INFO [main] (Agent.java:783)- # waitUntilClickable => btnAnswer : for(sec) => 30
+2017-07-19 13:55:12 ERROR [main] (Agent.java:824)- 
+@(WebAgent) young2@yc2.com => NoSuchElement on waitUntilClickable
+2017-07-19 13:55:12 ERROR [main] (Agent.java:825)- XPath is : .//*[@id='sidebar']/div/div[2]/span[1]/div[2]/ul/li/div[2]/div[3]
+2017-07-19 13:55:12  INFO [main] (Agent.java:929)- 
+@(WebAgent) young2@yc2.com=>@@ Fail to Click since => btnAnswer is not ready
+2017-07-19 13:55:15  INFO [main] (Agent.java:783)- # waitUntilClickable => btnAnswer : for(sec) => 30
+2017-07-19 13:55:25 ERROR [main] (Agent.java:824)- 
+@(WebAgent) young2@yc2.com => NoSuchElement on waitUntilClickable
+2017-07-19 13:55:25 ERROR [main] (Agent.java:825)- XPath is : .//*[@id='sidebar']/div/div[2]/span[1]/div[2]/ul/li/div[2]/div[3]
+2017-07-19 13:55:25  INFO [main] (Agent.java:929)- 
+@(WebAgent) young2@yc2.com=>@@ Fail to Click since => btnAnswer is not ready
+2017-07-19 13:55:28  INFO [main] (Agent.java:783)- # waitUntilClickable => btnAnswer : for(sec) => 30
+2017-07-19 13:55:38 ERROR [main] (Agent.java:824)- 
+@(WebAgent) young2@yc2.com => NoSuchElement on waitUntilClickable
+2017-07-19 13:55:38 ERROR [main] (Agent.java:825)- XPath is : .//*[@id='sidebar']/div/div[2]/span[1]/div[2]/ul/li/div[2]/div[3]
+2017-07-19 13:55:38  INFO [main] (Agent.java:929)- 
+@(WebAgent) young2@yc2.com=>@@ Fail to Click since => btnAnswer is not ready
+2017-07-19 13:55:41 ERROR [main] (Agent.java:951)- 
+@(WebAgent) young2@yc2.com =>@@@@ Exception on btnAnswer java.lang.Exception
+2017-07-19 13:55:41  INFO [main] (AgentHB.java:377)- 
+@(WebAgent) young2@yc2.com exception on answering acd calljava.lang.Exception
+2017-07-19 13:55:41  INFO [main] (Agent.java:740)- 
+@(CustomerChat) Customer1 => Maximizing Browser
+2017-07-19 13:55:41  INFO [main] (CustomerChat.java:142)- 
+@(CustomerChat) Customer1 #### Disconnect a chat ####
+2017-07-19 13:55:41  INFO [main] (Agent.java:783)- # waitUntilClickable => chatDisconnectBtn : for(sec) => 30
+2017-07-19 13:55:41  INFO [main] (Agent.java:818)- XPath is : .//*[starts-with(@id,'chatdisc')]
+2017-07-19 13:55:41  INFO [main] (Agent.java:926)- 
+@(CustomerChat) Customer1 Clicked=> chatDisconnectBtn
+2017-07-19 13:55:42  INFO [main] (Agent.java:749)- 
+@(CustomerChat) Customer1 => minimizing Browser
+2017-07-19 13:55:42  INFO [main] (Agent.java:720)- 
+@(CustomerChat) Customer1 => Setting size to: W(10), H(10), X(10), Y(700)
+2017-07-19 13:55:44  INFO [main] (Agent.java:727)- I am here setting size
+2017-07-19 13:55:44  INFO [main] (AgentHB.java:820)- 
+@(WebAgent) young2@yc2.com #### Wrapup End ####
+2017-07-19 13:55:44  INFO [main] (AgentHB.java:821)- 
+@(WebAgent) young2@yc2.com : Pressing Extend Wrapup button
+2017-07-19 13:55:44  INFO [main] (Agent.java:783)- # waitUntilClickable => btnWrapExtend : for(sec) => 30
+2017-07-19 13:55:54 ERROR [main] (Agent.java:824)- 
+@(WebAgent) young2@yc2.com => NoSuchElement on waitUntilClickable
+2017-07-19 13:55:54 ERROR [main] (Agent.java:825)- XPath is : .//*[starts-with(@id,'100')]/div[2]/div[6]/div[2]/div[2]/div[2]/button[2]|//*[contains(@id,':')]/div[2]/div[6]/div[2]/div[2]/div[2]/button[2]
+2017-07-19 13:55:54  INFO [main] (Agent.java:929)- 
+@(WebAgent) young2@yc2.com=>@@ Fail to Click since => btnWrapExtend is not ready
+2017-07-19 13:55:57  INFO [main] (Agent.java:783)- # waitUntilClickable => btnWrapExtend : for(sec) => 30
+2017-07-19 13:56:07 ERROR [main] (Agent.java:824)- 
+@(WebAgent) young2@yc2.com => NoSuchElement on waitUntilClickable
+2017-07-19 13:56:07 ERROR [main] (Agent.java:825)- XPath is : .//*[starts-with(@id,'100')]/div[2]/div[6]/div[2]/div[2]/div[2]/button[2]|//*[contains(@id,':')]/div[2]/div[6]/div[2]/div[2]/div[2]/button[2]
+2017-07-19 13:56:07  INFO [main] (Agent.java:929)- 
+@(WebAgent) young2@yc2.com=>@@ Fail to Click since => btnWrapExtend is not ready
+2017-07-19 13:56:10  INFO [main] (Agent.java:783)- # waitUntilClickable => btnWrapExtend : for(sec) => 30
+2017-07-19 13:56:20 ERROR [main] (Agent.java:824)- 
+@(WebAgent) young2@yc2.com => NoSuchElement on waitUntilClickable
+2017-07-19 13:56:20 ERROR [main] (Agent.java:825)- XPath is : .//*[starts-with(@id,'100')]/div[2]/div[6]/div[2]/div[2]/div[2]/button[2]|//*[contains(@id,':')]/div[2]/div[6]/div[2]/div[2]/div[2]/button[2]
+2017-07-19 13:56:20  INFO [main] (Agent.java:929)- 
+@(WebAgent) young2@yc2.com=>@@ Fail to Click since => btnWrapExtend is not ready
+2017-07-19 13:56:23  INFO [main] (Agent.java:783)- # waitUntilClickable => btnWrapExtend : for(sec) => 30
+2017-07-19 13:56:33 ERROR [main] (Agent.java:824)- 
+@(WebAgent) young2@yc2.com => NoSuchElement on waitUntilClickable
+2017-07-19 13:56:33 ERROR [main] (Agent.java:825)- XPath is : .//*[starts-with(@id,'100')]/div[2]/div[6]/div[2]/div[2]/div[2]/button[2]|//*[contains(@id,':')]/div[2]/div[6]/div[2]/div[2]/div[2]/button[2]
+2017-07-19 13:56:33  INFO [main] (Agent.java:929)- 
+@(WebAgent) young2@yc2.com=>@@ Fail to Click since => btnWrapExtend is not ready
+2017-07-19 13:56:36 ERROR [main] (Agent.java:951)- 
+@(WebAgent) young2@yc2.com =>@@@@ Exception on btnWrapExtend java.lang.Exception
+2017-07-19 13:56:36  INFO [main] (AgentHB.java:845)- 
+@(WebAgent) young2@yc2.com exception on wrapupEndWith2WrapupCodesjava.lang.Exception
+2017-07-19 13:56:36  INFO [main] (Test_Chat_All.java:32)- * After Class: Test_Chat_All
+2017-07-19 13:56:36  INFO [main] (AgentHB.java:906)- 
+@(WebAgent) young2@yc2.com #### Logout and Close FireFox ####
+2017-07-19 13:56:37  INFO [main] (TestObject.java:48)- * Wait : 1 seconds.
+2017-07-19 13:56:38  INFO [main] (AgentHB.java:906)- 
+@(WebAgent) young3@yc2.com #### Logout and Close FireFox ####
+2017-07-19 13:56:38  INFO [main] (TestObject.java:48)- * Wait : 1 seconds.
+2017-07-19 13:56:39  INFO [main] (AgentHB.java:906)- 
+@(WebAgent) young4@yc2.com #### Logout and Close FireFox ####
+2017-07-19 13:56:40  INFO [main] (TestObject.java:48)- * Wait : 1 seconds.
+2017-07-19 13:56:41  INFO [main] (CustomerCMWin.java:158)- 
+@(CustomerVoice) young6wb2 #### Close FireFox ####
+2017-07-19 13:56:42  INFO [main] (TestObject.java:48)- * Wait : 1 seconds.
+2017-07-19 13:56:43  INFO [main] (AgentHBDirector.java:75)- 
+@(HBDirector) young2@yc2.com #### Close FireFox ####
+2017-07-19 13:56:44  INFO [main] (TestObject.java:48)- * Wait : 1 seconds.
+2017-07-19 13:56:45  INFO [main] (CustomerChat.java:178)- 
+@(CustomerChat) Customer1 #### Close FireFox ####
+2017-07-19 13:56:45  INFO [main] (TestObject.java:48)- * Wait : 1 seconds.
+2017-07-19 13:56:46  INFO [main] (TestObject.java:182)- 
+###########################################################################################
+2017-07-19 13:56:46  INFO [main] (TestObject.java:184)- ### times: @@Start=>07/19/2017 13:52:15, @@End=> 07/19/2017 13:56:46
+2017-07-19 13:56:46  INFO [main] (TestObject.java:186)- ### Total execution time: 0(Days) 0(Hour) 4(Min) 31(Sec)
+2017-07-19 13:56:46  INFO [main] (TestCaseObject.java:115)- start@good;
+2017-07-19 13:56:46  INFO [main] (TestCaseObject.java:117)- ###################################################
+2017-07-19 13:56:46  INFO [main] (TestCaseObject.java:118)- ###################################################
+2017-07-19 13:56:46  INFO [main] (TestCaseObject.java:119)- ###### End of TestSuite ###########################
+2017-07-19 13:56:46  INFO [main] (TestCaseObject.java:120)- ###################################################
+2017-07-19 13:56:46  INFO [main] (TestCaseObject.java:121)- ###################################################

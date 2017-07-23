@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Java_Selenium LoadTest" verbose="1">
+  <parameter name="waitUntilOneAm" value="no"></parameter>  <!--## yes: waits until 1 am tomorrow, no: starts immediately ##-->
+  <parameter name="tearDownOrNot" value="yes"></parameter>  <!--## yes: close all WebBrowsers, no: Don't close ##-->
+  
+  <test name="VoiceACD Scenarios"> <!--### This is VoiceACD scenarios ### -->
+	  
+      <classes>
+	  <class name="HBTestesNG.TestCases.Test_Initiate">
+	  </class>
+	  
+	   <class name="HBTestesNG.TestCases.Test_Load">
+        <methods>  
+          <include name="Load" /> <!--### This applies for all load scenarios ### -->
+        </methods>
+      </class>
+      
+   
+       
+    </classes>
+  </test>
+</suite> 

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test HB Suite" verbose="1">
+  <parameter name="qT1" value="10"></parameter> 
+  <parameter name="rT1" value="10"></parameter>          
+  <parameter name="tT1" value="10"></parameter>
+  <parameter name="wT1" value="10"></parameter>
+  <parameter name="rT2" value="10"></parameter>
+  <parameter name="tT2" value="10"></parameter> 
+  <parameter name="wT2" value="10"></parameter> 
+  <parameter name="waitUntilOneAm" value="no"></parameter>  <!--## yes: waits until 1 am tomorrow, no: starts immediately ##-->
+  <parameter name="tearDownOrNot" value="yes"></parameter>  <!--## yes: close all WebBrowsers, no: Don't close ##-->
+  <parameter name="usePhantomJS" value="no"></parameter>  <!--## yes: use PhantomeJS for WebDriver, no: Don't use it. ##-->
+  
+  <test name="VoiceACD Scenarios"> 
+  	  <groups>
+         <run>
+         	<include name="Test_Initiate"/> <!--### This must be "include" all the time ### -->
+            <include name="VoiceACD_Basic_ClassLevel"/>
+            <include name="VoiceACD_Transfer_ClassLevel"/>
+            <include name="VoiceACD_Transfer_WrapTimeZero_ClassLevel"/>
+            <include name="VoiceACD_Conference_ClassLevel"/>
+            <include name="VoiceACD_Conference_WrapTimeZero_ClassLevel"/>
+            <include name="VoiceACD_Reverse_TransferConference_ClassLevel"/>
+            <include name="VoiceNACD_Transfer_ClassLevel"/>  
+            <include name="VoiceNACD_Conference_ClassLevel"/> 
+            <include name="VoiceAQ_Transfer_ClassLevel"/> 
+            <include name="VoiceAQ_Conference_ClassLevel"/>
+            <include name="VoiceScript_Transfer_ClassLevel"/>
+            <include name="VoiceScript_Conference_ClassLevel"/>
+            <include name="Test_VoiceACD_OverInterflow"/>
+            <include name="Chat_All_ClassLevel"/>
+            <include name="Email_All_ClassLevel"/>
+            <include name="VoiceOACD_ByAgandon_Conference_WrapTimeZero_ClassLevel"/>
+         </run>
+      </groups>
+	  
+    <classes>
+	  <class name="HBTestesNG.TestCases.Test_Initiate">
+	  </class>
+	  
+      <class name="HBTestesNG.TestCases.Test_VoiceACD_Basic">
+      </class>
+       
+       <class name="HBTestesNG.TestCases.Test_VoiceACD_Transfer">
+       </class>
+       
+       <class name="HBTestesNG.TestCases.Test_VoiceACD_Transfer_WrapTimeZero">
+       </class>
+       
+       <class name="HBTestesNG.TestCases.Test_VoiceACD_Conference">
+       </class>
+       
+       <class name="HBTestesNG.TestCases.Test_VoiceACD_Conference_WrapTimeZero">
+       </class>
+       
+        <class name="HBTestesNG.TestCases.Test_VoiceACD_Reverse_TransferConference">
+        </class>
+       
+       <class name="HBTestesNG.TestCases.Test_VoiceNACD_Transfer">
+       </class>
+       
+       <class name="HBTestesNG.TestCases.Test_VoiceNACD_Conference">
+       </class>
+       
+       <class name="HBTestesNG.TestCases.Test_VoiceAQ_Transfer">
+       </class>
+       
+       <class name="HBTestesNG.TestCases.Test_VoiceAQ_Conference">
+       </class>
+       
+       <class name="HBTestesNG.TestCases.Test_VoiceScript_Transfer">
+       </class>
+       
+       <class name="HBTestesNG.TestCases.Test_VoiceScript_Conference">
+       </class>
+       
+       <class name="HBTestesNG.TestCases.Test_VoiceACD_OverInterflow">
+       </class>
+       
+       <class name="HBTestesNG.TestCases.Test_Chat_All">
+       </class>
+       
+       <class name="HBTestesNG.TestCases.Test_Email_All">
+       </class>
+       
+       <class name="HBTestesNG.TestCases.Test_VoiceOACD_ByAbandon_Conference_WrapTimeZero">
+       </class>
+       
+    </classes>
+  </test>
+</suite> 

@@ -1,0 +1,32 @@
+2017-07-21 16:31:09  INFO [main] (Agent.java:79)- ## WebBrowser is => chrome
+2017-07-21 16:31:09  INFO [main] (Agent.java:84)- @ WebDriver=> chrome
+2017-07-21 16:31:09  INFO [main] (Agent.java:175)- 
+@ #### Opening Chrome ####
+2017-07-21 16:31:12  INFO [main] (HBDirector.java:23)- supUserName ==> Agt_001@LT1.com
+2017-07-21 16:31:12  INFO [main] (AllEntities.java:59)- I am here 6
+2017-07-21 16:31:12  INFO [main] (Test_HBDirector.java:24)- * Before Class: Test_HBDirector
+2017-07-21 16:31:12  INFO [main] (TestCaseBaseObject.java:82)- 
+
+
+****************************************************************************************
+2017-07-21 16:31:12  INFO [main] (TestCaseBaseObject.java:83)- ****************************************************************************************
+2017-07-21 16:31:12  INFO [main] (TestCaseBaseObject.java:84)- $$$$$$$$$$$$$$$$$$$$$  CCDirector->CreateAgents $$$$$$$$$$$$$$$$$$$$$$$$$
+2017-07-21 16:31:12  INFO [main] (TestCaseBaseObject.java:85)- ****************************************************************************************
+2017-07-21 16:31:12  INFO [main] (TestCaseBaseObject.java:86)- ****************************************************************************************
+2017-07-21 16:31:12  INFO [main] (HBDirector.java:34)- 
+@ Agt_001@LT1.com #### Go to Login Page ####
+2017-07-21 16:31:12  INFO [main] (Agent.java:693)- 
+@ Agt_001@LT1.com => Maximizing FireFox
+2017-07-21 16:31:14  INFO [main] (HBDirector.java:38)- 
+@ Agt_001@LT1.com #### Adding supUserName -> password -> Submit ####
+2017-07-21 16:31:16  INFO [main] (TestBaseObject.java:44)- * Wait : 5 seconds.
+2017-07-21 16:31:21  INFO [main] (HBDirector.java:65)- 
+@ Agt_001@LT1.com opens HB Director http://10.32.160.15:31459/cc_admin/#page=agent
+2017-07-21 16:31:21  INFO [main] (Agent.java:860)- 
+@ Agt_001@LT1.com:0: Wait for ID: mainTitle
+2017-07-21 16:31:25  INFO [main] (Agent.java:860)- 
+@ Agt_001@LT1.com:1: Wait for ID: mainTitle
+2017-07-21 16:31:27  INFO [main] (Agent.java:860)- 
+@ Agt_001@LT1.com:2: Wait for ID: mainTitle
+2017-07-21 16:31:29  INFO [main] (Agent.java:860)- 
+@ Agt_001@LT1.com:3: Wait for ID: mainTitle

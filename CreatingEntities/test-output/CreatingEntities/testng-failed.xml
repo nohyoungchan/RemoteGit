@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [CreatingEntities]">
+  <test name="Creating CCDirector Entities(failed)">
+    <classes>
+      <class name="TestCases.Test_HBDirector">
+        <methods>
+          <include name="CCDirector_CreateAgents"/>
+        </methods>
+      </class> <!-- TestCases.Test_HBDirector -->
+      <class name="TestCases.Test_Prepare">
+        <methods>
+          <include name="beforeSuite"/>
+        </methods>
+      </class> <!-- TestCases.Test_Prepare -->
+    </classes>
+  </test> <!-- Creating CCDirector Entities(failed) -->
+</suite> <!-- Failed suite [CreatingEntities] -->

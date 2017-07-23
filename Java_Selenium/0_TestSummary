@@ -1,0 +1,37 @@
+* The following is precondition to run the automated test cases.
+
+1. Setting
+   1) There are 3 Agents, 1 supervisor, and 1 Customer
+   2) IRN1->Service1->Group1->agent1, agent2
+   3) IRN2->Service3->Group3->agent3
+   4) IRN3->AQ1->agent1
+   5) IRN4->AQ1->agent3
+   6) IRN5->Script->IRN1
+   7) agent3 belongs to Group2 and Group3
+   8) Service1->Overflow(60s) to Group2->Interflow(120s) to Group3
+   
+   
+
+2. Procedure
+   1) 3 WebAgents, 1 CMWin, 1 HBDirector will start initially.
+   2) The above will persist until the end of the test.
+   
+ 3. You need 3 DID numbers as follows.
+   1) agent1, agent3, irn1
+   2) agent1: DID is used for NACD incoming.
+   3) agent3: DID is used for NACD incoming.
+   4) irn1:   DID is used for IRN calling from fortuna client.
+   
+   
+* The following is how to install/configure automation environment.
+1. Copy the whole "Automation" directory and set the directory structure as the following
+=> C:\young\Automation
+2. download jdk
+   1) Install JDK to a default directory(Select all default options)
+3. download eclipse->Install Eclipse (Eclipse IDE for Java Developers) 
+4. Open eclipse->File->Import->General->Existing Projects into Workspace
+=> Select "Java_Selenium" project
+5. Go to "Elipse->Help->Eclipse Market Place"
+-> Search for "TestNG"->Install
+-> Ignore warning->restart
+6. Open testing.xml-> Run

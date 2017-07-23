@@ -1,0 +1,36 @@
+#### This is for Boss configuration file ####
+
+##### Start of Global variable ##############
+globalVaribleMax=12
+
+globalVarible1.name=agentPrefix
+globalVarible1.value=Testagent
+globalVarible2.name=agentDomain
+globalVarible2.value=@loadtest1.com
+globalVarible3.name=agentCOS
+globalVarible3.value=LOAD_COS
+globalVarible4.name=agentEmailPrefix
+globalVarible4.value=agent
+globalVarible5.name=agentEmailDomain
+globalVarible5.value=@loadtest1.com
+globalVarible6.name=totNumAgentsToCreate
+globalVarible6.value=200
+globalVarible7.name=startingNum
+globalVarible7.value=0
+globalVarible8.name=idExtStartNum
+globalVarible8.value=400
+
+## This is when agent name is like agent001, agent002, etc : Make this "yes".
+## if fixedWidth =4,  agent0001, if fixedWithth=6, agent000001
+globalVarible9.name=agentNameWithLeadingZero
+globalVarible9.value=yes
+globalVarible10.name=fixedWidth
+globalVarible10.value=5
+
+### Not ready yet: When using CSV file, the above options are not needed.  Default=> split by ";"
+globalVarible11.name=useCSVFile
+globalVarible11.value=no
+globalVarible12.name=csvFileName
+globalVarible12.value=agentData.csv
+globalVarible13.name=stringSplitBy
+globalVarible13.value=;
