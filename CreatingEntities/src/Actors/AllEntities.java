@@ -52,6 +52,7 @@ public class AllEntities extends TestBaseObject{
 		//gVariableHash = readTestDataINI();
 		gCCDXPathHash = readTestPropertyINI_ForHBDirector();
 		read_testDataINI();
+		TestBaseObject.useWhichWebDriver = wini.get("Supervisor", "webDriver");
 
 		CCD = new HBDirector();
 

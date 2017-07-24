@@ -22,7 +22,7 @@ public class HBDirector extends Agent{
 		inic= AllEntities.wini;
 		supUserName = inic.get("Supervisor", "supUserName");
 		supPassword = inic.get("Supervisor", "supPassword");
-		username = supUserName;
+		//username = supUserName;
 		log.info("supUserName ==> " + supUserName);
 
 		// TODO Auto-generated constructor stub
@@ -36,25 +36,18 @@ public class HBDirector extends Agent{
 		
 		log.info("\n@ " +  supUserName + " #### Go to Login Page ####");
 		maximizeFireFox();
-		driver.get(gVariableHash.get("hbDirectorURL")); 
+		driver.get(inic.get("URL", "hbDirectorURL")); 
 		
 		log.info("\n@ " +  supUserName + " #### Adding supUserName -> password -> Submit ####");
 		// ## This is for MT ##
-/*		driver.findElement(By.id("username")).clear();
+		driver.findElement(By.id("username")).clear();
 		driver.findElement(By.id("username")).sendKeys(supUserName);
 		driver.findElement(By.id("password")).clear();
 		driver.findElement(By.id("password")).sendKeys(supPassword);
 		wait(2);
-		driver.findElement(By.id("submitBtn")).click();*/
+		driver.findElement(By.id("submitBtn")).click();
 		//currentTime();
-		
-		// ## This is for ST  ##
-		driver.findElement(By.id("ccd2_login")).clear();
-		driver.findElement(By.id("ccd2_login")).sendKeys(supUserName);
-		driver.findElement(By.id("id_password")).clear();
-		driver.findElement(By.id("id_password")).sendKeys(supPassword);
-		wait(2);
-		driver.findElement(By.id("SUBMIT1")).click();
+
 	}
 	
 	
@@ -63,7 +56,7 @@ public class HBDirector extends Agent{
 		String part;
 		
 		part = "#page=";
-		pageURL= gVariableHash.get("hbDirectorURLAfterLogIn") + part + pageName;
+		pageURL= inic.get("URL", "hbDirectorURLAfterLogIn") + part + pageName;
 		
 		log.info("\n@ " +  supUserName + " opens HB Director " + pageURL);
 		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
