@@ -1,0 +1,14 @@
+02-17 13:56 SrcCode.TestCases.Test_HB INFO     I am here at setupModule()
+02-17 13:56 SrcCode.TestCases.Test_HB INFO     I am here at setup
+02-17 13:56 SrcCode.BaseObjects.API_Tester INFO     I am here at login() with young2@yc2.com Shoreadmin1
+02-17 13:56 requests.packages.urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): ccapi2.shoretel.com
+02-17 13:56 requests.packages.urllib3.connectionpool DEBUG    https://ccapi2.shoretel.com:443 "POST / HTTP/1.1" 200 877
+02-17 13:56 SrcCode.TestCases.Test_HB INFO     I am here to test httpsWithClass
+02-17 13:56 requests.packages.urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): ccapi2.shoretel.com
+02-17 13:56 requests.packages.urllib3.connectionpool DEBUG    https://ccapi2.shoretel.com:443 "POST / HTTP/1.1" 200 197
+02-17 13:56 requests.packages.urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): ccapi2.shoretel.com
+02-17 13:56 requests.packages.urllib3.connectionpool DEBUG    https://ccapi2.shoretel.com:443 "POST / HTTP/1.1" 200 1054
+02-17 13:56 requests.packages.urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): ccapi2.shoretel.com
+02-17 13:56 requests.packages.urllib3.connectionpool DEBUG    https://ccapi2.shoretel.com:443 "POST / HTTP/1.1" 200 116
+02-17 13:56 SrcCode.TestCases.Test_HB INFO     I am here at teatDown()
+02-17 13:56 SrcCode.TestCases.Test_HB INFO     I am here at tearDownModule()

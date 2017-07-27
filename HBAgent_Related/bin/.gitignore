@@ -1,0 +1,10 @@
+/.classpath
+/.project
+/.settings/
+/BaseObject/
+/TestObject/
+/chromedriver.exe
+/log/
+/testData.ini
+/testPropertyWithXPath.ini
+/testProperty_XPath.ini

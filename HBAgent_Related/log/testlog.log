@@ -1,0 +1,52 @@
+2016-10-05 17:14:51  INFO [main] (WebBrowser.java:179)- 
+@ #### Opening Chrome ####
+2016-10-05 17:14:54  INFO [main] (HBAgent.java:34)- 
+@(young1)  #### Initializing ####
+2016-10-05 17:14:54  INFO [main] (HBAgent.java:161)- 
+@(WebAgent) young1 #### Go to Login Page ####
+2016-10-05 17:14:54  INFO [main] (WebBrowser.java:697)- 
+@ young1 => Maximizing FireFox
+2016-10-05 17:14:54  INFO [main] (TBaseObject.java:44)- * Wait : 3 seconds.
+2016-10-05 17:14:57  INFO [main] (WebBrowser.java:782)- 
+@ young1 => logIntoWebAgent_PreCondition
+2016-10-05 17:14:58  INFO [main] (WebBrowser.java:751)- XPath is : .//*[@id='username']
+2016-10-05 17:14:58  INFO [main] (WebBrowser.java:785)- 
+@ young1 => logIntoWebAgent_PreCondition: Success
+2016-10-05 17:14:58  INFO [main] (HBAgent.java:179)- 
+@(WebAgent) young1 #### Adding username -> password -> Submit ####
+2016-10-05 17:14:58  INFO [main] (TBaseObject.java:44)- * Wait : 2 seconds.
+2016-10-05 17:15:00  INFO [main] (TBaseObject.java:44)- * Wait : 3 seconds.
+2016-10-05 17:15:03  INFO [main] (WebBrowser.java:782)- 
+@ young1 => logIntoWebAgent_PostCondition
+2016-10-05 17:15:03  INFO [main] (WebBrowser.java:751)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2016-10-05 17:15:03  INFO [main] (WebBrowser.java:785)- 
+@ young1 => logIntoWebAgent_PostCondition: Success
+2016-10-05 17:15:03  INFO [main] (TBaseObject.java:44)- * Wait : 10 seconds.
+2016-10-05 17:15:13  INFO [main] (HBAgent.java:733)- 
+@(WebAgent) young1 #### Signout When there is no call####
+2016-10-05 17:15:13  INFO [main] (HBAgent.java:330)- 
+@(WebAgent) young1 #### Resume agent. ####
+2016-10-05 17:15:13  INFO [main] (WebBrowser.java:782)- 
+@ young1 => resumeAgent_PreCondition
+2016-10-05 17:15:13  INFO [main] (WebBrowser.java:751)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2016-10-05 17:15:13  INFO [main] (WebBrowser.java:785)- 
+@ young1 => resumeAgent_PreCondition: Success
+2016-10-05 17:15:13  INFO [main] (TBaseObject.java:44)- * Wait : 2 seconds.
+2016-10-05 17:15:15  INFO [main] (HBAgent.java:350)- 
+@(WebAgent) young1: State=> Idle
+2016-10-05 17:15:15  INFO [main] (TBaseObject.java:44)- * Wait : 3 seconds.
+2016-10-05 17:15:18  INFO [main] (HBAgent.java:749)-    
+@(WebAgent) young1: Status=> status title-bg idle
+2016-10-05 17:15:18  INFO [main] (WebBrowser.java:751)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[1]/button
+2016-10-05 17:15:18  INFO [main] (WebBrowser.java:818)- 
+@ young1 Clicked=> btnSignOutMenu
+2016-10-05 17:15:18  INFO [main] (TBaseObject.java:44)- * Wait : 2 seconds.
+2016-10-05 17:15:20  INFO [main] (WebBrowser.java:751)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[1]/ul/li[2]/a
+2016-10-05 17:15:20  INFO [main] (WebBrowser.java:818)- 
+@ young1 Clicked=> btnSignOut
+2016-10-05 17:15:20  INFO [main] (TBaseObject.java:44)- * Wait : 5 seconds.
+2016-10-05 17:15:25  INFO [main] (TBaseObject.java:44)- * Wait : 5 seconds.
+2016-10-05 17:15:30  INFO [main] (HBAgent.java:766)- 
+@(WebAgent) young1 #### Close FireFox ####
+2016-10-05 17:15:31  INFO [main] (TBaseObject.java:57)- * Current date/time : 10/05/2016 17:15:31
+2016-10-05 17:15:31  INFO [main] (TBaseObject.java:44)- * Wait : 5 seconds.

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test DirectorAPI suite" verbose="1">
+  <parameter name="strAdminOrSuper" value="super"></parameter> 
+  <parameter name="waitUntilOneAm" value="no"></parameter>  <!--## yes: waits until 1 am tomorrow, no: starts immediately ##-->
+  <parameter name="tearDownOrNot" value="no"></parameter>  <!--## yes: close all WebBrowsers, no: Don't close ##-->
+  <parameter name="usePhantomJS" value="no"></parameter>  <!--## yes: use PhantomeJS for WebDriver, no: Don't use it. ##-->
+  
+  <test name="Subscribe-event"> <!--### This is subscribe scenario ### -->
+	  
+    <classes>
+    
+	  <class name="ClassesTest.Test_Initiate">
+	  </class>
+	  
+      <class name="ClassesTest.Test_SubscribeEvent">
+        <methods>  
+          <exclude name="Test_SubscribeEvent_schedule"/>   	
+          <include name="Test_SubscribeEvent_agent"/>     
+          <exclude name="Test_SubscribeEvent_dnis"/>   
+          <exclude name="Test_SubscribeEvent_service"/>  
+          <exclude name="Test_SubscribeEvent_group"/>    
+          <exclude name="Test_SubscribeEvent_reportTemplate"/>  
+          <exclude name="Test_SubscribeEvent_customReport"/> 	
+          <exclude name="Test_SubscribeEvent_IVRApplication"/>  
+          <exclude name="Test_SubscribeEvent_tenant"/>  
+        </methods>
+      </class>  
+      
+      <class name="ClassesTest.Test_SubscribeEvent_DM">
+        <methods>   	
+          <exclude name="Test_SubscribeEvent_DM_Agents"/> 
+          <exclude name="Test_SubscribeEvent_DM_Supervisors"/> 
+          <exclude name="Test_SubscribeEvent_DM_IVRPorts"/>    
+          <exclude name="Test_SubscribeEvent_DM_EcEmails"/>
+          <exclude name="Test_SubscribeEvent_DM_ReportingStations"/>
+          <exclude name="Test_SubscribeEvent_DM_SubSystem"/>
+        </methods>
+      </class> 
+          
+    </classes>
+    
+  </test>
+  
+</suite> 

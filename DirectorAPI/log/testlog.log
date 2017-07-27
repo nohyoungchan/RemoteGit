@@ -1,0 +1,76 @@
+2017-03-16 09:57:28  INFO [main] (TestCaseObject.java:62)- 
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+2017-03-16 09:57:28  INFO [main] (TestCaseObject.java:63)- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+2017-03-16 09:57:28  INFO [main] (TestCaseObject.java:64)- @@@@@@@@@@@@@@@@@@  Test_SubscribeEvent Class @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+2017-03-16 09:57:28  INFO [main] (TestCaseObject.java:65)- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+2017-03-16 09:57:29  INFO [main] (JasonAPITesterClient.java:211)- ### Trust All certificate ###
+2017-03-16 09:57:29  INFO [main] (JasonAPITesterClient.java:167)- 
+
+######## Reason to SendRequest : LogIn ###########
+2017-03-16 09:57:29  INFO [main] (JasonAPITesterClient.java:311)- ### opening Connection on LogIn :  ###
+2017-03-16 09:57:29  INFO [main] (JasonAPITesterClient.java:340)- ### Write Outputstream on LogIn :  ###
+2017-03-16 09:57:29  INFO [main] (JasonAPITesterClient.java:347)- ==> Flush/Close Outputstream after writeOutputStream
+2017-03-16 09:57:30  INFO [main] (JasonAPITesterClient.java:352)- ==> The following is the message sent to Outputstream
+2017-03-16 09:57:30  INFO [main] (JasonAPITesterClient.java:353)- 1) CCAPI_URL : https://ccapi2.shoretel.com/
+2017-03-16 09:57:30  INFO [main] (JasonAPITesterClient.java:354)- 2) Full Jason Message : 
+2017-03-16 09:57:30  INFO [main] (JasonAPITesterClient.java:357)- 3) Response Code : 200
+2017-03-16 09:57:30  INFO [main] (JasonAPITesterClient.java:360)- ===> It means :the response contains a payload.  Good!
+2017-03-16 09:57:30  INFO [main] (JasonAPITesterClient.java:184)- 4) Response of sendRequest 
+2017-03-16 09:57:30  INFO [main] (JasonAPITesterClient.java:188)- #### Close Input Stream on : LogIn ####
+2017-03-16 09:57:30  INFO [main] (TestCaseObject.java:71)- 
+
+
+**********************************************************************************************************************************************
+2017-03-16 09:57:30  INFO [main] (TestCaseObject.java:72)- ****************************************************************************************
+2017-03-16 09:57:30  INFO [main] (TestCaseObject.java:73)- $$$$$$$$$$$$$$$$$$$$$  Test Case: Test_SubscribeEvent==> agent $$$$$$$$$$$$$$$$$$$$$$$$$
+2017-03-16 09:57:30  INFO [main] (TestCaseObject.java:74)- ****************************************************************************************
+2017-03-16 09:57:30  INFO [main] (JasonMessageBuilder.java:39)- @subscribe-events->Raw: {"version":1,"topic":"contact-center","message":"subscribe-events","request-id":10,"subscribe":[["ecc","entity",["replaceMe"]]]}
+2017-03-16 09:57:30  INFO [main] (JasonAPITesterClient.java:130)- @ sendRequestJson => (reason):  Subscribe agent: message => {"subscribe":[["ecc","entity",["agent"]]],"topic":"contact-center","message":"subscribe-events","request-id":10,"version":1}
+2017-03-16 09:57:30  INFO [main] (JasonAPITesterClient.java:167)- 
+
+######## Reason to SendRequest : Subscribe agent ###########
+2017-03-16 09:57:30  INFO [main] (JasonAPITesterClient.java:311)- ### opening Connection on Subscribe agent :  ###
+2017-03-16 09:57:30  INFO [main] (JasonAPITesterClient.java:340)- ### Write Outputstream on Subscribe agent :  ###
+2017-03-16 09:57:30  INFO [main] (JasonAPITesterClient.java:347)- ==> Flush/Close Outputstream after writeOutputStream
+2017-03-16 09:57:30  INFO [main] (JasonAPITesterClient.java:352)- ==> The following is the message sent to Outputstream
+2017-03-16 09:57:30  INFO [main] (JasonAPITesterClient.java:353)- 1) CCAPI_URL : https://ccapi2.shoretel.com/
+2017-03-16 09:57:30  INFO [main] (JasonAPITesterClient.java:354)- 2) Full Jason Message : 
+2017-03-16 09:57:30  INFO [main] (JasonAPITesterClient.java:357)- 3) Response Code : 200
+2017-03-16 09:57:30  INFO [main] (JasonAPITesterClient.java:360)- ===> It means :the response contains a payload.  Good!
+2017-03-16 09:57:30  INFO [main] (JasonAPITesterClient.java:184)- 4) Response of sendRequest 
+2017-03-16 09:57:30  INFO [main] (TestBaseObject.java:55)- * Wait : 1 seconds.
+2017-03-16 09:57:31  INFO [main] (JasonAPITesterClient.java:142)- @ StartPolling => Subscribe agent
+2017-03-16 09:57:31  INFO [main] (JasonAPITesterClient.java:167)- 
+
+######## Reason to SendRequest : Start Polling after Subscribe agent ###########
+2017-03-16 09:57:31  INFO [main] (JasonAPITesterClient.java:311)- ### opening Connection on Start Polling after Subscribe agent :  ###
+2017-03-16 09:57:31  INFO [main] (JasonAPITesterClient.java:340)- ### Write Outputstream on Start Polling after Subscribe agent :  ###
+2017-03-16 09:57:31  INFO [main] (JasonAPITesterClient.java:347)- ==> Flush/Close Outputstream after writeOutputStream
+2017-03-16 09:57:31  INFO [main] (JasonAPITesterClient.java:352)- ==> The following is the message sent to Outputstream
+2017-03-16 09:57:31  INFO [main] (JasonAPITesterClient.java:353)- 1) CCAPI_URL : https://ccapi2.shoretel.com/
+2017-03-16 09:57:31  INFO [main] (JasonAPITesterClient.java:354)- 2) Full Jason Message : 
+2017-03-16 09:57:31  INFO [main] (JasonAPITesterClient.java:357)- 3) Response Code : 200
+2017-03-16 09:57:31  INFO [main] (JasonAPITesterClient.java:360)- ===> It means :the response contains a payload.  Good!
+2017-03-16 09:57:31  INFO [main] (JasonAPITesterClient.java:184)- 4) Response of sendRequest 
+2017-03-16 09:57:31  INFO [main] (JasonAPITesterClient.java:188)- #### Close Input Stream on : Start Polling after Subscribe agent ####
+2017-03-16 09:57:31  INFO [main] (JasonMessageBuilder.java:224)- 
+#### Parsing Jason Message: agents ####
+2017-03-16 09:57:31  INFO [main] (JasonMessageBuilder.java:247)- ########
+
+2017-03-16 09:57:31  INFO [main] (Test_SubscribeEvent.java:181)- @@@ After Class: Test_SubscribeEvent @@@
+2017-03-16 09:57:31  INFO [main] (TestCaseObject.java:100)- 
+
+ #################### Printing out : poll Result ########################
+2017-03-16 09:57:31  INFO [main] (TestCaseObject.java:100)- 
+
+ #################### Printing out : Poll Result processed ########################
+2017-03-16 09:57:31  INFO [main] (TestBaseObject.java:173)- ### times: @@Start=>03/16/2017 09:57:28, @@End=> 03/16/2017 09:57:31
+2017-03-16 09:57:31  INFO [main] (TestBaseObject.java:175)- ### Total execution time: 0(Days) 0(Hour) 0(Min) 2(Sec)
+2017-03-16 09:57:31  INFO [main] (TestCaseObject.java:51)- ###################################################
+2017-03-16 09:57:31  INFO [main] (TestCaseObject.java:52)- ###################################################
+2017-03-16 09:57:31  INFO [main] (TestCaseObject.java:53)- ###### End of TestSuite ###########################
+2017-03-16 09:57:31  INFO [main] (TestCaseObject.java:54)- ###################################################
+2017-03-16 09:57:31  INFO [main] (TestCaseObject.java:55)- ###################################################

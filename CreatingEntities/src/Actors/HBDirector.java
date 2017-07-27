@@ -22,7 +22,6 @@ public class HBDirector extends Agent{
 		inic= AllEntities.wini;
 		supUserName = inic.get("Supervisor", "supUserName");
 		supPassword = inic.get("Supervisor", "supPassword");
-		//username = supUserName;
 		log.info("supUserName ==> " + supUserName);
 
 		// TODO Auto-generated constructor stub

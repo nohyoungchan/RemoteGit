@@ -1,0 +1,41 @@
+@@@@ This is a description for all commands @@@@
+
+   %%% WebAgent Commands %%%
+* WebAgent_login_num : Login specific number of WebAgents (You can enter a number on the textbox)
+* WebAgent_logout : logout all WebAgent (If WebAgent is not logged in, it will be ignored)
+* WebAgent_resume : Resume all WebAgents (If WebAgent is not logged in, it will be ignored)
+* WebAgent_release : Release all WebAgents (If WebAgent is not logged in, it will be ignored)
+* WebAgent_releaseResume_repeat : Release / Resume repeatedly 
+==> Precondition : WebAgent should be logged in first
+==> Interval time is set on Y_Server side(testData.ini)
+==>The variable name is :intSecReleaseResume in testData.ini
+
+   %%% Agent Manager Commands %%%
+* Login_NLA_num : Login specific number of Agent Manager (You can enter a number on the textbox)
+* login_NLA_num_repeat : Login specific number of AM -> Logout them -> Repeat 
+==> Interval time before logout is set on Y_Server side(testData.ini)
+==> The variable name is : intSecBeforeLogout in testData.ini
+* login_NLA_all : Login Agent Manager to all Y_Clients
+* relogin_NLA : This closes login dialogue and relogin if somehow loginto NLA has some problem 
+==>This assumes that "login_NLA_all" or "login_NLA_num" are already ran.
+* relogin_NLA_repeat : This is the same as "login_NLA_all->Wait->logout->Repeat"
+==> Interval time is set on Y_Server side(testData.ini)
+==> The variable name is : intSecBeforeLogout in testData.ini
+* logout : This logs out all Agent Manager(NLA)
+* logout :  logout all NLA (If NLA is not logged in, it will be ignored)
+
+   %%% FLA/GCCS Commands %%%
+* Open_FLA : Login FLA to all Y_Clients
+==>Precondition : NLA should be open first
+* Close_FLA : Logout all FLA
+* Open_GCCS : Login GCCS to all Y_Clients
+==>Precondition : NLA should be open first
+* Close_GCCS : Logout all GCCS
+
+   %%% Y_Server Commands %%%
+* server_list : This shows the number of Y_Clients which are registered
+* server_reload  : This re-reads all configuration files and CSV files from Y_Server
+* exit : This closes all Y_Clients
+* Kill_all : This closes all NLA/FLA/GCCS/WebAgent and eventually Y_Clients
+* hello : This sends "hello" message to all Y_Clients
+==> This is used to check if Y_Clients are connected correctly.

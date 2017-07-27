@@ -1,83 +1,21 @@
-2017-07-24 10:54:48  INFO [main] (Agent.java:79)- ## WebBrowser is => chrome
-2017-07-24 10:54:48  INFO [main] (Agent.java:84)- @ WebDriver=> chrome
-2017-07-24 10:54:48  INFO [main] (Agent.java:175)- 
+2017-07-25 15:59:31  INFO [main] (Agent.java:79)- ## WebBrowser is => chrome
+2017-07-25 15:59:31  INFO [main] (Agent.java:84)- @ WebDriver=> chrome
+2017-07-25 15:59:31  INFO [main] (Agent.java:175)- 
 @ #### Opening Chrome ####
-2017-07-24 10:54:51  INFO [main] (HBDirector.java:26)- supUserName ==> young1
-2017-07-24 10:54:51  INFO [main] (Test_HBDirector.java:24)- * Before Class: Test_HBDirector
-2017-07-24 10:54:51  INFO [main] (TestCaseBaseObject.java:82)- 
+2017-07-25 15:59:33  INFO [main] (HBDirector.java:25)- supUserName ==> young1
+2017-07-25 15:59:33  INFO [main] (Test_HBDirector.java:24)- * Before Class: Test_HBDirector
+2017-07-25 15:59:33  INFO [main] (TestCaseBaseObject.java:82)- 
 
 
 ****************************************************************************************
-2017-07-24 10:54:51  INFO [main] (TestCaseBaseObject.java:83)- ****************************************************************************************
-2017-07-24 10:54:51  INFO [main] (TestCaseBaseObject.java:84)- $$$$$$$$$$$$$$$$$$$$$  CCDirector->CreateAgents $$$$$$$$$$$$$$$$$$$$$$$$$
-2017-07-24 10:54:51  INFO [main] (TestCaseBaseObject.java:85)- ****************************************************************************************
-2017-07-24 10:54:51  INFO [main] (TestCaseBaseObject.java:86)- ****************************************************************************************
-2017-07-24 10:54:51  INFO [main] (HBDirector.java:37)- 
+2017-07-25 15:59:33  INFO [main] (TestCaseBaseObject.java:83)- ****************************************************************************************
+2017-07-25 15:59:33  INFO [main] (TestCaseBaseObject.java:84)- $$$$$$$$$$$$$$$$$$$$$  CCDirector->CreateAgents $$$$$$$$$$$$$$$$$$$$$$$$$
+2017-07-25 15:59:33  INFO [main] (TestCaseBaseObject.java:85)- ****************************************************************************************
+2017-07-25 15:59:33  INFO [main] (TestCaseBaseObject.java:86)- ****************************************************************************************
+2017-07-25 15:59:33  INFO [main] (HBDirector.java:36)- 
 @ young1 #### Go to Login Page ####
-2017-07-24 10:54:51  INFO [main] (Agent.java:693)- 
+2017-07-25 15:59:33  INFO [main] (Agent.java:693)- 
 @ null => Maximizing FireFox
-2017-07-24 10:54:52  INFO [main] (HBDirector.java:41)- 
+2017-07-25 15:59:35  INFO [main] (HBDirector.java:40)- 
 @ young1 #### Adding supUserName -> password -> Submit ####
-2017-07-24 10:54:55  INFO [main] (TestBaseObject.java:44)- * Wait : 5 seconds.
-2017-07-24 10:55:00  INFO [main] (HBDirector.java:70)- 
-@ young1 opens HB Director http://10.23.175.161:31459/cc_admin/#page=agent
-2017-07-24 10:55:11  INFO [main] (Agent.java:860)- 
-@ null:0: Wait for ID: mainTitle
-2017-07-24 10:55:11  INFO [main] (Agent.java:864)- 
-@ null: MainTitleID text is  
-2017-07-24 10:55:13  INFO [main] (Agent.java:860)- 
-@ null:1: Wait for ID: mainTitle
-2017-07-24 10:55:13  INFO [main] (Agent.java:864)- 
-@ null: MainTitleID text is  Favorites : Agents
-2017-07-24 10:55:13  INFO [main] (Test_HBDirector.java:52)- 
-###### Creating : agent1 ########
-2017-07-24 10:55:13  INFO [main] (Agent.java:307)- @null:0: Wait for : .//*[@id='form_action_new']
-2017-07-24 10:55:13  INFO [main] (Agent.java:425)- XPath=> .//*[@id='form_action_new'] : exists
-2017-07-24 10:55:13  INFO [main] (Agent.java:334)- @null: Clicked=> .//*[@id='form_action_new']
-2017-07-24 10:55:13  INFO [main] (Agent.java:505)- @null:0: Wait for : .//*[@id='a_name']
-2017-07-24 10:55:13  INFO [main] (Agent.java:425)- XPath=> .//*[@id='a_name'] : exists
-2017-07-24 10:55:14  INFO [main] (Agent.java:348)- @null: Clicked=> .//*[@id='a_name']
-2017-07-24 10:55:14  INFO [main] (Agent.java:519)- @null: Clicked=> .//*[@id='a_name']
-2017-07-24 10:55:16  INFO [main] (Agent.java:453)- @null: Typed=> agent1
-2017-07-24 10:55:16  INFO [main] (Agent.java:505)- @null:0: Wait for : .//*[@id='a_username']
-2017-07-24 10:55:16  INFO [main] (Agent.java:425)- XPath=> .//*[@id='a_username'] : exists
-2017-07-24 10:55:16  INFO [main] (Agent.java:348)- @null: Clicked=> .//*[@id='a_username']
-2017-07-24 10:55:16  INFO [main] (Agent.java:519)- @null: Clicked=> .//*[@id='a_username']
-2017-07-24 10:55:18  INFO [main] (Agent.java:453)- @null: Typed=> agent1@loadtest1.com
-2017-07-24 10:55:18  INFO [main] (Agent.java:505)- @null:0: Wait for : .//*[@id='a_number']
-2017-07-24 10:55:18  INFO [main] (Agent.java:425)- XPath=> .//*[@id='a_number'] : exists
-2017-07-24 10:55:18  INFO [main] (Agent.java:348)- @null: Clicked=> .//*[@id='a_number']
-2017-07-24 10:55:18  INFO [main] (Agent.java:519)- @null: Clicked=> .//*[@id='a_number']
-2017-07-24 10:55:20  INFO [main] (Agent.java:453)- @null: Typed=> 201
-2017-07-24 10:55:20  INFO [main] (Agent.java:505)- @null:0: Wait for : .//*[@id='a_ext']
-2017-07-24 10:55:20  INFO [main] (Agent.java:425)- XPath=> .//*[@id='a_ext'] : exists
-2017-07-24 10:55:20  INFO [main] (Agent.java:348)- @null: Clicked=> .//*[@id='a_ext']
-2017-07-24 10:55:20  INFO [main] (Agent.java:519)- @null: Clicked=> .//*[@id='a_ext']
-2017-07-24 10:55:22  INFO [main] (Agent.java:453)- @null: Typed=> 201
-2017-07-24 10:55:22  INFO [main] (Agent.java:911)- ### updating combobox=> .//*[@id='cos_id'] with index ACOS1
-2017-07-24 10:55:22  INFO [main] (Agent.java:505)- @null:0: Wait for : .//*[@id='corporate_email_address']
-2017-07-24 10:55:23  INFO [main] (Agent.java:425)- XPath=> .//*[@id='corporate_email_address'] : exists
-2017-07-24 10:55:23  INFO [main] (Agent.java:348)- @null: Clicked=> .//*[@id='corporate_email_address']
-2017-07-24 10:55:23  INFO [main] (Agent.java:519)- @null: Clicked=> .//*[@id='corporate_email_address']
-2017-07-24 10:55:25  INFO [main] (Agent.java:453)- @null: Typed=> agent1@qa.shoretel.com
-2017-07-24 10:55:25  INFO [main] (TestBaseObject.java:44)- * Wait : 2 seconds.
-2017-07-24 10:55:27  INFO [main] (Agent.java:307)- @null:0: Wait for : .//*[@id='createButton']
-2017-07-24 10:55:27  INFO [main] (Agent.java:425)- XPath=> .//*[@id='createButton'] : exists
-2017-07-24 10:55:27  INFO [main] (Agent.java:334)- @null: Clicked=> .//*[@id='createButton']
-2017-07-24 10:55:27  INFO [main] (TestBaseObject.java:44)- * Wait : 2 seconds.
-2017-07-24 10:55:29  INFO [main] (TestCaseBaseObject.java:95)- XXXXXXXXXXXXXXXXXXXXXXX  -END-CCDirector->CreateAgents XXXXXXXXXXXXXXXXXXXXXX
-2017-07-24 10:55:29  INFO [main] (TestCaseBaseObject.java:96)- X
-2017-07-24 10:55:29  INFO [main] (TestCaseBaseObject.java:97)- X
-2017-07-24 10:55:29  INFO [main] (TestCaseBaseObject.java:98)- X
-2017-07-24 10:55:29  INFO [main] (TestCaseBaseObject.java:99)- X
-2017-07-24 10:55:29  INFO [main] (TestBaseObject.java:104)- * Wait for the next test case: 2 seconds
-2017-07-24 10:55:31  INFO [main] (Test_HBDirector.java:31)- * After Class: Test_HBDirector
-2017-07-24 10:55:31  INFO [main] (TestBaseObject.java:160)- 
-###########################################################################################
-2017-07-24 10:55:31  INFO [main] (TestBaseObject.java:162)- ### times: @@Start=>07/24/2017 10:54:48, @@End=> 07/24/2017 10:55:31
-2017-07-24 10:55:31  INFO [main] (TestBaseObject.java:164)- ### Total execution time: 0(Days) 0(Hour) 0(Min) 43(Sec)
-2017-07-24 10:55:31  INFO [main] (TestCaseBaseObject.java:42)- ###################################################
-2017-07-24 10:55:31  INFO [main] (TestCaseBaseObject.java:43)- ###################################################
-2017-07-24 10:55:31  INFO [main] (TestCaseBaseObject.java:44)- ###### End of TestSuite ###########################
-2017-07-24 10:55:31  INFO [main] (TestCaseBaseObject.java:45)- ###################################################
-2017-07-24 10:55:31  INFO [main] (TestCaseBaseObject.java:46)- ###################################################
+2017-07-25 15:59:37  INFO [main] (TestBaseObject.java:44)- * Wait : 5 seconds.

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Failed suite [Test DirectorAPI suite]]">
+  <parameter name="usePhantomJS" value="no"/>
+  <parameter name="strAdminOrSuper" value="super"/>
+  <parameter name="tearDownOrNot" value="no"/>
+  <parameter name="waitUntilOneAm" value="no"/>
+  <test name="Subscribe-event(failed)(failed)">
+    <classes>
+      <class name="ClassesTest.Test_Initiate">
+        <methods>
+          <include name="beforeSuite"/>
+          <include name="afterSuite"/>
+        </methods>
+      </class> <!-- ClassesTest.Test_Initiate -->
+      <class name="ClassesTest.Test_SubscribeEvent_DM">
+        <methods>
+          <include name="Test_SubscribeEvent_DM_Supervisors"/>
+          <include name="beforeClass"/>
+          <include name="Test_SubscribeEvent_DM_SubSystem"/>
+          <include name="Test_SubscribeEvent_DM_EcEmails"/>
+          <include name="Test_SubscribeEvent_DM_Agents"/>
+          <include name="Test_SubscribeEvent_DM_ReportingStations"/>
+          <include name="Test_SubscribeEvent_DM_IVRPorts"/>
+        </methods>
+      </class> <!-- ClassesTest.Test_SubscribeEvent_DM -->
+    </classes>
+  </test> <!-- Subscribe-event(failed)(failed) -->
+</suite> <!-- Failed suite [Failed suite [Test DirectorAPI suite]] -->

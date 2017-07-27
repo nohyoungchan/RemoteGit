@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="14" total="15" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Test DirectorAPI suite" duration-ms="2500" started-at="2017-03-16T16:57:28Z" finished-at="2017-03-16T16:57:31Z">
+    <groups>
+      <group name="SubscribeEvent">
+        <method signature="Test_SubscribeEvent.Test_SubscribeEvent_agent()[pri:0, instance:Thread[Thread-1,5,main]]" name="Test_SubscribeEvent_agent" class="ClassesTest.Test_SubscribeEvent"/>
+      </group> <!-- SubscribeEvent -->
+    </groups>
+    <test name="Subscribe-event" duration-ms="2500" started-at="2017-03-16T16:57:28Z" finished-at="2017-03-16T16:57:31Z">
+      <class name="ClassesTest.Test_SubscribeEvent">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:Thread[Thread-1,5,main]]" name="beforeClass" is-config="true" duration-ms="1359" started-at="2017-03-16T09:57:28Z" finished-at="2017-03-16T09:57:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="Test_SubscribeEvent_agent()[pri:0, instance:Thread[Thread-1,5,main]]" name="Test_SubscribeEvent_agent" duration-ms="1110" started-at="2017-03-16T09:57:30Z" finished-at="2017-03-16T09:57:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test_SubscribeEvent_agent -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:Thread[Thread-1,5,main]]" name="afterClass" is-config="true" duration-ms="0" started-at="2017-03-16T09:57:31Z" finished-at="2017-03-16T09:57:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- ClassesTest.Test_SubscribeEvent -->
+      <class name="ClassesTest.Test_Initiate">
+        <test-method status="PASS" signature="beforeSuite(java.lang.String)[pri:0, instance:Thread[Thread-0,5,main]]" name="beforeSuite" is-config="true" duration-ms="172" started-at="2017-03-16T09:57:28Z" finished-at="2017-03-16T09:57:28Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method status="PASS" signature="afterSuite(java.lang.String)[pri:0, instance:Thread[Thread-0,5,main]]" name="afterSuite" is-config="true" duration-ms="16" started-at="2017-03-16T09:57:31Z" finished-at="2017-03-16T09:57:31Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- ClassesTest.Test_Initiate -->
+    </test> <!-- Subscribe-event -->
+  </suite> <!-- Test DirectorAPI suite -->
+</testng-results>
