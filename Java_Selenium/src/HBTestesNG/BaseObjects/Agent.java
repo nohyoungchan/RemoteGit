@@ -819,6 +819,7 @@ public class Agent extends TestObject {
 			//wait.until(ExpectedConditions.visibilityOf(res));
 		 }catch(TimeoutException e){
 			 log.error("\n@(" + agentType + ") " + username + " => Timeout on waitUntilClickable");
+			 log.error("XPath is : " + xPath);
 			 webElement = null;
 		 }catch(NoSuchElementException e){
 			 log.error("\n@(" + agentType + ") " + username + " => NoSuchElement on waitUntilClickable");

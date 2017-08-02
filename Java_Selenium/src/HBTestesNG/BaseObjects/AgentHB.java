@@ -219,6 +219,7 @@ public class AgentHB extends Agent {
 		  	try{
 				  String txtReturned;
 				  WebElement webElement;
+				  maximizeBrowser();
 		
 				  webElement = driver.findElement(By.xpath(AllActors.hbWebAgentXPathHash.get("btnResume")));	
 				  txtReturned = webElement.getText();
@@ -232,6 +233,7 @@ public class AgentHB extends Agent {
 				  }else{
 				  	log.info("\n@(" + agentType + ") " +  username + ": State=> " + txtReturned);
 				  }
+				  minimizeBrowser();
 			}catch(InterruptedException e){
 				//log.info("I am handling Interrupted Exceptionj=>"+ e.toString());
 				throw e;
@@ -253,7 +255,7 @@ public class AgentHB extends Agent {
 		  	
 		  	try{
 		  		  maximizeBrowser();
-				  resumeAgent();
+				  //resumeAgent();
 			      wait(1);
 			      click_XPath("btnReleaseCodeSelect");
 			      wait(2);
@@ -282,11 +284,13 @@ public class AgentHB extends Agent {
 		  	}
 		  	
 		  	try{
-				  resumeAgent();
+				  //resumeAgent();
+				  maximizeBrowser();
 			      wait(1);
 			      click_XPath(("btnReleaseCodeSelect"));
 			      wait(2);
 			      click_XPath(("thirdReleaseCode"));
+			      minimizeBrowser();
 				  
 			}catch(InterruptedException e){
 				//log.info("I am handling Interrupted Exceptionj=>"+ e.toString());
