@@ -20,7 +20,7 @@
 	  
       <class name="HBTestesNG.TestCases.Test_VoiceACD_Basic">
         <methods>   	
-          <exclude name="VoiceACD_NoQ_Answer" />     
+          <include name="VoiceACD_NoQ_Answer" />     
           <exclude name="VoiceACD_Q_Answer" />     	
           <exclude name="VoiceACD_NoQ_Answer_NoWrapTime" />       	 
         </methods>
@@ -167,9 +167,9 @@
        
        <class name="HBTestesNG.TestCases.Test_Chat_All">
        <methods>      
-      	  <include name="Chat_NoQ_Answer" />
+      	  <exclude name="Chat_NoQ_Answer" />
           <exclude name="Chat_NoQ_Answer_NoWrapTime" /> 
-          <include name="Chat_Q_Answer" /> 
+          <exclude name="Chat_Q_Answer" /> 
           <exclude name="Chat_Queue_Abandon" />  
           <exclude name="Chat_Ring_Abandon" />      
           <exclude name="Chat_Q_Overflow_R_Ans_1stGroup" />

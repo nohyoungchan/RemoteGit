@@ -66,9 +66,9 @@ public boolean startChat() throws Exception {
 		WebElement webElement;
 		int ringTimeSec, talkTimeSec, wrapTimeSec;
 		webElement = null;
-		ringTimeSec = Integer.parseInt(AllActors.globalVariableMainHash.get("ringTimeSec"));
-		talkTimeSec = Integer.parseInt(AllActors.globalVariableMainHash.get("talkTimeSec"));
-		wrapTimeSec = Integer.parseInt(AllActors.globalVariableMainHash.get("wrapTimeSec"));
+		ringTimeSec = Integer.parseInt(AllActors.testDataIni.get("LOAD", "ringTimeSec"));
+		talkTimeSec = Integer.parseInt(AllActors.testDataIni.get("LOAD", "talkTimeSec"));
+		wrapTimeSec = Integer.parseInt(AllActors.testDataIni.get("LOAD", "wrapTimeSec"));
 		
 		try{
 			maximizeBrowser();

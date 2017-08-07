@@ -193,6 +193,7 @@ public class Agent extends TestObject {
 	    driver = new ChromeDriver(options);
 	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	    driver.get("http://www.google.com"); 
+	    minimizeBrowser();
 	}
 	
 	public void openHtmlUnitDriver() throws Exception
@@ -724,7 +725,6 @@ public class Agent extends TestObject {
 		 driver.manage().window().setSize(windowSize);
 		 wait(2);
 		 driver.manage().window().setPosition(windowLocation);
-		 log.info("I am here setting size");
 	 }
 	 
 	 public void setPointFireFox(int xLocation, int yLocation) {
@@ -749,7 +749,7 @@ public class Agent extends TestObject {
 		 log.info("\n@(" + agentType + ") " + username + " => minimizing Browser");
 
 		 //setSizeAndLocation(10, 10, -2000, 700);
-		 setSizeAndLocation(10, 10, 10, 700);
+		 setSizeAndLocation(10, 10, 900, 800);
 		 booleanMaximized = false;
 
 	 }

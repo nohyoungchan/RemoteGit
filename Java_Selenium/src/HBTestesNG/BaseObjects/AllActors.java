@@ -1,16 +1,18 @@
 package HBTestesNG.BaseObjects;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Properties;
 import Utility.PostCondition;
+import org.ini4j.Wini;
 
 
 public class AllActors extends TestObject{
 
     public ArrayList<AgentHB> agents;
-    public ArrayList<CustomerCMWin> customers;
+    public ArrayList<CustomerManhattan> customers;
     public ArrayList<CustomerChat> chatCustomers;
     public ArrayList<CustomerEmail> emailCustomers;
     public ArrayList<AgentHBDirector> supervisors;
@@ -18,7 +20,7 @@ public class AllActors extends TestObject{
     public static ArrayList<Service> services;
     public ArrayList<Boss> bosses;
     
-    public static Hashtable<String, String> globalVariableMainHash;
+    public static Wini testDataIni;
     public static Hashtable<String, String> globalVariableHash;
 	public static Hashtable<String, String> hbDirectorXPathHash;
 	public static Hashtable<String, String> hbWebAgentXPathHash;
@@ -47,7 +49,7 @@ public class AllActors extends TestObject{
 		stopTest = "no";
 		currentCallType = "NA";
 		agents = new ArrayList<AgentHB>();
-		customers = new ArrayList<CustomerCMWin>();
+		customers = new ArrayList<CustomerManhattan>();
 		chatCustomers = new ArrayList<CustomerChat>();
 		emailCustomers = new ArrayList<CustomerEmail>();
 		supervisors = new ArrayList<AgentHBDirector>();
@@ -55,7 +57,7 @@ public class AllActors extends TestObject{
 		services = new ArrayList<Service>();
 		bosses = new ArrayList<Boss>();
 		
-		globalVariableMainHash =new Hashtable<String, String>();
+
 		globalVariableHash = new Hashtable<String, String>();
 		globalVariableBossHash = new Hashtable<String, String>();
 		bossXPathHash = new Hashtable<String, String>();;
@@ -70,7 +72,6 @@ public class AllActors extends TestObject{
 	    try{
 	    	
 	    	postCondition = new PostCondition();
-	    	Properties configFileMain = new Properties();
 	        Properties configFile = new Properties();
 	        Properties propertyFile = new Properties();
 	        Properties configFileAgentCreate = new Properties();
@@ -85,24 +86,16 @@ public class AllActors extends TestObject{
 
 	        }
 	        
-	        
-	      //#### Read Global Variable from .\\test_Config_Files\\testData.ini (Main)
-	        configFileMain.load(new FileInputStream(".\\test_Config_Files\\testData.ini"));
-	        max = Integer.parseInt(configFileMain.getProperty("globalVariableMax"));
-	        for(i=0; i < max; i++){
-	        	j = i+1;
-	        	globalVariableMainHash.put(configFileMain.getProperty("globalVariable" + j+ ".name"), configFileMain.getProperty("globalVariable" + j+ ".value"));
-	        }
-	        
-	        //#### Assign Global Variable from .\\test_Config_Files\\testData.ini (Main)
-	        TestObject.useWhichWebDriver = globalVariableMainHash.get("webDriver");
-	        TestObject.globalSec = Integer.parseInt(globalVariableMainHash.get("waitSecBetweenRun"));
-	        TestObject.globalMinToRelogIn = Integer.parseInt(globalVariableMainHash.get("globalMinToRelogIn"));
-	        TestObject.globalScenario= globalVariableMainHash.get("globalScenario");
-	        TestObject.loginSequentially= globalVariableMainHash.get("loginSequentially");
+	        //#### Read/Assign Global Variable from .\\test_Config_Files\\testData.ini (Main)
+	        testDataIni = new Wini(new File(".\\test_Config_Files\\testData.ini"));         
+	        TestObject.useWhichWebDriver = testDataIni.get("SYSTEM", "webDriver");
+	        TestObject.globalSec = Integer.parseInt(testDataIni.get("LOAD", "waitSecBetweenRun"));
+	        TestObject.globalMinToRelogIn = Integer.parseInt(testDataIni.get("LOAD", "globalMinToRelogIn"));
+	        TestObject.globalScenario= testDataIni.get("LOAD", "globalScenario");
+	        TestObject.loginSequentially= testDataIni.get("LOAD", "loginSequentially");
 	        log.info("TestObject.loginSequentially => " + TestObject.loginSequentially);
 	        
-	        String systemToTest = globalVariableMainHash.get("systemToTest");
+	        String systemToTest = testDataIni.get("SYSTEM", "systemToTest");
 	        if (!systemToTest.contains("Boss")){
 	        	log.info("Testing: " + systemToTest); 
 	        	configFile.load(new FileInputStream(".\\test_Config_Files\\testData.ini_" + systemToTest));
@@ -235,7 +228,7 @@ public class AllActors extends TestObject{
 	        max = Integer.parseInt(configFile.getProperty("customerMax"));
 	        for(i=0; i < max; i++){
 	        	j = i+1;
-	        	customers.add(new CustomerCMWin());
+	        	customers.add(new CustomerManhattan());
 	        	customers.get(i).username = configFile.getProperty("customer" + j+ ".name");
 	        	customers.get(i).password = configFile.getProperty("customer" + j+ ".password");
 	        	customers.get(i).extension = configFile.getProperty("customer" + j+ ".extension");

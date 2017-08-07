@@ -32,10 +32,10 @@ globalVarible10.value=This_is_Email_Content
 
 # Customer Data for voiceACD
 customerMax=1
-customer1.name=young6wb2
+customer1.name=young6@yc2.com
 customer1.password=changeme
-customer1.extension=306
-customer1.did=914089621376
+customer1.extension=1406
+customer1.did=1406
 
 ###### Chat Customer Data: stOrMT=>either "st" or "mt"
 chatCustomerStart=1
@@ -131,29 +131,29 @@ agent3.scenario=Load_LogInOnly_ByThread
 irnMax=5
 
 # This calls service1->Group1
-irn1.irnNum=374
-irn1.dnisNum=DNIS_374
-irn1.didNum=914084007882
+irn1.irnNum=1374
+irn1.dnisNum=DNIS_1374
+irn1.didNum=1374
 
 # This calls service3->Group3
-irn2.irnNum=376
-irn2.dnisNum=DNIS_376
-irn2.didNum=376
+irn2.irnNum=1375
+irn2.dnisNum=DNIS_1375
+irn2.didNum=1375
 
 # This calls AQ->agent1
-irn3.irnNum=377
-irn3.dnisNum=DNIS_377
-irn3.didNum=377
+irn3.irnNum=1376
+irn3.dnisNum=DNIS_1376
+irn3.didNum=1376
 
 #This calls AQ->agent3
-irn4.irnNum=378
-irn4.dnisNum=DNIS_378
-irn4.didNum=378
+irn4.irnNum=1377
+irn4.dnisNum=DNIS_1377
+irn4.didNum=1377
 
 #This calls a script->transfer to agent1
-irn5.irnNum=379
-irn5.dnisNum=DNIS_379
-irn5.didNum=379
+irn5.irnNum=1372
+irn5.dnisNum=DNIS_1372
+irn5.didNum=1372
 
 
 

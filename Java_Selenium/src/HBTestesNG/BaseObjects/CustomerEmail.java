@@ -362,7 +362,7 @@ public class CustomerEmail extends Agent {
 		  waitSec = globalSec;
 		  
 		  //totalEmailToSend = Integer.parseInt(Test_Initiate.allActors.globalVariableHash.get("emailTotalToSend"));
-		  totalEmailToSend = Integer.parseInt(AllActors.globalVariableMainHash.get("emailTotalToSend"));
+		  totalEmailToSend = Integer.parseInt(AllActors.testDataIni.get("LOAD", "emailTotalToSend"));
 		  log.info("@" + username + ": Running => " +  threadName );
 	      try {
 		    	logIntoEmailClient();

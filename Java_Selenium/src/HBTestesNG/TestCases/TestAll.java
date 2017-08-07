@@ -10,11 +10,12 @@ public class TestAll extends TestCaseObject{
 	}
 
 	public static void main(String[] args) throws Exception {
-		String waitUntilOneAm, tearDownOrNot, loadOrNot, usePhantomJS;
+		String skipCCDPrepare, waitUntilOneAm, tearDownOrNot, loadOrNot, usePhantomJS;
 		int qT1, rT1, tT1, wT1, rT2, tT2, wT2;
 		int i;
 		
 		qT1=10; rT1=10; tT1=10; wT1=10; rT2=10; tT2=10; wT2=10;
+		skipCCDPrepare = "yes";
 		waitUntilOneAm = "no";
 		tearDownOrNot = "yes";
 		usePhantomJS = "no";
@@ -25,7 +26,7 @@ public class TestAll extends TestCaseObject{
 		Test_VoiceACD_Basic testVoiceACDBasic = new Test_VoiceACD_Basic();
 		Test_VoiceACD_Transfer testVoiceACDTransfer = new Test_VoiceACD_Transfer();
 		
-		testInitiate.beforeSuite(waitUntilOneAm);
+		testInitiate.beforeSuite(waitUntilOneAm, skipCCDPrepare);
 		InitializeAllVariables();
 		
 		try{

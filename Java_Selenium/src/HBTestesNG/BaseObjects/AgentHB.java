@@ -135,7 +135,7 @@ public class AgentHB extends Agent {
 		boolean actionResult;
 		webElement = null;
 		actionResult = true;
-		getCurrentDimenSion();
+		//getCurrentDimenSion();
 		driver.get(AllActors.globalVariableHash.get("agentHBURL")); 
 		
 		//#### Action
@@ -163,7 +163,8 @@ public class AgentHB extends Agent {
 			if(webElement != null) actionResult = true;
 
 		}
-		restoreDimenSion();
+		minimizeBrowser();
+		//restoreDimenSion();
 		return actionResult;
 	}
 	
@@ -910,7 +911,7 @@ public class AgentHB extends Agent {
 		log.info("\n@(" + agentType + ") " +  username + " #### Logout and Close FireFox ####");
 		//signoutWebAgent();
 		try{
-			//logOutGroups();
+			logOutGroups();
 			driver.quit();
 			driver = null;
 			currentTime();	  
@@ -957,8 +958,8 @@ public class AgentHB extends Agent {
 		  boolExit = false;
 		  i=0;
 		  waitSec = globalSec;
-		  ringTimeSec = Integer.parseInt(AllActors.globalVariableMainHash.get("ringTimeSec"));
-		  talkTimeSec = Integer.parseInt(AllActors.globalVariableMainHash.get("talkTimeSec"));
+		  ringTimeSec = Integer.parseInt(AllActors.testDataIni.get("LOAD", "ringTimeSec"));
+		  talkTimeSec = Integer.parseInt(AllActors.testDataIni.get("LOAD", "talkTimeSec"));
 		  log.info("@" + username + ": Running => " +  threadName );
 	      try {
 	    	  

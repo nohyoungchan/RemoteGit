@@ -18,66 +18,38 @@ public class  Test_Initiate extends TestCaseObject{
 	}
 	
 	@BeforeSuite
-	@Parameters({"waitUntilOneAm"})
-	public void beforeSuite(String waitUntilOneAm) throws Exception {
+	@Parameters({"waitUntilOneAm", "skipCCDPrepare"})
+	public void beforeSuite(String waitUntilOneAm, String skipCCDPrepare) throws Exception {
 		
 		//wait_for_inputToStart("Press Enter to start a test");
 		waitUntilTomorrowOneAm(waitUntilOneAm);
 		allActors = new AllActors();
-		aa =allActors;
-		startTestSuitMessage();  //actors need to initiate for log to work.
-		log.info("I am here 0");
-		
-		for (int i=0; i < allActors.supervisors.size() ; i++ ){
-			if (0 ==allActors.supervisors.size()) { break;}
-			allActors.supervisors.get(i).minimizeBrowser();  //minimize: setSizeAndLocation(10, 10, 10, 700);
-			wait(3);
-		}
-		log.info("I am here 1");
-		
-		for (int i=0; i < allActors.chatCustomers.size() ; i++ ){
-			if (0 ==allActors.chatCustomers.size()) { break;}
-			allActors.chatCustomers.get(i).minimizeBrowser();
-			wait(3);
-		}
-		log.info("I am here 2");
-		
-		for (int i=0; i < allActors.emailCustomers.size() ; i++ ){
-			if (0 ==allActors.emailCustomers.size()) { break;}
-			allActors.emailCustomers.get(i).minimizeBrowser();
-			wait(3);
-		}
-		log.info("I am here 3");
-		
-		for (int i=0; i < allActors.customers.size() ; i++ ){
-			if (0 ==allActors.customers.size()) { break;}
-			allActors.customers.get(i).logIntoCMWin();;
-			wait(3);
-			allActors.customers.get(i).minimizeBrowser();
-			//allActors.customers.get(i).setSizeAndLocation(1300, 200, 20, 500);
-		}
-		log.info("I am here 4");
-		
-		
-		int x, y; x=5; y=5;
+		startTestSuitMessage();  
+
+			
 		for (int i=0; i < allActors.agents.size() ; i++ ){
 			if (0 ==allActors.agents.size()) { break;}
 			//It is better to log in this way, not by thread because some unknown problem.
 			if (TestObject.loginSequentially.contains("yes")) {
 				allActors.agents.get(i).logIntoWebAgent();
 			}
-			//allActors.agents.get(i).MinimizeAll();  //this is not working.
-			//allActors.agents.get(i).setSizeAndLocation(1000, 300, -2000, 0);
-			allActors.agents.get(i).setSizeAndLocation(1000, 300, x, y);
-			x = x+20; y = y+50;
-			//wait(2);	
 		}
-		log.info("I am here 5");
+		
+		//Log in Manhattan client
+		for (int i=0; i < allActors.customers.size() ; i++ ){
+			if (0 ==allActors.customers.size()) { break;}
+			//You can set the location of Manhattan: x(10), y(200)
+			allActors.customers.get(i).startManhattan("10", "200");
+			allActors.customers.get(i).logIn();
 
-		if (allActors.supervisors.size() >0 ) allActors.supervisors.get(0).Max_LogIn_PrepareTest_LogOut_Min();
-		waitUntilTomorrowOneAm(waitUntilOneAm);
+		}
+
+		//CCD configuration before starting suite: You can skip this by "skipCCDPrepare" variable
+		if (allActors.supervisors.size() >0 && skipCCDPrepare == "no") 
+			allActors.supervisors.get(0).Max_LogIn_PrepareTest_LogOut_Min();
+		
 		currentTimeStart();
-		log.info("I am here 6");
+
 		
 
 
@@ -104,15 +76,6 @@ public class  Test_Initiate extends TestCaseObject{
 			wait(1);
 		}
 		
-		for (int i=0; i < allActors.customers.size() ; i++ ){
-			if (0 ==allActors.customers.size()) { break;}
-			
-			//if WebBrowser is not closed, close
-			if (!allActors.customers.get(i).state.contains("closed"))
-				allActors.customers.get(i).tearDownAll();
-
-			wait(1);
-		}
 
 		for (int i=0; i < allActors.supervisors.size() ; i++ ){
 			if (0 ==allActors.supervisors.size()) { break;}
@@ -138,6 +101,14 @@ public class  Test_Initiate extends TestCaseObject{
 			if (!allActors.emailCustomers.get(i).state.contains("closed"))
 				allActors.emailCustomers.get(i).tearDownAll();
 			wait(1);
+		}
+		
+		for (int i=0; i < allActors.customers.size() ; i++ ){
+			if (0 ==allActors.customers.size()) { break;}
+			
+			allActors.customers.get(i).tearDownAll();
+			//executeShellCommand("taskkill /IM  ShoreTel.exe /F");  //This is to kill ShoreTel.exe when graceful close failed.
+
 		}
 		
 		currentTimeEnd();

@@ -20,7 +20,7 @@ import HBTestesNG.TestCases.Test_Initiate;
 public class TestCaseObject extends TestObject{
 	public static AllActors aa;
 	public static AgentHB agent1, agent2, agent3, agent4, agent5, agent6, agent7;
-	public static CustomerCMWin customer1;
+	public static CustomerManhattan customer1;
 	public static CustomerChat chatCustomer1;
 	public static CustomerEmail emailCustomer1;
 	public static AgentHBDirector sup1;
@@ -112,8 +112,6 @@ public class TestCaseObject extends TestObject{
 	
 	public static void endtTestSuitMessage() throws IOException{
 		 
-		log.info(errorString);
-
 	    log.info("###################################################");
 	    log.info("###################################################");
 	    log.info("###### End of TestSuite ###########################");
