@@ -131,8 +131,9 @@ public class CustomerManhattan  extends TestObject {
 	  public void makeACDCall(String number) throws Exception{
 		  log.info("\n@ Manhattan : " +  username + " #### Before making ACD call ####");
 		  int j;
-		  String numTextBox= imgFolder + "mh_numTextBox.PNG";
-		  clickAppear(screen, numTextBox);
+		  Pattern patternoffhookBtn = new Pattern(imgFolder +"mh_offhookBtn.PNG").targetOffset(100, 0);
+		  //String numTextBox= imgFolder + "mh_numTextBox.PNG";
+		  clickAppear(screen, patternoffhookBtn);
 		  screen.type(number);
 		  screen.type(Key.ENTER);
 

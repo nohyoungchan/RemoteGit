@@ -21,7 +21,7 @@
 	  
       <class name="HBTestesNG.TestCases.Test_VoiceACD_Basic">
         <methods>   	
-          <include name="VoiceACD_NoQ_Answer" />     
+          <exclude name="VoiceACD_NoQ_Answer" />     
           <exclude name="VoiceACD_Q_Answer" />     	
           <exclude name="VoiceACD_NoQ_Answer_NoWrapTime" />       	 
         </methods>
@@ -33,7 +33,7 @@
           <exclude name="VoiceACD_BTransfer_ToExt_DifferentGroup" /> 
           <exclude name="VoiceACD_BTransfer_ToExternal" />
           <exclude name="VoiceACD_BTransfer_ToIRN_SameGroup" /> 
-          <exclude name="VoiceACD_BTransfer_ToIRN_DifferentGroup" /> 
+          <include name="VoiceACD_BTransfer_ToIRN_DifferentGroup" /> 
           <exclude name="VoiceACD_BTransfer_ToIRN_AQ" />        	 
           <exclude name="VoiceACD_CTransfer_ToExt_SameGroup" />
           <exclude name="VoiceACD_CTransfer_ToExt_DifferentGroup" /> 

@@ -207,7 +207,7 @@ public class Test_VoiceACD_Transfer extends TestCaseObject {
 	@Parameters({"rT1", "tT1", "rT2", "tT2", "wT2"})
 	public void VoiceACD_BTransfer_ToIRN_SameGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
-		String testName = "VoiceACD->Ans->Blind Transfer to Ext on Same Group ";
+		String testName = "VoiceACD->Ans->Blind Transfer to IRN on Same Group ";
 		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
 		//#########################
 		
@@ -243,7 +243,7 @@ public class Test_VoiceACD_Transfer extends TestCaseObject {
 	@Parameters({"rT1", "tT1", "rT2", "tT2", "wT2"})
 	public void VoiceACD_BTransfer_ToIRN_DifferentGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
-		String testName = "VoiceACD->Ans->Blind Transfer to Ext on Different Group ";
+		String testName = "VoiceACD->Ans->Blind Transfer to IRN on Different Group ";
 		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
 		//#########################
 		

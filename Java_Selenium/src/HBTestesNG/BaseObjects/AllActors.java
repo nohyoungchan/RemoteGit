@@ -18,18 +18,14 @@ public class AllActors extends TestObject{
     public ArrayList<AgentHBDirector> supervisors;
     public ArrayList<IRN> irns;
     public static ArrayList<Service> services;
-    public ArrayList<Boss> bosses;
     
     public static Wini testDataIni;
+    public static Wini envIni;
     public static Hashtable<String, String> globalVariableHash;
 	public static Hashtable<String, String> hbDirectorXPathHash;
 	public static Hashtable<String, String> hbWebAgentXPathHash;
 	public static Hashtable<String, String> emailOWAXPathHash;
 	public static Hashtable<String, String> chatCustomerXPathHash;
-	
-	public static Hashtable<String, String> bossXPathHash;
-	public static Hashtable<String, String> globalVariableBossHash;
-	public static Hashtable<String, String> hbDirectorAgentCreateHash;
 	
 	public static String currentCallType;
 	public static PostCondition postCondition;
@@ -44,7 +40,8 @@ public class AllActors extends TestObject{
     
 	//if usPhantomJS = yes, this uses phantom js.
 	public void initiateAllActors(){
-		int agentStart, bossStart, max, chatCustomerStart, i, j;
+		int agentStart, max, chatCustomerStart, i, j;
+		String configDir = ".\\test_Config_Files\\";
 
 		stopTest = "no";
 		currentCallType = "NA";
@@ -55,39 +52,24 @@ public class AllActors extends TestObject{
 		supervisors = new ArrayList<AgentHBDirector>();
 		irns = new ArrayList<IRN>();
 		services = new ArrayList<Service>();
-		bosses = new ArrayList<Boss>();
 		
 
 		globalVariableHash = new Hashtable<String, String>();
-		globalVariableBossHash = new Hashtable<String, String>();
-		bossXPathHash = new Hashtable<String, String>();;
     	hbDirectorXPathHash = new Hashtable<String, String>();
     	hbWebAgentXPathHash = new Hashtable<String, String>();
     	emailOWAXPathHash = new Hashtable<String, String>();
     	chatCustomerXPathHash = new Hashtable<String, String>();
-		
-    	hbDirectorAgentCreateHash =new Hashtable<String, String>();
+
     	
     	
 	    try{
 	    	
 	    	postCondition = new PostCondition();
-	        Properties configFile = new Properties();
 	        Properties propertyFile = new Properties();
-	        Properties configFileAgentCreate = new Properties();
 
-	        //#### this is for CC Director =>Agent creation and update
-	        configFileAgentCreate.load(new FileInputStream(".\\test_Config_Files\\testData.ini_CCDirector"));
-	        max = Integer.parseInt(configFileAgentCreate.getProperty("globalVaribleMax"));
-	        log.info("globalVaribleMax => " + max);
-	        for(i=0; i < max; i++){
-	        	j = i+1;
-	        	hbDirectorAgentCreateHash.put(configFileAgentCreate.getProperty("globalVarible" + j+ ".name"), configFileAgentCreate.getProperty("globalVarible" + j+ ".value"));
-
-	        }
-	        
+	       	        
 	        //#### Read/Assign Global Variable from .\\test_Config_Files\\testData.ini (Main)
-	        testDataIni = new Wini(new File(".\\test_Config_Files\\testData.ini"));         
+	        testDataIni = new Wini(new File(configDir + "testData.ini"));         
 	        TestObject.useWhichWebDriver = testDataIni.get("SYSTEM", "webDriver");
 	        TestObject.globalSec = Integer.parseInt(testDataIni.get("LOAD", "waitSecBetweenRun"));
 	        TestObject.globalMinToRelogIn = Integer.parseInt(testDataIni.get("LOAD", "globalMinToRelogIn"));
@@ -95,115 +77,66 @@ public class AllActors extends TestObject{
 	        TestObject.loginSequentially= testDataIni.get("LOAD", "loginSequentially");
 	        log.info("TestObject.loginSequentially => " + TestObject.loginSequentially);
 	        
+	        
+	        //#### Read/Assign  Variable from .\\test_Config_Files\\testData.ini_spcific
 	        String systemToTest = testDataIni.get("SYSTEM", "systemToTest");
-	        if (!systemToTest.contains("Boss")){
-	        	log.info("Testing: " + systemToTest); 
-	        	configFile.load(new FileInputStream(".\\test_Config_Files\\testData.ini_" + systemToTest));
-	        }else{ //This is for Boss testing
-	        	log.info("Testing: Boss"); 
-            	configFile.load(new FileInputStream(".\\test_Config_Files\\testData.ini_Boss"));
-            	propertyFile.load(new FileInputStream(".\\test_Property_Files\\testProperty.ini_Boss"));
-            	 
-            	//#### Read global variables from testData_Boss.ini files.
-     	        max = Integer.parseInt(configFile.getProperty("globalVaribleMax"));
-     	        for(i=0; i < max; i++){
-     	        	j = i+1;
-     	        	globalVariableBossHash.put(configFile.getProperty("globalVarible" + j+ ".name"), configFile.getProperty("globalVarible" + j+ ".value"));
-     	        }
-     	        
-     	        //#### Create instances
-     	        max = Integer.parseInt(configFile.getProperty("bossMax"));
-     	        bossStart = Integer.parseInt(configFile.getProperty("bossStart"));
-     	        for(i=0; i < max; i++){
-     	        	j = bossStart+i;
-     	        	bosses.add(new Boss());
-     	        	bosses.get(i).username = configFile.getProperty("boss" + j+ ".username");
-     	        	bosses.get(i).password = configFile.getProperty("boss" + j+ ".password");
-     	        	bosses.get(i).bossURL = configFile.getProperty("boss" + j+ ".bossURL");
-     	        	bosses.get(i).emailDestination = configFile.getProperty("boss" + j+ ".emailDestination");
-     	        	bosses.get(i).agentType = "BossSuper";
-     	        	log.info("boss"+ j+ "=>" + bosses.get(i).username + ": " + bosses.get(i).password
-     	        			+ bosses.get(i).bossURL + ": " + bosses.get(i).emailDestination);
-     	        }
-     	        
-    		    //Read Boss: Property name and value	 
-    	        max = Integer.parseInt(propertyFile.getProperty("bossXPathMax"));
-    	        log.info("bossXPathMax => " + max);
-    	        for(i=0; i < max; i++){
-    	        	j = i+1;
-    	        	bossXPathHash.put(propertyFile.getProperty("bossXPath" + j+ ".name"), propertyFile.getProperty("bossXPath" + j+ ".value"));
+	        log.info("Testing: " + systemToTest); 
+	        envIni = new Wini(new File(configDir + "testData.ini_" + systemToTest)); 
 
-    	        }
-	        }
-	       
-	        
-	        propertyFile.load(new FileInputStream(".\\test_Property_Files\\testProperty.ini"));
-	        
-	        
-	        
-	        //#### Read global variables from .\\test_Config_Files\\testData.ini of specific system
-	        max = Integer.parseInt(configFile.getProperty("globalVaribleMax"));
-	        for(i=0; i < max; i++){
-	        	j = i+1;
-	        	globalVariableHash.put(configFile.getProperty("globalVarible" + j+ ".name"), configFile.getProperty("globalVarible" + j+ ".value"));
-	        }
-	        
-	        //#### Assign Global Variable from .\\test_Config_Files\\testData.ini of specific system
-	        //TestObject.useWhichWebDriver = globalVariableHash.get("webDriver");
-	        
-	        
-	        max = Integer.parseInt(configFile.getProperty("irnMax"));
+	       	        
+	        max = Integer.parseInt(envIni.get("IRN", "max"));
 	        for(i=0; i < max; i++){
 	        	j = i+1;
 	        	irns.add(new IRN());
-	        	irns.get(i).irnNum = configFile.getProperty("irn" + j+ ".irnNum");
-	        	irns.get(i).dnisNum = configFile.getProperty("irn" + j+ ".dnisNum");
-	        	irns.get(i).didNum = configFile.getProperty("irn" + j+ ".didNum");
+	        	irns.get(i).irnNum =  envIni.get("IRN", "irn" + j+ ".irnNum");
+	        	irns.get(i).dnisNum = envIni.get("IRN", "irn" + j+ ".dnisNum");
+	        	irns.get(i).didNum =  envIni.get("IRN", "irn" + j+ ".didNum");
 	        	log.info("irn"+ j+ "=>" + irns.get(i).irnNum + ": " + irns.get(i).dnisNum+ ": " + irns.get(i).didNum);
 	        }
 	        
-	        max = Integer.parseInt(configFile.getProperty("serviceMax"));
+	        max = Integer.parseInt(envIni.get("Service", "max"));
 	        for(i=0; i < max; i++){
 	        	j = i+1;
 	        	services.add(new Service());
-	        	services.get(i).name = configFile.getProperty("service" + j+ ".name");
-	        	services.get(i).wrapupTime = configFile.getProperty("service" + j+ ".wrapupTime");
-	        	services.get(i).forcedReleaseTime = configFile.getProperty("service" + j+ ".forcedReleaseTime");
-	        	services.get(i).destination = configFile.getProperty("service" + j+ ".destination");
-	        	services.get(i).overflowDestination = configFile.getProperty("service" + j+ ".overflowDestination");
-	        	services.get(i).overflowTimeout = configFile.getProperty("service" + j+ ".overflowTimeout");
-	        	services.get(i).interflowDestination = configFile.getProperty("service" + j+ ".interflowDestination");
-	        	services.get(i).interflowDestinationType = configFile.getProperty("service" + j+ ".interflowDestinationType");
-	        	services.get(i).interflowTimeout = configFile.getProperty("service" + j+ ".interflowTimeout");	
+	        	services.get(i).name = envIni.get("Service", "service" + j+ ".name");
+	        	services.get(i).wrapupTime = envIni.get("Service", "service" + j+ ".wrapupTime");
+	        	services.get(i).forcedReleaseTime = envIni.get("Service", "service" + j+ ".forcedReleaseTime");
+	        	services.get(i).destination = envIni.get("Service", "service" + j+ ".destination");
+	        	services.get(i).overflowDestination = envIni.get("Service", "service" + j+ ".overflowDestination");
+	        	services.get(i).overflowTimeout = envIni.get("Service", "service" + j+ ".overflowTimeout");
+	        	services.get(i).interflowDestination = envIni.get("Service", "service" + j+ ".interflowDestination");
+	        	services.get(i).interflowDestinationType = envIni.get("Service", "service" + j+ ".interflowDestinationType");
+	        	services.get(i).interflowTimeout = envIni.get("Service", "service" + j+ ".interflowTimeout");	
 	        }
 	        
 	        //agentStart is the first agent to initiate until max number of agents.
-	        max = Integer.parseInt(configFile.getProperty("agentMax"));
+	        max = Integer.parseInt(envIni.get("AgentGeneral", "agentMax"));
 	        globalVariableHash.put("agentMaxNum",  Integer.toString(max)); //This will be used on logIntoEmailClient_DeleteAllEmails()
-	        agentStart = Integer.parseInt(configFile.getProperty("agentStart"));
+	        agentStart = Integer.parseInt(envIni.get("AgentGeneral", "agentStart"));
 	        globalVariableHash.put("agentStartNum",  Integer.toString(agentStart)); //This will be used on logIntoEmailClient_DeleteAllEmails()
-	        if(configFile.getProperty("agentUseLoop").contains("no")){       
-		        for(i=0; i < max; i++){
-		        	j = agentStart+i;
-		        	agents.add(new AgentHB());
-		        	agents.get(i).username = configFile.getProperty("agent" + j+ ".name");
-		        	agents.get(i).password = configFile.getProperty("agent" + j+ ".password");
-		        	agents.get(i).extension = configFile.getProperty("agent" + j+ ".extension");
-		        	agents.get(i).did = configFile.getProperty("agent" + j+ ".did");
-		        	agents.get(i).scenarioLocal = configFile.getProperty("agent" + j+ ".scenario");
-		        	agents.get(i).agentType = "WebAgent";
-		        	agents.get(i).threadName = agents.get(i).username + "_Thread";
-		        	log.info("Agent"+ j+ "=>" +agents.get(i).username + ": " + agents.get(i).password+ ": " +agents.get(i).extension+ ": " +agents.get(i).did );
-		        }
+	        for(i=0; i < max; i++){
+	        	j = agentStart+i;
+	        	agents.add(new AgentHB());
+	        	agents.get(i).username = envIni.get("AgentManual", "agent" + j+ ".name");
+	        	agents.get(i).password = envIni.get("AgentManual", "agent" + j+ ".password");
+	        	agents.get(i).extension = envIni.get("AgentManual", "agent" + j+ ".extension");
+	        	agents.get(i).did = envIni.get("AgentManual", "agent" + j+ ".did");
+	        	agents.get(i).scenarioLocal = envIni.get("AgentManual", "agent" + j+ ".scenario");
+	        	agents.get(i).agentType = "WebAgent";
+	        	agents.get(i).threadName = agents.get(i).username + "_Thread";
+	        	log.info("Agent"+ j+ "=>" +agents.get(i).username + ": " + agents.get(i).password+ ": " +agents.get(i).extension+ ": " +agents.get(i).did );
+	        }
+	        if(envIni.get("AgentGeneral", "agentUseLoop").contains("no")){       
+		        
 	        }else{
 	        	String namePrefix, domainName, password, extensionStartNumber, didStartNumber, scenario;
 
-	        	namePrefix = configFile.getProperty("agent.namePrefix");
-	        	domainName = configFile.getProperty("agent.domainName");
-	        	password = configFile.getProperty("agent.password");
-	        	extensionStartNumber = configFile.getProperty("agent.extensionStartNumber");
-	        	didStartNumber = configFile.getProperty("agent.didStartNumber");
-	        	scenario = configFile.getProperty("agent.scenario");
+	        	namePrefix = envIni.get("AgentLoad", "agent.namePrefix");
+	        	domainName = envIni.get("AgentLoad", "agent.domainName");
+	        	password = envIni.get("AgentLoad", "agent.password");
+	        	extensionStartNumber = envIni.get("AgentLoad", "agent.extensionStartNumber");
+	        	didStartNumber = envIni.get("AgentLoad", "agent.didStartNumber");
+	        	scenario = envIni.get("AgentLoad", "agent.scenario");
 
 	 	        for(i=0; i < max; i++){
 		        	j = agentStart+i;
@@ -225,27 +158,27 @@ public class AllActors extends TestObject{
 	 	        }
 	        }
 	        
-	        max = Integer.parseInt(configFile.getProperty("customerMax"));
+	        max = Integer.parseInt(envIni.get("CustomerVoice", "max"));
 	        for(i=0; i < max; i++){
 	        	j = i+1;
 	        	customers.add(new CustomerManhattan());
-	        	customers.get(i).username = configFile.getProperty("customer" + j+ ".name");
-	        	customers.get(i).password = configFile.getProperty("customer" + j+ ".password");
-	        	customers.get(i).extension = configFile.getProperty("customer" + j+ ".extension");
-	        	customers.get(i).did = configFile.getProperty("customer" + j+ ".did");
+	        	customers.get(i).username = envIni.get("CustomerVoice", "CustomerVoice" + j+ ".name");
+	        	customers.get(i).password = envIni.get("CustomerVoice", "CustomerVoice" + j+ ".password");
+	        	customers.get(i).extension = envIni.get("CustomerVoice", "CustomerVoice" + j+ ".extension");
+	        	customers.get(i).did = envIni.get("CustomerVoice", "CustomerVoice" + j+ ".did");
 	        	customers.get(i).agentType = "CustomerVoice";
 	        	log.info("Customer"+ j+ "=>" + customers.get(i).username + ": " + customers.get(i).password+ ": " +customers.get(i).extension+ ": " +customers.get(i).did );
 	        }
 	        
 	        // #### Creating and Setting ChatCustomer ####
 	        String tenantPrefix, chatIRN, chatCustomerNamePrefix, stOrMt;
-	        max = Integer.parseInt(configFile.getProperty("chatCustomerMax"));
-	        chatCustomerStart = Integer.parseInt(configFile.getProperty("chatCustomerStart"));
+	        max = Integer.parseInt(envIni.get("CustomerChat", "max"));
+	        chatCustomerStart = Integer.parseInt(envIni.get("CustomerChat", "chatCustomerStart"));
 
-	        tenantPrefix = configFile.getProperty("chatCustomer.tenantPrefix");
-	        chatIRN = configFile.getProperty("chatCustomer.chatIRN");
-	        chatCustomerNamePrefix = configFile.getProperty("chatCustomer.chatCustomerNamePrefix");
-	        stOrMt = configFile.getProperty("chatCustomer.stOrMt");
+	        tenantPrefix = envIni.get("CustomerChat", "tenantPrefix");
+	        chatIRN = envIni.get("CustomerChat", "chatIRN");
+	        chatCustomerNamePrefix = envIni.get("CustomerChat", "chatCustomerNamePrefix");
+	        stOrMt = envIni.get("CustomerChat", "stOrMt");
 	        for(i=0; i < max; i++){
 	        	j = i+1;
 	        	chatCustomers.add(new CustomerChat());
@@ -260,30 +193,31 @@ public class AllActors extends TestObject{
 	        
 	        
 	        // #### Creating and Setting EmailCustomer ####
-	        max = Integer.parseInt(configFile.getProperty("emailCustomerMax"));
+	        max = Integer.parseInt(envIni.get("CustomerChat", "max"));
 	        for(i=0; i < max; i++){
 	        	j = i+1;
 	        	emailCustomers.add(new CustomerEmail());
-	        	emailCustomers.get(i).username = configFile.getProperty("emailCustomer" + j+ ".name");
-	        	emailCustomers.get(i).password = configFile.getProperty("emailCustomer" + j+ ".password");
-	        	emailCustomers.get(i).domain = configFile.getProperty("emailCustomer" + j+ ".domain");
+	        	emailCustomers.get(i).username = envIni.get("CustomerEmail", "CustomerEmail" + j+ ".name");
+	        	emailCustomers.get(i).password = envIni.get("CustomerEmail", "CustomerEmail" + j+ ".password");
+	        	emailCustomers.get(i).domain = envIni.get("CustomerEmail", "CustomerEmail" + j+ ".domain");
 	        	emailCustomers.get(i).agentType = "CustomerEmail";
 	        	log.info("emailCustomer"+ j+ "=>" + emailCustomers.get(i).username + ": " + emailCustomers.get(i).password+ ": " +emailCustomers.get(i).domain);
 	        }
 	        
-	        max = Integer.parseInt(configFile.getProperty("supervisorMax"));
+	        max = Integer.parseInt(envIni.get("CCD", "max"));
 	        for(i=0; i < max; i++){
 	        	j = i+1;
 	        	supervisors.add(new AgentHBDirector());
-	        	supervisors.get(i).username = configFile.getProperty("supervisor" + j+ ".name");
-	        	supervisors.get(i).password = configFile.getProperty("supervisor" + j+ ".password");
+	        	supervisors.get(i).username = envIni.get("CCD", "supervisor" + j+ ".name");
+	        	supervisors.get(i).password = envIni.get("CCD", "supervisor" + j+ ".password");
 	        	supervisors.get(i).agentType = "HBDirector";
 	        	log.info("supervisors"+ j+ "=>" + supervisors.get(i).username + ": " + supervisors.get(i).password);
 	        }
 	        
 	        
 	        //######################## Variable applied globally ######################################
-	        //Read HB director: Property name and value	        
+	        //Read HB director: Property name and value	     
+	        propertyFile.load(new FileInputStream(".\\test_Property_Files\\testProperty.ini"));
 	        max = Integer.parseInt(propertyFile.getProperty("directorMax"));
 	        //allXPathID = new AllXPathAndID();
 	        for(i=0; i < max; i++){
@@ -313,8 +247,7 @@ public class AllActors extends TestObject{
 	        	chatCustomerXPathHash.put(propertyFile.getProperty("chatCustomerXPath" + j+ ".name"), propertyFile.getProperty("chatCustomerXPath" + j+ ".value"));
 	        }
 	             
-     
-	        //p.list(System.out);
+
 	     }
 	     catch (Exception e) {
 	        System.out.println(e);

@@ -136,7 +136,8 @@ public class AgentHB extends Agent {
 		webElement = null;
 		actionResult = true;
 		//getCurrentDimenSion();
-		driver.get(AllActors.globalVariableHash.get("agentHBURL")); 
+		log.info("I am here: url is => " +  AllActors.testDataIni.get("URL", "agentHBURL"));
+		driver.get(AllActors.envIni.get("URL", "agentHBURL")); 
 		
 		//#### Action
 		maximizeBrowser();
