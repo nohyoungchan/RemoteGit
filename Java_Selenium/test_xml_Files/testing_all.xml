@@ -33,7 +33,7 @@
           <exclude name="VoiceACD_BTransfer_ToExt_DifferentGroup" /> 
           <exclude name="VoiceACD_BTransfer_ToExternal" />
           <exclude name="VoiceACD_BTransfer_ToIRN_SameGroup" /> 
-          <include name="VoiceACD_BTransfer_ToIRN_DifferentGroup" /> 
+          <exclude name="VoiceACD_BTransfer_ToIRN_DifferentGroup" /> 
           <exclude name="VoiceACD_BTransfer_ToIRN_AQ" />        	 
           <exclude name="VoiceACD_CTransfer_ToExt_SameGroup" />
           <exclude name="VoiceACD_CTransfer_ToExt_DifferentGroup" /> 
@@ -225,7 +225,7 @@
        
         <class name="HBTestesNG.TestCases.Test_VoiceOACD_ByAbandon_Conference_WrapTimeZero">
        	 <methods>      
-      	  <exclude name="VoiceOACD_ByAbandon_CConference_ToExt_DifferentGroup" />
+      	  <include name="VoiceOACD_ByAbandon_CConference_ToExt_DifferentGroup" />
           <exclude name="VoiceOACD_ByAbandon_CConference_ToExt_SameGroup" /> 
           <exclude name="VoiceOACD_ByAbandon_CConference_ToIRN_DifferentGroup" /> 
           <exclude name="VoiceOACD_ByAbandon_CConference_ToIRN_SameGroup" /> <!--# Not supported except PCM/Physical Phone # -->

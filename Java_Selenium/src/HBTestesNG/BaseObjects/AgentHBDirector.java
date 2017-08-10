@@ -219,8 +219,8 @@ public class AgentHBDirector extends Agent {
 		 //Set Outbound->General Preferences
 		 openHBDirectorPage("sys_outbound");
 		 waitUntilMainTitle("General Preferences");
-		 find_and_fill_byID("local_area_code", "408", false);
-		 find_and_fill_byID("outbound_prefix", "9", false);
+		 //find_and_fill_byID("local_area_code", "408", false);
+		 //find_and_fill_byID("outbound_prefix", "9", false);
 		 selectFromComboBox_ByID("cb_def_srv_id", serviceName);
 		 
 		 wait(1);

@@ -23,16 +23,13 @@ public class  Test_Initiate extends TestCaseObject{
 		
 		//wait_for_inputToStart("Press Enter to start a test");
 		waitUntilTomorrowOneAm(waitUntilOneAm);
-		allActors = new AllActors();
+		allActors = new AllActors(); //This reads all ini and starts web.
 		startTestSuitMessage();  
 
 			
 		for (int i=0; i < allActors.agents.size() ; i++ ){
 			if (0 ==allActors.agents.size()) { break;}
-			//It is better to log in this way, not by thread because some unknown problem.
-			if (TestObject.loginSequentially.contains("yes")) {
-				allActors.agents.get(i).logIntoWebAgent();
-			}
+			allActors.agents.get(i).logIntoWebAgent();
 		}
 		
 		//Log in Manhattan client

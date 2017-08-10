@@ -71,19 +71,10 @@ public class AllActors extends TestObject{
 	        //#### Read/Assign Global Variable from .\\test_Config_Files\\testData.ini (Main)
 	        testDataIni = new Wini(new File(configDir + "testData.ini"));         
 	        TestObject.useWhichWebDriver = testDataIni.get("SYSTEM", "webDriver");
-	        TestObject.globalSec = Integer.parseInt(testDataIni.get("LOAD", "waitSecBetweenRun"));
-	        TestObject.globalMinToRelogIn = Integer.parseInt(testDataIni.get("LOAD", "globalMinToRelogIn"));
-	        TestObject.globalScenario= testDataIni.get("LOAD", "globalScenario");
-	        TestObject.loginSequentially= testDataIni.get("LOAD", "loginSequentially");
-	        log.info("TestObject.loginSequentially => " + TestObject.loginSequentially);
-	        
-	        
-	        //#### Read/Assign  Variable from .\\test_Config_Files\\testData.ini_spcific
 	        String systemToTest = testDataIni.get("SYSTEM", "systemToTest");
 	        log.info("Testing: " + systemToTest); 
-	        envIni = new Wini(new File(configDir + "testData.ini_" + systemToTest)); 
-
-	       	        
+	        
+	        envIni = new Wini(new File(configDir + "testData.ini_" + systemToTest));     
 	        max = Integer.parseInt(envIni.get("IRN", "max"));
 	        for(i=0; i < max; i++){
 	        	j = i+1;
@@ -110,53 +101,21 @@ public class AllActors extends TestObject{
 	        }
 	        
 	        //agentStart is the first agent to initiate until max number of agents.
-	        max = Integer.parseInt(envIni.get("AgentGeneral", "agentMax"));
-	        globalVariableHash.put("agentMaxNum",  Integer.toString(max)); //This will be used on logIntoEmailClient_DeleteAllEmails()
-	        agentStart = Integer.parseInt(envIni.get("AgentGeneral", "agentStart"));
-	        globalVariableHash.put("agentStartNum",  Integer.toString(agentStart)); //This will be used on logIntoEmailClient_DeleteAllEmails()
+	        max = Integer.parseInt(envIni.get("Agent", "max"));
 	        for(i=0; i < max; i++){
-	        	j = agentStart+i;
+	        	j = i+1;
 	        	agents.add(new AgentHB());
-	        	agents.get(i).username = envIni.get("AgentManual", "agent" + j+ ".name");
-	        	agents.get(i).password = envIni.get("AgentManual", "agent" + j+ ".password");
-	        	agents.get(i).extension = envIni.get("AgentManual", "agent" + j+ ".extension");
-	        	agents.get(i).did = envIni.get("AgentManual", "agent" + j+ ".did");
-	        	agents.get(i).scenarioLocal = envIni.get("AgentManual", "agent" + j+ ".scenario");
+	        	agents.get(i).username =  envIni.get("Agent", "agent" + j+ ".name");
+	        	agents.get(i).password =  envIni.get("Agent", "agent" + j+ ".password");
+	        	agents.get(i).extension = envIni.get("Agent", "agent" + j+ ".extension");
+	        	agents.get(i).did =       envIni.get("Agent", "agent" + j+ ".did");
 	        	agents.get(i).agentType = "WebAgent";
 	        	agents.get(i).threadName = agents.get(i).username + "_Thread";
 	        	log.info("Agent"+ j+ "=>" +agents.get(i).username + ": " + agents.get(i).password+ ": " +agents.get(i).extension+ ": " +agents.get(i).did );
 	        }
-	        if(envIni.get("AgentGeneral", "agentUseLoop").contains("no")){       
-		        
-	        }else{
-	        	String namePrefix, domainName, password, extensionStartNumber, didStartNumber, scenario;
+	        
 
-	        	namePrefix = envIni.get("AgentLoad", "agent.namePrefix");
-	        	domainName = envIni.get("AgentLoad", "agent.domainName");
-	        	password = envIni.get("AgentLoad", "agent.password");
-	        	extensionStartNumber = envIni.get("AgentLoad", "agent.extensionStartNumber");
-	        	didStartNumber = envIni.get("AgentLoad", "agent.didStartNumber");
-	        	scenario = envIni.get("AgentLoad", "agent.scenario");
-
-	 	        for(i=0; i < max; i++){
-		        	j = agentStart+i;
-		        	agents.add(new AgentHB());
-		        	if (systemToTest.contains("C1HB1_with200")){
-		        		//c1h1 username is like Agent_001@domain.com
-			        	agents.get(i).username =namePrefix+intToStringWithLeadingZero(3, j)+domainName;
-		        	}else{
-		        		//other username is like Agent1@domain.com
-		        		agents.get(i).username= namePrefix+j+domainName;
-		        	}
-		        	agents.get(i).password = password;
-		        	agents.get(i).extension = extensionStartNumber+j;
-		        	agents.get(i).did= didStartNumber+j;
-		        	agents.get(i).scenarioLocal = scenario;
-		        	agents.get(i).agentType = "WebAgent";
-		        	agents.get(i).threadName = agents.get(i).username + "_Thread";
-		        	log.info("Agent"+ j+ "=>" +agents.get(i).username + ": " + agents.get(i).password+ ": " +agents.get(i).extension+ ": " +agents.get(i).did );
-	 	        }
-	        }
+	        
 	        
 	        max = Integer.parseInt(envIni.get("CustomerVoice", "max"));
 	        for(i=0; i < max; i++){
@@ -193,7 +152,7 @@ public class AllActors extends TestObject{
 	        
 	        
 	        // #### Creating and Setting EmailCustomer ####
-	        max = Integer.parseInt(envIni.get("CustomerChat", "max"));
+	        max = Integer.parseInt(envIni.get("CustomerEmail", "max"));
 	        for(i=0; i < max; i++){
 	        	j = i+1;
 	        	emailCustomers.add(new CustomerEmail());
@@ -204,6 +163,7 @@ public class AllActors extends TestObject{
 	        	log.info("emailCustomer"+ j+ "=>" + emailCustomers.get(i).username + ": " + emailCustomers.get(i).password+ ": " +emailCustomers.get(i).domain);
 	        }
 	        
+	        //Setting supervisor for director
 	        max = Integer.parseInt(envIni.get("CCD", "max"));
 	        for(i=0; i < max; i++){
 	        	j = i+1;

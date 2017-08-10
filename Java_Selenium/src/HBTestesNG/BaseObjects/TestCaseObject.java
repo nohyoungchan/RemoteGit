@@ -75,31 +75,10 @@ public class TestCaseObject extends TestObject{
 			irn5 = aa.irns.get(4);
 		}
 		pc = aa.postCondition;
+		
 	}
 	
-	public static void InitializeAllVariables_Load() throws Exception {
-		log.info("* Initializing all variables");
-		aa = Test_Initiate.allActors;
-		log.info("* here 1");
-		agent1 = aa.agents.get(0);
-		agent2 = aa.agents.get(1);
-		agent3 = aa.agents.get(2);
-		agent4 = aa.agents.get(3);
-		agent5 = aa.agents.get(4);
-		agent6 = aa.agents.get(5);
-		agent7 = aa.agents.get(6);
-		log.info("* here 2");
-		customer1 = aa.customers.get(0);
-		chatCustomer1=aa.chatCustomers.get(0);
-		emailCustomer1=aa.emailCustomers.get(0);
-		sup1 = aa.supervisors.get(0);
-		irn1 = aa.irns.get(0);
-		irn2 = aa.irns.get(1);
-		irn3 = aa.irns.get(2);
-		irn4 = aa.irns.get(3);
-		irn5 = aa.irns.get(4);
-	}
-	
+		
 	public static void startTestSuitMessage(){
 		 
 	    log.info("\n\n###################################################");

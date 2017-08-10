@@ -136,7 +136,7 @@ public class AgentHB extends Agent {
 		webElement = null;
 		actionResult = true;
 		//getCurrentDimenSion();
-		log.info("I am here: url is => " +  AllActors.testDataIni.get("URL", "agentHBURL"));
+		log.info("I am here: url is => " +  AllActors.envIni.get("URL", "agentHBURL"));
 		driver.get(AllActors.envIni.get("URL", "agentHBURL")); 
 		
 		//#### Action
@@ -385,6 +385,32 @@ public class AgentHB extends Agent {
 		  }
 	  }
 	  
+	  public synchronized void answerEmail(int ringSec, int talkSec) throws InterruptedException{
+		  String strFunctionName = "answerACDCall";
+		  log.info("\n@(" + agentType + ") " +  username + " #### Click Answer button ####");
+		  try{
+			  //getCurrentDimenSion();
+			  maximizeBrowser();
+			  wait(ringSec, "Ring");
+			  
+			  click_XPath("btnAnswerEmail");
+			  wait(talkSec, "Talk");
+			  state = "busy";
+			  minimizeBrowser();
+			  //restoreDimenSion();
+			  //Assert.assertTrue(true, "Answered Correctly");
+		  }catch(InterruptedException e){
+			  errorCount++;
+			  log.error("@ " + username + " : @@ Thread inturrepted -> throw again on answerACDCall()");
+			  throw e;
+		 }catch(Exception e){
+			 errorCount++;
+			 errorString.concat("fail to " + strFunctionName + ";");
+			log.info("\n@(" + agentType + ") " +  username + " exception on answering acd call" + e.toString() );
+			state = "weird";
+		  }
+	  }
+	  
 	  public void hold(int secInt) throws InterruptedException{
 		  log.info("\n@(" + agentType + ") " +  username + " #### Click hold button ####");
 		  try{
@@ -548,7 +574,7 @@ public class AgentHB extends Agent {
 	  public void consultTransfer(String num) throws Exception{
 		  log.info("\n@(" + agentType + ") " +  username + " #### Consult Transfer to =>" + num +" ####");  
 		  try{
-			  getCurrentDimenSion();
+			  //getCurrentDimenSion();
 			  //This is needed for chat transfer since without it, selenium cannot confirm transfer.
 			  maximizeBrowser();
 			  wait(2);
@@ -561,7 +587,7 @@ public class AgentHB extends Agent {
 			  wait(2);		  
 			  log.info("\n@(" + agentType + ") " +  username + ": Press Consult transfer button");
 			  click_XPath(("btnConsultTransfer"));
-			  restoreDimenSion();
+			  //restoreDimenSion();
 		  }catch(Exception e){
 			  log.info("\n@(" + agentType + ") " +  username + " exception on Consult Transfer" + e.toString());
 			  state = "weird";
@@ -597,9 +623,11 @@ public class AgentHB extends Agent {
 	  public void confirmTransfer(){  	 
 		  log.info("\n@(" + agentType + ") " +  username + ": Press Confirm button");
 		  try{
+			  maximizeBrowser();
 			  wait(2);	  
 			  click_XPath(("btnConsultTransferConfirm"));
 			  state = "idle";
+			  minimizeBrowser();
 			  //Assert.assertTrue(true, "Answered Correctly");
 		  }catch(Exception e){
 			  log.info("\n@(" + agentType + ") " +  username + " exception on blindTransfer" + e.toString());
@@ -610,7 +638,7 @@ public class AgentHB extends Agent {
 	  public void consultConference_ByNumber(String num){
 		  log.info("\n@(" + agentType + ") " +  username + " #### Consult Conference to =>" + num +" ####");
 		  try{
-			  getCurrentDimenSion();
+			  //getCurrentDimenSion();
 			  //This is needed for chat transfer since without it, selenium cannot confirm transfer.
 			  maximizeBrowser();		  
 			  wait(2);
@@ -623,7 +651,9 @@ public class AgentHB extends Agent {
 			  wait(2);		  
 			  log.info("\n@(" + agentType + ") " +  username + ": Press Consult Conference button");
 			  click_XPath(("btnConsultConference"));
-			  restoreDimenSion();
+			  wait(2);
+			  minimizeBrowser();
+			  //restoreDimenSion();
 		  }catch(Exception e){
 			  log.info("\n@(" + agentType + ") " +  username + " exception on Consult Conference" + e.toString());
 			  state = "weird";
@@ -661,9 +691,12 @@ public class AgentHB extends Agent {
 	  public void confirmConference() throws Exception{		
 		  log.info("\n@(" + agentType + ") " +  username + ": Press Confirm button");
 		  try{
+			  maximizeBrowser();
 			  wait(2);	  
 			  if(!click_XPath(("btnConsultConferenceConfirm"))) throw new Exception();
 			  //Assert.assertTrue(true, "Answered Correctly");
+			  wait(2);
+			  minimizeBrowser();
 		  }catch(Exception e){
 			  log.info("\n@(" + agentType + ") " +  username + " exception on Confirm Conference" + e.toString());
 			  state = "weird";
@@ -677,7 +710,7 @@ public class AgentHB extends Agent {
 		  boolean res;
 		  res = true;
 		  try{
-			  getCurrentDimenSion();
+			  //getCurrentDimenSion();
 			  maximizeBrowser();
 			  
 			  if(waitUntilClickable("btnDisconnect", 5) == null){
@@ -691,7 +724,8 @@ public class AgentHB extends Agent {
 				  log.info("\n@(" + agentType + ") " +  username + " doesn't need to disconnect"); 
 			  };
 			  state = "idle";
-			  restoreDimenSion();
+			  //restoreDimenSion();
+			  minimizeBrowser();
 		  }catch(Exception e){
 			  log.info("\n@(" + agentType + ") " +  username + " exception on disconnectByWebAgent");
 			  state = "weird";
@@ -723,7 +757,7 @@ public class AgentHB extends Agent {
 	  public void disconnectOACD(){
 		  log.info("\n@(" + agentType + ") " +  username + " #### Disconnect by WebAgent : OACD call ####");
 		  try{
-			  getCurrentDimenSion();
+			  //getCurrentDimenSion();
 			  maximizeBrowser();
 			  click_XPath(("panelCurrentCall"));
 			  wait(2);
@@ -732,7 +766,8 @@ public class AgentHB extends Agent {
 			  click_XPath(("OACDDisconnectSuccessful"));
 	 
 			  state = "idle";
-			  restoreDimenSion();
+			  //restoreDimenSion();
+			  minimizeBrowser();
 		  
 		  }catch(Exception e){
 			  log.info("\n@(" + agentType + ") " +  username + " exception on disconnectOACD");
@@ -959,8 +994,6 @@ public class AgentHB extends Agent {
 		  boolExit = false;
 		  i=0;
 		  waitSec = globalSec;
-		  ringTimeSec = Integer.parseInt(AllActors.testDataIni.get("LOAD", "ringTimeSec"));
-		  talkTimeSec = Integer.parseInt(AllActors.testDataIni.get("LOAD", "talkTimeSec"));
 		  log.info("@" + username + ": Running => " +  threadName );
 	      try {
 	    	  
@@ -1012,30 +1045,7 @@ public class AgentHB extends Agent {
 				        	closeAndQuit();
 				        	
 				            break;
-			         case "Load_VoiceACD_Answer_ByThread":
-			        	 log.info("@" + username + ": Thread on=>Load_VoiceACD_Answer_ByThread");
-			        	 //answerACDCall(1, 30);
-			        	 //disconnectByWebAgent();
-			        	 answerAndDisconnect(ringTimeSec, talkTimeSec);
-			        	 //disconnectAndWrapupWith2Codes(5); //this is not good for load
-			         	 break;
-			         case "Load_Email_Send_ByThread":
-			        	 log.info("@" + username + ": Thread on=>Load_Email_Send_ByThread");
-			             break;
-			         case "Load_Email_Answer_ByThread":
-			        	 log.info("@" + username + ": Thread on=>Load_Email_Answer_ByThread");
-			        	 answerAndDisconnect(ringTimeSec, talkTimeSec);
-			        	 //disconnectAndWrapupWith2Codes(5); //this is not good for load
-			         	 break;
-			         case "Load_Email_SendAndAnswer_ByThread":
-			        	 log.info("@" + username + ": Thread on=>Load_Email_SendAndAnswer_ByThread");
-			        	 answerAndDisconnect(ringTimeSec, talkTimeSec);
-			         	 break;
-			         case "Load_Chat_SendAndAnswer_ByThread":
-			        	 //ChatCustomer disconnects.
-			        	 log.info("@" + username + ": Thread on=>Load_Chat_SendAndAnswer_ByThread");
-			        	 answerChatAndType(ringTimeSec, talkTimeSec);
-			         	 break;
+			         
 			         default:
 			             log.info("No matching load scenaro");
 				   }

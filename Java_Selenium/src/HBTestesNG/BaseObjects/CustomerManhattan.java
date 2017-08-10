@@ -142,12 +142,48 @@ public class CustomerManhattan  extends TestObject {
 	  public void dropCall() throws Exception {
 		  
 		  log.info("\n@ Manhattan : " +  username + " #### Dropping a call ####");
+		  String callBox = imgFolder +"mh_callBox";
+		  String dropBtn = imgFolder +"mh_dropBtn";
+	    	
+    	  clickAppear(screen, callBox);
+    	  clickAppear(screen, dropBtn);
+    	  
+		  currentTime();
 		 
 	  }
 	  
-	  public void answerCall() throws Exception {
+	  public void dropCall(int waitSec) throws Exception {
 		  
+		  log.info("\n@ Manhattan : " +  username + " #### Dropping a call ####");
+		  String callBox = imgFolder +"mh_callBox";
+		  String dropBtn = imgFolder +"mh_dropBtn";
+	    	
+		  wait(waitSec, "# Customer waits before drop the call");
+    	  clickAppear(screen, callBox);
+    	  clickAppear(screen, dropBtn);
+    	  
+		  currentTime();
+		 
+	  }
+	  
+	  public void answerCall(int waitSec) throws Exception {
 		  log.info("\n@ Manhattan : " +  username + " #### Answering a call ####");
+		  String answerBtn = imgFolder +"mh_answerBtn";
+	    	
+    	  wait(waitSec);
+    	  clickAppear(screen, answerBtn);
+		  currentTime();
+		 
+
+	  }
+	  
+	  public void abandonCall() throws Exception {
+		  
+		  log.info("\n@ Manhattan : " +  username + " #### Abandoning a call ####");
+		  String abandonBtn = imgFolder +"mh_abandonBtn";
+	    	
+	    	clickAppear(screen, abandonBtn);
+			currentTime();
 		 
 
 	  }

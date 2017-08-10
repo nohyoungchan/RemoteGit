@@ -19,16 +19,19 @@ public class Test_Email_All extends TestCaseObject {
 	@BeforeClass
 	public void beforeClass() throws Exception {
 		log.info("* Before Class: Test_Email_All");
-		InitializeAllVariables(); 
-		
-		 if (stopTest.contains("yes")) {
-			 log.info("@@ Stop is requested, so skip the rest" );
-		 }else{
-			 emailCustomer1.logIntoEmailClient();
-			 emailCustomer1.minimizeBrowser();
-		 }
-
-		
+		try { 
+			InitializeAllVariables(); 
+			
+			 if (stopTest.contains("yes")) {
+				 log.info("@@ Stop is requested, so skip the rest" );
+			 }else{
+				 emailCustomer1.logIntoEmailClient();
+				 emailCustomer1.minimizeBrowser();
+			 }
+		}catch(Exception e){
+			log.info("@@@ I am handling General exception and stopping all test cases=>"+ e.toString());
+			stopTest= "yes";
+		}
     }
 	
 	@AfterClass
@@ -38,39 +41,6 @@ public class Test_Email_All extends TestCaseObject {
 		//emailCustomer1.signOutEmailClient();
 	}
 	
-	
-	/*@Parameters({"rT1", "tT1", "wT1"})
-	protected void Email_SendEmail(int rT1, int tT1, int wT1) throws Exception {
-		String testName = "Test Case: (Load) Email->NoQ->Answered";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
-		
-		//#########################
-		//resetAllActors(testName);
-		//agent1.resumeAgent();
-		//agent2.releaseAgentSecondCode();
-		//agent3.releaseAgentThirdCode();
-
-		try{
-			for(int i=0; i< 10;i++){
-				emailCustomer1.sendEmail();
-				wait(1);
-			}
-			emailCustomer1.sendEmail();
-			
-			//##########################
-			//agent1.answerACDCall(rT1, tT1);
-			
-			//############################
-			//agent1.disconnectByWebAgent();
-			//agent1.wrapupEndWith2WrapupCodes(wT1);
-		}catch(Exception e){
-			log.info("I am handling General exception=>"+ e.toString());
-			resetAllActors(testName);
-		}finally{
-			endTestCase(testName);
-		}
-		
-	}*/
 	
 	
 	@Parameters({"rT1", "tT1", "wT1"})
@@ -89,7 +59,7 @@ public class Test_Email_All extends TestCaseObject {
 			emailCustomer1.sendEmail();
 			
 			//##########################
-			agent1.answerACDCall(rT1, tT1);
+			agent1.answerEmail(rT1, tT1);
 			
 			//############################
 			agent1.disconnectByWebAgent();
@@ -121,7 +91,7 @@ public class Test_Email_All extends TestCaseObject {
 			agent1.resumeAgent();
 					
 			//##########################
-			agent1.answerACDCall(rT1, tT1);
+			agent1.answerEmail(rT1, tT1);
 			
 			//############################
 			agent1.disconnectByWebAgent();
@@ -155,7 +125,7 @@ public class Test_Email_All extends TestCaseObject {
 		try{
 			//##########################
 			emailCustomer1.sendEmail();
-			agent1.answerACDCall(rT1, tT1);
+			agent1.answerEmail(rT1, tT1);
 			
 			//############################
 			agent1.disconnectByWebAgent();
@@ -186,12 +156,12 @@ public class Test_Email_All extends TestCaseObject {
 			emailCustomer1.sendEmail();
 
 			//##########################
-			agent1.answerACDCall(rT1, tT1);
+			agent1.answerEmail(rT1, tT1);
 
 			//###########################
 			agent2.resumeAgent();
 			agent1.blindTransfer(agent2.extension);
-			agent2.answerACDCall(rT2, tT2);
+			agent2.answerEmail(rT2, tT2);
 
 
 			//############################
@@ -224,7 +194,7 @@ public class Test_Email_All extends TestCaseObject {
 
 			//##########################
 			emailCustomer1.wait(60, "Wait for Overflow timeout: This includes Ring before forced-released time");
-			agent3.answerACDCall(rT2, tT2);
+			agent3.answerEmail(rT2, tT2);
 
 			//############################
 			agent3.disconnectByWebAgent();
@@ -257,7 +227,7 @@ public class Test_Email_All extends TestCaseObject {
 			//##########################
 			emailCustomer1.wait(80, "Wait for Overflow timeout");
 			agent3.resumeAgent();
-			agent3.answerACDCall(rT2, tT2);
+			agent3.answerEmail(rT2, tT2);
 
 			//############################
 			agent3.disconnectByWebAgent();
@@ -290,7 +260,7 @@ public class Test_Email_All extends TestCaseObject {
 
 			//##########################
 			emailCustomer1.wait(60, "Wait for Overflow timeout");
-			agent3.answerACDCall(rT2, tT2);
+			agent3.answerEmail(rT2, tT2);
 
 			//############################
 			agent3.disconnectByWebAgent();
@@ -322,7 +292,7 @@ public class Test_Email_All extends TestCaseObject {
 			//##########################
 			emailCustomer1.wait(60, "Wait for Overflow timeout");
 			agent1.resumeAgent();
-			agent1.answerACDCall(rT1, tT1);
+			agent1.answerEmail(rT1, tT1);
 
 			//############################
 			agent1.disconnectByWebAgent();
@@ -356,7 +326,7 @@ public class Test_Email_All extends TestCaseObject {
 			//##########################
 			emailCustomer1.wait(120, "Wait for Overflow and Interflow timeout");
 			agent3.resumeAgent();
-			agent3.answerACDCall(rT2, tT2);
+			agent3.answerEmail(rT2, tT2);
 
 			//############################
 			agent3.disconnectByWebAgent();

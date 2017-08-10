@@ -745,7 +745,6 @@ public class Agent extends TestObject {
 	 // This is not really minimize but imitate it.
 	 public void minimizeBrowser() throws Exception {
 		 if (TestObject.useWhichWebDriver.contains("phantomjs")) return;
-		 if (TestObject.globalScenario.contains("Load_Email")) return;
 		 log.info("\n@(" + agentType + ") " + username + " => minimizing Browser");
 
 		 //setSizeAndLocation(10, 10, -2000, 700);
@@ -992,7 +991,7 @@ public class Agent extends TestObject {
 		 }
 		 if (TestObject.useWhichWebDriver.contains("phantomjs")) return;
 		 //The following might not need for email load
-		 if (TestObject.globalScenario.contains("Load_Email")) return;
+		 
 		 log.info("\n@(" + agentType + ") " + username + " => Collecting current dimension and point");
 		 pt = driver.manage().window().getPosition();
 		 dn = driver.manage().window().getSize();
@@ -1002,7 +1001,7 @@ public class Agent extends TestObject {
 	 public void restoreDimenSion() throws Exception {
 		 if (TestObject.useWhichWebDriver.contains("phantomjs")) return;
 		 //The following might not need for email load
-		 if (TestObject.globalScenario.contains("Load_Email")) return;
+		 
 		 log.info("\n@(" + agentType + ") " + username + " => Restoring previous dimension and point");
 		 driver.manage().window().setSize(dn);
 		 driver.manage().window().setPosition(pt);
@@ -1205,10 +1204,10 @@ public class Agent extends TestObject {
 	            try
 	            {
 	            	wait(2);
-	                wait.until(ExpectedConditions.elementToBeClickable(By.id(id))).click();
+	            	if (driver.findElement(By.id(id)).isEnabled())
+	                   wait.until(ExpectedConditions.elementToBeClickable(By.id(id))).click();
 	                return;
-	            }catch (StaleElementReferenceException e)
-	            //catch (Exception e)
+	            }catch (StaleElementReferenceException e)         
 	            {
 	            	
 	                if (retries < MAX_STALE_ELEMENT_RETRIES)
@@ -1221,7 +1220,6 @@ public class Agent extends TestObject {
 	                    throw e;
 	                }
 	            }
-	            //wait(2);
 	        }
 	    }
 	    

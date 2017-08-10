@@ -67,8 +67,8 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 			agent1.waitTillRingPlusSec(callbackAbandonSecInt+5);
 			customer1.dropCall();
 			agent1.resumeAgent(); //This is needed in case agent1 becomes forced-released
-			wait(5);
-			customer1.answerCall();
+			
+			customer1.answerCall(5);
 					
 			//##########################
 			agent1.answerACDCall(rT1, tT1);
@@ -112,8 +112,8 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 			agent1.waitTillRingPlusSec(callbackAbandonSecInt+5);
 			customer1.dropCall();
 			agent1.resumeAgent(); //This is needed in case agent1 becomes forced-released
-			wait(5);
-			customer1.answerCall();
+			
+			customer1.answerCall(5);
 					
 			//##########################
 			agent1.answerACDCall(rT1, tT1);
@@ -157,8 +157,8 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 			agent1.waitTillRingPlusSec(callbackAbandonSecInt+5);
 			customer1.dropCall();
 			agent1.resumeAgent(); //This is needed in case agent1 becomes forced-released
-			wait(5);
-			customer1.answerCall();
+			
+			customer1.answerCall(5);
 					
 			//##########################
 			agent1.answerACDCall(rT1, tT1);
@@ -209,8 +209,8 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 			agent1.waitTillRingPlusSec(callbackAbandonSecInt+5);
 			customer1.dropCall();
 			agent1.resumeAgent(); //This is needed in case agent1 becomes forced-released
-			wait(5);
-			customer1.answerCall();
+			
+			customer1.answerCall(5);
 			
 			//##########################
 			agent1.answerACDCall(rT1, tT1);
@@ -252,8 +252,8 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 			agent1.waitTillRingPlusSec(callbackAbandonSecInt+5);
 			customer1.dropCall();
 			agent1.resumeAgent(); //This is needed in case agent1 becomes forced-released
-			wait(5);
-			customer1.answerCall();
+			
+			customer1.answerCall(5);
 					
 			//##########################
 			agent1.answerACDCall(rT1, tT1);
@@ -296,8 +296,8 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 			agent1.waitTillRingPlusSec(callbackAbandonSecInt+5);
 			customer1.dropCall();
 			agent1.resumeAgent(); //This is needed in case agent1 becomes forced-released
-			wait(5);
-			customer1.answerCall();
+			
+			customer1.answerCall(5);
 					
 			//##########################
 			agent1.answerACDCall(rT1, tT1);
@@ -340,8 +340,8 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 			agent1.waitTillRingPlusSec(callbackAbandonSecInt+5);
 			customer1.dropCall();
 			agent1.resumeAgent(); //This is needed in case agent1 becomes forced-released
-			wait(5);
-			customer1.answerCall();
+			
+			customer1.answerCall(5);
 					
 			//##########################
 			agent1.answerACDCall(rT1, tT1);
@@ -385,8 +385,8 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 			agent1.waitTillRingPlusSec(callbackAbandonSecInt+5);
 			customer1.dropCall();
 			agent1.resumeAgent(); //This is needed in case agent1 becomes forced-released
-			wait(5);
-			customer1.answerCall();
+			
+			customer1.answerCall(5);
 					
 			//##########################
 			agent1.answerACDCall(rT1, tT1);
@@ -431,8 +431,8 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 			agent1.waitTillRingPlusSec(callbackAbandonSecInt+5);
 			customer1.dropCall();
 			agent1.resumeAgent(); //This is needed in case agent1 becomes forced-released
-			wait(5);
-			customer1.answerCall();
+			
+			customer1.answerCall(5);
 					
 			//##########################
 			agent1.answerACDCall(rT1, tT1);
@@ -477,8 +477,8 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 			agent1.waitTillRingPlusSec(callbackAbandonSecInt+5);
 			customer1.dropCall();
 			agent1.resumeAgent(); //This is needed in case agent1 becomes forced-released
-			wait(5);
-			customer1.answerCall();
+			
+			customer1.answerCall(5);
 					
 			//##########################
 			agent1.answerACDCall(rT1, tT1);
@@ -530,8 +530,8 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 			agent1.waitTillRingPlusSec(callbackAbandonSecInt+5);
 			customer1.dropCall();
 			agent1.resumeAgent(); //This is needed in case agent1 becomes forced-released
-			wait(5);
-			customer1.answerCall();
+			
+			customer1.answerCall(5);
 			
 			//##########################
 			agent1.answerACDCall(rT1, tT1);
@@ -574,8 +574,8 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 			agent1.waitTillRingPlusSec(callbackAbandonSecInt+5);
 			customer1.dropCall();
 			agent1.resumeAgent(); //This is needed in case agent1 becomes forced-released
-			wait(5);
-			customer1.answerCall();
+			
+			customer1.answerCall(5);
 					
 			//##########################
 			agent1.answerACDCall(rT1, tT1);
@@ -619,8 +619,8 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 			agent1.waitTillRingPlusSec(callbackAbandonSecInt+5);
 			customer1.dropCall();
 			agent1.resumeAgent(); //This is needed in case agent1 becomes forced-released
-			wait(5);
-			customer1.answerCall();
+			
+			customer1.answerCall(5);
 					
 			//##########################
 			agent1.answerACDCall(rT1, tT1);
@@ -664,8 +664,8 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 			agent1.waitTillRingPlusSec(callbackAbandonSecInt+5);
 			customer1.dropCall();
 			agent1.resumeAgent(); //This is needed in case agent1 becomes forced-released
-			wait(5);
-			customer1.answerCall();
+			
+			customer1.answerCall(5);
 					
 			//##########################
 			agent1.answerACDCall(rT1, tT1);
