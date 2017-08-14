@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test HB Suite" verbose="1">
+  <parameter name="qT1" value="10"></parameter> 
+  <parameter name="rT1" value="10"></parameter>          
+  <parameter name="tT1" value="10"></parameter>
+  <parameter name="wT1" value="10"></parameter>
+  <parameter name="rT2" value="10"></parameter>
+  <parameter name="tT2" value="10"></parameter> 
+  <parameter name="wT2" value="10"></parameter> 
+  <parameter name="skipCCDPrepare" value="yes"></parameter>
+  <parameter name="waitUntilOneAm" value="no"></parameter>  <!--## yes: waits until 1 am tomorrow, no: starts immediately ##-->
+  <parameter name="tearDownOrNot" value="yes"></parameter>  <!--## yes: close all WebBrowsers, no: Don't close ##-->
+  <parameter name="usePhantomJS" value="no"></parameter>  <!--## yes: use PhantomeJS for WebDriver, no: Don't use it. ##-->
+
+  <test name="VoiceACD Scenarios"> <!--### This is VoiceACD scenarios without Reverse scenarios### -->
+	  
+    <classes>
+	  <class name="HBTestesNG.TestCases.Test_Initiate">
+	  </class>
+       
+       <class name="HBTestesNG.TestCases.Test_Email_All">
+        <methods>      
+      	  <include name="Email_NoQ_Answer" />
+          <include name="Email_NoQ_Answer_NoWrapTime" /> 
+          <include name="Email_Q_Answer" />     
+          <include name="Email_Q_Overflow_R_Ans_1stGroup" />
+          <include name="Email_Q_Overflow_R_Ans_2ndGroup" /> 
+          <include name="Email_R_Q_Overflow_Q_R_Ans_2ndGroup" /> 
+          <include name="Email_R_Q_Overflow_R_Ans_2ndGroup" />  
+          <include name="Email_Q_OverInterflow_Q_R_Ans_3rdGroup" /> 
+          <include name="Email_BTransfer_ToExt_SameGroup" />   
+         </methods>
+       </class>
+       
+       
+    </classes>
+  </test>
+</suite> 

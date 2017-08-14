@@ -15,14 +15,14 @@ emailContent=This_is_Email_Content for C1HB1
 
 
 [CustomerVoice]
-max=1
+max=0
 CustomerVoice1.name=agent6yc1@c1yc1.com
 CustomerVoice1.password=Shoreadmin1
 CustomerVoice1.extension=4006
 CustomerVoice1.did=4006
 
 [CustomerChat]
-max=1
+max=0
 tenantPrefix=80005
 chatIRN=5555
 stOrMt=mt

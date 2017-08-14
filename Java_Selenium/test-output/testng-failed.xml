@@ -3,7 +3,7 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Test HB Suite]">
   <parameter name="tT1" value="10"/>
   <parameter name="rT2" value="10"/>
-  <parameter name="skipCCDPrepare" value="no"/>
+  <parameter name="skipCCDPrepare" value="yes"/>
   <parameter name="tT2" value="10"/>
   <parameter name="wT2" value="10"/>
   <parameter name="usePhantomJS" value="no"/>
@@ -20,13 +20,13 @@
           <include name="afterSuite"/>
         </methods>
       </class> <!-- HBTestesNG.TestCases.Test_Initiate -->
-      <class name="HBTestesNG.TestCases.Test_VoiceACD_Conference">
+      <class name="HBTestesNG.TestCases.Test_Email_All">
         <methods>
-          <include name="afterClass"/>
           <include name="beforeClass"/>
-          <include name="VoiceACD_CConference_All" invocation-numbers="0"/>
+          <include name="Email_NoQ_Answer" invocation-numbers="0"/>
+          <include name="afterClass"/>
         </methods>
-      </class> <!-- HBTestesNG.TestCases.Test_VoiceACD_Conference -->
+      </class> <!-- HBTestesNG.TestCases.Test_Email_All -->
     </classes>
   </test> <!-- VoiceACD Scenarios(failed) -->
 </suite> <!-- Failed suite [Test HB Suite] -->

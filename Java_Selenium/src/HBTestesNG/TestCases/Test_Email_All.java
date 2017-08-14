@@ -318,7 +318,7 @@ public class Test_Email_All extends TestCaseObject {
 		try{
 			agent1.releaseAgent();
 			agent2.releaseAgentSecondCode();
-			agent2.releaseAgentThirdCode();;
+			agent3.releaseAgentThirdCode();;
 
 			//###########################
 			emailCustomer1.sendEmail();
