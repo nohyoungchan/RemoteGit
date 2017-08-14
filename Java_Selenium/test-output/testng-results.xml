@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="1" total="1" passed="0">
+  <reporter-output>
+    <line>
+      <![CDATA[** Testcase Failed: VoiceACD->Ans->Consult Conference : All test cases]]>
+    </line>
+  </reporter-output>
+  <suite name="Test HB Suite" duration-ms="2125850" started-at="2017-08-14T20:46:03Z" finished-at="2017-08-14T21:21:29Z">
+    <groups>
+      <group name="VoiceACD_Conference_ClassLevel">
+        <method signature="Test_VoiceACD_Conference.VoiceACD_CConference_All(int, int, int, int, int)[pri:0, instance:Thread[Thread-4,5,main]]" name="VoiceACD_CConference_All" class="HBTestesNG.TestCases.Test_VoiceACD_Conference"/>
+      </group> <!-- VoiceACD_Conference_ClassLevel -->
+    </groups>
+    <test name="VoiceACD Scenarios" duration-ms="2125850" started-at="2017-08-14T20:46:03Z" finished-at="2017-08-14T21:21:29Z">
+      <class name="HBTestesNG.TestCases.Test_Initiate">
+        <test-method status="PASS" signature="beforeSuite(java.lang.String, java.lang.String)[pri:0, instance:Thread[Thread-0,5,main]]" name="beforeSuite" is-config="true" duration-ms="88802" started-at="2017-08-14T13:44:34Z" finished-at="2017-08-14T13:46:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method status="PASS" signature="afterSuite(java.lang.String)[pri:0, instance:Thread[Thread-0,5,main]]" name="afterSuite" is-config="true" duration-ms="28728" started-at="2017-08-14T14:21:29Z" finished-at="2017-08-14T14:21:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- HBTestesNG.TestCases.Test_Initiate -->
+      <class name="HBTestesNG.TestCases.Test_VoiceACD_Conference">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:Thread[Thread-4,5,main]]" name="beforeClass" is-config="true" duration-ms="0" started-at="2017-08-14T13:46:03Z" finished-at="2017-08-14T13:46:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="FAIL" signature="VoiceACD_CConference_All(int, int, int, int, int)[pri:0, instance:Thread[Thread-4,5,main]]" name="VoiceACD_CConference_All" duration-ms="2125835" started-at="2017-08-14T13:46:03Z" finished-at="2017-08-14T14:21:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[10]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[10]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[10]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[10]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[10]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[
+** Testcase Failed: VoiceACD->Ans->Consult Conference : All test cases
+
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 
+** Testcase Failed: VoiceACD->Ans->Consult Conference : All test cases
+
+
+	at org.testng.Assert.fail(Assert.java:94)
+	at HBTestesNG.BaseObjects.TestCaseObject.resetAllActors(TestCaseObject.java:261)
+	at HBTestesNG.TestCases.Test_VoiceACD_Conference.VoiceACD_CConference_All(Test_VoiceACD_Conference.java:312)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+            <line>
+              <![CDATA[** Testcase Failed: VoiceACD->Ans->Consult Conference : All test cases]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- VoiceACD_CConference_All -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:Thread[Thread-4,5,main]]" name="afterClass" is-config="true" duration-ms="0" started-at="2017-08-14T14:21:29Z" finished-at="2017-08-14T14:21:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- HBTestesNG.TestCases.Test_VoiceACD_Conference -->
+    </test> <!-- VoiceACD Scenarios -->
+  </suite> <!-- Test HB Suite -->
+</testng-results>

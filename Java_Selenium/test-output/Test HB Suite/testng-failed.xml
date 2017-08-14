@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Test HB Suite]">
+  <parameter name="tT1" value="10"/>
+  <parameter name="rT2" value="10"/>
+  <parameter name="skipCCDPrepare" value="no"/>
+  <parameter name="tT2" value="10"/>
+  <parameter name="wT2" value="10"/>
+  <parameter name="usePhantomJS" value="no"/>
+  <parameter name="wT1" value="10"/>
+  <parameter name="tearDownOrNot" value="yes"/>
+  <parameter name="waitUntilOneAm" value="no"/>
+  <parameter name="rT1" value="10"/>
+  <parameter name="qT1" value="10"/>
+  <test name="VoiceACD Scenarios(failed)">
+    <classes>
+      <class name="HBTestesNG.TestCases.Test_Initiate">
+        <methods>
+          <include name="beforeSuite"/>
+          <include name="afterSuite"/>
+        </methods>
+      </class> <!-- HBTestesNG.TestCases.Test_Initiate -->
+      <class name="HBTestesNG.TestCases.Test_VoiceACD_Conference">
+        <methods>
+          <include name="afterClass"/>
+          <include name="beforeClass"/>
+          <include name="VoiceACD_CConference_All" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- HBTestesNG.TestCases.Test_VoiceACD_Conference -->
+    </classes>
+  </test> <!-- VoiceACD Scenarios(failed) -->
+</suite> <!-- Failed suite [Test HB Suite] -->
