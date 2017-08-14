@@ -21,33 +21,39 @@ public class  Test_Initiate extends TestCaseObject{
 	@Parameters({"waitUntilOneAm", "skipCCDPrepare"})
 	public void beforeSuite(String waitUntilOneAm, String skipCCDPrepare) throws Exception {
 		
-		//wait_for_inputToStart("Press Enter to start a test");
-		waitUntilTomorrowOneAm(waitUntilOneAm);
-		allActors = new AllActors(); //This reads all ini and starts web.
-		startTestSuitMessage();  
-
+		try  {
+			//wait_for_inputToStart("Press Enter to start a test");
+			waitUntilTomorrowOneAm(waitUntilOneAm);
+			allActors = new AllActors(); //This reads all ini and starts web.
+			startTestSuitMessage();  
+	
+				
+			for (int i=0; i < allActors.agents.size() ; i++ ){
+				if (0 ==allActors.agents.size()) { break;}
+				allActors.agents.get(i).logIntoWebAgent();
+			}
 			
-		for (int i=0; i < allActors.agents.size() ; i++ ){
-			if (0 ==allActors.agents.size()) { break;}
-			allActors.agents.get(i).logIntoWebAgent();
+			//Log in Manhattan client
+			for (int i=0; i < allActors.customers.size() ; i++ ){
+				if (0 ==allActors.customers.size()) { break;}
+				//You can set the location of Manhattan: x(10), y(200)
+				allActors.customers.get(i).startManhattan("10", "200");
+				allActors.customers.get(i).logIn();
+	
+			}
+	
+			//CCD configuration before starting suite: You can skip this by "skipCCDPrepare" variable
+			if (allActors.supervisors.size() >0 && skipCCDPrepare == "no") 
+				allActors.supervisors.get(0).Max_LogIn_PrepareTest_LogOut_Min();
+			
+			currentTimeStart();
+		}catch (Exception e) {
+			log.error("Exception on before suite: Failing all");
+			afterSuite("yes");
+			
 		}
-		
-		//Log in Manhattan client
-		for (int i=0; i < allActors.customers.size() ; i++ ){
-			if (0 ==allActors.customers.size()) { break;}
-			//You can set the location of Manhattan: x(10), y(200)
-			allActors.customers.get(i).startManhattan("10", "200");
-			allActors.customers.get(i).logIn();
-
-		}
-
-		//CCD configuration before starting suite: You can skip this by "skipCCDPrepare" variable
-		if (allActors.supervisors.size() >0 && skipCCDPrepare == "no") 
-			allActors.supervisors.get(0).Max_LogIn_PrepareTest_LogOut_Min();
-		
-		currentTimeStart();
-
-		
+	
+			
 
 
 	}

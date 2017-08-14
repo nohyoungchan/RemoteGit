@@ -359,7 +359,7 @@ public class AgentHB extends Agent {
 	  }
 	  
 		  
-	  public synchronized void answerACDCall(int ringSec, int talkSec) throws InterruptedException{
+	  public synchronized void answerACDCall(int ringSec, int talkSec) throws Exception{
 		  String strFunctionName = "answerACDCall";
 		  log.info("\n@(" + agentType + ") " +  username + " #### Click Answer button ####");
 		  try{
@@ -382,6 +382,7 @@ public class AgentHB extends Agent {
 			 errorString.concat("fail to " + strFunctionName + ";");
 			log.info("\n@(" + agentType + ") " +  username + " exception on answering acd call" + e.toString() );
 			state = "weird";
+			throw e;
 		  }
 	  }
 	  
@@ -815,31 +816,42 @@ public class AgentHB extends Agent {
 
 	  }
 	  
-	  
+	  /**
+	   * If wrap-up fails, it doesn't need to stop a test, so not throwing exception
+	   */
 	  public void wrapupEnd(){
 		  
 		  log.info("\n@(" + agentType + ") " +  username + " #### Wrapup End ####"); 
 		  log.info("\n@(" + agentType + ") " +  username + " : Pressing Extend Wrapup button");
+		  
 		  try{
+			  maximizeBrowser();
 			  if (!click_XPath("btnWrapExtend")){
 				  log.info("\n@(" + agentType + ") " +  username + " : Wraup could be 0, so finish wrapup");
 				  return;
 			  }
 			  log.info("\n@(" + agentType + ") " +  username + " : Pressing End Wrapup button");
-			  click_XPath(("btnWrapupEnd"));
+			  click_XPath("btnWrapupEnd", 3);
 			  state = "idle";
 			  //Assert.assertTrue(true, "Wrapup end Correctly");
 			  //wait(10);
 		  }catch(Exception e){
 			  log.info("\n@(" + agentType + ") " +  username + " exception on wrapupEnd" + e.toString());
 			  state = "weird";
+		  }finally {
+			  minimizeBrowser();
 		  }
 	  }
 	  
+	  /**
+	   *  If wrap-up fails, it doesn't need to stop a test, so not throwing exception
+	   * @param wrapSec
+	   */
 	  public void wrapupEnd(int wrapSec) {
 		  log.info("\n@(" + agentType + ") " +  username + " #### Wrapup End ####");
 		  log.info("\n@(" + agentType + ") " +  username + " : Pressing Extend Wrapup button");
 		  try{
+			  maximizeBrowser();
 			  if (!click_XPath("btnWrapExtend")){
 				  log.info("\n@(" + agentType + ") " +  username + " : Wraup could be 0, so finish wrapup");
 				  return;
@@ -853,9 +865,15 @@ public class AgentHB extends Agent {
 		  }catch(Exception e){
 			  log.info("\n@(" + agentType + ") " +  username + " exception on wrapupEnd" + e.toString());
 			  state = "weird";
+		  }finally {
+			  minimizeBrowser();
 		  }
 	  }
 	  
+	  /**
+	   *  If wrap-up fails, it doesn't need to stop a test, so not throwing exception
+	   * @param wrapSec
+	   */
 	  public void wrapupEndWith2WrapupCodes(int wrapSec) {
 		  String strFunctionName = "wrapupEndWith2WrapupCode";
 		  log.info("\n@(" + agentType + ") " +  username + " #### Wrapup End ####");
@@ -870,23 +888,24 @@ public class AgentHB extends Agent {
 			  }
 			  //Todo : Enter wrapup Code
 			  wait(1);
-			  click_XPath(("comboBoxWrapupCode"));
+			  click_XPath("comboBoxWrapupCode", 1);
 			  wait(1);
-			  click_XPath(("wrapupCodeFirst"));
+			  click_XPath("wrapupCodeFirst", 3);
 			  wait(1);
-			  click_XPath(("wrapupCodeSecond"));
+			  click_XPath("wrapupCodeSecond", 3);
 			  wait(1);
 			  click_XPath(("comboBoxWrapupCode"));
 			  wait(wrapSec, "Wrapup time");
 			  log.info("\n@(" + agentType + ") " +  username + " : Pressing End Wrapup button");
 			  click_XPath(("btnWrapupEnd"));
 			  state = "idle";
-			  minimizeBrowser();
 		  }catch(Exception e){
 			  log.info("\n@(" + agentType + ") " +  username + " exception on wrapupEndWith2WrapupCodes" + e.toString());
 			  errorCount++;
 			  errorString.concat("fail to " + strFunctionName + ";");
 			  state = "weird";
+		  }finally {
+				minimizeBrowser();
 		  }
 
 	  }

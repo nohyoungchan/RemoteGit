@@ -1,7 +1,6 @@
 package HBTestesNG.BaseObjects;
 
 import org.sikuli.script.*;
-import org.testng.TestNG;
 
 import Utility.Utilities;
 
@@ -24,7 +23,7 @@ public class CustomerManhattan  extends TestObject {
 	public void startManhattan(String x, String y) throws Exception {
 		log.info("\n@ Manhattan : " +  username + " #### Starts Manhattan client: Location : " + x + "/" + y + " ####");
 		Utilities.executeCommand("ShoreTel.exe");
-		wait(5);
+		wait(2);
 		String strAutoItCommand = "AutoIt3.exe " + autoitFolder + "manhattan_relocate.exe " + x + " " + y;
     	Utilities.executeCommand(strAutoItCommand);
 		currentTime();
@@ -40,6 +39,7 @@ public class CustomerManhattan  extends TestObject {
     	String connectionNotSecure = imgFolder + "mh_connectionNotSecure.PNG";
     	String proceedBtn = imgFolder + "mh_proceedBtn.PNG";
     	
+    	activateManhattan();
     	clickAppear(screen, patternUsername);
     	screen.write(username);
     	clickAppear(screen, patternPassword);
@@ -67,6 +67,7 @@ public class CustomerManhattan  extends TestObject {
     	String connectionNotSecure = imgFolder + "mh_connectionNotSecure.PNG";
     	String proceedBtn = imgFolder + "mh_proceedBtn.PNG";
     	
+    	activateManhattan();
     	clickAppear(screen, patternUsername);
     	screen.write(username);
     	clickAppear(screen, patternPassword);
@@ -90,9 +91,9 @@ public class CustomerManhattan  extends TestObject {
     	Pattern patternStateBtn = new Pattern(imgFolder +"mh_stateBtn.PNG").targetOffset(100, 0);
     	//String stateBtn = imgFolder + "mh_stateBtn.PNG";
     	String logoutBtn = imgFolder +"mh_logoutBtn.PNG";
-    	
 
     	wait(waitSec);
+    	activateManhattan();
     	clickAppear(screen, patternStateBtn);
     	wait(1);
     	clickAppear(screen, logoutBtn);
@@ -103,7 +104,7 @@ public class CustomerManhattan  extends TestObject {
 		log.info("\n@ Manhattan : " +  username + " #### Close Manhattan client by pressing X ####");
 
     	String closeIcon = imgFolder +"mh_closeManhattan";
-    	
+    	activateManhattan();
     	wait(waitSec);
     	clickAppear(screen, closeIcon);
 		currentTime();
@@ -128,11 +129,18 @@ public class CustomerManhattan  extends TestObject {
 	    //tearDownAll();
 	  }
 	  
+	  public void activateManhattan() {
+		  log.info("\n@ Manhattan : " +  username + " #### Activating Manhattan client ####");
+		  String strAutoItCommand = "AutoIt3.exe " + autoitFolder + "manhattan_activateMH.exe";
+	      Utilities.executeCommand(strAutoItCommand);
+	  }
+	  
 	  public void makeACDCall(String number) throws Exception{
 		  log.info("\n@ Manhattan : " +  username + " #### Before making ACD call ####");
 		  int j;
 		  Pattern patternoffhookBtn = new Pattern(imgFolder +"mh_offhookBtn.PNG").targetOffset(100, 0);
-		  //String numTextBox= imgFolder + "mh_numTextBox.PNG";
+
+		  activateManhattan();
 		  clickAppear(screen, patternoffhookBtn);
 		  screen.type(number);
 		  screen.type(Key.ENTER);
@@ -145,6 +153,7 @@ public class CustomerManhattan  extends TestObject {
 		  String callBox = imgFolder +"mh_callBox";
 		  String dropBtn = imgFolder +"mh_dropBtn";
 	    	
+		  activateManhattan();
     	  clickAppear(screen, callBox);
     	  clickAppear(screen, dropBtn);
     	  
@@ -158,6 +167,7 @@ public class CustomerManhattan  extends TestObject {
 		  String callBox = imgFolder +"mh_callBox";
 		  String dropBtn = imgFolder +"mh_dropBtn";
 	    	
+		  activateManhattan();
 		  wait(waitSec, "# Customer waits before drop the call");
     	  clickAppear(screen, callBox);
     	  clickAppear(screen, dropBtn);
@@ -170,6 +180,7 @@ public class CustomerManhattan  extends TestObject {
 		  log.info("\n@ Manhattan : " +  username + " #### Answering a call ####");
 		  String answerBtn = imgFolder +"mh_answerBtn";
 	    	
+		  activateManhattan();
     	  wait(waitSec);
     	  clickAppear(screen, answerBtn);
 		  currentTime();
@@ -182,17 +193,26 @@ public class CustomerManhattan  extends TestObject {
 		  log.info("\n@ Manhattan : " +  username + " #### Abandoning a call ####");
 		  String abandonBtn = imgFolder +"mh_abandonBtn";
 	    	
-	    	clickAppear(screen, abandonBtn);
-			currentTime();
+		  activateManhattan();
+	      clickAppear(screen, abandonBtn);
+		  currentTime();
 		 
 
 	  }
 	  
 	  public void dropCall_reset() throws Exception {
-		  if (state.contains("idle")) return;
+		  //if (state.contains("idle")) return;
 		  
 		  log.info("\n@ Manhattan : " +  username + " #### Dropping a call for a reset ####");
-		 
+		  String callBox = imgFolder +"mh_callBox";
+		  String dropBtn = imgFolder +"mh_dropBtn";
+	    	
+		  activateManhattan();
+    	  if (clickAppear(screen, callBox, 5)) {
+    		  clickAppear(screen, dropBtn, 5);
+    	  }
+    	  
+		  currentTime();
 
 	  }
 	  
@@ -226,6 +246,36 @@ public class CustomerManhattan  extends TestObject {
 		}
 	  }
 	  
+	  /**
+	   * This waits until "img" appear and click.
+	   * @param s  : This is screen object 
+	   * @param img : This is image to click
+	   * @param numTry: This is to try how many time to check if an image appears.
+	   */
+	  public boolean clickAppear(Screen s, String img, int numTry) {
+		int i = 0;
+		boolean returnValue = true;
+		try {
+		while (true) {
+				if (s.exists(img) != null) {
+				    s.click(img);
+				    break;
+				} 
+				i++;
+				wait(2);
+				if (i > numTry) {
+					log.info("\n@ Manhattan : " +  username + " : image doesn't appear after " + numTry + " Tries  => " + img);
+					throw new Exception();
+				}
+			}
+		}catch(Exception e) {
+			returnValue = false;
+			log.error("Fail to click: " + img + " => " + e.toString());
+		}
+		
+		return returnValue;
+	  }
+	  
 	  
 	  /**
 	   * This waits until "img" appear and click: This img is a pattern, so you can use "offset" from image.
@@ -255,8 +305,8 @@ public class CustomerManhattan  extends TestObject {
 		 for(int i=0 ; i < 2; i++) {
 			CustomerManhattan manhattan=new CustomerManhattan();
 			manhattan.startManhattan("10", "200");
-			manhattan.logIn("young6@yc2.com", "changeme");
-		    manhattan.makeACDCall("4024");
+			manhattan.logIn("agent6yc1@c1yc1.com", "Shoreadmin1");
+		    manhattan.makeACDCall("4021");
 			manhattan.logOut(5);
 			manhattan.closeManhattan(2);
 			sleep(1000);

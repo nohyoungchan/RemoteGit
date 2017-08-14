@@ -139,7 +139,7 @@ public class TestCaseObject extends TestObject{
 		}
 	    log.info("\n\n\n****************************************************************************************");
 	    log.info("****************************************************************************************");
-	    log.info("$$$$$$$$$$$$$$$$$$$$$  "+sTestCaseName+ " $$$$$$$$$$$$$$$$$$$$$$$$$");
+	    log.info("$$$$$$$$$$ Test Start:   "+sTestCaseName+ " $$$$$$$$$$$$$$$$$$$$$$$$$");
 	    log.info("****************************************************************************************");
 	    log.info("****************************************************************************************");
 	    
@@ -164,18 +164,30 @@ public class TestCaseObject extends TestObject{
 	public void endTestCase(String testName) throws Exception{
 	 
 		String userInputString;
-		if (errorCount > 0) failTest(testName + " has failed");
 		
-	    log.info("XXXXXXXXXXXXXXXXXXXXXXX  "+"-END-"+ testName + " XXXXXXXXXXXXXXXXXXXXXX");
-	    log.info("X");
-	    log.info("X");
-	    log.info("X");
-	    log.info("X");
-	    
-	    //If there is a user input, all test cases will be stopped.
-	    userInputString=  WaitingForUserInput(20);
-	    //This will stop all remaining test cases
-	    if (userInputString.contains("yes")) stopTest = "yes"; 
+		if (errorCount > 0) {
+			 log.info("XXXXXXXXXXXXXXXXXXXXXXX  "+"Test Result(Failed) => "+ testName + " XXXXXXXXXXXXXXXXXXXXXX");
+			 log.info("X");
+			 log.info("X");
+			 
+		     //If there is a user input, all test cases will be stopped.
+		     userInputString=  WaitingForUserInput(20);
+		     //This will stop all remaining test cases
+		     if (userInputString.contains("yes")) stopTest = "yes"; 
+		     failTest(testName + " has failed");
+		}else {
+		    log.info("XXXXXXXXXXXXXXXXXXXXXXX  "+"Test Result(Successful) => "+ testName + " XXXXXXXXXXXXXXXXXXXXXX");
+		    log.info("X");
+		    log.info("X");
+		    
+		    //If there is a user input, all test cases will be stopped.
+		    userInputString=  WaitingForUserInput(20);
+		    //This will stop all remaining test cases
+		    if (userInputString.contains("yes")) stopTest = "yes"; 
+			
+		}
+		
+	
    }
 	
 	public void endTestCase_Main(String testName) throws Exception{

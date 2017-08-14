@@ -743,12 +743,17 @@ public class Agent extends TestObject {
 	 }
 
 	 // This is not really minimize but imitate it.
-	 public void minimizeBrowser() throws Exception {
+	 public void minimizeBrowser(){
 		 if (TestObject.useWhichWebDriver.contains("phantomjs")) return;
 		 log.info("\n@(" + agentType + ") " + username + " => minimizing Browser");
 
 		 //setSizeAndLocation(10, 10, -2000, 700);
-		 setSizeAndLocation(10, 10, 900, 800);
+		 try {
+			setSizeAndLocation(10, 10, 900, 800);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		 booleanMaximized = false;
 
 	 }
@@ -956,6 +961,66 @@ public class Agent extends TestObject {
 			return returnResult;
 	}
 	  
+	  //strXPath is name, not XPath value
+	  /**
+	   * This clicks xpath
+	   * @param strXPath
+	   * @param numTry  : some click doesn't need to try much, so give num to try.
+	   * @return
+	   * @throws Exception
+	   */
+	  public boolean click_XPath(String strXPath, int numTry) throws Exception {
+		 WebElement webElement;
+		 boolean returnResult;
+		 int waitTimeSec;
+		 int i;
+		 i=0;
+		 
+		 webElement = null;
+		 returnResult = true;
+		 waitTimeSec = 30;
+
+		 try{
+			 
+			while(true){
+				webElement = waitUntilClickable(strXPath, waitTimeSec); 
+				if (webElement != null) {
+					///JavascriptExecutor executor = (JavascriptExecutor) driver;
+					executor.executeScript("arguments[0].click();", webElement);
+					//webElement.click();   //somehow this doesn't work.
+					log.info("\n@(" + agentType + ") " + username + " Clicked=> " + strXPath);
+					break;
+				}else {
+					log.info("\n@(" + agentType + ") " + username + "=>@@ Fail to Click since => " + strXPath + " is not ready");
+					//log.info("@@ This means=> null, or no such element exist, so wait until it appears.");
+				}
+				i++;
+				wait(3);
+				if (i > numTry) {
+					returnResult = false;
+					//break;
+					throw new Exception();
+				}
+			}
+		 }catch(ElementNotVisibleException e){
+			 log.error("\n@(" + agentType + ") " + username + " =>@@ ElementNotVisibleException on " + " " + strXPath);
+			 returnResult = false;
+			 
+		 }catch(InterruptedException e){
+			  log.error("@ " + username + " : @@ Thread inturrepted -> throw again on click_XPath()");
+			  throw e;
+		 }catch(SessionNotFoundException e){
+			  log.error("@ " + username + " : @@ SessionNotFoundException -> throw again on click_XPath()");
+			  throw e;
+		 }catch(Exception e){
+			 log.error("\n@(" + agentType + ") " + username + " =>@@@@ Exception on " + strXPath + " " +e.toString());
+			 returnResult = false;
+			 throw e;
+		 }
+		
+			return returnResult;
+	}
+	  
 	 
 	 public void waitUntilMainTitle(String mainTitleSubText) throws Exception{
 		 
@@ -1031,6 +1096,7 @@ public class Agent extends TestObject {
 		 log.info("### selectFromInput_ByPartialText => " + partialText);
 		 int i, max = 100;
 		 WebElement element;
+		 String elementText;
 		 
 		 try{
 			 //To show list elements, this needs to be done.
@@ -1040,7 +1106,9 @@ public class Agent extends TestObject {
 			 wait(1);
 			 for(i = 1; i < max ; i++){
 				 element = driver.findElement(By.xpath(".//*[@id='agent-list']/li[" + i + "]/a"));
-				 if (element.getText().contains(partialText)){ 
+				 elementText = element.getText();
+				 log.info(i + "th Element => " + elementText + "vs the partial text: " + partialText);
+				 if (partialText.contains(elementText)){ 
 					 element.click();
 					 break;
 				 }

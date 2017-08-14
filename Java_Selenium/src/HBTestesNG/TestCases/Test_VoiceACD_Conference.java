@@ -293,6 +293,27 @@ public class Test_VoiceACD_Conference extends TestCaseObject {
 			endTestCase(testName);
 		}
 	}
+	
+	
+	@Parameters({"rT1", "tT1", "rT2", "tT2", "wT2"})
+	public void VoiceACD_CConference_All(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
+		String testName = "VoiceACD->Ans->Consult Conference : All test cases";
+		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		//#########################
+		try{
+			for (int i = 1; i < 10001 ; i++) {
+				log.info("@@@@ " + i + "th try ==> ");
+				VoiceACD_CConference_ToExt_DifferentGroup_byName(10, 10, 10, 10);	
+			}
+				
+		
+		}catch(Exception e){
+			log.info("I am handling General exception=>"+ e.toString());
+			resetAllActors(testName);
+		}finally{
+			endTestCase(testName);
+		}
+	}
 
 
 
