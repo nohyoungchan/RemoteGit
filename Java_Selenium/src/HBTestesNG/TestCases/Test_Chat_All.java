@@ -213,7 +213,7 @@ public class Test_Chat_All extends TestCaseObject {
 	@Parameters({"rT1", "tT1", "rT2", "tT2", "wT2"})
 	public void Chat_BTransfer_ByAgentName_SameGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 	
-		String testName = "Chat->Ans->Blind Transfer to Ext on Same Group ";
+		String testName = "Chat->Ans->Blind Transfer by agent name on Same Group ";
 		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
 		//#########################
 		
@@ -409,6 +409,36 @@ public class Test_Chat_All extends TestCaseObject {
 			endTestCase(testName);
 		}
 	}
+	
+	//agent3 belongs to both Group2 and Group3
+		//This test assumes that overflow time(60s), Interflow time(120s)
+		@Parameters({"rT1", "tT1", "rT2", "tT2", "wT2"})
+		public void Chat_All_Repeat(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
+			
+			String testName = "Chat_All_Repeat";
+			if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+			//#########################
+			
+			try{
+				for (int i = 1; i < 10001 ; i++) {
+					log.info("@@@@ " + i + "th try ==> ");
+					Chat_NoQ_Answer(10, 10, 10);
+					Chat_Q_Answer(10, 10, 10, 10);
+					Chat_BTransfer_ByAgentName_SameGroup(10, 10, 10, 10, 10);
+					Chat_BTransfer_ByExt_SameGroup(10, 10, 10, 10, 10);
+					
+				}
+					
+			
+			}catch(Exception e){
+				log.info("I am handling General exception=>"+ e.toString());
+				resetAllActors(testName);
+			}finally{
+				endTestCase(testName);
+			}
+		}
+		
+		
 	
 	
 

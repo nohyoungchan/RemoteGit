@@ -8,9 +8,7 @@
   <parameter name="rT2" value="10"></parameter>
   <parameter name="tT2" value="10"></parameter> 
   <parameter name="wT2" value="10"></parameter> 
-  <parameter name="waitUntilOneAm" value="no"></parameter>  <!--## yes: waits until 1 am tomorrow, no: starts immediately ##-->
-  <parameter name="tearDownOrNot" value="yes"></parameter>  <!--## yes: close all WebBrowsers, no: Don't close ##-->
-  <parameter name="usePhantomJS" value="no"></parameter>  <!--## yes: use PhantomeJS for WebDriver, no: Don't use it. ##-->
+
   
   <test name="VoiceACD Scenarios"> <!--### This is VoiceACD scenarios ### -->
 	  
@@ -20,18 +18,19 @@
        
        <class name="HBTestesNG.TestCases.Test_Chat_All">
        <methods>      
-      	  <include name="Chat_NoQ_Answer" />
-          <include name="Chat_NoQ_Answer_NoWrapTime" /> 
-          <include name="Chat_Q_Answer" /> 
-          <include name="Chat_Queue_Abandon" />  
-          <include name="Chat_Ring_Abandon" />      
-          <include name="Chat_Q_Overflow_R_Ans_1stGroup" />
-          <include name="Chat_Q_Overflow_R_Ans_2ndGroup" /> 
-          <include name="Chat_R_Q_Overflow_Q_R_Ans_2ndGroup" /> 
-          <include name="Chat_R_Q_Overflow_R_Ans_2ndGroup" />  
-          <include name="Chat_Q_OverInterflow_Q_R_Ans_3rdGroup" /> 
-          <include name="Chat_BTransfer_ByExt_SameGroup" /> 
-          <include name="Chat_BTransfer_ByAgentname_SameGroup" />   
+      	  <exclude name="Chat_NoQ_Answer" />
+          <exclude name="Chat_NoQ_Answer_NoWrapTime" /> 
+          <exclude name="Chat_Q_Answer" /> 
+          <exclude name="Chat_Queue_Abandon" />  
+          <exclude name="Chat_Ring_Abandon" />      
+          <exclude name="Chat_Q_Overflow_R_Ans_1stGroup" />
+          <exclude name="Chat_Q_Overflow_R_Ans_2ndGroup" /> 
+          <exclude name="Chat_R_Q_Overflow_Q_R_Ans_2ndGroup" /> 
+          <exclude name="Chat_R_Q_Overflow_R_Ans_2ndGroup" />  
+          <exclude name="Chat_Q_OverInterflow_Q_R_Ans_3rdGroup" /> 
+          <exclude name="Chat_BTransfer_ByExt_SameGroup" /> 
+          <exclude name="Chat_BTransfer_ByAgentName_SameGroup" />   
+          <exclude name="Chat_All_Repeat" /> 
         </methods>
        </class>
         

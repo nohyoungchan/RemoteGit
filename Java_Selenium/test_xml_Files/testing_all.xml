@@ -8,10 +8,6 @@
   <parameter name="rT2" value="10"></parameter>
   <parameter name="tT2" value="10"></parameter> 
   <parameter name="wT2" value="10"></parameter> 
-  <parameter name="skipCCDPrepare" value="no"></parameter>
-  <parameter name="waitUntilOneAm" value="no"></parameter>  <!--## yes: waits until 1 am tomorrow, no: starts immediately ##-->
-  <parameter name="tearDownOrNot" value="yes"></parameter>  <!--## yes: close all WebBrowsers, no: Don't close ##-->
-  <parameter name="usePhantomJS" value="no"></parameter>  <!--## yes: use PhantomeJS for WebDriver, no: Don't use it. ##-->
 
   <test name="VoiceACD Scenarios"> <!--### This is VoiceACD scenarios without Reverse scenarios### -->
 	  
@@ -34,15 +30,15 @@
           <exclude name="VoiceACD_BTransfer_ToExternal" />
           <exclude name="VoiceACD_BTransfer_ToIRN_SameGroup" /> 
           <exclude name="VoiceACD_BTransfer_ToIRN_DifferentGroup" /> 
-          <exclude name="VoiceACD_BTransfer_ToIRN_AQ" />        	 
+          <exclude name="VoiceACD_BTransfer_ToIRN_AQ" />   <!--## Defect ##-->     	 
           <exclude name="VoiceACD_CTransfer_ToExt_SameGroup" />
           <exclude name="VoiceACD_CTransfer_ToExt_DifferentGroup" /> 
           <exclude name="VoiceACD_CTransfer_ToExternal" />
-          <exclude name="VoiceACD_CTransfer_ToIRN_SameGroup" /> 
-          <exclude name="VoiceACD_CTransfer_ToIRN_DifferentGroup" />  
-          <exclude name="VoiceACD_BTransfer_ToExt_SameGroup_byName" />       	 
+          <exclude name="VoiceACD_CTransfer_ToIRN_SameGroup" /> <!--## Defect ##--> 
+          <exclude name="VoiceACD_CTransfer_ToIRN_DifferentGroup" />  <!--## Defect ##-->
+          <exclude name="VoiceACD_BTransfer_ToExt_SameGroup_byName" />      	 
           <exclude name="VoiceACD_BTransfer_ToExt_DifferentGroup_byName" /> 
-          <exclude name="VoiceACD_CTransfer_ToExt_SameGroup_byName" />
+          <exclude name="VoiceACD_CTransfer_ToExt_SameGroup_byName" /> <!--## Defect ##-->
           <exclude name="VoiceACD_CTransfer_ToExt_DifferentGroup_byName" />      
         </methods>
        </class>
@@ -71,7 +67,7 @@
           <exclude name="VoiceACD_CConference_ToExternal" />     
           <exclude name="VoiceACD_CConference_ToExt_DifferentGroup_byName" />
           <exclude name="VoiceACD_CConference_ToExt_SameGroup_byName" />    
-          <include name="VoiceACD_CConference_All" /> 
+          <exclude name="VoiceACD_CConference_All" /> 
         </methods>
        </class>
        
@@ -105,7 +101,7 @@
        <class name="HBTestesNG.TestCases.Test_VoiceNACD_Conference">
         <methods>      
       	  <exclude name="VoiceNACD_CConference_ToExt_DifferentGroup" />
-          <exclude name="VoiceNACD_CConference_ToExt_SameGroup" /> 
+          <include name="VoiceNACD_CConference_ToExt_SameGroup" /> 
           <exclude name="VoiceNACD_CConference_ToIRN_DifferentGroup" /> 
           <exclude name="VoiceNACD_CConference_ToIRN_SameGroup" />  <!--# Not supported except PCM/Physical Phone # -->
           <exclude name="VoiceNACD_CConference_ToExternal" />         
@@ -188,6 +184,7 @@
           <exclude name="Chat_Q_OverInterflow_Q_R_Ans_3rdGroup" /> 
           <exclude name="Chat_BTransfer_ByExt_SameGroup" /> 
           <exclude name="Chat_BTransfer_ByAgentName_SameGroup" />  
+          <exclude name="Chat_All_Repeat" /> 
         </methods>
        </class>
        

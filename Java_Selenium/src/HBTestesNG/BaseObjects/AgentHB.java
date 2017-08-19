@@ -1,49 +1,29 @@
 package HBTestesNG.BaseObjects;
 
-import java.util.Iterator;
-import java.util.Set;
+
 
 //import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.InvalidElementStateException;
+
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.UnhandledAlertException;
-import org.openqa.selenium.WebDriver;
-//import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-//import org.openqa.selenium.firefox.FirefoxDriver;
-//import org.testng.Assert;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
 
-//import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
+import ExceptionCustom.EC_DisconnectBtn;
+import ExceptionCustom.EC_logintoAIC;
+
 
 public class AgentHB extends Agent {
 
-/*	public AgentHB(String username, String password, String extension) throws Exception {
-		super(username, password, extension);
-		log.info("\n@(" + agentType + ") " +  username + " #### Initializing ####");
-	}*/
 
 	public AgentHB() throws Exception{
 		super();
 	}
 	
 		
-	     /*   while(true)
-        {
-			try{
-				wait(5);
-				releaseAgent();
-		  	    resumeAgent();
-		  	    break;
-			}catch(Exception e){
-				log.info("\n@(" + agentType + ") " +  username + " #### loIntoWebAgent: Something wrong, so refresh ####");
-				refreshPage();
-			}
-        }
-  	  */
-
 	
 	
 	public boolean CheckStatus(String strStatus) throws Exception{
@@ -128,7 +108,7 @@ public class AgentHB extends Agent {
   
 	
 
-	public boolean logIntoWebAgent() throws Exception {
+	public void logIntoWebAgent() throws Exception {
 	    
 		log.info("\n@(" + agentType + ") " +  username + " #### Go to Login Page ####");
 		WebElement webElement;
@@ -143,7 +123,7 @@ public class AgentHB extends Agent {
 		maximizeBrowser();
 		//
 		
-		//#### Precondition
+		log.info("## Precondition: logIntoWebAgent");
 		wait(3);
 		//actionResult = logIntoWebAgent_PreCondition();
 		webElement=conditonClickable_XPath("logIntoWebAgent_PreCondition", "webAgentUserNameTxtBox", 60);
@@ -161,12 +141,15 @@ public class AgentHB extends Agent {
 			wait(3);
 			
 			webElement=conditonClickable_XPath("logIntoWebAgent_PostCondition", "btnResume", 60);
-			if(webElement != null) actionResult = true;
+			if(webElement == null) actionResult = false;
 
+		}else {
+			actionResult = false;
 		}
 		minimizeBrowser();
-		//restoreDimenSion();
-		return actionResult;
+		if (actionResult == false)  throw new EC_logintoAIC("@@ " + username + "logIntoWebAgent() failed");
+
+		//return actionResult;
 	}
 	
 	  public void logIntoGroup() throws Exception{
@@ -187,27 +170,29 @@ public class AgentHB extends Agent {
 	  public void logOutGroups() throws Exception{
 		  log.info("\n@(" + agentType + ") " +  username + " #### Logging out ####");
 		  try{
-			  getCurrentDimenSion();
+			  //getCurrentDimenSion();
 			  maximizeBrowser();
 			  String txtReturned;  
 			  txtReturned= driver.findElement(By.xpath(AllActors.hbWebAgentXPathHash.get("btnLogIntoGroup"))).getText();
 			  if (!txtReturned.equalsIgnoreCase("Log into my queues")) //If agent is logged out, log in.
 			  {
 			      log.info("\n@(" + agentType + ") " +  username + " #### Agent is currently logged in=>Click Log out button ####");
-			      click_XPath(("btnLogIntoGroup"));
+			      click_XPath("btnLogIntoGroup");
 			      wait(1);
 			  }else{//if agent is already logged in, print status only
 				  log.info("\n@(" + agentType + ") " +  username + " #### Agent is alreay logged out ####");
 			  	//log.info("** Agent Status: " + txtReturned);
 			  }
-			  restoreDimenSion();
+			  //restoreDimenSion();
+			  
 		  }catch(NoSuchElementException e){
 			  log.info("\n@(" + agentType + ") " +  username + "=> @@@@@ NoSuchElementException on logOutGroups()");
 			  
 		  }catch(Exception e){
 			  log.info("\n@(" + agentType + ") " +  username + "=> @@@@@ exception on logOutGroups()");
 			  
-			  
+		  }finally{
+			  minimizeBrowser();
 		  }
 	  }
 	  
@@ -235,7 +220,6 @@ public class AgentHB extends Agent {
 				  }else{
 				  	log.info("\n@(" + agentType + ") " +  username + ": State=> " + txtReturned);
 				  }
-				  minimizeBrowser();
 			}catch(InterruptedException e){
 				//log.info("I am handling Interrupted Exceptionj=>"+ e.toString());
 				throw e;
@@ -245,7 +229,9 @@ public class AgentHB extends Agent {
 				log.info("I am handling General exception=>"+ e.toString());
 				state = "weird";
 				throw e;
-			}
+			}finally{
+				  minimizeBrowser();
+			  }
 	  }
 	  
 	  public void releaseAgentSecondCode() throws Exception{
@@ -262,7 +248,6 @@ public class AgentHB extends Agent {
 			      click_XPath("btnReleaseCodeSelect");
 			      wait(2);
 			      click_XPath("secondReleaseCode");
-			      minimizeBrowser();
 				  
 			}catch(InterruptedException e){
 				//log.info("I am handling Interrupted Exceptionj=>"+ e.toString());
@@ -275,7 +260,9 @@ public class AgentHB extends Agent {
 				errorCount++;
 				errorString.concat("fail to releaseAgentSecondCode;");
 				state = "weird";
-			}
+			}finally{
+				  minimizeBrowser();
+			  }
 	  }
 	  
 	  public void releaseAgentThirdCode() throws Exception{
@@ -292,7 +279,6 @@ public class AgentHB extends Agent {
 			      click_XPath(("btnReleaseCodeSelect"));
 			      wait(2);
 			      click_XPath(("thirdReleaseCode"));
-			      minimizeBrowser();
 				  
 			}catch(InterruptedException e){
 				//log.info("I am handling Interrupted Exceptionj=>"+ e.toString());
@@ -303,7 +289,9 @@ public class AgentHB extends Agent {
 				log.info("I am handling General exception=>"+ e.toString());
 				errorCount++;
 				state = "weird";
-			}
+			}finally{
+				  minimizeBrowser();
+			  }
 			      
 	  }
 	  
@@ -370,7 +358,7 @@ public class AgentHB extends Agent {
 			  click_XPath("btnAnswer");
 			  wait(talkSec, "Talk");
 			  state = "busy";
-			  minimizeBrowser();
+			  //minimizeBrowser();
 			  //restoreDimenSion();
 			  //Assert.assertTrue(true, "Answered Correctly");
 		  }catch(InterruptedException e){
@@ -383,6 +371,8 @@ public class AgentHB extends Agent {
 			log.info("\n@(" + agentType + ") " +  username + " exception on answering acd call" + e.toString() );
 			state = "weird";
 			throw e;
+		  }finally {
+			  minimizeBrowser();
 		  }
 	  }
 	  
@@ -397,9 +387,6 @@ public class AgentHB extends Agent {
 			  click_XPath("btnAnswerEmail");
 			  wait(talkSec, "Talk");
 			  state = "busy";
-			  minimizeBrowser();
-			  //restoreDimenSion();
-			  //Assert.assertTrue(true, "Answered Correctly");
 		  }catch(InterruptedException e){
 			  errorCount++;
 			  log.error("@ " + username + " : @@ Thread inturrepted -> throw again on answerACDCall()");
@@ -409,48 +396,49 @@ public class AgentHB extends Agent {
 			 errorString.concat("fail to " + strFunctionName + ";");
 			log.info("\n@(" + agentType + ") " +  username + " exception on answering acd call" + e.toString() );
 			state = "weird";
+		  }finally{
+			  minimizeBrowser();
 		  }
 	  }
 	  
 	  public void hold(int secInt) throws InterruptedException{
 		  log.info("\n@(" + agentType + ") " +  username + " #### Click hold button ####");
 		  try{
-			  getCurrentDimenSion();
 			  maximizeBrowser();
-
-			  
+ 
 			  click_XPath("btnHold");
 			  wait(secInt, "holding...");
 			  state = "busy";
-			  restoreDimenSion();
-			  //Assert.assertTrue(true, "Answered Correctly");
+
 		  }catch(InterruptedException e){
 			  log.error("@ " + username + " : @@ Thread inturrepted -> throw again on answerACDCall()");
 			  throw e;
 		 }catch(Exception e){
 			log.info("\n@(" + agentType + ") " +  username + " exception on answering acd call" + e.toString() );
 			state = "weird";
+		  }finally{
+			  minimizeBrowser();
 		  }
 	  }
 	  
 	  public void unHold(int secInt) throws InterruptedException{
 		  log.info("\n@(" + agentType + ") " +  username + " #### Click unhold button ####");
 		  try{
-			  getCurrentDimenSion();
 			  maximizeBrowser();
 
 			  //unholding is using the same button which is "btnHold"
 			  click_XPath("btnHold");
 			  wait(secInt, "unholding...");
 			  state = "busy";
-			  restoreDimenSion();
-			  //Assert.assertTrue(true, "Answered Correctly");
+
 		  }catch(InterruptedException e){
 			  log.error("@ " + username + " : @@ Thread inturrepted -> throw again on answerACDCall()");
 			  throw e;
 		 }catch(Exception e){
 			log.info("\n@(" + agentType + ") " +  username + " exception on answering acd call" + e.toString() );
 			state = "weird";
+		  }finally{
+			  minimizeBrowser();
 		  }
 	  }
 	  
@@ -497,7 +485,6 @@ public class AgentHB extends Agent {
 	  public synchronized void answerChatAndType(int ringSec, int talkSec) throws InterruptedException{
 		  log.info("\n@(" + agentType + ") " +  username + " #### answerChatAndType ####");
 		  try{
-			  getCurrentDimenSion();
 			  maximizeBrowser();
 			  wait(ringSec, "Ring");
 
@@ -508,13 +495,14 @@ public class AgentHB extends Agent {
 			  wait(talkSec, "Talk");
 			  state = "busy";
 			  enterXPathAndEnter("Hello", "webAgentChatSendTxtBox");
-			  restoreDimenSion();
 		  }catch(InterruptedException e){
 			  log.error("@ " + username + " : @@ Thread inturrepted -> throw again on answerACDCall()");
 			  throw e;
 		 }catch(Exception e){
 			log.info("\n@(" + agentType + ") " +  username + " exception on answering acd call" + e.toString() );
 			state = "weird";
+		  }finally{
+			  minimizeBrowser();
 		  }
 	  }
 	  
@@ -536,39 +524,37 @@ public class AgentHB extends Agent {
 			  log.info("\n@(" + agentType + ") " +  username + ": Confirm blind transfer");
 			  click_XPath(("btnBlindTransfer"));
 			  state = "idle";
-			  minimizeBrowser();
-			  //restoreDimenSion();
-			  //Assert.assertTrue(true, "Answered Correctly");
 		  }catch(Exception e){
 			  log.info("\n@(" + agentType + ") " +  username + " exception on blindTransfer" + e.toString());
 			  state = "weird";
+		  }finally{
+			  minimizeBrowser();
 		  }
 	  }
 	  
 	  public void blindTransfer_byName(String name) throws Exception{
 		  log.info("\n@(" + agentType + ") " +  username + " #### Blind Transfer by Name to =>" + name +" ####");
 		  try{
-			  getCurrentDimenSion();
+			  //getCurrentDimenSion();
 			  maximizeBrowser();
 			  wait(2);
 			  log.info("\n@(" + agentType + ") " +  username + ": Clikc Transfer Button");
 			  click_XPath(("btnTransfer"));
 			  wait(2);
 			  log.info("\n@(" + agentType + ") " +  username + ": Type the name: " + name);
-			  typeElementXPath(AllActors.hbWebAgentXPathHash.get("txtBoxTransfer"), name);
-			  //selectFromInput_ByPartialText(name);
-			  wait(2);		  
-			  click_XPath(("FirstlistFromTextBox"));
+
+			  selectFromInput_ByPartialText(name, "txtBoxTransfer");
 			  wait(1);
-			  log.info("\n@(" + agentType + ") " +  username + ": Confirm blind transfer");
-			  click_XPath(("btnBlindTransfer"));
+			  log.info("\n@(" + agentType + ") " +  username + ": Click blind transfer btn");
+			  click_XPath("btnBlindTransfer");
 			  state = "idle";
-			  restoreDimenSion();
-			  //Assert.assertTrue(true, "Answered Correctly");
+			  wait(2);
 		  }catch(Exception e){
 			  log.info("\n@(" + agentType + ") " +  username + " exception on blindTransfer" + e.toString());
 			  state = "weird";
 			  throw e;
+		  }finally{
+			  minimizeBrowser();
 		  }
 	  }
 	  
@@ -593,14 +579,14 @@ public class AgentHB extends Agent {
 			  log.info("\n@(" + agentType + ") " +  username + " exception on Consult Transfer" + e.toString());
 			  state = "weird";
 			  throw e;
+		  }finally{
+			  minimizeBrowser();
 		  }
 	  }
 	  
 	  public void consultTransfer_byName(String name) throws Exception{
 		  log.info("\n@(" + agentType + ") " +  username + " #### Consult Transfer to =>" + name+" ####");  
 		  try{
-			  getCurrentDimenSion();
-			  //This is needed for chat transfer since without it, selenium cannot confirm transfer.
 			  maximizeBrowser();
 			  wait(2);
 			  log.info("\n@(" + agentType + ") " +  username + ": Clikc Transfer Button");
@@ -613,11 +599,12 @@ public class AgentHB extends Agent {
 			  wait(2);		  
 			  log.info("\n@(" + agentType + ") " +  username + ": Press Consult transfer button");
 			  click_XPath(("btnConsultTransfer"));
-			  restoreDimenSion();
 		  }catch(Exception e){
 			  log.info("\n@(" + agentType + ") " +  username + " exception on Consult Transfer" + e.toString());
 			  state = "weird";
 			  throw e;
+		  }finally{
+			  minimizeBrowser();
 		  }
 	  }
 	  
@@ -629,10 +616,11 @@ public class AgentHB extends Agent {
 			  click_XPath(("btnConsultTransferConfirm"));
 			  state = "idle";
 			  minimizeBrowser();
-			  //Assert.assertTrue(true, "Answered Correctly");
 		  }catch(Exception e){
 			  log.info("\n@(" + agentType + ") " +  username + " exception on blindTransfer" + e.toString());
 			  state = "weird";
+		  }finally{
+			  minimizeBrowser();
 		  }
 	  }
 	  
@@ -653,11 +641,11 @@ public class AgentHB extends Agent {
 			  log.info("\n@(" + agentType + ") " +  username + ": Press Consult Conference button");
 			  click_XPath(("btnConsultConference"));
 			  wait(2);
-			  minimizeBrowser();
-			  //restoreDimenSion();
 		  }catch(Exception e){
 			  log.info("\n@(" + agentType + ") " +  username + " exception on Consult Conference" + e.toString());
 			  state = "weird";
+		  }finally{
+			  minimizeBrowser();
 		  }
 
 	  }
@@ -665,8 +653,6 @@ public class AgentHB extends Agent {
 	public void consultConference_ByAgentName(String agentName) throws Exception{
 		  log.info("\n@(" + agentType + ") " +  username + " #### Consult Conference to =>" + agentName +" ####");
 		  try{
-			  getCurrentDimenSion();
-			  //This is needed for chat transfer since without it, selenium cannot confirm transfer.
 			  maximizeBrowser();		  
 			  wait(2);
 			  log.info("\n@(" + agentType + ") " +  username + ": Clikc Conference Button");
@@ -683,7 +669,7 @@ public class AgentHB extends Agent {
 			  state = "weird";
 			  throw e;
 		  }finally{
-			  restoreDimenSion();
+			  minimizeBrowser();
 		  }
 		  
 
@@ -697,16 +683,17 @@ public class AgentHB extends Agent {
 			  if(!click_XPath(("btnConsultConferenceConfirm"))) throw new Exception();
 			  //Assert.assertTrue(true, "Answered Correctly");
 			  wait(2);
-			  minimizeBrowser();
 		  }catch(Exception e){
 			  log.info("\n@(" + agentType + ") " +  username + " exception on Confirm Conference" + e.toString());
 			  state = "weird";
 			  throw e;
+		  }finally{
+			  minimizeBrowser();
 		  }
 	  }
 	  
 	  
-	  public void disconnectByWebAgent() {
+	  public void disconnectByWebAgent() throws EC_DisconnectBtn {
 		  log.info("\n@(" + agentType + ") " +  username + " #### Disconnect by WebAgent ####");
 		  boolean res;
 		  res = true;
@@ -714,6 +701,7 @@ public class AgentHB extends Agent {
 			  //getCurrentDimenSion();
 			  maximizeBrowser();
 			  
+			  log.info("\n ## Pre-Condition of disconnectByWebAgent()");
 			  if(waitUntilClickable("btnDisconnect", 5) == null){
 				  click_XPath(("panelCurrentCall"));  //This is needed for a consult transferred/conference call.
 			  }
@@ -724,12 +712,28 @@ public class AgentHB extends Agent {
 			  }else {
 				  log.info("\n@(" + agentType + ") " +  username + " doesn't need to disconnect"); 
 			  };
+			  
+/*			  log.info("\n ## Post-Condition of disconnectByWebAgent()");
+			  if(existsElement("btnDisconnect")) {
+				  wait(2, "check one more time for btnDisconnect");
+				  if(existsElement("btnDisconnect")) {
+				     log.info("\n@(" + agentType + ") " +  username + " disconnectBtn still exist after clicking it");
+				     throw new EC_DisconnectBtn("Fail to close disconnectBtn");
+				  }
+			  }*/
 			  state = "idle";
 			  //restoreDimenSion();
-			  minimizeBrowser();
-		  }catch(Exception e){
+			  
+		  }catch(EC_DisconnectBtn e) {
+			  errorCount++;
+			  errorString += "# " + username+ "Exceptionafter pressing btnDisconnect";
+			  //Assert.assertTrue(false, errorString);
+			  throw new EC_DisconnectBtn("Fail to close disconnectBtn");}
+		  catch(Exception e){
 			  log.info("\n@(" + agentType + ") " +  username + " exception on disconnectByWebAgent");
 			  state = "weird";
+		  }finally {
+				minimizeBrowser();
 		  }
 	  }
 	  
@@ -738,7 +742,6 @@ public class AgentHB extends Agent {
 		  boolean res;
 		  res = true;
 		  try{
-			  getCurrentDimenSion();
 			  maximizeBrowser();
 			  click_XPath(("panelCurrentChat"));  //This is needed for a consult transferred call.
 			  wait(2);
@@ -748,10 +751,11 @@ public class AgentHB extends Agent {
 				  log.info("\n@(" + agentType + ") " +  username + " doesn't need to disconnect"); 
 			  };
 			  state = "idle";
-			  restoreDimenSion();
 		  }catch(Exception e){
 			  log.info("\n@(" + agentType + ") " +  username + " exception on disconnectChatByWebAgent");
 			  state = "weird";
+		  }finally{
+			  minimizeBrowser();
 		  }
 	  }
 	  
@@ -767,12 +771,12 @@ public class AgentHB extends Agent {
 			  click_XPath(("OACDDisconnectSuccessful"));
 	 
 			  state = "idle";
-			  //restoreDimenSion();
-			  minimizeBrowser();
 		  
 		  }catch(Exception e){
 			  log.info("\n@(" + agentType + ") " +  username + " exception on disconnectOACD");
 			  state = "weird";
+		  }finally{
+			  minimizeBrowser();
 		  }
 	  }
 	  
@@ -811,7 +815,7 @@ public class AgentHB extends Agent {
 		  
 		  }catch(Exception e){
 			  log.info("\n@(" + agentType + ") " +  username + " exception on disconnectByWebAgent_Reset" + e.toString());
-			  state = "weird";
+			  state = "idle";  //There might be any call left, so this is OK.
 		  }
 
 	  }
@@ -882,7 +886,7 @@ public class AgentHB extends Agent {
 
 		  try{
 			  maximizeBrowser();
-			  if (!click_XPath("btnWrapExtend")){
+			  if (!click_XPath("btnWrapExtend", 2)){
 				  log.info("\n@(" + agentType + ") " +  username + " : Wraup could be 0, so finish wrapup");
 				  return;
 			  }
@@ -915,13 +919,14 @@ public class AgentHB extends Agent {
 		  String strFunctionName = "signoutWebAgent";
 		  
 		  try{
-			  getCurrentDimenSion();
+			  //getCurrentDimenSion();
 			  maximizeBrowser();
-			  click_XPath(("btnSignOutMenu"));
+			  click_XPath("btnSignOutMenu");
 			  wait(2);
-			  click_XPath(("btnSignOut"));
+			  click_XPath("btnSignOut");
 			  wait(5);
-			  restoreDimenSion();
+			  minimizeBrowser();
+			  //restoreDimenSion();
 		  }catch(Exception e){
 			  log.info("\n@(" + agentType + ") " +  username + " exception on signoutWebAgent" + e.toString());
 			  errorCount++;
@@ -934,7 +939,7 @@ public class AgentHB extends Agent {
 		  log.info("\n@(" + agentType + ") " +  username + " #### Signout When there is no call####");
 		  
 		  try{
-			  getCurrentDimenSion();
+			  //getCurrentDimenSion();
 			  maximizeBrowser();
 			  resumeAgent();
 			  
@@ -953,7 +958,8 @@ public class AgentHB extends Agent {
 			  wait(2);
 			  click_XPath(("btnSignOut"));
 			  wait(5);
-			  restoreDimenSion();
+			  maximizeBrowser();
+			  //restoreDimenSion();
 		  }catch(Exception e){
 			  log.info("\n@(" + agentType + ") " +  username + " exception on signoutWebAgent" + e.toString());
 			  state = "weird";
@@ -964,9 +970,10 @@ public class AgentHB extends Agent {
 	  
 	  public void tearDownAll(){
 		log.info("\n@(" + agentType + ") " +  username + " #### Logout and Close FireFox ####");
-		//signoutWebAgent();
 		try{
 			logOutGroups();
+			//signoutWebAgent();
+			wait(2);
 			driver.quit();
 			driver = null;
 			currentTime();	  
@@ -981,6 +988,7 @@ public class AgentHB extends Agent {
 			//signoutWebAgent();
 			try{
 				state = "closed";
+				
 				driver.quit();
 				driver = null;
 				currentTime();	  

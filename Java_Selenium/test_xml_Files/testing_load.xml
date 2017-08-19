@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Java_Selenium LoadTest" verbose="1">
-  <parameter name="waitUntilOneAm" value="no"></parameter>  <!--## yes: waits until 1 am tomorrow, no: starts immediately ##-->
-  <parameter name="tearDownOrNot" value="yes"></parameter>  <!--## yes: close all WebBrowsers, no: Don't close ##-->
   
   <test name="VoiceACD Scenarios"> <!--### This is VoiceACD scenarios ### -->
 	  

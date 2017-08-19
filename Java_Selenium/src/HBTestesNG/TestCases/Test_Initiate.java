@@ -4,6 +4,8 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Test;
+
+import ExceptionCustom.EC_logintoAIC;
 import Utility.PostCondition;
 
 import HBTestesNG.BaseObjects.*;import org.testng.SkipException;
@@ -18,14 +20,14 @@ public class  Test_Initiate extends TestCaseObject{
 	}
 	
 	@BeforeSuite
-	@Parameters({"waitUntilOneAm", "skipCCDPrepare"})
-	public void beforeSuite(String waitUntilOneAm, String skipCCDPrepare) throws Exception {
+	public void beforeSuite() throws Exception {
 		
 		try  {
 			//wait_for_inputToStart("Press Enter to start a test");
-			waitUntilTomorrowOneAm(waitUntilOneAm);
+
 			allActors = new AllActors(); //This reads all ini and starts web.
 			startTestSuitMessage();  
+			waitUntilTomorrowOneAm(AllActors.testDataIni.get("TestFlow", "waitUntilOneAm"));
 	
 				
 			for (int i=0; i < allActors.agents.size() ; i++ ){
@@ -43,13 +45,15 @@ public class  Test_Initiate extends TestCaseObject{
 			}
 	
 			//CCD configuration before starting suite: You can skip this by "skipCCDPrepare" variable
-			if (allActors.supervisors.size() >0 && skipCCDPrepare == "no") 
+			if (allActors.supervisors.size() >0 &&  AllActors.testDataIni.get("TestFlow", "skipCCDPrepare") == "no") 
 				allActors.supervisors.get(0).Max_LogIn_PrepareTest_LogOut_Min();
 			
 			currentTimeStart();
+		}catch (EC_logintoAIC e) {
+			
 		}catch (Exception e) {
 			log.error("Exception on before suite: Failing all");
-			afterSuite("yes");
+			afterSuite();
 			
 		}
 	
@@ -60,10 +64,13 @@ public class  Test_Initiate extends TestCaseObject{
 
 
 	@AfterSuite
-	@Parameters({"tearDownOrNot"})
-	public void afterSuite(String tearDownOrNot) throws Exception {
+	public void afterSuite() throws Exception {
+		
+		log.info("\n\n#######################################################");
+		log.info("########### Starting End of TestSuite  ###################");
+		log.info("#########################################################\n\n");
 
-		if (tearDownOrNot.contains("no")) {
+		if (AllActors.testDataIni.get("TestFlow", "tearDownOrNot").contains("no")) {
 			log.info("\n\n%%% Waiting for a user input: Enter any key to close all actors %%%");
 			System.in.read();
 			//return;

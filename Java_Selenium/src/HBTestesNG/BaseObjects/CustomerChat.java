@@ -24,7 +24,7 @@ public boolean startChat() throws Exception {
 		webElement = null;
 		
 		maximizeBrowser();
-		driver.get(AllActors.globalVariableHash.get("chatURL")); 
+		driver.get(AllActors.envIni.get("URL", "chatURL")); 
 		
 		//#### Precondition
 		wait(3);
@@ -72,7 +72,7 @@ public boolean startChat() throws Exception {
 		
 		try{
 			maximizeBrowser();
-			driver.get(AllActors.globalVariableHash.get("chatURL")); 
+			driver.get(AllActors.envIni.get("URL", "chatURL")); 
 			
 			//#### Precondition
 			wait(3);

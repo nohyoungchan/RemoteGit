@@ -174,7 +174,7 @@ public class TestCaseObject extends TestObject{
 		     userInputString=  WaitingForUserInput(20);
 		     //This will stop all remaining test cases
 		     if (userInputString.contains("yes")) stopTest = "yes"; 
-		     failTest(testName + " has failed");
+		     failTest(testName + " has failed because => " + errorString);
 		}else {
 		    log.info("XXXXXXXXXXXXXXXXXXXXXXX  "+"Test Result(Successful) => "+ testName + " XXXXXXXXXXXXXXXXXXXXXX");
 		    log.info("X");

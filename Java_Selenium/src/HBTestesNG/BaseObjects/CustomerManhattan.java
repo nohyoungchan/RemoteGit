@@ -7,7 +7,7 @@ import Utility.Utilities;
 
 
 public class CustomerManhattan  extends TestObject {
-	public String username, password, extension, did, agentType, state;
+	public String username, password, extension, did, agentType;
 	public String imgFolder, autoitFolder;
 	public Screen screen;
    
@@ -26,6 +26,7 @@ public class CustomerManhattan  extends TestObject {
 		wait(2);
 		String strAutoItCommand = "AutoIt3.exe " + autoitFolder + "manhattan_relocate.exe " + x + " " + y;
     	Utilities.executeCommand(strAutoItCommand);
+    	currentState ="started";
 		currentTime();
 	}
 	
@@ -54,6 +55,7 @@ public class CustomerManhattan  extends TestObject {
     	}
     
 		log.info("\n@ Manhattan : " +  username + " #### Login Completed ####");
+		currentState ="loggedin_idle";
 		currentTime();
 	}
 	
@@ -82,6 +84,7 @@ public class CustomerManhattan  extends TestObject {
     	}
     
 		log.info("\n@ Manhattan : " +  username + " #### Login Completed ####");
+		currentState = "loggedin_idle";
 		currentTime();
 	}
 	
@@ -97,6 +100,7 @@ public class CustomerManhattan  extends TestObject {
     	clickAppear(screen, patternStateBtn);
     	wait(1);
     	clickAppear(screen, logoutBtn);
+    	currentState ="loggedout";
 		currentTime();
 	}
 	
@@ -107,6 +111,7 @@ public class CustomerManhattan  extends TestObject {
     	activateManhattan();
     	wait(waitSec);
     	clickAppear(screen, closeIcon);
+    	currentState ="closed";
 		currentTime();
 	}
 	
@@ -123,7 +128,7 @@ public class CustomerManhattan  extends TestObject {
 	    	wait(2);
 
 		}
-	    state = "busy";
+	    currentState ="loggedin_busy";
 	    
 	    //signoutWebAgent(); 
 	    //tearDownAll();
@@ -144,6 +149,7 @@ public class CustomerManhattan  extends TestObject {
 		  clickAppear(screen, patternoffhookBtn);
 		  screen.type(number);
 		  screen.type(Key.ENTER);
+		  currentState ="loggedin_busy";
 
 	  }
 	  
@@ -157,6 +163,7 @@ public class CustomerManhattan  extends TestObject {
     	  clickAppear(screen, callBox);
     	  clickAppear(screen, dropBtn);
     	  
+    	  currentState ="loggedin_idle";
 		  currentTime();
 		 
 	  }
@@ -172,6 +179,7 @@ public class CustomerManhattan  extends TestObject {
     	  clickAppear(screen, callBox);
     	  clickAppear(screen, dropBtn);
     	  
+    	  currentState ="loggedin_idle";
 		  currentTime();
 		 
 	  }
@@ -183,6 +191,7 @@ public class CustomerManhattan  extends TestObject {
 		  activateManhattan();
     	  wait(waitSec);
     	  clickAppear(screen, answerBtn);
+    	  currentState ="loggedin_busy";
 		  currentTime();
 		 
 
@@ -195,6 +204,7 @@ public class CustomerManhattan  extends TestObject {
 	    	
 		  activateManhattan();
 	      clickAppear(screen, abandonBtn);
+	      currentState ="loggedin_idle";
 		  currentTime();
 		 
 

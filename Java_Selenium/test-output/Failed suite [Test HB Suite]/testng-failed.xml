@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Failed suite [Test HB Suite]]">
+  <parameter name="tT1" value="10"/>
+  <parameter name="rT2" value="10"/>
+  <parameter name="skipCCDPrepare" value="yes"/>
+  <parameter name="tT2" value="10"/>
+  <parameter name="wT2" value="10"/>
+  <parameter name="usePhantomJS" value="no"/>
+  <parameter name="wT1" value="10"/>
+  <parameter name="tearDownOrNot" value="yes"/>
+  <parameter name="waitUntilOneAm" value="no"/>
+  <parameter name="rT1" value="10"/>
+  <parameter name="qT1" value="10"/>
+  <test name="VoiceACD Scenarios(failed)(failed)">
+    <classes>
+      <class name="HBTestesNG.TestCases.Test_Initiate">
+        <methods>
+          <include name="beforeSuite"/>
+          <include name="afterSuite"/>
+        </methods>
+      </class> <!-- HBTestesNG.TestCases.Test_Initiate -->
+      <class name="HBTestesNG.TestCases.Test_Chat_All">
+        <methods>
+          <include name="afterClass"/>
+          <include name="Chat_All_Repeat" invocation-numbers="0"/>
+          <include name="beforeClass"/>
+        </methods>
+      </class> <!-- HBTestesNG.TestCases.Test_Chat_All -->
+      <class name="HBTestesNG.TestCases.Test_VoiceACD_Transfer">
+        <methods>
+          <include name="VoiceACD_BTransfer_ToExt_DifferentGroup_byName"/>
+          <include name="VoiceACD_CTransfer_ToExt_SameGroup"/>
+          <include name="VoiceACD_CTransfer_ToExt_SameGroup_byName"/>
+          <include name="beforeClass"/>
+          <include name="VoiceACD_CTransfer_ToIRN_SameGroup"/>
+          <include name="VoiceACD_CTransfer_ToIRN_DifferentGroup"/>
+          <include name="VoiceACD_BTransfer_ToExt_SameGroup_byName"/>
+          <include name="VoiceACD_BTransfer_ToIRN_AQ"/>
+        </methods>
+      </class> <!-- HBTestesNG.TestCases.Test_VoiceACD_Transfer -->
+    </classes>
+  </test> <!-- VoiceACD Scenarios(failed)(failed) -->
+</suite> <!-- Failed suite [Failed suite [Test HB Suite]] -->

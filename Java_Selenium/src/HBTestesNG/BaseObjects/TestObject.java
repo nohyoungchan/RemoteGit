@@ -31,10 +31,12 @@ public class TestObject extends Thread{
 	  public static String stopMain;  //If this is yes, stop Main which stop all.
 	  public static int errorCount = 0;
 	  public static String errorString = "start@good;";
+	  public String currentState;
 
 	  
 	  TestObject(){
 		  PropertyConfigurator.configure(".\\log\\log4j.properties");
+		  currentState ="created";
 	  }
 	 
 	/*

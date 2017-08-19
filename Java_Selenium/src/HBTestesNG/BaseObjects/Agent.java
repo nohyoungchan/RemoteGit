@@ -188,7 +188,8 @@ public class Agent extends TestObject {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("chrome.switches","--disable-extensions");
 
-		//System.setProperty("webdriver.chrome.driver", "C:\\young\\HBLoadAutomation\\chromedriver.exe");
+
+		//System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 	    driver = new ChromeDriver(options);
 	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -448,6 +449,11 @@ public class Agent extends TestObject {
 		}
 	}
 	
+	/**
+	 * 
+	 * @param strXPath : This is real full XPath
+	 * @return
+	 */
 	  public boolean existsElementXPath(String strXPath) {
 		    try {
 		        driver.findElement(By.xpath(strXPath));
@@ -461,6 +467,27 @@ public class Agent extends TestObject {
 		    }
 		    return true;
 		}
+	  
+	/**
+	 * 
+	 * @param strName: The full XPath can be found by this strName
+	 * @return
+	 */
+	  public boolean existsElement(String strName) {
+		    try {
+		        driver.findElement(By.xpath(getXPath(strName)));
+		        log.info("XPath=> " + strName + " : exists");
+		    } catch (NoSuchElementException e) {
+		    	log.info("NoSuchElementExceptio is catched");
+		        return false;
+		    }catch (Throwable e){  //This catches all exception and errors
+		    	log.info("General exception is catched");
+		    	return false;
+		    }
+		    return true;
+		}
+	  
+	  
 	  
 	  
 	  public boolean existsElementID(String strID) {
@@ -781,8 +808,13 @@ public class Agent extends TestObject {
 		 return returnResult;
 	 }
 	 
-	 //strXPath is name, not XPath value
-	 //Wait until xpath component is clickable.
+
+	 /**
+	  * 
+	  * @param strXPath : This is an identifiable name like btnResume
+	  * @param intTimeOutSec
+	  * @return returning webElement
+	  */
 	  public WebElement waitUntilClickable(String strXPath, int intTimeOutSec) {
 		 log.info("# waitUntilClickable => " + strXPath + " : for(sec) => " + intTimeOutSec);
 		 String xPath;
@@ -846,6 +878,11 @@ public class Agent extends TestObject {
 	 }
 	  
 
+	  /**
+	   * 
+	   * @param name: This is idenfiable name like btnRelease
+	   * @return xPath
+	   */
 	 public String  getXPath(String name) {
 			 log.info("# getXPath for  => " + name );
 			 String xPath;
@@ -918,7 +955,7 @@ public class Agent extends TestObject {
 		 
 		 webElement = null;
 		 returnResult = true;
-		 waitTimeSec = 30;
+		 waitTimeSec = 10;
 
 		 try{
 			 
@@ -978,7 +1015,7 @@ public class Agent extends TestObject {
 		 
 		 webElement = null;
 		 returnResult = true;
-		 waitTimeSec = 30;
+		 waitTimeSec = 10;
 
 		 try{
 			 
@@ -1123,6 +1160,48 @@ public class Agent extends TestObject {
 		  }
 			 
 	 }
+	 
+	 /**
+	  * 
+	  * 
+	  * @param fullText : partal text would be selected from xx@yy: xx is the partial text
+	  * @param textBoxType : This can be name of xpath
+	  * @throws Exception
+	  */
+	 
+	 public void selectFromInput_ByPartialText(String fullText, String textBoxType) throws Exception {
+		 log.info("### selectFromInput_ByPartialText => " + fullText + "from => " + textBoxType);
+		 int i, max = 100;
+		 WebElement element;
+		 String elementText;
+		 
+		 try{
+			 //To show list elements, this needs to be done.
+			 //This action is the same as transfer and conference
+			 WebElement dropdown = waitUntilClickable(textBoxType, 10);
+			 dropdown.click();
+			 wait(1);
+			 for(i = 1; i < max ; i++){
+				 element = driver.findElement(By.xpath(".//*[@id='agent-list']/li[" + i + "]/a"));
+				 elementText = element.getText();
+				 log.info(i + "th Element => " + elementText + "vs the partial text: " + fullText);
+				 if (fullText.contains(elementText)){ 
+					 element.click();
+					 break;
+				 }
+			 }
+		 
+		  }catch(Exception e){
+			  log.info("\n@(" + agentType + ") " +  username + " selectFromInput_ByPartialText()" + e.toString());
+			  state = "weird";
+			  throw e;
+		  }finally{
+
+		  }
+			 
+	 }
+	 
+	 
 	 
 	 public boolean selectFromComboBox_ByPartialText(String entityName, String partialText) throws Exception {
 		 

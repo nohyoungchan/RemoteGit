@@ -1,120 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="9" passed="9">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Test HB Suite" duration-ms="1497485" started-at="2017-08-14T23:05:45Z" finished-at="2017-08-14T23:30:42Z">
+  <suite name="Test HB Suite" duration-ms="144476" started-at="2017-08-19T23:16:19Z" finished-at="2017-08-19T23:18:43Z">
     <groups>
-      <group name="Test_Email_All_ClassLevel">
-        <method signature="Test_Email_All.Email_BTransfer_ToExt_SameGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-1,5,main]]" name="Email_BTransfer_ToExt_SameGroup" class="HBTestesNG.TestCases.Test_Email_All"/>
-        <method signature="Test_Email_All.Email_NoQ_Answer(int, int, int)[pri:0, instance:Thread[Thread-1,5,main]]" name="Email_NoQ_Answer" class="HBTestesNG.TestCases.Test_Email_All"/>
-        <method signature="Test_Email_All.Email_NoQ_Answer_NoWrapTime(int, int)[pri:0, instance:Thread[Thread-1,5,main]]" name="Email_NoQ_Answer_NoWrapTime" class="HBTestesNG.TestCases.Test_Email_All"/>
-        <method signature="Test_Email_All.Email_Q_Answer(int, int, int, int)[pri:0, instance:Thread[Thread-1,5,main]]" name="Email_Q_Answer" class="HBTestesNG.TestCases.Test_Email_All"/>
-        <method signature="Test_Email_All.Email_Q_OverInterflow_Q_R_Ans_3rdGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-1,5,main]]" name="Email_Q_OverInterflow_Q_R_Ans_3rdGroup" class="HBTestesNG.TestCases.Test_Email_All"/>
-        <method signature="Test_Email_All.Email_Q_Overflow_R_Ans_1stGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-1,5,main]]" name="Email_Q_Overflow_R_Ans_1stGroup" class="HBTestesNG.TestCases.Test_Email_All"/>
-        <method signature="Test_Email_All.Email_Q_Overflow_R_Ans_2ndGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-1,5,main]]" name="Email_Q_Overflow_R_Ans_2ndGroup" class="HBTestesNG.TestCases.Test_Email_All"/>
-        <method signature="Test_Email_All.Email_R_Q_Overflow_Q_R_Ans_2ndGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-1,5,main]]" name="Email_R_Q_Overflow_Q_R_Ans_2ndGroup" class="HBTestesNG.TestCases.Test_Email_All"/>
-        <method signature="Test_Email_All.Email_R_Q_Overflow_R_Ans_2ndGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-1,5,main]]" name="Email_R_Q_Overflow_R_Ans_2ndGroup" class="HBTestesNG.TestCases.Test_Email_All"/>
-      </group> <!-- Test_Email_All_ClassLevel -->
+      <group name="VoiceNACD_Conference_ClassLevel">
+        <method signature="Test_VoiceNACD_Conference.VoiceNACD_CConference_ToExt_SameGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-7,5,main]]" name="VoiceNACD_CConference_ToExt_SameGroup" class="HBTestesNG.TestCases.Test_VoiceNACD_Conference"/>
+      </group> <!-- VoiceNACD_Conference_ClassLevel -->
     </groups>
-    <test name="VoiceACD Scenarios" duration-ms="1497485" started-at="2017-08-14T23:05:45Z" finished-at="2017-08-14T23:30:42Z">
+    <test name="VoiceACD Scenarios" duration-ms="144476" started-at="2017-08-19T23:16:19Z" finished-at="2017-08-19T23:18:43Z">
       <class name="HBTestesNG.TestCases.Test_Initiate">
-        <test-method status="PASS" signature="beforeSuite(java.lang.String, java.lang.String)[pri:0, instance:Thread[Thread-0,5,main]]" name="beforeSuite" is-config="true" duration-ms="61382" started-at="2017-08-14T16:04:43Z" finished-at="2017-08-14T16:05:45Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[no]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[yes]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:Thread[Thread-0,5,main]]" name="beforeSuite" is-config="true" duration-ms="78336" started-at="2017-08-19T16:15:01Z" finished-at="2017-08-19T16:16:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="afterSuite(java.lang.String)[pri:0, instance:Thread[Thread-0,5,main]]" name="afterSuite" is-config="true" duration-ms="12065" started-at="2017-08-14T16:30:42Z" finished-at="2017-08-14T16:30:54Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[yes]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:Thread[Thread-0,5,main]]" name="afterSuite" is-config="true" duration-ms="38926" started-at="2017-08-19T16:18:43Z" finished-at="2017-08-19T16:19:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
       </class> <!-- HBTestesNG.TestCases.Test_Initiate -->
-      <class name="HBTestesNG.TestCases.Test_Email_All">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:Thread[Thread-1,5,main]]" name="beforeClass" is-config="true" duration-ms="7186" started-at="2017-08-14T16:05:45Z" finished-at="2017-08-14T16:05:52Z">
+      <class name="HBTestesNG.TestCases.Test_VoiceNACD_Conference">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:Thread[Thread-7,5,main]]" name="beforeClass" is-config="true" duration-ms="1" started-at="2017-08-19T16:16:19Z" finished-at="2017-08-19T16:16:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="Email_NoQ_Answer(int, int, int)[pri:0, instance:Thread[Thread-1,5,main]]" name="Email_NoQ_Answer" duration-ms="127829" started-at="2017-08-14T16:05:52Z" finished-at="2017-08-14T16:08:00Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Email_NoQ_Answer -->
-        <test-method status="PASS" signature="Email_NoQ_Answer_NoWrapTime(int, int)[pri:0, instance:Thread[Thread-1,5,main]]" name="Email_NoQ_Answer_NoWrapTime" duration-ms="161383" started-at="2017-08-14T16:08:00Z" finished-at="2017-08-14T16:10:41Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Email_NoQ_Answer_NoWrapTime -->
-        <test-method status="PASS" signature="Email_Q_Answer(int, int, int, int)[pri:0, instance:Thread[Thread-1,5,main]]" name="Email_Q_Answer" duration-ms="109165" started-at="2017-08-14T16:10:41Z" finished-at="2017-08-14T16:12:30Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Email_Q_Answer -->
-        <test-method status="PASS" signature="Email_Q_Overflow_R_Ans_1stGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-1,5,main]]" name="Email_Q_Overflow_R_Ans_1stGroup" duration-ms="156144" started-at="2017-08-14T16:12:30Z" finished-at="2017-08-14T16:15:06Z">
+        <test-method status="PASS" signature="VoiceNACD_CConference_ToExt_SameGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-7,5,main]]" name="VoiceNACD_CConference_ToExt_SameGroup" duration-ms="144464" started-at="2017-08-19T16:16:19Z" finished-at="2017-08-19T16:18:43Z">
           <params>
             <param index="0">
               <value>
@@ -144,167 +54,12 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Email_Q_Overflow_R_Ans_1stGroup -->
-        <test-method status="PASS" signature="Email_Q_Overflow_R_Ans_2ndGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-1,5,main]]" name="Email_Q_Overflow_R_Ans_2ndGroup" duration-ms="174802" started-at="2017-08-14T16:15:06Z" finished-at="2017-08-14T16:18:01Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Email_Q_Overflow_R_Ans_2ndGroup -->
-        <test-method status="PASS" signature="Email_R_Q_Overflow_Q_R_Ans_2ndGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-1,5,main]]" name="Email_R_Q_Overflow_Q_R_Ans_2ndGroup" duration-ms="181406" started-at="2017-08-14T16:18:01Z" finished-at="2017-08-14T16:21:03Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Email_R_Q_Overflow_Q_R_Ans_2ndGroup -->
-        <test-method status="PASS" signature="Email_R_Q_Overflow_R_Ans_2ndGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-1,5,main]]" name="Email_R_Q_Overflow_R_Ans_2ndGroup" duration-ms="180299" started-at="2017-08-14T16:21:03Z" finished-at="2017-08-14T16:24:03Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Email_R_Q_Overflow_R_Ans_2ndGroup -->
-        <test-method status="PASS" signature="Email_Q_OverInterflow_Q_R_Ans_3rdGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-1,5,main]]" name="Email_Q_OverInterflow_Q_R_Ans_3rdGroup" duration-ms="226056" started-at="2017-08-14T16:24:03Z" finished-at="2017-08-14T16:27:49Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Email_Q_OverInterflow_Q_R_Ans_3rdGroup -->
-        <test-method status="PASS" signature="Email_BTransfer_ToExt_SameGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-1,5,main]]" name="Email_BTransfer_ToExt_SameGroup" duration-ms="173190" started-at="2017-08-14T16:27:49Z" finished-at="2017-08-14T16:30:42Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Email_BTransfer_ToExt_SameGroup -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:Thread[Thread-1,5,main]]" name="afterClass" is-config="true" duration-ms="1" started-at="2017-08-14T16:30:42Z" finished-at="2017-08-14T16:30:42Z">
+        </test-method> <!-- VoiceNACD_CConference_ToExt_SameGroup -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:Thread[Thread-7,5,main]]" name="afterClass" is-config="true" duration-ms="0" started-at="2017-08-19T16:18:43Z" finished-at="2017-08-19T16:18:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-      </class> <!-- HBTestesNG.TestCases.Test_Email_All -->
+      </class> <!-- HBTestesNG.TestCases.Test_VoiceNACD_Conference -->
     </test> <!-- VoiceACD Scenarios -->
   </suite> <!-- Test HB Suite -->
 </testng-results>

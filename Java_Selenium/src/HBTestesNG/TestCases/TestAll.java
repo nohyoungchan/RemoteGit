@@ -26,7 +26,7 @@ public class TestAll extends TestCaseObject{
 		Test_VoiceACD_Basic testVoiceACDBasic = new Test_VoiceACD_Basic();
 		Test_VoiceACD_Transfer testVoiceACDTransfer = new Test_VoiceACD_Transfer();
 		
-		testInitiate.beforeSuite(waitUntilOneAm, skipCCDPrepare);
+		testInitiate.beforeSuite();
 		InitializeAllVariables();
 		
 		try{
@@ -56,7 +56,7 @@ public class TestAll extends TestCaseObject{
 		}catch(Exception e){
 			log.info("I am handling exception on TestAll=>"+ e.toString());
 		}finally{		
-			testInitiate.afterSuite(tearDownOrNot);
+			testInitiate.afterSuite();
 		}
 
 
