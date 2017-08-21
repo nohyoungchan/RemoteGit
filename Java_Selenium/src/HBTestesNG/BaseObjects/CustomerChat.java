@@ -24,7 +24,7 @@ public boolean startChat() throws Exception {
 		webElement = null;
 		
 		maximizeBrowser();
-		driver.get(AllActors.envIni.get("URL", "chatURL")); 
+		driver.get(AllActors.iniEnv.get("URL", "chatURL")); 
 		
 		//#### Precondition
 		wait(3);
@@ -66,13 +66,13 @@ public boolean startChat() throws Exception {
 		WebElement webElement;
 		int ringTimeSec, talkTimeSec, wrapTimeSec;
 		webElement = null;
-		ringTimeSec = Integer.parseInt(AllActors.testDataIni.get("LOAD", "ringTimeSec"));
-		talkTimeSec = Integer.parseInt(AllActors.testDataIni.get("LOAD", "talkTimeSec"));
-		wrapTimeSec = Integer.parseInt(AllActors.testDataIni.get("LOAD", "wrapTimeSec"));
+		ringTimeSec = Integer.parseInt(AllActors.iniMain.get("LOAD", "ringTimeSec"));
+		talkTimeSec = Integer.parseInt(AllActors.iniMain.get("LOAD", "talkTimeSec"));
+		wrapTimeSec = Integer.parseInt(AllActors.iniMain.get("LOAD", "wrapTimeSec"));
 		
 		try{
 			maximizeBrowser();
-			driver.get(AllActors.envIni.get("URL", "chatURL")); 
+			driver.get(AllActors.iniEnv.get("URL", "chatURL")); 
 			
 			//#### Precondition
 			wait(3);

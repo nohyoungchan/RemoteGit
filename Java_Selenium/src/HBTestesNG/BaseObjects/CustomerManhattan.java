@@ -39,6 +39,7 @@ public class CustomerManhattan  extends TestObject {
     	String loginBtn = imgFolder +"ic_login_loginButton.PNG";
     	String connectionNotSecure = imgFolder + "mh_connectionNotSecure.PNG";
     	String proceedBtn = imgFolder + "mh_proceedBtn.PNG";
+    	String voiceMailBtn = imgFolder + "mh_voiceMailBtn.PNG";
     	
     	activateManhattan();
     	clickAppear(screen, patternUsername);
@@ -46,6 +47,12 @@ public class CustomerManhattan  extends TestObject {
     	clickAppear(screen, patternPassword);
     	screen.write(password);
     	clickAppear(screen, loginBtn);
+    	
+    	//This is needed to expand manhattan client
+    	clickAppear(screen, voiceMailBtn);
+    	clickAppear(screen, voiceMailBtn);
+    	
+    	
     	
     	while (null != screen.exists(connectionNotSecure)) {
     		log.info("@ Handling connection not secure");
@@ -68,6 +75,7 @@ public class CustomerManhattan  extends TestObject {
     	String loginBtn = imgFolder +"ic_login_loginButton.PNG";
     	String connectionNotSecure = imgFolder + "mh_connectionNotSecure.PNG";
     	String proceedBtn = imgFolder + "mh_proceedBtn.PNG";
+    	String voiceMailBtn = imgFolder + "mh_voiceMailBtn.PNG";
     	
     	activateManhattan();
     	clickAppear(screen, patternUsername);
@@ -75,6 +83,10 @@ public class CustomerManhattan  extends TestObject {
     	clickAppear(screen, patternPassword);
     	screen.write(password);
     	clickAppear(screen, loginBtn);
+    	
+    	//This is needed to expand manhattan client
+    	clickAppear(screen, voiceMailBtn);
+    	clickAppear(screen, voiceMailBtn);
     	
     	while (null != screen.exists(connectionNotSecure)) {
     		log.info("@ Handling connection not secure");
@@ -140,7 +152,7 @@ public class CustomerManhattan  extends TestObject {
 	      Utilities.executeCommand(strAutoItCommand);
 	  }
 	  
-	  public void makeACDCall(String number) throws Exception{
+	  public void makeACDCallOld(String number) throws Exception{
 		  log.info("\n@ Manhattan : " +  username + " #### Before making ACD call ####");
 		  int j;
 		  Pattern patternoffhookBtn = new Pattern(imgFolder +"mh_offhookBtn.PNG").targetOffset(100, 0);
@@ -151,6 +163,38 @@ public class CustomerManhattan  extends TestObject {
 		  screen.type(Key.ENTER);
 		  currentState ="loggedin_busy";
 
+	  }
+	  
+  public void makeACDCall(String number) throws Exception {
+		  
+		  log.info("\n@ Manhattan : " +  username + " #### clearing calls if they exist ####");
+		  Pattern patternoffhookBtn = new Pattern(imgFolder +"mh_offhookBtn.PNG").targetOffset(100, 0);
+		  Pattern callBox = new Pattern(imgFolder +"mh_callBox.PNG").targetOffset(0, 10);
+		  Pattern dropBtn = new Pattern(imgFolder +"mh_dropBtn.PNG").targetOffset(10, 0);
+
+		  //String eventBtn =imgFolder + "mh_eventBtn";
+		  
+		  
+		  activateManhattan();	
+		  //This is to check if there is any call left
+		  //screen.click(eventBtn);
+		  //screen.click(eventBtn);
+		  while (null != screen.exists(callBox)) {
+	    		log.info("@ cleaning a remaining call");
+	    		clickAppear(screen, callBox);
+	    		clickAppear(screen, dropBtn);
+	    		wait(2);
+	    	}
+
+		  log.info("\n@ Manhattan : " +  username + " #### Making ACD call ####");
+
+		  clickAppear(screen, patternoffhookBtn);
+		  screen.type(number);
+		  wait(2);
+		  screen.type(Key.ENTER);
+		  currentState ="loggedin_busy";
+		  currentTime();
+		 
 	  }
 	  
 	  public void dropCall() throws Exception {
@@ -183,6 +227,8 @@ public class CustomerManhattan  extends TestObject {
 		  currentTime();
 		 
 	  }
+	  
+	
 	  
 	  public void answerCall(int waitSec) throws Exception {
 		  log.info("\n@ Manhattan : " +  username + " #### Answering a call ####");
@@ -241,6 +287,7 @@ public class CustomerManhattan  extends TestObject {
 	   * @throws Exception
 	   */
 	  public void clickAppear(Screen s, String img) throws Exception {
+		log.info("\n@ Manhattan : " +  username + " : clicking => " + img);
 		int i = 0;
 		while (true) {
 			if (s.exists(img) != null) {
@@ -263,6 +310,7 @@ public class CustomerManhattan  extends TestObject {
 	   * @param numTry: This is to try how many time to check if an image appears.
 	   */
 	  public boolean clickAppear(Screen s, String img, int numTry) {
+		log.info("\n@ Manhattan : " +  username + " : clicking => " + img);
 		int i = 0;
 		boolean returnValue = true;
 		try {
@@ -294,6 +342,7 @@ public class CustomerManhattan  extends TestObject {
 	   * @throws Exception
 	   */
 	  public void clickAppear(Screen s, Pattern img) throws Exception {
+		    log.info("\n@ Manhattan : " +  username + " : clicking => " + img);
 			int i = 0;
 			while (true) {
 				if (s.exists(img) != null) {

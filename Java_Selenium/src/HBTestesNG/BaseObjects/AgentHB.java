@@ -116,8 +116,8 @@ public class AgentHB extends Agent {
 		webElement = null;
 		actionResult = true;
 		//getCurrentDimenSion();
-		log.info("I am here: url is => " +  AllActors.envIni.get("URL", "agentHBURL"));
-		driver.get(AllActors.envIni.get("URL", "agentHBURL")); 
+		log.info("I am here: url is => " +  AllActors.iniEnv.get("URL", "agentHBURL"));
+		driver.get(AllActors.iniEnv.get("URL", "agentHBURL")); 
 		
 		//#### Action
 		maximizeBrowser();
@@ -906,7 +906,7 @@ public class AgentHB extends Agent {
 		  }catch(Exception e){
 			  log.info("\n@(" + agentType + ") " +  username + " exception on wrapupEndWith2WrapupCodes" + e.toString());
 			  errorCount++;
-			  errorString.concat("fail to " + strFunctionName + ";");
+			  errorString += "fail on wrapupEndWith2WrapupCodes";
 			  state = "weird";
 		  }finally {
 				minimizeBrowser();

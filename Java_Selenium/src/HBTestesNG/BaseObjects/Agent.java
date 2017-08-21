@@ -773,10 +773,22 @@ public class Agent extends TestObject {
 	 public void minimizeBrowser(){
 		 if (TestObject.useWhichWebDriver.contains("phantomjs")) return;
 		 log.info("\n@(" + agentType + ") " + username + " => minimizing Browser");
+		 int x, y, xWidth, yWidth;
+		 
+		 String minDimension = AllActors.iniMain.get("WebBrowser", "minimizeDimension");
+		 log.info("Dimension ==> " + minDimension);
+		 String splitResult[] = minDimension.split("/");
+		 xWidth= Integer.parseInt(splitResult[0]);
+		 yWidth= Integer.parseInt(splitResult[1]);
+		 x = Integer.parseInt(splitResult[2]);
+		 y = Integer.parseInt(splitResult[3]);
+		 
+		 
 
 		 //setSizeAndLocation(10, 10, -2000, 700);
+		 //setSizeAndLocation(10, 10, 900, 800)
 		 try {
-			setSizeAndLocation(10, 10, 900, 800);
+			setSizeAndLocation(xWidth, yWidth, x, y);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -811,38 +823,21 @@ public class Agent extends TestObject {
 
 	 /**
 	  * 
-	  * @param strXPath : This is an identifiable name like btnResume
+	  * @param elementName This is an identifiable name like btnResume
 	  * @param intTimeOutSec
 	  * @return returning webElement
 	  */
-	  public WebElement waitUntilClickable(String strXPath, int intTimeOutSec) {
-		 log.info("# waitUntilClickable => " + strXPath + " : for(sec) => " + intTimeOutSec);
+	  public WebElement waitUntilClickable(String elementName, int intTimeOutSec) {
+		 log.info("# waitUntilClickable => " + elementName + " : for(sec) => " + intTimeOutSec);
 		 String xPath;
 		 WebElement webElement;
 		 xPath="Not_Initialized_Yet";
 		 webElement =null;
 
-		 xPath = strXPath;
-		 switch (agentType) 
-		{
-    		case "BossSuper": 
-    			break;
-        	case "CustomerChat": 
-        		xPath= AllActors.chatCustomerXPathHash.get(strXPath);
-        		break;
-        	case "CustomerEmail": 
-        		xPath= AllActors.emailOWAXPathHash.get(strXPath);
-        		break;
-	        case "CustomerVoice": 
-	        	break;
-	        case "HBDirector": 
-	        	xPath= AllActors.hbDirectorXPathHash.get(strXPath);
-	        	break;
-	        case "WebAgent": 
-	        	xPath= AllActors.hbWebAgentXPathHash.get(strXPath);
-	        	break;
-	        default:
-		}
+		 //xPath = getXPath(elementName);
+		 xPath = getXPathStr(elementName);
+		 log.info("XPath is : " + xPath);
+		 
 		 
 		 try{
 			webElement = driver.findElement(By.xpath(xPath));
@@ -851,7 +846,7 @@ public class Agent extends TestObject {
 			wait.ignoring(ElementNotVisibleException.class);
 			wait.ignoring(StaleElementReferenceException.class);
 			wait.until(ExpectedConditions.elementToBeClickable(webElement));
-			log.info("XPath is : " + xPath);
+			
 			//wait.until(ExpectedConditions.visibilityOf(res));
 		 }catch(TimeoutException e){
 			 log.error("\n@(" + agentType + ") " + username + " => Timeout on waitUntilClickable");
@@ -877,10 +872,111 @@ public class Agent extends TestObject {
 		return webElement;
 	 }
 	  
+	  	  /**
+	  	   * 	
+	  	   * @param elementName  This is an identifiable name like btnResume
+	  	   * @param intTimeOutSec
+	  	   * @param strCondition This condition can be clickable, selected,...
+	  	   * @return
+	  	   */
+		  public WebElement getWebElement(String elementName, int intTimeOutSec, String strCondition) {
+			 log.info("# getWebElement => " + elementName + " : for(sec) => " + intTimeOutSec + " when => " + strCondition);
+			 String xPath;
+			 WebElement webElement;
+			 xPath="Not_Initialized_Yet";
+			 webElement =null;
+
+			 xPath = getXPathStr(elementName);
+
+
+			 try{
+				webElement = driver.findElement(By.xpath(xPath));
+				WebDriverWait wait = new WebDriverWait(driver, intTimeOutSec);
+				wait.ignoring(NoSuchElementException.class);
+				wait.ignoring(ElementNotVisibleException.class);
+				wait.ignoring(StaleElementReferenceException.class);
+				switch(strCondition) {
+					case "clickable":
+						wait.until(ExpectedConditions.elementToBeClickable(webElement));
+					case "selectecd":
+						wait.until(ExpectedConditions.elementToBeSelected(webElement));
+					default:
+						log.error("The condition is wrong => Fix it");
+						
+				}
+			 }catch(TimeoutException e){
+				 log.error("\n@(" + agentType + ") " + username + " => Timeout on waitUntilClickable");
+				 log.error("XPath is : " + xPath);
+				 webElement = null;
+			 }catch(NoSuchElementException e){
+				 log.error("\n@(" + agentType + ") " + username + " => NoSuchElement on waitUntilClickable");
+				 log.error("XPath is : " + xPath);
+				 webElement = null;
+			 }catch(ElementNotVisibleException e){
+				 log.error("\n@(" + agentType + ") " + username + " => ElementNotVisible on waitUntilClickable");
+				 webElement = null;
+			 }/*catch(InterruptedException e){
+				 log.error("\n@(" + agentType + ") " + username + " => InterruptedException on waitUntilClickable");
+				  webElement = null;
+				  exceptionName = "InterruptedException";
+			 }*/
+			 /*catch(Exception e){
+				 log.error("\n@(" + agentType + ") " + username + " => Exception on waitUntilClickable " + e.toString());
+				 webElement = null;
+			 }*/
+			
+			return webElement;
+		 }
+		  
+		
+		/**
+		 * This returns WebElement using textXpath.ini  
+		 * @param elementName  an identifiable name like btnResume
+		 * @param intTimeOutSec
+		 * @return
+		 */
+		@SuppressWarnings("finally")
+		public WebElement getWebElement(String elementName, int intTimeOutSec) {
+				 log.info("# getWebElement => " + elementName + " : for(sec) => " + intTimeOutSec );
+				 String xPath;
+				 WebElement webElement;
+				 xPath="Not_Initialized_Yet";
+				 webElement =null;
+
+				 try{
+					 xPath = getXPathStr(elementName);
+
+					 webElement = driver.findElement(By.xpath(xPath));
+					 WebDriverWait wait = new WebDriverWait(driver, intTimeOutSec);
+					 wait.ignoring(NoSuchElementException.class);
+					 wait.ignoring(ElementNotVisibleException.class);
+					 wait.ignoring(StaleElementReferenceException.class);
+				 }catch(TimeoutException e){
+					 log.error("\n@(" + agentType + ") " + username + " => Timeout on waitUntilClickable");
+					 log.error("XPath is : " + xPath);
+					 webElement = null;
+				 }catch(NoSuchElementException e){
+					 log.error("\n@(" + agentType + ") " + username + " => NoSuchElement on waitUntilClickable");
+					 log.error("XPath is : " + xPath);
+					 webElement = null;
+				 }catch(ElementNotVisibleException e){
+					 log.error("\n@(" + agentType + ") " + username + " => ElementNotVisible on waitUntilClickable");
+					 webElement = null;
+				 }catch(Exception e){
+					 log.error("\n@(" + agentType + ") " + username + " => Exception on waitUntilClickable " + e.toString());
+					 webElement = null;
+				 }finally {
+					 return webElement;
+				 }
+
+			 }
+			  
+
+	  
 
 	  /**
 	   * 
-	   * @param name: This is idenfiable name like btnRelease
+	   * @param name This is idenfiable name like btnRelease
 	   * @return xPath
 	   */
 	 public String  getXPath(String name) {
@@ -909,8 +1005,41 @@ public class Agent extends TestObject {
 		        default:
 			}
 			 
+			log.info("XPath is : " + xPath);
 			return xPath;
 		  }
+	 
+	 /**
+	  * This returns xPath from textXPath.ini
+	  * @param name identifiable name like btnResume
+	  * @return  xPath
+	  */
+	 public String  getXPathStr(String name) {
+		 log.info("# getXPath for  => " + name );
+		 String xPath;
+		 xPath="Not_Initialized_Yet";
+
+		 switch (agentType) 
+		{
+        	case "WebAgent": 
+        		xPath= AllActors.iniXPath.get("AIC", name);
+        		break;
+        	case "CustomerChat": 
+        		xPath= AllActors.iniXPath.get("ChatCustomer", name);
+        		break;
+        	case "CustomerEmail": 
+        		xPath= AllActors.iniXPath.get("EmailCustomer", name);
+        		break;
+	        case "HBDirector": 
+	        	xPath= AllActors.iniXPath.get("CCD", name);
+	        	break;
+
+	        default:
+		}
+		 
+		log.info("XPath is : " + xPath);
+		return xPath;
+	  }
 	  
 	  
 	  public WebElement conditonClickable_XPath(String strCondition, String strXPath, int secToWait) throws Exception{

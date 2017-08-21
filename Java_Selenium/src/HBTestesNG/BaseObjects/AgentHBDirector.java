@@ -26,7 +26,7 @@ public class AgentHBDirector extends Agent {
 		
 		log.info("\n@(" + agentType + ") " +  username + " #### Go to Login Page ####");
 		maximizeBrowser();
-		driver.get(AllActors.envIni.get("URL", "hbDirectorURL")); 
+		driver.get(AllActors.iniEnv.get("URL", "hbDirectorURL")); 
 		
 		log.info("\n@(" + agentType + ") " +  username + " #### Adding username -> password -> Submit ####");
 		driver.findElement(By.id("username")).clear();
@@ -44,7 +44,7 @@ public class AgentHBDirector extends Agent {
 		String part;
 		
 		part = "#page=";
-		pageURL= AllActors.envIni.get("URL", "hbDirectorURLAfterLogIn") + part + pageName;
+		pageURL= AllActors.iniEnv.get("URL", "hbDirectorURLAfterLogIn") + part + pageName;
 		
 		log.info("\n@(" + agentType + ") " +  username + " opens HB Director " + pageURL);
 		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);

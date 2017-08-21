@@ -27,7 +27,7 @@ public class  Test_Initiate extends TestCaseObject{
 
 			allActors = new AllActors(); //This reads all ini and starts web.
 			startTestSuitMessage();  
-			waitUntilTomorrowOneAm(AllActors.testDataIni.get("TestFlow", "waitUntilOneAm"));
+			waitUntilTomorrowOneAm(AllActors.iniMain.get("TestFlow", "waitUntilOneAm"));
 	
 				
 			for (int i=0; i < allActors.agents.size() ; i++ ){
@@ -36,16 +36,22 @@ public class  Test_Initiate extends TestCaseObject{
 			}
 			
 			//Log in Manhattan client
+			String x, y, startLocation;
 			for (int i=0; i < allActors.customers.size() ; i++ ){
-				if (0 ==allActors.customers.size()) { break;}
-				//You can set the location of Manhattan: x(10), y(200)
-				allActors.customers.get(i).startManhattan("10", "200");
+				 if (0 ==allActors.customers.size()) { break;}
+				 //You can set the location of Manhattan: x(10), y(200)
+				 startLocation = AllActors.iniMain.get("Manhattan", "startingLocation");
+				 String splitResult[] = startLocation.split("/");
+				 x= splitResult[0];
+				 y= splitResult[1];
+
+				allActors.customers.get(i).startManhattan(x, y);
 				allActors.customers.get(i).logIn();
 	
 			}
 	
 			//CCD configuration before starting suite: You can skip this by "skipCCDPrepare" variable
-			if (allActors.supervisors.size() >0 &&  AllActors.testDataIni.get("TestFlow", "skipCCDPrepare") == "no") 
+			if (allActors.supervisors.size() >0 &&  AllActors.iniMain.get("TestFlow", "skipCCDPrepare") == "no") 
 				allActors.supervisors.get(0).Max_LogIn_PrepareTest_LogOut_Min();
 			
 			currentTimeStart();
@@ -66,11 +72,12 @@ public class  Test_Initiate extends TestCaseObject{
 	@AfterSuite
 	public void afterSuite() throws Exception {
 		
-		log.info("\n\n#######################################################");
+		log.info("\n\n");
+		log.info("#######################################################");
 		log.info("########### Starting End of TestSuite  ###################");
 		log.info("#########################################################\n\n");
 
-		if (AllActors.testDataIni.get("TestFlow", "tearDownOrNot").contains("no")) {
+		if (AllActors.iniMain.get("TestFlow", "tearDownOrNot").contains("no")) {
 			log.info("\n\n%%% Waiting for a user input: Enter any key to close all actors %%%");
 			System.in.read();
 			//return;

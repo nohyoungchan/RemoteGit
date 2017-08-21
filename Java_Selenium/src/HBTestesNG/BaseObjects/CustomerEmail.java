@@ -31,7 +31,7 @@ public class CustomerEmail extends Agent {
 	public void logIntoEmailClient() throws Exception {
 		maximizeBrowser();
 		log.info("\n@(" + agentType + ") " +  username + " #### Go to Email Login Page ####");
-		driver.get(AllActors.envIni.get("URL", "owaURL")); 
+		driver.get(AllActors.iniEnv.get("URL", "owaURL")); 
 		
 		log.info("\n@(" + agentType + ") " +  username + " #### Entering customer username/password -> Submit ####");
 		enterXPath(username, "EmailLoginUsername");
@@ -56,7 +56,7 @@ public class CustomerEmail extends Agent {
 		
 		for(int i=4;i<51;i++)
 		{
-			driver.get(AllActors.envIni.get("URL", "emailURL"));
+			driver.get(AllActors.iniEnv.get("URL", "emailURL"));
 			
 			agentUserName = agentNamePrefix+i+agentNameDomain;
 			log.info("\n@ "+agentUserName + " #### Entering customer username/password -> Submit ####");
@@ -94,14 +94,14 @@ public class CustomerEmail extends Agent {
 		driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
 		
 		//Delete all emals from agents only used in the email scenario
-		//agentStartNum = Integer.parseInt(AllActors.envIni.get("agentStartNum"));
-		//agentMaxNum = Integer.parseInt(AllActors.envIni.get("agentMaxNum"));
+		//agentStartNum = Integer.parseInt(AllActors.iniEnv.get("agentStartNum"));
+		//agentMaxNum = Integer.parseInt(AllActors.iniEnv.get("agentMaxNum"));
 		agentStartNum = 1;
 		agentMaxNum = 29;
 		
 		for(i=agentStartNum;i<= agentMaxNum;i++)
 		{
-			//driver.get(AllActors.envIni.get("emailURL"));
+			//driver.get(AllActors.iniEnv.get("emailURL"));
 			driver.get("https://qaxchange10.qa.shoretel.com/owa/auth/logon.aspx");
 			//https://qaxchange13.qa.shoretel.com/owa/auth/logon.aspx
 			agentUserName = agentNamePrefix+i+agentNameDomain;
@@ -127,7 +127,7 @@ public class CustomerEmail extends Agent {
 		}
 		
 		
-		emailTo = AllActors.envIni.get("Email", "emailTo");
+		emailTo = AllActors.iniEnv.get("Email", "emailTo");
 		if (emailTo.contains("41")){
 			emailToNum = 41;
 		}else {emailToNum = 43;}
@@ -136,7 +136,7 @@ public class CustomerEmail extends Agent {
 		//Starting 41,  this is corporate account
 		for(i=emailToNum;i<emailToNum+2;i++)
 		{
-			//driver.get(AllActors.envIni.get("emailURL"));
+			//driver.get(AllActors.iniEnv.get("emailURL"));
 			driver.get("https://qaxchange10.qa.shoretel.com/owa/auth/logon.aspx");
 			https://qaxchange13.qa.shoretel.com/owa/auth/logon.aspx
 			agentUserName = agentNamePrefix+i+agentNameDomain;
@@ -164,7 +164,7 @@ public class CustomerEmail extends Agent {
 		//Starting 50,  this is interflowed account
 		for(i=50;i<51;i++)
 		{
-			//driver.get(AllActors.envIni.get("emailURL"));
+			//driver.get(AllActors.iniEnv.get("emailURL"));
 			driver.get("https://qaxchange10.qa.shoretel.com/owa/auth/logon.aspx");
 			https://qaxchange13.qa.shoretel.com/owa/auth/logon.aspx
 			agentUserName = agentNamePrefix+i+agentNameDomain;
@@ -210,9 +210,9 @@ public class CustomerEmail extends Agent {
 		String emailToXPath, emailSubjectXPath, emailContentXPath;
 		
 		
-		emailTo = AllActors.envIni.get("Email", "emailTo");
-		emailSubject = AllActors.envIni.get("Email", "emailSubject");
-		emailContent = AllActors.envIni.get("Email", "emailContent");
+		emailTo = AllActors.iniEnv.get("Email", "emailTo");
+		emailSubject = AllActors.iniEnv.get("Email", "emailSubject");
+		emailContent = AllActors.iniEnv.get("Email", "emailContent");
 		emailToXPath = "EmailTo";
 		emailSubjectXPath = "EmailSubject";
 		emailContentXPath = "EmailContent";
@@ -362,8 +362,8 @@ public class CustomerEmail extends Agent {
 		  int waitSec, totalEmailToSend;
 		  waitSec = globalSec;
 		  
-		  //totalEmailToSend = Integer.parseInt(Test_Initiate.AllActors.envIni.get("emailTotalToSend"));
-		  totalEmailToSend = Integer.parseInt(AllActors.testDataIni.get("LOAD", "emailTotalToSend"));
+		  //totalEmailToSend = Integer.parseInt(Test_Initiate.AllActors.iniEnv.get("emailTotalToSend"));
+		  totalEmailToSend = Integer.parseInt(AllActors.iniMain.get("LOAD", "emailTotalToSend"));
 		  log.info("@" + username + ": Running => " +  threadName );
 	      try {
 		    	logIntoEmailClient();
