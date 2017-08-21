@@ -358,7 +358,7 @@ public class Agent extends TestObject {
 	  public void waitTillRingPlusSec(Integer waitTimeSecInt) throws Exception, NoSuchElementException {
 		    for (int second = 0;; second++) {
 		    	log.info("@" + username + ": Wait for Ring");
-	    		if (existsElementXPath(AllActors.hbWebAgentXPathHash.get("btnAnswer"))) break;	    	
+	    		if (existsElementXPath(AllActors.iniXPath.get("AIC", "btnAnswer"))) break;	    	
 		    	if (second > 7) {
 		    		log.error("\nSomething is Wrong=> It doesn't wring ");
 		    		throw noSuchElementException;
@@ -475,7 +475,7 @@ public class Agent extends TestObject {
 	 */
 	  public boolean existsElement(String strName) {
 		    try {
-		        driver.findElement(By.xpath(getXPath(strName)));
+		        driver.findElement(By.xpath(getXPathStr(strName)));
 		        log.info("XPath=> " + strName + " : exists");
 		    } catch (NoSuchElementException e) {
 		    	log.info("NoSuchElementExceptio is catched");
@@ -974,40 +974,7 @@ public class Agent extends TestObject {
 
 	  
 
-	  /**
-	   * 
-	   * @param name This is idenfiable name like btnRelease
-	   * @return xPath
-	   */
-	 public String  getXPath(String name) {
-			 log.info("# getXPath for  => " + name );
-			 String xPath;
-			 xPath="Not_Initialized_Yet";
-
-			 switch (agentType) 
-			{
-	    		case "BossSuper": 
-	    			break;
-	        	case "CustomerChat": 
-	        		xPath= AllActors.chatCustomerXPathHash.get(name);
-	        		break;
-	        	case "CustomerEmail": 
-	        		xPath= AllActors.emailOWAXPathHash.get(name);
-	        		break;
-		        case "CustomerVoice": 
-		        	break;
-		        case "HBDirector": 
-		        	xPath= AllActors.hbDirectorXPathHash.get(name);
-		        	break;
-		        case "WebAgent": 
-		        	xPath= AllActors.hbWebAgentXPathHash.get(name);
-		        	break;
-		        default:
-			}
-			 
-			log.info("XPath is : " + xPath);
-			return xPath;
-		  }
+	  
 	 
 	 /**
 	  * This returns xPath from textXPath.ini
@@ -1058,7 +1025,7 @@ public class Agent extends TestObject {
 			log.info("\n@(" + agentType + ") " +  username + " => " + strCondition);
 			
 			
-			//waitUntilVisible(AllActors.hbWebAgentXPathHash.get("webAgentUserNameTxtBox"), 60);
+			//waitUntilVisible(AllActors.iniXPath.get("AIC", "webAgentUserNameTxtBox"), 60);
 			webElement= waitUntilClickable(strXPath, secToWait);
 			if (webElement != null){
 				log.info("\n@(" + agentType + ") " +  username + " => " + strCondition + ": Success");
@@ -1480,6 +1447,7 @@ public class Agent extends TestObject {
 	            try
 	            {
 	            	wait(2);
+	            	log.info(retries + ") dependableClick_byID: " + id);
 	            	if (driver.findElement(By.id(id)).isEnabled())
 	                   wait.until(ExpectedConditions.elementToBeClickable(By.id(id))).click();
 	                return;

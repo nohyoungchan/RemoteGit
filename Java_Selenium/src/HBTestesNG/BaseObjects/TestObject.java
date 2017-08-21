@@ -30,7 +30,7 @@ public class TestObject extends Thread{
 	  public static String stopTest;  //If this is yes, stop all tests.
 	  public static String stopMain;  //If this is yes, stop Main which stop all.
 	  public static int errorCount = 0;
-	  public static String errorString = "start@good;";
+	  public static String errorString = "start_good;";
 	  public String currentState;
 
 	  

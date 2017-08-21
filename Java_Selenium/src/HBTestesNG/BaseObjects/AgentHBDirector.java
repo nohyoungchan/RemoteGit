@@ -85,10 +85,10 @@ public class AgentHBDirector extends Agent {
 		 wait(2);
 		 openHBDirectorPage("service");
 		 wait(2);
-		 typeElementXPath(AllActors.hbDirectorXPathHash.get("searchBox"), serviceName);
-		 clickXPath(AllActors.hbDirectorXPathHash.get("serviceGeneralTab")); 
-		 typeElementXPath(AllActors.hbDirectorXPathHash.get("wrapupTime_TxtBox"), wuTime); 
-		 clickXPath(AllActors.hbDirectorXPathHash.get("submitButton"));
+		 typeElementXPath(AllActors.iniXPath.get("CCD", "searchBox"), serviceName);
+		 clickXPath(AllActors.iniXPath.get("CCD", "serviceGeneralTab")); 
+		 typeElementXPath(AllActors.iniXPath.get("CCD", "wrapupTime_TxtBox"), wuTime); 
+		 clickXPath(AllActors.iniXPath.get("CCD", "submitButton"));
 
 		 logOutHBDirector();
 		 minimizeBrowser();
@@ -102,11 +102,11 @@ public class AgentHBDirector extends Agent {
 		 wait(2);
 		 openHBDirectorPage("service");
 		 wait(2);
-		 typeElementXPath(AllActors.hbDirectorXPathHash.get("searchBox"), serviceName);
-		 clickXPath(AllActors.hbDirectorXPathHash.get("serviceGeneralTab")); 
-		 typeElementXPath(AllActors.hbDirectorXPathHash.get("wrapupTime_TxtBox"), wuTime); 
-		 typeElementXPath(AllActors.hbDirectorXPathHash.get("ForcedReleaseTimeout_TxtBox"), frTime);
-		 clickXPath(AllActors.hbDirectorXPathHash.get("submitButton"));
+		 typeElementXPath(AllActors.iniXPath.get("CCD", "searchBox"), serviceName);
+		 clickXPath(AllActors.iniXPath.get("CCD", "serviceGeneralTab")); 
+		 typeElementXPath(AllActors.iniXPath.get("CCD", "wrapupTime_TxtBox"), wuTime); 
+		 typeElementXPath(AllActors.iniXPath.get("CCD", "ForcedReleaseTimeout_TxtBox"), frTime);
+		 clickXPath(AllActors.iniXPath.get("CCD", "submitButton"));
 		 
 		 //logOutHBDirector();
 		 minimizeBrowser();
@@ -159,10 +159,10 @@ public class AgentHBDirector extends Agent {
 		 find_and_fill_byID("listFilterGlobal", serviceName, false);
 		 dependableClick_byID("tab7_link");  //Click abandon tab
 		 
-		 enabled = checkEnabledXPath(AllActors.hbDirectorXPathHash.get("minTimeBeforeAbandon_TxtBox"));
+		 enabled = checkEnabledXPath(AllActors.iniXPath.get("CCD", "minTimeBeforeAbandon_TxtBox"));
 		 if(enabled){
-			 clickXPath(AllActors.hbDirectorXPathHash.get("enableAbandon_CheckBox"));
-			 clickXPath(AllActors.hbDirectorXPathHash.get("submitButton"));
+			 clickXPath(AllActors.iniXPath.get("CCD", "enableAbandon_CheckBox"));
+			 clickXPath(AllActors.iniXPath.get("CCD", "submitButton"));
 			 log.info("\n@(" + agentType + ") " +  username + " : Disabled Abandon Callback ");
 		 }else {
 			 log.info("\n@(" + agentType + ") " +  username + " : Abandon Callback is already disabled. ");
@@ -205,10 +205,10 @@ public class AgentHBDirector extends Agent {
 		 find_and_fill_byID("forced_release_time", frTime, false);
 
 		 dependableClick_byID("tab7_link");  //Click abandon tab
-		 enabled = checkEnabledXPath(AllActors.hbDirectorXPathHash.get("minTimeBeforeAbandon_TxtBox"));
+		 enabled = checkEnabledXPath(AllActors.iniXPath.get("CCD", "minTimeBeforeAbandon_TxtBox"));
 		 if(!enabled){ 
-			 clickXPath(AllActors.hbDirectorXPathHash.get("enableAbandon_CheckBox"));
-			 typeElementXPath(AllActors.hbDirectorXPathHash.get("minTimeBeforeAbandon_TxtBox"), minAbandonTime);
+			 clickXPath(AllActors.iniXPath.get("CCD", "enableAbandon_CheckBox"));
+			 typeElementXPath(AllActors.iniXPath.get("CCD", "minTimeBeforeAbandon_TxtBox"), minAbandonTime);
 			 log.info("\n@(" + agentType + ") " +  username + " : Enabled Abandon Callback ");
 		 }else {
 			 log.info("\n@(" + agentType + ") " +  username + " : Abandon Callback is already enabled. ");
@@ -243,24 +243,24 @@ public class AgentHBDirector extends Agent {
 		 waitUntilMainTitle("Services");
 		 
 		 wait(2);
-		 typeElementXPath(AllActors.hbDirectorXPathHash.get("searchBox"), serviceName);
+		 typeElementXPath(AllActors.iniXPath.get("CCD", "searchBox"), serviceName);
 		//Change wrapup and forced released time
-		 clickXPath(AllActors.hbDirectorXPathHash.get("serviceGeneralTab")); 
-		 typeElementXPath(AllActors.hbDirectorXPathHash.get("wrapupTime_TxtBox"), wuTime); 
-		 typeElementXPath(AllActors.hbDirectorXPathHash.get("ForcedReleaseTimeout_TxtBox"), frTime);
+		 clickXPath(AllActors.iniXPath.get("CCD", "serviceGeneralTab")); 
+		 typeElementXPath(AllActors.iniXPath.get("CCD", "wrapupTime_TxtBox"), wuTime); 
+		 typeElementXPath(AllActors.iniXPath.get("CCD", "ForcedReleaseTimeout_TxtBox"), frTime);
 		 
 		 
-		 clickXPath(AllActors.hbDirectorXPathHash.get("serviceAbandonTab")); 
+		 clickXPath(AllActors.iniXPath.get("CCD", "serviceAbandonTab")); 
 		 
-		 enabled = checkEnabledXPath(AllActors.hbDirectorXPathHash.get("minTimeBeforeAbandon_TxtBox"));
+		 enabled = checkEnabledXPath(AllActors.iniXPath.get("CCD", "minTimeBeforeAbandon_TxtBox"));
 		 if(enabled){
-			 clickXPath(AllActors.hbDirectorXPathHash.get("enableAbandon_CheckBox"));
+			 clickXPath(AllActors.iniXPath.get("CCD", "enableAbandon_CheckBox"));
 			 log.info("\n@(" + agentType + ") " +  username + " : Disabled Abandon Callback ");
 		 }else {
 			 log.info("\n@(" + agentType + ") " +  username + " : Abandon Callback is already disabled. ");
 		 }
 			  
-		 clickXPath(AllActors.hbDirectorXPathHash.get("submitButton"));
+		 clickXPath(AllActors.iniXPath.get("CCD", "submitButton"));
 		 logOutHBDirector();
 		 minimizeBrowser();
 	 }
@@ -285,14 +285,14 @@ public class AgentHBDirector extends Agent {
 		 
 		 find_and_fill_byID("listFilterGlobal", serviceName, false);
 		 dependableClick_byID("tab7_link");  //Click abandon tab
-		 //clickXPath(AllActors.hbDirectorXPathHash.get("serviceAbandonTab")); 
+		 //clickXPath(AllActors.iniXPath.get("CCD", "serviceAbandonTab")); 
 		 
-		 enabled = checkEnabledXPath(AllActors.hbDirectorXPathHash.get("minTimeBeforeAbandon_TxtBox"));
+		 enabled = checkEnabledXPath(AllActors.iniXPath.get("CCD", "minTimeBeforeAbandon_TxtBox"));
 		 if(!enabled){
 			 
-			 clickXPath(AllActors.hbDirectorXPathHash.get("enableAbandon_CheckBox"));
-			 typeElementXPath(AllActors.hbDirectorXPathHash.get("minTimeBeforeAbandon_TxtBox"), minAbandonTime);
-			 clickXPath(AllActors.hbDirectorXPathHash.get("submitButton"));
+			 clickXPath(AllActors.iniXPath.get("CCD", "enableAbandon_CheckBox"));
+			 typeElementXPath(AllActors.iniXPath.get("CCD", "minTimeBeforeAbandon_TxtBox"), minAbandonTime);
+			 clickXPath(AllActors.iniXPath.get("CCD", "submitButton"));
 			 log.info("\n@(" + agentType + ") " +  username + " : Enabled Abandon Callback ");
 		 }else {
 			 log.info("\n@(" + agentType + ") " +  username + " : Abandon Callback is already enabled. ");
@@ -312,11 +312,11 @@ public class AgentHBDirector extends Agent {
 		 openHBDirectorPage("service");
 		 waitUntilMainTitle("Services");
 		 wait(2);
-		 typeElementXPath(AllActors.hbDirectorXPathHash.get("searchBox"), serviceName);
-		 //clickXPath(AllActors.hbDirectorXPathHash.get("serviceGeneralTab")); 
-		 typeElementXPath(AllActors.hbDirectorXPathHash.get("wrapupTime_TxtBox"), wuTime); 
-		 typeElementXPath(AllActors.hbDirectorXPathHash.get("ForcedReleaseTimeout_TxtBox"), frTime);
-		 clickXPath(AllActors.hbDirectorXPathHash.get("submitButton"));
+		 typeElementXPath(AllActors.iniXPath.get("CCD", "searchBox"), serviceName);
+		 //clickXPath(AllActors.iniXPath.get("CCD", "serviceGeneralTab")); 
+		 typeElementXPath(AllActors.iniXPath.get("CCD", "wrapupTime_TxtBox"), wuTime); 
+		 typeElementXPath(AllActors.iniXPath.get("CCD", "ForcedReleaseTimeout_TxtBox"), frTime);
+		 clickXPath(AllActors.iniXPath.get("CCD", "submitButton"));
 		 
 		 //logOutHBDirector();
 		 minimizeBrowser();
@@ -339,11 +339,11 @@ public class AgentHBDirector extends Agent {
 		 }
 		 
 		 wait(2);
-		 typeElementXPath(AllActors.hbDirectorXPathHash.get("searchBox"), serviceName);
-		 clickXPath(AllActors.hbDirectorXPathHash.get("serviceGeneralTab")); 
-		 typeElementXPath(AllActors.hbDirectorXPathHash.get("wrapupTime_TxtBox"), wuTime); 
-		 typeElementXPath(AllActors.hbDirectorXPathHash.get("ForcedReleaseTimeout_TxtBox"), frTime);
-		 clickXPath(AllActors.hbDirectorXPathHash.get("submitButton"));
+		 typeElementXPath(AllActors.iniXPath.get("CCD", "searchBox"), serviceName);
+		 clickXPath(AllActors.iniXPath.get("CCD", "serviceGeneralTab")); 
+		 typeElementXPath(AllActors.iniXPath.get("CCD", "wrapupTime_TxtBox"), wuTime); 
+		 typeElementXPath(AllActors.iniXPath.get("CCD", "ForcedReleaseTimeout_TxtBox"), frTime);
+		 clickXPath(AllActors.iniXPath.get("CCD", "submitButton"));
 		 
 		 //logOutHBDirector();
 		 minimizeBrowser();
@@ -419,11 +419,11 @@ public class AgentHBDirector extends Agent {
 		 }
 		 
 		 wait(2);
-		 typeElementXPath(AllActors.hbDirectorXPathHash.get("searchBox"), serviceName);
-		 clickXPath(AllActors.hbDirectorXPathHash.get("serviceGeneralTab")); 
-		 typeElementXPath(AllActors.hbDirectorXPathHash.get("wrapupTime_TxtBox"), wuTime); 
-		 typeElementXPath(AllActors.hbDirectorXPathHash.get("ForcedReleaseTimeout_TxtBox"), frTime);
-		 clickXPath(AllActors.hbDirectorXPathHash.get("submitButton"));
+		 typeElementXPath(AllActors.iniXPath.get("CCD", "searchBox"), serviceName);
+		 clickXPath(AllActors.iniXPath.get("CCD", "serviceGeneralTab")); 
+		 typeElementXPath(AllActors.iniXPath.get("CCD", "wrapupTime_TxtBox"), wuTime); 
+		 typeElementXPath(AllActors.iniXPath.get("CCD", "ForcedReleaseTimeout_TxtBox"), frTime);
+		 clickXPath(AllActors.iniXPath.get("CCD", "submitButton"));
 		 
 		 logOutHBDirector();
 		 minimizeBrowser();
@@ -436,7 +436,7 @@ public class AgentHBDirector extends Agent {
 		 log.info("\n@(Super)" + username + ": Log out HB-Director");
 		 maximizeBrowser();
 		 wait(2);
-		 clickXPath(AllActors.hbDirectorXPathHash.get("logoutLink"));
+		 clickXPath(AllActors.iniXPath.get("CCD", "logoutLink"));
 		 wait(2);
 		 minimizeBrowser();
 	 }
@@ -446,14 +446,14 @@ public class AgentHBDirector extends Agent {
 		String agentCOS;
 		agentCOS = "LOAD_COS";
 		try{
-			 clickXPath(AllActors.hbDirectorXPathHash.get("agentNewBtn"));
-			 typeElementXPath(AllActors.hbDirectorXPathHash.get("agentNameTxtBox"), agentName);
-			 typeElementXPath(AllActors.hbDirectorXPathHash.get("agentUserNameTxtBox"), agentUserName); 
-			 typeElementXPath(AllActors.hbDirectorXPathHash.get("agentIDTxtBox"), agentID);
-			 typeElementXPath(AllActors.hbDirectorXPathHash.get("agentExtenstionTxtBox"), agentExtension);
-			 selectFromComboBox(AllActors.hbDirectorXPathHash.get("agentCOS"), agentCOS);
-			 typeElementXPath(AllActors.hbDirectorXPathHash.get("agentCorporateEmailAddress"), agentEmail);
-			 clickXPath(AllActors.hbDirectorXPathHash.get("agentCreateBtn"));
+			 clickXPath(AllActors.iniXPath.get("CCD", "agentNewBtn"));
+			 typeElementXPath(AllActors.iniXPath.get("CCD", "agentNameTxtBox"), agentName);
+			 typeElementXPath(AllActors.iniXPath.get("CCD", "agentUserNameTxtBox"), agentUserName); 
+			 typeElementXPath(AllActors.iniXPath.get("CCD", "agentIDTxtBox"), agentID);
+			 typeElementXPath(AllActors.iniXPath.get("CCD", "agentExtenstionTxtBox"), agentExtension);
+			 selectFromComboBox(AllActors.iniXPath.get("CCD", "agentCOS"), agentCOS);
+			 typeElementXPath(AllActors.iniXPath.get("CCD", "agentCorporateEmailAddress"), agentEmail);
+			 clickXPath(AllActors.iniXPath.get("CCD", "agentCreateBtn"));
 			 wait(2);
 		}catch(Exception e){
 			log.info("\n@(" + agentType + ") " +  username + " fail to create an agent=> "+ agentName);
@@ -503,9 +503,9 @@ public class AgentHBDirector extends Agent {
 			 
 			 //#### Disable Abandon ####
 			 dependableClick_byID("tab7_link");  //Click abandon tab
-			 enabled = checkEnabledXPath(AllActors.hbDirectorXPathHash.get("minTimeBeforeAbandon_TxtBox"));
+			 enabled = checkEnabledXPath(AllActors.iniXPath.get("CCD", "minTimeBeforeAbandon_TxtBox"));
 			 if(enabled){
-				 clickXPath(AllActors.hbDirectorXPathHash.get("enableAbandon_CheckBox"));
+				 clickXPath(AllActors.iniXPath.get("CCD", "enableAbandon_CheckBox"));
 				 log.info("\n@(" + agentType + ") " +  username + " : Disabled Abandon Callback ");
 			 }else {
 				 log.info("\n@(" + agentType + ") " +  username + " : Abandon Callback is already disabled. ");

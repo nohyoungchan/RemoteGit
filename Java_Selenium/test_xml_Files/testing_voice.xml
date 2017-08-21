@@ -60,8 +60,8 @@
        
        <class name="HBTestesNG.TestCases.Test_VoiceACD_Conference">
        <methods>      
-      	  <exclude name="VoiceACD_CConference_ToExt_DifferentGroup" />
-          <exclude name="VoiceACD_CConference_ToExt_SameGroup" /> 
+      	  <include name="VoiceACD_CConference_ToExt_DifferentGroup" />
+          <include name="VoiceACD_CConference_ToExt_SameGroup" /> 
           <exclude name="VoiceACD_CConference_ToIRN_DifferentGroup" /> 
           <exclude name="VoiceACD_CConference_ToIRN_SameGroup" />  <!--# Not supported except PCM/Physical Phone # -->
           <exclude name="VoiceACD_CConference_ToExternal" />     

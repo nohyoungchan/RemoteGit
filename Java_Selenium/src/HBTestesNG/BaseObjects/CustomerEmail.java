@@ -61,9 +61,9 @@ public class CustomerEmail extends Agent {
 			agentUserName = agentNamePrefix+i+agentNameDomain;
 			log.info("\n@ "+agentUserName + " #### Entering customer username/password -> Submit ####");
 			
-			enterXPath(agentUserName, AllActors.hbWebAgentXPathHash.get("EmailLoginUsername"));
+			enterXPath(agentUserName, AllActors.iniXPath.get("AIC", "EmailLoginUsername"));
 			wait(1);
-			enterXPath(agentPassword, AllActors.hbWebAgentXPathHash.get("EmailLoginPassword"));
+			enterXPath(agentPassword, AllActors.iniXPath.get("AIC", "EmailLoginPassword"));
 			wait(1);
 			click_XPath(("EmailBtnSignIn_qaxchange10"));
 			wait(2);
@@ -90,7 +90,7 @@ public class CustomerEmail extends Agent {
 		agentNameDomain = "@qa.shoretel.com";
 		agentPassword ="changeme";
 		
-		xPathEmailSubject = AllActors.hbWebAgentXPathHash.get("EmailInboxEmailSubject_qaxchange10");
+		xPathEmailSubject = AllActors.iniXPath.get("AIC", "EmailInboxEmailSubject_qaxchange10");
 		driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
 		
 		//Delete all emals from agents only used in the email scenario

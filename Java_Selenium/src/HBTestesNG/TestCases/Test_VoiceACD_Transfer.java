@@ -23,14 +23,16 @@ public class Test_VoiceACD_Transfer extends TestCaseObject {
 	}
 	@BeforeClass
 	public void beforeClass() throws Exception {
-		log.info("* Before Class: Test_VoiceACD_Transfer");
+		String className = "Test_VoiceACD_Transfer";
+		classStart(className);
 		InitializeAllVariables(); 
 	}
 
   
 	@AfterClass
 	public void afterClass() throws Exception {
-		log.info("* After Class: Test_VoiceACD_Transfer");
+		String className = "Test_VoiceACD_Transfer";
+		classEnd(className);
 	}
 	
 	@Test

@@ -28,7 +28,7 @@ public class CustomerCMWin extends Agent {
 	    
 		log.info("\n@(" + agentType + ") " +  username + " #### Go to Login Page ####");
 		//driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-		driver.get(AllActors.globalVariableHash.get("agentCMWinURL")); 
+		driver.get(AllActors.iniEnv.get("URL", "agentCMWinURL")); 
 		maximizeBrowser();
 		
 		log.info("\n@(" + agentType + ") " +  username + " #### Adding username -> password -> Submit ####");

@@ -22,7 +22,7 @@ CustomerVoice1.extension=4006
 CustomerVoice1.did=4006
 
 [CustomerChat]
-max=0
+max=1
 tenantPrefix=80005
 chatIRN=5555
 stOrMt=st
@@ -31,7 +31,7 @@ chatCustomerNamePrefix=Customer
 
 # Current email customer is using owa->2017
 [CustomerEmail]
-max=0
+max=1
 CustomerEmail1.name=qa\ynoh11
 CustomerEmail1.password=changeme
 CustomerEmail1.domain=qa
@@ -128,7 +128,7 @@ service3.interflowTimeout=NA
 service3.interflowDestinationType=NA
 service3.interflowDestination=NA
 
-service4.name=YC1_EService1
+service4.name=YC1 EService1
 service4.destination=YC1_EGroup1
 service4.wrapupTime=20
 service4.forcedReleaseTime=30

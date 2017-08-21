@@ -28,6 +28,12 @@ public class  Test_Initiate extends TestCaseObject{
 			allActors = new AllActors(); //This reads all ini and starts web.
 			startTestSuitMessage();  
 			waitUntilTomorrowOneAm(AllActors.iniMain.get("TestFlow", "waitUntilOneAm"));
+			
+			//CCD configuration before starting suite: You can skip this by "skipCCDPrepare" variable
+			if (allActors.supervisors.size() >0 &&  AllActors.iniMain.get("TestFlow", "skipCCDPrepare").contains("no")) 
+			{ 
+				allActors.supervisors.get(0).Max_LogIn_PrepareTest_LogOut_Min();
+			}
 	
 				
 			for (int i=0; i < allActors.agents.size() ; i++ ){
@@ -50,15 +56,15 @@ public class  Test_Initiate extends TestCaseObject{
 	
 			}
 	
-			//CCD configuration before starting suite: You can skip this by "skipCCDPrepare" variable
-			if (allActors.supervisors.size() >0 &&  AllActors.iniMain.get("TestFlow", "skipCCDPrepare") == "no") 
-				allActors.supervisors.get(0).Max_LogIn_PrepareTest_LogOut_Min();
+
 			
 			currentTimeStart();
 		}catch (EC_logintoAIC e) {
+			log.error("Exception on before suite(logIntoWebAgent: Failing all : " + e.toString());
+			afterSuite();
 			
 		}catch (Exception e) {
-			log.error("Exception on before suite: Failing all");
+			log.error("Exception on before suite: Failing all : " + e.toString());
 			afterSuite();
 			
 		}

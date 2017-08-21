@@ -34,7 +34,7 @@ public class AgentHB extends Agent {
 			  String txtReturned;
 			  WebElement webElement;
 	
-			  webElement = driver.findElement(By.xpath(AllActors.hbWebAgentXPathHash.get("webAgentStatusBox")));	
+			  webElement = getWebElement("webAgentStatusBox", 10);	
 			  txtReturned = webElement.getText();
 			  wait(2);
 			  log.info("\n@(" + agentType + ") " +  username + ": Status=> " + txtReturned);
@@ -68,7 +68,7 @@ public class AgentHB extends Agent {
 			  
 			 while (true){
 				  i++;
-				  webElement = driver.findElement(By.xpath(AllActors.hbWebAgentXPathHash.get("webAgentStatusBox")));	
+				  webElement = getWebElement("webAgentStatusBox", 10);
 				  txtReturned = webElement.getAttribute("class"); 
 				  wait(3, i);
 				  log.info("   \n@(" + agentType + ") " +  username + ": Status=> " + txtReturned);
@@ -156,7 +156,7 @@ public class AgentHB extends Agent {
 		  String txtReturned;
 		  
 		  log.info("\n@(" + agentType + ") " +  username + " #### Check if the agent needs to log in. ####");
-		  txtReturned= driver.findElement(By.xpath(AllActors.hbWebAgentXPathHash.get("btnLogIntoGroup"))).getText();
+		  txtReturned= getWebElement("btnLogIntoGroup", 10).getText();
 		  if (txtReturned.equalsIgnoreCase("Log into my queues")) //If agent is logged out, log in.
 		  {
 		      log.info("\n@(" + agentType + ") " +  username + " #### Agent is logged out=>Click Log in button ####");
@@ -173,7 +173,7 @@ public class AgentHB extends Agent {
 			  //getCurrentDimenSion();
 			  maximizeBrowser();
 			  String txtReturned;  
-			  txtReturned= driver.findElement(By.xpath(AllActors.hbWebAgentXPathHash.get("btnLogIntoGroup"))).getText();
+			  txtReturned= getWebElement("btnLogIntoGroup", 10).getText();
 			  if (!txtReturned.equalsIgnoreCase("Log into my queues")) //If agent is logged out, log in.
 			  {
 			      log.info("\n@(" + agentType + ") " +  username + " #### Agent is currently logged in=>Click Log out button ####");
@@ -208,7 +208,7 @@ public class AgentHB extends Agent {
 				  WebElement webElement;
 				  maximizeBrowser();
 		
-				  webElement = driver.findElement(By.xpath(AllActors.hbWebAgentXPathHash.get("btnResume")));	
+				  webElement = getWebElement("btnResume", 10);
 				  txtReturned = webElement.getText();
 				  wait(2);
 				  
@@ -258,7 +258,7 @@ public class AgentHB extends Agent {
 		  	catch(Exception e){
 				log.info("I am handling General exception=>"+ e.toString());
 				errorCount++;
-				errorString.concat("fail to releaseAgentSecondCode;");
+				errorString += "# " + username+ "fail to releaseAgentSecondCode;";
 				state = "weird";
 			}finally{
 				  minimizeBrowser();
@@ -327,7 +327,7 @@ public class AgentHB extends Agent {
 					log.error("\n@(" + agentType + ") " +  username + " I am handling Interrupted exception=> resumeAgent(), and throw again");
 					actionResult = false;
 					errorCount++;
-					errorString.concat("fail to resume;");
+					errorString += "# " + username+ "fail to resume;";
 					throw e;
 					//state = "weird";
 				}
@@ -367,7 +367,7 @@ public class AgentHB extends Agent {
 			  throw e;
 		 }catch(Exception e){
 			 errorCount++;
-			 errorString.concat("fail to " + strFunctionName + ";");
+			 errorString += "# " + username+ "fail to " + strFunctionName + ";";
 			log.info("\n@(" + agentType + ") " +  username + " exception on answering acd call" + e.toString() );
 			state = "weird";
 			throw e;
@@ -393,7 +393,7 @@ public class AgentHB extends Agent {
 			  throw e;
 		 }catch(Exception e){
 			 errorCount++;
-			 errorString.concat("fail to " + strFunctionName + ";");
+			 errorString += "# " + username+ "fail to " + strFunctionName + ";";
 			log.info("\n@(" + agentType + ") " +  username + " exception on answering acd call" + e.toString() );
 			state = "weird";
 		  }finally{
@@ -518,7 +518,7 @@ public class AgentHB extends Agent {
 			  click_XPath(("btnTransfer"));
 			  wait(2);
 			  log.info("\n@(" + agentType + ") " +  username + ": Type the number: " + num);
-			  typeElementXPath(AllActors.hbWebAgentXPathHash.get("txtBoxTransfer"), num);
+			  typeElementXPath(AllActors.iniXPath.get("AIC", "txtBoxTransfer"), num);
 			  click_XPath(("txtBoxTransfer"));
 			  wait(2);		  
 			  log.info("\n@(" + agentType + ") " +  username + ": Confirm blind transfer");
@@ -569,7 +569,7 @@ public class AgentHB extends Agent {
 			  click_XPath(("btnTransfer"));
 			  wait(2);
 			  log.info("\n@(" + agentType + ") " +  username + ": Type the number: " + num);
-			  typeElementXPath(AllActors.hbWebAgentXPathHash.get("txtBoxTransfer"), num);
+			  typeElementXPath(AllActors.iniXPath.get("AIC", "txtBoxTransfer"), num);
 			  click_XPath(("txtBoxConference"));
 			  wait(2);		  
 			  log.info("\n@(" + agentType + ") " +  username + ": Press Consult transfer button");
@@ -593,7 +593,7 @@ public class AgentHB extends Agent {
 			  click_XPath(("btnTransfer"));
 			  wait(2);
 			  log.info("\n@(" + agentType + ") " +  username + ": Type the number: " + name);
-			  //typeElementXPath(AllActors.hbWebAgentXPathHash.get("txtBoxTransfer"), name);
+			  //typeElementXPath(AllActors.iniXPath.get("AIC", "txtBoxTransfer"), name);
 			  //click_XPath(("txtBoxConference"));
 			  selectFromInput_ByPartialText(name);
 			  wait(2);		  
@@ -635,7 +635,7 @@ public class AgentHB extends Agent {
 			  click_XPath(("btnConference"));
 			  wait(2);
 			  log.info("\n@(" + agentType + ") " +  username + ": Type the number: " + num);
-			  typeElementXPath(AllActors.hbWebAgentXPathHash.get("txtBoxConference"), num);
+			  typeElementXPath(AllActors.iniXPath.get("AIC", "txtBoxConference"), num);
 			  click_XPath(("txtBoxConference"));
 			  wait(2);		  
 			  log.info("\n@(" + agentType + ") " +  username + ": Press Consult Conference button");
@@ -804,11 +804,11 @@ public class AgentHB extends Agent {
 				  log.info("\n@(" + agentType + ") " +  username + " is Idle");
 				  return;
 			  }
-			  if (clickElementXPath_Reset(AllActors.hbWebAgentXPathHash.get("panelCurrentCall"))){
+			  if (clickElementXPath_Reset(AllActors.iniXPath.get("AIC", "panelCurrentCall"))){
 				  wait(2);
-				  if (clickElementXPath_Reset(AllActors.hbWebAgentXPathHash.get("btnRetrieve"))){
+				  if (clickElementXPath_Reset(AllActors.iniXPath.get("AIC", "btnRetrieve"))){
 					  wait(2);
-					  clickElementXPath_Reset(AllActors.hbWebAgentXPathHash.get("btnDisconnect"));
+					  clickElementXPath_Reset(AllActors.iniXPath.get("AIC", "btnDisconnect"));
 				  }
 				  state = "idle";
 			  }
@@ -906,7 +906,7 @@ public class AgentHB extends Agent {
 		  }catch(Exception e){
 			  log.info("\n@(" + agentType + ") " +  username + " exception on wrapupEndWith2WrapupCodes" + e.toString());
 			  errorCount++;
-			  errorString += "fail on wrapupEndWith2WrapupCodes";
+			  errorString += "# " + username+ "fail on wrapupEndWith2WrapupCodes";
 			  state = "weird";
 		  }finally {
 				minimizeBrowser();
@@ -930,7 +930,7 @@ public class AgentHB extends Agent {
 		  }catch(Exception e){
 			  log.info("\n@(" + agentType + ") " +  username + " exception on signoutWebAgent" + e.toString());
 			  errorCount++;
-			  errorString.concat("fail to " + strFunctionName + ";");
+			  errorString += "# " + username+ "signoutWebAgent;";
 			  state = "weird";
 		  }
 	  }
@@ -947,7 +947,7 @@ public class AgentHB extends Agent {
 			  WebElement webElement;
 			  
 			 while (true){
-			  webElement = driver.findElement(By.xpath(AllActors.hbWebAgentXPathHash.get("webAgentStatusBox")));	
+			  webElement = getWebElement("webAgentStatusBox", 10);	
 			  txtReturned = webElement.getAttribute("class"); 
 			  wait(3);
 			  log.info("   \n@(" + agentType + ") " +  username + ": Status=> " + txtReturned);

@@ -1,10 +1,8 @@
 package HBTestesNG.BaseObjects;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.Hashtable;
-import java.util.Properties;
 import Utility.PostCondition;
 import org.ini4j.Wini;
 
@@ -20,11 +18,7 @@ public class AllActors extends TestObject{
     public static ArrayList<Service> services;
     
     public static Wini iniMain,  iniEnv, iniXPath;
-    public static Hashtable<String, String> globalVariableHash;
-	public static Hashtable<String, String> hbDirectorXPathHash;
-	public static Hashtable<String, String> hbWebAgentXPathHash;
-	public static Hashtable<String, String> emailOWAXPathHash;
-	public static Hashtable<String, String> chatCustomerXPathHash;
+    //public static Hashtable<String, String> globalVariableHash;
 	
 	public static String currentCallType;
 	public static PostCondition postCondition;
@@ -54,18 +48,11 @@ public class AllActors extends TestObject{
 		services = new ArrayList<Service>();
 		
 
-		globalVariableHash = new Hashtable<String, String>();
-    	hbDirectorXPathHash = new Hashtable<String, String>();
-    	hbWebAgentXPathHash = new Hashtable<String, String>();
-    	emailOWAXPathHash = new Hashtable<String, String>();
-    	chatCustomerXPathHash = new Hashtable<String, String>();
 
-    	
-    	
 	    try{
 	    	
 	    	postCondition = new PostCondition();
-	        Properties propertyFile = new Properties();
+	        //Properties propertyFile = new Properties();
 
 	       	        
 	        //#### Read/Assign Global Variable from .\\test_Config_Files\\testData.ini (Main)
@@ -177,37 +164,6 @@ public class AllActors extends TestObject{
 	        
 	        //######################## Reading XPath ######################################
 	        iniXPath = new Wini(new File(xPathDir + "testXPath.ini"));    
-	        //Read HB director: Property name and value	     
-	        propertyFile.load(new FileInputStream(".\\test_Property_Files\\testProperty.ini"));
-	        max = Integer.parseInt(propertyFile.getProperty("directorMax"));
-	        //allXPathID = new AllXPathAndID();
-	        for(i=0; i < max; i++){
-	        	j = i+1;
-	        	hbDirectorXPathHash.put(propertyFile.getProperty("director" + j+ ".name"), propertyFile.getProperty("director" + j+ ".value"));
-	        }
-	        
-	        
-	      //Read HB WebAgent: Property name and value	 
-	        max = Integer.parseInt(propertyFile.getProperty("webAgentXPathMax"));
-	        for(i=0; i < max; i++){
-	        	j = i+1;
-	        	hbWebAgentXPathHash.put(propertyFile.getProperty("webAgentXPath" + j+ ".name"), propertyFile.getProperty("webAgentXPath" + j+ ".value"));
-	        }
-	        
-		    //Read email OWA: Property name and value	 
-	        max = Integer.parseInt(propertyFile.getProperty("emailOWAXPathMax"));
-	        for(i=0; i < max; i++){
-	        	j = i+1;
-	        	emailOWAXPathHash.put(propertyFile.getProperty("emailOWAXPath" + j+ ".name"), propertyFile.getProperty("emailOWAXPath" + j+ ".value"));
-	        }
-	        
-		    //Read ChatCustomerXPath: Property name and value	
-	        max = Integer.parseInt(propertyFile.getProperty("chatCustomerXPathMax"));
-	        for(i=0; i < max; i++){
-	        	j = i+1;
-	        	chatCustomerXPathHash.put(propertyFile.getProperty("chatCustomerXPath" + j+ ".name"), propertyFile.getProperty("chatCustomerXPath" + j+ ".value"));
-	        }
-	             
 
 	     }
 	     catch (Exception e) {

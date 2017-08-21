@@ -18,18 +18,18 @@
        
        <class name="HBTestesNG.TestCases.Test_Chat_All">
        <methods>      
-      	  <exclude name="Chat_NoQ_Answer" />
-          <exclude name="Chat_NoQ_Answer_NoWrapTime" /> 
-          <exclude name="Chat_Q_Answer" /> 
-          <exclude name="Chat_Queue_Abandon" />  
-          <exclude name="Chat_Ring_Abandon" />      
-          <exclude name="Chat_Q_Overflow_R_Ans_1stGroup" />
-          <exclude name="Chat_Q_Overflow_R_Ans_2ndGroup" /> 
-          <exclude name="Chat_R_Q_Overflow_Q_R_Ans_2ndGroup" /> 
-          <exclude name="Chat_R_Q_Overflow_R_Ans_2ndGroup" />  
-          <exclude name="Chat_Q_OverInterflow_Q_R_Ans_3rdGroup" /> 
-          <exclude name="Chat_BTransfer_ByExt_SameGroup" /> 
-          <exclude name="Chat_BTransfer_ByAgentName_SameGroup" />   
+      	  <include name="Chat_NoQ_Answer" />
+          <include name="Chat_NoQ_Answer_NoWrapTime" /> 
+          <include name="Chat_Q_Answer" /> 
+          <include name="Chat_Queue_Abandon" />  
+          <include name="Chat_Ring_Abandon" />      
+          <include name="Chat_Q_Overflow_R_Ans_1stGroup" />
+          <include name="Chat_Q_Overflow_R_Ans_2ndGroup" /> 
+          <include name="Chat_R_Q_Overflow_Q_R_Ans_2ndGroup" /> 
+          <include name="Chat_R_Q_Overflow_R_Ans_2ndGroup" />  
+          <include name="Chat_Q_OverInterflow_Q_R_Ans_3rdGroup" /> 
+          <include name="Chat_BTransfer_ByExt_SameGroup" /> 
+          <include name="Chat_BTransfer_ByAgentName_SameGroup" />   
           <exclude name="Chat_All_Repeat" /> 
         </methods>
        </class>
