@@ -294,7 +294,7 @@ public class Agent extends TestObject {
 		}
 		
 		try{
-			nameString = screenShotName+"_"+ agentType + "_" + username + "_" + currentTimeWithDash();
+			nameString = screenShotName+ "_" + currentTimeWithDash();
 			TakesScreenshot ts = (TakesScreenshot)driver;
 			File src = ts.getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(src, new File("./Screenshots/"+ nameString + ".jpg" ));
@@ -1072,7 +1072,10 @@ public class Agent extends TestObject {
 				if (i > 3) {
 					returnResult = false;
 					//break;
-					throw new Exception();
+					errorCount++;
+					errorString += "\n@ " + username+ "fail on => " + strXPath;
+					Assert.fail("\n@(" + agentType + ") " + username + "==> Failed on (Click_XPath) ==> "  + strXPath);
+					//throw new Exception();
 				}
 			}
 		 }catch(ElementNotVisibleException e){

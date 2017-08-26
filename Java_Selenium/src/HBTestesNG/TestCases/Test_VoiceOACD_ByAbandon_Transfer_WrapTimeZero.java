@@ -64,8 +64,8 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 		try{
 			//###########################
 			customer1.makeACDCall(irn1.didNum);
-			agent1.waitTillRingPlusSec(callbackAbandonSecInt+5);
-			customer1.dropCall();
+			agent1.waitTillRingPlusSec(callbackAbandonSecInt+1);
+			customer1.abandonCall();
 			agent1.resumeAgent(); //This is needed in case agent1 becomes forced-released
 			
 			customer1.answerCall(5);
@@ -109,8 +109,8 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 		try{
 			//###########################
 			customer1.makeACDCall(irn1.didNum);
-			agent1.waitTillRingPlusSec(callbackAbandonSecInt+5);
-			customer1.dropCall();
+			agent1.waitTillRingPlusSec(callbackAbandonSecInt+1);
+			customer1.abandonCall();
 			agent1.resumeAgent(); //This is needed in case agent1 becomes forced-released
 			
 			customer1.answerCall(5);
@@ -126,7 +126,7 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 			//############################
 			//agent1.wrapupEndWith2WrapupCodes(10);	
 			wait(10, "Talk after 2nd agent hangs up for the conference");
-			customer1.dropCall();
+			customer1.dropCall();;
 		}catch(Exception e){
 			log.info("I am handling General exception=>"+ e.toString());
 			resetAllActors(testName);
@@ -154,8 +154,8 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 		try{
 			//###########################
 			customer1.makeACDCall(irn1.didNum);
-			agent1.waitTillRingPlusSec(callbackAbandonSecInt+5);
-			customer1.dropCall();
+			agent1.waitTillRingPlusSec(callbackAbandonSecInt+1);
+			customer1.abandonCall();
 			agent1.resumeAgent(); //This is needed in case agent1 becomes forced-released
 			
 			customer1.answerCall(5);
@@ -172,7 +172,7 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 			agent1.disconnectOACD();
 			//agent1.wrapupEndWith2WrapupCodes(10);	
 			wait(10, "Talk after 2nd agent hangs up for the conference");
-			customer1.dropCall();
+			customer1.dropCall();;
 			////agent1.wrapupEndWith2WrapupCodes(10);
 		
 		}catch(Exception e){
@@ -206,8 +206,8 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 		try{
 			//###########################
 			customer1.makeACDCall(irn1.didNum);
-			agent1.waitTillRingPlusSec(callbackAbandonSecInt+5);
-			customer1.dropCall();
+			agent1.waitTillRingPlusSec(callbackAbandonSecInt+1);
+			customer1.abandonCall();
 			agent1.resumeAgent(); //This is needed in case agent1 becomes forced-released
 			
 			customer1.answerCall(5);
@@ -222,7 +222,7 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 			wait(10, "Talk after confirmation of consult-Conference");
 	
 			//############################
-			customer1.dropCall();
+			customer1.dropCall();;
 		}catch(Exception e){
 			log.info("I am handling General exception=>"+ e.toString());
 			resetAllActors(testName);
@@ -249,8 +249,8 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 		try{
 			//###########################
 			customer1.makeACDCall(irn1.didNum);
-			agent1.waitTillRingPlusSec(callbackAbandonSecInt+5);
-			customer1.dropCall();
+			agent1.waitTillRingPlusSec(callbackAbandonSecInt+1);
+			customer1.abandonCall();
 			agent1.resumeAgent(); //This is needed in case agent1 becomes forced-released
 			
 			customer1.answerCall(5);
@@ -264,7 +264,7 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 			wait(10, "Talk after confirmation of consult-Conference");
 	
 			//############################
-			customer1.dropCall();
+			customer1.dropCall();;
 		}catch(Exception e){
 			log.info("I am handling General exception=>"+ e.toString());
 			resetAllActors(testName);
@@ -293,8 +293,8 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 		try{
 			//###########################
 			customer1.makeACDCall(irn1.didNum);
-			agent1.waitTillRingPlusSec(callbackAbandonSecInt+5);
-			customer1.dropCall();
+			agent1.waitTillRingPlusSec(callbackAbandonSecInt+1);
+			customer1.abandonCall();
 			agent1.resumeAgent(); //This is needed in case agent1 becomes forced-released
 			
 			customer1.answerCall(5);
@@ -310,7 +310,7 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 			//############################
 			//agent1.wrapupEndWith2WrapupCodes(10);	
 			wait(10, "Talk after 2nd agent hangs up for the conference");
-			customer1.dropCall();
+			customer1.dropCall();;
 		}catch(Exception e){
 			log.info("I am handling General exception=>"+ e.toString());
 			resetAllActors(testName);
@@ -337,8 +337,8 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 		try{
 			//###########################
 			customer1.makeACDCall(irn1.didNum);
-			agent1.waitTillRingPlusSec(callbackAbandonSecInt+5);
-			customer1.dropCall();
+			agent1.waitTillRingPlusSec(callbackAbandonSecInt+1);
+			customer1.abandonCall();
 			agent1.resumeAgent(); //This is needed in case agent1 becomes forced-released
 			
 			customer1.answerCall(5);
@@ -353,7 +353,7 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 			wait(10, "Talk after confirmation of consult-Conference");
 	
 			//############################
-			customer1.dropCall();
+			customer1.dropCall();;
 		}catch(Exception e){
 			log.info("I am handling General exception=>"+ e.toString());
 			resetAllActors(testName);
@@ -382,8 +382,8 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 		try{
 			//###########################
 			customer1.makeACDCall(irn1.didNum);
-			agent1.waitTillRingPlusSec(callbackAbandonSecInt+5);
-			customer1.dropCall();
+			agent1.waitTillRingPlusSec(callbackAbandonSecInt+1);
+			customer1.abandonCall();
 			agent1.resumeAgent(); //This is needed in case agent1 becomes forced-released
 			
 			customer1.answerCall(5);
@@ -399,7 +399,7 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 			wait(10, "Talk after confirmation of consult-Conference");
 	
 			//############################
-			customer1.dropCall();
+			customer1.dropCall();;
 		}catch(Exception e){
 			log.info("I am handling General exception=>"+ e.toString());
 			resetAllActors(testName);
@@ -428,8 +428,8 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 		try{
 			//###########################
 			customer1.makeACDCall(irn1.didNum);
-			agent1.waitTillRingPlusSec(callbackAbandonSecInt+5);
-			customer1.dropCall();
+			agent1.waitTillRingPlusSec(callbackAbandonSecInt+1);
+			customer1.abandonCall();
 			agent1.resumeAgent(); //This is needed in case agent1 becomes forced-released
 			
 			customer1.answerCall(5);
@@ -446,7 +446,7 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 			//############################
 			//agent1.wrapupEndWith2WrapupCodes(10);	
 			wait(10, "Talk after 2nd agent hangs up for the conference");
-			customer1.dropCall();
+			customer1.dropCall();;
 		}catch(Exception e){
 			log.info("I am handling General exception=>"+ e.toString());
 			resetAllActors(testName);
@@ -474,8 +474,8 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 		try{
 			//###########################
 			customer1.makeACDCall(irn1.didNum);
-			agent1.waitTillRingPlusSec(callbackAbandonSecInt+5);
-			customer1.dropCall();
+			agent1.waitTillRingPlusSec(callbackAbandonSecInt+1);
+			customer1.abandonCall();
 			agent1.resumeAgent(); //This is needed in case agent1 becomes forced-released
 			
 			customer1.answerCall(5);
@@ -493,7 +493,7 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 			agent1.disconnectOACD();
 			//agent1.wrapupEndWith2WrapupCodes(10);	
 			wait(10, "Talk after 2nd agent hangs up for the conference");
-			customer1.dropCall();
+			customer1.dropCall();;
 			////agent1.wrapupEndWith2WrapupCodes(10);
 		
 		}catch(Exception e){
@@ -527,8 +527,8 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 		try{
 			//###########################
 			customer1.makeACDCall(irn1.didNum);
-			agent1.waitTillRingPlusSec(callbackAbandonSecInt+5);
-			customer1.dropCall();
+			agent1.waitTillRingPlusSec(callbackAbandonSecInt+1);
+			customer1.abandonCall();
 			agent1.resumeAgent(); //This is needed in case agent1 becomes forced-released
 			
 			customer1.answerCall(5);
@@ -544,7 +544,7 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 			wait(10, "Talk after confirmation of consult-Conference");
 	
 			//############################
-			customer1.dropCall();
+			customer1.dropCall();;
 		}catch(Exception e){
 			log.info("I am handling General exception=>"+ e.toString());
 			resetAllActors(testName);
@@ -571,8 +571,8 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 		try{
 			//###########################
 			customer1.makeACDCall(irn1.didNum);
-			agent1.waitTillRingPlusSec(callbackAbandonSecInt+5);
-			customer1.dropCall();
+			agent1.waitTillRingPlusSec(callbackAbandonSecInt+1);
+			customer1.abandonCall();
 			agent1.resumeAgent(); //This is needed in case agent1 becomes forced-released
 			
 			customer1.answerCall(5);
@@ -587,7 +587,7 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 			wait(10, "Talk after confirmation of consult-Conference");
 	
 			//############################
-			customer1.dropCall();
+			customer1.dropCall();;
 		}catch(Exception e){
 			log.info("I am handling General exception=>"+ e.toString());
 			resetAllActors(testName);
@@ -616,8 +616,8 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 		try{
 			//###########################
 			customer1.makeACDCall(irn1.didNum);
-			agent1.waitTillRingPlusSec(callbackAbandonSecInt+5);
-			customer1.dropCall();
+			agent1.waitTillRingPlusSec(callbackAbandonSecInt+1);
+			customer1.abandonCall();
 			agent1.resumeAgent(); //This is needed in case agent1 becomes forced-released
 			
 			customer1.answerCall(5);
@@ -634,7 +634,7 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 			//############################
 			//agent1.wrapupEndWith2WrapupCodes(10);	
 			wait(10, "Talk after 2nd agent hangs up for the conference");
-			customer1.dropCall();
+			customer1.dropCall();;
 		}catch(Exception e){
 			log.info("I am handling General exception=>"+ e.toString());
 			resetAllActors(testName);
@@ -661,8 +661,8 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 		try{
 			//###########################
 			customer1.makeACDCall(irn1.didNum);
-			agent1.waitTillRingPlusSec(callbackAbandonSecInt+5);
-			customer1.dropCall();
+			agent1.waitTillRingPlusSec(callbackAbandonSecInt+1);
+			customer1.abandonCall();
 			agent1.resumeAgent(); //This is needed in case agent1 becomes forced-released
 			
 			customer1.answerCall(5);
@@ -678,7 +678,7 @@ public class Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero extends TestCaseObje
 			wait(10, "Talk after confirmation of consult-Conference");
 	
 			//############################
-			customer1.dropCall();
+			customer1.dropCall();;
 		}catch(Exception e){
 			log.info("I am handling General exception=>"+ e.toString());
 			resetAllActors(testName);

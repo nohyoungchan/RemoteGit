@@ -243,14 +243,12 @@ public class AgentHBDirector extends Agent {
 		 waitUntilMainTitle("Services");
 		 
 		 wait(2);
-		 typeElementXPath(AllActors.iniXPath.get("CCD", "searchBox"), serviceName);
-		//Change wrapup and forced released time
-		 clickXPath(AllActors.iniXPath.get("CCD", "serviceGeneralTab")); 
-		 typeElementXPath(AllActors.iniXPath.get("CCD", "wrapupTime_TxtBox"), wuTime); 
-		 typeElementXPath(AllActors.iniXPath.get("CCD", "ForcedReleaseTimeout_TxtBox"), frTime);
-		 
-		 
-		 clickXPath(AllActors.iniXPath.get("CCD", "serviceAbandonTab")); 
+		 find_and_fill_byID("listFilterGlobal", serviceName, false);
+		 dependableClick_byID("tab0_link");
+		 find_and_fill_byID("wrap_up_time", wuTime, false);
+		 find_and_fill_byID("forced_release_time", frTime, false);
+
+		 dependableClick_byID("tab7_link");  //Click abandon tab
 		 
 		 enabled = checkEnabledXPath(AllActors.iniXPath.get("CCD", "minTimeBeforeAbandon_TxtBox"));
 		 if(enabled){
@@ -260,7 +258,9 @@ public class AgentHBDirector extends Agent {
 			 log.info("\n@(" + agentType + ") " +  username + " : Abandon Callback is already disabled. ");
 		 }
 			  
-		 clickXPath(AllActors.iniXPath.get("CCD", "submitButton"));
+		 wait(2);
+		 dependableClick_byID("submitButton");	  
+		 wait(2);
 		 logOutHBDirector();
 		 minimizeBrowser();
 	 }

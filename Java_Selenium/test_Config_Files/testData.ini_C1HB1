@@ -22,7 +22,7 @@ CustomerVoice1.extension=4006
 CustomerVoice1.did=4006
 
 [CustomerChat]
-max=1
+max=0
 tenantPrefix=80005
 chatIRN=5555
 stOrMt=st
@@ -31,7 +31,7 @@ chatCustomerNamePrefix=Customer
 
 # Current email customer is using owa->2017
 [CustomerEmail]
-max=1
+max=0
 CustomerEmail1.name=qa\ynoh11
 CustomerEmail1.password=changeme
 CustomerEmail1.domain=qa

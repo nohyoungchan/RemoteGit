@@ -23,7 +23,7 @@ public class CustomerManhattan  extends TestObject {
 	public void startManhattan(String x, String y) throws Exception {
 		log.info("\n@ Manhattan : " +  username + " #### Starts Manhattan client: Location : " + x + "/" + y + " ####");
 		Utilities.executeCommand("ShoreTel.exe");
-		wait(2);
+		wait(4);
 		String strAutoItCommand = "AutoIt3.exe " + autoitFolder + "manhattan_relocate.exe " + x + " " + y;
     	Utilities.executeCommand(strAutoItCommand);
     	currentState ="started";
@@ -42,15 +42,15 @@ public class CustomerManhattan  extends TestObject {
     	String voiceMailBtn = imgFolder + "mh_voiceMailBtn.PNG";
     	
     	activateManhattan();
-    	clickAppear(screen, patternUsername);
+    	clickAppear(screen, patternUsername, 5);
     	screen.write(username);
-    	clickAppear(screen, patternPassword);
+    	clickAppear(screen, patternPassword, 5);
     	screen.write(password);
-    	clickAppear(screen, loginBtn);
+    	clickAppear(screen, loginBtn, 5);
     	
     	//This is needed to expand manhattan client
-    	clickAppear(screen, voiceMailBtn);
-    	clickAppear(screen, voiceMailBtn);
+    	clickAppear(screen, voiceMailBtn, 5);
+    	clickAppear(screen, voiceMailBtn, 5);
     	
     	
     	
@@ -78,15 +78,12 @@ public class CustomerManhattan  extends TestObject {
     	String voiceMailBtn = imgFolder + "mh_voiceMailBtn.PNG";
     	
     	activateManhattan();
-    	clickAppear(screen, patternUsername);
+    	clickAppear(screen, patternUsername, 5);
     	screen.write(username);
-    	clickAppear(screen, patternPassword);
+    	clickAppear(screen, patternPassword, 5);
     	screen.write(password);
-    	clickAppear(screen, loginBtn);
+    	clickAppear(screen, loginBtn, 5);
     	
-    	//This is needed to expand manhattan client
-    	clickAppear(screen, voiceMailBtn);
-    	clickAppear(screen, voiceMailBtn);
     	
     	while (null != screen.exists(connectionNotSecure)) {
     		log.info("@ Handling connection not secure");
@@ -94,6 +91,10 @@ public class CustomerManhattan  extends TestObject {
     		screen.click(proceedBtn);
     		wait(2);
     	}
+    	
+    	//This is needed to expand manhattan client
+    	clickAppear(screen, voiceMailBtn, 5);
+    	clickAppear(screen, voiceMailBtn, 5);
     
 		log.info("\n@ Manhattan : " +  username + " #### Login Completed ####");
 		currentState = "loggedin_idle";
@@ -109,9 +110,9 @@ public class CustomerManhattan  extends TestObject {
 
     	wait(waitSec);
     	activateManhattan();
-    	clickAppear(screen, patternStateBtn);
+    	clickAppear(screen, patternStateBtn, 5);
     	wait(1);
-    	clickAppear(screen, logoutBtn);
+    	clickAppear(screen, logoutBtn, 5);
     	currentState ="loggedout";
 		currentTime();
 	}
@@ -122,7 +123,7 @@ public class CustomerManhattan  extends TestObject {
     	String closeIcon = imgFolder +"mh_closeManhattan";
     	activateManhattan();
     	wait(waitSec);
-    	clickAppear(screen, closeIcon);
+    	clickAppear(screen, closeIcon, 5);
     	currentState ="closed";
 		currentTime();
 	}
@@ -158,7 +159,7 @@ public class CustomerManhattan  extends TestObject {
 		  Pattern patternoffhookBtn = new Pattern(imgFolder +"mh_offhookBtn.PNG").targetOffset(100, 0);
 
 		  activateManhattan();
-		  clickAppear(screen, patternoffhookBtn);
+		  clickAppear(screen, patternoffhookBtn, 5);
 		  screen.type(number);
 		  screen.type(Key.ENTER);
 		  currentState ="loggedin_busy";
@@ -170,7 +171,7 @@ public class CustomerManhattan  extends TestObject {
 		  log.info("\n@ Manhattan : " +  username + " #### clearing calls if they exist ####");
 		  Pattern patternoffhookBtn = new Pattern(imgFolder +"mh_offhookBtn.PNG").targetOffset(100, 0);
 		  Pattern callBox = new Pattern(imgFolder +"mh_callBox.PNG").targetOffset(0, 10);
-		  Pattern dropBtn = new Pattern(imgFolder +"mh_dropBtn.PNG").targetOffset(10, 0);
+		  Pattern dropBtn = new Pattern(imgFolder +"mh_dropBtn.PNG").targetOffset(20, 0);
 
 		  //String eventBtn =imgFolder + "mh_eventBtn";
 		  
@@ -181,14 +182,14 @@ public class CustomerManhattan  extends TestObject {
 		  //screen.click(eventBtn);
 		  while (null != screen.exists(callBox)) {
 	    		log.info("@ cleaning a remaining call");
-	    		clickAppear(screen, callBox);
-	    		clickAppear(screen, dropBtn);
+	    		clickAppear(screen, callBox, 5);
+	    		clickAppear(screen, dropBtn, 5);
 	    		wait(2);
 	    	}
 
 		  log.info("\n@ Manhattan : " +  username + " #### Making ACD call ####");
 
-		  clickAppear(screen, patternoffhookBtn);
+		  clickAppear(screen, patternoffhookBtn, 5);
 		  screen.type(number);
 		  wait(2);
 		  screen.type(Key.ENTER);
@@ -204,8 +205,8 @@ public class CustomerManhattan  extends TestObject {
 		  String dropBtn = imgFolder +"mh_dropBtn";
 	    	
 		  activateManhattan();
-    	  clickAppear(screen, callBox);
-    	  clickAppear(screen, dropBtn);
+		  if(clickAppear(screen, callBox, 5))
+			  clickAppear(screen, dropBtn, 5);
     	  
     	  currentState ="loggedin_idle";
 		  currentTime();
@@ -220,8 +221,8 @@ public class CustomerManhattan  extends TestObject {
 	    	
 		  activateManhattan();
 		  wait(waitSec, "# Customer waits before drop the call");
-    	  clickAppear(screen, callBox);
-    	  clickAppear(screen, dropBtn);
+    	  if(clickAppear(screen, callBox, 5))
+    		  clickAppear(screen, dropBtn, 5);
     	  
     	  currentState ="loggedin_idle";
 		  currentTime();
@@ -229,14 +230,18 @@ public class CustomerManhattan  extends TestObject {
 	  }
 	  
 	
-	  
+	 /**
+	  *  
+	  * @param waitSec wait before click answerBtn
+	  * @throws Exception
+	  */
 	  public void answerCall(int waitSec) throws Exception {
 		  log.info("\n@ Manhattan : " +  username + " #### Answering a call ####");
 		  String answerBtn = imgFolder +"mh_answerBtn";
 	    	
 		  activateManhattan();
     	  wait(waitSec);
-    	  clickAppear(screen, answerBtn);
+    	  clickAppear(screen, answerBtn, 5);
     	  currentState ="loggedin_busy";
 		  currentTime();
 		 
@@ -249,7 +254,7 @@ public class CustomerManhattan  extends TestObject {
 		  String abandonBtn = imgFolder +"mh_abandonBtn";
 	    	
 		  activateManhattan();
-	      clickAppear(screen, abandonBtn);
+	      clickAppear(screen, abandonBtn, 5);
 	      currentState ="loggedin_idle";
 		  currentTime();
 		 
@@ -276,7 +281,7 @@ public class CustomerManhattan  extends TestObject {
 	  public void tearDownAll() throws Exception {
 		log.info("\n@ Manhattan : " +  username + " #### Logout and Close Manhattan client ####");
 		logOut(2);
-		closeManhattan(2);
+		closeManhattan(1);
 	    currentTime();	    
 	  }
 	  
@@ -321,9 +326,44 @@ public class CustomerManhattan  extends TestObject {
 				} 
 				i++;
 				wait(2);
+				activateManhattan();
 				if (i > numTry) {
 					log.info("\n@ Manhattan : " +  username + " : image doesn't appear after " + numTry + " Tries  => " + img);
-					throw new Exception();
+					returnValue = false;
+					break;
+				}
+			}
+		}catch(Exception e) {
+			returnValue = false;
+			log.error("Fail to click: " + img + " => " + e.toString());
+		}
+		
+		return returnValue;
+	  }
+	  
+	  /**
+	   * This waits until "img" appear and click.
+	   * @param s  : This is screen object 
+	   * @param img : This is image to click
+	   * @param numTry: This is to try how many time to check if an image appears.
+	   */
+	  public boolean clickAppear(Screen s, Pattern img, int numTry) {
+		log.info("\n@ Manhattan : " +  username + " : clicking => " + img);
+		int i = 0;
+		boolean returnValue = true;
+		try {
+		while (true) {
+				if (s.exists(img) != null) {
+				    s.click(img);
+				    break;
+				} 
+				i++;
+				wait(2);
+				activateManhattan();
+				if (i > numTry) {
+					log.info("\n@ Manhattan : " +  username + " : image doesn't appear after " + numTry + " Tries  => " + img);
+					returnValue = false;
+					break;
 				}
 			}
 		}catch(Exception e) {
@@ -352,7 +392,7 @@ public class CustomerManhattan  extends TestObject {
 			
 				i++;
 				wait(2);
-				if (i > 10) {
+				if (i > 5) {
 					log.info("\n@ Manhattan : " +  username + " : image doesn't appear so exception => " + img);
 					throw new Exception();
 				}

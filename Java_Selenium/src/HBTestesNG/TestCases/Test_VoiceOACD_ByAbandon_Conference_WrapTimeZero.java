@@ -64,7 +64,7 @@ public class Test_VoiceOACD_ByAbandon_Conference_WrapTimeZero extends TestCaseOb
 		try{
 			//###########################
 			customer1.makeACDCall(irn1.didNum);
-			agent1.waitTillRingPlusSec(callbackAbandonSecInt+5);
+			agent1.waitTillRingPlusSec(callbackAbandonSecInt+1);
 			customer1.abandonCall();
 			agent1.resumeAgent(); //This is needed in case agent1 becomes forced-released
 			customer1.answerCall(5);
@@ -110,7 +110,7 @@ public class Test_VoiceOACD_ByAbandon_Conference_WrapTimeZero extends TestCaseOb
 		try{
 			//###########################
 			customer1.makeACDCall(irn1.didNum);
-			agent1.waitTillRingPlusSec(callbackAbandonSecInt+5);
+			agent1.waitTillRingPlusSec(callbackAbandonSecInt+1);
 			customer1.abandonCall();
 			agent1.resumeAgent(); //This is needed in case agent1 becomes forced-released
 			customer1.answerCall(5);
@@ -154,7 +154,7 @@ public class Test_VoiceOACD_ByAbandon_Conference_WrapTimeZero extends TestCaseOb
 		try{
 			//###########################
 			customer1.makeACDCall(irn1.didNum);
-			agent1.waitTillRingPlusSec(callbackAbandonSecInt+5);
+			agent1.waitTillRingPlusSec(callbackAbandonSecInt+1);
 			customer1.abandonCall();
 			agent1.resumeAgent(); //This is needed in case agent1 becomes forced-released
 			customer1.answerCall(5);
@@ -204,7 +204,7 @@ public class Test_VoiceOACD_ByAbandon_Conference_WrapTimeZero extends TestCaseOb
 		try{
 			//###########################
 			customer1.makeACDCall(irn1.didNum);
-			agent1.waitTillRingPlusSec(callbackAbandonSecInt+5);
+			agent1.waitTillRingPlusSec(callbackAbandonSecInt+1);
 			customer1.abandonCall();
 			agent1.resumeAgent(); //This is needed in case agent1 becomes forced-released
 			customer1.answerCall(5);
@@ -248,7 +248,7 @@ public class Test_VoiceOACD_ByAbandon_Conference_WrapTimeZero extends TestCaseOb
 		try{
 			//###########################
 			customer1.makeACDCall(irn1.didNum);
-			agent1.waitTillRingPlusSec(callbackAbandonSecInt+5);
+			agent1.waitTillRingPlusSec(callbackAbandonSecInt+1);
 			customer1.abandonCall();
 			agent1.resumeAgent(); //This is needed in case agent1 becomes forced-released
 			customer1.answerCall(5);
@@ -293,7 +293,7 @@ public class Test_VoiceOACD_ByAbandon_Conference_WrapTimeZero extends TestCaseOb
 		try{
 			//###########################
 			customer1.makeACDCall(irn1.didNum);
-			agent1.waitTillRingPlusSec(callbackAbandonSecInt+5);
+			agent1.waitTillRingPlusSec(callbackAbandonSecInt+1);
 			customer1.abandonCall();
 			agent1.resumeAgent(); //This is needed in case agent1 becomes forced-released
 			customer1.answerCall(5);
@@ -336,7 +336,7 @@ public class Test_VoiceOACD_ByAbandon_Conference_WrapTimeZero extends TestCaseOb
 		try{
 			//###########################
 			customer1.makeACDCall(irn1.didNum);
-			agent1.waitTillRingPlusSec(callbackAbandonSecInt+5);
+			agent1.waitTillRingPlusSec(callbackAbandonSecInt+1);
 			customer1.abandonCall();
 			agent1.resumeAgent(); //This is needed in case agent1 becomes forced-released
 			customer1.answerCall(5);

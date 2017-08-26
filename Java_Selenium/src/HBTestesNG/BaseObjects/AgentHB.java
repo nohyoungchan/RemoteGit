@@ -216,7 +216,7 @@ public class AgentHB extends Agent {
 				  {
 				      log.info("\n@(" + agentType + ") " +  username + " #### Agent is idle=>Click release button ####");
 				      click_XPath(("btnResume"));
-				      wait(5);
+				      wait(2);
 				  }else{
 				  	log.info("\n@(" + agentType + ") " +  username + ": State=> " + txtReturned);
 				  }
@@ -248,6 +248,7 @@ public class AgentHB extends Agent {
 			      click_XPath("btnReleaseCodeSelect");
 			      wait(2);
 			      click_XPath("secondReleaseCode");
+			      wait(2);
 				  
 			}catch(InterruptedException e){
 				//log.info("I am handling Interrupted Exceptionj=>"+ e.toString());
@@ -258,7 +259,7 @@ public class AgentHB extends Agent {
 		  	catch(Exception e){
 				log.info("I am handling General exception=>"+ e.toString());
 				errorCount++;
-				errorString += "# " + username+ "fail to releaseAgentSecondCode;";
+				errorString += "\n@ " + username+ "fail to releaseAgentSecondCode;";
 				state = "weird";
 			}finally{
 				  minimizeBrowser();
@@ -279,6 +280,7 @@ public class AgentHB extends Agent {
 			      click_XPath(("btnReleaseCodeSelect"));
 			      wait(2);
 			      click_XPath(("thirdReleaseCode"));
+			      wait(2);
 				  
 			}catch(InterruptedException e){
 				//log.info("I am handling Interrupted Exceptionj=>"+ e.toString());
@@ -327,7 +329,7 @@ public class AgentHB extends Agent {
 					log.error("\n@(" + agentType + ") " +  username + " I am handling Interrupted exception=> resumeAgent(), and throw again");
 					actionResult = false;
 					errorCount++;
-					errorString += "# " + username+ "fail to resume;";
+					errorString += "\n@ " + username+ "fail to resume;";
 					throw e;
 					//state = "weird";
 				}
@@ -367,9 +369,10 @@ public class AgentHB extends Agent {
 			  throw e;
 		 }catch(Exception e){
 			 errorCount++;
-			 errorString += "# " + username+ "fail to " + strFunctionName + ";";
+			 errorString += "\n@ " + username+ "fail to " + strFunctionName + ";";
 			log.info("\n@(" + agentType + ") " +  username + " exception on answering acd call" + e.toString() );
 			state = "weird";
+			stopTest = "yes"; //This will stop all test cases
 			throw e;
 		  }finally {
 			  minimizeBrowser();
@@ -393,7 +396,7 @@ public class AgentHB extends Agent {
 			  throw e;
 		 }catch(Exception e){
 			 errorCount++;
-			 errorString += "# " + username+ "fail to " + strFunctionName + ";";
+			 errorString += "\n@ " + username+ "fail to " + strFunctionName + ";";
 			log.info("\n@(" + agentType + ") " +  username + " exception on answering acd call" + e.toString() );
 			state = "weird";
 		  }finally{
@@ -692,11 +695,44 @@ public class AgentHB extends Agent {
 		  }
 	  }
 	  
+	  public void disconnectByWebAgent(int waitSec) throws EC_DisconnectBtn {
+		  log.info("\n@(" + agentType + ") " +  username + " #### Disconnect by WebAgent ####");
+
+		  try{
+			  //getCurrentDimenSion();
+			  maximizeBrowser();
+			  wait(waitSec, "wait before clicking btnDisconnect");
+			  
+			  log.info("\n ## Pre-Condition of disconnectByWebAgent()");
+			  if(waitUntilClickable("btnDisconnect", 5) == null){
+				  click_XPath(("panelCurrentCall"));  //This is needed for a consult transferred/conference call.
+			  }
+			  
+			  wait(2);
+			  if (click_XPath(("btnDisconnect"))) {
+				  log.info("\n@(" + agentType + ") " +  username + " disconnectByWebAgent() successfully"); 
+			  }else {
+				  log.info("\n@(" + agentType + ") " +  username + " doesn't need to disconnect"); 
+			  };
+			  
+			  state = "idle";
+			  
+		  }catch(EC_DisconnectBtn e) {
+			  errorCount++;
+			  errorString += "\n@ " + username+ "Exception on btnDisconnectByWebAent";
+			  //Assert.assertTrue(false, errorString);
+			  throw new EC_DisconnectBtn("Fail to close disconnectBtn");}
+		  catch(Exception e){
+			  log.info("\n@(" + agentType + ") " +  username + " exception on disconnectByWebAgent");
+			  state = "weird";
+		  }finally {
+				minimizeBrowser();
+		  }
+	  }
+	  
 	  
 	  public void disconnectByWebAgent() throws EC_DisconnectBtn {
 		  log.info("\n@(" + agentType + ") " +  username + " #### Disconnect by WebAgent ####");
-		  boolean res;
-		  res = true;
 		  try{
 			  //getCurrentDimenSion();
 			  maximizeBrowser();
@@ -713,11 +749,14 @@ public class AgentHB extends Agent {
 				  log.info("\n@(" + agentType + ") " +  username + " doesn't need to disconnect"); 
 			  };
 			  
-/*			  log.info("\n ## Post-Condition of disconnectByWebAgent()");
-			  if(existsElement("btnDisconnect")) {
+			  //This only works with a single call.  Not working when
+			  /*wait(2);
+			  log.info("\n ## Post-Condition of disconnectByWebAgent()");
+			  if(existsElement("panelCurrentCall")) {
 				  wait(2, "check one more time for btnDisconnect");
 				  if(existsElement("btnDisconnect")) {
 				     log.info("\n@(" + agentType + ") " +  username + " disconnectBtn still exist after clicking it");
+				     captureScreenshot("DisconnectByWebAgent_panelExist");
 				     throw new EC_DisconnectBtn("Fail to close disconnectBtn");
 				  }
 			  }*/
@@ -726,7 +765,7 @@ public class AgentHB extends Agent {
 			  
 		  }catch(EC_DisconnectBtn e) {
 			  errorCount++;
-			  errorString += "# " + username+ "Exceptionafter pressing btnDisconnect";
+			  errorString += "\n@ " + username+ "Exceptionafter pressing btnDisconnect";
 			  //Assert.assertTrue(false, errorString);
 			  throw new EC_DisconnectBtn("Fail to close disconnectBtn");}
 		  catch(Exception e){
@@ -906,7 +945,7 @@ public class AgentHB extends Agent {
 		  }catch(Exception e){
 			  log.info("\n@(" + agentType + ") " +  username + " exception on wrapupEndWith2WrapupCodes" + e.toString());
 			  errorCount++;
-			  errorString += "# " + username+ "fail on wrapupEndWith2WrapupCodes";
+			  errorString += "\n@ " + username+ "fail on wrapupEndWith2WrapupCodes";
 			  state = "weird";
 		  }finally {
 				minimizeBrowser();
@@ -930,7 +969,7 @@ public class AgentHB extends Agent {
 		  }catch(Exception e){
 			  log.info("\n@(" + agentType + ") " +  username + " exception on signoutWebAgent" + e.toString());
 			  errorCount++;
-			  errorString += "# " + username+ "signoutWebAgent;";
+			  errorString += "\n@ " + username+ "signoutWebAgent;";
 			  state = "weird";
 		  }
 	  }

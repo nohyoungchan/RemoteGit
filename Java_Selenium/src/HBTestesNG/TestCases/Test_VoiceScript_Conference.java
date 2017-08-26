@@ -44,12 +44,9 @@ public class Test_VoiceScript_Conference extends TestCaseObject {
 			agent3.resumeAgent();
 
 			//###########################
-			customer1.makeACDCall(agent1.did);
+			customer1.makeACDCall(irn5.didNum);
 			agent1.answerACDCall(rT1, tT1);
-			//This transfers to a script which transfers to irn1->agent1 again.
-			agent1.blindTransfer(irn5.irnNum);  
-			agent1.answerACDCall(rT1, tT1);
-
+			
 
 			//###########################
 			agent2.resumeAgent();
@@ -85,13 +82,9 @@ public class Test_VoiceScript_Conference extends TestCaseObject {
 			agent3.resumeAgent();
 
 			//###########################
-			customer1.makeACDCall(agent1.did);
+			customer1.makeACDCall(irn5.didNum);
 			agent1.answerACDCall(rT1, tT1);
-			//This transfers to a script which transfers to irn1->agent1 again.
-			agent1.blindTransfer(irn5.irnNum);  
-			agent1.answerACDCall(rT1, tT1);
-
-
+			
 			//###########################
 			agent1.consultConference_ByNumber(agent3.extension);
 			agent3.answerACDCall(rT2, tT2);
@@ -125,12 +118,9 @@ public class Test_VoiceScript_Conference extends TestCaseObject {
 			agent3.resumeAgent();
 
 			//###########################
-			customer1.makeACDCall(agent1.did);
+			customer1.makeACDCall(irn5.didNum);
 			agent1.answerACDCall(rT1, tT1);
-			//This transfers to a script which transfers to irn1->agent1 again.
-			agent1.blindTransfer(irn5.irnNum);  
-			agent1.answerACDCall(rT1, tT1);
-
+			
 
 			//###########################
 			agent1.consultConference_ByNumber(agent3.did);
@@ -168,12 +158,9 @@ public class Test_VoiceScript_Conference extends TestCaseObject {
 			agent3.resumeAgent();
 
 			//###########################
-			customer1.makeACDCall(agent1.did);
+			customer1.makeACDCall(irn5.didNum);
 			agent1.answerACDCall(rT1, tT1);
-			//This transfers to a script which transfers to irn1->agent1 again.
-			agent1.blindTransfer(irn5.irnNum);  
-			agent1.answerACDCall(rT1, tT1);
-
+			
 
 			//###########################
 			agent2.resumeAgent();
@@ -209,13 +196,9 @@ public class Test_VoiceScript_Conference extends TestCaseObject {
 			agent3.resumeAgent();
 
 			//###########################
-			customer1.makeACDCall(agent1.did);
+			customer1.makeACDCall(irn5.didNum);
 			agent1.answerACDCall(rT1, tT1);
-			//This transfers to a script which transfers to irn1->agent1 again.
-			agent1.blindTransfer(irn5.irnNum);  
-			agent1.answerACDCall(rT1, tT1);
-
-
+			
 			//###########################
 			agent1.consultConference_ByNumber(irn2.irnNum);
 			agent3.answerACDCall(rT2, tT2);

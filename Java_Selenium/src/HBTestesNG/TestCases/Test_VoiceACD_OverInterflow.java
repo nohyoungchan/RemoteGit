@@ -133,7 +133,7 @@ public class Test_VoiceACD_OverInterflow extends TestCaseObject {
 	@Parameters({"rT1", "tT1", "rT2", "tT2", "wT2"})
 	public void VoiceACD_Q_Overflow_R_Ans_1stGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
-		String testName = "VoiceACD->Q->Overflow->Ring->Answer on the 2nd group";
+		String testName = "VoiceACD->Q->Overflow->Ring->Answer on the 1st group";
 		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
 		//#########################
 		

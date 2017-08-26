@@ -10,15 +10,17 @@ import org.testng.SkipException;
 
 @Test(groups= {"VoiceACD_Conference_ClassLevel"})
 public class Test_VoiceACD_Conference extends TestCaseObject {
+	String className;
 	
 
 	Test_VoiceACD_Conference() throws Exception{
 		log.info("* Construction: Test_VoiceACD_Conference");
+		className = "Test_VoiceACD_Conference";
 
 	}
 	@BeforeClass
 	public void beforeClass() throws Exception {
-		log.info("* Before Class: Test_VoiceACD_Conference");
+		classStart(className);
 		InitializeAllVariables(); 
 	  
 	}
@@ -26,7 +28,7 @@ public class Test_VoiceACD_Conference extends TestCaseObject {
   
 	@AfterClass
 	public void afterClass() throws Exception {
-		log.info("* After Class: Test_VoiceACD_Conference");
+		classEnd(className);
 	}
 	
 	@Parameters({"rT1", "tT1", "rT2", "tT2", "wT2"})
@@ -299,6 +301,7 @@ public class Test_VoiceACD_Conference extends TestCaseObject {
 	@Parameters({"rT1", "tT1", "rT2", "tT2", "wT2"})
 	public void VoiceACD_CConference_All(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		String testName = "VoiceACD->Ans->Consult Conference : All test cases";
+		skipTest("Skipping because this is loop test: no fit for functional test");
 		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
 		//#########################
 		try{

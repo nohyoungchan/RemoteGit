@@ -15,6 +15,12 @@
 	  <class name="HBTestesNG.TestCases.Test_Initiate">
 	  </class>
 	  
+	  <class name="HBTestesNG.TestCases.Test_Preparation">
+        <methods>   	
+          <include name="VoiceACD_Q_Abandon" />     <!--### This is an workaround for acd work. skip it once the problem is gone## -->
+        </methods>
+      </class>
+	  
       <class name="HBTestesNG.TestCases.Test_VoiceACD_Basic">
         <methods>   	
           <exclude name="VoiceACD_NoQ_Answer" />     
@@ -31,10 +37,10 @@
           <exclude name="VoiceACD_BTransfer_ToIRN_SameGroup" /> 
           <exclude name="VoiceACD_BTransfer_ToIRN_DifferentGroup" /> 
           <exclude name="VoiceACD_BTransfer_ToIRN_AQ" />   <!--## Defect ##-->     	 
-          <include name="VoiceACD_CTransfer_ToExt_SameGroup" />
-          <include name="VoiceACD_CTransfer_ToExt_DifferentGroup" /> 
+          <exclude name="VoiceACD_CTransfer_ToExt_SameGroup" />
+          <exclude name="VoiceACD_CTransfer_ToExt_DifferentGroup" /> 
           <exclude name="VoiceACD_CTransfer_ToExternal" />
-          <include name="VoiceACD_CTransfer_ToIRN_SameGroup" /> <!--## Defect ##--> 
+          <exclude name="VoiceACD_CTransfer_ToIRN_SameGroup" /> <!--## Defect ##--> 
           <exclude name="VoiceACD_CTransfer_ToIRN_DifferentGroup" />  <!--## Defect ##-->
           <exclude name="VoiceACD_BTransfer_ToExt_SameGroup_byName" />      	 
           <exclude name="VoiceACD_BTransfer_ToExt_DifferentGroup_byName" /> 
@@ -60,8 +66,8 @@
        
        <class name="HBTestesNG.TestCases.Test_VoiceACD_Conference">
        <methods>      
-      	  <include name="VoiceACD_CConference_ToExt_DifferentGroup" />
-          <include name="VoiceACD_CConference_ToExt_SameGroup" /> 
+      	  <exclude name="VoiceACD_CConference_ToExt_DifferentGroup" />
+          <exclude name="VoiceACD_CConference_ToExt_SameGroup" /> 
           <exclude name="VoiceACD_CConference_ToIRN_DifferentGroup" /> 
           <exclude name="VoiceACD_CConference_ToIRN_SameGroup" />  <!--# Not supported except PCM/Physical Phone # -->
           <exclude name="VoiceACD_CConference_ToExternal" />     
@@ -137,7 +143,7 @@
        <class name="HBTestesNG.TestCases.Test_VoiceScript_Transfer">
         <methods>  
           <exclude name="VoiceScript_BTransfer_ToExt_SameGroup" />       	 
-          <exclude name="VoiceScript_BTransfer_ToExt_DifferentGroup" /> 
+          <include name="VoiceScript_BTransfer_ToExt_DifferentGroup" /> 
           <exclude name="VoiceScript_BTransfer_ToExternal" />
           <exclude name="VoiceScript_BTransfer_ToIRN_SameGroup" /> 
           <exclude name="VoiceScript_BTransfer_ToIRN_DifferentGroup" /> 
@@ -184,7 +190,7 @@
        
         <class name="HBTestesNG.TestCases.Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero">
        	 <methods>   
-      	  <exclude name="VoiceOACD_ByAbandon_BTransfer_ToExt_DifferentGroup" />
+      	  <include name="VoiceOACD_ByAbandon_BTransfer_ToExt_DifferentGroup" />
           <exclude name="VoiceOACD_ByAbandon_BTransfer_ToExt_SameGroup" /> 
           <exclude name="VoiceOACD_ByAbandon_BTransfer_ToIRN_DifferentGroup" /> 
           <exclude name="VoiceOACD_ByAbandon_BTransfer_ToIRN_SameGroup" /> <!--# Not supported except PCM/Physical Phone # -->

@@ -155,7 +155,7 @@ public class TestCaseObject extends TestObject{
 	public static String startTestCase(String sTestCaseName){
 		 
 		errorCount = 0;
-		errorString.concat(sTestCaseName + "@");
+		errorString = "";
 		if (stopTest.contains("yes")) {
 			log.info("@@ Stop is requested, so skip => " + sTestCaseName);
 			return "no";

@@ -41,12 +41,8 @@ public class Test_VoiceAQ_Conference extends TestCaseObject {
 			agent3.resumeAgent();
 
 			//###########################
-			customer1.makeACDCall(agent1.did);
+			customer1.makeACDCall(irn3.didNum);
 			agent1.answerACDCall(rT1, tT1);
-			//This transfers to AQ IRN again.
-			agent1.blindTransfer(irn3.irnNum);  
-			agent1.answerACDCall(rT1, tT1);
-
 
 
 			//###########################
@@ -84,11 +80,9 @@ public class Test_VoiceAQ_Conference extends TestCaseObject {
 			agent3.resumeAgent();
 
 			//###########################
-			customer1.makeACDCall(agent1.did);
+			customer1.makeACDCall(irn3.didNum);
 			agent1.answerACDCall(rT1, tT1);
-			//This transfers to AQ IRN again.
-			agent1.blindTransfer(irn3.irnNum);  
-			agent1.answerACDCall(rT1, tT1);
+
 
 			//###########################
 			agent1.consultConference_ByNumber(agent3.extension);
@@ -124,11 +118,9 @@ public class Test_VoiceAQ_Conference extends TestCaseObject {
 			agent3.resumeAgent();
 
 			//###########################
-			customer1.makeACDCall(agent1.did);
+			customer1.makeACDCall(irn3.didNum);
 			agent1.answerACDCall(rT1, tT1);
-			//This transfers to AQ IRN again.
-			agent1.blindTransfer(irn3.irnNum);  
-			agent1.answerACDCall(rT1, tT1);
+
 
 			//###########################
 			agent1.consultConference_ByNumber(agent3.did);
@@ -167,11 +159,9 @@ public class Test_VoiceAQ_Conference extends TestCaseObject {
 			agent3.resumeAgent();
 
 			//###########################
-			customer1.makeACDCall(agent1.did);
+			customer1.makeACDCall(irn3.didNum);
 			agent1.answerACDCall(rT1, tT1);
-			//This transfers to AQ IRN again.
-			agent1.blindTransfer(irn3.irnNum);  
-			agent1.answerACDCall(rT1, tT1);
+
 
 			//###########################
 			agent2.resumeAgent();
@@ -207,11 +197,9 @@ public class Test_VoiceAQ_Conference extends TestCaseObject {
 			agent3.resumeAgent();
 
 			//###########################
-			customer1.makeACDCall(agent1.did);
+			customer1.makeACDCall(irn3.didNum);
 			agent1.answerACDCall(rT1, tT1);
-			//This transfers to AQ IRN again.
-			agent1.blindTransfer(irn3.irnNum);  
-			agent1.answerACDCall(rT1, tT1);
+
 
 			//###########################
 			agent1.consultConference_ByNumber(irn2.irnNum);

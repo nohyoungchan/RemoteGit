@@ -41,12 +41,9 @@ public class Test_VoiceAQ_Transfer extends TestCaseObject {
 			agent3.resumeAgent();
 
 			//###########################
-			customer1.makeACDCall(agent1.did);
+			customer1.makeACDCall(irn3.didNum);
 			agent1.answerACDCall(rT1, tT1);
-			//This transfers to AQ IRN again.
-			agent1.blindTransfer(irn3.irnNum);  
-			agent1.answerACDCall(rT1, tT1);
-
+			
 			//###########################
 			agent2.resumeAgent();
 			agent1.blindTransfer(agent2.extension);
@@ -80,11 +77,9 @@ public class Test_VoiceAQ_Transfer extends TestCaseObject {
 			agent3.resumeAgent();
 
 			//###########################
-			customer1.makeACDCall(agent1.did);
+			customer1.makeACDCall(irn3.didNum);
 			agent1.answerACDCall(rT1, tT1);
-			//This transfers to AQ IRN again.
-			agent1.blindTransfer(irn3.irnNum);  
-			agent1.answerACDCall(rT1, tT1);
+			
 
 			//###########################
 			agent1.blindTransfer(agent3.extension);
@@ -115,11 +110,9 @@ public class Test_VoiceAQ_Transfer extends TestCaseObject {
 			agent3.resumeAgent();
 
 			//###########################
-			customer1.makeACDCall(agent1.did);
+			customer1.makeACDCall(irn3.didNum);
 			agent1.answerACDCall(rT1, tT1);
-			//This transfers to AQ IRN again.
-			agent1.blindTransfer(irn3.irnNum);  
-			agent1.answerACDCall(rT1, tT1);
+			
 			//###### Blind transfer to the external number of agent3
 			agent1.blindTransfer(agent3.did);
 			agent3.answerACDCall(rT2, tT2);
@@ -149,11 +142,9 @@ public class Test_VoiceAQ_Transfer extends TestCaseObject {
 			agent3.resumeAgent();
 
 			//###########################
-			customer1.makeACDCall(agent1.did);
+			customer1.makeACDCall(irn3.didNum);
 			agent1.answerACDCall(rT1, tT1);
-			//This transfers to AQ IRN again.
-			agent1.blindTransfer(irn3.irnNum);  
-			agent1.answerACDCall(rT1, tT1);
+			
 			//###########################
 			agent2.resumeAgent();
 			agent1.blindTransfer(irn1.irnNum);
@@ -185,11 +176,9 @@ public class Test_VoiceAQ_Transfer extends TestCaseObject {
 			agent3.resumeAgent();
 
 			//###########################
-			customer1.makeACDCall(agent1.did);
+			customer1.makeACDCall(irn3.didNum);
 			agent1.answerACDCall(rT1, tT1);
-			//This transfers to AQ IRN again.
-			agent1.blindTransfer(irn3.irnNum);  
-			agent1.answerACDCall(rT1, tT1);
+			
 
 			//###########################
 			agent1.blindTransfer(irn2.irnNum);
@@ -221,11 +210,9 @@ public class Test_VoiceAQ_Transfer extends TestCaseObject {
 			agent3.resumeAgent();
 
 			//###########################
-			customer1.makeACDCall(agent1.did);
+			customer1.makeACDCall(irn3.didNum);
 			agent1.answerACDCall(rT1, tT1);
-			//This transfers to AQ IRN again.
-			agent1.blindTransfer(irn3.irnNum);  
-			agent1.answerACDCall(rT1, tT1);
+			
 
 			//###########################
 			agent1.blindTransfer(irn4.irnNum);
@@ -257,11 +244,9 @@ public class Test_VoiceAQ_Transfer extends TestCaseObject {
 			agent3.resumeAgent();
 
 			//###########################
-			customer1.makeACDCall(agent1.did);
+			customer1.makeACDCall(irn3.didNum);
 			agent1.answerACDCall(rT1, tT1);
-			//This transfers to AQ IRN again.
-			agent1.blindTransfer(irn3.irnNum);  
-			agent1.answerACDCall(rT1, tT1);
+			
 
 			//###########################
 			agent2.resumeAgent();
@@ -295,11 +280,9 @@ public class Test_VoiceAQ_Transfer extends TestCaseObject {
 			agent3.resumeAgent();
 
 			//###########################
-			customer1.makeACDCall(agent1.did);
+			customer1.makeACDCall(irn3.didNum);
 			agent1.answerACDCall(rT1, tT1);
-			//This transfers to AQ IRN again.
-			agent1.blindTransfer(irn3.irnNum);  
-			agent1.answerACDCall(rT1, tT1);
+			
 
 			//###########################
 			agent1.consultTransfer(irn2.irnNum);
@@ -331,12 +314,9 @@ public class Test_VoiceAQ_Transfer extends TestCaseObject {
 			agent3.resumeAgent();
 
 			//###########################
-			customer1.makeACDCall(agent1.did);
+			customer1.makeACDCall(irn3.didNum);
 			agent1.answerACDCall(rT1, tT1);
-			//This transfers to AQ IRN again.
-			agent1.blindTransfer(irn3.irnNum);  
-			agent1.answerACDCall(rT1, tT1);
-
+			
 			//###########################
 			agent1.consultTransfer(agent3.did);
 			agent3.answerACDCall(rT2, tT2);
@@ -371,12 +351,9 @@ public class Test_VoiceAQ_Transfer extends TestCaseObject {
 			agent3.resumeAgent();
 
 			//###########################
-			customer1.makeACDCall(agent1.did);
+			customer1.makeACDCall(irn3.didNum);
 			agent1.answerACDCall(rT1, tT1);
-			//This transfers to AQ IRN again.
-			agent1.blindTransfer(irn3.irnNum);  
-			agent1.answerACDCall(rT1, tT1);
-
+			
 			//###########################
 			agent2.resumeAgent();
 			agent1.consultTransfer(irn1.irnNum);
@@ -409,11 +386,9 @@ public class Test_VoiceAQ_Transfer extends TestCaseObject {
 			agent3.resumeAgent();
 
 			//###########################
-			customer1.makeACDCall(agent1.did);
+			customer1.makeACDCall(irn3.didNum);
 			agent1.answerACDCall(rT1, tT1);
-			//This transfers to AQ IRN again.
-			agent1.blindTransfer(irn3.irnNum);  
-			agent1.answerACDCall(rT1, tT1);
+			
 
 			//###########################
 			agent1.consultTransfer(irn2.irnNum);
