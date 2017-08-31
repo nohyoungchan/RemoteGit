@@ -103,29 +103,37 @@ public class CustomerManhattan  extends TestObject {
 	
 	public void logOut(int waitSec) throws Exception {
 		log.info("\n@ Manhattan : " +  username + " #### LogOut Manhattan client ####");
+		if(activateManhattan() == 0) {
+    		log.info("## Manhattan is already closed");
+    		return;
+    	}else {
 
-    	Pattern patternStateBtn = new Pattern(imgFolder +"mh_stateBtn.PNG").targetOffset(100, 0);
-    	//String stateBtn = imgFolder + "mh_stateBtn.PNG";
-    	String logoutBtn = imgFolder +"mh_logoutBtn.PNG";
-
-    	wait(waitSec);
-    	activateManhattan();
-    	clickAppear(screen, patternStateBtn, 5);
-    	wait(1);
-    	clickAppear(screen, logoutBtn, 5);
-    	currentState ="loggedout";
-		currentTime();
+	    	Pattern patternStateBtn = new Pattern(imgFolder +"mh_stateBtn.PNG").targetOffset(100, 0);
+	    	//String stateBtn = imgFolder + "mh_stateBtn.PNG";
+	    	String logoutBtn = imgFolder +"mh_logoutBtn.PNG";
+	
+	    	wait(waitSec);
+	    	clickAppear(screen, patternStateBtn, 5);
+	    	wait(1);
+	    	clickAppear(screen, logoutBtn, 5);
+	    	currentState ="loggedout";
+			currentTime();
+    	}
 	}
 	
 	public void closeManhattan(int waitSec) throws Exception {
 		log.info("\n@ Manhattan : " +  username + " #### Close Manhattan client by pressing X ####");
 
     	String closeIcon = imgFolder +"mh_closeManhattan";
-    	activateManhattan();
-    	wait(waitSec);
-    	clickAppear(screen, closeIcon, 5);
-    	currentState ="closed";
-		currentTime();
+    	if(activateManhattan() == 0) {
+    		log.info("## Manhattan is already closed");
+    		return;
+    	}else {
+    		wait(waitSec);
+	    	clickAppear(screen, closeIcon, 5);
+	    	currentState ="closed";
+			currentTime();
+    	}
 	}
 	
 	  public void makeACDCall_Continually(String number) throws Exception {
@@ -147,10 +155,21 @@ public class CustomerManhattan  extends TestObject {
 	    //tearDownAll();
 	  }
 	  
-	  public void activateManhattan() {
+	  /**
+	   * 
+	   * @return  1 is successfully activate, 0 is that manhattan client is closed
+	   * @throws Exception
+	   */
+	  public int  activateManhattan() throws Exception{
 		  log.info("\n@ Manhattan : " +  username + " #### Activating Manhattan client ####");
 		  String strAutoItCommand = "AutoIt3.exe " + autoitFolder + "manhattan_activateMH.exe";
-	      Utilities.executeCommand(strAutoItCommand);
+		  Process result = Runtime.getRuntime().exec(strAutoItCommand);
+		  result.waitFor();
+		  int res = result.exitValue();
+		  log.info("manhattan exit value:" + res);
+		  
+		  return res;
+	      
 	  }
 	  
 	  public void makeACDCallOld(String number) throws Exception{
@@ -265,24 +284,38 @@ public class CustomerManhattan  extends TestObject {
 		  //if (state.contains("idle")) return;
 		  
 		  log.info("\n@ Manhattan : " +  username + " #### Dropping a call for a reset ####");
+	
 		  String callBox = imgFolder +"mh_callBox";
 		  String dropBtn = imgFolder +"mh_dropBtn";
 	    	
-		  activateManhattan();
-    	  if (clickAppear(screen, callBox, 5)) {
-    		  clickAppear(screen, dropBtn, 5);
-    	  }
+		  if(activateManhattan()==0) {
+			  log.info("Manhattan is already closed");
+			  return;
+		  }else {
+	    	  if (clickAppear(screen, callBox, 5)) {
+	    		  clickAppear(screen, dropBtn, 5);
+	    	  }
+		  }
     	  
 		  currentTime();
 
 	  }
 	  
-	  
+	  /**
+	   * Close Manhattan if it is open
+	   * @throws Exception
+	   */
 	  public void tearDownAll() throws Exception {
 		log.info("\n@ Manhattan : " +  username + " #### Logout and Close Manhattan client ####");
-		logOut(2);
-		closeManhattan(1);
-	    currentTime();	    
+		if(activateManhattan() == 0) {
+    		log.info("## Manhattan is already closed");
+    		return;
+    	}else {
+			logOut(2);
+			closeManhattan(1);
+		    currentTime();	  
+    	}
+
 	  }
 	  
 	  /**

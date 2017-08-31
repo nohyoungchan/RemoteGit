@@ -34,7 +34,7 @@ public class TestObject extends Thread{
 	  public String currentState;
 
 	  
-	  TestObject(){
+	  protected TestObject(){
 		  PropertyConfigurator.configure(".\\log\\log4j.properties");
 		  currentState ="created";
 	  }
@@ -54,6 +54,21 @@ public class TestObject extends Thread{
 	  public void wait(int num, String reason) throws Exception{
 		  log.info("* Wait: " + reason +  " : " + num + " seconds.");
 		  Thread.sleep(num * 1000);
+	  }
+	  
+	  /**
+	   * This waits for num, and prints on console as system.out.println
+	   * @param num
+	   * @param reason
+	   */
+	  public static void waits(int num, String reason){
+		  System.out.println("* Wait: " + num + " (sec) => " + reason );
+		  try {
+			Thread.sleep(num * 1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	  }
 	  
 	  public void waitMin(int num) throws Exception{
@@ -79,6 +94,24 @@ public class TestObject extends Thread{
 		  Date date = new Date();
 		  String date1= dateFormat.format(date);
 		  log.info("* Current date/time : " + date1);
+	  }
+	  
+
+	public static String returnTime(){
+		  String date1;
+		  date1 ="notInitialized";
+		  
+		  try {
+			  DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+			  Date date = new Date();
+			  date1= dateFormat.format(date);
+			  
+		  }catch (Exception e){  
+			  logConsole(e.toString());
+		  }
+
+		  return date1;
+		  
 	  }
 	  
 	  public void currentTimeStart() throws Exception{
@@ -257,8 +290,36 @@ public class TestObject extends Thread{
 		    	
 		    }
 		    
-		    private void log(String message) {
+		    
+		    /**
+		     * This prints on screen as System.out.println(..)
+		     * @param message
+		     */
+		    public static void logConsole(String message) {
 	            System.out.println(message);
 	        }
+		    
+		    public static String WaitForUserInput(int waitSec) throws IOException{
+				 int x = waitSec; // wait 2 seconds at most
+				 String strReturn;
+
+				 logConsole("@@@ Type any to stop this command within " + waitSec + " (sec) : ");
+				 BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+				 long startTime = System.currentTimeMillis();
+				 while ((System.currentTimeMillis() - startTime) < x * 1000
+				         && !in.ready()) {
+				 }
+
+				 if (in.ready()) {
+					 logConsole("==> You entered: " + in.readLine() + ", so leaving this command and wait for another :)");
+				     strReturn = "yes";
+				     
+				 } else {
+					 strReturn = "no";
+					 logConsole("==> You did not enter data, so repeating this command");
+				 }
+				 
+				 return strReturn;
+			 }
 
 }

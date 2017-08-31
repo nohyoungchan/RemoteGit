@@ -26,7 +26,6 @@ max=1
 tenantPrefix=81000
 chatIRN=5555
 stOrMt=mt
-chatCustomerStart=1
 chatCustomerNamePrefix=Customer
 
 # Current email customer is using owa->2017

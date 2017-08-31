@@ -1,17 +1,102 @@
-2017-08-26 12:30:54  INFO [main] (Agent.java:81)- @ WebDriver=> chrome
-2017-08-26 12:30:54  INFO [main] (Agent.java:181)- 
-@ #### Opening Chrome ####
-2017-08-26 12:30:56  INFO [main] (Agent.java:775)- 
-@(null) null => minimizing Browser
-2017-08-26 12:30:56  INFO [main] (Agent.java:779)- Dimension ==> 10/10/950/800
-2017-08-26 12:30:56  INFO [main] (Agent.java:748)- 
-@(null) null => Setting size to: W(10), H(10), X(950), Y(800)
-2017-08-26 12:30:59  INFO [main] (AllActors.java:161)- supervisors1=>agent1yc1@c1yc1.com: changeme
-2017-08-26 12:30:59  INFO [main] (TestCaseObject.java:84)- 
+2017-08-30 17:26:34  INFO [main] (Supervisor_Admin.java:125)- $$$$$$ SuperloadAdmin: Starting SuprloadAdmin $$$$
+2017-08-30 17:26:34  INFO [main] (TestObject.java:55)- * Wait: wait 1 : 20 seconds.
+2017-08-30 17:26:54  INFO [main] (TestObject.java:55)- * Wait: wait 2 : 20 seconds.
+2017-08-30 17:27:14  INFO [main] (TestObject.java:55)- * Wait: wait 3 : 20 seconds.
+2017-08-30 17:27:34  INFO [main] (TestObject.java:55)- * Wait: wait 4 : 20 seconds.
+2017-08-30 17:27:54  INFO [main] (TestCaseObject.java:84)- 
 
 ###################################################
-2017-08-26 12:30:59  INFO [main] (TestCaseObject.java:85)- ###################################################
-2017-08-26 12:30:59  INFO [main] (TestCaseObject.java:86)- ###########  Starting a Test Suite ################
-2017-08-26 12:30:59  INFO [main] (TestCaseObject.java:87)- ###################################################
-2017-08-26 12:30:59  INFO [main] (TestCaseObject.java:88)- ###################################################
-2017-08-26 12:30:59  INFO [main] (TestObject.java:119)- $$$$ To start test, wait until tomorrow 1 am =>  12 hr 29 min 0 sec
+2017-08-30 17:27:54  INFO [main] (TestCaseObject.java:85)- ###################################################
+2017-08-30 17:27:54  INFO [main] (TestCaseObject.java:86)- ###########  Starting a Test Suite ################
+2017-08-30 17:27:54  INFO [main] (TestCaseObject.java:87)- ###################################################
+2017-08-30 17:27:54  INFO [main] (TestCaseObject.java:88)- ###################################################
+2017-08-30 17:27:54  INFO [main] (AgentHB.java:113)- 
+@(WebAgent) agent1yc1@c1yc1.com #### Go to Login Page ####
+2017-08-30 17:27:54  INFO [main] (AgentHB.java:119)- I am here: url is => http://cc1.uccqac1.com/ecc
+2017-08-30 17:27:54  INFO [main] (Agent.java:767)- 
+@(WebAgent) agent1yc1@c1yc1.com => Maximizing Browser
+2017-08-30 17:27:54  INFO [main] (AgentHB.java:126)- ## Precondition: logIntoWebAgent
+2017-08-30 17:27:57  INFO [main] (Agent.java:1025)- 
+@(WebAgent) agent1yc1@c1yc1.com => logIntoWebAgent_PreCondition
+2017-08-30 17:27:57  INFO [main] (Agent.java:831)- # waitUntilClickable => webAgentUserNameTxtBox : for(sec) => 60
+2017-08-30 17:27:57  INFO [main] (Agent.java:985)- # getXPath for  => webAgentUserNameTxtBox
+2017-08-30 17:27:57  INFO [main] (Agent.java:1007)- XPath is : .//*[@id='username']
+2017-08-30 17:27:57  INFO [main] (Agent.java:839)- XPath is : .//*[@id='username']
+2017-08-30 17:27:57  INFO [main] (Agent.java:1031)- 
+@(WebAgent) agent1yc1@c1yc1.com => logIntoWebAgent_PreCondition: Success
+2017-08-30 17:27:57  INFO [main] (AgentHB.java:132)- 
+@(WebAgent) agent1yc1@c1yc1.com #### Adding username -> password -> Submit ####
+2017-08-30 17:28:02  INFO [main] (Agent.java:1025)- 
+@(WebAgent) agent1yc1@c1yc1.com => logIntoWebAgent_PostCondition
+2017-08-30 17:28:02  INFO [main] (Agent.java:831)- # waitUntilClickable => btnResume : for(sec) => 60
+2017-08-30 17:28:02  INFO [main] (Agent.java:985)- # getXPath for  => btnResume
+2017-08-30 17:28:02  INFO [main] (Agent.java:1007)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2017-08-30 17:28:02  INFO [main] (Agent.java:839)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2017-08-30 17:28:02  INFO [main] (Agent.java:1031)- 
+@(WebAgent) agent1yc1@c1yc1.com => logIntoWebAgent_PostCondition: Success
+2017-08-30 17:28:02  INFO [main] (Agent.java:775)- 
+@(WebAgent) agent1yc1@c1yc1.com => minimizing Browser
+2017-08-30 17:28:02  INFO [main] (Agent.java:779)- Dimension ==> 10/10/1000/800
+2017-08-30 17:28:02  INFO [main] (Agent.java:748)- 
+@(WebAgent) agent1yc1@c1yc1.com => Setting size to: W(10), H(10), X(1000), Y(800)
+2017-08-30 17:28:05  INFO [main] (AgentHB.java:113)- 
+@(WebAgent) agent2yc1@c1yc1.com #### Go to Login Page ####
+2017-08-30 17:28:05  INFO [main] (AgentHB.java:119)- I am here: url is => http://cc1.uccqac1.com/ecc
+2017-08-30 17:28:05  INFO [main] (Agent.java:767)- 
+@(WebAgent) agent2yc1@c1yc1.com => Maximizing Browser
+2017-08-30 17:28:05  INFO [main] (AgentHB.java:126)- ## Precondition: logIntoWebAgent
+2017-08-30 17:28:08  INFO [main] (Agent.java:1025)- 
+@(WebAgent) agent2yc1@c1yc1.com => logIntoWebAgent_PreCondition
+2017-08-30 17:28:08  INFO [main] (Agent.java:831)- # waitUntilClickable => webAgentUserNameTxtBox : for(sec) => 60
+2017-08-30 17:28:08  INFO [main] (Agent.java:985)- # getXPath for  => webAgentUserNameTxtBox
+2017-08-30 17:28:08  INFO [main] (Agent.java:1007)- XPath is : .//*[@id='username']
+2017-08-30 17:28:08  INFO [main] (Agent.java:839)- XPath is : .//*[@id='username']
+2017-08-30 17:28:08  INFO [main] (Agent.java:1031)- 
+@(WebAgent) agent2yc1@c1yc1.com => logIntoWebAgent_PreCondition: Success
+2017-08-30 17:28:08  INFO [main] (AgentHB.java:132)- 
+@(WebAgent) agent2yc1@c1yc1.com #### Adding username -> password -> Submit ####
+2017-08-30 17:28:14  INFO [main] (Agent.java:1025)- 
+@(WebAgent) agent2yc1@c1yc1.com => logIntoWebAgent_PostCondition
+2017-08-30 17:28:14  INFO [main] (Agent.java:831)- # waitUntilClickable => btnResume : for(sec) => 60
+2017-08-30 17:28:14  INFO [main] (Agent.java:985)- # getXPath for  => btnResume
+2017-08-30 17:28:14  INFO [main] (Agent.java:1007)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2017-08-30 17:28:14  INFO [main] (Agent.java:839)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2017-08-30 17:28:14  INFO [main] (Agent.java:1031)- 
+@(WebAgent) agent2yc1@c1yc1.com => logIntoWebAgent_PostCondition: Success
+2017-08-30 17:28:14  INFO [main] (Agent.java:775)- 
+@(WebAgent) agent2yc1@c1yc1.com => minimizing Browser
+2017-08-30 17:28:14  INFO [main] (Agent.java:779)- Dimension ==> 10/10/1000/800
+2017-08-30 17:28:14  INFO [main] (Agent.java:748)- 
+@(WebAgent) agent2yc1@c1yc1.com => Setting size to: W(10), H(10), X(1000), Y(800)
+2017-08-30 17:28:16  INFO [main] (AgentHB.java:113)- 
+@(WebAgent) agent4yc1@c1yc1.com #### Go to Login Page ####
+2017-08-30 17:28:16  INFO [main] (AgentHB.java:119)- I am here: url is => http://cc1.uccqac1.com/ecc
+2017-08-30 17:28:17  INFO [main] (Agent.java:767)- 
+@(WebAgent) agent4yc1@c1yc1.com => Maximizing Browser
+2017-08-30 17:28:17  INFO [main] (AgentHB.java:126)- ## Precondition: logIntoWebAgent
+2017-08-30 17:28:20  INFO [main] (Agent.java:1025)- 
+@(WebAgent) agent4yc1@c1yc1.com => logIntoWebAgent_PreCondition
+2017-08-30 17:28:20  INFO [main] (Agent.java:831)- # waitUntilClickable => webAgentUserNameTxtBox : for(sec) => 60
+2017-08-30 17:28:20  INFO [main] (Agent.java:985)- # getXPath for  => webAgentUserNameTxtBox
+2017-08-30 17:28:20  INFO [main] (Agent.java:1007)- XPath is : .//*[@id='username']
+2017-08-30 17:28:20  INFO [main] (Agent.java:839)- XPath is : .//*[@id='username']
+2017-08-30 17:28:20  INFO [main] (Agent.java:1031)- 
+@(WebAgent) agent4yc1@c1yc1.com => logIntoWebAgent_PreCondition: Success
+2017-08-30 17:28:20  INFO [main] (AgentHB.java:132)- 
+@(WebAgent) agent4yc1@c1yc1.com #### Adding username -> password -> Submit ####
+2017-08-30 17:28:25  INFO [main] (Agent.java:1025)- 
+@(WebAgent) agent4yc1@c1yc1.com => logIntoWebAgent_PostCondition
+2017-08-30 17:28:25  INFO [main] (Agent.java:831)- # waitUntilClickable => btnResume : for(sec) => 60
+2017-08-30 17:28:25  INFO [main] (Agent.java:985)- # getXPath for  => btnResume
+2017-08-30 17:28:25  INFO [main] (Agent.java:1007)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2017-08-30 17:28:25  INFO [main] (Agent.java:839)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2017-08-30 17:28:25  INFO [main] (Agent.java:1031)- 
+@(WebAgent) agent4yc1@c1yc1.com => logIntoWebAgent_PostCondition: Success
+2017-08-30 17:28:25  INFO [main] (Agent.java:775)- 
+@(WebAgent) agent4yc1@c1yc1.com => minimizing Browser
+2017-08-30 17:28:25  INFO [main] (Agent.java:779)- Dimension ==> 10/10/1000/800
+2017-08-30 17:28:25  INFO [main] (Agent.java:748)- 
+@(WebAgent) agent4yc1@c1yc1.com => Setting size to: W(10), H(10), X(1000), Y(800)
+2017-08-30 17:28:27  INFO [main] (CustomerManhattan.java:24)- 
+@ Manhattan : agent6yc1@c1yc1.com #### Starts Manhattan client: Location : 10/200 ####
+2017-08-30 17:28:28  INFO [main] (TestObject.java:50)- * Wait : 4 seconds.

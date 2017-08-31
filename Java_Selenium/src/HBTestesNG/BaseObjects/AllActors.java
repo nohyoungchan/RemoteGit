@@ -1,10 +1,26 @@
 package HBTestesNG.BaseObjects;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Hashtable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 import Utility.PostCondition;
 import org.ini4j.Wini;
+
+import SupervisorLoad.SupervisorClient;
+import SupervisorLoad.Supervisor_Admin;
+import SupervisorLoad.Supervisor_Server;
+import SupervisorLoad.Supervisor_Server.Handler;
 
 
 public class AllActors extends TestObject{
@@ -16,26 +32,32 @@ public class AllActors extends TestObject{
     public ArrayList<AgentHBDirector> supervisors;
     public ArrayList<IRN> irns;
     public static ArrayList<Service> services;
+    public static ArrayList<SupervisorClient> supClients;
     
     public static Wini iniMain,  iniEnv, iniXPath;
     //public static Hashtable<String, String> globalVariableHash;
 	
 	public static String currentCallType;
 	public static PostCondition postCondition;
+	public static String configDir, xPathDir;
 	
 
+    public static Supervisor_Admin superAdmin;
     
     public AllActors(){
+		configDir = ".\\test_Config_Files\\";
+		xPathDir = ".\\test_XPath_Files\\";
     	initiateAllActors();
-    	//initiateAllActors_withPhantomOrNot();
+
 	
 	}
     
-	//if usPhantomJS = yes, this uses phantom js.
+	/**
+	 * This initiate all actors like agentHB and all components.
+	 */
 	public void initiateAllActors(){
-		int max, chatCustomerStart, i, j;
-		String configDir = ".\\test_Config_Files\\";
-		String xPathDir = ".\\test_XPath_Files\\";
+		int max, i, j;
+
 
 		stopTest = "no";
 		currentCallType = "NA";
@@ -60,6 +82,7 @@ public class AllActors extends TestObject{
 	        TestObject.useWhichWebDriver = iniMain.get("WebBrowser", "webDriver");
 	        String systemToTest = iniMain.get("SYSTEM", "systemToTest");
 	        log.info("Testing: " + systemToTest); 
+	        
 	        
 	        iniEnv = new Wini(new File(configDir + "testData.ini_" + systemToTest));     
 	        max = Integer.parseInt(iniEnv.get("IRN", "max"));
@@ -119,7 +142,6 @@ public class AllActors extends TestObject{
 	        // #### Creating and Setting ChatCustomer ####
 	        String tenantPrefix, chatIRN, chatCustomerNamePrefix, stOrMt;
 	        max = Integer.parseInt(iniEnv.get("CustomerChat", "max"));
-	        chatCustomerStart = Integer.parseInt(iniEnv.get("CustomerChat", "chatCustomerStart"));
 
 	        tenantPrefix = iniEnv.get("CustomerChat", "tenantPrefix");
 	        chatIRN = iniEnv.get("CustomerChat", "chatIRN");
@@ -163,7 +185,12 @@ public class AllActors extends TestObject{
 	        
 	        
 	        //######################## Reading XPath ######################################
-	        iniXPath = new Wini(new File(xPathDir + "testXPath.ini"));    
+	        iniXPath = new Wini(new File(xPathDir + "testXPath.ini"));  
+	        
+	        //####### starting SuperLoadAdmin to communicate with other nla #############
+	        start_SuperLoadServer();
+	        wait(3);
+	        start_SuperLoadAdmin();
 
 	     }
 	     catch (Exception e) {
@@ -172,7 +199,21 @@ public class AllActors extends TestObject{
 	    
 	    
 	 }
-
+	
+	
+	
+	private void start_SuperLoadServer() throws Exception{
+		// TODO Auto-generated method stub
+		Supervisor_Server superServer;
+		superServer = new Supervisor_Server();
+		superServer.start();
+		
+	}
+	
+	private void start_SuperLoadAdmin() throws Exception{
+	
+		superAdmin = new Supervisor_Admin();
+	}
 	
 	
 	
