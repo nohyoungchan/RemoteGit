@@ -13,13 +13,13 @@ emailTo=myeung17@qa.shoretel.com
 emailSubject=This_is_Email_Subject
 emailContent=This_is_Email_Content
 
-
+#It doesn't like Shoreadmin1# as password: exception
 [CustomerVoice]
 max=1
 CustomerVoice1.name=young6@yc2.com
-CustomerVoice1.password=changeme
-CustomerVoice1.extension=306
-CustomerVoice1.did=914089621376
+CustomerVoice1.password=Shoreadmin1
+CustomerVoice1.extension=1499
+CustomerVoice1.did=1499
 
 [CustomerChat]
 max=1
@@ -39,23 +39,23 @@ CustomerEmail1.domain=qa
 [CCD]
 max=1
 supervisor1.name=young2@yc2.com
-supervisor1.password=Shoreadmin1
+supervisor1.password=Shoreadmin1#
 
 
 [Agent]
 max=3
 agent1.name=young2@yc2.com
-agent1.password=Shoreadmin1
+agent1.password=Shoreadmin1#
 agent1.extension=1362
 agent1.did=1362
 
 agent2.name=young3@yc2.com
-agent2.password=changeme
+agent2.password=Shoreadmin1
 agent2.extension=1363
 agent2.did=1363
 
 agent3.name=young4@yc2.com
-agent3.password=changeme
+agent3.password=Shoreadmin1#
 agent3.extension=1364
 agent3.did=1364
 

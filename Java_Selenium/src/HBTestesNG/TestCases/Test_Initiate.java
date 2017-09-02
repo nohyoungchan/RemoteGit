@@ -30,18 +30,6 @@ public class  Test_Initiate extends TestCaseObject{
 			waitUntilTomorrowOneAm(AllActors.iniMain.get("TestFlow", "waitUntilOneAm"));
 			currentTimeStart();
 			
-			//CCD configuration before starting suite: You can skip this by "skipCCDPrepare" variable
-			if (allActors.supervisors.size() >0 &&  AllActors.iniMain.get("TestFlow", "skipCCDPrepare").contains("no")) 
-			{ 
-				allActors.supervisors.get(0).Max_LogIn_PrepareTest_LogOut_Min();
-			}
-	
-				
-			for (int i=0; i < allActors.agents.size() ; i++ ){
-				if (0 ==allActors.agents.size()) { break;}
-				allActors.agents.get(i).logIntoWebAgent();
-			}
-			
 			//Log in Manhattan client
 			String x, y, startLocation;
 			for (int i=0; i < allActors.customers.size() ; i++ ){
@@ -56,7 +44,22 @@ public class  Test_Initiate extends TestCaseObject{
 				allActors.customers.get(i).logIn();
 	
 			}
+			
+
+			
+			//CCD configuration before starting suite: You can skip this by "skipCCDPrepare" variable
+			if (allActors.supervisors.size() >0 &&  AllActors.iniMain.get("TestFlow", "skipCCDPrepare").contains("no")) 
+			{ 
+				allActors.supervisors.get(0).Max_LogIn_PrepareTest_LogOut_Min();
+			}
 	
+				
+			for (int i=0; i < allActors.agents.size() ; i++ ){
+				if (0 ==allActors.agents.size()) { break;}
+				allActors.agents.get(i).logIntoWebAgent();
+			}
+			
+			
 			
 		}catch (EC_logintoAIC e) {
 			log.error("Exception on before suite(logIntoWebAgent: Failing all : " + e.toString());

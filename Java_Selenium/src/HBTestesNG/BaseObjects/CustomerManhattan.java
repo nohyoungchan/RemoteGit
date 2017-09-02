@@ -72,7 +72,7 @@ public class CustomerManhattan  extends TestObject {
     	Pattern patternUsername = new Pattern(imgFolder +"mh_username_left.PNG").targetOffset(100, 0);
     	Pattern patternPassword = new Pattern(imgFolder +"mh_password_left.PNG").targetOffset(100, 0);
 
-    	String loginBtn = imgFolder +"ic_login_loginButton.PNG";
+    	String loginBtn = imgFolder +"mh_loginBtn.PNG";
     	String connectionNotSecure = imgFolder + "mh_connectionNotSecure.PNG";
     	String proceedBtn = imgFolder + "mh_proceedBtn.PNG";
     	String voiceMailBtn = imgFolder + "mh_voiceMailBtn.PNG";
@@ -92,9 +92,12 @@ public class CustomerManhattan  extends TestObject {
     		wait(2);
     	}
     	
-    	//This is needed to expand manhattan client
-    	clickAppear(screen, voiceMailBtn, 5);
-    	clickAppear(screen, voiceMailBtn, 5);
+    	//This is needed to expand manhattan client.  It means login successful.
+    	if(clickAppear(screen, voiceMailBtn, 5)) {
+    		clickAppear(screen, voiceMailBtn, 5);
+    	}else {
+    		throw new Exception("@ Manhattan : " +  username + " #### Login Failed ####");
+    	}
     
 		log.info("\n@ Manhattan : " +  username + " #### Login Completed ####");
 		currentState = "loggedin_idle";
@@ -271,6 +274,32 @@ public class CustomerManhattan  extends TestObject {
 		  
 		  log.info("\n@ Manhattan : " +  username + " #### Abandoning a call ####");
 		  String abandonBtn = imgFolder +"mh_abandonBtn";
+	    	
+		  activateManhattan();
+	      clickAppear(screen, abandonBtn, 5);
+	      currentState ="loggedin_idle";
+		  currentTime();
+		 
+
+	  }
+	  
+	  public void abandonWhileRingCall() throws Exception {
+		  
+		  log.info("\n@ Manhattan : " +  username + " #### Abandoning a call ####");
+		  String abandonBtn = imgFolder +"mh_abandonWhileRingBtn";
+	    	
+		  activateManhattan();
+	      clickAppear(screen, abandonBtn, 5);
+	      currentState ="loggedin_idle";
+		  currentTime();
+		 
+
+	  }
+	  
+	  public void abandonWhileInQCall() throws Exception {
+		  
+		  log.info("\n@ Manhattan : " +  username + " #### Abandoning a call ####");
+		  String abandonBtn = imgFolder +"mh_abandonWhileInQBtn";
 	    	
 		  activateManhattan();
 	      clickAppear(screen, abandonBtn, 5);

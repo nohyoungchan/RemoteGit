@@ -30,8 +30,11 @@ public class AgentHBDirector extends Agent {
 		
 		log.info("\n@(" + agentType + ") " +  username + " #### Adding username -> password -> Submit ####");
 		driver.findElement(By.id("username")).clear();
+		wait(1);
 		driver.findElement(By.id("username")).sendKeys(username);
+		wait(1);
 		driver.findElement(By.id("password")).clear();
+		wait(1);
 		driver.findElement(By.id("password")).sendKeys(password);
 		wait(2);
 		driver.findElement(By.id("submitBtn")).click();
@@ -462,7 +465,7 @@ public class AgentHBDirector extends Agent {
 	 
 	// This prepares HB Director for the whole test.
 		public void Max_LogIn_PrepareTest_LogOut_Min() throws Exception{
-			 log.info("\n@(" + agentType + ") " +  username + " : PrepareTest ");
+			 log.info("\n@(" + agentType + ") " +  username + " ##### PrepareTest #####");
 			 String wuTime, frTime, overflowTime, interflowTime;
 			 String serviceName, eServiceName, chatIRN, emailIRN;
 			 Boolean enabled;

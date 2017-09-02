@@ -1,5 +1,6 @@
 package HBTestesNG.BaseObjects;
 
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -10,9 +11,10 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
+
+
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
-
 
 
 public class TestObject extends Thread{
@@ -39,21 +41,24 @@ public class TestObject extends Thread{
 		  currentState ="created";
 	  }
 	 
-	/*
-	  public void log.info(String status) throws Exception {
-		  System.out.println(status);
-		  //log.info(status);
-	  }
-	  */
+  
 	  
-	  public void wait(int num) throws Exception{
-		  log.info("* Wait : " + num + " seconds.");
-		  Thread.sleep(num * 1000);
+	  public void wait(int num){
+		  try {
+			  log.info("* Wait : " + num + " seconds.");
+			  Thread.sleep(num * 1000);
+		  }catch (Exception e) {
+			  log.error(e.toString());
+		  }
 	  }
 	  
 	  public void wait(int num, String reason) throws Exception{
-		  log.info("* Wait: " + reason +  " : " + num + " seconds.");
-		  Thread.sleep(num * 1000);
+		  try {
+			  log.info("* Wait: " + reason +  " : " + num + " seconds.");
+			  Thread.sleep(num * 1000);
+		  }catch (Exception e) {
+			  log.error(e.toString());
+		  }
 	  }
 	  
 	  /**
@@ -251,7 +256,16 @@ public class TestObject extends Thread{
 		    
 		    public static void wait_for_input() {
 				try {
-				    System.out.print("press a key >>>");
+				    System.out.print("@@@@ press a key to continue >>>");
+				    int b = System.in.read();
+				} catch(IOException e) {
+				    System.out.println("caught exception" + e);
+				}
+		    }
+		    
+		    public static void wait_for_input(String reason) {
+				try {
+				    System.out.print(reason);
 				    int b = System.in.read();
 				} catch(IOException e) {
 				    System.out.println("caught exception" + e);

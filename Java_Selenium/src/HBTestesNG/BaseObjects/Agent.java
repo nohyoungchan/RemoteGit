@@ -689,7 +689,7 @@ public class Agent extends TestObject {
 		  }
 	  }
 	    
-	  public void wait(int num) throws Exception{
+	 /* public void wait(int num){
 		  System.out.println("@" + username + ": Wait : " + num + " seconds.");
 		  Thread.sleep(num * 1000);
 	  }
@@ -703,7 +703,7 @@ public class Agent extends TestObject {
 	  public void wait(int num, String reason) throws Exception{
 		  log.info("@" + username + ": " + reason +  " : " + num + " seconds.");
 		  Thread.sleep(num * 1000);
-	  }
+	  }*/
 	  
 	  public void waitMin(int num) throws Exception{
 		  //log.info("@" + username + ": Wait : " + num + " minutes.");
@@ -1082,9 +1082,6 @@ public class Agent extends TestObject {
 			 log.error("\n@(" + agentType + ") " + username + " =>@@ ElementNotVisibleException on " + " " + strXPath);
 			 returnResult = false;
 			 
-		 }catch(InterruptedException e){
-			  log.error("@ " + username + " : @@ Thread inturrepted -> throw again on click_XPath()");
-			  throw e;
 		 }catch(SessionNotFoundException e){
 			  log.error("@ " + username + " : @@ SessionNotFoundException -> throw again on click_XPath()");
 			  throw e;
@@ -1162,7 +1159,7 @@ public class Agent extends TestObject {
 		 
 		 	String strMainTitle= "";
 		    for (int second = 0;; second++) {
-		    	log.info("\n@(" + agentType + ") " + username + ":" + second +": Wait for ID: mainTitle");
+		    	log.info("\n@(" + agentType + ") " + username + ":" + second +": Wait for => " + mainTitleSubText);
 		    	try { 
 		    		if (driver.findElement(By.id("mainTitle")).isDisplayed()) 
 		    			strMainTitle = driver.findElement(By.id("mainTitle")).getText();

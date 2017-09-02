@@ -44,12 +44,7 @@ public class AgentHB extends Agent {
 			  }else{
 			  	return false;
 			  }
-		}catch(InterruptedException e){
-			//log.info("I am handling Interrupted Exceptionj=>"+ e.toString());
-			throw e;
-			//state = "weird";
-		}
-	  	catch(Exception e){
+		}catch(Exception e){
 			log.info("I am handling General exception=>"+ e.toString());
 			state = "weird";
 			throw e;

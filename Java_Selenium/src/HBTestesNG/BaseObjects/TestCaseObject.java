@@ -156,8 +156,10 @@ public class TestCaseObject extends TestObject{
 		 
 		errorCount = 0;
 		errorString = "";
+		AllActors.superAdmin.sendMessage("Starting : " + sTestCaseName);
 		if (stopTest.contains("yes")) {
 			log.info("@@ Stop is requested, so skip => " + sTestCaseName);
+			AllActors.superAdmin.sendMessage("Skipping : " + sTestCaseName);
 			return "no";
 		}
 	    log.info("\n\n\n****************************************************************************************");
@@ -188,10 +190,13 @@ public class TestCaseObject extends TestObject{
 	 
 		String userInputString;
 		
+		
 		if (errorCount > 0) {
+			 AllActors.superAdmin.sendMessage("Ending : " + testName + " : Failed because => " + errorString);
 			 log.info("XXXXXXXXXXXXXXXXXXXXXXX  "+"Test Result(Failed) => "+ testName + " XXXXXXXXXXXXXXXXXXXXXX");
 			 log.info("X");
 			 log.info("X");
+			 
 			 
 		     //If there is a user input, all test cases will be stopped.
 		     userInputString=  WaitingForUserInput(20);
@@ -199,6 +204,7 @@ public class TestCaseObject extends TestObject{
 		     if (userInputString.contains("yes")) stopTest = "yes"; 
 		     failTest(testName + " has failed because => " + errorString);
 		}else {
+			AllActors.superAdmin.sendMessage("Ending : " + testName + " : Successful");
 		    log.info("XXXXXXXXXXXXXXXXXXXXXXX  "+"Test Result(Successful) => "+ testName + " XXXXXXXXXXXXXXXXXXXXXX");
 		    log.info("X");
 		    log.info("X");
@@ -227,21 +233,30 @@ public class TestCaseObject extends TestObject{
 	 public static String WaitingForUserInput(int waitSec) throws IOException{
 		 int x = waitSec; // wait 2 seconds at most
 		 String strReturn;
+		 String res;
 
-		 log.info("@@@ Type any to stop this command within " + waitSec + " (sec) : ");
+		 log.info("@@@ Type y to stop whole test suite within " + waitSec + " (sec) : ");
 		 BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		 long startTime = System.currentTimeMillis();
 		 while ((System.currentTimeMillis() - startTime) < x * 1000
 		         && !in.ready()) {
 		 }
-
-		 if (in.ready()) {
-		     log.info("==> You entered: " + in.readLine() + ", so leaving this command and wait for another :)");
-		     strReturn = "yes";
-		     
-		 } else {
-			 strReturn = "no";
-		     log.info("==> You did not enter data, so repeating this command");
+       
+		 if (in.ready()) {//When something is entered
+			 //This needs to run 2 times to get a correct user input.
+			 res = in.readLine();
+			 res = in.readLine();
+			 log.info("Result is ==> " + res);
+			 if(res.contains("y")) {
+			     log.info("==> You entered: " + res + ", so stopping whole test suite.  Bye :)");
+			     strReturn = "yes";
+			}else { 
+			     log.info("==> You entered: " + res + " ,so continue test");
+				 strReturn = "no";
+			}
+		 }else {//nothing is entered
+		     log.info("==> You did not enter data, so continue test");
+		     strReturn = "no";
 		 }
 		 
 		 return strReturn;

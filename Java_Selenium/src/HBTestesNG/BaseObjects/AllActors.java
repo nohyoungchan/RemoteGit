@@ -191,6 +191,9 @@ public class AllActors extends TestObject{
 	        start_SuperLoadServer();
 	        wait(3);
 	        start_SuperLoadAdmin();
+	        wait(2);
+	        //This is needed to start supervisor_client
+	        wait_for_input("\"@@@@ Start SupClient and press any key to continue >>>\"");
 
 	     }
 	     catch (Exception e) {

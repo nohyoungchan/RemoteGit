@@ -29,7 +29,7 @@ public class Test_VoiceACD_Basic extends TestCaseObject {
 	
 	@Parameters({"rT1", "tT1", "wT1"})
 	public void VoiceACD_NoQ_Answer(int rT1, int tT1, int wT1) throws Exception {
-		String testName = "Test Case: VoiceACD->NoQ->Answered";
+		String testName = "VoiceACD->NoQ->Answered";
 		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
 		
 		
@@ -94,7 +94,7 @@ public class Test_VoiceACD_Basic extends TestCaseObject {
 		String testName = "VoiceACD->NoQ->Answered with No Wrap time";
 		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
 		//#########################
-		sup1.Max_LogIn_changeWrapAndFRTime_Min(aa.services.get(0).name, "0", "40");
+		sup1.Max_LogIn_changeWrapAndFRTime_LogOut_Min(aa.services.get(0).name, "0", "40");
 		 
 		//#########################
 		agent1.resumeAgent();
@@ -108,7 +108,7 @@ public class Test_VoiceACD_Basic extends TestCaseObject {
 			
 			//############################
 			agent1.disconnectByWebAgent();
-			sup1.Max_changeWrapAndFRTime_LogOut_Min(aa.services.get(0).name, "20", "30");
+			sup1.Max_LogIn_changeWrapAndFRTime_LogOut_Min(aa.services.get(0).name, "20", "30");
 		}catch(Exception e){
 			log.info("I am handling General exception=>"+ e.toString());
 			resetAllActors(testName);

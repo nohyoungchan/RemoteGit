@@ -11,7 +11,7 @@ While 1 ;use infinite loop since ExitLoop will get called
    Opt("WinTitleMatchMode", 2)
    If WinExists("ShoreTel Connect") Then
 	  ;MsgBox(4096, "manhattan", "Relocating to " + $xLocation + " and " + $yLocation, 3)
-	  Sleep(3000)
+	  Sleep(4000)
 	  MsgBox(4096, "manhattan", "Relocating manhattan client to " & $xLocation & "/" & $yLocation, 3)
 	  WinMove("ShoreTel Connect", "", $xLocation, $yLocation)
 	  Exit
