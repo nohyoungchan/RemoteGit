@@ -176,7 +176,7 @@ public class Agent extends TestObject {
 	    
 	}
 	
-	public void openChrome() throws Exception
+	public void openChromeLocal() throws Exception
 	{
 		log.info("\n@ #### Opening Chrome ####");
 		/*ChromeOptions options = new ChromeOptions();
@@ -186,14 +186,41 @@ public class Agent extends TestObject {
 
 	      
 		ChromeOptions options = new ChromeOptions();
-		options.addArguments("chrome.switches","--disable-extensions");
-
+		//options.addArguments("--proxy-server", "10.23.176.230");
+		//options.addArguments("chrome.switches","--disable-extensions");
+		options.addArguments("disable-extensions");
+		options.addArguments("--start-maximized");
 
 		//System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 	    driver = new ChromeDriver(options);
 	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	    driver.get("http://www.google.com"); 
+	    minimizeBrowser();
+	}
+	
+	/**
+	 * This connects to local grid hum and open chrome
+	 * @throws Exception
+	 */
+	public void openChrome() throws Exception
+	{
+		
+		//URL server = new URL("http://10.23.176.230:4444/wd/hub");
+		URL server = new URL(AllActors.iniMain.get("Grid", "hub_url"));
+		//System.setProperty("webdriver.chrome.driver","C:\\young\\Selenium_jar\\chromedriver.exe");
+				 
+	    DesiredCapabilities capabilities = new DesiredCapabilities();
+	    capabilities.setBrowserName("chrome");
+	    capabilities.setPlatform(org.openqa.selenium.Platform.WINDOWS);
+
+	    System.out.println("Connecting to " + server);
+	 
+	    driver = new RemoteWebDriver(server, capabilities);    
+	    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+        //driver.manage().window().setSize(new Dimension(1920, 1080));
+        driver.get("http://www.google.com");
 	    minimizeBrowser();
 	}
 	
@@ -767,6 +794,11 @@ public class Agent extends TestObject {
 		 log.info("\n@(" + agentType + ") " + username + " => Maximizing Browser");
 		 driver.manage().window().maximize();
 		 booleanMaximized = true;
+	 }
+
+	 public void minimizeBrowser_skip(){
+		 log.info("\n@(" + agentType + ") " + username + " => minimizing Browser skipped");
+		 
 	 }
 
 	 // This is not really minimize but imitate it.

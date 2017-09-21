@@ -5,6 +5,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.NoSuchElementException;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 
@@ -26,8 +28,11 @@ public class TestCaseObject extends TestObject{
 	public static AgentHBDirector sup1;
 	public static IRN irn1, irn2, irn3, irn4, irn5;
 	public static PostCondition pc;
-
+	private static String customerReturn;
+	private static TimerTask task;
 	
+	
+
 	
 	
 	public static void InitializeAllVariables() throws Exception {
@@ -156,10 +161,10 @@ public class TestCaseObject extends TestObject{
 		 
 		errorCount = 0;
 		errorString = "";
-		AllActors.superAdmin.sendMessage("Starting : " + sTestCaseName);
+		AllActors.superAdmin.sendMessage("Starting scenario @ " + sTestCaseName);
 		if (stopTest.contains("yes")) {
 			log.info("@@ Stop is requested, so skip => " + sTestCaseName);
-			AllActors.superAdmin.sendMessage("Skipping : " + sTestCaseName);
+			AllActors.superAdmin.sendMessage("Skipping scenario @ " + sTestCaseName);
 			return "no";
 		}
 	    log.info("\n\n\n****************************************************************************************");
@@ -192,7 +197,7 @@ public class TestCaseObject extends TestObject{
 		
 		
 		if (errorCount > 0) {
-			 AllActors.superAdmin.sendMessage("Ending : " + testName + " : Failed because => " + errorString);
+			 AllActors.superAdmin.sendMessage("Ending scenario @ " + testName + " @ Failed because => " + errorString);
 			 log.info("XXXXXXXXXXXXXXXXXXXXXXX  "+"Test Result(Failed) => "+ testName + " XXXXXXXXXXXXXXXXXXXXXX");
 			 log.info("X");
 			 log.info("X");
@@ -204,7 +209,7 @@ public class TestCaseObject extends TestObject{
 		     if (userInputString.contains("yes")) stopTest = "yes"; 
 		     failTest(testName + " has failed because => " + errorString);
 		}else {
-			AllActors.superAdmin.sendMessage("Ending : " + testName + " : Successful");
+			AllActors.superAdmin.sendMessage("Ending scenario @ " + testName + " @ Successful");
 		    log.info("XXXXXXXXXXXXXXXXXXXXXXX  "+"Test Result(Successful) => "+ testName + " XXXXXXXXXXXXXXXXXXXXXX");
 		    log.info("X");
 		    log.info("X");
@@ -230,21 +235,63 @@ public class TestCaseObject extends TestObject{
 	    
    }
 	
-	 public static String WaitingForUserInput(int waitSec) throws IOException{
-		 int x = waitSec; // wait 2 seconds at most
+	public static String WaitingForUserInput_usingTask(int waitSec) throws IOException {
+
+        String strReturn ="no";
+        customerReturn = "";
+		task = new TimerTask()
+	    {
+	        public void run()
+	        {
+	            if( customerReturn.equals(" ") )
+	            {
+	            	log.info("==> Your input is not valid.  Continue");
+	            }
+	            
+	            if( customerReturn.equals("") )
+	            {
+	            	log.info("==> You did not enter data, so continue test");
+	                System.exit( 0 );
+	            }
+	        }    
+	    };
+		
+
+        Timer timer = new Timer();
+        timer.schedule( task, waitSec*1000 );
+
+        log.info("@@@ Type y to stop whole test suite within " + waitSec + " (sec) : ");
+        BufferedReader in = new BufferedReader(new InputStreamReader( System.in ) );
+        customerReturn = in.readLine();
+        
+        timer.cancel();
+        
+        if(customerReturn.contains("y")) {
+		     log.info("==> You entered: " + customerReturn + ", so stopping whole test suite.  Bye :)");
+		     strReturn = "yes";
+		}else { 
+		     log.info("==> You entered: " + customerReturn + " ,so continue test");
+		}
+
+        timer.cancel();
+        customerReturn ="";
+        
+        return strReturn;
+
+	}
+	
+	 public static String WaitingForUserInput_old(int waitSec) throws IOException, InterruptedException{
 		 String strReturn;
 		 String res;
 
 		 log.info("@@@ Type y to stop whole test suite within " + waitSec + " (sec) : ");
-		 BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		 long startTime = System.currentTimeMillis();
-		 while ((System.currentTimeMillis() - startTime) < x * 1000
-		         && !in.ready()) {
+		 BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		 sleep(1000);
+		 while (((System.currentTimeMillis() - startTime) < waitSec * 1000)  && !in.ready()) {
 		 }
        
 		 if (in.ready()) {//When something is entered
-			 //This needs to run 2 times to get a correct user input.
-			 res = in.readLine();
 			 res = in.readLine();
 			 log.info("Result is ==> " + res);
 			 if(res.contains("y")) {
@@ -260,6 +307,59 @@ public class TestCaseObject extends TestObject{
 		 }
 		 
 		 return strReturn;
+	 }
+	 
+	 /**
+	  * This waits for the user input -> y : stop all test, no input: wait 20s and next test, other than y: next test
+	  * @param waitSec
+	  * @return   if this is yes, stop all test.
+	  * @throws IOException
+	  * @throws InterruptedException
+	  */
+	 public static String WaitingForUserInput(int waitSec) throws IOException, InterruptedException{
+		 String strStopAllTest = "no";
+		 String res;
+		 int breakWhile = 0;
+
+		 log.info("@@@ Type y to stop whole test suite within " + waitSec + " (sec) : ");
+		 long startTime = System.currentTimeMillis();
+		 BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+
+		 while (((System.currentTimeMillis() - startTime) < waitSec * 1000) && breakWhile == 0) {
+			 
+			 if (in.ready()) {//When something is entered
+				 res = in.readLine();
+				 log.info("Result is ==> " + res);
+				 switch (res) {
+				 case "y":
+					 log.info("==> You entered: " + res + ", so stopping whole test suite.  Bye :)");
+					 strStopAllTest = "yes";
+				     breakWhile = 1;
+				     break;
+				 case "":
+					 log.info("==> You entered: " + res + ", this is not a valid input, so wait)");
+					 strStopAllTest = "no";
+				     breakWhile = 0;
+				     break;
+				 default:
+					 log.info("==> You entered: " + res + ", so start next test.  Continue Test :)");
+					 strStopAllTest = "no";
+				     breakWhile = 1;
+				     break;
+				 
+				 }
+				
+			 }
+			 
+			 if((System.currentTimeMillis() - startTime) > waitSec * 1000){
+			     log.info("==> You did not enter any inpu, so start next test");
+				 
+			 }
+			 
+			 
+		 }
+		 
+		 return strStopAllTest;
 	 }
 	 
 	 /**

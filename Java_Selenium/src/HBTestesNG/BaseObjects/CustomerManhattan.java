@@ -23,7 +23,7 @@ public class CustomerManhattan  extends TestObject {
 	public void startManhattan(String x, String y) throws Exception {
 		log.info("\n@ Manhattan : " +  username + " #### Starts Manhattan client: Location : " + x + "/" + y + " ####");
 		Utilities.executeCommand("ShoreTel.exe");
-		wait(4);
+		Thread.sleep(4000);  //somehow wait(4) causes a problem here.
 		String strAutoItCommand = "AutoIt3.exe " + autoitFolder + "manhattan_relocate.exe " + x + " " + y;
     	Utilities.executeCommand(strAutoItCommand);
     	currentState ="started";

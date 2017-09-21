@@ -23,12 +23,43 @@
           <include name="VoiceACD_CConference_ToIRN_SameGroup"/>
         </methods>
       </class> <!-- HBTestesNG.TestCases.Test_VoiceACD_Conference -->
-      <class name="HBTestesNG.TestCases.Test_Initiate">
+      <class name="HBTestesNG.TestCases.Test_VoiceACD_Transfer">
         <methods>
-          <include name="beforeSuite"/>
-          <include name="afterSuite"/>
+          <include name="VoiceACD_BTransfer_ToExt_DifferentGroup_byName"/>
+          <include name="VoiceACD_CTransfer_ToExternal"/>
+          <include name="VoiceACD_BTransfer_ToExternal"/>
+          <include name="VoiceACD_CTransfer_ToExt_DifferentGroup_byName"/>
+          <include name="beforeClass"/>
+          <include name="VoiceACD_CTransfer_ToIRN_SameGroup"/>
+          <include name="VoiceACD_CTransfer_ToIRN_DifferentGroup"/>
+          <include name="VoiceACD_BTransfer_ToExt_SameGroup_byName"/>
+          <include name="VoiceACD_CTransfer_ToExt_DifferentGroup"/>
+          <include name="VoiceACD_CTransfer_ToExt_SameGroup"/>
+          <include name="VoiceACD_CTransfer_ToExt_SameGroup_byName"/>
+          <include name="VoiceACD_BTransfer_ToIRN_DifferentGroup"/>
+          <include name="VoiceACD_BTransfer_ToIRN_SameGroup"/>
+          <include name="VoiceACD_BTransfer_ToExt_SameGroup"/>
+          <include name="VoiceACD_BTransfer_ToExt_DifferentGroup"/>
+          <include name="VoiceACD_BTransfer_ToIRN_AQ"/>
         </methods>
-      </class> <!-- HBTestesNG.TestCases.Test_Initiate -->
+      </class> <!-- HBTestesNG.TestCases.Test_VoiceACD_Transfer -->
+      <class name="HBTestesNG.TestCases.Test_VoiceACD_Basic">
+        <methods>
+          <include name="VoiceACD_NoQ_Answer_NoWrapTime" invocation-numbers="0"/>
+          <include name="afterClass"/>
+          <include name="beforeClass"/>
+        </methods>
+      </class> <!-- HBTestesNG.TestCases.Test_VoiceACD_Basic -->
+      <class name="HBTestesNG.TestCases.Test_VoiceACD_Conference_WrapTimeZero">
+        <methods>
+          <include name="VoiceACD_CConference_ToExt_DifferentGroup"/>
+          <include name="VoiceACD_CConference_ToExternal"/>
+          <include name="VoiceACD_CConference_ToIRN_DifferentGroup"/>
+          <include name="beforeClass"/>
+          <include name="VoiceACD_CConference_ToExt_SameGroup"/>
+          <include name="VoiceACD_CConference_ToIRN_SameGroup"/>
+        </methods>
+      </class> <!-- HBTestesNG.TestCases.Test_VoiceACD_Conference_WrapTimeZero -->
       <class name="HBTestesNG.TestCases.Test_VoiceACD_Transfer_WrapTimeZero">
         <methods>
           <include name="VoiceACD_BTransfer_ToExternal"/>
@@ -44,40 +75,12 @@
           <include name="VoiceACD_CTransfer_ToExternal"/>
         </methods>
       </class> <!-- HBTestesNG.TestCases.Test_VoiceACD_Transfer_WrapTimeZero -->
-      <class name="HBTestesNG.TestCases.Test_VoiceACD_Conference_WrapTimeZero">
+      <class name="HBTestesNG.TestCases.Test_Initiate">
         <methods>
-          <include name="VoiceACD_CConference_ToExt_DifferentGroup"/>
-          <include name="VoiceACD_CConference_ToExternal"/>
-          <include name="VoiceACD_CConference_ToIRN_DifferentGroup"/>
-          <include name="beforeClass"/>
-          <include name="VoiceACD_CConference_ToExt_SameGroup"/>
-          <include name="VoiceACD_CConference_ToIRN_SameGroup"/>
+          <include name="beforeSuite"/>
+          <include name="afterSuite"/>
         </methods>
-      </class> <!-- HBTestesNG.TestCases.Test_VoiceACD_Conference_WrapTimeZero -->
-      <class name="HBTestesNG.TestCases.Test_VoiceACD_Basic">
-        <methods>
-          <include name="afterClass"/>
-          <include name="beforeClass"/>
-        </methods>
-      </class> <!-- HBTestesNG.TestCases.Test_VoiceACD_Basic -->
-      <class name="HBTestesNG.TestCases.Test_VoiceACD_Transfer">
-        <methods>
-          <include name="VoiceACD_BTransfer_ToExt_DifferentGroup_byName" invocation-numbers="0"/>
-          <include name="VoiceACD_CTransfer_ToExt_SameGroup_byName" invocation-numbers="0"/>
-          <include name="VoiceACD_CTransfer_ToExt_DifferentGroup_byName" invocation-numbers="0"/>
-          <include name="beforeClass"/>
-          <include name="VoiceACD_CTransfer_ToIRN_SameGroup" invocation-numbers="0"/>
-          <include name="VoiceACD_CTransfer_ToIRN_DifferentGroup" invocation-numbers="0"/>
-          <include name="afterClass"/>
-          <include name="VoiceACD_BTransfer_ToIRN_AQ" invocation-numbers="0"/>
-        </methods>
-      </class> <!-- HBTestesNG.TestCases.Test_VoiceACD_Transfer -->
-      <class name="HBTestesNG.TestCases.Test_Preparation">
-        <methods>
-          <include name="afterClass"/>
-          <include name="beforeClass"/>
-        </methods>
-      </class> <!-- HBTestesNG.TestCases.Test_Preparation -->
+      </class> <!-- HBTestesNG.TestCases.Test_Initiate -->
     </classes>
   </test> <!-- VoiceACD Scenarios(failed) -->
 </suite> <!-- Failed suite [Test HB Suite] -->

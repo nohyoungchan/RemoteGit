@@ -322,6 +322,7 @@ public class Test_VoiceACD_Transfer extends TestCaseObject {
 	public void VoiceACD_CTransfer_ToExt_SameGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
 		String testName = "VoiceACD->Ans->Consult Transfer to Ext on Same Group";
+		skipTest("Defect:UCC-1642");
 		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
 		//#########################
 		
@@ -362,7 +363,7 @@ public class Test_VoiceACD_Transfer extends TestCaseObject {
 	public void VoiceACD_CTransfer_ToExt_SameGroup_byName(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
 		String testName = "VoiceACD->Ans->Consult Transfer to Ext on Same Group_byName";
-		//skipTest("Defect: UCC-1642/UCC-1498");
+		skipTest("Defect: UCC-1642/UCC-1498");
 		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
 		//#########################
 		

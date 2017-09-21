@@ -135,6 +135,7 @@ public class AgentHBDirector extends Agent {
 		 find_and_fill_byID("wrap_up_time", wuTime, false);
 		 find_and_fill_byID("forced_release_time", frTime, false);
 		 dependableClick_byID("submitButton");
+		 wait(3);
 
 		 
 		 logOutHBDirector();
@@ -170,6 +171,8 @@ public class AgentHBDirector extends Agent {
 		 }else {
 			 log.info("\n@(" + agentType + ") " +  username + " : Abandon Callback is already disabled. ");
 		 }
+		 
+		 wait(3);
 			  
 		 logOutHBDirector();
 		 minimizeBrowser();
@@ -528,7 +531,7 @@ public class AgentHBDirector extends Agent {
 			 selectFromComboBox_ByID("srv_dest", serviceName);
 			 wait(3);
 			 dependableClick_byID("submitButton");
-			 wait(3);
+			 wait(5);
 			 
 			 //#### Set destination for email
 			 /* TODO

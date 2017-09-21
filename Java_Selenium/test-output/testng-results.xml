@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="29" failed="0" total="42" passed="13">
+<testng-results skipped="39" failed="0" total="41" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Test HB Suite" duration-ms="1533875" started-at="2017-09-02T22:55:18Z" finished-at="2017-09-02T23:20:52Z">
+  <suite name="Test HB Suite" duration-ms="189031" started-at="2017-09-21T16:57:56Z" finished-at="2017-09-21T17:01:06Z">
     <groups>
       <group name="VoiceACD_Basic_ClassLevel">
-        <method signature="Test_Preparation.VoiceACD_Q_Abandon(int)[pri:0, instance:Thread[Thread-1,5,main]]" name="VoiceACD_Q_Abandon" class="HBTestesNG.TestCases.Test_Preparation"/>
         <method signature="Test_VoiceACD_Basic.VoiceACD_NoQ_Answer(int, int, int)[pri:0, instance:Thread[Thread-2,5,main]]" name="VoiceACD_NoQ_Answer" class="HBTestesNG.TestCases.Test_VoiceACD_Basic"/>
         <method signature="Test_VoiceACD_Basic.VoiceACD_NoQ_Answer_NoWrapTime(int, int)[pri:0, instance:Thread[Thread-2,5,main]]" name="VoiceACD_NoQ_Answer_NoWrapTime" class="HBTestesNG.TestCases.Test_VoiceACD_Basic"/>
         <method signature="Test_VoiceACD_Basic.VoiceACD_Q_Answer(int, int, int, int)[pri:0, instance:Thread[Thread-2,5,main]]" name="VoiceACD_Q_Answer" class="HBTestesNG.TestCases.Test_VoiceACD_Basic"/>
@@ -57,26 +56,26 @@
         <method signature="Test_VoiceACD_Conference_WrapTimeZero.VoiceACD_CConference_ToIRN_SameGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-6,5,main]]" name="VoiceACD_CConference_ToIRN_SameGroup" class="HBTestesNG.TestCases.Test_VoiceACD_Conference_WrapTimeZero"/>
       </group> <!-- VoiceACD_Conference_WrapTimeZero_ClassLevel -->
     </groups>
-    <test name="VoiceACD Scenarios" duration-ms="1533875" started-at="2017-09-02T22:55:18Z" finished-at="2017-09-02T23:20:52Z">
+    <test name="VoiceACD Scenarios" duration-ms="189031" started-at="2017-09-21T16:57:56Z" finished-at="2017-09-21T17:01:06Z">
       <class name="HBTestesNG.TestCases.Test_Initiate">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:Thread[Thread-0,5,main]]" name="beforeSuite" is-config="true" duration-ms="168372" started-at="2017-09-02T15:52:30Z" finished-at="2017-09-02T15:55:18Z">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:Thread[Thread-0,5,main]]" name="beforeSuite" is-config="true" duration-ms="177009" started-at="2017-09-21T09:54:59Z" finished-at="2017-09-21T09:57:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:Thread[Thread-0,5,main]]" name="afterSuite" is-config="true" duration-ms="38446" started-at="2017-09-02T16:20:52Z" finished-at="2017-09-02T16:21:31Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:Thread[Thread-0,5,main]]" name="afterSuite" is-config="true" duration-ms="33529" started-at="2017-09-21T10:01:06Z" finished-at="2017-09-21T10:01:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
       </class> <!-- HBTestesNG.TestCases.Test_Initiate -->
       <class name="HBTestesNG.TestCases.Test_VoiceACD_Conference_WrapTimeZero">
-        <test-method status="SKIP" signature="beforeClass()[pri:0, instance:Thread[Thread-6,5,main]]" name="beforeClass" is-config="true" duration-ms="0" started-at="2017-09-02T16:20:52Z" finished-at="2017-09-02T16:20:52Z">
+        <test-method status="SKIP" signature="beforeClass()[pri:0, instance:Thread[Thread-6,5,main]]" name="beforeClass" is-config="true" duration-ms="0" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <exception class="org.testng.SkipException">
             <message>
               <![CDATA[Skipping InitializeAllVariables()]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.SkipException: Skipping InitializeAllVariables()
-	at HBTestesNG.BaseObjects.TestCaseObject.InitializeAllVariables(TestCaseObject.java:38)
+	at HBTestesNG.BaseObjects.TestCaseObject.InitializeAllVariables(TestCaseObject.java:43)
 	at HBTestesNG.TestCases.Test_VoiceACD_Conference_WrapTimeZero.beforeClass(Test_VoiceACD_Conference_WrapTimeZero.java:24)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
@@ -108,7 +107,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="SKIP" signature="VoiceACD_CConference_ToExt_DifferentGroup(int, int, int, int)[pri:0, instance:Thread[Thread-6,5,main]]" name="VoiceACD_CConference_ToExt_DifferentGroup" duration-ms="1" started-at="2017-09-02T16:20:52Z" finished-at="2017-09-02T16:20:52Z">
+        <test-method status="SKIP" signature="VoiceACD_CConference_ToExt_DifferentGroup(int, int, int, int)[pri:0, instance:Thread[Thread-6,5,main]]" name="VoiceACD_CConference_ToExt_DifferentGroup" duration-ms="0" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <params>
             <param index="0">
               <value>
@@ -134,7 +133,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_CConference_ToExt_DifferentGroup -->
-        <test-method status="SKIP" signature="VoiceACD_CConference_ToExt_SameGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-6,5,main]]" name="VoiceACD_CConference_ToExt_SameGroup" duration-ms="1" started-at="2017-09-02T16:20:52Z" finished-at="2017-09-02T16:20:52Z">
+        <test-method status="SKIP" signature="VoiceACD_CConference_ToExt_SameGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-6,5,main]]" name="VoiceACD_CConference_ToExt_SameGroup" duration-ms="1" started-at="2017-09-21T10:01:06Z" finished-at="2017-09-21T10:01:06Z">
           <params>
             <param index="0">
               <value>
@@ -165,7 +164,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_CConference_ToExt_SameGroup -->
-        <test-method status="SKIP" signature="VoiceACD_CConference_ToIRN_DifferentGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-6,5,main]]" name="VoiceACD_CConference_ToIRN_DifferentGroup" duration-ms="0" started-at="2017-09-02T16:20:52Z" finished-at="2017-09-02T16:20:52Z">
+        <test-method status="SKIP" signature="VoiceACD_CConference_ToIRN_DifferentGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-6,5,main]]" name="VoiceACD_CConference_ToIRN_DifferentGroup" duration-ms="1" started-at="2017-09-21T10:01:06Z" finished-at="2017-09-21T10:01:06Z">
           <params>
             <param index="0">
               <value>
@@ -196,7 +195,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_CConference_ToIRN_DifferentGroup -->
-        <test-method status="SKIP" signature="VoiceACD_CConference_ToIRN_SameGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-6,5,main]]" name="VoiceACD_CConference_ToIRN_SameGroup" duration-ms="1" started-at="2017-09-02T16:20:52Z" finished-at="2017-09-02T16:20:52Z">
+        <test-method status="SKIP" signature="VoiceACD_CConference_ToIRN_SameGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-6,5,main]]" name="VoiceACD_CConference_ToIRN_SameGroup" duration-ms="2" started-at="2017-09-21T10:01:06Z" finished-at="2017-09-21T10:01:06Z">
           <params>
             <param index="0">
               <value>
@@ -227,7 +226,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_CConference_ToIRN_SameGroup -->
-        <test-method status="SKIP" signature="VoiceACD_CConference_ToExternal(int, int, int, int)[pri:0, instance:Thread[Thread-6,5,main]]" name="VoiceACD_CConference_ToExternal" duration-ms="0" started-at="2017-09-02T16:20:52Z" finished-at="2017-09-02T16:20:52Z">
+        <test-method status="SKIP" signature="VoiceACD_CConference_ToExternal(int, int, int, int)[pri:0, instance:Thread[Thread-6,5,main]]" name="VoiceACD_CConference_ToExternal" duration-ms="0" started-at="2017-09-21T10:01:06Z" finished-at="2017-09-21T10:01:06Z">
           <params>
             <param index="0">
               <value>
@@ -253,17 +252,52 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_CConference_ToExternal -->
-        <test-method status="SKIP" signature="afterClass()[pri:0, instance:Thread[Thread-6,5,main]]" name="afterClass" is-config="true" duration-ms="0" started-at="2017-09-02T16:20:52Z" finished-at="2017-09-02T16:20:52Z">
+        <test-method status="SKIP" signature="afterClass()[pri:0, instance:Thread[Thread-6,5,main]]" name="afterClass" is-config="true" duration-ms="0" started-at="2017-09-21T10:01:06Z" finished-at="2017-09-21T10:01:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
       </class> <!-- HBTestesNG.TestCases.Test_VoiceACD_Conference_WrapTimeZero -->
       <class name="HBTestesNG.TestCases.Test_VoiceACD_Transfer">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:Thread[Thread-3,5,main]]" name="beforeClass" is-config="true" duration-ms="1" started-at="2017-09-02T16:01:58Z" finished-at="2017-09-02T16:01:58Z">
+        <test-method status="SKIP" signature="beforeClass()[pri:0, instance:Thread[Thread-3,5,main]]" name="beforeClass" is-config="true" duration-ms="0" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
+          <exception class="org.testng.SkipException">
+            <message>
+              <![CDATA[Skipping InitializeAllVariables()]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.SkipException: Skipping InitializeAllVariables()
+	at HBTestesNG.BaseObjects.TestCaseObject.InitializeAllVariables(TestCaseObject.java:43)
+	at HBTestesNG.TestCases.Test_VoiceACD_Transfer.beforeClass(Test_VoiceACD_Transfer.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:170)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:104)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.SkipException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="VoiceACD_BTransfer_ToExt_SameGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-3,5,main]]" name="VoiceACD_BTransfer_ToExt_SameGroup" duration-ms="130108" started-at="2017-09-02T16:01:58Z" finished-at="2017-09-02T16:04:08Z">
+        <test-method status="SKIP" signature="VoiceACD_BTransfer_ToExt_SameGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-3,5,main]]" name="VoiceACD_BTransfer_ToExt_SameGroup" duration-ms="0" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <params>
             <param index="0">
               <value>
@@ -294,7 +328,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_BTransfer_ToExt_SameGroup -->
-        <test-method status="PASS" signature="VoiceACD_BTransfer_ToExt_DifferentGroup(int, int, int, int)[pri:0, instance:Thread[Thread-3,5,main]]" name="VoiceACD_BTransfer_ToExt_DifferentGroup" duration-ms="106600" started-at="2017-09-02T16:04:08Z" finished-at="2017-09-02T16:05:54Z">
+        <test-method status="SKIP" signature="VoiceACD_BTransfer_ToExt_DifferentGroup(int, int, int, int)[pri:0, instance:Thread[Thread-3,5,main]]" name="VoiceACD_BTransfer_ToExt_DifferentGroup" duration-ms="1" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <params>
             <param index="0">
               <value>
@@ -320,7 +354,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_BTransfer_ToExt_DifferentGroup -->
-        <test-method status="PASS" signature="VoiceACD_BTransfer_ToExternal(int, int, int, int)[pri:0, instance:Thread[Thread-3,5,main]]" name="VoiceACD_BTransfer_ToExternal" duration-ms="106416" started-at="2017-09-02T16:05:54Z" finished-at="2017-09-02T16:07:41Z">
+        <test-method status="SKIP" signature="VoiceACD_BTransfer_ToExternal(int, int, int, int)[pri:0, instance:Thread[Thread-3,5,main]]" name="VoiceACD_BTransfer_ToExternal" duration-ms="1" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <params>
             <param index="0">
               <value>
@@ -346,7 +380,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_BTransfer_ToExternal -->
-        <test-method status="PASS" signature="VoiceACD_BTransfer_ToIRN_SameGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-3,5,main]]" name="VoiceACD_BTransfer_ToIRN_SameGroup" duration-ms="130166" started-at="2017-09-02T16:07:41Z" finished-at="2017-09-02T16:09:51Z">
+        <test-method status="SKIP" signature="VoiceACD_BTransfer_ToIRN_SameGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-3,5,main]]" name="VoiceACD_BTransfer_ToIRN_SameGroup" duration-ms="1" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <params>
             <param index="0">
               <value>
@@ -377,7 +411,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_BTransfer_ToIRN_SameGroup -->
-        <test-method status="PASS" signature="VoiceACD_BTransfer_ToIRN_DifferentGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-3,5,main]]" name="VoiceACD_BTransfer_ToIRN_DifferentGroup" duration-ms="123592" started-at="2017-09-02T16:09:51Z" finished-at="2017-09-02T16:11:54Z">
+        <test-method status="SKIP" signature="VoiceACD_BTransfer_ToIRN_DifferentGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-3,5,main]]" name="VoiceACD_BTransfer_ToIRN_DifferentGroup" duration-ms="1" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <params>
             <param index="0">
               <value>
@@ -408,7 +442,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_BTransfer_ToIRN_DifferentGroup -->
-        <test-method status="SKIP" signature="VoiceACD_BTransfer_ToIRN_AQ(int, int, int, int, int)[pri:0, instance:Thread[Thread-3,5,main]]" name="VoiceACD_BTransfer_ToIRN_AQ" duration-ms="1" started-at="2017-09-02T16:11:54Z" finished-at="2017-09-02T16:11:54Z">
+        <test-method status="SKIP" signature="VoiceACD_BTransfer_ToIRN_AQ(int, int, int, int, int)[pri:0, instance:Thread[Thread-3,5,main]]" name="VoiceACD_BTransfer_ToIRN_AQ" duration-ms="1" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <params>
             <param index="0">
               <value>
@@ -436,45 +470,10 @@
               </value>
             </param>
           </params>
-          <exception class="org.testng.SkipException">
-            <message>
-              <![CDATA[Defect:UCC-1641]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.SkipException: Defect:UCC-1641
-	at HBTestesNG.BaseObjects.TestCaseObject.skipTest(TestCaseObject.java:328)
-	at HBTestesNG.TestCases.Test_VoiceACD_Transfer.VoiceACD_BTransfer_ToIRN_AQ(Test_VoiceACD_Transfer.java:289)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
-	at org.testng.TestRunner.privateRun(TestRunner.java:774)
-	at org.testng.TestRunner.run(TestRunner.java:624)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-	at org.testng.TestNG.run(TestNG.java:1048)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.SkipException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_BTransfer_ToIRN_AQ -->
-        <test-method status="PASS" signature="VoiceACD_CTransfer_ToExt_SameGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-3,5,main]]" name="VoiceACD_CTransfer_ToExt_SameGroup" duration-ms="156814" started-at="2017-09-02T16:11:54Z" finished-at="2017-09-02T16:14:31Z">
+        <test-method status="SKIP" signature="VoiceACD_CTransfer_ToExt_SameGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-3,5,main]]" name="VoiceACD_CTransfer_ToExt_SameGroup" duration-ms="2" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <params>
             <param index="0">
               <value>
@@ -505,7 +504,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_CTransfer_ToExt_SameGroup -->
-        <test-method status="PASS" signature="VoiceACD_CTransfer_ToExt_DifferentGroup(int, int, int, int)[pri:0, instance:Thread[Thread-3,5,main]]" name="VoiceACD_CTransfer_ToExt_DifferentGroup" duration-ms="122413" started-at="2017-09-02T16:14:31Z" finished-at="2017-09-02T16:16:34Z">
+        <test-method status="SKIP" signature="VoiceACD_CTransfer_ToExt_DifferentGroup(int, int, int, int)[pri:0, instance:Thread[Thread-3,5,main]]" name="VoiceACD_CTransfer_ToExt_DifferentGroup" duration-ms="1" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <params>
             <param index="0">
               <value>
@@ -531,7 +530,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_CTransfer_ToExt_DifferentGroup -->
-        <test-method status="PASS" signature="VoiceACD_CTransfer_ToExternal(int, int, int, int)[pri:0, instance:Thread[Thread-3,5,main]]" name="VoiceACD_CTransfer_ToExternal" duration-ms="133282" started-at="2017-09-02T16:16:34Z" finished-at="2017-09-02T16:18:47Z">
+        <test-method status="SKIP" signature="VoiceACD_CTransfer_ToExternal(int, int, int, int)[pri:0, instance:Thread[Thread-3,5,main]]" name="VoiceACD_CTransfer_ToExternal" duration-ms="0" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <params>
             <param index="0">
               <value>
@@ -557,7 +556,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_CTransfer_ToExternal -->
-        <test-method status="SKIP" signature="VoiceACD_CTransfer_ToIRN_SameGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-3,5,main]]" name="VoiceACD_CTransfer_ToIRN_SameGroup" duration-ms="1" started-at="2017-09-02T16:18:47Z" finished-at="2017-09-02T16:18:47Z">
+        <test-method status="SKIP" signature="VoiceACD_CTransfer_ToIRN_SameGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-3,5,main]]" name="VoiceACD_CTransfer_ToIRN_SameGroup" duration-ms="1" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <params>
             <param index="0">
               <value>
@@ -585,45 +584,10 @@
               </value>
             </param>
           </params>
-          <exception class="org.testng.SkipException">
-            <message>
-              <![CDATA[Defect:UCC-1642]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.SkipException: Defect:UCC-1642
-	at HBTestesNG.BaseObjects.TestCaseObject.skipTest(TestCaseObject.java:328)
-	at HBTestesNG.TestCases.Test_VoiceACD_Transfer.VoiceACD_CTransfer_ToIRN_SameGroup(Test_VoiceACD_Transfer.java:512)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
-	at org.testng.TestRunner.privateRun(TestRunner.java:774)
-	at org.testng.TestRunner.run(TestRunner.java:624)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-	at org.testng.TestNG.run(TestNG.java:1048)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.SkipException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_CTransfer_ToIRN_SameGroup -->
-        <test-method status="SKIP" signature="VoiceACD_CTransfer_ToIRN_DifferentGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-3,5,main]]" name="VoiceACD_CTransfer_ToIRN_DifferentGroup" duration-ms="0" started-at="2017-09-02T16:18:47Z" finished-at="2017-09-02T16:18:47Z">
+        <test-method status="SKIP" signature="VoiceACD_CTransfer_ToIRN_DifferentGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-3,5,main]]" name="VoiceACD_CTransfer_ToIRN_DifferentGroup" duration-ms="2" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <params>
             <param index="0">
               <value>
@@ -651,45 +615,10 @@
               </value>
             </param>
           </params>
-          <exception class="org.testng.SkipException">
-            <message>
-              <![CDATA[Defect:UCC-1642]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.SkipException: Defect:UCC-1642
-	at HBTestesNG.BaseObjects.TestCaseObject.skipTest(TestCaseObject.java:328)
-	at HBTestesNG.TestCases.Test_VoiceACD_Transfer.VoiceACD_CTransfer_ToIRN_DifferentGroup(Test_VoiceACD_Transfer.java:550)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
-	at org.testng.TestRunner.privateRun(TestRunner.java:774)
-	at org.testng.TestRunner.run(TestRunner.java:624)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-	at org.testng.TestNG.run(TestNG.java:1048)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.SkipException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_CTransfer_ToIRN_DifferentGroup -->
-        <test-method status="PASS" signature="VoiceACD_BTransfer_ToExt_SameGroup_byName(int, int, int, int, int)[pri:0, instance:Thread[Thread-3,5,main]]" name="VoiceACD_BTransfer_ToExt_SameGroup_byName" duration-ms="119194" started-at="2017-09-02T16:18:47Z" finished-at="2017-09-02T16:20:46Z">
+        <test-method status="SKIP" signature="VoiceACD_BTransfer_ToExt_SameGroup_byName(int, int, int, int, int)[pri:0, instance:Thread[Thread-3,5,main]]" name="VoiceACD_BTransfer_ToExt_SameGroup_byName" duration-ms="1" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <params>
             <param index="0">
               <value>
@@ -720,7 +649,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_BTransfer_ToExt_SameGroup_byName -->
-        <test-method status="SKIP" signature="VoiceACD_BTransfer_ToExt_DifferentGroup_byName(int, int, int, int)[pri:0, instance:Thread[Thread-3,5,main]]" name="VoiceACD_BTransfer_ToExt_DifferentGroup_byName" duration-ms="2001" started-at="2017-09-02T16:20:46Z" finished-at="2017-09-02T16:20:48Z">
+        <test-method status="SKIP" signature="VoiceACD_BTransfer_ToExt_DifferentGroup_byName(int, int, int, int)[pri:0, instance:Thread[Thread-3,5,main]]" name="VoiceACD_BTransfer_ToExt_DifferentGroup_byName" duration-ms="1" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <params>
             <param index="0">
               <value>
@@ -743,45 +672,10 @@
               </value>
             </param>
           </params>
-          <exception class="org.testng.SkipException">
-            <message>
-              <![CDATA[Skipping because user want to end test => VoiceACD->Ans->Blind Transfer to Ext on Different Group_byName ]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.SkipException: Skipping because user want to end test => VoiceACD->Ans->Blind Transfer to Ext on Different Group_byName 
-	at HBTestesNG.BaseObjects.TestCaseObject.skipTest(TestCaseObject.java:328)
-	at HBTestesNG.TestCases.Test_VoiceACD_Transfer.VoiceACD_BTransfer_ToExt_DifferentGroup_byName(Test_VoiceACD_Transfer.java:150)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
-	at org.testng.TestRunner.privateRun(TestRunner.java:774)
-	at org.testng.TestRunner.run(TestRunner.java:624)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-	at org.testng.TestNG.run(TestNG.java:1048)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.SkipException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_BTransfer_ToExt_DifferentGroup_byName -->
-        <test-method status="SKIP" signature="VoiceACD_CTransfer_ToExt_SameGroup_byName(int, int, int, int, int)[pri:0, instance:Thread[Thread-3,5,main]]" name="VoiceACD_CTransfer_ToExt_SameGroup_byName" duration-ms="2001" started-at="2017-09-02T16:20:48Z" finished-at="2017-09-02T16:20:50Z">
+        <test-method status="SKIP" signature="VoiceACD_CTransfer_ToExt_SameGroup_byName(int, int, int, int, int)[pri:0, instance:Thread[Thread-3,5,main]]" name="VoiceACD_CTransfer_ToExt_SameGroup_byName" duration-ms="1" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <params>
             <param index="0">
               <value>
@@ -809,45 +703,10 @@
               </value>
             </param>
           </params>
-          <exception class="org.testng.SkipException">
-            <message>
-              <![CDATA[Skipping because user want to end test => VoiceACD->Ans->Consult Transfer to Ext on Same Group_byName]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.SkipException: Skipping because user want to end test => VoiceACD->Ans->Consult Transfer to Ext on Same Group_byName
-	at HBTestesNG.BaseObjects.TestCaseObject.skipTest(TestCaseObject.java:328)
-	at HBTestesNG.TestCases.Test_VoiceACD_Transfer.VoiceACD_CTransfer_ToExt_SameGroup_byName(Test_VoiceACD_Transfer.java:366)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
-	at org.testng.TestRunner.privateRun(TestRunner.java:774)
-	at org.testng.TestRunner.run(TestRunner.java:624)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-	at org.testng.TestNG.run(TestNG.java:1048)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.SkipException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_CTransfer_ToExt_SameGroup_byName -->
-        <test-method status="SKIP" signature="VoiceACD_CTransfer_ToExt_DifferentGroup_byName(int, int, int, int)[pri:0, instance:Thread[Thread-3,5,main]]" name="VoiceACD_CTransfer_ToExt_DifferentGroup_byName" duration-ms="2001" started-at="2017-09-02T16:20:50Z" finished-at="2017-09-02T16:20:52Z">
+        <test-method status="SKIP" signature="VoiceACD_CTransfer_ToExt_DifferentGroup_byName(int, int, int, int)[pri:0, instance:Thread[Thread-3,5,main]]" name="VoiceACD_CTransfer_ToExt_DifferentGroup_byName" duration-ms="2" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <params>
             <param index="0">
               <value>
@@ -870,58 +729,23 @@
               </value>
             </param>
           </params>
-          <exception class="org.testng.SkipException">
-            <message>
-              <![CDATA[Skipping because user want to end test => VoiceACD->Ans->Consult Transfer to Ext on Different Group by name]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.SkipException: Skipping because user want to end test => VoiceACD->Ans->Consult Transfer to Ext on Different Group by name
-	at HBTestesNG.BaseObjects.TestCaseObject.skipTest(TestCaseObject.java:328)
-	at HBTestesNG.TestCases.Test_VoiceACD_Transfer.VoiceACD_CTransfer_ToExt_DifferentGroup_byName(Test_VoiceACD_Transfer.java:438)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
-	at org.testng.TestRunner.privateRun(TestRunner.java:774)
-	at org.testng.TestRunner.run(TestRunner.java:624)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-	at org.testng.TestNG.run(TestNG.java:1048)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.SkipException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_CTransfer_ToExt_DifferentGroup_byName -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:Thread[Thread-3,5,main]]" name="afterClass" is-config="true" duration-ms="1" started-at="2017-09-02T16:20:52Z" finished-at="2017-09-02T16:20:52Z">
+        <test-method status="SKIP" signature="afterClass()[pri:0, instance:Thread[Thread-3,5,main]]" name="afterClass" is-config="true" duration-ms="0" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
       </class> <!-- HBTestesNG.TestCases.Test_VoiceACD_Transfer -->
       <class name="HBTestesNG.TestCases.Test_VoiceACD_Transfer_WrapTimeZero">
-        <test-method status="SKIP" signature="beforeClass()[pri:0, instance:Thread[Thread-4,5,main]]" name="beforeClass" is-config="true" duration-ms="0" started-at="2017-09-02T16:20:52Z" finished-at="2017-09-02T16:20:52Z">
+        <test-method status="SKIP" signature="beforeClass()[pri:0, instance:Thread[Thread-4,5,main]]" name="beforeClass" is-config="true" duration-ms="0" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <exception class="org.testng.SkipException">
             <message>
               <![CDATA[Skipping InitializeAllVariables()]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.SkipException: Skipping InitializeAllVariables()
-	at HBTestesNG.BaseObjects.TestCaseObject.InitializeAllVariables(TestCaseObject.java:38)
+	at HBTestesNG.BaseObjects.TestCaseObject.InitializeAllVariables(TestCaseObject.java:43)
 	at HBTestesNG.TestCases.Test_VoiceACD_Transfer_WrapTimeZero.beforeClass(Test_VoiceACD_Transfer_WrapTimeZero.java:20)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
@@ -953,7 +777,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="SKIP" signature="VoiceACD_BTransfer_ToExt_SameGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-4,5,main]]" name="VoiceACD_BTransfer_ToExt_SameGroup" duration-ms="0" started-at="2017-09-02T16:20:52Z" finished-at="2017-09-02T16:20:52Z">
+        <test-method status="SKIP" signature="VoiceACD_BTransfer_ToExt_SameGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-4,5,main]]" name="VoiceACD_BTransfer_ToExt_SameGroup" duration-ms="1" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <params>
             <param index="0">
               <value>
@@ -984,7 +808,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_BTransfer_ToExt_SameGroup -->
-        <test-method status="SKIP" signature="VoiceACD_BTransfer_ToExt_DifferentGroup(int, int, int, int)[pri:0, instance:Thread[Thread-4,5,main]]" name="VoiceACD_BTransfer_ToExt_DifferentGroup" duration-ms="1" started-at="2017-09-02T16:20:52Z" finished-at="2017-09-02T16:20:52Z">
+        <test-method status="SKIP" signature="VoiceACD_BTransfer_ToExt_DifferentGroup(int, int, int, int)[pri:0, instance:Thread[Thread-4,5,main]]" name="VoiceACD_BTransfer_ToExt_DifferentGroup" duration-ms="1" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <params>
             <param index="0">
               <value>
@@ -1010,7 +834,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_BTransfer_ToExt_DifferentGroup -->
-        <test-method status="SKIP" signature="VoiceACD_BTransfer_ToExternal(int, int, int, int)[pri:0, instance:Thread[Thread-4,5,main]]" name="VoiceACD_BTransfer_ToExternal" duration-ms="1" started-at="2017-09-02T16:20:52Z" finished-at="2017-09-02T16:20:52Z">
+        <test-method status="SKIP" signature="VoiceACD_BTransfer_ToExternal(int, int, int, int)[pri:0, instance:Thread[Thread-4,5,main]]" name="VoiceACD_BTransfer_ToExternal" duration-ms="1" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <params>
             <param index="0">
               <value>
@@ -1036,7 +860,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_BTransfer_ToExternal -->
-        <test-method status="SKIP" signature="VoiceACD_BTransfer_ToIRN_SameGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-4,5,main]]" name="VoiceACD_BTransfer_ToIRN_SameGroup" duration-ms="0" started-at="2017-09-02T16:20:52Z" finished-at="2017-09-02T16:20:52Z">
+        <test-method status="SKIP" signature="VoiceACD_BTransfer_ToIRN_SameGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-4,5,main]]" name="VoiceACD_BTransfer_ToIRN_SameGroup" duration-ms="1" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <params>
             <param index="0">
               <value>
@@ -1067,7 +891,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_BTransfer_ToIRN_SameGroup -->
-        <test-method status="SKIP" signature="VoiceACD_BTransfer_ToIRN_DifferentGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-4,5,main]]" name="VoiceACD_BTransfer_ToIRN_DifferentGroup" duration-ms="0" started-at="2017-09-02T16:20:52Z" finished-at="2017-09-02T16:20:52Z">
+        <test-method status="SKIP" signature="VoiceACD_BTransfer_ToIRN_DifferentGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-4,5,main]]" name="VoiceACD_BTransfer_ToIRN_DifferentGroup" duration-ms="0" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <params>
             <param index="0">
               <value>
@@ -1098,7 +922,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_BTransfer_ToIRN_DifferentGroup -->
-        <test-method status="SKIP" signature="VoiceACD_CTransfer_ToExt_SameGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-4,5,main]]" name="VoiceACD_CTransfer_ToExt_SameGroup" duration-ms="0" started-at="2017-09-02T16:20:52Z" finished-at="2017-09-02T16:20:52Z">
+        <test-method status="SKIP" signature="VoiceACD_CTransfer_ToExt_SameGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-4,5,main]]" name="VoiceACD_CTransfer_ToExt_SameGroup" duration-ms="1" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <params>
             <param index="0">
               <value>
@@ -1129,7 +953,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_CTransfer_ToExt_SameGroup -->
-        <test-method status="SKIP" signature="VoiceACD_CTransfer_ToExt_DifferentGroup(int, int, int, int)[pri:0, instance:Thread[Thread-4,5,main]]" name="VoiceACD_CTransfer_ToExt_DifferentGroup" duration-ms="0" started-at="2017-09-02T16:20:52Z" finished-at="2017-09-02T16:20:52Z">
+        <test-method status="SKIP" signature="VoiceACD_CTransfer_ToExt_DifferentGroup(int, int, int, int)[pri:0, instance:Thread[Thread-4,5,main]]" name="VoiceACD_CTransfer_ToExt_DifferentGroup" duration-ms="1" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <params>
             <param index="0">
               <value>
@@ -1155,7 +979,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_CTransfer_ToExt_DifferentGroup -->
-        <test-method status="SKIP" signature="VoiceACD_CTransfer_ToExternal(int, int, int, int)[pri:0, instance:Thread[Thread-4,5,main]]" name="VoiceACD_CTransfer_ToExternal" duration-ms="0" started-at="2017-09-02T16:20:52Z" finished-at="2017-09-02T16:20:52Z">
+        <test-method status="SKIP" signature="VoiceACD_CTransfer_ToExternal(int, int, int, int)[pri:0, instance:Thread[Thread-4,5,main]]" name="VoiceACD_CTransfer_ToExternal" duration-ms="0" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <params>
             <param index="0">
               <value>
@@ -1181,7 +1005,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_CTransfer_ToExternal -->
-        <test-method status="SKIP" signature="VoiceACD_CTransfer_ToIRN_SameGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-4,5,main]]" name="VoiceACD_CTransfer_ToIRN_SameGroup" duration-ms="1" started-at="2017-09-02T16:20:52Z" finished-at="2017-09-02T16:20:52Z">
+        <test-method status="SKIP" signature="VoiceACD_CTransfer_ToIRN_SameGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-4,5,main]]" name="VoiceACD_CTransfer_ToIRN_SameGroup" duration-ms="0" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <params>
             <param index="0">
               <value>
@@ -1212,7 +1036,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_CTransfer_ToIRN_SameGroup -->
-        <test-method status="SKIP" signature="VoiceACD_CTransfer_ToIRN_DifferentGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-4,5,main]]" name="VoiceACD_CTransfer_ToIRN_DifferentGroup" duration-ms="1" started-at="2017-09-02T16:20:52Z" finished-at="2017-09-02T16:20:52Z">
+        <test-method status="SKIP" signature="VoiceACD_CTransfer_ToIRN_DifferentGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-4,5,main]]" name="VoiceACD_CTransfer_ToIRN_DifferentGroup" duration-ms="2" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <params>
             <param index="0">
               <value>
@@ -1243,17 +1067,17 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_CTransfer_ToIRN_DifferentGroup -->
-        <test-method status="SKIP" signature="afterClass()[pri:0, instance:Thread[Thread-4,5,main]]" name="afterClass" is-config="true" duration-ms="0" started-at="2017-09-02T16:20:52Z" finished-at="2017-09-02T16:20:52Z">
+        <test-method status="SKIP" signature="afterClass()[pri:0, instance:Thread[Thread-4,5,main]]" name="afterClass" is-config="true" duration-ms="0" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
       </class> <!-- HBTestesNG.TestCases.Test_VoiceACD_Transfer_WrapTimeZero -->
       <class name="HBTestesNG.TestCases.Test_VoiceACD_Basic">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:Thread[Thread-2,5,main]]" name="beforeClass" is-config="true" duration-ms="0" started-at="2017-09-02T15:56:27Z" finished-at="2017-09-02T15:56:27Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:Thread[Thread-2,5,main]]" name="beforeClass" is-config="true" duration-ms="1" started-at="2017-09-21T09:57:56Z" finished-at="2017-09-21T09:57:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="VoiceACD_NoQ_Answer(int, int, int)[pri:0, instance:Thread[Thread-2,5,main]]" name="VoiceACD_NoQ_Answer" duration-ms="88915" started-at="2017-09-02T15:56:27Z" finished-at="2017-09-02T15:57:56Z">
+        <test-method status="PASS" signature="VoiceACD_NoQ_Answer(int, int, int)[pri:0, instance:Thread[Thread-2,5,main]]" name="VoiceACD_NoQ_Answer" duration-ms="88637" started-at="2017-09-21T09:57:56Z" finished-at="2017-09-21T09:59:25Z">
           <params>
             <param index="0">
               <value>
@@ -1274,7 +1098,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_NoQ_Answer -->
-        <test-method status="PASS" signature="VoiceACD_Q_Answer(int, int, int, int)[pri:0, instance:Thread[Thread-2,5,main]]" name="VoiceACD_Q_Answer" duration-ms="108681" started-at="2017-09-02T15:57:56Z" finished-at="2017-09-02T15:59:45Z">
+        <test-method status="PASS" signature="VoiceACD_Q_Answer(int, int, int, int)[pri:0, instance:Thread[Thread-2,5,main]]" name="VoiceACD_Q_Answer" duration-ms="98274" started-at="2017-09-21T09:59:25Z" finished-at="2017-09-21T10:01:03Z">
           <params>
             <param index="0">
               <value>
@@ -1300,7 +1124,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_Q_Answer -->
-        <test-method status="PASS" signature="VoiceACD_NoQ_Answer_NoWrapTime(int, int)[pri:0, instance:Thread[Thread-2,5,main]]" name="VoiceACD_NoQ_Answer_NoWrapTime" duration-ms="132983" started-at="2017-09-02T15:59:45Z" finished-at="2017-09-02T16:01:58Z">
+        <test-method status="SKIP" signature="VoiceACD_NoQ_Answer_NoWrapTime(int, int)[pri:0, instance:Thread[Thread-2,5,main]]" name="VoiceACD_NoQ_Answer_NoWrapTime" duration-ms="2002" started-at="2017-09-21T10:01:03Z" finished-at="2017-09-21T10:01:05Z">
           <params>
             <param index="0">
               <value>
@@ -1313,23 +1137,58 @@
               </value>
             </param>
           </params>
+          <exception class="org.testng.SkipException">
+            <message>
+              <![CDATA[Skipping because user want to end test => VoiceACD->NoQ->Answered with No Wrap time]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.SkipException: Skipping because user want to end test => VoiceACD->NoQ->Answered with No Wrap time
+	at HBTestesNG.BaseObjects.TestCaseObject.skipTest(TestCaseObject.java:428)
+	at HBTestesNG.TestCases.Test_VoiceACD_Basic.VoiceACD_NoQ_Answer_NoWrapTime(Test_VoiceACD_Basic.java:95)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.SkipException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_NoQ_Answer_NoWrapTime -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:Thread[Thread-2,5,main]]" name="afterClass" is-config="true" duration-ms="0" started-at="2017-09-02T16:01:58Z" finished-at="2017-09-02T16:01:58Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:Thread[Thread-2,5,main]]" name="afterClass" is-config="true" duration-ms="0" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
       </class> <!-- HBTestesNG.TestCases.Test_VoiceACD_Basic -->
       <class name="HBTestesNG.TestCases.Test_VoiceACD_Conference">
-        <test-method status="SKIP" signature="beforeClass()[pri:0, instance:Thread[Thread-5,5,main]]" name="beforeClass" is-config="true" duration-ms="0" started-at="2017-09-02T16:20:52Z" finished-at="2017-09-02T16:20:52Z">
+        <test-method status="SKIP" signature="beforeClass()[pri:0, instance:Thread[Thread-5,5,main]]" name="beforeClass" is-config="true" duration-ms="0" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <exception class="org.testng.SkipException">
             <message>
               <![CDATA[Skipping InitializeAllVariables()]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.SkipException: Skipping InitializeAllVariables()
-	at HBTestesNG.BaseObjects.TestCaseObject.InitializeAllVariables(TestCaseObject.java:38)
+	at HBTestesNG.BaseObjects.TestCaseObject.InitializeAllVariables(TestCaseObject.java:43)
 	at HBTestesNG.TestCases.Test_VoiceACD_Conference.beforeClass(Test_VoiceACD_Conference.java:24)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
@@ -1361,7 +1220,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="SKIP" signature="VoiceACD_CConference_ToExt_DifferentGroup(int, int, int, int)[pri:0, instance:Thread[Thread-5,5,main]]" name="VoiceACD_CConference_ToExt_DifferentGroup" duration-ms="1" started-at="2017-09-02T16:20:52Z" finished-at="2017-09-02T16:20:52Z">
+        <test-method status="SKIP" signature="VoiceACD_CConference_ToExt_DifferentGroup(int, int, int, int)[pri:0, instance:Thread[Thread-5,5,main]]" name="VoiceACD_CConference_ToExt_DifferentGroup" duration-ms="0" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <params>
             <param index="0">
               <value>
@@ -1387,7 +1246,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_CConference_ToExt_DifferentGroup -->
-        <test-method status="SKIP" signature="VoiceACD_CConference_ToExt_SameGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-5,5,main]]" name="VoiceACD_CConference_ToExt_SameGroup" duration-ms="0" started-at="2017-09-02T16:20:52Z" finished-at="2017-09-02T16:20:52Z">
+        <test-method status="SKIP" signature="VoiceACD_CConference_ToExt_SameGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-5,5,main]]" name="VoiceACD_CConference_ToExt_SameGroup" duration-ms="1" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <params>
             <param index="0">
               <value>
@@ -1418,7 +1277,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_CConference_ToExt_SameGroup -->
-        <test-method status="SKIP" signature="VoiceACD_CConference_ToIRN_DifferentGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-5,5,main]]" name="VoiceACD_CConference_ToIRN_DifferentGroup" duration-ms="0" started-at="2017-09-02T16:20:52Z" finished-at="2017-09-02T16:20:52Z">
+        <test-method status="SKIP" signature="VoiceACD_CConference_ToIRN_DifferentGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-5,5,main]]" name="VoiceACD_CConference_ToIRN_DifferentGroup" duration-ms="1" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <params>
             <param index="0">
               <value>
@@ -1449,7 +1308,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_CConference_ToIRN_DifferentGroup -->
-        <test-method status="SKIP" signature="VoiceACD_CConference_ToIRN_SameGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-5,5,main]]" name="VoiceACD_CConference_ToIRN_SameGroup" duration-ms="1" started-at="2017-09-02T16:20:52Z" finished-at="2017-09-02T16:20:52Z">
+        <test-method status="SKIP" signature="VoiceACD_CConference_ToIRN_SameGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-5,5,main]]" name="VoiceACD_CConference_ToIRN_SameGroup" duration-ms="0" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <params>
             <param index="0">
               <value>
@@ -1480,7 +1339,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_CConference_ToIRN_SameGroup -->
-        <test-method status="SKIP" signature="VoiceACD_CConference_ToExternal(int, int, int, int)[pri:0, instance:Thread[Thread-5,5,main]]" name="VoiceACD_CConference_ToExternal" duration-ms="0" started-at="2017-09-02T16:20:52Z" finished-at="2017-09-02T16:20:52Z">
+        <test-method status="SKIP" signature="VoiceACD_CConference_ToExternal(int, int, int, int)[pri:0, instance:Thread[Thread-5,5,main]]" name="VoiceACD_CConference_ToExternal" duration-ms="0" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <params>
             <param index="0">
               <value>
@@ -1506,7 +1365,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_CConference_ToExternal -->
-        <test-method status="SKIP" signature="VoiceACD_CConference_ToExt_DifferentGroup_byName(int, int, int, int)[pri:0, instance:Thread[Thread-5,5,main]]" name="VoiceACD_CConference_ToExt_DifferentGroup_byName" duration-ms="0" started-at="2017-09-02T16:20:52Z" finished-at="2017-09-02T16:20:52Z">
+        <test-method status="SKIP" signature="VoiceACD_CConference_ToExt_DifferentGroup_byName(int, int, int, int)[pri:0, instance:Thread[Thread-5,5,main]]" name="VoiceACD_CConference_ToExt_DifferentGroup_byName" duration-ms="0" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <params>
             <param index="0">
               <value>
@@ -1532,7 +1391,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_CConference_ToExt_DifferentGroup_byName -->
-        <test-method status="SKIP" signature="VoiceACD_CConference_ToExt_SameGroup_byName(int, int, int, int, int)[pri:0, instance:Thread[Thread-5,5,main]]" name="VoiceACD_CConference_ToExt_SameGroup_byName" duration-ms="0" started-at="2017-09-02T16:20:52Z" finished-at="2017-09-02T16:20:52Z">
+        <test-method status="SKIP" signature="VoiceACD_CConference_ToExt_SameGroup_byName(int, int, int, int, int)[pri:0, instance:Thread[Thread-5,5,main]]" name="VoiceACD_CConference_ToExt_SameGroup_byName" duration-ms="0" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <params>
             <param index="0">
               <value>
@@ -1563,11 +1422,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_CConference_ToExt_SameGroup_byName -->
-        <test-method status="SKIP" signature="afterClass()[pri:0, instance:Thread[Thread-5,5,main]]" name="afterClass" is-config="true" duration-ms="0" started-at="2017-09-02T16:20:52Z" finished-at="2017-09-02T16:20:52Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterClass -->
-        <test-method status="SKIP" signature="VoiceACD_CConference_All(int, int, int, int, int)[pri:0, instance:Thread[Thread-5,5,main]]" name="VoiceACD_CConference_All" duration-ms="0" started-at="2017-09-02T16:20:52Z" finished-at="2017-09-02T16:20:52Z">
+        <test-method status="SKIP" signature="VoiceACD_CConference_All(int, int, int, int, int)[pri:0, instance:Thread[Thread-5,5,main]]" name="VoiceACD_CConference_All" duration-ms="0" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <params>
             <param index="0">
               <value>
@@ -1598,28 +1453,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VoiceACD_CConference_All -->
-      </class> <!-- HBTestesNG.TestCases.Test_VoiceACD_Conference -->
-      <class name="HBTestesNG.TestCases.Test_Preparation">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:Thread[Thread-1,5,main]]" name="beforeClass" is-config="true" duration-ms="1" started-at="2017-09-02T15:55:18Z" finished-at="2017-09-02T15:55:18Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="VoiceACD_Q_Abandon(int)[pri:0, instance:Thread[Thread-1,5,main]]" name="VoiceACD_Q_Abandon" duration-ms="68633" started-at="2017-09-02T15:55:18Z" finished-at="2017-09-02T15:56:27Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VoiceACD_Q_Abandon -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:Thread[Thread-1,5,main]]" name="afterClass" is-config="true" duration-ms="0" started-at="2017-09-02T15:56:27Z" finished-at="2017-09-02T15:56:27Z">
+        <test-method status="SKIP" signature="afterClass()[pri:0, instance:Thread[Thread-5,5,main]]" name="afterClass" is-config="true" duration-ms="0" started-at="2017-09-21T10:01:05Z" finished-at="2017-09-21T10:01:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-      </class> <!-- HBTestesNG.TestCases.Test_Preparation -->
+      </class> <!-- HBTestesNG.TestCases.Test_VoiceACD_Conference -->
     </test> <!-- VoiceACD Scenarios -->
   </suite> <!-- Test HB Suite -->
 </testng-results>

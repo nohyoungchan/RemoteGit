@@ -39,7 +39,7 @@ CustomerEmail1.domain=qa
 [CCD]
 max=1
 supervisor1.name=agent1yc1@c1yc1.com 
-supervisor1.password=changeme
+supervisor1.password=Shoreadmin1#
 
 
 [Agent]
@@ -47,7 +47,7 @@ max=3
 
 ## agent1/2 belongs to Group1
 agent1.name=agent1yc1@c1yc1.com 
-agent1.password=changeme
+agent1.password=Shoreadmin1#
 agent1.extension=4001
 agent1.did=4001
 
