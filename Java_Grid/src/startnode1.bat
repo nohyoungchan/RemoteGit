@@ -1,0 +1,1 @@
+java -jar -Dwebdriver.gecko.driver=C:\Selenium\geckodriver.exe -Dwebdriver.chrome.driver=C:\Selenium\chromedriver.exe selenium-server-standalone-3.5.3.jar -role node -nodeConfig node1.json
