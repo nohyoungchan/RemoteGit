@@ -1,5 +1,10 @@
 package SupervisorLoad;
 
+import java.awt.AWTException;
+import java.awt.Rectangle;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -10,11 +15,13 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Properties;
 
+import javax.imageio.ImageIO;
+
 import org.ini4j.Wini;
 
 
 
-public final class Utility {
+public final class Utility extends TestObject{
 
 	static Hashtable globalVariableHash = new Hashtable<String, String>();
 	static Properties configFile = new Properties();
@@ -37,14 +44,14 @@ public final class Utility {
 	      
 	     }
 	     catch (Exception e) {
-	        System.out.println(e);
+	        log.info(e.toString());
 	     }
 	    
 	    
 	 }
 	
     public static void log(String message) {
-        System.out.println(message);
+        log.info(message);
     }
     
     public static String executeCommand(String command) {
@@ -81,15 +88,61 @@ public final class Utility {
 		}
 	}
     
-    public void wait(int num) throws Exception{
-		  log("* Wait : " + num + " seconds.");
-		  Thread.sleep(num * 1000);
+	  
+	  /**
+	   * process command from superload_server to return a string with a scenario name.
+	   * @param strCommand this is a command from superload_server.
+	   * @return
+	   */
+	  public static String processCommandForScreenshot(String strCommand) {
+		    log.info("## String Command to process is => " + strCommand);
+		    String strScenario1 = strCommand.split("@")[0].trim();
+
+	    	String strScenario2 = strCommand.split("@")[1].trim();
+	    	strScenario2 = strScenario2.replaceAll(" ", "_");
+	    	strScenario2 = strScenario2.replaceAll("->", "_");
+	    	strScenario2 = strScenario2.replaceAll(">", "_"); 
+	    	
+	    	if (strScenario1.contains("Starting")) {
+	    		strScenario2 = strScenario2 + "_start";
+	    		
+	    	}else if (strScenario1.contains("Ending")){
+	    		strScenario2 = strScenario2 + "_end";
+	    		
+	    	}else if (strScenario1.contains("Skipping")){
+	    		strScenario2 = strScenario2 + "_skip";
+	    		
+	    	}else {
+	    		strScenario2 = strScenario2 + "_middle";
+	    	}
+	    		    		
+	    	log.info("## The processed string is => " + strScenario2);
+	    	
+	    	return strScenario2;
 	  }
 	  
-	  public void wait(int num, String reason) throws Exception{
-		  log("* Wait: " + reason +  " : " + num + " seconds.");
-		  Thread.sleep(num * 1000);
+	  
+	  /**
+	   * Capture screenshot of the full screen and save it as captureName
+	   * @param captureName
+	   */
+	  public static void captureScreem(String captureName) {
+		  try {
+	            Robot robot = new Robot();
+	            String format = "jpg";
+	            String fileName = captureName + ".jpg";
+	             
+	            Rectangle screenRect = new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
+	            BufferedImage screenFullImage = robot.createScreenCapture(screenRect);
+	            ImageIO.write(screenFullImage, format, new File(fileName));
+	             
+	            log.info("A full screenshot saved!");
+	        } catch (AWTException | IOException ex) {
+	            System.err.println(ex);
+	        }
 	  }
+	  
+	  
 	  
 	  
 }

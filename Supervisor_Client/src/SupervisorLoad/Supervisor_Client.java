@@ -19,6 +19,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import org.sikuli.script.Screen;
+
 import BaseObject.*;
 
 
@@ -41,12 +43,13 @@ import BaseObject.*;
  */
 public class Supervisor_Client extends TestObject{
 
-	int commandNum;
+	int commandNum, screenshotNum;
+	String originalScenario;
     BufferedReader in;
     PrintWriter out;
-    JFrame frame = new JFrame("SupervisorClient");
-    JTextField textField = new JTextField(40);
-    JTextArea messageArea = new JTextArea(8, 40);
+    JFrame frame = new JFrame("Supervisor_Client");
+    JTextField textField = new JTextField(60);
+    JTextArea messageArea = new JTextArea(8, 60);
     Socket socket;
     String userName, userPassword, userDelaySec; //Default value is "none"
     
@@ -65,6 +68,8 @@ public class Supervisor_Client extends TestObject{
     public Supervisor_Client() {
 
     	commandNum=1;
+    	screenshotNum = 1000;
+    	originalScenario ="original";
     	userName = "none";
     	userPassword = "none";
     	userDelaySec = "none";
@@ -88,6 +93,7 @@ public class Supervisor_Client extends TestObject{
                 //textField.setText("");
             }
         });
+        
     }
 
     /**
@@ -95,27 +101,27 @@ public class Supervisor_Client extends TestObject{
      */
     private String getServerAddress() {
     	String strName;
-    /*    return JOptionPane.showInputDialog(
-            frame,
-            "Enter IP Address of the Server:",
-            "Welcome to the Chatter",
-            JOptionPane.QUESTION_MESSAGE);*/
-
-        //Utility.readConfigFile();
-        //Utility.read_ConfigINI();
     	strName = (String) Utility.ini.get("SuperLoadServer_Config", "serverIPAddress");;
     	return strName;
     }
     
     private int getPort() {
     	int intPort;
-    	//strName = (String) Utility.globalVariableHash.get("serverIPAddress");
     	intPort = Integer.parseInt(Utility.ini.get("SuperLoadServer_Config", "port"));
     	return intPort;
     }
+    
+    private String getScreenshotFolder( ) {
+    	String sFolder;
+    	sFolder = Utility.ini.get("SuperLoadServer_Config",  "screenshot_folder");
+    	log.info("foldername is => "+ sFolder);
+    	return sFolder;
+    }
+    
+    
 
     /**
-     * Prompt for and return the desired screen name.
+     * Prompt for and return the desired screen name like ipaddress_username 10.23.177.888_admin
      */
     private String getName() {
     	String strName;
@@ -125,16 +131,12 @@ public class Supervisor_Client extends TestObject{
     		strName = strName.split("/")[1]; //just to show ip address instead of both hostname/ip
     		strName = strName + "_" + System.getProperty("user.name");
 		} catch (UnknownHostException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-       /* return JOptionPane.showInputDialog(
-            frame,
-            "Choose a screen name:",
-            "Screen name selection",
-            JOptionPane.PLAIN_MESSAGE);*/
 		return strName;
     }
+    
+    
 
     /**
      * Connects to the server then enters the processing loop.
@@ -151,10 +153,10 @@ public class Supervisor_Client extends TestObject{
 	        String serverAddress = getServerAddress();
 	        int port = getPort();
 	        socket = new Socket(serverAddress, port);
-	        log("Connected to " + serverAddress);
+	        log.info("Connected to " + serverAddress);
 	        in = new BufferedReader(new InputStreamReader(
 	            socket.getInputStream()));
-	        out = new PrintWriter(socket.getOutputStream(), true);
+	        out = new PrintWriter(socket.getOutputStream(), true); //out is not used for this now
 	        
 	        allMemberForHBAgent = new AllMembers();
 	        allMemberForHBAgent.initiateAllActors();
@@ -190,29 +192,20 @@ public class Supervisor_Client extends TestObject{
 	        socket.close();
 	        //System.exit(1);
     	}catch (ConnectException e){
-    		log("@ Connection Refused from Server.  Server might not be ready");
+    		log.info("@ Connection Refused from Server.  Server might not be ready");
     		
     	}
     	catch (IOException e) {
-            System.out.println(e);
+            log.info(e.toString());
         } finally {
         	//socket.close();
-        	log("## Closing client");
+        	log.info("## Closing client");
 	        System.exit(1);
            
         }
     }
 
-    /**
-     * Runs the client as an application with a closeable frame.
-     */
-    public static void main(String[] args) throws Exception {
-        Supervisor_Client client = new Supervisor_Client();
-        client.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        client.frame.setVisible(true);
-        client.run();
-        client.frame.setVisible(false);
-    }
+
     
     
     protected boolean handleMessage(String strMessage) throws Exception{
@@ -224,14 +217,14 @@ public class Supervisor_Client extends TestObject{
     	String strReturn;
     	String superName, superPassword, superDelaySec;
     	String strAutoItCommand;
-    	log("#### HandleMessage => " + strMessage);
+    	log.info("#### HandleMessage => " + strMessage);
     	logInHandled = 0;
     	strCommand = strMessage.split(":")[1].trim();
     	
-    	log("#### string command is => " + strCommand);
+    	log.info("#### string command is => " + strCommand);
     	
     	if (strCommand.contains("login_NLA_all")){
-    		log("    ## Handling login");
+    		log.info("    ## Handling login");
 	    	strComCommand = strCommand.split(" ")[0].trim();
 	    	userName = strCommand.split(" ")[1].trim();
 	    	userPassword = strCommand.split(" ")[2].trim();
@@ -239,64 +232,106 @@ public class Supervisor_Client extends TestObject{
         	//strReturn = Utility.executeCommand("Cac_login.bat" + " " + superName + " " + superPassword);
 	    	strAutoItCommand = "AutoIt3.exe Cac_login_Super.exe " + userName + " " + userPassword + " " + userDelaySec;
 	    	strReturn = Utility.executeCommand(strAutoItCommand);
-        	//log("superName is "+ superName  + "/" + superPassword);
-        	//log("String Return after command => " + strReturn);
+        	//log.info("superName is "+ superName  + "/" + superPassword);
+        	//log.info("String Return after command => " + strReturn);
         	logInHandled = 1;
+        	
+        	return boolState;
+    	}
+    	
+    	//all messages for each scenario start like "starting scenario:..." "ending scenario:..."
+    	//When scenario is started or ended make a screenshot.
+    	//Since this uses a command which contains scenario, it cannot be used on Swtich.case which requires an exact match.
+    	/*if (strCommand.contains("scenario")){
+    		log.info("    ## Handling screenshot");
+	    	String strScenario = Utility.processCommandForScreenshot(strCommand);
+	    	if (!strScenario.contains("skip")) {		    	
+	    		strScenario = strScenario + "_" + getName();
+	    		strScenario = screenshotNum + "_" + strScenario;
+		    	strScenario = getScreenshotFolder() + strScenario;
+		    	Utility.captureScreem(strScenario);
+		    	screenshotNum++;	
+	    	}else {
+	    		log.info(" ## skipping screenshot on=> " + strScenario);
+	    	}
+	    	logInHandled = 1;
+	    	
+    	}*/
+    	
+    	if (strCommand.contains("scenario")){
+    		
+	    	//String strScenario = UtilityRecordScreen.processCommandForRecording(strCommand);
+	    	if (strCommand.contains("Starting")) {		
+	    		//log.info(" ## Start Recording on => " + strScenario);
+		    	UtilityRecordScreen.startRecording();
+
+	    	}else{
+	    		//log.info(" ## Stop Recording on=> " + strScenario);
+	    		String strScenario = UtilityRecordScreen.processCommandForRecording(strCommand);
+	    		UtilityRecordScreen.stopRecording();
+	    		strScenario = strScenario + "_" + getName();
+	    		strScenario = screenshotNum + "_" + strScenario;
+		    	UtilityRecordScreen.enterFileNameAndSave(strScenario);
+		    	screenshotNum++;	
+	    	}
+	    	
+	    	return boolState;
+	    	
     	}
     	
         switch (strCommand){
         case "relogin_NLA":
         	if (userName.contains("none")) {
-        		log("Something wrong on relogin_NLA_all");
+        		log.info("Something wrong on relogin_NLA_all");
         	} else {
 	        	strAutoItCommand = "AutoIt3.exe Cac_login_Super.exe " + userName + " " + userPassword + " " + userDelaySec;
 		    	strReturn = Utility.executeCommand(strAutoItCommand);
-	        	log("superName is "+ userName  + "/" + userPassword  + "/" + userPassword);
-	        	//log("String Return after command => " + strReturn);
+	        	log.info("superName is "+ userName  + "/" + userPassword  + "/" + userPassword);
+	        	//log.info("String Return after command => " + strReturn);
 	        	logInHandled = 1;
         	}
         	break;
         case "logout":
-        	log("    ## Handling logout");
+        	log.info("    ## Handling logout");
 	    	strAutoItCommand = "AutoIt3.exe Cac_logout_Super.exe";
 	    	strReturn = Utility.executeCommand(strAutoItCommand);
-        	//log("superName is "+ superName  + "/" + superPassword);
-        	//log("String Return after command => " + strReturn);
+        	//log.info("superName is "+ superName  + "/" + superPassword);
+        	//log.info("String Return after command => " + strReturn);
         	
         	break;
         case "Open_FLA":
-        	log("    ## Opening FLA(Historical Report)");
+        	log.info("    ## Opening FLA(Historical Report)");
 	    	strAutoItCommand = "AutoIt3.exe Cac_FLA_Open.exe";
 	    	strReturn = Utility.executeCommand(strAutoItCommand);
         	break;
         case "Close_FLA":
-        	log("    ## Closing FLA(Historical Report)");
+        	log.info("    ## Closing FLA(Historical Report)");
 	    	strAutoItCommand = "AutoIt3.exe Cac_FLA_Close.exe";
 	    	strReturn = Utility.executeCommand(strAutoItCommand);
         	break; 
         case "Open_GCCS":
-        	log("    ## Opening GCCS(Historical Report)");
+        	log.info("    ## Opening GCCS(Historical Report)");
 	    	strAutoItCommand = "AutoIt3.exe Cac_GCCS_Open.exe";
 	    	strReturn = Utility.executeCommand(strAutoItCommand);
         	break;
         case "Close_GCCS":
-        	log("    ## Closing GCCS(Historical Report)");
+        	log.info("    ## Closing GCCS(Historical Report)");
 	    	strAutoItCommand = "AutoIt3.exe Cac_GCCS_Close.exe";
 	    	strReturn = Utility.executeCommand(strAutoItCommand);
         	break; 	
         
         case "Upgrade_HBSuper":
-        	log("    ## Handling upgrade of HB Supervisor");
+        	log.info("    ## Handling upgrade of HB Supervisor");
 	    	strAutoItCommand = "AutoIt3.exe Cac_Upgrade_Super.exe";
 	    	strReturn = Utility.executeCommand(strAutoItCommand);
         	break;
         case "exit":
-        	log("    ## Handling Exit: I am closing myself after 5 sec.   Bye!!!");
+        	log.info("    ## Handling Exit: I am closing myself after 5 sec.   Bye!!!");
         	wait(5);
         	boolState = false;
         	break;
         case "Kill_all":
-        	log("    ## Handling Kill_all: I am killing all components in 5 sec.   Bye!!!");
+        	log.info("    ## Handling Kill_all: I am killing all components in 5 sec.   Bye!!!");
         	wait(5);
         	Utility.executeCommand("kill_All.bat");
         	//boolState = false;
@@ -305,7 +340,7 @@ public class Supervisor_Client extends TestObject{
         	if (logInHandled == 1){
         		//If logIn is handled already on if statement, it is not handled anymore here.
         	}else{
-        	   log("    ## Handling ???");
+        	   log.info("    ## Handling ???");
         	}
         }
 		return boolState;
@@ -318,12 +353,12 @@ public class Supervisor_Client extends TestObject{
     	 String commandMain, commandFinal, hbAgentURL;
     	 String strSplitter;
     	 strSplitter = " ";
-    	 log("#### string command is => " + strCommand);
+    	 log.info("#### string command is => " + strCommand);
     	 
     	 commandMain = strCommand.split("_")[1];
     	 commandFinal = commandMain.split(strSplitter)[0].trim();
-    	 log("commandMain is => " + commandMain);
-    	 log("commandFinal is => " + commandFinal);
+    	 log.info("commandMain is => " + commandMain);
+    	 log.info("commandFinal is => " + commandFinal);
     	 switch (commandFinal){
          case "login":
         	 if (hbAgent == null){
@@ -339,7 +374,7 @@ public class Supervisor_Client extends TestObject{
 				//hbAgent.releaseAgent();
 				hbAgent.resumeAgent();
         	 }else{
-        		log("@@@ hbAgent is already started");
+        		log.info("@@@ hbAgent is already started");
         	 }
 			
          	
@@ -364,8 +399,19 @@ public class Supervisor_Client extends TestObject{
         	 }
          	break;
          default:
-        	 log("I am here at default");
+        	 log.info("I am here at default");
     	 }
     	
+    }
+    
+    /**
+     * Runs the client as an application with a closeable frame.
+     */
+    public static void main(String[] args) throws Exception {
+        Supervisor_Client client = new Supervisor_Client();
+        client.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        client.frame.setVisible(true);
+        client.run();
+        client.frame.setVisible(false);
     }
 }
