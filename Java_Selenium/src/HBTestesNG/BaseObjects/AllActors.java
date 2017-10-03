@@ -30,7 +30,7 @@ public class AllActors extends TestObject{
     public ArrayList<CustomerChat> chatCustomers;
     public ArrayList<CustomerEmail> emailCustomers;
     public ArrayList<AgentHBDirector> supervisors;
-    public ArrayList<IRN> irns;
+    public static ArrayList<IRN> irns;
     public static ArrayList<Service> services;
     public static ArrayList<SupervisorClient> supClients;
     

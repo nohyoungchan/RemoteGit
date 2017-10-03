@@ -9,7 +9,7 @@
   <parameter name="tT2" value="10"></parameter> 
   <parameter name="wT2" value="10"></parameter> 
 
-  <test name="VoiceACD Scenarios"> <!--### This is VoiceACD scenarios without Reverse scenarios### -->
+  <test name="Email Scenarios"> <!--### This is VoiceACD scenarios without Reverse scenarios### -->
 	  
     <classes>
 	  <class name="HBTestesNG.TestCases.Test_Initiate">
@@ -20,10 +20,10 @@
       	  <include name="Email_NoQ_Answer" />
           <include name="Email_NoQ_Answer_NoWrapTime" /> 
           <include name="Email_Q_Answer" />     
-          <exclude name="Email_Q_Overflow_R_Ans_1stGroup" />
-          <exclude name="Email_Q_Overflow_R_Ans_2ndGroup" /> 
-          <exclude name="Email_R_Q_Overflow_Q_R_Ans_2ndGroup" /> 
-          <exclude name="Email_R_Q_Overflow_R_Ans_2ndGroup" />  
+          <include name="Email_Q_Overflow_R_Ans_1stGroup" />
+          <include name="Email_Q_Overflow_R_Ans_2ndGroup" /> 
+          <include name="Email_R_Q_Overflow_Q_R_Ans_2ndGroup" /> 
+          <include name="Email_R_Q_Overflow_R_Ans_2ndGroup" />  
           <include name="Email_Q_OverInterflow_Q_R_Ans_3rdGroup" /> 
           <include name="Email_BTransfer_ToExt_SameGroup" />   
          </methods>

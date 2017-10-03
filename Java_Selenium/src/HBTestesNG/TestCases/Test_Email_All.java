@@ -45,7 +45,7 @@ public class Test_Email_All extends TestCaseObject {
 	
 	@Parameters({"rT1", "tT1", "wT1"})
 	public void Email_NoQ_Answer(int rT1, int tT1, int wT1) throws Exception {
-		String testName = "Test Case: Email->NoQ->Answered";
+		String testName = "Email->NoQ->Answered";
 		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
 		
 		//#########################
@@ -277,7 +277,7 @@ public class Test_Email_All extends TestCaseObject {
 	@Parameters({"rT1", "tT1", "rT2", "tT2", "wT2"})
 	public void Email_Q_Overflow_R_Ans_1stGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
-		String testName = "Email->Q->Overflow->Ring->Answer on the 2nd group";
+		String testName = "Email->Q->Overflow->Ring->Answer on the 1st group";
 		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
 		//#########################
 		
@@ -316,15 +316,16 @@ public class Test_Email_All extends TestCaseObject {
 		//#########################
 		
 		try{
-			agent1.releaseAgent();
+			agent1.resumeAgent();
 			agent2.releaseAgentSecondCode();
 			agent3.releaseAgentThirdCode();;
 
 			//###########################
 			emailCustomer1.sendEmail();
+			agent1.waitForEmailArrives(5);
 
-			//##########################
-			emailCustomer1.wait(120, "Wait for Overflow and Interflow timeout");
+			//##########################Interflow time is 2 min, and 10 more sec to answer
+			emailCustomer1.wait(130, "Wait for Overflow and Interflow timeout");
 			agent3.resumeAgent();
 			agent3.answerEmail(rT2, tT2);
 

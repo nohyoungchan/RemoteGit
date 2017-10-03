@@ -31,7 +31,7 @@ public class  Test_Initiate extends TestCaseObject{
 			currentTimeStart();
 			
 			//Log in Manhattan client
-			String x, y, startLocation;
+			/*String x, y, startLocation;
 			for (int i=0; i < allActors.customers.size() ; i++ ){
 				 if (0 ==allActors.customers.size()) { break;}
 				 //You can set the location of Manhattan: x(10), y(200)
@@ -43,12 +43,23 @@ public class  Test_Initiate extends TestCaseObject{
 				allActors.customers.get(i).startManhattan(x, y);
 				allActors.customers.get(i).logIn();
 	
+			}*/
+			
+			//Log in Manhattan client: only 1 if needed.
+			String startLocation;
+			if (allActors.customers.size() == 1){
+				startLocation = AllActors.iniMain.get("Manhattan", "startingLocation");
+				String splitResult[] = startLocation.split("/");
+				allActors.customers.get(0).startManhattan(splitResult[0], splitResult[1]);
+				allActors.customers.get(0).logIn();
+				
 			}
+
 			
 
 			
 			//CCD configuration before starting suite: You can skip this by "skipCCDPrepare" variable
-			if (allActors.supervisors.size() >0 &&  AllActors.iniMain.get("TestFlow", "skipCCDPrepare").contains("no")) 
+			if (allActors.supervisors.size() >0 &&  AllActors.iniMain.get("CCD", "skipCCDPrepare").contains("no")) 
 			{ 
 				allActors.supervisors.get(0).Max_LogIn_PrepareTest_LogOut_Min();
 			}

@@ -17,12 +17,12 @@ emailContent=This_is_Email_Content
 [CustomerVoice]
 max=1
 CustomerVoice1.name=young6@yc2.com
-CustomerVoice1.password=Shoreadmin1
+CustomerVoice1.password=changeme
 CustomerVoice1.extension=1499
 CustomerVoice1.did=1499
 
 [CustomerChat]
-max=1
+max=0
 tenantPrefix=81000
 chatIRN=5555
 stOrMt=mt
@@ -30,7 +30,7 @@ chatCustomerNamePrefix=Customer
 
 # Current email customer is using owa->2017
 [CustomerEmail]
-max=1
+max=0
 CustomerEmail1.name=qa\ynoh11
 CustomerEmail1.password=changeme
 CustomerEmail1.domain=qa
@@ -62,7 +62,7 @@ agent3.did=1364
 
 
 [IRN]
-max=5
+max=6
 
 # This calls service1->Group1
 irn1.irnNum=1374
@@ -88,6 +88,11 @@ irn4.didNum=1377
 irn5.irnNum=1372
 irn5.dnisNum=DNIS_1372
 irn5.didNum=1372
+
+#This is Email IRN
+irn6.irnNum=YC1_EIRN1
+irn6.dnisNum=YC1_EIRN1
+irn6.didNum=YC1_EIRN1
 
 
 

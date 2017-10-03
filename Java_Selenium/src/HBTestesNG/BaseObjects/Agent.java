@@ -163,6 +163,19 @@ public class Agent extends TestObject {
 		
 	}
 	
+	public void openFireFoxLocal() throws Exception
+	{
+		log.info("\n@ #### Opening firefox ####");
+		ProfilesIni profile = new ProfilesIni();
+		FirefoxProfile ffprofile = profile.getProfile("Y_Test");
+		
+	    driver = new FirefoxDriver(ffprofile);
+	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	    driver.get("http://www.google.com");
+	    
+	    
+	}
+	
 	public void openFireFox() throws Exception
 	{
 		log.info("\n@ #### Opening firefox ####");
@@ -1186,6 +1199,7 @@ public class Agent extends TestObject {
 			return returnResult;
 	}
 	  
+	  
 	 
 	 public void waitUntilMainTitle(String mainTitleSubText) throws Exception{
 		 
@@ -1493,6 +1507,43 @@ public class Agent extends TestObject {
 	                }
 	                else
 	                {
+	                    throw e;
+	                }
+	            }
+	        }
+	    }
+	    
+	    public void dependableWait_byID(String id, int numRetries) throws Exception
+	    {
+	    	
+	        int MAXIMUM_WAIT_TIME = 10;
+	        int MAX_STALE_ELEMENT_RETRIES = numRetries;
+
+	        WebDriverWait wait = new WebDriverWait(driver, MAXIMUM_WAIT_TIME);
+	        int retries = 0;
+	        while (true)
+	        {
+	        	
+	            try
+	            {
+	            	wait(2);
+	            	log.info(retries + ") Wait for the id to be enabled/clickable: " + id);
+	            	if (driver.findElement(By.id(id)).isEnabled()) {
+	                   wait.until(ExpectedConditions.elementToBeClickable(By.id(id)));
+	                   log.info(retries + ") The ID is now clickable: " + id);
+	                   return;
+	            	}
+	            }catch (StaleElementReferenceException e)         
+	            {
+	            	
+	                if (retries < MAX_STALE_ELEMENT_RETRIES)
+	                {
+	                    retries++;
+	                    continue;
+	                }
+	                else
+	                {
+	                	log.info(retries + ") The ID not clickable: " + id);
 	                    throw e;
 	                }
 	            }

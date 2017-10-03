@@ -157,16 +157,17 @@ public class TestCaseObject extends TestObject{
 	}
 	
 	
-	public static String startTestCase(String sTestCaseName){
+	public static String startTestCase(String sTestCaseName) throws Exception{
 		 
 		errorCount = 0;
 		errorString = "";
-		AllActors.superAdmin.sendMessage("Starting scenario @ " + sTestCaseName);
+		
 		if (stopTest.contains("yes")) {
 			log.info("@@ Stop is requested, so skip => " + sTestCaseName);
 			AllActors.superAdmin.sendMessage("Skipping scenario @ " + sTestCaseName);
 			return "no";
 		}
+		
 	    log.info("\n\n\n****************************************************************************************");
 	    log.info("****************************************************************************************");
 	    log.info("$$$$$$$$$$ Test Start:   "+sTestCaseName+ " $$$$$$$$$$$$$$$$$$$$$$$$$");
@@ -182,6 +183,10 @@ public class TestCaseObject extends TestObject{
 	    } else {
 	    	AllActors.currentCallType = "NotAvailable"; 
 	    }
+		
+		
+		sup1.Max_LogIn_reset_NLA_LogOut_Min();
+		AllActors.superAdmin.sendMessage("Starting scenario @ " + sTestCaseName);
 	    
 	    return "yes";
 	}
@@ -329,7 +334,6 @@ public class TestCaseObject extends TestObject{
 			 
 			 if (in.ready()) {//When something is entered
 				 res = in.readLine();
-				 log.info("Result is ==> " + res);
 				 switch (res) {
 				 case "y":
 					 log.info("==> You entered: " + res + ", so stopping whole test suite.  Bye :)");

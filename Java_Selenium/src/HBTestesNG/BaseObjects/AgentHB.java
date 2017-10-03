@@ -5,6 +5,7 @@ package HBTestesNG.BaseObjects;
 //import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.InvalidElementStateException;
 
 import org.openqa.selenium.NoSuchElementException;
@@ -50,6 +51,68 @@ public class AgentHB extends Agent {
 			throw e;
 		}
   }
+	
+	/**
+	   * This wait for an email arrive, and when no email arrives throw exception
+	   * @param numTry  each try takes about 11 second
+	   * @return
+	   * @throws Exception
+	   */
+	  public boolean waitForEmailArrives(int numTry) throws Exception {
+			 WebElement webElement;
+			 boolean returnResult;
+			 int waitTimeSec;
+			 int i;
+			 i=0;
+			 
+			 webElement = null;
+			 returnResult = true;
+			 waitTimeSec = 10;
+			 
+			 log.info("\n@(" + agentType + ") " + username + " ########### Wait for email arrives : maximum => " + numTry * waitTimeSec);
+
+			 try{
+				 maximizeBrowser();
+				 
+				while(true){
+					webElement = waitUntilClickable("btnAnswerEmail", waitTimeSec); 
+					if (webElement != null) {
+						log.info("\n@(" + agentType + ") " + username + " Email Arrived");
+						break;
+					}else {
+						log.info("\n@(" + agentType + ") " + username + "=>@@ Fail to receive email yet");
+						
+					}
+					i++;
+					wait(1);
+					if (i > numTry) {
+						returnResult = false;
+						errorCount++;
+						errorString = errorString + "@fail to receive an email";
+						throw new Exception();
+					}
+				}
+			 }catch(ElementNotVisibleException e){
+				 log.error("\n@(" + agentType + ") " + username + " =>@@ ElementNotVisibleException on " + " " + "btnAnswerEmail");
+				 returnResult = false;
+				 
+			 }catch(InterruptedException e){
+				  log.error("@ " + username + " : @@ Thread inturrepted -> throw again on click_XPath()");
+				  throw e;
+			 }catch(Exception e){
+				 log.error("\n@(" + agentType + ") " + username + " =>@@@@ Exception on " + "btnAnswerEmail" + " " +e.toString());
+				 returnResult = false;
+				 throw e;
+			 }finally {
+				 wait(1);
+				 minimizeBrowser();
+				 return returnResult;
+			 }
+			
+			
+		}
+		  
+	  
 	
 	public void WaitUntil_StatusBecomesIdle() throws Exception{
 		// State can be: idle, busy, unavailable when released

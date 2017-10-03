@@ -92,6 +92,8 @@ public class AgentHBDirector extends Agent {
 		 clickXPath(AllActors.iniXPath.get("CCD", "serviceGeneralTab")); 
 		 typeElementXPath(AllActors.iniXPath.get("CCD", "wrapupTime_TxtBox"), wuTime); 
 		 clickXPath(AllActors.iniXPath.get("CCD", "submitButton"));
+		 //Wait until new button is enabled which means save is completed.
+		 dependableWait_byID("form_action_new", 5);
 
 		 logOutHBDirector();
 		 minimizeBrowser();
@@ -110,6 +112,8 @@ public class AgentHBDirector extends Agent {
 		 typeElementXPath(AllActors.iniXPath.get("CCD", "wrapupTime_TxtBox"), wuTime); 
 		 typeElementXPath(AllActors.iniXPath.get("CCD", "ForcedReleaseTimeout_TxtBox"), frTime);
 		 clickXPath(AllActors.iniXPath.get("CCD", "submitButton"));
+		 //Wait until new button is enabled which means save is completed.
+		 dependableWait_byID("form_action_new", 5);
 		 
 		 //logOutHBDirector();
 		 minimizeBrowser();
@@ -135,7 +139,8 @@ public class AgentHBDirector extends Agent {
 		 find_and_fill_byID("wrap_up_time", wuTime, false);
 		 find_and_fill_byID("forced_release_time", frTime, false);
 		 dependableClick_byID("submitButton");
-		 wait(3);
+		 //Wait until new button is enabled which means save is completed.
+		 dependableWait_byID("form_action_new", 5);
 
 		 
 		 logOutHBDirector();
@@ -167,6 +172,8 @@ public class AgentHBDirector extends Agent {
 		 if(enabled){
 			 clickXPath(AllActors.iniXPath.get("CCD", "enableAbandon_CheckBox"));
 			 clickXPath(AllActors.iniXPath.get("CCD", "submitButton"));
+			 //Wait until new button is enabled which means save is completed.
+			 dependableWait_byID("form_action_new", 5);
 			 log.info("\n@(" + agentType + ") " +  username + " : Disabled Abandon Callback ");
 		 }else {
 			 log.info("\n@(" + agentType + ") " +  username + " : Abandon Callback is already disabled. ");
@@ -220,7 +227,9 @@ public class AgentHBDirector extends Agent {
 			 log.info("\n@(" + agentType + ") " +  username + " : Abandon Callback is already enabled. ");
 		 }
 		 wait(5);
-		 dependableClick_byID("submitButton");	  
+		 dependableClick_byID("submitButton");	 
+		 //Wait until new button is enabled which means save is completed.
+		 dependableWait_byID("form_action_new", 5);
 		 wait(2);
 		 //Set Outbound->General Preferences
 		 openHBDirectorPage("sys_outbound");
@@ -266,7 +275,8 @@ public class AgentHBDirector extends Agent {
 			  
 		 wait(2);
 		 dependableClick_byID("submitButton");	  
-		 wait(2);
+		 //Wait until new button is enabled which means save is completed.
+		 dependableWait_byID("form_action_new", 5);
 		 logOutHBDirector();
 		 minimizeBrowser();
 	 }
@@ -299,6 +309,8 @@ public class AgentHBDirector extends Agent {
 			 clickXPath(AllActors.iniXPath.get("CCD", "enableAbandon_CheckBox"));
 			 typeElementXPath(AllActors.iniXPath.get("CCD", "minTimeBeforeAbandon_TxtBox"), minAbandonTime);
 			 clickXPath(AllActors.iniXPath.get("CCD", "submitButton"));
+			 //Wait until new button is enabled which means save is completed.
+			 dependableWait_byID("form_action_new", 5);
 			 log.info("\n@(" + agentType + ") " +  username + " : Enabled Abandon Callback ");
 		 }else {
 			 log.info("\n@(" + agentType + ") " +  username + " : Abandon Callback is already enabled. ");
@@ -323,6 +335,8 @@ public class AgentHBDirector extends Agent {
 		 typeElementXPath(AllActors.iniXPath.get("CCD", "wrapupTime_TxtBox"), wuTime); 
 		 typeElementXPath(AllActors.iniXPath.get("CCD", "ForcedReleaseTimeout_TxtBox"), frTime);
 		 clickXPath(AllActors.iniXPath.get("CCD", "submitButton"));
+		 //Wait until new button is enabled which means save is completed.
+		 dependableWait_byID("form_action_new", 5);
 		 
 		 //logOutHBDirector();
 		 minimizeBrowser();
@@ -350,6 +364,8 @@ public class AgentHBDirector extends Agent {
 		 typeElementXPath(AllActors.iniXPath.get("CCD", "wrapupTime_TxtBox"), wuTime); 
 		 typeElementXPath(AllActors.iniXPath.get("CCD", "ForcedReleaseTimeout_TxtBox"), frTime);
 		 clickXPath(AllActors.iniXPath.get("CCD", "submitButton"));
+		 //Wait until new button is enabled which means save is completed.
+		 dependableWait_byID("form_action_new", 5);
 		 
 		 //logOutHBDirector();
 		 minimizeBrowser();
@@ -379,6 +395,8 @@ public class AgentHBDirector extends Agent {
 		 find_and_fill_byID("wrap_up_time", wuTime, false);
 		 find_and_fill_byID("forced_release_time", frTime, false);
 		 dependableClick_byID("submitButton");
+		 //Wait until new button is enabled which means save is completed.
+		 dependableWait_byID("form_action_new", 5);
 		 
 		 
 		 logOutHBDirector();
@@ -403,6 +421,8 @@ public class AgentHBDirector extends Agent {
 		 find_and_fill_byID("wrap_up_time", wuTime, false);
 		 find_and_fill_byID("forced_release_time", frTime, false);
 		 dependableClick_byID("submitButton");
+		 //Wait until new button is enabled which means save is completed.
+		 dependableWait_byID("form_action_new", 5);
 		 
 		 
 		 logOutHBDirector();
@@ -430,6 +450,8 @@ public class AgentHBDirector extends Agent {
 		 typeElementXPath(AllActors.iniXPath.get("CCD", "wrapupTime_TxtBox"), wuTime); 
 		 typeElementXPath(AllActors.iniXPath.get("CCD", "ForcedReleaseTimeout_TxtBox"), frTime);
 		 clickXPath(AllActors.iniXPath.get("CCD", "submitButton"));
+		 //Wait until new button is enabled which means save is completed.
+		 dependableWait_byID("form_action_new", 5);
 		 
 		 logOutHBDirector();
 		 minimizeBrowser();
@@ -466,7 +488,12 @@ public class AgentHBDirector extends Agent {
 		}
 	}
 	 
-	// This prepares HB Director for the whole test.
+	/**
+	 * This prepares CCd before running test scenrios
+	 * It includes Service setup with Destination/Overflow(60)/Interflow(120s)
+	 * and outbound default destination and email irn default destination, etc.
+	 * @throws Exception
+	 */
 		public void Max_LogIn_PrepareTest_LogOut_Min() throws Exception{
 			 log.info("\n@(" + agentType + ") " +  username + " ##### PrepareTest #####");
 			 String wuTime, frTime, overflowTime, interflowTime;
@@ -518,7 +545,8 @@ public class AgentHBDirector extends Agent {
 			 }
 			 wait(3);
 			 dependableClick_byID("submitButton");	  
-			 wait(3);
+			 //Wait until new button is enabled which means save is completed.
+			 dependableWait_byID("form_action_new", 5);
 			 
 			 //#### Set destination for Chat
 			 openHBDirectorPage("irn");
@@ -531,7 +559,8 @@ public class AgentHBDirector extends Agent {
 			 selectFromComboBox_ByID("srv_dest", serviceName);
 			 wait(3);
 			 dependableClick_byID("submitButton");
-			 wait(5);
+			 //Wait until new button is enabled which means save is completed.
+			 dependableWait_byID("form_action_new", 5);
 			 
 			 //#### Set destination for email
 			 /* TODO
@@ -561,6 +590,220 @@ public class AgentHBDirector extends Agent {
 			 logOutHBDirector();
 			 minimizeBrowser();
 		 }
+		
+		/**
+		 * This resets NLA real-time reports like Group/DNIS reports for voice/chat/email
+		 * @throws Exception
+		 */
+		public void Max_LogIn_reset_NLA_LogOut_Min() throws Exception{
+			if (AllActors.iniMain.get("CCD", "skipNLAReset").contains("yes"))
+				 return;
+			
+			if (AllActors.currentCallType.contains("Email")){
+				Max_LogIn_reset_EGroup_EDNIS_LogOut_Min();
+			}else {
+				Max_LogIn_reset_Group_DNIS_LogOut_Min();
+				
+			}
+
+		}
+		
+		/**
+		 * This changes Group/DNIS-> Interval time to 1 and 60 to rest NLA Group Report
+		 * This only sets voice and chat group.
+		 * @throws Exception
+		 */
+		public void Max_LogIn_reset_Group_DNIS_LogOut_Min() throws Exception{
+			
+			 //if (AllActors.currentCallType.contains("Voice")) {
+			 log.info("\n@(" + agentType + ") " +  username + " ##### Reset Group/DNIS intervl -> NLA #####");
+			 String intervalTimeLong, intervalTimeShort;
+			 String groupName1, groupName2, irnName1;
+			 int intervalResetTime;
+			 
+			 intervalResetTime = Integer.parseInt(AllActors.iniMain.get("CCD", "intervalResetTime"));
+			 intervalTimeLong = "60";
+			 intervalTimeShort = "1";
+			 groupName1 = AllActors.services.get(0).destination;
+			 groupName2 = AllActors.services.get(2).destination;
+			 irnName1 = AllActors.irns.get(0).irnNum;
+			 
+			 maximizeBrowser();
+			 logIntoHBDirector();
+			 waitUntilMainTitle("Favorites");
+			 
+			 //##### Reseting Group #####
+			 wait(2);
+			 openHBDirectorPage("group");
+			 waitUntilMainTitle("Groups");
+			 wait(2);
+
+			 log.info("\n@(" + agentType + ") " +  username + " ##### Set 1st Group Interval to 1 sec: " + groupName1);
+			 find_and_fill_byID("listFilterGlobal", groupName1 , false);
+			 dependableClick_byID("tab0_link");
+			 find_and_fill_byID("g_interval_time", intervalTimeShort, false);
+			 dependableClick_byID("submitButton");	
+			 //Wait until new button is enabled which means save is completed.
+			 dependableWait_byID("form_action_new", 5);
+			 
+			 log.info("\n@(" + agentType + ") " +  username + " ##### Set 2nd Group Interval to  1 sec: " + groupName2);
+			 find_and_fill_byID("listFilterGlobal", groupName2 , false);
+			 dependableClick_byID("tab0_link");
+			 find_and_fill_byID("g_interval_time", intervalTimeShort, false);
+			 dependableClick_byID("submitButton");	
+			 //Wait until new button is enabled which means save is completed.
+			 dependableWait_byID("form_action_new", 5);
+			 
+			//##### Reseting IRN #####
+			 openHBDirectorPage("irn");
+			 waitUntilMainTitle("IRN");
+			 wait(2);
+			 
+			 log.info("\n@(" + agentType + ") " +  username + " ##### Set 1st IRN Interval to 1 sec: " + irnName1 );
+			 find_and_fill_byID("listFilterGlobal", irnName1 , false);
+			 dependableClick_byID("tab2_link");
+			 find_and_fill_byID("dn_interval_time", intervalTimeShort, false);
+			 dependableClick_byID("submitButton");	
+			 //Wait until new button is enabled which means save is completed.
+			 dependableWait_byID("form_action_new", 5);
+			 
+			 //Wait
+			 log.info("\n@(" + agentType + ") " +  username + " ##### wait until NLA reset for : " + intervalResetTime);
+			 wait(intervalResetTime);
+			 
+			 
+			 //##### Reseting Group #####
+			 wait(2);
+			 openHBDirectorPage("group");
+			 waitUntilMainTitle("Groups");
+			 wait(2);
+			 log.info("\n@(" + agentType + ") " +  username + " ##### Set 1st Group Interval to 60s: " + groupName1);
+			 find_and_fill_byID("listFilterGlobal", groupName1 , false);
+			 dependableClick_byID("tab0_link");
+			 find_and_fill_byID("g_interval_time", intervalTimeLong, false);
+			 dependableClick_byID("submitButton");	
+			 //Wait until new button is enabled which means save is completed.
+			 dependableWait_byID("form_action_new", 5);
+			 
+			 log.info("\n@(" + agentType + ") " +  username + " ##### Set 2nd Group Interval to 60 : " + groupName2);
+			 find_and_fill_byID("listFilterGlobal", groupName2 , false);
+			 dependableClick_byID("tab0_link");
+			 find_and_fill_byID("g_interval_time", intervalTimeLong, false);
+			 dependableClick_byID("submitButton");	
+			 //Wait until new button is enabled which means save is completed.
+			 dependableWait_byID("form_action_new", 5);
+			 
+			 
+			//##### Reseting IRN to 60 s#####
+			 openHBDirectorPage("irn");
+			 waitUntilMainTitle("IRN");
+			 wait(2);
+			 
+			 log.info("\n@(" + agentType + ") " +  username + " ##### Set 1st IRN Interval to 60 : " + irnName1);
+			 find_and_fill_byID("listFilterGlobal", irnName1 , false);
+			 dependableClick_byID("tab2_link");
+			 find_and_fill_byID("dn_interval_time", intervalTimeLong, false);
+			 dependableClick_byID("submitButton");	
+			 //Wait until new button is enabled which means save is completed.
+			 dependableWait_byID("form_action_new", 5);
+			 
+			 
+					 
+			 logOutHBDirector();
+			 minimizeBrowser();
+		 }
+		
+		
+		/**
+		 * This changes Email Group/DNIS-> Interval time to 1 and 60 to rest NLA Group Report
+		 * This only sets voice and chat group.
+		 * @throws Exception
+		 */
+		public void Max_LogIn_reset_EGroup_EDNIS_LogOut_Min() throws Exception{
+
+			 //if (AllActors.currentCallType.contains("Voice")) {
+			 log.info("\n@(" + agentType + ") " +  username + " ##### Reset Email Group/DNIS intervl -> NLA #####");
+			 String intervalTimeLong, intervalTimeShort;
+			 String groupName1, irnName1;
+			 int intervalResetTime;
+			 
+			 intervalResetTime = Integer.parseInt(AllActors.iniMain.get("CCD", "intervalResetTime"));
+			 intervalTimeLong = "0100";
+			 intervalTimeShort = "0001";
+			 groupName1 = AllActors.services.get(3).destination;
+			 irnName1 = AllActors.irns.get(5).irnNum;
+			 
+			 maximizeBrowser();
+			 logIntoHBDirector();
+			 waitUntilMainTitle("Favorites");
+			 
+			 //##### Reseting Group #####
+			 wait(2);
+			 openHBDirectorPage("email_group");
+			 waitUntilMainTitle("Email Groups");
+			 wait(2);
+
+			 log.info("\n@(" + agentType + ") " +  username + " ##### Set 1st Email Group Interval to 1 sec: " + groupName1);
+			 find_and_fill_byID("listFilterGlobal", groupName1 , false);
+			 dependableClick_byID("tab0_link");
+			 find_and_fill_byID("g_interval_time", intervalTimeShort, false);
+			 dependableClick_byID("submitButton");	
+			 //Wait until new button is enabled which means save is completed.
+			 dependableWait_byID("form_action_new", 5);
+			 
+						 
+			//##### Reseting IRN #####
+			 openHBDirectorPage("email_irn");
+			 waitUntilMainTitle("Email IRN");
+			 wait(2);
+			 
+			 log.info("\n@(" + agentType + ") " +  username + " ##### Set 1st Email IRN Interval to 1 sec: " + irnName1 );
+			 find_and_fill_byID("listFilterGlobal", irnName1 , false);
+			 dependableClick_byID("tab2_link");
+			 find_and_fill_byID("dn_interval_time", intervalTimeShort, false);
+			 dependableClick_byID("submitButton");	
+			 //Wait until new button is enabled which means save is completed.
+			 dependableWait_byID("form_action_new", 5);
+			 
+			 //Wait
+			 log.info("\n@(" + agentType + ") " +  username + " ##### wait until NLA reset for : " + intervalResetTime);
+			 wait(intervalResetTime);
+			 
+			 
+			 //##### Reseting Group #####
+			 wait(2);
+			 openHBDirectorPage("email_group");
+			 waitUntilMainTitle("Email Groups");
+			 wait(2);
+			 
+			 log.info("\n@(" + agentType + ") " +  username + " ##### Set 1st Group Interval to 60s: " + groupName1);
+			 find_and_fill_byID("listFilterGlobal", groupName1 , false);
+			 dependableClick_byID("tab0_link");
+			 find_and_fill_byID("g_interval_time", intervalTimeLong, false);
+			 dependableClick_byID("submitButton");	
+			 //Wait until new button is enabled which means save is completed.
+			 dependableWait_byID("form_action_new", 5);
+			 
+			 			 
+			//##### Reseting IRN to 60 s#####
+			 openHBDirectorPage("email_irn");
+			 waitUntilMainTitle("Email IRN");
+			 wait(2);
+			 
+			 log.info("\n@(" + agentType + ") " +  username + " ##### Set 1st IRN Interval to 60 : " + irnName1);
+			 find_and_fill_byID("listFilterGlobal", irnName1 , false);
+			 dependableClick_byID("tab2_link");
+			 find_and_fill_byID("dn_interval_time", intervalTimeLong, false);
+			 dependableClick_byID("submitButton");	
+			 //Wait until new button is enabled which means save is completed.
+			 dependableWait_byID("form_action_new", 5);
+			 
+			 
+					 
+			 logOutHBDirector();
+			 minimizeBrowser();
+		 }
+	 
 	 
 	
 }
