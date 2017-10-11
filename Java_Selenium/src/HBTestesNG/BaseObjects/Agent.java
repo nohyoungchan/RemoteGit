@@ -1088,6 +1088,7 @@ public class Agent extends TestObject {
 	  
 	  //strXPath is name, not XPath value
 	  public boolean click_XPath(String strXPath) throws Exception {
+		 String nameOnly;
 		 WebElement webElement;
 		 boolean returnResult;
 		 int waitTimeSec;
@@ -1106,6 +1107,10 @@ public class Agent extends TestObject {
 					///JavascriptExecutor executor = (JavascriptExecutor) driver;
 					executor.executeScript("arguments[0].click();", webElement);
 					//webElement.click();   //somehow this doesn't work.
+					if (AllActors.screenshotOrRecord.contains("screenshot")) {
+						nameOnly = returnAgentNameWithoutCompanyName(username);
+						AllActors.superAdmin.sendMessage("screenshot scenario @ " + testNameGlobal + "@" + nameOnly  + "_" +strXPath);
+					}
 					log.info("\n@(" + agentType + ") " + username + " Clicked=> " + strXPath);
 					break;
 				}else {
@@ -1557,6 +1562,21 @@ public class Agent extends TestObject {
 	    	keyAction.keyDown(Keys.COMMAND).sendKeys("m").keyUp(Keys.COMMAND).perform();
 	    	//String keyComb= Keys.chord(Keys.COMMAND, 'm');
 	    }
+	    
+
+	    public String returnAgentNameWithoutCompanyName(String strAgentName) throws Exception
+	    {
+	    	String nameOnly;
+	    	nameOnly="noName";
+	    	if (strAgentName.contains("@")) {
+	    		nameOnly = strAgentName.split("@")[0].trim();
+	    	}
+	    	return nameOnly;
+	    }
+	    
+	    
+	    
+	    
 
 
 	    

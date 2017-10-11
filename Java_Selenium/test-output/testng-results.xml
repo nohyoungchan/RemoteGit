@@ -1,101 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="9" passed="9">
+<testng-results skipped="2" failed="1" total="3" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Test HB Suite" duration-ms="3593382" started-at="2017-10-03T19:02:09Z" finished-at="2017-10-03T20:02:02Z">
+  <suite name="Test HB Suite" duration-ms="142551" started-at="2017-10-11T00:30:22Z" finished-at="2017-10-11T00:32:44Z">
     <groups>
-      <group name="Test_Email_All_ClassLevel">
-        <method signature="Test_Email_All.Email_BTransfer_ToExt_SameGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-1,5,main]]" name="Email_BTransfer_ToExt_SameGroup" class="HBTestesNG.TestCases.Test_Email_All"/>
-        <method signature="Test_Email_All.Email_NoQ_Answer(int, int, int)[pri:0, instance:Thread[Thread-1,5,main]]" name="Email_NoQ_Answer" class="HBTestesNG.TestCases.Test_Email_All"/>
-        <method signature="Test_Email_All.Email_NoQ_Answer_NoWrapTime(int, int)[pri:0, instance:Thread[Thread-1,5,main]]" name="Email_NoQ_Answer_NoWrapTime" class="HBTestesNG.TestCases.Test_Email_All"/>
-        <method signature="Test_Email_All.Email_Q_Answer(int, int, int, int)[pri:0, instance:Thread[Thread-1,5,main]]" name="Email_Q_Answer" class="HBTestesNG.TestCases.Test_Email_All"/>
-        <method signature="Test_Email_All.Email_Q_OverInterflow_Q_R_Ans_3rdGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-1,5,main]]" name="Email_Q_OverInterflow_Q_R_Ans_3rdGroup" class="HBTestesNG.TestCases.Test_Email_All"/>
-        <method signature="Test_Email_All.Email_Q_Overflow_R_Ans_1stGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-1,5,main]]" name="Email_Q_Overflow_R_Ans_1stGroup" class="HBTestesNG.TestCases.Test_Email_All"/>
-        <method signature="Test_Email_All.Email_Q_Overflow_R_Ans_2ndGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-1,5,main]]" name="Email_Q_Overflow_R_Ans_2ndGroup" class="HBTestesNG.TestCases.Test_Email_All"/>
-        <method signature="Test_Email_All.Email_R_Q_Overflow_Q_R_Ans_2ndGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-1,5,main]]" name="Email_R_Q_Overflow_Q_R_Ans_2ndGroup" class="HBTestesNG.TestCases.Test_Email_All"/>
-        <method signature="Test_Email_All.Email_R_Q_Overflow_R_Ans_2ndGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-1,5,main]]" name="Email_R_Q_Overflow_R_Ans_2ndGroup" class="HBTestesNG.TestCases.Test_Email_All"/>
-      </group> <!-- Test_Email_All_ClassLevel -->
+      <group name="VoiceACD_Transfer_ClassLevel">
+        <method signature="Test_VoiceACD_Transfer.VoiceACD_BTransfer_ToExt_SameGroup_byName(int, int, int, int, int)[pri:0, instance:Thread[Thread-3,5,main]]" name="VoiceACD_BTransfer_ToExt_SameGroup_byName" class="HBTestesNG.TestCases.Test_VoiceACD_Transfer"/>
+        <method signature="Test_VoiceACD_Transfer.VoiceACD_CTransfer_ToExt_DifferentGroup(int, int, int, int)[pri:0, instance:Thread[Thread-3,5,main]]" name="VoiceACD_CTransfer_ToExt_DifferentGroup" class="HBTestesNG.TestCases.Test_VoiceACD_Transfer"/>
+        <method signature="Test_VoiceACD_Transfer.VoiceACD_CTransfer_ToExt_SameGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-3,5,main]]" name="VoiceACD_CTransfer_ToExt_SameGroup" class="HBTestesNG.TestCases.Test_VoiceACD_Transfer"/>
+      </group> <!-- VoiceACD_Transfer_ClassLevel -->
     </groups>
-    <test name="Email Scenarios" duration-ms="3593382" started-at="2017-10-03T19:02:09Z" finished-at="2017-10-03T20:02:02Z">
+    <test name="VoiceACD Scenarios" duration-ms="142551" started-at="2017-10-11T00:30:22Z" finished-at="2017-10-11T00:32:44Z">
       <class name="HBTestesNG.TestCases.Test_Initiate">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:Thread[Thread-0,5,main]]" name="beforeSuite" is-config="true" duration-ms="117611" started-at="2017-10-03T12:00:11Z" finished-at="2017-10-03T12:02:09Z">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:Thread[Thread-0,5,main]]" name="beforeSuite" is-config="true" duration-ms="107322" started-at="2017-10-10T17:28:34Z" finished-at="2017-10-10T17:30:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:Thread[Thread-0,5,main]]" name="afterSuite" is-config="true" duration-ms="24478" started-at="2017-10-03T13:02:02Z" finished-at="2017-10-03T13:02:27Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:Thread[Thread-0,5,main]]" name="afterSuite" is-config="true" duration-ms="35545" started-at="2017-10-10T17:32:44Z" finished-at="2017-10-10T17:33:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
       </class> <!-- HBTestesNG.TestCases.Test_Initiate -->
-      <class name="HBTestesNG.TestCases.Test_Email_All">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:Thread[Thread-1,5,main]]" name="beforeClass" is-config="true" duration-ms="11596" started-at="2017-10-03T12:02:09Z" finished-at="2017-10-03T12:02:20Z">
+      <class name="HBTestesNG.TestCases.Test_VoiceACD_Transfer">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:Thread[Thread-3,5,main]]" name="beforeClass" is-config="true" duration-ms="1" started-at="2017-10-10T17:30:22Z" finished-at="2017-10-10T17:30:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="Email_NoQ_Answer(int, int, int)[pri:0, instance:Thread[Thread-1,5,main]]" name="Email_NoQ_Answer" duration-ms="348655" started-at="2017-10-03T12:02:20Z" finished-at="2017-10-03T12:08:09Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Email_NoQ_Answer -->
-        <test-method status="PASS" signature="Email_NoQ_Answer_NoWrapTime(int, int)[pri:0, instance:Thread[Thread-1,5,main]]" name="Email_NoQ_Answer_NoWrapTime" duration-ms="483929" started-at="2017-10-03T12:08:09Z" finished-at="2017-10-03T12:16:13Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Email_NoQ_Answer_NoWrapTime -->
-        <test-method status="PASS" signature="Email_Q_Answer(int, int, int, int)[pri:0, instance:Thread[Thread-1,5,main]]" name="Email_Q_Answer" duration-ms="358435" started-at="2017-10-03T12:16:13Z" finished-at="2017-10-03T12:22:11Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Email_Q_Answer -->
-        <test-method status="PASS" signature="Email_Q_Overflow_R_Ans_1stGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-1,5,main]]" name="Email_Q_Overflow_R_Ans_1stGroup" duration-ms="374490" started-at="2017-10-03T12:22:11Z" finished-at="2017-10-03T12:28:26Z">
+        <test-method status="SKIP" signature="VoiceACD_CTransfer_ToExt_SameGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-3,5,main]]" name="VoiceACD_CTransfer_ToExt_SameGroup" duration-ms="4" started-at="2017-10-10T17:30:22Z" finished-at="2017-10-10T17:30:22Z">
           <params>
             <param index="0">
               <value>
@@ -123,10 +54,112 @@
               </value>
             </param>
           </params>
+          <exception class="org.testng.SkipException">
+            <message>
+              <![CDATA[Defect:UCC-1642]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.SkipException: Defect:UCC-1642
+	at HBTestesNG.BaseObjects.TestCaseObject.skipTest(TestCaseObject.java:434)
+	at HBTestesNG.TestCases.Test_VoiceACD_Transfer.VoiceACD_CTransfer_ToExt_SameGroup(Test_VoiceACD_Transfer.java:325)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.SkipException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Email_Q_Overflow_R_Ans_1stGroup -->
-        <test-method status="PASS" signature="Email_Q_Overflow_R_Ans_2ndGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-1,5,main]]" name="Email_Q_Overflow_R_Ans_2ndGroup" duration-ms="377975" started-at="2017-10-03T12:28:26Z" finished-at="2017-10-03T12:34:44Z">
+        </test-method> <!-- VoiceACD_CTransfer_ToExt_SameGroup -->
+        <test-method status="FAIL" signature="VoiceACD_CTransfer_ToExt_DifferentGroup(int, int, int, int)[pri:0, instance:Thread[Thread-3,5,main]]" name="VoiceACD_CTransfer_ToExt_DifferentGroup" duration-ms="142529" started-at="2017-10-10T17:30:22Z" finished-at="2017-10-10T17:32:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[10]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[10]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[10]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[10]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[VoiceACD->Ans->Consult Transfer to Ext on Different Group has failed because => 
+@ agent4yc1@c1yc1.comExceptionafter pressing btnDisconnect expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: VoiceACD->Ans->Consult Transfer to Ext on Different Group has failed because => 
+@ agent4yc1@c1yc1.comExceptionafter pressing btnDisconnect expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:496)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at HBTestesNG.BaseObjects.TestCaseObject.failTest(TestCaseObject.java:438)
+	at HBTestesNG.BaseObjects.TestCaseObject.endTestCase(TestCaseObject.java:217)
+	at HBTestesNG.TestCases.Test_VoiceACD_Transfer.VoiceACD_CTransfer_ToExt_DifferentGroup(Test_VoiceACD_Transfer.java:431)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VoiceACD_CTransfer_ToExt_DifferentGroup -->
+        <test-method status="SKIP" signature="VoiceACD_BTransfer_ToExt_SameGroup_byName(int, int, int, int, int)[pri:0, instance:Thread[Thread-3,5,main]]" name="VoiceACD_BTransfer_ToExt_SameGroup_byName" duration-ms="1" started-at="2017-10-10T17:32:44Z" finished-at="2017-10-10T17:32:44Z">
           <params>
             <param index="0">
               <value>
@@ -154,138 +187,49 @@
               </value>
             </param>
           </params>
+          <exception class="org.testng.SkipException">
+            <message>
+              <![CDATA[Skipping because user want to end test => VoiceACD->Ans->Blind Transfer to Ext on Same Group _byName ]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.SkipException: Skipping because user want to end test => VoiceACD->Ans->Blind Transfer to Ext on Same Group _byName 
+	at HBTestesNG.BaseObjects.TestCaseObject.skipTest(TestCaseObject.java:434)
+	at HBTestesNG.TestCases.Test_VoiceACD_Transfer.VoiceACD_BTransfer_ToExt_SameGroup_byName(Test_VoiceACD_Transfer.java:80)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.SkipException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Email_Q_Overflow_R_Ans_2ndGroup -->
-        <test-method status="PASS" signature="Email_R_Q_Overflow_Q_R_Ans_2ndGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-1,5,main]]" name="Email_R_Q_Overflow_Q_R_Ans_2ndGroup" duration-ms="394341" started-at="2017-10-03T12:34:44Z" finished-at="2017-10-03T12:41:18Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Email_R_Q_Overflow_Q_R_Ans_2ndGroup -->
-        <test-method status="PASS" signature="Email_R_Q_Overflow_R_Ans_2ndGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-1,5,main]]" name="Email_R_Q_Overflow_R_Ans_2ndGroup" duration-ms="389667" started-at="2017-10-03T12:41:18Z" finished-at="2017-10-03T12:47:48Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Email_R_Q_Overflow_R_Ans_2ndGroup -->
-        <test-method status="PASS" signature="Email_Q_OverInterflow_Q_R_Ans_3rdGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-1,5,main]]" name="Email_Q_OverInterflow_Q_R_Ans_3rdGroup" duration-ms="478297" started-at="2017-10-03T12:47:48Z" finished-at="2017-10-03T12:55:46Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Email_Q_OverInterflow_Q_R_Ans_3rdGroup -->
-        <test-method status="PASS" signature="Email_BTransfer_ToExt_SameGroup(int, int, int, int, int)[pri:0, instance:Thread[Thread-1,5,main]]" name="Email_BTransfer_ToExt_SameGroup" duration-ms="375973" started-at="2017-10-03T12:55:46Z" finished-at="2017-10-03T13:02:02Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Email_BTransfer_ToExt_SameGroup -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:Thread[Thread-1,5,main]]" name="afterClass" is-config="true" duration-ms="0" started-at="2017-10-03T13:02:02Z" finished-at="2017-10-03T13:02:02Z">
+        </test-method> <!-- VoiceACD_BTransfer_ToExt_SameGroup_byName -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:Thread[Thread-3,5,main]]" name="afterClass" is-config="true" duration-ms="0" started-at="2017-10-10T17:32:44Z" finished-at="2017-10-10T17:32:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-      </class> <!-- HBTestesNG.TestCases.Test_Email_All -->
-    </test> <!-- Email Scenarios -->
+      </class> <!-- HBTestesNG.TestCases.Test_VoiceACD_Transfer -->
+    </test> <!-- VoiceACD Scenarios -->
   </suite> <!-- Test HB Suite -->
 </testng-results>

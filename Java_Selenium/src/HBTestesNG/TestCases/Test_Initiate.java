@@ -48,9 +48,9 @@ public class  Test_Initiate extends TestCaseObject{
 			//Log in Manhattan client: only 1 if needed.
 			String startLocation;
 			if (allActors.customers.size() == 1){
-				startLocation = AllActors.iniMain.get("Manhattan", "startingLocation");
+/*				startLocation = AllActors.iniMain.get("Manhattan", "startingLocation");
 				String splitResult[] = startLocation.split("/");
-				allActors.customers.get(0).startManhattan(splitResult[0], splitResult[1]);
+				allActors.customers.get(0).startManhattan(splitResult[0], splitResult[1]);*/
 				allActors.customers.get(0).logIn();
 				
 			}
@@ -97,6 +97,10 @@ public class  Test_Initiate extends TestCaseObject{
 		log.info("#######################################################");
 		log.info("########### Starting End of TestSuite  ###################");
 		log.info("#########################################################\n\n");
+		
+		
+
+		
 
 		if (AllActors.iniMain.get("TestFlow", "tearDownOrNot").contains("no")) {
 			log.info("\n\n%%% Waiting for a user input: Enter any key to close all actors %%%");
@@ -148,6 +152,10 @@ public class  Test_Initiate extends TestCaseObject{
 			//executeShellCommand("taskkill /IM  ShoreTel.exe /F");  //This is to kill ShoreTel.exe when graceful close failed.
 
 		}
+		
+		//This clears all message on Supervisor_Clent ->textMessage box
+		AllActors.superAdmin.sendMessage("clearMessage");
+		AllActors.superAdmin.printAllMessages();
 		
 		currentTimeEnd();
 		totalExecutionTime();

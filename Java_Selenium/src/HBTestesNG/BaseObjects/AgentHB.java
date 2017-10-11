@@ -293,6 +293,14 @@ public class AgentHB extends Agent {
 	  }
 	  
 	  public void releaseAgentSecondCode() throws Exception{
+		    //This is temporary solution : Defect is open : UCC-1958
+		    if (AllActors.iniMain.get("TestFlow", "releaseAgentSecondCode_defect").contains("yes"))
+		    {
+		       log.info("\n@(" + agentType + ") " +  username + " #### releaseAgentSecondCode_defect = yes, so just release ####");
+		       releaseAgent();
+		       return;
+		    }
+		    
 		  	log.info("\n@(" + agentType + ") " +  username + " #### Release agent. ####");
 		  	if (state.contains("weird")) {
 		  		log.info("@" + username + ": The state is $$$$ weird $$$$. So skip this step");
@@ -325,6 +333,14 @@ public class AgentHB extends Agent {
 	  }
 	  
 	  public void releaseAgentThirdCode() throws Exception{
+		  
+		    //This is temporary solution : Defect is open : UCC-1958
+		    if (AllActors.iniMain.get("TestFlow", "releaseAgentSecondCode_defect").contains("yes"))
+		    {
+		       releaseAgent();
+		       return;
+		    }
+		    
 		  	log.info("\n@(" + agentType + ") " +  username + " #### Release agent. ####");
 		  	if (state.contains("weird")) {
 		  		log.info("@" + username + ": The state is $$$$ weird $$$$. So skip this step");
@@ -371,10 +387,13 @@ public class AgentHB extends Agent {
 			if(webElement != null){
 		  	
 			  	try{	
-					  txtReturned = webElement.getText();	  		  
+					  txtReturned = webElement.getText();	  	
+					  log.info("\n@(" + agentType + ") " +  username+ " ResumeAgent and State Returned: " + txtReturned);
 					  wait(2);
 					  
-					  if (txtReturned.contains("Start taking requests") || txtReturned.contains("Commencer à prendre les appels")) //If agent is idle, release.
+					  //if (txtReturned.contains("Start taking requests") || txtReturned.contains("Commencer à prendre les appels")) //If agent is idle, release.
+					  //{
+					  if (txtReturned.contains("Start taking requests") && getAICState().contains("Release")) //If agent is Release, resume
 					  {
 					      log.info("\n@(" + agentType + ") " +  username+ " #### Agent is released=>Click resume button ####");
 					      click_XPath(("btnResume"));
@@ -802,22 +821,21 @@ public class AgentHB extends Agent {
 			  
 			  wait(2);
 			  if (click_XPath(("btnDisconnect"))) {
-				  log.info("\n@(" + agentType + ") " +  username + " disconnectByWebAgent() successfully"); 
+				  log.info("\n@(" + agentType + ") " +  username + " disconnectByWebAgent()"); 
 			  }else {
 				  log.info("\n@(" + agentType + ") " +  username + " doesn't need to disconnect"); 
 			  };
 			  
 			  //This only works with a single call.  Not working when
-			  /*wait(2);
 			  log.info("\n ## Post-Condition of disconnectByWebAgent()");
-			  if(existsElement("panelCurrentCall")) {
-				  wait(2, "check one more time for btnDisconnect");
-				  if(existsElement("btnDisconnect")) {
-				     log.info("\n@(" + agentType + ") " +  username + " disconnectBtn still exist after clicking it");
-				     captureScreenshot("DisconnectByWebAgent_panelExist");
-				     throw new EC_DisconnectBtn("Fail to close disconnectBtn");
-				  }
-			  }*/
+			  wait(2);
+			  //if the result is not Busy, the disconnect is successful
+			  if(getAICStateAfterDisconnect().contains("Busy")) {
+			      log.info("\n@(" + agentType + ") " +  username + " disconnectBtn still exist after clicking it");
+			      captureScreenshot("DisconnectByWebAgent_panelExist");
+			      throw new EC_DisconnectBtn("disconnectBtn is not working");
+			  }
+			  log.info("\n@(" + agentType + ") " +  username + " disconnectByWebAgent() successfully"); 
 			  state = "idle";
 			  //restoreDimenSion();
 			  
@@ -1304,16 +1322,74 @@ public class AgentHB extends Agent {
 	        //restoreDimenSion();
 	        logIntoWebAgent();
 	  }
+	  
+	  /**
+	   * The result can be other than Busy or Wrap-up after disconnect a call.
+	   * This is only used after disconnect a call for post disconnect checking
+	   * @return
+	   * @throws Exception
+	   */
+	  public String getAICStateAfterDisconnect() throws Exception
+	  {
+		  String strWebElementGetText;
+
+	      log.info("\n@(" + agentType + ") " + username + " => ######### Getting AIC state ########");
+	      WebElement webElement = getWebElement("webAgentStatusBox", 10);     
+	      strWebElementGetText = webElement.getText();
+	      log.info("\n@(" + agentType + ") " + username + " => strWebElementGetText: " + strWebElementGetText);
+	      return strWebElementGetText;
+	        
+	  }
+	  
+	  public String getAICState() throws Exception
+	  {
+		  String strWebElementGetText;
+
+	      log.info("\n@(" + agentType + ") " + username + " => ######### Getting AIC state ########");
+	      WebElement webElement = getWebElement("webAgentStatusBox", 10);     
+	      strWebElementGetText = webElement.getText();
+	      log.info("\n@(" + agentType + ") " + username + " => strWebElementGetText: " + strWebElementGetText);
+	      return strWebElementGetText;
+	        
+	  }
+	  
+	  
+	  
+	  public void getAICState(String strState) throws Exception
+	  {
+		  String strWebElementGetText, strWebElementGetTagName, strWebElementToString;
+		  String strClassToString, strClassGetName, strClassGetSimpleName;
+
+	      log.info("\n@(" + agentType + ") " + username + " => ######### Getting AIC state after : " + strState);
+	      WebElement webElement = getWebElement("webAgentStatusBox", 10);
+	      
+	      strWebElementGetText = webElement.getText();
+	      strWebElementGetTagName= webElement.getTagName();
+	      strWebElementToString = webElement.toString();
+
+	      
+	      strClassToString = webElement.getClass().toString();
+	      strClassGetName = webElement.getClass().getName();
+	      strClassGetSimpleName = webElement.getClass().getSimpleName();
+	      
+	      log.info("\n@(" + agentType + ") " + username + " => strWebElementGetText: " + strWebElementGetText);
+	      log.info("\n@(" + agentType + ") " + username + " => strWebElementGetTagName: " + strWebElementGetTagName);
+	      log.info("\n@(" + agentType + ") " + username + " => strWebElementToString: " + strWebElementToString);
+	      
+	      
+	      //log.info("\n@(" + agentType + ") " + username + " => strClassToString: " + strClassToString);
+	      //log.info("\n@(" + agentType + ") " + username + " => strClassGetName: " + strClassGetName);
+	      //log.info("\n@(" + agentType + ") " + username + " => strClassGetSimpleName : " + strClassGetSimpleName );
+	      
+	      log.info("\n@(" + agentType + ") " + username + " => ######### Ending AIC state ##########");
+	      
+	      
+
+	        
+	  }
 	
 }
+	
 
 
-/*				synchronized(s_exitSignal) {
-	try {
-		s_exitSignal.wait(2);
-		log.info("I am here $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-}*/
+

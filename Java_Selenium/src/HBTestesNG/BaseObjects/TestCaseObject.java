@@ -164,7 +164,8 @@ public class TestCaseObject extends TestObject{
 		
 		if (stopTest.contains("yes")) {
 			log.info("@@ Stop is requested, so skip => " + sTestCaseName);
-			AllActors.superAdmin.sendMessage("Skipping scenario @ " + sTestCaseName);
+			//Don't need to send a message when skipping
+			//AllActors.superAdmin.sendMessage("Skipping scenario @ " + sTestCaseName);
 			return "no";
 		}
 		
@@ -184,9 +185,10 @@ public class TestCaseObject extends TestObject{
 	    	AllActors.currentCallType = "NotAvailable"; 
 	    }
 		
-		
+	    runTestEvery15Min();
 		sup1.Max_LogIn_reset_NLA_LogOut_Min();
-		AllActors.superAdmin.sendMessage("Starting scenario @ " + sTestCaseName);
+		testNameGlobal = sTestCaseName;
+		AllActors.superAdmin.sendMessage(AllActors.screenshotOrRecord + " starting scenario @ " + sTestCaseName + "@starting");
 	    
 	    return "yes";
 	}
@@ -202,7 +204,7 @@ public class TestCaseObject extends TestObject{
 		
 		
 		if (errorCount > 0) {
-			 AllActors.superAdmin.sendMessage("Ending scenario @ " + testName + " @ Failed because => " + errorString);
+			 AllActors.superAdmin.sendMessage(AllActors.screenshotOrRecord + " ending scenario @ " + testName + " @ending_Failed because_" + errorString);
 			 log.info("XXXXXXXXXXXXXXXXXXXXXXX  "+"Test Result(Failed) => "+ testName + " XXXXXXXXXXXXXXXXXXXXXX");
 			 log.info("X");
 			 log.info("X");
@@ -214,7 +216,7 @@ public class TestCaseObject extends TestObject{
 		     if (userInputString.contains("yes")) stopTest = "yes"; 
 		     failTest(testName + " has failed because => " + errorString);
 		}else {
-			AllActors.superAdmin.sendMessage("Ending scenario @ " + testName + " @ Successful");
+			AllActors.superAdmin.sendMessage(AllActors.screenshotOrRecord + " ending scenario @ " + testName + " @ending_Successful");
 		    log.info("XXXXXXXXXXXXXXXXXXXXXXX  "+"Test Result(Successful) => "+ testName + " XXXXXXXXXXXXXXXXXXXXXX");
 		    log.info("X");
 		    log.info("X");

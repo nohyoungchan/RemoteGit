@@ -27,25 +27,24 @@
           <include name="beforeClass"/>
           <include name="VoiceACD_CTransfer_ToIRN_SameGroup"/>
           <include name="VoiceACD_CTransfer_ToIRN_DifferentGroup"/>
+          <include name="VoiceACD_BTransfer_ToExt_SameGroup_byName"/>
           <include name="VoiceACD_BTransfer_ToIRN_AQ"/>
         </methods>
       </class> <!-- HBTestesNG.TestCases.Test_VoiceACD_Transfer -->
       <class name="HBTestesNG.TestCases.Test_VoiceACD_Conference">
         <methods>
           <include name="afterClass"/>
+          <include name="VoiceACD_CConference_ToExt_SameGroup_byName" invocation-numbers="0"/>
           <include name="beforeClass"/>
           <include name="VoiceACD_CConference_All" invocation-numbers="0"/>
         </methods>
       </class> <!-- HBTestesNG.TestCases.Test_VoiceACD_Conference -->
       <class name="HBTestesNG.TestCases.Test_VoiceACD_Transfer_WrapTimeZero">
         <methods>
-          <include name="VoiceACD_BTransfer_ToExternal"/>
           <include name="beforeClass"/>
           <include name="VoiceACD_BTransfer_ToIRN_DifferentGroup"/>
           <include name="VoiceACD_CTransfer_ToExt_DifferentGroup"/>
           <include name="VoiceACD_CTransfer_ToExt_SameGroup"/>
-          <include name="VoiceACD_BTransfer_ToExt_DifferentGroup"/>
-          <include name="VoiceACD_BTransfer_ToExt_SameGroup"/>
           <include name="VoiceACD_CTransfer_ToIRN_DifferentGroup"/>
           <include name="VoiceACD_BTransfer_ToIRN_SameGroup"/>
           <include name="VoiceACD_CTransfer_ToIRN_SameGroup"/>
@@ -58,12 +57,6 @@
           <include name="afterSuite"/>
         </methods>
       </class> <!-- HBTestesNG.TestCases.Test_Initiate -->
-      <class name="HBTestesNG.TestCases.Test_VoiceACD_Basic">
-        <methods>
-          <include name="VoiceACD_NoQ_Answer"/>
-          <include name="beforeClass"/>
-        </methods>
-      </class> <!-- HBTestesNG.TestCases.Test_VoiceACD_Basic -->
     </classes>
   </test> <!-- VoiceACD Scenarios(failed)(failed) -->
 </suite> <!-- Failed suite [Failed suite [Test HB Suite]] -->

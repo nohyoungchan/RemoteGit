@@ -5,6 +5,7 @@ agentHBURL=http://cc3.uccqac1.com/ecc
 hbDirectorURL=https://ccd-ripley-dev-cca.mci01-uce.uce.corvisa.net/ccd
 hbDirectorURLAfterLogIn=https://ccd-ripley-dev-cca.mci01-uce.uce.corvisa.net/cc_admin
 chatURL=https://chat3.uccqac1.com/chat?token=U2FsdGVkX1%2BuSDSYzO0m6ekVNMZM1gu31Uxsj7bj31M%2BREpxlTFkYqAfYN2zp8EwTL0ENAVvqIsgDuutkxZ%2FAw%3D%3D
+webCBURL=https://chat-twi2.sit.shoretel.com/webcallback?token=U2FsdGVkX1%2Bw9v%2BYoO7V1o331AUZYhSsTuLT5Rg8O8Pyx1MwCfyLMhfXPjOvk71Q
 owaURL=https://qaxchange16.qa.shoretel.com/owa
 
 
@@ -15,7 +16,7 @@ emailContent=This_is_Email_Content for C1HB1
 
 
 [CustomerVoice]
-max=0
+max=1
 CustomerVoice1.name=agent6yc1@c1yc1.com
 CustomerVoice1.password=Shoreadmin1
 CustomerVoice1.extension=4006
@@ -30,7 +31,7 @@ chatCustomerNamePrefix=Customer
 
 # Current email customer is using owa->2017
 [CustomerEmail]
-max=1
+max=0
 CustomerEmail1.name=qa\ynoh11
 CustomerEmail1.password=changeme
 CustomerEmail1.domain=qa

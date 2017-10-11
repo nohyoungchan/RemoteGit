@@ -37,7 +37,7 @@ public class AllActors extends TestObject{
     public static Wini iniMain,  iniEnv, iniXPath;
     //public static Hashtable<String, String> globalVariableHash;
 	
-	public static String currentCallType;
+	public static String currentCallType, screenshotOrRecord;
 	public static PostCondition postCondition;
 	public static String configDir, xPathDir;
 	
@@ -81,6 +81,7 @@ public class AllActors extends TestObject{
 	        iniMain = new Wini(new File(configDir + "testData.ini"));         
 	        TestObject.useWhichWebDriver = iniMain.get("WebBrowser", "webDriver");
 	        String systemToTest = iniMain.get("SYSTEM", "systemToTest");
+	        screenshotOrRecord = iniMain.get("SupervisorLoad", "screenshotOrRecord");
 	        log.info("Testing: " + systemToTest); 
 	        
 	        
@@ -110,7 +111,35 @@ public class AllActors extends TestObject{
 	        	services.get(i).interflowTimeout = iniEnv.get("Service", "service" + j+ ".interflowTimeout");	
 	        }
 	        
-	        //agentStart is the first agent to initiate until max number of agents.
+	        
+	        //###### Starting manhattan, but not logged in
+	        max = Integer.parseInt(iniEnv.get("CustomerVoice", "max"));
+	        String startLocation;
+	        for(i=0; i < max; i++){
+	        	j = i+1;
+	        	customers.add(new CustomerManhattan());
+	        	customers.get(i).username = iniEnv.get("CustomerVoice", "CustomerVoice" + j+ ".name");
+	        	customers.get(i).password = iniEnv.get("CustomerVoice", "CustomerVoice" + j+ ".password");
+	        	customers.get(i).extension = iniEnv.get("CustomerVoice", "CustomerVoice" + j+ ".extension");
+	        	customers.get(i).did = iniEnv.get("CustomerVoice", "CustomerVoice" + j+ ".did");
+	        	customers.get(i).agentType = "CustomerVoice";
+	        	log.info("Customer"+ j+ "=>" + customers.get(i).username + ": " + customers.get(i).password+ ": " +customers.get(i).extension+ ": " +customers.get(i).did );
+	        	
+				startLocation = AllActors.iniMain.get("Manhattan", "startingLocation");
+				String splitResult[] = startLocation.split("/");
+				customers.get(i).startManhattan(splitResult[0], splitResult[1]);
+	        }
+	        
+	       //####### starting SuperLoadAdmin to communicate with other nla #############
+	        start_SuperLoadServer();
+	        wait(3);
+	        start_SuperLoadAdmin();
+	        wait(2);
+	        //This is needed to start supervisor_client
+	        wait_for_input("\"@@@@ Start SupClient and press any key to continue >>>\"");
+	        
+	        
+	        //####### agentStart is the first agent to initiate until max number of agents.
 	        max = Integer.parseInt(iniEnv.get("Agent", "max"));
 	        for(i=0; i < max; i++){
 	        	j = i+1;
@@ -124,20 +153,6 @@ public class AllActors extends TestObject{
 	        	log.info("Agent"+ j+ "=>" +agents.get(i).username + ": " + agents.get(i).password+ ": " +agents.get(i).extension+ ": " +agents.get(i).did );
 	        }
 	        
-
-	        
-	        
-	        max = Integer.parseInt(iniEnv.get("CustomerVoice", "max"));
-	        for(i=0; i < max; i++){
-	        	j = i+1;
-	        	customers.add(new CustomerManhattan());
-	        	customers.get(i).username = iniEnv.get("CustomerVoice", "CustomerVoice" + j+ ".name");
-	        	customers.get(i).password = iniEnv.get("CustomerVoice", "CustomerVoice" + j+ ".password");
-	        	customers.get(i).extension = iniEnv.get("CustomerVoice", "CustomerVoice" + j+ ".extension");
-	        	customers.get(i).did = iniEnv.get("CustomerVoice", "CustomerVoice" + j+ ".did");
-	        	customers.get(i).agentType = "CustomerVoice";
-	        	log.info("Customer"+ j+ "=>" + customers.get(i).username + ": " + customers.get(i).password+ ": " +customers.get(i).extension+ ": " +customers.get(i).did );
-	        }
 	        
 	        // #### Creating and Setting ChatCustomer ####
 	        String tenantPrefix, chatIRN, chatCustomerNamePrefix, stOrMt;
@@ -188,12 +203,12 @@ public class AllActors extends TestObject{
 	        iniXPath = new Wini(new File(xPathDir + "testXPath.ini"));  
 	        
 	        //####### starting SuperLoadAdmin to communicate with other nla #############
-	        start_SuperLoadServer();
+	       /* start_SuperLoadServer();
 	        wait(3);
 	        start_SuperLoadAdmin();
 	        wait(2);
 	        //This is needed to start supervisor_client
-	        wait_for_input("\"@@@@ Start SupClient and press any key to continue >>>\"");
+	        wait_for_input("\"@@@@ Start SupClient and press any key to continue >>>\"");*/
 
 	     }
 	     catch (Exception e) {

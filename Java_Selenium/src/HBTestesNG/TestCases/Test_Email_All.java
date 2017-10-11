@@ -130,11 +130,12 @@ public class Test_Email_All extends TestCaseObject {
 			//############################
 			agent1.disconnectByWebAgent();
 			wait(2);
-			sup1.AllType_Max_LogIn_changeWrapAndFRTime_LogOut_Min("emailservice", aa.services.get(3).name, "20", "30");
+			
 		}catch(Exception e){
 			log.info("I am handling General exception=>"+ e.toString());
 			resetAllActors(testName);
 		}finally{
+			sup1.AllType_Max_LogIn_changeWrapAndFRTime_LogOut_Min("emailservice", aa.services.get(3).name, "20", "30");
 			endTestCase(testName);
 	  }
 	}

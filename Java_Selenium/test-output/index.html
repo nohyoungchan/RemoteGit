@@ -23,7 +23,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -37,7 +37,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Test_HB_Suite">
-              <span class="suite-name border-passed">Test HB Suite</span>
+              <span class="suite-name border-failed">Test HB Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -48,7 +48,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Test_HB_Suite">
-                    <span>C:\young\Git_Local\Java_Selenium\test_xml_Files\testing_email.xml</span>
+                    <span>C:\young\Git_Local\Java_Selenium\test_xml_Files\testing_voice_acd.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -90,61 +90,40 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">9 methods,   9 passed</span>
+                    <span class="method-stats">3 methods, 1 failed,  2 skipped,  </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Test_HB_Suite" class="hide-methods passed suite-Test_HB_Suite"> (hide)</a> <!-- hide-methods passed suite-Test_HB_Suite -->
-                      <a href="#" panel-name="suite-Test_HB_Suite" class="show-methods passed suite-Test_HB_Suite"> (show)</a> <!-- show-methods passed suite-Test_HB_Suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Test_HB_Suite" class="hide-methods failed suite-Test_HB_Suite"> (hide)</a> <!-- hide-methods failed suite-Test_HB_Suite -->
+                      <a href="#" panel-name="suite-Test_HB_Suite" class="show-methods failed suite-Test_HB_Suite"> (show)</a> <!-- show-methods failed suite-Test_HB_Suite -->
                     </span>
-                    <div class="method-list-content passed suite-Test_HB_Suite">
+                    <div class="method-list-content failed suite-Test_HB_Suite">
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Test_HB_Suite" title="HBTestesNG.TestCases.Test_Email_All" hash-for-method="Email_BTransfer_ToExt_SameGroup(10, 10, 10, 10, 10)">Email_BTransfer_ToExt_SameGroup(10, 10, 10, 10, 10)</a> <!-- method navigator-link -->
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_HB_Suite" title="HBTestesNG.TestCases.Test_VoiceACD_Transfer" hash-for-method="VoiceACD_CTransfer_ToExt_DifferentGroup(10, 10, 10, 10)">VoiceACD_CTransfer_ToExt_DifferentGroup(10, 10, 10, 10)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Test_HB_Suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Test_HB_Suite" class="hide-methods skipped suite-Test_HB_Suite"> (hide)</a> <!-- hide-methods skipped suite-Test_HB_Suite -->
+                      <a href="#" panel-name="suite-Test_HB_Suite" class="show-methods skipped suite-Test_HB_Suite"> (show)</a> <!-- show-methods skipped suite-Test_HB_Suite -->
+                    </span>
+                    <div class="method-list-content skipped suite-Test_HB_Suite">
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_HB_Suite" title="HBTestesNG.TestCases.Test_VoiceACD_Transfer" hash-for-method="VoiceACD_BTransfer_ToExt_SameGroup_byName(10, 10, 10, 10, 10)">VoiceACD_BTransfer_ToExt_SameGroup_byName(10, 10, 10, 10, 10)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Test_HB_Suite" title="HBTestesNG.TestCases.Test_Email_All" hash-for-method="Email_NoQ_Answer(10, 10, 10)">Email_NoQ_Answer(10, 10, 10)</a> <!-- method navigator-link -->
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_HB_Suite" title="HBTestesNG.TestCases.Test_VoiceACD_Transfer" hash-for-method="VoiceACD_CTransfer_ToExt_SameGroup(10, 10, 10, 10, 10)">VoiceACD_CTransfer_ToExt_SameGroup(10, 10, 10, 10, 10)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Test_HB_Suite" title="HBTestesNG.TestCases.Test_Email_All" hash-for-method="Email_NoQ_Answer_NoWrapTime(10, 10)">Email_NoQ_Answer_NoWrapTime(10, 10)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Test_HB_Suite" title="HBTestesNG.TestCases.Test_Email_All" hash-for-method="Email_Q_Answer(10, 10, 10, 10)">Email_Q_Answer(10, 10, 10, 10)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Test_HB_Suite" title="HBTestesNG.TestCases.Test_Email_All" hash-for-method="Email_Q_OverInterflow_Q_R_Ans_3rdGroup(10, 10, 10, 10, 10)">Email_Q_OverInterflow_Q_R_Ans_3rdGroup(10, 10, 10, 10, 10)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Test_HB_Suite" title="HBTestesNG.TestCases.Test_Email_All" hash-for-method="Email_Q_Overflow_R_Ans_1stGroup(10, 10, 10, 10, 10)">Email_Q_Overflow_R_Ans_1stGroup(10, 10, 10, 10, 10)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Test_HB_Suite" title="HBTestesNG.TestCases.Test_Email_All" hash-for-method="Email_Q_Overflow_R_Ans_2ndGroup(10, 10, 10, 10, 10)">Email_Q_Overflow_R_Ans_2ndGroup(10, 10, 10, 10, 10)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Test_HB_Suite" title="HBTestesNG.TestCases.Test_Email_All" hash-for-method="Email_R_Q_Overflow_Q_R_Ans_2ndGroup(10, 10, 10, 10, 10)">Email_R_Q_Overflow_Q_R_Ans_2ndGroup(10, 10, 10, 10, 10)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Test_HB_Suite" title="HBTestesNG.TestCases.Test_Email_All" hash-for-method="Email_R_Q_Overflow_R_Ans_2ndGroup(10, 10, 10, 10, 10)">Email_R_Q_Overflow_R_Ans_2ndGroup(10, 10, 10, 10, 10)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content passed suite-Test_HB_Suite -->
+                    </div> <!-- method-list-content skipped suite-Test_HB_Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -156,90 +135,67 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Test_HB_Suite" class="panel Test_HB_Suite">
-          <div class="suite-Test_HB_Suite-class-passed">
+          <div class="suite-Test_HB_Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">HBTestesNG.TestCases.Test_Email_All</span>
+              <img src="failed.png"/>
+              <span class="class-name">HBTestesNG.TestCases.Test_VoiceACD_Transfer</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="Email_BTransfer_ToExt_SameGroup(10, 10, 10, 10, 10)">
-                  </a> <!-- Email_BTransfer_ToExt_SameGroup(10, 10, 10, 10, 10) -->
-                  <span class="method-name">Email_BTransfer_ToExt_SameGroup</span>
-                  <span class="parameters">(10, 10, 10, 10, 10)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="Email_NoQ_Answer(10, 10, 10)">
-                  </a> <!-- Email_NoQ_Answer(10, 10, 10) -->
-                  <span class="method-name">Email_NoQ_Answer</span>
-                  <span class="parameters">(10, 10, 10)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="Email_NoQ_Answer_NoWrapTime(10, 10)">
-                  </a> <!-- Email_NoQ_Answer_NoWrapTime(10, 10) -->
-                  <span class="method-name">Email_NoQ_Answer_NoWrapTime</span>
-                  <span class="parameters">(10, 10)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="Email_Q_Answer(10, 10, 10, 10)">
-                  </a> <!-- Email_Q_Answer(10, 10, 10, 10) -->
-                  <span class="method-name">Email_Q_Answer</span>
+                  <a name="VoiceACD_CTransfer_ToExt_DifferentGroup(10, 10, 10, 10)">
+                  </a> <!-- VoiceACD_CTransfer_ToExt_DifferentGroup(10, 10, 10, 10) -->
+                  <span class="method-name">VoiceACD_CTransfer_ToExt_DifferentGroup</span>
                   <span class="parameters">(10, 10, 10, 10)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="Email_Q_OverInterflow_Q_R_Ans_3rdGroup(10, 10, 10, 10, 10)">
-                  </a> <!-- Email_Q_OverInterflow_Q_R_Ans_3rdGroup(10, 10, 10, 10, 10) -->
-                  <span class="method-name">Email_Q_OverInterflow_Q_R_Ans_3rdGroup</span>
-                  <span class="parameters">(10, 10, 10, 10, 10)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="Email_Q_Overflow_R_Ans_1stGroup(10, 10, 10, 10, 10)">
-                  </a> <!-- Email_Q_Overflow_R_Ans_1stGroup(10, 10, 10, 10, 10) -->
-                  <span class="method-name">Email_Q_Overflow_R_Ans_1stGroup</span>
-                  <span class="parameters">(10, 10, 10, 10, 10)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="Email_Q_Overflow_R_Ans_2ndGroup(10, 10, 10, 10, 10)">
-                  </a> <!-- Email_Q_Overflow_R_Ans_2ndGroup(10, 10, 10, 10, 10) -->
-                  <span class="method-name">Email_Q_Overflow_R_Ans_2ndGroup</span>
-                  <span class="parameters">(10, 10, 10, 10, 10)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="Email_R_Q_Overflow_Q_R_Ans_2ndGroup(10, 10, 10, 10, 10)">
-                  </a> <!-- Email_R_Q_Overflow_Q_R_Ans_2ndGroup(10, 10, 10, 10, 10) -->
-                  <span class="method-name">Email_R_Q_Overflow_Q_R_Ans_2ndGroup</span>
-                  <span class="parameters">(10, 10, 10, 10, 10)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="Email_R_Q_Overflow_R_Ans_2ndGroup(10, 10, 10, 10, 10)">
-                  </a> <!-- Email_R_Q_Overflow_R_Ans_2ndGroup(10, 10, 10, 10, 10) -->
-                  <span class="method-name">Email_R_Q_Overflow_R_Ans_2ndGroup</span>
-                  <span class="parameters">(10, 10, 10, 10, 10)</span>
+                  <div class="stack-trace">java.lang.AssertionError: VoiceACD-&gt;Ans-&gt;Consult Transfer to Ext on Different Group has failed because =&gt; 
+@ agent4yc1@c1yc1.comExceptionafter pressing btnDisconnect expected [true] but found [false]
+	at HBTestesNG.BaseObjects.TestCaseObject.failTest(TestCaseObject.java:438)
+	at HBTestesNG.BaseObjects.TestCaseObject.endTestCase(TestCaseObject.java:217)
+	at HBTestesNG.TestCases.Test_VoiceACD_Transfer.VoiceACD_CTransfer_ToExt_DifferentGroup(Test_VoiceACD_Transfer.java:431)
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Test_HB_Suite-class-passed -->
+          </div> <!-- suite-Test_HB_Suite-class-failed -->
+          <div class="suite-Test_HB_Suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">HBTestesNG.TestCases.Test_VoiceACD_Transfer</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="VoiceACD_BTransfer_ToExt_SameGroup_byName(10, 10, 10, 10, 10)">
+                  </a> <!-- VoiceACD_BTransfer_ToExt_SameGroup_byName(10, 10, 10, 10, 10) -->
+                  <span class="method-name">VoiceACD_BTransfer_ToExt_SameGroup_byName</span>
+                  <span class="parameters">(10, 10, 10, 10, 10)</span>
+                  <div class="stack-trace">org.testng.SkipException: Skipping because user want to end test =&gt; VoiceACD-&gt;Ans-&gt;Blind Transfer to Ext on Same Group _byName 
+	at HBTestesNG.BaseObjects.TestCaseObject.skipTest(TestCaseObject.java:434)
+	at HBTestesNG.TestCases.Test_VoiceACD_Transfer.VoiceACD_BTransfer_ToExt_SameGroup_byName(Test_VoiceACD_Transfer.java:80)
+... Removed 24 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="VoiceACD_CTransfer_ToExt_SameGroup(10, 10, 10, 10, 10)">
+                  </a> <!-- VoiceACD_CTransfer_ToExt_SameGroup(10, 10, 10, 10, 10) -->
+                  <span class="method-name">VoiceACD_CTransfer_ToExt_SameGroup</span>
+                  <span class="parameters">(10, 10, 10, 10, 10)</span>
+                  <div class="stack-trace">org.testng.SkipException: Defect:UCC-1642
+	at HBTestesNG.BaseObjects.TestCaseObject.skipTest(TestCaseObject.java:434)
+	at HBTestesNG.TestCases.Test_VoiceACD_Transfer.VoiceACD_CTransfer_ToExt_SameGroup(Test_VoiceACD_Transfer.java:325)
+... Removed 24 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Test_HB_Suite-class-skipped -->
         </div> <!-- panel Test_HB_Suite -->
         <div panel-name="test-xml-Test_HB_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\young\Git_Local\Java_Selenium\test_xml_Files\testing_email.xml</span>
+            <span class="header-content">C:\young\Git_Local\Java_Selenium\test_xml_Files\testing_voice_acd.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -253,24 +209,78 @@
   &lt;parameter name=&quot;wT1&quot; value=&quot;10&quot;/&gt;
   &lt;parameter name=&quot;rT1&quot; value=&quot;10&quot;/&gt;
   &lt;parameter name=&quot;qT1&quot; value=&quot;10&quot;/&gt;
-  &lt;test name=&quot;Email Scenarios&quot;&gt;
+  &lt;test name=&quot;VoiceACD Scenarios&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;HBTestesNG.TestCases.Test_Initiate&quot;/&gt;
-      &lt;class name=&quot;HBTestesNG.TestCases.Test_Email_All&quot;&gt;
+      &lt;class name=&quot;HBTestesNG.TestCases.Test_Preparation&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;Email_NoQ_Answer&quot;/&gt;
-          &lt;include name=&quot;Email_NoQ_Answer_NoWrapTime&quot;/&gt;
-          &lt;include name=&quot;Email_Q_Answer&quot;/&gt;
-          &lt;include name=&quot;Email_Q_Overflow_R_Ans_1stGroup&quot;/&gt;
-          &lt;include name=&quot;Email_Q_Overflow_R_Ans_2ndGroup&quot;/&gt;
-          &lt;include name=&quot;Email_R_Q_Overflow_Q_R_Ans_2ndGroup&quot;/&gt;
-          &lt;include name=&quot;Email_R_Q_Overflow_R_Ans_2ndGroup&quot;/&gt;
-          &lt;include name=&quot;Email_Q_OverInterflow_Q_R_Ans_3rdGroup&quot;/&gt;
-          &lt;include name=&quot;Email_BTransfer_ToExt_SameGroup&quot;/&gt;
+          &lt;exclude name=&quot;VoiceACD_Q_Abandon&quot;/&gt;
+          &lt;exclude name=&quot;VoiceACD_Q_Answer&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- HBTestesNG.TestCases.Test_Email_All --&gt;
+      &lt;/class&gt; &lt;!-- HBTestesNG.TestCases.Test_Preparation --&gt;
+      &lt;class name=&quot;HBTestesNG.TestCases.Test_VoiceACD_Basic&quot;&gt;
+        &lt;methods&gt;
+          &lt;exclude name=&quot;VoiceACD_NoQ_Answer&quot;/&gt;
+          &lt;exclude name=&quot;VoiceACD_Q_Answer&quot;/&gt;
+          &lt;exclude name=&quot;VoiceACD_NoQ_Answer_NoWrapTime&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- HBTestesNG.TestCases.Test_VoiceACD_Basic --&gt;
+      &lt;class name=&quot;HBTestesNG.TestCases.Test_VoiceACD_Transfer&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;VoiceACD_CTransfer_ToExt_SameGroup&quot;/&gt;
+          &lt;include name=&quot;VoiceACD_CTransfer_ToExt_DifferentGroup&quot;/&gt;
+          &lt;include name=&quot;VoiceACD_BTransfer_ToExt_SameGroup_byName&quot;/&gt;
+          &lt;exclude name=&quot;VoiceACD_BTransfer_ToExt_SameGroup&quot;/&gt;
+          &lt;exclude name=&quot;VoiceACD_BTransfer_ToExt_DifferentGroup&quot;/&gt;
+          &lt;exclude name=&quot;VoiceACD_BTransfer_ToExternal&quot;/&gt;
+          &lt;exclude name=&quot;VoiceACD_BTransfer_ToIRN_SameGroup&quot;/&gt;
+          &lt;exclude name=&quot;VoiceACD_BTransfer_ToIRN_DifferentGroup&quot;/&gt;
+          &lt;exclude name=&quot;VoiceACD_BTransfer_ToIRN_AQ&quot;/&gt;
+          &lt;exclude name=&quot;VoiceACD_CTransfer_ToExternal&quot;/&gt;
+          &lt;exclude name=&quot;VoiceACD_CTransfer_ToIRN_SameGroup&quot;/&gt;
+          &lt;exclude name=&quot;VoiceACD_CTransfer_ToIRN_DifferentGroup&quot;/&gt;
+          &lt;exclude name=&quot;VoiceACD_BTransfer_ToExt_DifferentGroup_byName&quot;/&gt;
+          &lt;exclude name=&quot;VoiceACD_CTransfer_ToExt_SameGroup_byName&quot;/&gt;
+          &lt;exclude name=&quot;VoiceACD_CTransfer_ToExt_DifferentGroup_byName&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- HBTestesNG.TestCases.Test_VoiceACD_Transfer --&gt;
+      &lt;class name=&quot;HBTestesNG.TestCases.Test_VoiceACD_Transfer_WrapTimeZero&quot;&gt;
+        &lt;methods&gt;
+          &lt;exclude name=&quot;VoiceACD_BTransfer_ToExt_SameGroup&quot;/&gt;
+          &lt;exclude name=&quot;VoiceACD_BTransfer_ToExt_DifferentGroup&quot;/&gt;
+          &lt;exclude name=&quot;VoiceACD_BTransfer_ToExternal&quot;/&gt;
+          &lt;exclude name=&quot;VoiceACD_BTransfer_ToIRN_SameGroup&quot;/&gt;
+          &lt;exclude name=&quot;VoiceACD_BTransfer_ToIRN_DifferentGroup&quot;/&gt;
+          &lt;exclude name=&quot;VoiceACD_CTransfer_ToExt_SameGroup&quot;/&gt;
+          &lt;exclude name=&quot;VoiceACD_CTransfer_ToExt_DifferentGroup&quot;/&gt;
+          &lt;exclude name=&quot;VoiceACD_CTransfer_ToExternal&quot;/&gt;
+          &lt;exclude name=&quot;VoiceACD_CTransfer_ToIRN_SameGroup&quot;/&gt;
+          &lt;exclude name=&quot;VoiceACD_CTransfer_ToIRN_DifferentGroup&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- HBTestesNG.TestCases.Test_VoiceACD_Transfer_WrapTimeZero --&gt;
+      &lt;class name=&quot;HBTestesNG.TestCases.Test_VoiceACD_Conference&quot;&gt;
+        &lt;methods&gt;
+          &lt;exclude name=&quot;VoiceACD_CConference_ToExt_DifferentGroup&quot;/&gt;
+          &lt;exclude name=&quot;VoiceACD_CConference_ToExt_SameGroup&quot;/&gt;
+          &lt;exclude name=&quot;VoiceACD_CConference_ToIRN_DifferentGroup&quot;/&gt;
+          &lt;exclude name=&quot;VoiceACD_CConference_ToIRN_SameGroup&quot;/&gt;
+          &lt;exclude name=&quot;VoiceACD_CConference_ToExternal&quot;/&gt;
+          &lt;exclude name=&quot;VoiceACD_CConference_ToExt_DifferentGroup_byName&quot;/&gt;
+          &lt;exclude name=&quot;VoiceACD_CConference_ToExt_SameGroup_byName&quot;/&gt;
+          &lt;exclude name=&quot;VoiceACD_CConference_All&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- HBTestesNG.TestCases.Test_VoiceACD_Conference --&gt;
+      &lt;class name=&quot;HBTestesNG.TestCases.Test_VoiceACD_Conference_WrapTimeZero&quot;&gt;
+        &lt;methods&gt;
+          &lt;exclude name=&quot;VoiceACD_CConference_ToExt_DifferentGroup&quot;/&gt;
+          &lt;exclude name=&quot;VoiceACD_CConference_ToExt_SameGroup&quot;/&gt;
+          &lt;exclude name=&quot;VoiceACD_CConference_ToIRN_DifferentGroup&quot;/&gt;
+          &lt;exclude name=&quot;VoiceACD_CConference_ToIRN_SameGroup&quot;/&gt;
+          &lt;exclude name=&quot;VoiceACD_CConference_ToExternal&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- HBTestesNG.TestCases.Test_VoiceACD_Conference_WrapTimeZero --&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Email Scenarios --&gt;
+  &lt;/test&gt; &lt;!-- VoiceACD Scenarios --&gt;
 &lt;/suite&gt; &lt;!-- Test HB Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -282,7 +292,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Email Scenarios (2 classes)</span>
+                <span class="test-name">VoiceACD Scenarios (7 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -293,42 +303,18 @@
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="test-group">
-              <span class="test-group-name">Test_Email_All_ClassLevel</span>
+              <span class="test-group-name">VoiceACD_Transfer_ClassLevel</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">Email_BTransfer_ToExt_SameGroup</span>
+                <span class="method-in-group-name">VoiceACD_BTransfer_ToExt_SameGroup_byName</span>
                 <br/>
               </div> <!-- method-in-group -->
               <div class="method-in-group">
-                <span class="method-in-group-name">Email_NoQ_Answer</span>
+                <span class="method-in-group-name">VoiceACD_CTransfer_ToExt_DifferentGroup</span>
                 <br/>
               </div> <!-- method-in-group -->
               <div class="method-in-group">
-                <span class="method-in-group-name">Email_NoQ_Answer_NoWrapTime</span>
-                <br/>
-              </div> <!-- method-in-group -->
-              <div class="method-in-group">
-                <span class="method-in-group-name">Email_Q_Answer</span>
-                <br/>
-              </div> <!-- method-in-group -->
-              <div class="method-in-group">
-                <span class="method-in-group-name">Email_Q_OverInterflow_Q_R_Ans_3rdGroup</span>
-                <br/>
-              </div> <!-- method-in-group -->
-              <div class="method-in-group">
-                <span class="method-in-group-name">Email_Q_Overflow_R_Ans_1stGroup</span>
-                <br/>
-              </div> <!-- method-in-group -->
-              <div class="method-in-group">
-                <span class="method-in-group-name">Email_Q_Overflow_R_Ans_2ndGroup</span>
-                <br/>
-              </div> <!-- method-in-group -->
-              <div class="method-in-group">
-                <span class="method-in-group-name">Email_R_Q_Overflow_Q_R_Ans_2ndGroup</span>
-                <br/>
-              </div> <!-- method-in-group -->
-              <div class="method-in-group">
-                <span class="method-in-group-name">Email_R_Q_Overflow_R_Ans_2ndGroup</span>
+                <span class="method-in-group-name">VoiceACD_CTransfer_ToExt_SameGroup</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -348,48 +334,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(9);
+data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'Email_NoQ_Answer_NoWrapTime')
-data.setCell(0, 2, 'HBTestesNG.TestCases.Test_Email_All')
-data.setCell(0, 3, 483929);
+data.setCell(0, 1, 'VoiceACD_CTransfer_ToExt_DifferentGroup')
+data.setCell(0, 2, 'HBTestesNG.TestCases.Test_VoiceACD_Transfer')
+data.setCell(0, 3, 142529);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'Email_Q_OverInterflow_Q_R_Ans_3rdGroup')
-data.setCell(1, 2, 'HBTestesNG.TestCases.Test_Email_All')
-data.setCell(1, 3, 478297);
+data.setCell(1, 1, 'VoiceACD_CTransfer_ToExt_SameGroup')
+data.setCell(1, 2, 'HBTestesNG.TestCases.Test_VoiceACD_Transfer')
+data.setCell(1, 3, 4);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'Email_R_Q_Overflow_Q_R_Ans_2ndGroup')
-data.setCell(2, 2, 'HBTestesNG.TestCases.Test_Email_All')
-data.setCell(2, 3, 394341);
-data.setCell(3, 0, 3)
-data.setCell(3, 1, 'Email_R_Q_Overflow_R_Ans_2ndGroup')
-data.setCell(3, 2, 'HBTestesNG.TestCases.Test_Email_All')
-data.setCell(3, 3, 389667);
-data.setCell(4, 0, 4)
-data.setCell(4, 1, 'Email_Q_Overflow_R_Ans_2ndGroup')
-data.setCell(4, 2, 'HBTestesNG.TestCases.Test_Email_All')
-data.setCell(4, 3, 377975);
-data.setCell(5, 0, 5)
-data.setCell(5, 1, 'Email_BTransfer_ToExt_SameGroup')
-data.setCell(5, 2, 'HBTestesNG.TestCases.Test_Email_All')
-data.setCell(5, 3, 375973);
-data.setCell(6, 0, 6)
-data.setCell(6, 1, 'Email_Q_Overflow_R_Ans_1stGroup')
-data.setCell(6, 2, 'HBTestesNG.TestCases.Test_Email_All')
-data.setCell(6, 3, 374490);
-data.setCell(7, 0, 7)
-data.setCell(7, 1, 'Email_Q_Answer')
-data.setCell(7, 2, 'HBTestesNG.TestCases.Test_Email_All')
-data.setCell(7, 3, 358435);
-data.setCell(8, 0, 8)
-data.setCell(8, 1, 'Email_NoQ_Answer')
-data.setCell(8, 2, 'HBTestesNG.TestCases.Test_Email_All')
-data.setCell(8, 3, 348655);
+data.setCell(2, 1, 'VoiceACD_BTransfer_ToExt_SameGroup_byName')
+data.setCell(2, 2, 'HBTestesNG.TestCases.Test_VoiceACD_Transfer')
+data.setCell(2, 3, 1);
 window.suiteTableData['Test_HB_Suite']= { tableData: data, tableDiv: 'times-div-Test_HB_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 59 minutes</span>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
               <div id="times-div-Test_HB_Suite">
               </div> <!-- times-div-Test_HB_Suite -->
             </div> <!-- times-div -->
@@ -404,9 +366,119 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Test_HB_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">40 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">HBTestesNG.TestCases.Test_VoiceACD_Transfer</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">VoiceACD_CTransfer_ToExternal</span>
+                <br/>
+                <span class="ignored-method-name">VoiceACD_BTransfer_ToExt_DifferentGroup_byName</span>
+                <br/>
+                <span class="ignored-method-name">VoiceACD_CTransfer_ToExt_SameGroup_byName</span>
+                <br/>
+                <span class="ignored-method-name">VoiceACD_BTransfer_ToIRN_DifferentGroup</span>
+                <br/>
+                <span class="ignored-method-name">VoiceACD_BTransfer_ToExternal</span>
+                <br/>
+                <span class="ignored-method-name">VoiceACD_CTransfer_ToExt_DifferentGroup_byName</span>
+                <br/>
+                <span class="ignored-method-name">VoiceACD_CTransfer_ToIRN_SameGroup</span>
+                <br/>
+                <span class="ignored-method-name">VoiceACD_BTransfer_ToIRN_SameGroup</span>
+                <br/>
+                <span class="ignored-method-name">VoiceACD_CTransfer_ToIRN_DifferentGroup</span>
+                <br/>
+                <span class="ignored-method-name">VoiceACD_BTransfer_ToExt_SameGroup</span>
+                <br/>
+                <span class="ignored-method-name">VoiceACD_BTransfer_ToIRN_AQ</span>
+                <br/>
+                <span class="ignored-method-name">VoiceACD_BTransfer_ToExt_DifferentGroup</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">HBTestesNG.TestCases.Test_VoiceACD_Conference_WrapTimeZero</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">VoiceACD_CConference_ToExternal</span>
+                <br/>
+                <span class="ignored-method-name">VoiceACD_CConference_ToExt_DifferentGroup</span>
+                <br/>
+                <span class="ignored-method-name">VoiceACD_CConference_ToIRN_DifferentGroup</span>
+                <br/>
+                <span class="ignored-method-name">VoiceACD_CConference_ToExt_SameGroup</span>
+                <br/>
+                <span class="ignored-method-name">VoiceACD_CConference_ToIRN_SameGroup</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">HBTestesNG.TestCases.Test_Preparation</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">VoiceACD_Q_Answer</span>
+                <br/>
+                <span class="ignored-method-name">VoiceACD_Q_Abandon</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">HBTestesNG.TestCases.Test_VoiceACD_Transfer_WrapTimeZero</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">VoiceACD_BTransfer_ToExternal</span>
+                <br/>
+                <span class="ignored-method-name">VoiceACD_BTransfer_ToIRN_DifferentGroup</span>
+                <br/>
+                <span class="ignored-method-name">VoiceACD_CTransfer_ToExt_DifferentGroup</span>
+                <br/>
+                <span class="ignored-method-name">VoiceACD_CTransfer_ToExt_SameGroup</span>
+                <br/>
+                <span class="ignored-method-name">VoiceACD_BTransfer_ToExt_DifferentGroup</span>
+                <br/>
+                <span class="ignored-method-name">VoiceACD_BTransfer_ToExt_SameGroup</span>
+                <br/>
+                <span class="ignored-method-name">VoiceACD_CTransfer_ToIRN_DifferentGroup</span>
+                <br/>
+                <span class="ignored-method-name">VoiceACD_BTransfer_ToIRN_SameGroup</span>
+                <br/>
+                <span class="ignored-method-name">VoiceACD_CTransfer_ToIRN_SameGroup</span>
+                <br/>
+                <span class="ignored-method-name">VoiceACD_CTransfer_ToExternal</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">HBTestesNG.TestCases.Test_VoiceACD_Conference</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">VoiceACD_CConference_ToExt_SameGroup_byName</span>
+                <br/>
+                <span class="ignored-method-name">VoiceACD_CConference_ToExt_SameGroup</span>
+                <br/>
+                <span class="ignored-method-name">VoiceACD_CConference_ToExternal</span>
+                <br/>
+                <span class="ignored-method-name">VoiceACD_CConference_ToExt_DifferentGroup_byName</span>
+                <br/>
+                <span class="ignored-method-name">VoiceACD_CConference_ToExt_DifferentGroup</span>
+                <br/>
+                <span class="ignored-method-name">VoiceACD_CConference_All</span>
+                <br/>
+                <span class="ignored-method-name">VoiceACD_CConference_ToIRN_SameGroup</span>
+                <br/>
+                <span class="ignored-method-name">VoiceACD_CConference_ToIRN_DifferentGroup</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">HBTestesNG.TestCases.Test_VoiceACD_Basic</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">VoiceACD_NoQ_Answer</span>
+                <br/>
+                <span class="ignored-method-name">VoiceACD_NoQ_Answer_NoWrapTime</span>
+                <br/>
+                <span class="ignored-method-name">VoiceACD_Q_Answer</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Test_HB_Suite" class="panel">
@@ -422,57 +494,35 @@ return data;
               </div> <!-- configuration-suite before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">HBTestesNG.TestCases.Test_Email_All</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">HBTestesNG.TestCases.Test_VoiceACD_Transfer</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">117618 ms</span>
+                <span class="method-start">107328 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">Email_NoQ_Answer(10, 10, 10)</span>
-                <span class="method-start">129218 ms</span>
+                <span class="method-name">VoiceACD_CTransfer_ToExt_SameGroup(10, 10, 10, 10, 10)</span>
+                <span class="method-start">107333 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">Email_NoQ_Answer_NoWrapTime(10, 10)</span>
-                <span class="method-start">477875 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">VoiceACD_CTransfer_ToExt_DifferentGroup(10, 10, 10, 10)</span>
+                <span class="method-start">107339 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">Email_Q_Answer(10, 10, 10, 10)</span>
-                <span class="method-start">961806 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">Email_Q_Overflow_R_Ans_1stGroup(10, 10, 10, 10, 10)</span>
-                <span class="method-start">1320242 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">Email_Q_Overflow_R_Ans_2ndGroup(10, 10, 10, 10, 10)</span>
-                <span class="method-start">1694734 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">Email_R_Q_Overflow_Q_R_Ans_2ndGroup(10, 10, 10, 10, 10)</span>
-                <span class="method-start">2072710 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">Email_R_Q_Overflow_R_Ans_2ndGroup(10, 10, 10, 10, 10)</span>
-                <span class="method-start">2467052 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">Email_Q_OverInterflow_Q_R_Ans_3rdGroup(10, 10, 10, 10, 10)</span>
-                <span class="method-start">2856720 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">Email_BTransfer_ToExt_SameGroup(10, 10, 10, 10, 10)</span>
-                <span class="method-start">3335018 ms</span>
+                <span class="method-name">VoiceACD_BTransfer_ToExt_SameGroup_byName(10, 10, 10, 10, 10)</span>
+                <span class="method-start">249870 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">afterClass</span>
-                <span class="method-start">3710992 ms</span>
+                <span class="method-start">249872 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">HBTestesNG.TestCases.Test_Initiate</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">afterSuite</span>
-                <span class="method-start">3711013 ms</span>
+                <span class="method-start">249892 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

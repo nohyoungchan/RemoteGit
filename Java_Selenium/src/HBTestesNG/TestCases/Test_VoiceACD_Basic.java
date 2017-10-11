@@ -36,8 +36,8 @@ public class Test_VoiceACD_Basic extends TestCaseObject {
 		//#########################
 		//resetAllActors(testName);
 		agent1.resumeAgent();
-		agent2.releaseAgent();
-		//agent2.releaseAgentSecondCode();
+		//agent2.releaseAgent();
+		agent2.releaseAgentSecondCode();
 		agent3.resumeAgent();
 
 		try{
@@ -108,11 +108,12 @@ public class Test_VoiceACD_Basic extends TestCaseObject {
 			
 			//############################
 			agent1.disconnectByWebAgent();
-			sup1.Max_LogIn_changeWrapAndFRTime_LogOut_Min(aa.services.get(0).name, "20", "30");
+			
 		}catch(Exception e){
 			log.info("I am handling General exception=>"+ e.toString());
 			resetAllActors(testName);
 		}finally{
+			sup1.Max_LogIn_changeWrapAndFRTime_LogOut_Min(aa.services.get(0).name, "20", "30");
 			endTestCase(testName);
 	}
 	}

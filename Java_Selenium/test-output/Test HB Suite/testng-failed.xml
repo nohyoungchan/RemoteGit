@@ -8,15 +8,17 @@
   <parameter name="wT1" value="10"/>
   <parameter name="rT1" value="10"/>
   <parameter name="qT1" value="10"/>
-  <test name="Email Scenarios(failed)">
+  <test name="VoiceACD Scenarios(failed)">
     <classes>
-      <class name="HBTestesNG.TestCases.Test_Email_All">
+      <class name="HBTestesNG.TestCases.Test_VoiceACD_Transfer">
         <methods>
+          <include name="VoiceACD_CTransfer_ToExt_DifferentGroup" invocation-numbers="0"/>
+          <include name="VoiceACD_CTransfer_ToExt_SameGroup" invocation-numbers="0"/>
           <include name="beforeClass"/>
           <include name="afterClass"/>
-          <include name="Email_Q_OverInterflow_Q_R_Ans_3rdGroup" invocation-numbers="0"/>
+          <include name="VoiceACD_BTransfer_ToExt_SameGroup_byName" invocation-numbers="0"/>
         </methods>
-      </class> <!-- HBTestesNG.TestCases.Test_Email_All -->
+      </class> <!-- HBTestesNG.TestCases.Test_VoiceACD_Transfer -->
       <class name="HBTestesNG.TestCases.Test_Initiate">
         <methods>
           <include name="beforeSuite"/>
@@ -24,5 +26,5 @@
         </methods>
       </class> <!-- HBTestesNG.TestCases.Test_Initiate -->
     </classes>
-  </test> <!-- Email Scenarios(failed) -->
+  </test> <!-- VoiceACD Scenarios(failed) -->
 </suite> <!-- Failed suite [Test HB Suite] -->

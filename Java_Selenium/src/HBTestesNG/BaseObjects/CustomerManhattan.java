@@ -209,7 +209,7 @@ public class CustomerManhattan  extends TestObject {
 	    		wait(2);
 	    	}
 
-		  log.info("\n@ Manhattan : " +  username + " #### Making ACD call ####");
+		  log.info("\n@ Manhattan : " +  username + " #### Making ACD call to : "+ number);
 
 		  clickAppear(screen, patternoffhookBtn, 5);
 		  screen.type(number);
@@ -313,17 +313,20 @@ public class CustomerManhattan  extends TestObject {
 		  //if (state.contains("idle")) return;
 		  
 		  log.info("\n@ Manhattan : " +  username + " #### Dropping a call for a reset ####");
-	
-		  String callBox = imgFolder +"mh_callBox";
-		  String dropBtn = imgFolder +"mh_dropBtn";
+		  
+		  Pattern callBox = new Pattern(imgFolder +"mh_callBox.PNG").targetOffset(0, 10);
+		  Pattern dropBtn = new Pattern(imgFolder +"mh_dropBtn.PNG").targetOffset(20, 0);
 	    	
 		  if(activateManhattan()==0) {
 			  log.info("Manhattan is already closed");
 			  return;
 		  }else {
-	    	  if (clickAppear(screen, callBox, 5)) {
-	    		  clickAppear(screen, dropBtn, 5);
-	    	  }
+			  while (null != screen.exists(callBox)) {
+		    		log.info("@ cleaning a remaining call");
+		    		clickAppear(screen, callBox, 5);
+		    		clickAppear(screen, dropBtn, 5);
+		    		wait(2);
+		    	}
 		  }
     	  
 		  currentTime();

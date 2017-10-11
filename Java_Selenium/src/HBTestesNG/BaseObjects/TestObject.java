@@ -34,11 +34,14 @@ public class TestObject extends Thread{
 	  public static int errorCount = 0;
 	  public static String errorString = "start_good;";
 	  public String currentState;
+	  public static String testNameGlobal;
+	  public static int intervalRan = 99;  //It is going to be 0, 1, 2, 34 intervals.
 
 	  
 	  protected TestObject(){
 		  PropertyConfigurator.configure(".\\log\\log4j.properties");
 		  currentState ="created";
+		  testNameGlobal ="not_Assigned_yet";
 	  }
 	 
   
@@ -190,6 +193,35 @@ public class TestObject extends Thread{
 		  secUNtilTommrowOneAm = (int) ((oneAmTomorrowMili- currentTimeMili)/1000);
 		  log.info("$$$$ To start test, wait until tomorrow 1 am =>  " + timeConversion(secUNtilTommrowOneAm));
 		  Thread.sleep(oneAmTomorrowMili- currentTimeMili);
+		  
+	  }
+	  
+	  
+      public static void runTestEvery15Min() throws Exception{
+		  
+		  //0 means, just run immediately.
+		  //if (intMin == 0){return;}
+    	  if (AllActors.iniMain.get("TestFlow", "runTestEvery15Min").contains("no")) {
+    		  return;
+    	  }
+				  
+		  Calendar now = Calendar.getInstance();
+		  int minuteNow = now.get(Calendar.MINUTE);
+		  int minModuleResult = minuteNow % 15;
+		  int currentInterval = minuteNow / 15;
+		  int minRemaining = 15 - minModuleResult;
+		  
+		  
+		  //The default value for intervalRan is 99
+		  if (minRemaining >= 5 && intervalRan != currentInterval) {
+			  log.info("Running now");
+		  }else {
+			  log.info("Wait : " + minRemaining);
+			  TimeUnit.MINUTES.sleep(minRemaining);
+			  //Thread.sleep(60 * minRemaining * 1000);	  
+		  }
+		  
+		  intervalRan = currentInterval;
 		  
 	  }
 	  

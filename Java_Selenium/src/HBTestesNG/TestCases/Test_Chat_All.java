@@ -34,7 +34,7 @@ public class Test_Chat_All extends TestCaseObject {
 	
 	@Parameters({"rT1"})
 	public void Chat_Ring_Abandon(int rT1) throws Exception {
-		String testName = "Test Case: Chat->Ring->Disconnect";
+		String testName = "Chat->Ring->Disconnect";
 		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
 		
 		//#########################
@@ -60,7 +60,7 @@ public class Test_Chat_All extends TestCaseObject {
 	
 	@Parameters({"rT1"})
 	public void Chat_Queue_Abandon(int rT1) throws Exception {
-		String testName = "Test Case: Chat->Queue->Disconnect";
+		String testName = "Chat->Queue->Disconnect";
 		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
 		
 		//#########################
@@ -86,7 +86,7 @@ public class Test_Chat_All extends TestCaseObject {
 	
 	@Parameters({"rT1", "tT1", "wT1"})
 	public void Chat_NoQ_Answer(int rT1, int tT1, int wT1) throws Exception {
-		String testName = "Test Case: Chat->NoQ->Answered";
+		String testName = "Chat->NoQ->Answered";
 		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
 		
 		//#########################
@@ -164,11 +164,12 @@ public class Test_Chat_All extends TestCaseObject {
 			
 			//############################
 			chatCustomer1.disconnectChat();
-			sup1.Max_changeWrapAndFRTime_LogOut_Min(aa.services.get(0).name, "20", "30");
+			
 		}catch(Exception e){
 			log.info("I am handling General exception=>"+ e.toString());
 			resetAllActors(testName);
 		}finally{
+			sup1.Max_changeWrapAndFRTime_LogOut_Min(aa.services.get(0).name, "20", "30");
 			endTestCase(testName);
 	  }
 	}
