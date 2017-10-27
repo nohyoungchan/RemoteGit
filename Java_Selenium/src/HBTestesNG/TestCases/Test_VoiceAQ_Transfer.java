@@ -4,8 +4,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.AfterClass;
-
-import HBTestesNG.BaseObjects.*;import org.testng.SkipException;
+import HBTestesNG.BaseObjects.*;
 
 @Test(groups= {"VoiceAQ_Transfer_ClassLevel"})
 public class Test_VoiceAQ_Transfer extends TestCaseObject {	
@@ -32,7 +31,7 @@ public class Test_VoiceAQ_Transfer extends TestCaseObject {
 	public void VoiceAQ_BTransfer_ToExt_SameGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
 		String testName = "VoiceAQ->Ans->Blind Transfer to Ext on Same Group ";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		
 		try{
 			//#########################
@@ -68,7 +67,7 @@ public class Test_VoiceAQ_Transfer extends TestCaseObject {
 	public void VoiceAQ_BTransfer_ToExt_DifferentGroup(int rT1, int tT1, int rT2, int tT2) throws Exception {
 		
 		String testName = "VoiceAQ->Ans->Blind Transfer to Ext on Different Group ";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -101,7 +100,7 @@ public class Test_VoiceAQ_Transfer extends TestCaseObject {
 	public void VoiceAQ_BTransfer_ToExternal(int rT1, int tT1, int rT2, int tT2) throws Exception {
 		
 		String testName = "VoiceAQ->Ans->Blind Transfer to External number ";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -133,7 +132,7 @@ public class Test_VoiceAQ_Transfer extends TestCaseObject {
 	public void VoiceAQ_BTransfer_ToIRN_SameGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
 		String testName = "VoiceAQ->Ans->Blind Transfer to Ext on Same Group ";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -167,7 +166,7 @@ public class Test_VoiceAQ_Transfer extends TestCaseObject {
 	public void VoiceAQ_BTransfer_ToIRN_DifferentGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
 		String testName = "VoiceAQ->Ans->Blind Transfer to Ext on Different Group ";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -201,7 +200,7 @@ public class Test_VoiceAQ_Transfer extends TestCaseObject {
 	public void VoiceAQ_BTransfer_ToIRN_AQ(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
 		String testName = "VoiceAQ->Ans->Blind Transfer to IRN to AQ ";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -235,7 +234,7 @@ public class Test_VoiceAQ_Transfer extends TestCaseObject {
 	public void VoiceAQ_CTransfer_ToExt_SameGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
 		String testName = "VoiceAQ->Ans->Consult Transfer to Ext on Same Group";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -271,7 +270,7 @@ public class Test_VoiceAQ_Transfer extends TestCaseObject {
 	public void VoiceAQ_CTransfer_ToExt_DifferentGroup(int rT1, int tT1, int rT2, int tT2) throws Exception {
 		
 		String testName = "VoiceAQ->Ans->Consult Transfer to Ext on Different Group";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -305,7 +304,7 @@ public class Test_VoiceAQ_Transfer extends TestCaseObject {
 	public void VoiceAQ_CTransfer_ToExternal(int rT1, int tT1, int rT2, int tT2) throws Exception {
 		
 		String testName = "VoiceAQ->Ans->Consult Transfer to External number";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -342,7 +341,7 @@ public class Test_VoiceAQ_Transfer extends TestCaseObject {
 	public void VoiceAQ_CTransfer_ToIRN_SameGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
 		String testName = "VoiceAQ->Ans->Consult Transfer to IRN on Same Group ";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -377,7 +376,7 @@ public class Test_VoiceAQ_Transfer extends TestCaseObject {
 	public void VoiceAQ_CTransfer_ToIRN_DifferentGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
 		String testName = "VoiceAQ->Ans->Consult Transfer to IRN on Different Group ";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{

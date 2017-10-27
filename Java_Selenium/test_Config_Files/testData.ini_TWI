@@ -16,14 +16,14 @@ emailContent=This_is_Email_Content for C1HB1
 
 
 [CustomerVoice]
-max=1
-CustomerVoice1.name=agent6yc1@c1yc1.com
-CustomerVoice1.password=Shoreadmin1
-CustomerVoice1.extension=4006
-CustomerVoice1.did=4006
+max=0
+CustomerVoice1.name=customer1@rickandmorty.twi.ucc1.com
+CustomerVoice1.password=Shoreadmin1#
+CustomerVoice1.extension=6104
+CustomerVoice1.did=14085856104
 
 [CustomerChat]
-max=0
+max=1
 tenantPrefix=80005
 chatIRN=5555
 stOrMt=st
@@ -39,7 +39,7 @@ CustomerEmail1.domain=qa
 
 [CCD]
 max=1
-supervisor1.name=agent1yc1@c1yc1.com 
+supervisor1.name=super1@rickandmorty.twi.ucc1.com
 supervisor1.password=Shoreadmin1#
 
 
@@ -47,21 +47,21 @@ supervisor1.password=Shoreadmin1#
 max=3
 
 ## agent1/2 belongs to Group1
-agent1.name=agent1yc1@c1yc1.com 
+agent1.name=agent1@rickandmorty.twi.ucc1.com
 agent1.password=Shoreadmin1#
-agent1.extension=4001
-agent1.did=4001
+agent1.extension=6011
+agent1.did=6011
 
-agent2.name=agent2yc1@c1yc1.com 
-agent2.password=Shoreadmin1
-agent2.extension=4002
-agent2.did=4002
+agent2.name=agent2@rickandmorty.twi.ucc1.com
+agent2.password=Shoreadmin1#
+agent2.extension=6012
+agent2.did=6012
 
 ## agent3 belongs to Group2
-agent3.name=agent4yc1@c1yc1.com 
-agent3.password=Shoreadmin1
-agent3.extension=4004
-agent3.did=4004
+agent3.name=agent3@rickandmorty.twi.ucc1.com 
+agent3.password=Shoreadmin1#
+agent3.extension=6013
+agent3.did=6013
 
 
 
@@ -69,53 +69,53 @@ agent3.did=4004
 max=6
 
 # This calls service1->Group1
-irn1.irnNum=4021
-irn1.dnisNum=DNIS_4021
-irn1.didNum=4021
+irn1.irnNum=7002
+irn1.dnisNum=DNIS_7002
+irn1.didNum=7002
 
 # This calls service3->Group3
-irn2.irnNum=4023
-irn2.dnisNum=DNIS_4023
-irn2.didNum=4023
+irn2.irnNum=7003
+irn2.dnisNum=DNIS_7003
+irn2.didNum=7003
 
 # This calls AQ->agent1
-irn3.irnNum=4024
-irn3.dnisNum=DNIS_4024
-irn3.didNum=4024
+irn3.irnNum=7004
+irn3.dnisNum=DNIS_7004
+irn3.didNum=7004
 
 #This calls AQ->agent3
-irn4.irnNum=4025
-irn4.dnisNum=DNIS_4025
-irn4.didNum=4025
+irn4.irnNum=7005
+irn4.dnisNum=DNIS_7005
+irn4.didNum=7005
 
 #This calls a script->transfer to agent1
-irn5.irnNum=4026
-irn5.dnisNum=DNIS_4026
-irn5.didNum=4026
+irn5.irnNum=7006
+irn5.dnisNum=DNIS_7006
+irn5.didNum=7006
 
 
 #This is Email IRN
-irn6.irnNum=YC1_EIRN1
-irn6.dnisNum=YC1_EIRN1
-irn6.didNum=YC1_EIRN1
+irn6.irnNum=twi_EIRN1
+irn6.dnisNum=twi_EIRN1
+irn6.didNum=twi_EIRN1
 
 
 
 
 [Service]
 max=4
-service1.name=YC1_Service1
-service1.destination=YC1_Group1
+service1.name=twi_Service1
+service1.destination=twi_Group1
 service1.wrapupTime=20
 service1.forcedReleaseTime=30
 service1.overflowTimeout=60
-service1.overflowDestination=YC1_Group2
+service1.overflowDestination=twi_Group2
 service1.interflowTimeout=120
 service1.interflowDestinationType=Service
-service1.interflowDestination=YC1_Service3
+service1.interflowDestination=twi_Service3
 
-service2.name=YC1_Service2
-service2.destination=YC1_Group2
+service2.name=twi_Service2
+service2.destination=twi_Group2
 service2.wrapupTime=20
 service2.forcedReleaseTime=30
 service2.overflowTimeout=NA
@@ -124,8 +124,8 @@ service2.interflowTimeout=NA
 service2.interflowDestinationType=NA
 service2.interflowDestination=NA
 
-service3.name=YC1_Service3
-service3.destination=YC1_Group3
+service3.name=twi_Service3
+service3.destination=twi_Group3
 service3.wrapupTime=20
 service3.forcedReleaseTime=30
 service3.overflowTimeout=NA
@@ -134,12 +134,12 @@ service3.interflowTimeout=NA
 service3.interflowDestinationType=NA
 service3.interflowDestination=NA
 
-service4.name=YC1_EService1
-service4.destination=EGroupOne
+service4.name=twi_EService1
+service4.destination=twi_EGroup1
 service4.wrapupTime=20
 service4.forcedReleaseTime=30
 service4.overflowTimeout=00:01:00
-service4.overflowDestination=YC1_Egroup2
+service4.overflowDestination=twi_Egroup2
 service4.interflowTimeout=00:02:00
 service4.interflowDestinationType=Service
-service4.interflowDestination=YC1_EService3
+service4.interflowDestination=twi_EService3

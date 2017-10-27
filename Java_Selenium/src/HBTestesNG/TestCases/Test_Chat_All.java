@@ -6,11 +6,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.AfterClass;
 
 import HBTestesNG.BaseObjects.*;
-import HBTestesNG.BaseObjects.*;
-
 import org.testng.Assert;
-import org.testng.SkipException; 
-import Utility.PostCondition;
+
 
 @Test(groups= {"Chat_All_ClassLevel"})
 public class Test_Chat_All extends TestCaseObject {
@@ -35,7 +32,7 @@ public class Test_Chat_All extends TestCaseObject {
 	@Parameters({"rT1"})
 	public void Chat_Ring_Abandon(int rT1) throws Exception {
 		String testName = "Chat->Ring->Disconnect";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		
 		//#########################
 		//resetAllActors(testName);
@@ -61,7 +58,7 @@ public class Test_Chat_All extends TestCaseObject {
 	@Parameters({"rT1"})
 	public void Chat_Queue_Abandon(int rT1) throws Exception {
 		String testName = "Chat->Queue->Disconnect";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		
 		//#########################
 		//resetAllActors(testName);
@@ -87,7 +84,7 @@ public class Test_Chat_All extends TestCaseObject {
 	@Parameters({"rT1", "tT1", "wT1"})
 	public void Chat_NoQ_Answer(int rT1, int tT1, int wT1) throws Exception {
 		String testName = "Chat->NoQ->Answered";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		
 		//#########################
 		//resetAllActors(testName);
@@ -120,7 +117,7 @@ public class Test_Chat_All extends TestCaseObject {
 	@Parameters({"qT1", "rT1", "tT1", "wT1"})
 	public void Chat_Q_Answer(int qT1, int rT1, int tT1, int wT1) throws Exception {
 		String testName = "Chat->Q->Answered";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		agent1.releaseAgent();
 		agent2.releaseAgentSecondCode();
@@ -148,9 +145,9 @@ public class Test_Chat_All extends TestCaseObject {
 	@Parameters({"rT1", "tT1"})
 	public void Chat_NoQ_Answer_NoWrapTime(int rT1, int tT1) throws Exception {
 		String testName = "Chat->NoQ->Answered with No Wrap time";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
-		sup1.Max_LogIn_changeWrapAndFRTime_Min(aa.services.get(0).name, "0", "40");
+		sup1.Max_LogIn_changeWrapAndFRTime_Min(AllActors.services.get(0).name, "0", "40");
 		 
 		//#########################
 		agent1.resumeAgent();
@@ -169,7 +166,7 @@ public class Test_Chat_All extends TestCaseObject {
 			log.info("I am handling General exception=>"+ e.toString());
 			resetAllActors(testName);
 		}finally{
-			sup1.Max_changeWrapAndFRTime_LogOut_Min(aa.services.get(0).name, "20", "30");
+			sup1.Max_changeWrapAndFRTime_LogOut_Min(AllActors.services.get(0).name, "20", "30");
 			endTestCase(testName);
 	  }
 	}
@@ -179,7 +176,7 @@ public class Test_Chat_All extends TestCaseObject {
 	public void Chat_BTransfer_ByExt_SameGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 	
 		String testName = "Chat->Ans->Blind Transfer to Ext on Same Group ";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -215,7 +212,7 @@ public class Test_Chat_All extends TestCaseObject {
 	public void Chat_BTransfer_ByAgentName_SameGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 	
 		String testName = "Chat->Ans->Blind Transfer by agent name on Same Group ";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -252,7 +249,7 @@ public class Test_Chat_All extends TestCaseObject {
 	public void Chat_R_Q_Overflow_R_Ans_2ndGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
 		String testName = "Chat->Ring->Q->Overflow->Ring->Answer on the 2nd group";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -284,7 +281,7 @@ public class Test_Chat_All extends TestCaseObject {
 	public void Chat_R_Q_Overflow_Q_R_Ans_2ndGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
 		String testName = "Chat->Ring->Q->Overflow->Q->Ring->Answer on the 2nd group";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -318,7 +315,7 @@ public class Test_Chat_All extends TestCaseObject {
 	public void Chat_Q_Overflow_R_Ans_2ndGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
 		String testName = "Chat->Q->Overflow->Ring->Answer on the 2nd group";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -349,7 +346,7 @@ public class Test_Chat_All extends TestCaseObject {
 	public void Chat_Q_Overflow_R_Ans_1stGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
 		String testName = "Chat->Q->Overflow->Ring->Answer on the 2nd group";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -383,7 +380,7 @@ public class Test_Chat_All extends TestCaseObject {
 	public void Chat_Q_OverInterflow_Q_R_Ans_3rdGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
 		String testName = "Chat->Q->OverInterflow->Q->Ring->Answer on the 3rd group";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -417,7 +414,7 @@ public class Test_Chat_All extends TestCaseObject {
 		public void Chat_All_Repeat(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 			
 			String testName = "Chat_All_Repeat";
-			if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+			if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 			//#########################
 			
 			try{

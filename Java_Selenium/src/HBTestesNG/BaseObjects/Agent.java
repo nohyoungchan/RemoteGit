@@ -44,7 +44,6 @@ import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriverService;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.remote.SessionNotFoundException;
 import org.openqa.selenium.support.ui.Select;
 
 
@@ -1122,8 +1121,8 @@ public class Agent extends TestObject {
 				if (i > 3) {
 					returnResult = false;
 					//break;
-					errorCount++;
-					errorString += "\n@ " + username+ "fail on => " + strXPath;
+					//errorCount++;
+					TestStatus.errorReason.add(username + ": failed on => " + strXPath);
 					Assert.fail("\n@(" + agentType + ") " + username + "==> Failed on (Click_XPath) ==> "  + strXPath);
 					//throw new Exception();
 				}
@@ -1132,9 +1131,6 @@ public class Agent extends TestObject {
 			 log.error("\n@(" + agentType + ") " + username + " =>@@ ElementNotVisibleException on " + " " + strXPath);
 			 returnResult = false;
 			 
-		 }catch(SessionNotFoundException e){
-			  log.error("@ " + username + " : @@ SessionNotFoundException -> throw again on click_XPath()");
-			  throw e;
 		 }catch(Exception e){
 			 log.error("\n@(" + agentType + ") " + username + " =>@@@@ Exception on " + strXPath + " " +e.toString());
 			 returnResult = false;
@@ -1191,9 +1187,6 @@ public class Agent extends TestObject {
 			 
 		 }catch(InterruptedException e){
 			  log.error("@ " + username + " : @@ Thread inturrepted -> throw again on click_XPath()");
-			  throw e;
-		 }catch(SessionNotFoundException e){
-			  log.error("@ " + username + " : @@ SessionNotFoundException -> throw again on click_XPath()");
 			  throw e;
 		 }catch(Exception e){
 			 log.error("\n@(" + agentType + ") " + username + " =>@@@@ Exception on " + strXPath + " " +e.toString());

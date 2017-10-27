@@ -159,8 +159,8 @@ public class TestCaseObject extends TestObject{
 	
 	public static String startTestCase(String sTestCaseName) throws Exception{
 		 
-		errorCount = 0;
-		errorString = "";
+		//errorCount = 0;
+		TestStatus.errorReason.clear();
 		
 		if (stopTest.contains("yes")) {
 			log.info("@@ Stop is requested, so skip => " + sTestCaseName);
@@ -201,10 +201,11 @@ public class TestCaseObject extends TestObject{
 	public void endTestCase(String testName) throws Exception{
 	 
 		String userInputString;
+		waits(5, "just before sending message to all clients.");
 		
-		
-		if (errorCount > 0) {
-			 AllActors.superAdmin.sendMessage(AllActors.screenshotOrRecord + " ending scenario @ " + testName + " @ending_Failed because_" + errorString);
+		if (TestStatus.errorReason.size() > 0) {
+			 TestStatus.failedCases.put(testName, TestStatus.errorReason.toString());
+			 AllActors.superAdmin.sendMessage(AllActors.screenshotOrRecord + " ending scenario @ " + testName + " @ending_Failed because_" + TestStatus.errorReason.toString());
 			 log.info("XXXXXXXXXXXXXXXXXXXXXXX  "+"Test Result(Failed) => "+ testName + " XXXXXXXXXXXXXXXXXXXXXX");
 			 log.info("X");
 			 log.info("X");
@@ -214,7 +215,7 @@ public class TestCaseObject extends TestObject{
 		     userInputString=  WaitingForUserInput(20);
 		     //This will stop all remaining test cases
 		     if (userInputString.contains("yes")) stopTest = "yes"; 
-		     failTest(testName + " has failed because => " + errorString);
+		     failTest(testName + " has failed because => " + TestStatus.errorReason.toString());
 		}else {
 			AllActors.superAdmin.sendMessage(AllActors.screenshotOrRecord + " ending scenario @ " + testName + " @ending_Successful");
 		    log.info("XXXXXXXXXXXXXXXXXXXXXXX  "+"Test Result(Successful) => "+ testName + " XXXXXXXXXXXXXXXXXXXXXX");
@@ -418,9 +419,9 @@ public class TestCaseObject extends TestObject{
 		
 	}
 	
-	public boolean thisCaseIsNotSupported(){
+	public boolean thisCaseIsNotSupported(String testName){
 		boolean notSupportThisScenario = true;
-		log.info("*** This test case is only supported on PCM/Physical phone");
+		log.info("*** This is not supported because: " + testName);
 		return notSupportThisScenario;
 	}
 	
@@ -430,7 +431,8 @@ public class TestCaseObject extends TestObject{
 	    executor.shutdownNow();
 	  }
      
-	    public void skipTest(String reason) throws Exception{
+	    public void skipTest(String testName, String reason) throws Exception{
+	    	TestStatus.skippedCases.put(testName, reason);
 	    	throw new SkipException(reason);
 	    }
 	    

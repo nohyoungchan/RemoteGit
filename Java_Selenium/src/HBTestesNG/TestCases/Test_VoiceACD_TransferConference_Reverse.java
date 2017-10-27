@@ -4,11 +4,8 @@ package HBTestesNG.TestCases;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
-import org.testng.Assert;
-import org.testng.SkipException;
 import org.testng.annotations.AfterClass;
-
-import HBTestesNG.BaseObjects.*;import org.testng.SkipException;
+import HBTestesNG.BaseObjects.*;
 
 @Test(groups= {"VoiceACD_Reverse_TransferConference_ClassLevel"})
 public class Test_VoiceACD_TransferConference_Reverse extends TestCaseObject {	
@@ -35,7 +32,7 @@ public class Test_VoiceACD_TransferConference_Reverse extends TestCaseObject {
 	public void VoiceACD_CTransfer_ToExt_SameGroup_Reverse(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
 		String testName = "VoiceACD->Ans->Consult Transfer to Ext on Same Group";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -73,7 +70,7 @@ public class Test_VoiceACD_TransferConference_Reverse extends TestCaseObject {
 	public void VoiceACD_CTransfer_ToExt_DifferentGroup_Reverse(int rT1, int tT1, int rT2, int tT2) throws Exception {
 		
 		String testName = "VoiceACD->Ans->Consult Transfer to Ext on Different Group";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -109,7 +106,7 @@ public class Test_VoiceACD_TransferConference_Reverse extends TestCaseObject {
 	public void VoiceACD_CTransfer_ToExternal_Reverse(int rT1, int tT1, int rT2, int tT2) throws Exception {
 		
 		String testName = "VoiceACD->Ans->Consult Transfer to External number";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -152,7 +149,7 @@ public class Test_VoiceACD_TransferConference_Reverse extends TestCaseObject {
 	public void VoiceACD_CTransfer_ToIRN_SameGroup_Reverse(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
 		String testName = "VoiceACD->Ans->Consult Transfer to IRN on Same Group ";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -190,7 +187,7 @@ public class Test_VoiceACD_TransferConference_Reverse extends TestCaseObject {
 	public void VoiceACD_CTransfer_ToIRN_DifferentGroup_Reverse(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
 		String testName = "VoiceACD->Ans->Consult Transfer to IRN on Different Group ";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -227,8 +224,8 @@ public class Test_VoiceACD_TransferConference_Reverse extends TestCaseObject {
 	@Parameters({"rT1", "tT1", "rT2", "tT2", "wT2"})
 	public void VoiceACD_CConference_ToExt_SameGroup_Reverse(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		String testName = "VoiceACD->Ans->Consult Conference to Ext on Same Group";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
-		skipTest("@@ Skip this test because of a defect: ENG-467917");
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
+		skipTest(testName, "@@ Skip this test because of a defect: ENG-467917");
 		//#########################
 		try{
 			agent1.resumeAgent();
@@ -266,8 +263,8 @@ public class Test_VoiceACD_TransferConference_Reverse extends TestCaseObject {
 	@Parameters({"rT1", "tT1", "rT2", "tT2"})
 	public void VoiceACD_CConference_ToExt_DifferentGroup_Reverse(int rT1, int tT1, int rT2, int tT2) throws Exception {
 		String testName = "VoiceACD->Ans->Consult Conference to Ext on Different Group";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
-		skipTest("@@ Skip this test because of a defect: ENG-467917");
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
+		skipTest(testName, "@@ Skip this test because of a defect: ENG-467917");
 		try{
 			//#########################
 			agent1.resumeAgent();
@@ -305,7 +302,7 @@ public class Test_VoiceACD_TransferConference_Reverse extends TestCaseObject {
 	public void VoiceACD_CConference_ToExternal_Reverse(int rT1, int tT1, int rT2, int tT2) throws Exception {
 
 		String testName = "VoiceACD->Ans->Consult Conference to External number";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -346,8 +343,9 @@ public class Test_VoiceACD_TransferConference_Reverse extends TestCaseObject {
 	public void VoiceACD_CConference_ToIRN_SameGroup_Reverse(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 
 		String testName = "VoiceACD->Ans->Consult Conference to IRN on Same Group ";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
-		if (thisCaseIsNotSupported()) return;
+		if (thisCaseIsNotSupported(testName + "This test case is only supported on PCM/Physical phone")) return;
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
+		
 		//#########################
 		
 		try{
@@ -386,7 +384,7 @@ public class Test_VoiceACD_TransferConference_Reverse extends TestCaseObject {
 	@Parameters({"rT1", "tT1", "rT2", "tT2", "wT2"})
 	public void VoiceACD_CConference_ToIRN_DifferentGroup_Reverse(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		String testName = "VoiceACD->Ans->Consult Conference to IRN on Different Group ";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -426,7 +424,7 @@ public class Test_VoiceACD_TransferConference_Reverse extends TestCaseObject {
 	public void VoiceACD_CTransfer_ToExt_SameGroup_Reverse_byName(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
 		String testName = "VoiceACD->Ans->Consult Transfer to Ext on Same Group_byName";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -464,7 +462,7 @@ public class Test_VoiceACD_TransferConference_Reverse extends TestCaseObject {
 	public void VoiceACD_CTransfer_ToExt_DifferentGroup_Reverse_byName(int rT1, int tT1, int rT2, int tT2) throws Exception {
 		
 		String testName = "VoiceACD->Ans->Consult Transfer to Ext on Different Group_byName";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -502,8 +500,8 @@ public class Test_VoiceACD_TransferConference_Reverse extends TestCaseObject {
 	@Parameters({"rT1", "tT1", "rT2", "tT2", "wT2"})
 	public void VoiceACD_CConference_ToExt_SameGroup_Reverse_byName(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		String testName = "VoiceACD->Ans->Consult Conference to Ext on Same Group_byName";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
-		skipTest("@@ Skip this test because of a defect: ENG-467917");
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
+		skipTest(testName, "@@ Skip this test because of a defect: ENG-467917");
 		//#########################
 		try{
 			agent1.resumeAgent();
@@ -543,8 +541,8 @@ public class Test_VoiceACD_TransferConference_Reverse extends TestCaseObject {
 	@Parameters({"rT1", "tT1", "rT2", "tT2"})
 	public void VoiceACD_CConference_ToExt_DifferentGroup_Reverse_byName(int rT1, int tT1, int rT2, int tT2) throws Exception {
 		String testName = "VoiceACD->Ans->Consult Conference to Ext on Different Group_byName";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
-		skipTest("@@ Skip this test because of a defect: ENG-467917");
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
+		skipTest(testName, "@@ Skip this test because of a defect: ENG-467917");
 		try{
 			//#########################
 			agent1.resumeAgent();

@@ -4,10 +4,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.AfterClass;
-
 import HBTestesNG.BaseObjects.*;
-import junit.framework.Assert;
-
 import org.testng.SkipException;
 
 @Test(groups= {"VoiceOACD_ByAgandon_Conference_WrapTimeZero_ClassLevel"})
@@ -19,16 +16,16 @@ public class Test_VoiceOACD_ByAbandon_Conference_WrapTimeZero extends TestCaseOb
 	
 	@BeforeClass
 	public void beforeClass() throws Exception {
+		log.info("###### Before Class: Test_VoiceOACD_ByAbandon_Conference_WrapTimeZero");
 		String wrapTime, frTime;
 		wrapTime = "0";
 		frTime = "40";
 		callbackAbandonSecStr = "10";
 		callbackAbandonSecInt = Integer.parseInt(callbackAbandonSecStr);
-		log.info("* Before Class: Test_VoiceOACD_ByAbandon_Conference_WrapTimeZero");
 		InitializeAllVariables(); 
-		//sup1.Max_LogIn_EnableAbandon_LogOut_Min(aa.services.get(0).name, callbackAbandonSecStr);
-		sup1.Max_LogIn_ChangeWrapFR_EnableAbandon_SetOutboundPreferenceForAbandonLogOut_Min(aa.services.get(0).name, wrapTime, frTime, callbackAbandonSecStr);
-		//sup1.Max_LogIn_changeWrapAndFRTime_LogOut_Min(aa.services.get(0).name, wrapTime, frTime);
+		//sup1.Max_LogIn_EnableAbandon_LogOut_Min(AllActors.services.get(0).name, callbackAbandonSecStr);
+		sup1.Max_LogIn_ChangeWrapFR_EnableAbandon_SetOutboundPreferenceForAbandonLogOut_Min(AllActors.services.get(0).name, wrapTime, frTime, callbackAbandonSecStr);
+		//sup1.Max_LogIn_changeWrapAndFRTime_LogOut_Min(AllActors.services.get(0).name, wrapTime, frTime);
 		
 	  
 	}
@@ -36,13 +33,13 @@ public class Test_VoiceOACD_ByAbandon_Conference_WrapTimeZero extends TestCaseOb
   
 	@AfterClass
 	public void afterClass() throws Exception {
+		log.info("###### After Class: Test_VoiceOACD_ByAbandon_Conference_WrapTimeZero");
 		String wrapTime, frTime;
 		wrapTime = "20";
 		frTime = "30";
-		log.info("* After Class: Test_VoiceOACD_ByAbandon_Conference_WrapTimeZero");
-		sup1.Max_LogIn_ChangeWrapFR_DisableAbandon_LogOut_Min(aa.services.get(0).name, wrapTime, frTime);
-		//sup1.Max_LogIn_DisableAbandon_LogOut_Min(aa.services.get(0).name);
-		//sup1.Max_LogIn_changeWrapAndFRTime_LogOut_Min(aa.services.get(0).name, wrapTime, frTime);
+		sup1.Max_LogIn_ChangeWrapFR_DisableAbandon_LogOut_Min(AllActors.services.get(0).name, wrapTime, frTime);
+		//sup1.Max_LogIn_DisableAbandon_LogOut_Min(AllActors.services.get(0).name);
+		//sup1.Max_LogIn_changeWrapAndFRTime_LogOut_Min(AllActors.services.get(0).name, wrapTime, frTime);
 	}
 	
 	
@@ -54,7 +51,7 @@ public class Test_VoiceOACD_ByAbandon_Conference_WrapTimeZero extends TestCaseOb
 		if (testReady.contains("no")) throw new SkipException("Skipping because it is not ready");
 		
 		//######################
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//startTestCase( Test Case: VoiceOACD_ByAbandon->Ans->Consult Conference to Ext on Same Group_WrapTimeZero");
 		//#########################
 		agent1.resumeAgent();
@@ -99,7 +96,7 @@ public class Test_VoiceOACD_ByAbandon_Conference_WrapTimeZero extends TestCaseOb
 		if (testReady.contains("no")) throw new SkipException("Skipping because it is not ready");
 		
 		//######################
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 
 		//startTestCase( Test Case: VoiceOACD_ByAbandon->Ans->Consult Conference to Ext on Different Group_WrapTimeZero");
 		//#########################
@@ -144,7 +141,7 @@ public class Test_VoiceOACD_ByAbandon_Conference_WrapTimeZero extends TestCaseOb
 		if (testReady.contains("no")) throw new SkipException("Skipping because it is not ready");
 		
 		//######################
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//startTestCase( Test Case: VoiceOACD_ByAbandon->Ans->Consult Conference to External number_WrapTimeZero");
 		//#########################
 		agent1.resumeAgent();
@@ -187,14 +184,16 @@ public class Test_VoiceOACD_ByAbandon_Conference_WrapTimeZero extends TestCaseOb
 	public void VoiceOACD_ByAbandon_CConference_ToIRN_SameGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		String testName = "VoiceOACD_ByAbandon->Ans->Consult Conference to IRN on Same Group_WrapTimeZero";
 		
+		if (thisCaseIsNotSupported(testName + "This test case is only supported on PCM/Physical phone")) return;
+		
 		//######################
 		String testReady = "yes";
 		if (testReady.contains("no")) throw new SkipException("Skipping because it is not ready");
 		
 		//######################
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		
-		if (thisCaseIsNotSupported()) return;
+		
 		
 		//#########################
 		agent1.resumeAgent();
@@ -239,7 +238,7 @@ public class Test_VoiceOACD_ByAbandon_Conference_WrapTimeZero extends TestCaseOb
 		if (testReady.contains("no")) throw new SkipException("Skipping because it is not ready");
 		
 		//######################
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		agent1.resumeAgent();
 		agent2.releaseAgentSecondCode();
@@ -282,7 +281,7 @@ public class Test_VoiceOACD_ByAbandon_Conference_WrapTimeZero extends TestCaseOb
 		if (testReady.contains("no")) throw new SkipException("Skipping because it is not ready");
 		
 		//######################
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 
 		//startTestCase( Test Case: VoiceOACD_ByAbandon->Ans->Consult Conference to Ext on Different Group_WrapTimeZero");
 		//#########################
@@ -326,7 +325,7 @@ public class Test_VoiceOACD_ByAbandon_Conference_WrapTimeZero extends TestCaseOb
 		if (testReady.contains("no")) throw new SkipException("Skipping because it is not ready");
 		
 		//######################
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//startTestCase( Test Case: VoiceOACD_ByAbandon->Ans->Consult Conference to Ext on Same Group_WrapTimeZero");
 		//#########################
 		agent1.resumeAgent();

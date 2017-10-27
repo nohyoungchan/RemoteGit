@@ -3,15 +3,11 @@ package HBTestesNG.BaseObjects;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.SessionNotFoundException;
 
-import HBTestesNG.TestCases.Test_Initiate;
 
 public class CustomerEmail extends Agent {
 
@@ -138,7 +134,7 @@ public class CustomerEmail extends Agent {
 		{
 			//driver.get(AllActors.iniEnv.get("emailURL"));
 			driver.get("https://qaxchange10.qa.shoretel.com/owa/auth/logon.aspx");
-			https://qaxchange13.qa.shoretel.com/owa/auth/logon.aspx
+			//https://qaxchange13.qa.shoretel.com/owa/auth/logon.aspx
 			agentUserName = agentNamePrefix+i+agentNameDomain;
 			log.info("\n@ "+agentUserName + " #### Entering customer username/password -> Submit : " + agentUserName);
 			
@@ -166,7 +162,7 @@ public class CustomerEmail extends Agent {
 		{
 			//driver.get(AllActors.iniEnv.get("emailURL"));
 			driver.get("https://qaxchange10.qa.shoretel.com/owa/auth/logon.aspx");
-			https://qaxchange13.qa.shoretel.com/owa/auth/logon.aspx
+			//https://qaxchange13.qa.shoretel.com/owa/auth/logon.aspx
 			agentUserName = agentNamePrefix+i+agentNameDomain;
 			log.info("\n@ "+agentUserName + " #### Entering customer username/password -> Submit : " + agentUserName);
 			
@@ -244,9 +240,6 @@ public class CustomerEmail extends Agent {
 			//minimizeBrowser();
 		}catch(InterruptedException e){
 			  log.error("@ " + username + " : @@ Thread inturrepted -> throw again on sendEmail()");
-			  throw e;
-		 }catch(SessionNotFoundException e){
-			  log.error("@ " + username + " : @@ SessionNotFoundException -> throw again on sendEmail()");
 			  throw e;
 		 }catch(Exception e){
 			 log.error("\n@(" + agentType + ") " + username + " =>@@@@ Exception on sendEmail() => " + e.toString());

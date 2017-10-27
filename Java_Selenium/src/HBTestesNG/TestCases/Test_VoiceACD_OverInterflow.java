@@ -37,7 +37,7 @@ public class Test_VoiceACD_OverInterflow extends TestCaseObject {
 	public void VoiceACD_R_Q_Overflow_R_Ans_2ndGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
 		String testName = "VoiceACD->Ring->Q->Overflow->Ring->Answer on the 2nd group";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -69,7 +69,7 @@ public class Test_VoiceACD_OverInterflow extends TestCaseObject {
 	public void VoiceACD_R_Q_Overflow_Q_R_Ans_2ndGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
 		String testName = "VoiceACD->Ring->Q->Overflow->Q->Ring->Answer on the 2nd group";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -103,7 +103,7 @@ public class Test_VoiceACD_OverInterflow extends TestCaseObject {
 	public void VoiceACD_Q_Overflow_R_Ans_2ndGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
 		String testName = "VoiceACD->Q->Overflow->Ring->Answer on the 2nd group";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -134,7 +134,7 @@ public class Test_VoiceACD_OverInterflow extends TestCaseObject {
 	public void VoiceACD_Q_Overflow_R_Ans_1stGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
 		String testName = "VoiceACD->Q->Overflow->Ring->Answer on the 1st group";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -169,7 +169,7 @@ public class Test_VoiceACD_OverInterflow extends TestCaseObject {
 	public void VoiceACD_Q_OverInterflow_Q_R_Ans_3rdGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
 		String testName = "VoiceACD->Q->OverInterflow->Q->Ring->Answer on the 3rd group";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{

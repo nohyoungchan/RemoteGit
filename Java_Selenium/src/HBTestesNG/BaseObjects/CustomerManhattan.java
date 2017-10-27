@@ -81,7 +81,7 @@ public class CustomerManhattan  extends TestObject {
     	clickAppear(screen, patternUsername, 5);
     	screen.write(username);
     	clickAppear(screen, patternPassword, 5);
-    	screen.write(password);
+    	screen.type(password);
     	clickAppear(screen, loginBtn, 5);
     	
     	
@@ -192,8 +192,8 @@ public class CustomerManhattan  extends TestObject {
 		  
 		  log.info("\n@ Manhattan : " +  username + " #### clearing calls if they exist ####");
 		  Pattern patternoffhookBtn = new Pattern(imgFolder +"mh_offhookBtn.PNG").targetOffset(100, 0);
-		  Pattern callBox = new Pattern(imgFolder +"mh_callBox.PNG").targetOffset(0, 10);
-		  Pattern dropBtn = new Pattern(imgFolder +"mh_dropBtn.PNG").targetOffset(20, 0);
+		  Pattern activeName= new Pattern(imgFolder +"mh_active.PNG").targetOffset(0, 10);
+		  Pattern dropBtn_big = new Pattern(imgFolder +"mh_dropBtn_big.PNG").targetOffset(0, 0);
 
 		  //String eventBtn =imgFolder + "mh_eventBtn";
 		  
@@ -202,10 +202,10 @@ public class CustomerManhattan  extends TestObject {
 		  //This is to check if there is any call left
 		  //screen.click(eventBtn);
 		  //screen.click(eventBtn);
-		  while (null != screen.exists(callBox)) {
+		  while (null != screen.exists(activeName)) {
 	    		log.info("@ cleaning a remaining call");
-	    		clickAppear(screen, callBox, 5);
-	    		clickAppear(screen, dropBtn, 5);
+	    		clickAppear(screen, activeName, 5);
+	    		clickAppear(screen, dropBtn_big, 5);
 	    		wait(2);
 	    	}
 
@@ -223,13 +223,13 @@ public class CustomerManhattan  extends TestObject {
 	  public void dropCall() throws Exception {
 		  
 		  log.info("\n@ Manhattan : " +  username + " #### Dropping a call ####");
-		  String callBox = imgFolder +"mh_callBox";
+		  //String callBox = imgFolder +"mh_callBox";
 		  String dropBtn = imgFolder +"mh_dropBtn";
 	    	
 		  activateManhattan();
-		  if(clickAppear(screen, callBox, 5))
-			  clickAppear(screen, dropBtn, 5);
-    	  
+		  /*if(clickAppear(screen, callBox, 5))
+			  clickAppear(screen, dropBtn, 5);*/
+		  clickAppear(screen, dropBtn, 5);
     	  currentState ="loggedin_idle";
 		  currentTime();
 		 
@@ -238,13 +238,14 @@ public class CustomerManhattan  extends TestObject {
 	  public void dropCall(int waitSec) throws Exception {
 		  
 		  log.info("\n@ Manhattan : " +  username + " #### Dropping a call ####");
-		  String callBox = imgFolder +"mh_callBox";
+		  //String callBox = imgFolder +"mh_callBox";
 		  String dropBtn = imgFolder +"mh_dropBtn";
 	    	
 		  activateManhattan();
 		  wait(waitSec, "# Customer waits before drop the call");
-    	  if(clickAppear(screen, callBox, 5))
-    		  clickAppear(screen, dropBtn, 5);
+		  /*if(clickAppear(screen, callBox, 5))
+		       clickAppear(screen, dropBtn, 5);*/
+	      clickAppear(screen, dropBtn, 5);
     	  
     	  currentState ="loggedin_idle";
 		  currentTime();
@@ -273,7 +274,7 @@ public class CustomerManhattan  extends TestObject {
 	  public void abandonCall() throws Exception {
 		  
 		  log.info("\n@ Manhattan : " +  username + " #### Abandoning a call ####");
-		  String abandonBtn = imgFolder +"mh_abandonBtn";
+		  String abandonBtn = imgFolder +"mh_abandonCallBtn";
 	    	
 		  activateManhattan();
 	      clickAppear(screen, abandonBtn, 5);
@@ -314,17 +315,19 @@ public class CustomerManhattan  extends TestObject {
 		  
 		  log.info("\n@ Manhattan : " +  username + " #### Dropping a call for a reset ####");
 		  
-		  Pattern callBox = new Pattern(imgFolder +"mh_callBox.PNG").targetOffset(0, 10);
-		  Pattern dropBtn = new Pattern(imgFolder +"mh_dropBtn.PNG").targetOffset(20, 0);
+		  //Pattern callBox = new Pattern(imgFolder +"mh_callBox.PNG").targetOffset(0, 10);
+		  //Pattern dropBtn = new Pattern(imgFolder +"mh_dropBtn.PNG").targetOffset(20, 0);
+		  Pattern activeName= new Pattern(imgFolder +"mh_active.PNG").targetOffset(0, 10);
+		  Pattern dropBtn_big = new Pattern(imgFolder +"mh_dropBtn_big.PNG").targetOffset(0, 0);
 	    	
 		  if(activateManhattan()==0) {
 			  log.info("Manhattan is already closed");
 			  return;
 		  }else {
-			  while (null != screen.exists(callBox)) {
+			  while (null != screen.exists(activeName)) {
 		    		log.info("@ cleaning a remaining call");
-		    		clickAppear(screen, callBox, 5);
-		    		clickAppear(screen, dropBtn, 5);
+		    		clickAppear(screen, activeName, 5);
+		    		clickAppear(screen, dropBtn_big, 5);
 		    		wait(2);
 		    	}
 		  }

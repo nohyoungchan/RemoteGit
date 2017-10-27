@@ -4,8 +4,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.AfterClass;
-
-import HBTestesNG.BaseObjects.*;import org.testng.SkipException;
+import HBTestesNG.BaseObjects.*;
 
 @Test(groups= {"VoiceACD_Transfer_WrapTimeZero_ClassLevel"})
 public class Test_VoiceACD_Transfer_WrapTimeZero extends TestCaseObject {
@@ -19,7 +18,7 @@ public class Test_VoiceACD_Transfer_WrapTimeZero extends TestCaseObject {
 		log.info("* Before Class: Test_VoiceACD_Transfer_WrapTimeZero");
 		InitializeAllVariables(); 
 		
-		sup1.Max_LogIn_changeWrapAndFRTime_LogOut_Min(aa.services.get(0).name, "0", "40");
+		sup1.Max_LogIn_changeWrapAndFRTime_LogOut_Min(AllActors.services.get(0).name, "0", "40");
 	  
 	}
 
@@ -27,14 +26,14 @@ public class Test_VoiceACD_Transfer_WrapTimeZero extends TestCaseObject {
 	@AfterClass
 	public void afterClass() throws Exception {
 		log.info("* After Class: Test_VoiceACD_Transfer_WrapTimeZero");
-		sup1.Max_LogIn_changeWrapAndFRTime_LogOut_Min(aa.services.get(0).name, "20", "30");
+		sup1.Max_LogIn_changeWrapAndFRTime_LogOut_Min(AllActors.services.get(0).name, "20", "30");
 	}
 	
 
 	@Parameters({"rT1", "tT1", "rT2", "tT2", "wT2"})
 	public void VoiceACD_BTransfer_ToExt_SameGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		String testName = "VoiceACD->Ans->Blind Transfer to Ext on Same Group_WrapTimeZero ";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -70,7 +69,7 @@ public class Test_VoiceACD_Transfer_WrapTimeZero extends TestCaseObject {
 	public void VoiceACD_BTransfer_ToExt_DifferentGroup(int rT1, int tT1, int rT2, int tT2) throws Exception {
 		
 		String testName = "VoiceACD->Ans->Blind Transfer to Ext on Different Group_WrapTimeZero ";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -104,7 +103,7 @@ public class Test_VoiceACD_Transfer_WrapTimeZero extends TestCaseObject {
 	public void VoiceACD_BTransfer_ToExternal(int rT1, int tT1, int rT2, int tT2) throws Exception {
 		
 		String testName = "VoiceACD->Ans->Blind Transfer to External_WrapTimeZero ";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -140,7 +139,7 @@ public class Test_VoiceACD_Transfer_WrapTimeZero extends TestCaseObject {
 	public void VoiceACD_BTransfer_ToIRN_SameGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
 		String testName = "VoiceACD->Ans->Blind Transfer to Ext on Same Group_WrapTimeZero ";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -176,7 +175,7 @@ public class Test_VoiceACD_Transfer_WrapTimeZero extends TestCaseObject {
 	public void VoiceACD_BTransfer_ToIRN_DifferentGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
 		String testName = "VoiceACD->Ans->Blind Transfer to Ext on Different Group_WrapTimeZero ";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -211,7 +210,7 @@ public class Test_VoiceACD_Transfer_WrapTimeZero extends TestCaseObject {
 	public void VoiceACD_CTransfer_ToExt_SameGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
 		String testName = "VoiceACD->Ans->Consult Transfer to Ext on Same Group_WrapTimeZero";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -248,7 +247,7 @@ public class Test_VoiceACD_Transfer_WrapTimeZero extends TestCaseObject {
 	public void VoiceACD_CTransfer_ToExt_DifferentGroup(int rT1, int tT1, int rT2, int tT2) throws Exception {
 		
 		String testName = "VoiceACD->Ans->Consult Transfer to Ext on Different Group_WrapTimeZero";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -283,7 +282,7 @@ public class Test_VoiceACD_Transfer_WrapTimeZero extends TestCaseObject {
 	public void VoiceACD_CTransfer_ToExternal(int rT1, int tT1, int rT2, int tT2) throws Exception {
 		
 		String testName = "VoiceACD->Ans->Consult Transfer to External number_WrapTimeZero";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -318,7 +317,7 @@ public class Test_VoiceACD_Transfer_WrapTimeZero extends TestCaseObject {
 	public void VoiceACD_CTransfer_ToIRN_SameGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
 		String testName = "VoiceACD->Ans->Consult Transfer to IRN on Same Group_WrapTimeZero ";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -355,7 +354,7 @@ public class Test_VoiceACD_Transfer_WrapTimeZero extends TestCaseObject {
 	public void VoiceACD_CTransfer_ToIRN_DifferentGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
 		String testName = "VoiceACD->Ans->Consult Transfer to IRN on Different Group_WrapTimeZero ";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{

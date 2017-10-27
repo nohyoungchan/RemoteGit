@@ -87,8 +87,8 @@ public class AgentHB extends Agent {
 					wait(1);
 					if (i > numTry) {
 						returnResult = false;
-						errorCount++;
-						errorString = errorString + "@fail to receive an email";
+						//errorCount++;
+						TestStatus.errorReason.add(username + ": failed on => receiving an email");
 						throw new Exception();
 					}
 				}
@@ -270,8 +270,13 @@ public class AgentHB extends Agent {
 				  txtReturned = webElement.getText();
 				  wait(2);
 				  
-				  if (txtReturned.contains("Stop taking requests")) //If agent is idle, release.
+				  //if (txtReturned.contains("Stop taking requests") || getAICState().contains("")) //If agent is idle, release.
+				  if (getAICState().contains(""))
 				  {
+					  if (txtReturned.contains("Stop taking requests")) {
+						  TestStatus.errorReason.add(username + ": AIC shows idle but still reads \" Stop taking requests \"");
+					  }
+					  
 				      log.info("\n@(" + agentType + ") " +  username + " #### Agent is idle=>Click release button ####");
 				      click_XPath(("btnResume"));
 				      wait(2);
@@ -318,14 +323,14 @@ public class AgentHB extends Agent {
 				  
 			}catch(InterruptedException e){
 				//log.info("I am handling Interrupted Exceptionj=>"+ e.toString());
-				errorCount++;
+				TestStatus.errorReason.add(username + ": failed on => releaseAgentSecondCode");
 				throw e;
 				//state = "weird";
 			}
 		  	catch(Exception e){
 				log.info("I am handling General exception=>"+ e.toString());
-				errorCount++;
-				errorString += "\n@ " + username+ "fail to releaseAgentSecondCode;";
+				//errorCount++;
+				TestStatus.errorReason.add(username + ": failed on => releaseAgentSecondCode");
 				state = "weird";
 			}finally{
 				  minimizeBrowser();
@@ -358,12 +363,12 @@ public class AgentHB extends Agent {
 				  
 			}catch(InterruptedException e){
 				//log.info("I am handling Interrupted Exceptionj=>"+ e.toString());
-				errorCount++;
+				TestStatus.errorReason.add(username + ": failed on releaseAgentThirdCode");
 				throw e;
 				//state = "weird";
 			}catch(Exception e){
 				log.info("I am handling General exception=>"+ e.toString());
-				errorCount++;
+				TestStatus.errorReason.add(username + ": failed on releaseAgentThirdCode");
 				state = "weird";
 			}finally{
 				  minimizeBrowser();
@@ -393,8 +398,11 @@ public class AgentHB extends Agent {
 					  
 					  //if (txtReturned.contains("Start taking requests") || txtReturned.contains("Commencer à prendre les appels")) //If agent is idle, release.
 					  //{
-					  if (txtReturned.contains("Start taking requests") && getAICState().contains("Release")) //If agent is Release, resume
+					  if (getAICState().contains("Release")) //If agent is Release, resume
 					  {
+						  if (txtReturned.contains("Start taking requests")) {
+							  TestStatus.errorReason.add(username + ": AIC shows Released but still reads \" Start taking reauests \"");
+						  }
 					      log.info("\n@(" + agentType + ") " +  username+ " #### Agent is released=>Click resume button ####");
 					      click_XPath(("btnResume"));
 					      wait(2);
@@ -405,15 +413,16 @@ public class AgentHB extends Agent {
 				}catch(InterruptedException e){
 					log.error("\n@(" + agentType + ") " +  username + " I am handling Interrupted exception=> resumeAgent(), and throw again");
 					actionResult = false;
-					errorCount++;
-					errorString += "\n@ " + username+ "fail to resume;";
+					//errorCount++;
+					TestStatus.errorReason.add(username + ": failed  to resume");
 					throw e;
 					//state = "weird";
 				}
 			  	catch(Exception e){
 			  		log.error("\n@(" + agentType + ") " +  username + "I am handling General exception=> resumeAgent()");
 					state = "weird";
-					errorCount++;
+					//errorCount++;
+					TestStatus.errorReason.add(username + ": failed  to resume");
 					actionResult = false;
 			  	}
 			}else{
@@ -441,12 +450,12 @@ public class AgentHB extends Agent {
 			  //restoreDimenSion();
 			  //Assert.assertTrue(true, "Answered Correctly");
 		  }catch(InterruptedException e){
-			  errorCount++;
+				 TestStatus.errorReason.add(username + ": failed on"  + strFunctionName);
 			  log.error("@ " + username + " : @@ Thread inturrepted -> throw again on answerACDCall()");
 			  throw e;
 		 }catch(Exception e){
-			 errorCount++;
-			 errorString += "\n@ " + username+ "fail to " + strFunctionName + ";";
+			 //errorCount++;
+			 TestStatus.errorReason.add(username + ": failed on"  + strFunctionName);
 			log.info("\n@(" + agentType + ") " +  username + " exception on answering acd call" + e.toString() );
 			state = "weird";
 			stopTest = "yes"; //This will stop all test cases
@@ -457,7 +466,7 @@ public class AgentHB extends Agent {
 	  }
 	  
 	  public synchronized void answerEmail(int ringSec, int talkSec) throws InterruptedException{
-		  String strFunctionName = "answerACDCall";
+		  String strFunctionName = "answerEmail";
 		  log.info("\n@(" + agentType + ") " +  username + " #### Click Answer button ####");
 		  try{
 			  //getCurrentDimenSion();
@@ -468,12 +477,12 @@ public class AgentHB extends Agent {
 			  wait(talkSec, "Talk");
 			  state = "busy";
 		  }catch(InterruptedException e){
-			  errorCount++;
+			  TestStatus.errorReason.add(username + ": failed on => " + strFunctionName);
 			  log.error("@ " + username + " : @@ Thread inturrepted -> throw again on answerACDCall()");
 			  throw e;
 		 }catch(Exception e){
-			 errorCount++;
-			 errorString += "\n@ " + username+ "fail to " + strFunctionName + ";";
+			//errorCount++;
+			TestStatus.errorReason.add(username + ": failed on => " + strFunctionName);
 			log.info("\n@(" + agentType + ") " +  username + " exception on answering acd call" + e.toString() );
 			state = "weird";
 		  }finally{
@@ -795,11 +804,11 @@ public class AgentHB extends Agent {
 			  state = "idle";
 			  
 		  }catch(EC_DisconnectBtn e) {
-			  errorCount++;
-			  errorString += "\n@ " + username+ "Exception on btnDisconnectByWebAent";
+			  TestStatus.errorReason.add(username + ": failed -Exception on btnDisconnectByWebAent");
 			  //Assert.assertTrue(false, errorString);
 			  throw new EC_DisconnectBtn("Fail to close disconnectBtn");}
 		  catch(Exception e){
+			  TestStatus.errorReason.add(username + ": failed -Exception on btnDisconnectByWebAent");
 			  log.info("\n@(" + agentType + ") " +  username + " exception on disconnectByWebAgent");
 			  state = "weird";
 		  }finally {
@@ -840,12 +849,13 @@ public class AgentHB extends Agent {
 			  //restoreDimenSion();
 			  
 		  }catch(EC_DisconnectBtn e) {
-			  errorCount++;
-			  errorString += "\n@ " + username+ "Exceptionafter pressing btnDisconnect";
+			  //errorCount++;
+			  TestStatus.errorReason.add(username + ": failed -Exception after pressing btnDisconnect");
 			  //Assert.assertTrue(false, errorString);
 			  throw new EC_DisconnectBtn("Fail to close disconnectBtn");}
 		  catch(Exception e){
 			  log.info("\n@(" + agentType + ") " +  username + " exception on disconnectByWebAgent");
+			  TestStatus.errorReason.add(username + ": failed -Exception after pressing btnDisconnect");
 			  state = "weird";
 		  }finally {
 				minimizeBrowser();
@@ -868,6 +878,7 @@ public class AgentHB extends Agent {
 			  state = "idle";
 		  }catch(Exception e){
 			  log.info("\n@(" + agentType + ") " +  username + " exception on disconnectChatByWebAgent");
+			  TestStatus.errorReason.add(username + ": failed -Exception after pressing disconnectChatByWebAgent");
 			  state = "weird";
 		  }finally{
 			  minimizeBrowser();
@@ -884,11 +895,21 @@ public class AgentHB extends Agent {
 			  click_XPath(("btnDisconnectOACD"));
 			  wait(2); //The following is needed for successful OACD call.
 			  click_XPath(("OACDDisconnectSuccessful"));
-	 
+			  
+			//This only works with a single call.  Not working when
+			  log.info("\n ## Post-Condition of disconnectOACD()");
+			  wait(2);
+			  //if the result is not Busy, the disconnect is successful
+			  if(getAICStateAfterDisconnect().contains("Busy")) {
+			      log.info("\n@(" + agentType + ") " +  username + " disconnectBtn still exist after clicking it");
+			      throw new EC_DisconnectBtn("disconnectOACD is not working");
+			  }
+			  log.info("\n@(" + agentType + ") " +  username + " disconnectByWebAgent() successfully"); 
 			  state = "idle";
 		  
 		  }catch(Exception e){
 			  log.info("\n@(" + agentType + ") " +  username + " exception on disconnectOACD");
+			  TestStatus.errorReason.add(username + ": failed on disconnectOACD");
 			  state = "weird";
 		  }finally{
 			  minimizeBrowser();
@@ -1020,8 +1041,7 @@ public class AgentHB extends Agent {
 			  state = "idle";
 		  }catch(Exception e){
 			  log.info("\n@(" + agentType + ") " +  username + " exception on wrapupEndWith2WrapupCodes" + e.toString());
-			  errorCount++;
-			  errorString += "\n@ " + username+ "fail on wrapupEndWith2WrapupCodes";
+			  TestStatus.errorReason.add(username + ": failed on wrapupEndWith2WrapupCodes");
 			  state = "weird";
 		  }finally {
 				minimizeBrowser();
@@ -1044,8 +1064,7 @@ public class AgentHB extends Agent {
 			  //restoreDimenSion();
 		  }catch(Exception e){
 			  log.info("\n@(" + agentType + ") " +  username + " exception on signoutWebAgent" + e.toString());
-			  errorCount++;
-			  errorString += "\n@ " + username+ "signoutWebAgent;";
+			  TestStatus.errorReason.add(username + ": failed on signoutWebAgent");
 			  state = "weird";
 		  }
 	  }

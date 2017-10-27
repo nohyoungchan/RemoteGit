@@ -124,9 +124,6 @@ public boolean startChat() throws Exception {
 		}catch(InterruptedException e){
 			  log.error("@ " + username + " : @@ Thread inturrepted -> throw again on startChatAndDisconnect()");
 			  throw e;
-		 }catch(SessionNotFoundException e){
-			  log.error("@ " + username + " : @@ SessionNotFoundException -> throw again on startChatAndDisconnect()");
-			  throw e;
 		 }catch(Exception e){
 			 log.error("\n@(" + agentType + ") " + username + " =>@@@@ Exception on startChatAndDisconnect() => " + e.toString());
 			 throw e;
@@ -146,8 +143,8 @@ public boolean startChat() throws Exception {
 			minimizeBrowser();
 		}catch(Exception e){
 			 log.error("\n@(" + agentType + ") " + username + " =>@@@@ Exception on disconnectChat() => " + e.toString());
-			 errorCount++;
-			 errorString.concat("fail to " + strFunctionName + ";");
+			 //errorCount++;
+			 TestStatus.errorReason.add(username + ": failed on " + strFunctionName);
 			 throw e;
 		 }
 	}
@@ -164,9 +161,7 @@ public boolean startChat() throws Exception {
 			minimizeBrowser();
 		}catch(Exception e){
 			 log.error("\n@(" + agentType + ") " + username + " =>@@@@ Exception on disconnectChat_reset() => " + e.toString());
-			 
-			 errorCount++;
-			 errorString.concat("fail to " + strFunctionName + ";");
+			 TestStatus.errorReason.add(username + ": failed on " + strFunctionName);
 			 throw e;
 	 }
 	}
@@ -193,10 +188,7 @@ public boolean startChat() throws Exception {
 			}
 			}catch(InterruptedException e){
 				log.info("\n@(" + agentType + ") " +  username + " : @@@@@@@@@ Thread inturrepted -> Leaving the thread. Bye! @@@@@@@@@@@");
-			}catch(SessionNotFoundException e){
-				  log.info("@ " + username + " : @@ SessionNotFoundException on run()  -> Leaving the thread. Bye! @@@@@@@@@@@");
-				  throw e;
-			 }catch (Exception e) {
+			}catch (Exception e) {
 				log.error("\n@(" + agentType + ") " +  username + " : Exception happens  -> Leaving the thread. Bye! @@@@@@@@@@@");
 				//e.printStackTrace();
 			}

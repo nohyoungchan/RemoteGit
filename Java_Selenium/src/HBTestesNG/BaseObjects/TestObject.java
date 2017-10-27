@@ -31,8 +31,6 @@ public class TestObject extends Thread{
 	  protected String exceptionName;
 	  public static String stopTest;  //If this is yes, stop all tests.
 	  public static String stopMain;  //If this is yes, stop Main which stop all.
-	  public static int errorCount = 0;
-	  public static String errorString = "start_good;";
 	  public String currentState;
 	  public static String testNameGlobal;
 	  public static int intervalRan = 99;  //It is going to be 0, 1, 2, 34 intervals.
@@ -46,7 +44,7 @@ public class TestObject extends Thread{
 	 
   
 	  
-	  public void wait(int num){
+	  public static void wait(int num){
 		  try {
 			  log.info("* Wait : " + num + " seconds.");
 			  Thread.sleep(num * 1000);
@@ -211,17 +209,27 @@ public class TestObject extends Thread{
 		  int currentInterval = minuteNow / 15;
 		  int minRemaining = 15 - minModuleResult;
 		  
+		  log.info("#### runTestEvery15Min: intervalRan => " + intervalRan + " / currentInterval => " + currentInterval);
+		  
 		  
 		  //The default value for intervalRan is 99
 		  if (minRemaining >= 5 && intervalRan != currentInterval) {
 			  log.info("Running now");
+			  intervalRan = currentInterval;
+			  
 		  }else {
-			  log.info("Wait : " + minRemaining);
+			  log.info("Wait : " + minRemaining + " min until ");
 			  TimeUnit.MINUTES.sleep(minRemaining);
-			  //Thread.sleep(60 * minRemaining * 1000);	  
+			  //Thread.sleep(60 * minRemaining * 1000);
+			  //Since waited for some time, new currentInterval needs to be recalculated.
+			  now = Calendar.getInstance();
+			  minuteNow = now.get(Calendar.MINUTE);
+			  minModuleResult = minuteNow % 15;
+			  currentInterval = minuteNow / 15;
+			  intervalRan = currentInterval;
 		  }
 		  
-		  intervalRan = currentInterval;
+		  
 		  
 	  }
 	  

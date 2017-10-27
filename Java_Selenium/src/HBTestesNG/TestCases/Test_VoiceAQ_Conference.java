@@ -4,8 +4,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.AfterClass;
-
-import HBTestesNG.BaseObjects.*;import org.testng.SkipException;
+import HBTestesNG.BaseObjects.*;
 
 @Test(groups= {"VoiceAQ_Conference_ClassLevel"})
 public class Test_VoiceAQ_Conference extends TestCaseObject {
@@ -32,7 +31,7 @@ public class Test_VoiceAQ_Conference extends TestCaseObject {
 	public void VoiceAQ_CConference_ToExt_SameGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
 		String testName ="VoiceAQ->Ans->Consult Conference to Ext on Same Group" ;
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -70,7 +69,7 @@ public class Test_VoiceAQ_Conference extends TestCaseObject {
 	public void VoiceAQ_CConference_ToExt_DifferentGroup(int rT1, int tT1, int rT2, int tT2) throws Exception {
 		
 		String testName ="VoiceAQ->Ans->Consult Conference to Ext on Different Group" ;
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		
@@ -108,7 +107,7 @@ public class Test_VoiceAQ_Conference extends TestCaseObject {
 	public void VoiceAQ_CConference_ToExternal(int rT1, int tT1, int rT2, int tT2) throws Exception {
 	
 		String testName = "VoiceAQ->Ans->Consult Conference to External number";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		
@@ -148,8 +147,9 @@ public class Test_VoiceAQ_Conference extends TestCaseObject {
 	public void VoiceAQ_CConference_ToIRN_SameGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
 		String testName = "VoiceAQ->Ans->Consult Conference to IRN on Same Group ";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
-		if (thisCaseIsNotSupported()) return;
+		if (thisCaseIsNotSupported(testName + "This test case is only supported on PCM/Physical phone")) return;
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
+		
 		//#########################
 		
 		
@@ -188,7 +188,7 @@ public class Test_VoiceAQ_Conference extends TestCaseObject {
 	public void VoiceAQ_CConference_ToIRN_DifferentGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
 		String testName = "VoiceAQ->Ans->Consult Conference to IRN on Different Group ";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{

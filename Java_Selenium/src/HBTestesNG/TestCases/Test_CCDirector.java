@@ -39,7 +39,7 @@ public class Test_CCDirector extends TestCaseObject {
 		
 		
 		//The following value is entered while running scenarios to stop all
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 
 		try{
 

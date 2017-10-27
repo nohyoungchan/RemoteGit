@@ -4,9 +4,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.AfterClass;
-
 import HBTestesNG.BaseObjects.*;
-import org.testng.SkipException;
 
 @Test(groups= {"VoiceACD_Conference_ClassLevel"})
 public class Test_VoiceACD_Conference extends TestCaseObject {
@@ -34,7 +32,7 @@ public class Test_VoiceACD_Conference extends TestCaseObject {
 	@Parameters({"rT1", "tT1", "rT2", "tT2", "wT2"})
 	public void VoiceACD_CConference_ToExt_SameGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		String testName = "VoiceACD->Ans->Consult Conference to Ext on Same Group";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		try{
 			agent1.resumeAgent();
@@ -72,7 +70,7 @@ public class Test_VoiceACD_Conference extends TestCaseObject {
 	@Parameters({"rT1", "tT1", "rT2", "tT2", "wT2"})
 	public void VoiceACD_CConference_ToExt_SameGroup_byName(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		String testName = "VoiceACD->Ans->Consult Conference to Ext on Same Group";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		try{
 			agent1.resumeAgent();
@@ -109,7 +107,7 @@ public class Test_VoiceACD_Conference extends TestCaseObject {
 	@Parameters({"rT1", "tT1", "rT2", "tT2"})
 	public void VoiceACD_CConference_ToExt_DifferentGroup(int rT1, int tT1, int rT2, int tT2) throws Exception {
 		String testName = "VoiceACD->Ans->Consult Conference to Ext on Different Group";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		
 		try{
 			//#########################
@@ -146,7 +144,7 @@ public class Test_VoiceACD_Conference extends TestCaseObject {
 	@Parameters({"rT1", "tT1", "rT2", "tT2"})
 	public void VoiceACD_CConference_ToExt_DifferentGroup_byName(int rT1, int tT1, int rT2, int tT2) throws Exception {
 		String testName = "VoiceACD->Ans->Consult Conference to Ext on Different Group by Name";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		
 		try{
 			//#########################
@@ -184,7 +182,7 @@ public class Test_VoiceACD_Conference extends TestCaseObject {
 	public void VoiceACD_CConference_ToExternal(int rT1, int tT1, int rT2, int tT2) throws Exception {
 
 		String testName = "VoiceACD->Ans->Consult Conference to External number";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -224,8 +222,9 @@ public class Test_VoiceACD_Conference extends TestCaseObject {
 	public void VoiceACD_CConference_ToIRN_SameGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 
 		String testName = "VoiceACD->Ans->Consult Conference to IRN on Same Group ";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
-		if (thisCaseIsNotSupported()) return;
+		if (thisCaseIsNotSupported(testName + "This test case is only supported on PCM/Physical phone")) return;
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
+		
 		//#########################
 		
 		try{
@@ -263,7 +262,7 @@ public class Test_VoiceACD_Conference extends TestCaseObject {
 	@Parameters({"rT1", "tT1", "rT2", "tT2", "wT2"})
 	public void VoiceACD_CConference_ToIRN_DifferentGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		String testName = "VoiceACD->Ans->Consult Conference to IRN on Different Group ";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -301,8 +300,8 @@ public class Test_VoiceACD_Conference extends TestCaseObject {
 	@Parameters({"rT1", "tT1", "rT2", "tT2", "wT2"})
 	public void VoiceACD_CConference_All(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		String testName = "VoiceACD->Ans->Consult Conference : All test cases";
-		skipTest("Skipping because this is loop test: no fit for functional test");
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		skipTest(testName, "Skipping because this is loop test: no fit for functional test");
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		try{
 			for (int i = 1; i < 10001 ; i++) {

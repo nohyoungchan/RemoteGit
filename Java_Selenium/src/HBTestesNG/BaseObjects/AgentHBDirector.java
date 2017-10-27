@@ -82,7 +82,7 @@ public class AgentHBDirector extends Agent {
 	 
 	 public void changeWrapupTime(String serviceName, String wuTime) throws Exception{
 		 log.info("\n@(" + agentType + ") " +  username + " : change Wrapup time of " + serviceName);
-		 maximizeBrowser();
+		 //maximizeBrowser();
 		 logIntoHBDirector();
 		 
 		 wait(2);
@@ -96,7 +96,7 @@ public class AgentHBDirector extends Agent {
 		 dependableWait_byID("form_action_new", 5);
 
 		 logOutHBDirector();
-		 minimizeBrowser();
+		 //minimizeBrowser();
 	 }
 	 
 	 public void changeWrapAndForcedReleaseTime(String serviceName, String wuTime, String frTime) throws Exception{
@@ -125,7 +125,7 @@ public class AgentHBDirector extends Agent {
 			log.info("@@ Stop is requested, so skip this function" );
 			return ;
 		 }
-		 maximizeBrowser();
+		 //maximizeBrowser();
 		 logIntoHBDirector();
 		 waitUntilMainTitle("Favorites");
 		 
@@ -144,7 +144,7 @@ public class AgentHBDirector extends Agent {
 
 		 
 		 logOutHBDirector();
-		 minimizeBrowser();
+		 //minimizeBrowser();
 	 }
 	 
 	 
@@ -157,7 +157,7 @@ public class AgentHBDirector extends Agent {
 			return ;
 		 }
 		 Boolean enabled = true;
-		 maximizeBrowser();
+		 //maximizeBrowser();
 		 logIntoHBDirector();
 		 waitUntilMainTitle("Favorites");
 		 
@@ -182,7 +182,7 @@ public class AgentHBDirector extends Agent {
 		 wait(3);
 			  
 		 logOutHBDirector();
-		 minimizeBrowser();
+		 //minimizeBrowser();
 	 }
 	 
 	 private Boolean checkEnabledXPath(String stringXPath) {
@@ -203,7 +203,7 @@ public class AgentHBDirector extends Agent {
 	public void Max_LogIn_ChangeWrapFR_EnableAbandon_SetOutboundPreferenceForAbandonLogOut_Min(String serviceName, String wuTime, String frTime, String minAbandonTime) throws Exception{
 		 log.info("\n@(" + agentType + ") " +  username + " : Maximize->LogIn->Enable Abandon Callback "+ serviceName + "->Log out->Minmize ");
 		 Boolean enabled = true;
-		 maximizeBrowser();
+		 //maximizeBrowser();
 		 logIntoHBDirector();
 		 waitUntilMainTitle("Favorites");
 		 
@@ -242,14 +242,14 @@ public class AgentHBDirector extends Agent {
 		 dependableClick_byID("submitButton");	
 		 
 		 logOutHBDirector();
-		 minimizeBrowser();
+		 //minimizeBrowser();
 	 }
 	
 	 // This should go with Max_LogIn__ChangeWrapFR_EnableAbandon_LogOut_Min
 	 public void Max_LogIn_ChangeWrapFR_DisableAbandon_LogOut_Min(String serviceName, String wuTime, String frTime) throws Exception{
 		 log.info("\n@(" + agentType + ") " +  username + " : Maximize->LogIn->Enable Abandon Callback "+ serviceName + "->Log out->Minmize ");
 		 Boolean enabled = true;
-		 maximizeBrowser();
+		 //maximizeBrowser();
 		 logIntoHBDirector();
 		 waitUntilMainTitle("Favorites");
 		 
@@ -278,7 +278,7 @@ public class AgentHBDirector extends Agent {
 		 //Wait until new button is enabled which means save is completed.
 		 dependableWait_byID("form_action_new", 5);
 		 logOutHBDirector();
-		 minimizeBrowser();
+		 //minimizeBrowser();
 	 }
 
 	 
@@ -290,7 +290,7 @@ public class AgentHBDirector extends Agent {
 			return ;
 		 }
 		 Boolean enabled = true;
-		 maximizeBrowser();
+		 //maximizeBrowser();
 		 logIntoHBDirector();
 		 waitUntilMainTitle("Favorites");
 		 
@@ -317,12 +317,12 @@ public class AgentHBDirector extends Agent {
 		 }
 			  
 		 logOutHBDirector();
-		 minimizeBrowser();
+		 //minimizeBrowser();
 	 }
 
 	public void Max_LogIn_changeWrapAndFRTime_Min(String serviceName, String wuTime, String frTime) throws Exception{
 		 log.info("\n@(" + agentType + ") " +  username + " : Maximize->LogIn->change Wrapup and Forced Release time of "+ serviceName + "->Log out->Minmize ");
-		 maximizeBrowser();
+		 //maximizeBrowser();
 		 logIntoHBDirector();
 		 waitUntilMainTitle("Favorites");
 		 
@@ -344,7 +344,7 @@ public class AgentHBDirector extends Agent {
 	 
 	 public void AllType_Max_LogIn_changeWrapAndFRTime_Min(String serviceType, String serviceName, String wuTime, String frTime) throws Exception{
 		 log.info("\n@(" + agentType + ") " +  username + " : Maximize->LogIn->change Wrapup and Forced Release time of "+ serviceName + "->Log out->Minmize ");
-		 maximizeBrowser();
+		 //maximizeBrowser();
 		 logIntoHBDirector();
 		 waitUntilMainTitle("Favorites");
 		 
@@ -374,7 +374,7 @@ public class AgentHBDirector extends Agent {
 	 
 	 public void AllType_Max_LogIn_changeWrapAndFRTime_LogOut_Min(String serviceType, String serviceName, String wuTime, String frTime) throws Exception{
 		 log.info("\n@(" + agentType + ") " +  username + " : Maximize->LogIn->change Wrapup and Forced Release time of "+ serviceName + "->Log out->Minmize ");
-		 maximizeBrowser();
+		 //maximizeBrowser();
 		 logIntoHBDirector();
 		 waitUntilMainTitle("Favorites");
 		 
@@ -400,7 +400,7 @@ public class AgentHBDirector extends Agent {
 		 
 		 
 		 logOutHBDirector();
-		 minimizeBrowser();
+		 //minimizeBrowser();
 	 }
 	 
 	 
@@ -426,7 +426,7 @@ public class AgentHBDirector extends Agent {
 		 
 		 
 		 logOutHBDirector();
-		 minimizeBrowser();
+		 //minimizeBrowser();
 	 }
 	 
 	 public void AllType_Max_changeWrapAndFRTime_LogOut_Min(String serviceType, String serviceName, String wuTime, String frTime) throws Exception{
@@ -454,7 +454,7 @@ public class AgentHBDirector extends Agent {
 		 dependableWait_byID("form_action_new", 5);
 		 
 		 logOutHBDirector();
-		 minimizeBrowser();
+		 //minimizeBrowser();
 	 }
 	 
 	 
@@ -510,7 +510,7 @@ public class AgentHBDirector extends Agent {
 			 chatIRN = "5555";
 			 emailIRN = "Email IRN 1"; //ToDo
 			 
-			 maximizeBrowser();
+			 //maximizeBrowser();
 			 logIntoHBDirector();
 			 waitUntilMainTitle("Favorites");
 			 
@@ -588,7 +588,7 @@ public class AgentHBDirector extends Agent {
 			 */
 			 
 			 logOutHBDirector();
-			 minimizeBrowser();
+			 //minimizeBrowser();
 		 }
 		
 		/**
@@ -628,7 +628,7 @@ public class AgentHBDirector extends Agent {
 			 groupName2 = AllActors.services.get(2).destination;
 			 irnName1 = AllActors.irns.get(0).irnNum;
 			 
-			 maximizeBrowser();
+			 //maximizeBrowser();
 			 logIntoHBDirector();
 			 waitUntilMainTitle("Favorites");
 			 
@@ -710,7 +710,7 @@ public class AgentHBDirector extends Agent {
 			 
 					 
 			 logOutHBDirector();
-			 minimizeBrowser();
+			 //minimizeBrowser();
 		 }
 		
 		
@@ -733,7 +733,7 @@ public class AgentHBDirector extends Agent {
 			 groupName1 = AllActors.services.get(3).destination;
 			 irnName1 = AllActors.irns.get(5).irnNum;
 			 
-			 maximizeBrowser();
+			 //maximizeBrowser();
 			 logIntoHBDirector();
 			 waitUntilMainTitle("Favorites");
 			 
@@ -801,7 +801,7 @@ public class AgentHBDirector extends Agent {
 			 
 					 
 			 logOutHBDirector();
-			 minimizeBrowser();
+			 //minimizeBrowser();
 		 }
 	 
 	 

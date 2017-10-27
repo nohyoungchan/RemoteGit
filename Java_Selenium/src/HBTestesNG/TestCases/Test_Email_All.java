@@ -46,7 +46,7 @@ public class Test_Email_All extends TestCaseObject {
 	@Parameters({"rT1", "tT1", "wT1"})
 	public void Email_NoQ_Answer(int rT1, int tT1, int wT1) throws Exception {
 		String testName = "Email->NoQ->Answered";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		
 		//#########################
 		//resetAllActors(testName);
@@ -79,7 +79,7 @@ public class Test_Email_All extends TestCaseObject {
 	@Parameters({"qT1", "rT1", "tT1", "wT1"})
 	public void Email_Q_Answer(int qT1, int rT1, int tT1, int wT1) throws Exception {
 		String testName = "Email->Q->Answered";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		agent1.releaseAgent();
 		agent2.releaseAgentSecondCode();
@@ -107,14 +107,14 @@ public class Test_Email_All extends TestCaseObject {
 	@Parameters({"rT1", "tT1"})
 	public void Email_NoQ_Answer_NoWrapTime(int rT1, int tT1) throws Exception {
 		String testName = "Email->NoQ->Answered with No Wrap time";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
-		//aa.services.get(3)  <= This is email service
-		sup1.AllType_Max_LogIn_changeWrapAndFRTime_LogOut_Min("emailservice", aa.services.get(3).name, "0", "40");
+		//AllActors.services.get(3)  <= This is email service
+		sup1.AllType_Max_LogIn_changeWrapAndFRTime_LogOut_Min("emailservice", AllActors.services.get(3).name, "0", "40");
 		
 		
 		//sup1.AllType_Max_LogIn_changeWrapAndFRTime_LogOut_Min("emailservice", "Y_EService1", "0", "40");
-		//log.info("aa.service3.get3 ==> " + aa.services.get(3).name);
+		//log.info("aa.service3.get3 ==> " + AllActors.services.get(3).name);
 		
 		 
 		//#########################
@@ -135,7 +135,7 @@ public class Test_Email_All extends TestCaseObject {
 			log.info("I am handling General exception=>"+ e.toString());
 			resetAllActors(testName);
 		}finally{
-			sup1.AllType_Max_LogIn_changeWrapAndFRTime_LogOut_Min("emailservice", aa.services.get(3).name, "20", "30");
+			sup1.AllType_Max_LogIn_changeWrapAndFRTime_LogOut_Min("emailservice", AllActors.services.get(3).name, "20", "30");
 			endTestCase(testName);
 	  }
 	}
@@ -145,7 +145,7 @@ public class Test_Email_All extends TestCaseObject {
 	public void Email_BTransfer_ToExt_SameGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 	
 		String testName = "Email->Ans->Blind Transfer to Ext on Same Group ";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -182,7 +182,7 @@ public class Test_Email_All extends TestCaseObject {
 	public void Email_R_Q_Overflow_R_Ans_2ndGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
 		String testName = "Email->Ring->Q->Overflow->Ring->Answer on the 2nd group";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -214,7 +214,7 @@ public class Test_Email_All extends TestCaseObject {
 	public void Email_R_Q_Overflow_Q_R_Ans_2ndGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
 		String testName = "Email->Ring->Q->Overflow->Q->Ring->Answer on the 2nd group";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -248,7 +248,7 @@ public class Test_Email_All extends TestCaseObject {
 	public void Email_Q_Overflow_R_Ans_2ndGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
 		String testName = "Email->Q->Overflow->Ring->Answer on the 2nd group";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -279,7 +279,7 @@ public class Test_Email_All extends TestCaseObject {
 	public void Email_Q_Overflow_R_Ans_1stGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
 		String testName = "Email->Q->Overflow->Ring->Answer on the 1st group";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{
@@ -313,7 +313,7 @@ public class Test_Email_All extends TestCaseObject {
 	public void Email_Q_OverInterflow_Q_R_Ans_3rdGroup(int rT1, int tT1, int rT2, int tT2, int wT2) throws Exception {
 		
 		String testName = "Email->Q->OverInterflow->Q->Ring->Answer on the 3rd group";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		
 		try{

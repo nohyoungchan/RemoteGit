@@ -1,17 +1,12 @@
 package HBTestesNG.TestCases;
 
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
-
-import java.io.FileInputStream;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
-
 import org.testng.annotations.AfterClass;
-
-import HBTestesNG.BaseObjects.*;import org.testng.SkipException;
+import HBTestesNG.BaseObjects.*;
 
 @Test(groups= {"Test_Load_ClassLevel"})
 public class Test_Load extends TestCaseObject {
@@ -89,7 +84,7 @@ public class Test_Load extends TestCaseObject {
 	public void Load_Mix() throws Exception {
 		String testName = "Load_Mix";
 		globalScenario = testName;
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		int i, agentSize;
 		agentSize = aa.agents.size();
 
@@ -118,7 +113,7 @@ public class Test_Load extends TestCaseObject {
 	public void Load_LogInOnly_ByThread() throws Exception {
 		String testName = "Load_LogInOnly_ByThread";
 		globalScenario = "Load_LogInOnly_ByThread";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		int i, agentSize;
 		agentSize = aa.agents.size();
 
@@ -148,7 +143,7 @@ public class Test_Load extends TestCaseObject {
 	public void Load_LogAndReLogInAfterMin_ByThread() throws Exception {
 		String testName = "Load_LogAndReLogInAfterMin_ByThread";
 		globalScenario = "Load_LogAndReLogInAfterMin_ByThread";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		int i, agentSize;
 		agentSize = aa.agents.size();
 
@@ -178,7 +173,7 @@ public class Test_Load extends TestCaseObject {
 	public void Load_LogAndSignoutCloseAfterMin_ByThread() throws Exception {
 		String testName = "Load_LogAndSignoutCloseAfterMin_ByThread";
 		globalScenario =  "Load_LogAndSignoutCloseAfterMin_ByThread";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		int i, agentSize;
 		agentSize = aa.agents.size();
 
@@ -218,7 +213,7 @@ public class Test_Load extends TestCaseObject {
 	public void Load_ChangeState() throws Exception {
 		String testName = "Load_ChangeState_Consistently";
 		globalScenario = testName;
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		int i, j, agentSize;
 		agentSize = aa.agents.size();
 		int waitSec; 
@@ -270,7 +265,7 @@ public class Test_Load extends TestCaseObject {
 	public void Load_ChangeState_ByThread() throws Exception {
 		String testName = "Load_ChangeState_ByThread";
 		globalScenario = testName;
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		int i, agentSize;
 		agentSize = aa.agents.size();
 
@@ -302,7 +297,7 @@ public class Test_Load extends TestCaseObject {
 		public void Load_VoiceACD_Answer_ByThread() throws Exception {
 			String testName = "Load_VoiceACD_Answer_ByThread";
 			globalScenario = testName;
-			if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+			if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 			int i, agentSize;
 			agentSize = aa.agents.size();
 
@@ -333,7 +328,7 @@ public class Test_Load extends TestCaseObject {
 	public void Load_Email_Answer_ByThread() throws Exception {
 		String testName = "Load_Email_Answer_ByThread";
 		globalScenario = testName;
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		int i, agentSize;
 		agentSize = aa.agents.size();
 
@@ -364,7 +359,7 @@ public class Test_Load extends TestCaseObject {
 	public void Load_Email_SendAndAnswer_ByThread() throws Exception {
 		String testName = "Load_Email_SendAndAnswer_ByThread";
 		globalScenario = testName;
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		int i;
 
 		try{
@@ -402,7 +397,7 @@ public class Test_Load extends TestCaseObject {
 	public void Load_Email_Send_ByThread() throws Exception {
 		String testName = "Load_Email_Send_ByThread";
 		globalScenario = testName;
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 
 		try{
 			
@@ -434,7 +429,7 @@ public class Test_Load extends TestCaseObject {
 	public void Load_Email_LogInFortheFirstTime() throws Exception {
 		String testName = "Load_Email_SendEmail_Continuously_ByThread";
 		globalScenario = testName;
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 
 		try{
 			
@@ -456,7 +451,7 @@ public class Test_Load extends TestCaseObject {
 	public void Load_Email_logIntoEmailClient_DeleteAllEmails() throws Exception{
 		String testName = "Load_Email_logIntoEmailClient_DeleteAllEmails";
 		globalScenario = testName;
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 
 		try{
 			aa.emailCustomers.get(0).logIntoEmailClient_DeleteAllEmails();
@@ -476,7 +471,7 @@ public class Test_Load extends TestCaseObject {
 		public void Load_Chat_SendAndAnswer_ByThread() throws Exception {
 			String testName = "Load_Chat_SendAndAnswer_ByThread";
 			globalScenario = testName;
-			if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+			if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 			int i;
 
 			try{

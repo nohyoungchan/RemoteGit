@@ -1,14 +1,10 @@
 package HBTestesNG.TestCases;
 
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Test;
-
 import ExceptionCustom.EC_logintoAIC;
-import Utility.PostCondition;
-
-import HBTestesNG.BaseObjects.*;import org.testng.SkipException;
+import HBTestesNG.BaseObjects.*;
 
 @Test(groups= {"Test_Initiate"})
 public class  Test_Initiate extends TestCaseObject{
@@ -108,54 +104,74 @@ public class  Test_Initiate extends TestCaseObject{
 			//return;
 		}
 
-		
-		for (int i=0; i < allActors.agents.size() ; i++ ){
-			if (0 ==allActors.agents.size()) { break;}
-			
-			//if WebBrowser is not closed, close
-			if (!allActors.agents.get(i).state.contains("closed"))
-				allActors.agents.get(i).tearDownAll();
-			wait(1);
+		try {
+			for (int i=0; i < allActors.agents.size() ; i++ ){
+				if (0 ==allActors.agents.size()) { break;}
+				
+				//if WebBrowser is not closed, close
+				if (!allActors.agents.get(i).state.contains("closed"))
+					allActors.agents.get(i).tearDownAll();
+				wait(1);
+			}
+		}catch(Exception e){
+			log.info("Somthing wrong with AIC teardown : " + e.toString());
 		}
 		
-
-		for (int i=0; i < allActors.supervisors.size() ; i++ ){
-			if (0 ==allActors.supervisors.size()) { break;}
-			
-			//if WebBrowser is not closed, close
-			if (!allActors.supervisors.get(i).state.contains("closed"))
-				allActors.supervisors.get(i).tearDownAll();
-			wait(1);
+		try {
+			for (int i=0; i < allActors.supervisors.size() ; i++ ){
+				if (0 ==allActors.supervisors.size()) { break;}
+				
+				//if WebBrowser is not closed, close
+				if (!allActors.supervisors.get(i).state.contains("closed"))
+					allActors.supervisors.get(i).tearDownAll();
+				wait(1);
+			}
+		}catch(Exception e){
+			log.info("Somthing wrong with CCD teardown : " + e.toString());
 		}
 		
-		for (int i=0; i < allActors.chatCustomers.size() ; i++ ){
-			if (0 ==allActors.chatCustomers.size()) { break;}
-			//if WebBrowser is not closed, close
-			if (!allActors.chatCustomers.get(i).state.contains("closed"))
-				allActors.chatCustomers.get(i).tearDownAll();
-			wait(1);
+		try {
+			for (int i=0; i < allActors.chatCustomers.size() ; i++ ){
+				if (0 ==allActors.chatCustomers.size()) { break;}
+				//if WebBrowser is not closed, close
+				if (!allActors.chatCustomers.get(i).state.contains("closed"))
+					allActors.chatCustomers.get(i).tearDownAll();
+				wait(1);
+			}
+		}catch(Exception e){
+			log.info("Somthing wrong with Chat customer teardown : " + e.toString());
 		}
 		
-		for (int i=0; i < allActors.emailCustomers.size() ; i++ ){
-			if (0 ==allActors.emailCustomers.size()) { break;}
-			
-			//if WebBrowser is not closed, close
-			if (!allActors.emailCustomers.get(i).state.contains("closed"))
-				allActors.emailCustomers.get(i).tearDownAll();
-			wait(1);
+		try {
+			for (int i=0; i < allActors.emailCustomers.size() ; i++ ){
+				if (0 ==allActors.emailCustomers.size()) { break;}
+				
+				//if WebBrowser is not closed, close
+				if (!allActors.emailCustomers.get(i).state.contains("closed"))
+					allActors.emailCustomers.get(i).tearDownAll();
+				wait(1);
+			}
+		}catch(Exception e){
+			log.info("Somthing wrong with email customer teardown : " + e.toString());
 		}
 		
-		for (int i=0; i < allActors.customers.size() ; i++ ){
-			if (0 ==allActors.customers.size()) { break;}
-			
-			allActors.customers.get(i).tearDownAll();
-			//executeShellCommand("taskkill /IM  ShoreTel.exe /F");  //This is to kill ShoreTel.exe when graceful close failed.
-
+		try {
+			for (int i=0; i < allActors.customers.size() ; i++ ){
+				if (0 ==allActors.customers.size()) { break;}
+				
+				allActors.customers.get(i).tearDownAll();
+				//executeShellCommand("taskkill /IM  ShoreTel.exe /F");  //This is to kill ShoreTel.exe when graceful close failed.
+	
+			}
+		}catch(Exception e){
+			log.info("Somthing wrong with voice customer teardown : " + e.toString());
 		}
 		
 		//This clears all message on Supervisor_Clent ->textMessage box
 		AllActors.superAdmin.sendMessage("clearMessage");
 		AllActors.superAdmin.printAllMessages();
+		TestStatus.printFailedCases();
+		TestStatus.printSkippedCases();
 		
 		currentTimeEnd();
 		totalExecutionTime();

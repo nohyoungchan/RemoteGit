@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.AfterClass;
 import HBTestesNG.BaseObjects.*;
-import HBTestesNG.BaseObjects.*;import org.testng.SkipException;
+
 
 @Test(groups= {"VoiceACD_Basic_ClassLevel"})
 public class Test_VoiceACD_Basic extends TestCaseObject {
@@ -30,7 +30,7 @@ public class Test_VoiceACD_Basic extends TestCaseObject {
 	@Parameters({"rT1", "tT1", "wT1"})
 	public void VoiceACD_NoQ_Answer(int rT1, int tT1, int wT1) throws Exception {
 		String testName = "VoiceACD->NoQ->Answered";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		
 		
 		//#########################
@@ -64,7 +64,7 @@ public class Test_VoiceACD_Basic extends TestCaseObject {
 	@Parameters({"qT1", "rT1", "tT1", "wT1"})
 	public void VoiceACD_Q_Answer(int qT1, int rT1, int tT1, int wT1) throws Exception {
 		String testName = "VoiceACD->Q->Answered";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test");
 		//#########################
 		agent1.releaseAgent();
 		agent2.releaseAgentSecondCode();
@@ -92,9 +92,9 @@ public class Test_VoiceACD_Basic extends TestCaseObject {
 	@Parameters({"rT1", "tT1"})
 	public void VoiceACD_NoQ_Answer_NoWrapTime(int rT1, int tT1) throws Exception {
 		String testName = "VoiceACD->NoQ->Answered with No Wrap time";
-		if(startTestCase(testName).contains("no")) skipTest("Skipping because user want to end test => " + testName);
+		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test");
 		//#########################
-		sup1.Max_LogIn_changeWrapAndFRTime_LogOut_Min(aa.services.get(0).name, "0", "40");
+		sup1.Max_LogIn_changeWrapAndFRTime_LogOut_Min(AllActors.services.get(0).name, "0", "40");
 		 
 		//#########################
 		agent1.resumeAgent();
@@ -113,7 +113,7 @@ public class Test_VoiceACD_Basic extends TestCaseObject {
 			log.info("I am handling General exception=>"+ e.toString());
 			resetAllActors(testName);
 		}finally{
-			sup1.Max_LogIn_changeWrapAndFRTime_LogOut_Min(aa.services.get(0).name, "20", "30");
+			sup1.Max_LogIn_changeWrapAndFRTime_LogOut_Min(AllActors.services.get(0).name, "20", "30");
 			endTestCase(testName);
 	}
 	}
