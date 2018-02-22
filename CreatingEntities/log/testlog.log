@@ -1,21 +1,18 @@
-2017-07-25 15:59:31  INFO [main] (Agent.java:79)- ## WebBrowser is => chrome
-2017-07-25 15:59:31  INFO [main] (Agent.java:84)- @ WebDriver=> chrome
-2017-07-25 15:59:31  INFO [main] (Agent.java:175)- 
+2018-02-21 16:46:38  INFO [main] (Agent.java:79)- ## WebBrowser is => chrome
+2018-02-21 16:46:38  INFO [main] (Agent.java:84)- @ WebDriver=> chrome
+2018-02-21 16:46:38  INFO [main] (Agent.java:175)- 
 @ #### Opening Chrome ####
-2017-07-25 15:59:33  INFO [main] (HBDirector.java:25)- supUserName ==> young1
-2017-07-25 15:59:33  INFO [main] (Test_HBDirector.java:24)- * Before Class: Test_HBDirector
-2017-07-25 15:59:33  INFO [main] (TestCaseBaseObject.java:82)- 
+2018-02-21 16:46:42  INFO [main] (HBDirector.java:25)- supUserName ==> super1@rickandmorty.twi.ucc1.com
+2018-02-21 16:46:42  INFO [main] (Test_HBDirector.java:24)- * Before Class: Test_HBDirector
+2018-02-21 16:46:42  INFO [main] (TestCaseBaseObject.java:82)- 
 
 
 ****************************************************************************************
-2017-07-25 15:59:33  INFO [main] (TestCaseBaseObject.java:83)- ****************************************************************************************
-2017-07-25 15:59:33  INFO [main] (TestCaseBaseObject.java:84)- $$$$$$$$$$$$$$$$$$$$$  CCDirector->CreateAgents $$$$$$$$$$$$$$$$$$$$$$$$$
-2017-07-25 15:59:33  INFO [main] (TestCaseBaseObject.java:85)- ****************************************************************************************
-2017-07-25 15:59:33  INFO [main] (TestCaseBaseObject.java:86)- ****************************************************************************************
-2017-07-25 15:59:33  INFO [main] (HBDirector.java:36)- 
-@ young1 #### Go to Login Page ####
-2017-07-25 15:59:33  INFO [main] (Agent.java:693)- 
+2018-02-21 16:46:42  INFO [main] (TestCaseBaseObject.java:83)- ****************************************************************************************
+2018-02-21 16:46:42  INFO [main] (TestCaseBaseObject.java:84)- $$$$$$$$$$$$$$$$$$$$$  CCDirector->CreateAgents $$$$$$$$$$$$$$$$$$$$$$$$$
+2018-02-21 16:46:42  INFO [main] (TestCaseBaseObject.java:85)- ****************************************************************************************
+2018-02-21 16:46:42  INFO [main] (TestCaseBaseObject.java:86)- ****************************************************************************************
+2018-02-21 16:46:42  INFO [main] (HBDirector.java:36)- 
+@ super1@rickandmorty.twi.ucc1.com #### Go to Login Page ####
+2018-02-21 16:46:42  INFO [main] (Agent.java:693)- 
 @ null => Maximizing FireFox
-2017-07-25 15:59:35  INFO [main] (HBDirector.java:40)- 
-@ young1 #### Adding supUserName -> password -> Submit ####
-2017-07-25 15:59:37  INFO [main] (TestBaseObject.java:44)- * Wait : 5 seconds.

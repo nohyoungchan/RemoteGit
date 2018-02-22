@@ -1,2 +1,3 @@
 agentName,agentUserName,agentID,agentExtension,agentCOS,agentEmailAddress
-agent1,agent1@loadtest1.com,201,201,ACOS1,agent1@qa.shoretel.com
+agent001,agent001@loadtest1.com,201,201,twi_cos1,agent001@qa.shoretel.com
+agent002,agent002@loadtest1.com,202,202,twi_cos1,agent002@qa.shoretel.com

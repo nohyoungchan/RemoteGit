@@ -51,16 +51,20 @@ public class Test_HBDirector extends TestCaseBaseObject {
 
 				log.info("\n###### Creating : " + ccAgent.agentName + " ########");
 
-				ccd2.clickXPath(AllEntities.gCCDXPathHash.get("agentNewBtn"));
+				//ccd2.clickXPath(AllEntities.gCCDXPathHash.get("agentNewBtn"));
+				ccd2.click_XPath("agentNewBtn");
 				ccd2.typeElementXPath(AllEntities.gCCDXPathHash.get("agentNameTxtBox"), ccAgent.agentName);
 				ccd2.typeElementXPath(AllEntities.gCCDXPathHash.get("agentUserNameTxtBox"), ccAgent.agentUserName); 
 				ccd2.typeElementXPath(AllEntities.gCCDXPathHash.get("agentIDTxtBox"), ccAgent.agentID);
 				ccd2.typeElementXPath(AllEntities.gCCDXPathHash.get("agentExtenstionTxtBox"), ccAgent.agenExtension);
 				ccd2.selectFromComboBox(AllEntities.gCCDXPathHash.get("agentCOS"), ccAgent.agentCOS);
 				ccd2.typeElementXPath(AllEntities.gCCDXPathHash.get("agentCorporateEmailAddress"), ccAgent.agentEmailAddress);
+				//ccd2.click_XPath(AllEntities.gCCDXPathHash.get("autoAnswer_voiceACD"));
+				ccd2.click_XPath("autoAnswer_voiceACD");
+	
 				wait(2);
-				//ccd2.clickXPath(AllEntities.gCCDXPathHash.get("agentAutoAnswerFlag"));
-				ccd2.clickXPath(AllEntities.gCCDXPathHash.get("agentCreateBtn"));
+				//ccd2.clickXPath(AllEntities.gCCDXPathHash.get("agentCreateBtn"));
+				ccd2.click_XPath("agentCreateBtn");
 				wait(2);
 				//ccd2.createOneAgent(agentName, agentUserName, agentID, agentExtension, agentEmail);
 			}
