@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test HB Suite" verbose="1">
+  <parameter name="qT1" value="10"></parameter> 
+  <parameter name="rT1" value="10"></parameter>          
+  <parameter name="tT1" value="10"></parameter>
+  <parameter name="wT1" value="10"></parameter>
+  <parameter name="rT2" value="10"></parameter>
+  <parameter name="tT2" value="10"></parameter> 
+  <parameter name="wT2" value="10"></parameter> 
+
+  <test name="VoiceACD Scenarios"> <!--### This is VoiceACD scenarios without Reverse scenarios### -->
+	  
+    <classes>
+	  <class name="HBTestesNG.TestCases.Test_Initiate">
+	  </class>
+	  
+	  <class name="HBTestesNG.TestCases.Test_Preparation">
+        <methods>   	
+          <include name="VoiceACD_Q_Abandon" />     <!--### This is an workaround for acd work. skip it once the problem is gone## -->
+        </methods>
+      </class>
+	        
+       
+       <class name="HBTestesNG.TestCases.Test_VoiceNACD_Transfer">
+        <methods>  
+          <include name="VoiceNACD_BTransfer_ToExt_SameGroup" />       	 
+          <include name="VoiceNACD_BTransfer_ToExt_DifferentGroup" /> 
+          <include name="VoiceNACD_BTransfer_ToExternal" />
+          <include name="VoiceNACD_BTransfer_ToIRN_SameGroup" /> 
+          <include name="VoiceNACD_BTransfer_ToIRN_DifferentGroup" /> 
+          <include name="VoiceNACD_BTransfer_ToIRN_AQ" />        	 
+          <include name="VoiceNACD_CTransfer_ToExt_SameGroup" />
+          <include name="VoiceNACD_CTransfer_ToExt_DifferentGroup" /> 
+          <include name="VoiceNACD_CTransfer_ToExternal" />
+          <include name="VoiceNACD_CTransfer_ToIRN_SameGroup" /> 
+          <include name="VoiceNACD_CTransfer_ToIRN_DifferentGroup" />       
+        </methods>
+       </class>
+       
+       <class name="HBTestesNG.TestCases.Test_VoiceNACD_Conference">
+        <methods>      
+      	  <exclude name="VoiceNACD_CConference_ToExt_DifferentGroup" />
+          <exclude name="VoiceNACD_CConference_ToExt_SameGroup" /> 
+          <exclude name="VoiceNACD_CConference_ToIRN_DifferentGroup" /> 
+          <exclude name="VoiceNACD_CConference_ToIRN_SameGroup" />  <!--# Not supported except PCM/Physical Phone # -->
+          <exclude name="VoiceNACD_CConference_ToExternal" />         
+        </methods>
+       </class>
+       
+       
+    </classes>
+  </test>
+</suite> 

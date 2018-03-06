@@ -785,12 +785,16 @@ public class Agent extends TestObject {
 		 if (TestObject.useWhichWebDriver.contains("phantomjs")) return;
 		 
 		 log.info("\n@(" + agentType + ") " +  username + " => Setting size to: W("+ width +"), H("+height+"), X("+xLocation+"), Y("+yLocation+")");
-		 Dimension windowSize = new Dimension(width,height);
-		 Point windowLocation = new Point(xLocation, yLocation);
-		 
-		 driver.manage().window().setSize(windowSize);
-		 wait(2);
-		 driver.manage().window().setPosition(windowLocation);
+		 try {
+			 Dimension windowSize = new Dimension(width,height);
+			 Point windowLocation = new Point(xLocation, yLocation);
+			 
+			 driver.manage().window().setSize(windowSize);
+			 wait(2);
+			 driver.manage().window().setPosition(windowLocation);
+		 }catch (Exception e) {
+		     log.info("I am handling General exception on setSizeAndLocation=>"+ e.toString());
+		 }
 	 }
 	 
 	 public void setPointFireFox(int xLocation, int yLocation) {

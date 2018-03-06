@@ -1,0 +1,1463 @@
+2018-03-05 13:46:00  INFO [main] (Agent.java:80)- @ WebDriver=> chrome
+2018-03-05 13:46:03  INFO [main] (Agent.java:823)- 
+@(null) null => minimizing Browser
+2018-03-05 13:46:03  INFO [main] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:46:03  INFO [main] (Agent.java:787)- 
+@(null) null => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:46:04  INFO [main] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:46:06  INFO [main] (AllActors.java:140)- Agent2=>young3: Shoreadmin1#: 403: 403
+2018-03-05 13:46:06  INFO [main] (TestCaseObject.java:123)- 
+
+###################################################
+2018-03-05 13:46:06  INFO [main] (TestCaseObject.java:124)- ###################################################
+2018-03-05 13:46:06  INFO [main] (TestCaseObject.java:125)- ###########  Starting a Test Suite ################
+2018-03-05 13:46:06  INFO [main] (TestCaseObject.java:126)- ###################################################
+2018-03-05 13:46:06  INFO [main] (TestCaseObject.java:127)- ###################################################
+2018-03-05 13:46:06  INFO [main] (AgentHB.java:171)- 
+@(WebAgent) young1 #### Go to Login Page ####
+2018-03-05 13:46:06  INFO [main] (AgentHB.java:177)- I am here: url is => http://10.23.175.161:3000/ecc
+2018-03-05 13:46:07  INFO [main] (Agent.java:810)- 
+@(WebAgent) young1 => Maximizing Browser
+2018-03-05 13:46:07  INFO [main] (AgentHB.java:184)- ## Precondition: logIntoWebAgent
+2018-03-05 13:46:07  INFO [main] (TestObject.java:49)- * Wait : 3 seconds.
+2018-03-05 13:46:10  INFO [main] (Agent.java:1073)- 
+@(WebAgent) young1 => logIntoWebAgent_PreCondition
+2018-03-05 13:46:10  INFO [main] (Agent.java:879)- # waitUntilClickable => webAgentUserNameTxtBox : for(sec) => 60
+2018-03-05 13:46:10  INFO [main] (Agent.java:1033)- # getXPath for  => webAgentUserNameTxtBox
+2018-03-05 13:46:10  INFO [main] (Agent.java:1055)- XPath is : .//*[@id='username']
+2018-03-05 13:46:10  INFO [main] (Agent.java:887)- XPath is : .//*[@id='username']
+2018-03-05 13:46:10  INFO [main] (Agent.java:1079)- 
+@(WebAgent) young1 => logIntoWebAgent_PreCondition: Success
+2018-03-05 13:46:10  INFO [main] (AgentHB.java:190)- 
+@(WebAgent) young1 #### Adding username -> password -> Submit ####
+2018-03-05 13:46:10  INFO [main] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:46:13  INFO [main] (TestObject.java:49)- * Wait : 3 seconds.
+2018-03-05 13:46:16  INFO [main] (Agent.java:1073)- 
+@(WebAgent) young1 => logIntoWebAgent_PostCondition
+2018-03-05 13:46:16  INFO [main] (Agent.java:879)- # waitUntilClickable => btnResume : for(sec) => 60
+2018-03-05 13:46:16  INFO [main] (Agent.java:1033)- # getXPath for  => btnResume
+2018-03-05 13:46:16  INFO [main] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:46:16  INFO [main] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:46:16  INFO [main] (Agent.java:1079)- 
+@(WebAgent) young1 => logIntoWebAgent_PostCondition: Success
+2018-03-05 13:46:16  INFO [main] (Agent.java:823)- 
+@(WebAgent) young1 => minimizing Browser
+2018-03-05 13:46:16  INFO [main] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:46:16  INFO [main] (Agent.java:787)- 
+@(WebAgent) young1 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:46:16  INFO [main] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:46:18  INFO [main] (AgentHB.java:171)- 
+@(WebAgent) young3 #### Go to Login Page ####
+2018-03-05 13:46:18  INFO [main] (AgentHB.java:177)- I am here: url is => http://10.23.175.161:3000/ecc
+2018-03-05 13:46:19  INFO [main] (Agent.java:810)- 
+@(WebAgent) young3 => Maximizing Browser
+2018-03-05 13:46:19  INFO [main] (AgentHB.java:184)- ## Precondition: logIntoWebAgent
+2018-03-05 13:46:19  INFO [main] (TestObject.java:49)- * Wait : 3 seconds.
+2018-03-05 13:46:22  INFO [main] (Agent.java:1073)- 
+@(WebAgent) young3 => logIntoWebAgent_PreCondition
+2018-03-05 13:46:22  INFO [main] (Agent.java:879)- # waitUntilClickable => webAgentUserNameTxtBox : for(sec) => 60
+2018-03-05 13:46:22  INFO [main] (Agent.java:1033)- # getXPath for  => webAgentUserNameTxtBox
+2018-03-05 13:46:22  INFO [main] (Agent.java:1055)- XPath is : .//*[@id='username']
+2018-03-05 13:46:22  INFO [main] (Agent.java:887)- XPath is : .//*[@id='username']
+2018-03-05 13:46:22  INFO [main] (Agent.java:1079)- 
+@(WebAgent) young3 => logIntoWebAgent_PreCondition: Success
+2018-03-05 13:46:22  INFO [main] (AgentHB.java:190)- 
+@(WebAgent) young3 #### Adding username -> password -> Submit ####
+2018-03-05 13:46:22  INFO [main] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:46:24  INFO [main] (TestObject.java:49)- * Wait : 3 seconds.
+2018-03-05 13:46:27  INFO [main] (Agent.java:1073)- 
+@(WebAgent) young3 => logIntoWebAgent_PostCondition
+2018-03-05 13:46:27  INFO [main] (Agent.java:879)- # waitUntilClickable => btnResume : for(sec) => 60
+2018-03-05 13:46:27  INFO [main] (Agent.java:1033)- # getXPath for  => btnResume
+2018-03-05 13:46:27  INFO [main] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:46:27  INFO [main] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:46:27  INFO [main] (Agent.java:1079)- 
+@(WebAgent) young3 => logIntoWebAgent_PostCondition: Success
+2018-03-05 13:46:27  INFO [main] (Agent.java:823)- 
+@(WebAgent) young3 => minimizing Browser
+2018-03-05 13:46:27  INFO [main] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:46:27  INFO [main] (Agent.java:787)- 
+@(WebAgent) young3 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:46:28  INFO [main] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:46:30  INFO [main] (TestCaseObject.java:174)- 
+
+****************************************************************************************
+2018-03-05 13:46:30  INFO [main] (TestCaseObject.java:175)- ****************************************************************************************
+2018-03-05 13:46:30  INFO [main] (TestCaseObject.java:176)- $$$$$$$$$$ Class Start:   Test_Load $$$$$$$$$$$$$$$$$$$$$$$$$
+2018-03-05 13:46:30  INFO [main] (TestCaseObject.java:177)- ****************************************************************************************
+2018-03-05 13:46:30  INFO [main] (TestCaseObject.java:178)- ****************************************************************************************
+2018-03-05 13:46:30  INFO [main] (TestCaseObject.java:206)- 
+
+
+****************************************************************************************
+2018-03-05 13:46:30  INFO [main] (TestCaseObject.java:207)- ****************************************************************************************
+2018-03-05 13:46:30  INFO [main] (TestCaseObject.java:208)- $$$$$$$$$$ Test Start:   Load_ChangeState_ByThread $$$$$$$$$$$$$$$$$$$$$$$$$
+2018-03-05 13:46:30  INFO [main] (TestCaseObject.java:209)- ****************************************************************************************
+2018-03-05 13:46:30  INFO [main] (TestCaseObject.java:210)- ****************************************************************************************
+2018-03-05 13:46:30  INFO [main] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:46:30  INFO [pool-1-thread-1] (AgentHB.java:1253)- @young1: Running => young1_Thread
+2018-03-05 13:46:30  INFO [pool-1-thread-1] (AgentHB.java:1268)- @10001@ young1: Thread on=>Load_ChangeState_ByThread
+2018-03-05 13:46:30  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:46:30  INFO [pool-1-thread-1] (AgentHB.java:352)- 
+@(WebAgent) young1 #### Release agent. ####
+2018-03-05 13:46:30  INFO [pool-1-thread-1] (Agent.java:810)- 
+@(WebAgent) young1 => Maximizing Browser
+2018-03-05 13:46:30  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 1 seconds.
+2018-03-05 13:46:31  INFO [pool-1-thread-1] (Agent.java:879)- # waitUntilClickable => btnReleaseCodeSelect : for(sec) => 10
+2018-03-05 13:46:31  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => btnReleaseCodeSelect
+2018-03-05 13:46:31  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:46:31  INFO [pool-1-thread-1] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:46:31  INFO [pool-1-thread-1] (Agent.java:1117)- 
+@(WebAgent) young1 Clicked=> btnReleaseCodeSelect
+2018-03-05 13:46:31  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:46:32  INFO [main] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:46:32  INFO [pool-1-thread-2] (AgentHB.java:1253)- @young3: Running => young3_Thread
+2018-03-05 13:46:32  INFO [pool-1-thread-2] (AgentHB.java:1268)- @10001@ young3: Thread on=>Load_ChangeState_ByThread
+2018-03-05 13:46:32  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:46:32  INFO [pool-1-thread-2] (AgentHB.java:352)- 
+@(WebAgent) young3 #### Release agent. ####
+2018-03-05 13:46:32  INFO [pool-1-thread-2] (Agent.java:810)- 
+@(WebAgent) young3 => Maximizing Browser
+2018-03-05 13:46:32  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 1 seconds.
+2018-03-05 13:46:33  INFO [pool-1-thread-2] (Agent.java:879)- # waitUntilClickable => btnReleaseCodeSelect : for(sec) => 10
+2018-03-05 13:46:33  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => btnReleaseCodeSelect
+2018-03-05 13:46:33  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:46:33  INFO [pool-1-thread-2] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:46:33  INFO [pool-1-thread-2] (Agent.java:1117)- 
+@(WebAgent) young3 Clicked=> btnReleaseCodeSelect
+2018-03-05 13:46:33  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:46:33  INFO [pool-1-thread-1] (Agent.java:879)- # waitUntilClickable => secondReleaseCode : for(sec) => 10
+2018-03-05 13:46:33  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => secondReleaseCode
+2018-03-05 13:46:33  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='release-codes']/li[2]/a
+2018-03-05 13:46:33  INFO [pool-1-thread-1] (Agent.java:887)- XPath is : .//*[@id='release-codes']/li[2]/a
+2018-03-05 13:46:33  INFO [pool-1-thread-1] (Agent.java:1117)- 
+@(WebAgent) young1 Clicked=> secondReleaseCode
+2018-03-05 13:46:33  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:46:35  INFO [pool-1-thread-2] (Agent.java:879)- # waitUntilClickable => secondReleaseCode : for(sec) => 10
+2018-03-05 13:46:35  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => secondReleaseCode
+2018-03-05 13:46:35  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='release-codes']/li[2]/a
+2018-03-05 13:46:35  INFO [pool-1-thread-2] (Agent.java:887)- XPath is : .//*[@id='release-codes']/li[2]/a
+2018-03-05 13:46:35  INFO [pool-1-thread-1] (Agent.java:823)- 
+@(WebAgent) young1 => minimizing Browser
+2018-03-05 13:46:35  INFO [pool-1-thread-1] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:46:35  INFO [pool-1-thread-1] (Agent.java:787)- 
+@(WebAgent) young1 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:46:35  INFO [pool-1-thread-2] (Agent.java:1117)- 
+@(WebAgent) young3 Clicked=> secondReleaseCode
+2018-03-05 13:46:35  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:46:35  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:46:37  INFO [pool-1-thread-2] (Agent.java:823)- 
+@(WebAgent) young3 => minimizing Browser
+2018-03-05 13:46:37  INFO [pool-1-thread-2] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:46:37  INFO [pool-1-thread-2] (Agent.java:787)- 
+@(WebAgent) young3 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:46:37  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:46:38  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:46:38  INFO [pool-1-thread-1] (AgentHB.java:476)- 
+@(WebAgent) young1 #### Resume agent. ####
+2018-03-05 13:46:38  INFO [pool-1-thread-1] (Agent.java:810)- 
+@(WebAgent) young1 => Maximizing Browser
+2018-03-05 13:46:38  INFO [pool-1-thread-1] (Agent.java:1073)- 
+@(WebAgent) young1 => resumeAgent_PreCondition
+2018-03-05 13:46:38  INFO [pool-1-thread-1] (Agent.java:879)- # waitUntilClickable => btnResume : for(sec) => 60
+2018-03-05 13:46:38  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => btnResume
+2018-03-05 13:46:38  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:46:38  INFO [pool-1-thread-1] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:46:38  INFO [pool-1-thread-1] (Agent.java:1079)- 
+@(WebAgent) young1 => resumeAgent_PreCondition: Success
+2018-03-05 13:46:38  INFO [pool-1-thread-1] (AgentHB.java:489)- 
+@(WebAgent) young1 ResumeAgent and State Returned: 
+2018-03-05 13:46:38  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:46:40  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:46:40  INFO [pool-1-thread-2] (AgentHB.java:476)- 
+@(WebAgent) young3 #### Resume agent. ####
+2018-03-05 13:46:40  INFO [pool-1-thread-2] (Agent.java:810)- 
+@(WebAgent) young3 => Maximizing Browser
+2018-03-05 13:46:40  INFO [pool-1-thread-2] (Agent.java:1073)- 
+@(WebAgent) young3 => resumeAgent_PreCondition
+2018-03-05 13:46:40  INFO [pool-1-thread-2] (Agent.java:879)- # waitUntilClickable => btnResume : for(sec) => 60
+2018-03-05 13:46:40  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => btnResume
+2018-03-05 13:46:40  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:46:40  INFO [pool-1-thread-2] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:46:40  INFO [pool-1-thread-2] (Agent.java:1079)- 
+@(WebAgent) young3 => resumeAgent_PreCondition: Success
+2018-03-05 13:46:40  INFO [pool-1-thread-2] (AgentHB.java:489)- 
+@(WebAgent) young3 ResumeAgent and State Returned: 
+2018-03-05 13:46:40  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:46:40  INFO [pool-1-thread-1] (AgentHB.java:1472)- 
+@(WebAgent) young1 => ######### Getting AIC state ########
+2018-03-05 13:46:40  INFO [pool-1-thread-1] (Agent.java:988)- # getWebElement => webAgentStatusBox : for(sec) => 10
+2018-03-05 13:46:40  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => webAgentStatusBox
+2018-03-05 13:46:40  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[2]/div/span[3]
+2018-03-05 13:46:40  INFO [pool-1-thread-1] (AgentHB.java:1475)- 
+@(WebAgent) young1 => strWebElementGetText: Break
+2018-03-05 13:46:40  INFO [pool-1-thread-1] (AgentHB.java:505)- 
+@(WebAgent) young1: State is idle alreay => Break
+2018-03-05 13:46:40  INFO [pool-1-thread-1] (Agent.java:823)- 
+@(WebAgent) young1 => minimizing Browser
+2018-03-05 13:46:40  INFO [pool-1-thread-1] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:46:40  INFO [pool-1-thread-1] (Agent.java:787)- 
+@(WebAgent) young1 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:46:40  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:46:42  INFO [pool-1-thread-2] (AgentHB.java:1472)- 
+@(WebAgent) young3 => ######### Getting AIC state ########
+2018-03-05 13:46:42  INFO [pool-1-thread-2] (Agent.java:988)- # getWebElement => webAgentStatusBox : for(sec) => 10
+2018-03-05 13:46:42  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => webAgentStatusBox
+2018-03-05 13:46:42  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[2]/div/span[3]
+2018-03-05 13:46:42  INFO [pool-1-thread-2] (AgentHB.java:1475)- 
+@(WebAgent) young3 => strWebElementGetText: Break
+2018-03-05 13:46:42  INFO [pool-1-thread-2] (AgentHB.java:505)- 
+@(WebAgent) young3: State is idle alreay => Break
+2018-03-05 13:46:42  INFO [pool-1-thread-2] (Agent.java:823)- 
+@(WebAgent) young3 => minimizing Browser
+2018-03-05 13:46:42  INFO [pool-1-thread-2] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:46:42  INFO [pool-1-thread-2] (Agent.java:787)- 
+@(WebAgent) young3 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:46:42  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:46:42  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:46:42  INFO [pool-1-thread-1] (AgentHB.java:392)- 
+@(WebAgent) young1 #### Release agent. ####
+2018-03-05 13:46:42  INFO [pool-1-thread-1] (Agent.java:810)- 
+@(WebAgent) young1 => Maximizing Browser
+2018-03-05 13:46:42  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 1 seconds.
+2018-03-05 13:46:43  INFO [pool-1-thread-1] (Agent.java:879)- # waitUntilClickable => btnReleaseCodeSelect : for(sec) => 10
+2018-03-05 13:46:43  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => btnReleaseCodeSelect
+2018-03-05 13:46:43  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:46:43  INFO [pool-1-thread-1] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:46:44  INFO [pool-1-thread-1] (Agent.java:1117)- 
+@(WebAgent) young1 Clicked=> btnReleaseCodeSelect
+2018-03-05 13:46:44  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:46:44  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:46:44  INFO [pool-1-thread-2] (AgentHB.java:392)- 
+@(WebAgent) young3 #### Release agent. ####
+2018-03-05 13:46:44  INFO [pool-1-thread-2] (Agent.java:810)- 
+@(WebAgent) young3 => Maximizing Browser
+2018-03-05 13:46:44  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 1 seconds.
+2018-03-05 13:46:45  INFO [pool-1-thread-2] (Agent.java:879)- # waitUntilClickable => btnReleaseCodeSelect : for(sec) => 10
+2018-03-05 13:46:45  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => btnReleaseCodeSelect
+2018-03-05 13:46:45  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:46:45  INFO [pool-1-thread-2] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:46:45  INFO [pool-1-thread-2] (Agent.java:1117)- 
+@(WebAgent) young3 Clicked=> btnReleaseCodeSelect
+2018-03-05 13:46:45  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:46:46  INFO [pool-1-thread-1] (Agent.java:879)- # waitUntilClickable => thirdReleaseCode : for(sec) => 10
+2018-03-05 13:46:46  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => thirdReleaseCode
+2018-03-05 13:46:46  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='release-codes']/li[3]/a
+2018-03-05 13:46:46  INFO [pool-1-thread-1] (Agent.java:887)- XPath is : .//*[@id='release-codes']/li[3]/a
+2018-03-05 13:46:46  INFO [pool-1-thread-1] (Agent.java:1117)- 
+@(WebAgent) young1 Clicked=> thirdReleaseCode
+2018-03-05 13:46:46  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:46:47  INFO [pool-1-thread-2] (Agent.java:879)- # waitUntilClickable => thirdReleaseCode : for(sec) => 10
+2018-03-05 13:46:47  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => thirdReleaseCode
+2018-03-05 13:46:47  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='release-codes']/li[3]/a
+2018-03-05 13:46:47  INFO [pool-1-thread-2] (Agent.java:887)- XPath is : .//*[@id='release-codes']/li[3]/a
+2018-03-05 13:46:48  INFO [pool-1-thread-2] (Agent.java:1117)- 
+@(WebAgent) young3 Clicked=> thirdReleaseCode
+2018-03-05 13:46:48  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:46:48  INFO [pool-1-thread-1] (Agent.java:823)- 
+@(WebAgent) young1 => minimizing Browser
+2018-03-05 13:46:48  INFO [pool-1-thread-1] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:46:48  INFO [pool-1-thread-1] (Agent.java:787)- 
+@(WebAgent) young1 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:46:48  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:46:50  INFO [pool-1-thread-2] (Agent.java:823)- 
+@(WebAgent) young3 => minimizing Browser
+2018-03-05 13:46:50  INFO [pool-1-thread-2] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:46:50  INFO [pool-1-thread-2] (Agent.java:787)- 
+@(WebAgent) young3 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:46:50  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:46:50  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:46:50  INFO [pool-1-thread-1] (AgentHB.java:476)- 
+@(WebAgent) young1 #### Resume agent. ####
+2018-03-05 13:46:50  INFO [pool-1-thread-1] (Agent.java:810)- 
+@(WebAgent) young1 => Maximizing Browser
+2018-03-05 13:46:50  INFO [pool-1-thread-1] (Agent.java:1073)- 
+@(WebAgent) young1 => resumeAgent_PreCondition
+2018-03-05 13:46:50  INFO [pool-1-thread-1] (Agent.java:879)- # waitUntilClickable => btnResume : for(sec) => 60
+2018-03-05 13:46:50  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => btnResume
+2018-03-05 13:46:50  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:46:50  INFO [pool-1-thread-1] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:46:50  INFO [pool-1-thread-1] (Agent.java:1079)- 
+@(WebAgent) young1 => resumeAgent_PreCondition: Success
+2018-03-05 13:46:50  INFO [pool-1-thread-1] (AgentHB.java:489)- 
+@(WebAgent) young1 ResumeAgent and State Returned: 
+2018-03-05 13:46:50  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:46:52  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:46:52  INFO [pool-1-thread-2] (AgentHB.java:476)- 
+@(WebAgent) young3 #### Resume agent. ####
+2018-03-05 13:46:52  INFO [pool-1-thread-2] (Agent.java:810)- 
+@(WebAgent) young3 => Maximizing Browser
+2018-03-05 13:46:52  INFO [pool-1-thread-2] (Agent.java:1073)- 
+@(WebAgent) young3 => resumeAgent_PreCondition
+2018-03-05 13:46:52  INFO [pool-1-thread-2] (Agent.java:879)- # waitUntilClickable => btnResume : for(sec) => 60
+2018-03-05 13:46:52  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => btnResume
+2018-03-05 13:46:52  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:46:52  INFO [pool-1-thread-2] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:46:52  INFO [pool-1-thread-2] (Agent.java:1079)- 
+@(WebAgent) young3 => resumeAgent_PreCondition: Success
+2018-03-05 13:46:52  INFO [pool-1-thread-2] (AgentHB.java:489)- 
+@(WebAgent) young3 ResumeAgent and State Returned: 
+2018-03-05 13:46:52  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:46:52  INFO [pool-1-thread-1] (AgentHB.java:1472)- 
+@(WebAgent) young1 => ######### Getting AIC state ########
+2018-03-05 13:46:52  INFO [pool-1-thread-1] (Agent.java:988)- # getWebElement => webAgentStatusBox : for(sec) => 10
+2018-03-05 13:46:52  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => webAgentStatusBox
+2018-03-05 13:46:52  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[2]/div/span[3]
+2018-03-05 13:46:52  INFO [pool-1-thread-1] (AgentHB.java:1475)- 
+@(WebAgent) young1 => strWebElementGetText: Lunch
+2018-03-05 13:46:52  INFO [pool-1-thread-1] (AgentHB.java:505)- 
+@(WebAgent) young1: State is idle alreay => Lunch
+2018-03-05 13:46:52  INFO [pool-1-thread-1] (Agent.java:823)- 
+@(WebAgent) young1 => minimizing Browser
+2018-03-05 13:46:52  INFO [pool-1-thread-1] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:46:52  INFO [pool-1-thread-1] (Agent.java:787)- 
+@(WebAgent) young1 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:46:52  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:46:54  INFO [pool-1-thread-2] (AgentHB.java:1472)- 
+@(WebAgent) young3 => ######### Getting AIC state ########
+2018-03-05 13:46:54  INFO [pool-1-thread-2] (Agent.java:988)- # getWebElement => webAgentStatusBox : for(sec) => 10
+2018-03-05 13:46:54  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => webAgentStatusBox
+2018-03-05 13:46:54  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[2]/div/span[3]
+2018-03-05 13:46:54  INFO [pool-1-thread-2] (AgentHB.java:1475)- 
+@(WebAgent) young3 => strWebElementGetText: Lunch
+2018-03-05 13:46:54  INFO [pool-1-thread-2] (AgentHB.java:505)- 
+@(WebAgent) young3: State is idle alreay => Lunch
+2018-03-05 13:46:54  INFO [pool-1-thread-2] (Agent.java:823)- 
+@(WebAgent) young3 => minimizing Browser
+2018-03-05 13:46:54  INFO [pool-1-thread-2] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:46:54  INFO [pool-1-thread-2] (Agent.java:787)- 
+@(WebAgent) young3 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:46:54  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:46:55  INFO [pool-1-thread-1] (AgentHB.java:1306)- @young1: Just Finished Running =>  10001th times
+2018-03-05 13:46:55  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:46:55  INFO [pool-1-thread-1] (AgentHB.java:1268)- @10002@ young1: Thread on=>Load_ChangeState_ByThread
+2018-03-05 13:46:55  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:46:55  INFO [pool-1-thread-1] (AgentHB.java:352)- 
+@(WebAgent) young1 #### Release agent. ####
+2018-03-05 13:46:55  INFO [pool-1-thread-1] (Agent.java:810)- 
+@(WebAgent) young1 => Maximizing Browser
+2018-03-05 13:46:55  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 1 seconds.
+2018-03-05 13:46:56  INFO [pool-1-thread-1] (Agent.java:879)- # waitUntilClickable => btnReleaseCodeSelect : for(sec) => 10
+2018-03-05 13:46:56  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => btnReleaseCodeSelect
+2018-03-05 13:46:56  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:46:56  INFO [pool-1-thread-1] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:46:56  INFO [pool-1-thread-1] (Agent.java:1117)- 
+@(WebAgent) young1 Clicked=> btnReleaseCodeSelect
+2018-03-05 13:46:56  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:46:57  INFO [pool-1-thread-2] (AgentHB.java:1306)- @young3: Just Finished Running =>  10001th times
+2018-03-05 13:46:57  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:46:57  INFO [pool-1-thread-2] (AgentHB.java:1268)- @10002@ young3: Thread on=>Load_ChangeState_ByThread
+2018-03-05 13:46:57  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:46:57  INFO [pool-1-thread-2] (AgentHB.java:352)- 
+@(WebAgent) young3 #### Release agent. ####
+2018-03-05 13:46:57  INFO [pool-1-thread-2] (Agent.java:810)- 
+@(WebAgent) young3 => Maximizing Browser
+2018-03-05 13:46:57  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 1 seconds.
+2018-03-05 13:46:58  INFO [pool-1-thread-2] (Agent.java:879)- # waitUntilClickable => btnReleaseCodeSelect : for(sec) => 10
+2018-03-05 13:46:58  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => btnReleaseCodeSelect
+2018-03-05 13:46:58  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:46:58  INFO [pool-1-thread-2] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:46:58  INFO [pool-1-thread-2] (Agent.java:1117)- 
+@(WebAgent) young3 Clicked=> btnReleaseCodeSelect
+2018-03-05 13:46:58  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:46:58  INFO [pool-1-thread-1] (Agent.java:879)- # waitUntilClickable => secondReleaseCode : for(sec) => 10
+2018-03-05 13:46:58  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => secondReleaseCode
+2018-03-05 13:46:58  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='release-codes']/li[2]/a
+2018-03-05 13:46:58  INFO [pool-1-thread-1] (Agent.java:887)- XPath is : .//*[@id='release-codes']/li[2]/a
+2018-03-05 13:46:58  INFO [pool-1-thread-1] (Agent.java:1117)- 
+@(WebAgent) young1 Clicked=> secondReleaseCode
+2018-03-05 13:46:58  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:00  INFO [pool-1-thread-2] (Agent.java:879)- # waitUntilClickable => secondReleaseCode : for(sec) => 10
+2018-03-05 13:47:00  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => secondReleaseCode
+2018-03-05 13:47:00  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='release-codes']/li[2]/a
+2018-03-05 13:47:00  INFO [pool-1-thread-2] (Agent.java:887)- XPath is : .//*[@id='release-codes']/li[2]/a
+2018-03-05 13:47:00  INFO [pool-1-thread-2] (Agent.java:1117)- 
+@(WebAgent) young3 Clicked=> secondReleaseCode
+2018-03-05 13:47:00  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:00  INFO [pool-1-thread-1] (Agent.java:823)- 
+@(WebAgent) young1 => minimizing Browser
+2018-03-05 13:47:00  INFO [pool-1-thread-1] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:47:00  INFO [pool-1-thread-1] (Agent.java:787)- 
+@(WebAgent) young1 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:47:00  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:02  INFO [pool-1-thread-2] (Agent.java:823)- 
+@(WebAgent) young3 => minimizing Browser
+2018-03-05 13:47:02  INFO [pool-1-thread-2] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:47:02  INFO [pool-1-thread-2] (Agent.java:787)- 
+@(WebAgent) young3 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:47:02  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:02  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:47:02  INFO [pool-1-thread-1] (AgentHB.java:476)- 
+@(WebAgent) young1 #### Resume agent. ####
+2018-03-05 13:47:02  INFO [pool-1-thread-1] (Agent.java:810)- 
+@(WebAgent) young1 => Maximizing Browser
+2018-03-05 13:47:02  INFO [pool-1-thread-1] (Agent.java:1073)- 
+@(WebAgent) young1 => resumeAgent_PreCondition
+2018-03-05 13:47:02  INFO [pool-1-thread-1] (Agent.java:879)- # waitUntilClickable => btnResume : for(sec) => 60
+2018-03-05 13:47:02  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => btnResume
+2018-03-05 13:47:02  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:47:02  INFO [pool-1-thread-1] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:47:02  INFO [pool-1-thread-1] (Agent.java:1079)- 
+@(WebAgent) young1 => resumeAgent_PreCondition: Success
+2018-03-05 13:47:02  INFO [pool-1-thread-1] (AgentHB.java:489)- 
+@(WebAgent) young1 ResumeAgent and State Returned: 
+2018-03-05 13:47:02  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:04  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:47:04  INFO [pool-1-thread-2] (AgentHB.java:476)- 
+@(WebAgent) young3 #### Resume agent. ####
+2018-03-05 13:47:04  INFO [pool-1-thread-2] (Agent.java:810)- 
+@(WebAgent) young3 => Maximizing Browser
+2018-03-05 13:47:04  INFO [pool-1-thread-2] (Agent.java:1073)- 
+@(WebAgent) young3 => resumeAgent_PreCondition
+2018-03-05 13:47:04  INFO [pool-1-thread-2] (Agent.java:879)- # waitUntilClickable => btnResume : for(sec) => 60
+2018-03-05 13:47:04  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => btnResume
+2018-03-05 13:47:04  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:47:04  INFO [pool-1-thread-2] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:47:04  INFO [pool-1-thread-2] (Agent.java:1079)- 
+@(WebAgent) young3 => resumeAgent_PreCondition: Success
+2018-03-05 13:47:04  INFO [pool-1-thread-2] (AgentHB.java:489)- 
+@(WebAgent) young3 ResumeAgent and State Returned: 
+2018-03-05 13:47:04  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:04  INFO [pool-1-thread-1] (AgentHB.java:1472)- 
+@(WebAgent) young1 => ######### Getting AIC state ########
+2018-03-05 13:47:04  INFO [pool-1-thread-1] (Agent.java:988)- # getWebElement => webAgentStatusBox : for(sec) => 10
+2018-03-05 13:47:04  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => webAgentStatusBox
+2018-03-05 13:47:04  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[2]/div/span[3]
+2018-03-05 13:47:05  INFO [pool-1-thread-1] (AgentHB.java:1475)- 
+@(WebAgent) young1 => strWebElementGetText: Break
+2018-03-05 13:47:05  INFO [pool-1-thread-1] (AgentHB.java:505)- 
+@(WebAgent) young1: State is idle alreay => Break
+2018-03-05 13:47:05  INFO [pool-1-thread-1] (Agent.java:823)- 
+@(WebAgent) young1 => minimizing Browser
+2018-03-05 13:47:05  INFO [pool-1-thread-1] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:47:05  INFO [pool-1-thread-1] (Agent.java:787)- 
+@(WebAgent) young1 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:47:05  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:06  INFO [pool-1-thread-2] (AgentHB.java:1472)- 
+@(WebAgent) young3 => ######### Getting AIC state ########
+2018-03-05 13:47:06  INFO [pool-1-thread-2] (Agent.java:988)- # getWebElement => webAgentStatusBox : for(sec) => 10
+2018-03-05 13:47:06  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => webAgentStatusBox
+2018-03-05 13:47:06  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[2]/div/span[3]
+2018-03-05 13:47:07  INFO [pool-1-thread-2] (AgentHB.java:1475)- 
+@(WebAgent) young3 => strWebElementGetText: Break
+2018-03-05 13:47:07  INFO [pool-1-thread-2] (AgentHB.java:505)- 
+@(WebAgent) young3: State is idle alreay => Break
+2018-03-05 13:47:07  INFO [pool-1-thread-2] (Agent.java:823)- 
+@(WebAgent) young3 => minimizing Browser
+2018-03-05 13:47:07  INFO [pool-1-thread-2] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:47:07  INFO [pool-1-thread-2] (Agent.java:787)- 
+@(WebAgent) young3 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:47:07  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:07  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:47:07  INFO [pool-1-thread-1] (AgentHB.java:392)- 
+@(WebAgent) young1 #### Release agent. ####
+2018-03-05 13:47:07  INFO [pool-1-thread-1] (Agent.java:810)- 
+@(WebAgent) young1 => Maximizing Browser
+2018-03-05 13:47:07  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 1 seconds.
+2018-03-05 13:47:08  INFO [pool-1-thread-1] (Agent.java:879)- # waitUntilClickable => btnReleaseCodeSelect : for(sec) => 10
+2018-03-05 13:47:08  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => btnReleaseCodeSelect
+2018-03-05 13:47:08  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:47:08  INFO [pool-1-thread-1] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:47:08  INFO [pool-1-thread-1] (Agent.java:1117)- 
+@(WebAgent) young1 Clicked=> btnReleaseCodeSelect
+2018-03-05 13:47:08  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:09  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:47:09  INFO [pool-1-thread-2] (AgentHB.java:392)- 
+@(WebAgent) young3 #### Release agent. ####
+2018-03-05 13:47:09  INFO [pool-1-thread-2] (Agent.java:810)- 
+@(WebAgent) young3 => Maximizing Browser
+2018-03-05 13:47:09  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 1 seconds.
+2018-03-05 13:47:10  INFO [pool-1-thread-2] (Agent.java:879)- # waitUntilClickable => btnReleaseCodeSelect : for(sec) => 10
+2018-03-05 13:47:10  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => btnReleaseCodeSelect
+2018-03-05 13:47:10  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:47:10  INFO [pool-1-thread-2] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:47:10  INFO [pool-1-thread-2] (Agent.java:1117)- 
+@(WebAgent) young3 Clicked=> btnReleaseCodeSelect
+2018-03-05 13:47:10  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:10  INFO [pool-1-thread-1] (Agent.java:879)- # waitUntilClickable => thirdReleaseCode : for(sec) => 10
+2018-03-05 13:47:10  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => thirdReleaseCode
+2018-03-05 13:47:10  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='release-codes']/li[3]/a
+2018-03-05 13:47:10  INFO [pool-1-thread-1] (Agent.java:887)- XPath is : .//*[@id='release-codes']/li[3]/a
+2018-03-05 13:47:10  INFO [pool-1-thread-1] (Agent.java:1117)- 
+@(WebAgent) young1 Clicked=> thirdReleaseCode
+2018-03-05 13:47:10  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:12  INFO [pool-1-thread-2] (Agent.java:879)- # waitUntilClickable => thirdReleaseCode : for(sec) => 10
+2018-03-05 13:47:12  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => thirdReleaseCode
+2018-03-05 13:47:12  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='release-codes']/li[3]/a
+2018-03-05 13:47:12  INFO [pool-1-thread-2] (Agent.java:887)- XPath is : .//*[@id='release-codes']/li[3]/a
+2018-03-05 13:47:12  INFO [pool-1-thread-2] (Agent.java:1117)- 
+@(WebAgent) young3 Clicked=> thirdReleaseCode
+2018-03-05 13:47:12  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:12  INFO [pool-1-thread-1] (Agent.java:823)- 
+@(WebAgent) young1 => minimizing Browser
+2018-03-05 13:47:12  INFO [pool-1-thread-1] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:47:12  INFO [pool-1-thread-1] (Agent.java:787)- 
+@(WebAgent) young1 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:47:12  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:14  INFO [pool-1-thread-2] (Agent.java:823)- 
+@(WebAgent) young3 => minimizing Browser
+2018-03-05 13:47:14  INFO [pool-1-thread-2] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:47:14  INFO [pool-1-thread-2] (Agent.java:787)- 
+@(WebAgent) young3 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:47:14  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:15  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:47:15  INFO [pool-1-thread-1] (AgentHB.java:476)- 
+@(WebAgent) young1 #### Resume agent. ####
+2018-03-05 13:47:15  INFO [pool-1-thread-1] (Agent.java:810)- 
+@(WebAgent) young1 => Maximizing Browser
+2018-03-05 13:47:15  INFO [pool-1-thread-1] (Agent.java:1073)- 
+@(WebAgent) young1 => resumeAgent_PreCondition
+2018-03-05 13:47:15  INFO [pool-1-thread-1] (Agent.java:879)- # waitUntilClickable => btnResume : for(sec) => 60
+2018-03-05 13:47:15  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => btnResume
+2018-03-05 13:47:15  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:47:15  INFO [pool-1-thread-1] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:47:15  INFO [pool-1-thread-1] (Agent.java:1079)- 
+@(WebAgent) young1 => resumeAgent_PreCondition: Success
+2018-03-05 13:47:15  INFO [pool-1-thread-1] (AgentHB.java:489)- 
+@(WebAgent) young1 ResumeAgent and State Returned: 
+2018-03-05 13:47:15  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:17  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:47:17  INFO [pool-1-thread-2] (AgentHB.java:476)- 
+@(WebAgent) young3 #### Resume agent. ####
+2018-03-05 13:47:17  INFO [pool-1-thread-2] (Agent.java:810)- 
+@(WebAgent) young3 => Maximizing Browser
+2018-03-05 13:47:17  INFO [pool-1-thread-2] (Agent.java:1073)- 
+@(WebAgent) young3 => resumeAgent_PreCondition
+2018-03-05 13:47:17  INFO [pool-1-thread-2] (Agent.java:879)- # waitUntilClickable => btnResume : for(sec) => 60
+2018-03-05 13:47:17  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => btnResume
+2018-03-05 13:47:17  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:47:17  INFO [pool-1-thread-2] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:47:17  INFO [pool-1-thread-2] (Agent.java:1079)- 
+@(WebAgent) young3 => resumeAgent_PreCondition: Success
+2018-03-05 13:47:17  INFO [pool-1-thread-2] (AgentHB.java:489)- 
+@(WebAgent) young3 ResumeAgent and State Returned: 
+2018-03-05 13:47:17  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:17  INFO [pool-1-thread-1] (AgentHB.java:1472)- 
+@(WebAgent) young1 => ######### Getting AIC state ########
+2018-03-05 13:47:17  INFO [pool-1-thread-1] (Agent.java:988)- # getWebElement => webAgentStatusBox : for(sec) => 10
+2018-03-05 13:47:17  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => webAgentStatusBox
+2018-03-05 13:47:17  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[2]/div/span[3]
+2018-03-05 13:47:17  INFO [pool-1-thread-1] (AgentHB.java:1475)- 
+@(WebAgent) young1 => strWebElementGetText: Lunch
+2018-03-05 13:47:17  INFO [pool-1-thread-1] (AgentHB.java:505)- 
+@(WebAgent) young1: State is idle alreay => Lunch
+2018-03-05 13:47:17  INFO [pool-1-thread-1] (Agent.java:823)- 
+@(WebAgent) young1 => minimizing Browser
+2018-03-05 13:47:17  INFO [pool-1-thread-1] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:47:17  INFO [pool-1-thread-1] (Agent.java:787)- 
+@(WebAgent) young1 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:47:17  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:19  INFO [pool-1-thread-2] (AgentHB.java:1472)- 
+@(WebAgent) young3 => ######### Getting AIC state ########
+2018-03-05 13:47:19  INFO [pool-1-thread-2] (Agent.java:988)- # getWebElement => webAgentStatusBox : for(sec) => 10
+2018-03-05 13:47:19  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => webAgentStatusBox
+2018-03-05 13:47:19  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[2]/div/span[3]
+2018-03-05 13:47:19  INFO [pool-1-thread-2] (AgentHB.java:1475)- 
+@(WebAgent) young3 => strWebElementGetText: Lunch
+2018-03-05 13:47:19  INFO [pool-1-thread-2] (AgentHB.java:505)- 
+@(WebAgent) young3: State is idle alreay => Lunch
+2018-03-05 13:47:19  INFO [pool-1-thread-2] (Agent.java:823)- 
+@(WebAgent) young3 => minimizing Browser
+2018-03-05 13:47:19  INFO [pool-1-thread-2] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:47:19  INFO [pool-1-thread-2] (Agent.java:787)- 
+@(WebAgent) young3 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:47:19  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:19  INFO [pool-1-thread-1] (AgentHB.java:1306)- @young1: Just Finished Running =>  10002th times
+2018-03-05 13:47:19  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:47:19  INFO [pool-1-thread-1] (AgentHB.java:1268)- @10003@ young1: Thread on=>Load_ChangeState_ByThread
+2018-03-05 13:47:19  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:47:19  INFO [pool-1-thread-1] (AgentHB.java:352)- 
+@(WebAgent) young1 #### Release agent. ####
+2018-03-05 13:47:19  INFO [pool-1-thread-1] (Agent.java:810)- 
+@(WebAgent) young1 => Maximizing Browser
+2018-03-05 13:47:19  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 1 seconds.
+2018-03-05 13:47:20  INFO [pool-1-thread-1] (Agent.java:879)- # waitUntilClickable => btnReleaseCodeSelect : for(sec) => 10
+2018-03-05 13:47:20  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => btnReleaseCodeSelect
+2018-03-05 13:47:20  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:47:20  INFO [pool-1-thread-1] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:47:20  INFO [pool-1-thread-1] (Agent.java:1117)- 
+@(WebAgent) young1 Clicked=> btnReleaseCodeSelect
+2018-03-05 13:47:20  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:21  INFO [pool-1-thread-2] (AgentHB.java:1306)- @young3: Just Finished Running =>  10002th times
+2018-03-05 13:47:21  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:47:21  INFO [pool-1-thread-2] (AgentHB.java:1268)- @10003@ young3: Thread on=>Load_ChangeState_ByThread
+2018-03-05 13:47:21  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:47:21  INFO [pool-1-thread-2] (AgentHB.java:352)- 
+@(WebAgent) young3 #### Release agent. ####
+2018-03-05 13:47:21  INFO [pool-1-thread-2] (Agent.java:810)- 
+@(WebAgent) young3 => Maximizing Browser
+2018-03-05 13:47:21  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 1 seconds.
+2018-03-05 13:47:22  INFO [pool-1-thread-2] (Agent.java:879)- # waitUntilClickable => btnReleaseCodeSelect : for(sec) => 10
+2018-03-05 13:47:22  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => btnReleaseCodeSelect
+2018-03-05 13:47:22  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:47:22  INFO [pool-1-thread-2] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:47:22  INFO [pool-1-thread-2] (Agent.java:1117)- 
+@(WebAgent) young3 Clicked=> btnReleaseCodeSelect
+2018-03-05 13:47:22  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:22  INFO [pool-1-thread-1] (Agent.java:879)- # waitUntilClickable => secondReleaseCode : for(sec) => 10
+2018-03-05 13:47:22  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => secondReleaseCode
+2018-03-05 13:47:22  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='release-codes']/li[2]/a
+2018-03-05 13:47:22  INFO [pool-1-thread-1] (Agent.java:887)- XPath is : .//*[@id='release-codes']/li[2]/a
+2018-03-05 13:47:22  INFO [pool-1-thread-1] (Agent.java:1117)- 
+@(WebAgent) young1 Clicked=> secondReleaseCode
+2018-03-05 13:47:22  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:24  INFO [pool-1-thread-2] (Agent.java:879)- # waitUntilClickable => secondReleaseCode : for(sec) => 10
+2018-03-05 13:47:24  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => secondReleaseCode
+2018-03-05 13:47:24  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='release-codes']/li[2]/a
+2018-03-05 13:47:24  INFO [pool-1-thread-2] (Agent.java:887)- XPath is : .//*[@id='release-codes']/li[2]/a
+2018-03-05 13:47:24  INFO [pool-1-thread-2] (Agent.java:1117)- 
+@(WebAgent) young3 Clicked=> secondReleaseCode
+2018-03-05 13:47:24  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:24  INFO [pool-1-thread-1] (Agent.java:823)- 
+@(WebAgent) young1 => minimizing Browser
+2018-03-05 13:47:24  INFO [pool-1-thread-1] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:47:24  INFO [pool-1-thread-1] (Agent.java:787)- 
+@(WebAgent) young1 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:47:25  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:26  INFO [pool-1-thread-2] (Agent.java:823)- 
+@(WebAgent) young3 => minimizing Browser
+2018-03-05 13:47:26  INFO [pool-1-thread-2] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:47:26  INFO [pool-1-thread-2] (Agent.java:787)- 
+@(WebAgent) young3 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:47:27  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:27  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:47:27  INFO [pool-1-thread-1] (AgentHB.java:476)- 
+@(WebAgent) young1 #### Resume agent. ####
+2018-03-05 13:47:27  INFO [pool-1-thread-1] (Agent.java:810)- 
+@(WebAgent) young1 => Maximizing Browser
+2018-03-05 13:47:27  INFO [pool-1-thread-1] (Agent.java:1073)- 
+@(WebAgent) young1 => resumeAgent_PreCondition
+2018-03-05 13:47:27  INFO [pool-1-thread-1] (Agent.java:879)- # waitUntilClickable => btnResume : for(sec) => 60
+2018-03-05 13:47:27  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => btnResume
+2018-03-05 13:47:27  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:47:27  INFO [pool-1-thread-1] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:47:27  INFO [pool-1-thread-1] (Agent.java:1079)- 
+@(WebAgent) young1 => resumeAgent_PreCondition: Success
+2018-03-05 13:47:27  INFO [pool-1-thread-1] (AgentHB.java:489)- 
+@(WebAgent) young1 ResumeAgent and State Returned: 
+2018-03-05 13:47:27  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:29  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:47:29  INFO [pool-1-thread-2] (AgentHB.java:476)- 
+@(WebAgent) young3 #### Resume agent. ####
+2018-03-05 13:47:29  INFO [pool-1-thread-2] (Agent.java:810)- 
+@(WebAgent) young3 => Maximizing Browser
+2018-03-05 13:47:29  INFO [pool-1-thread-2] (Agent.java:1073)- 
+@(WebAgent) young3 => resumeAgent_PreCondition
+2018-03-05 13:47:29  INFO [pool-1-thread-2] (Agent.java:879)- # waitUntilClickable => btnResume : for(sec) => 60
+2018-03-05 13:47:29  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => btnResume
+2018-03-05 13:47:29  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:47:29  INFO [pool-1-thread-2] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:47:29  INFO [pool-1-thread-2] (Agent.java:1079)- 
+@(WebAgent) young3 => resumeAgent_PreCondition: Success
+2018-03-05 13:47:29  INFO [pool-1-thread-2] (AgentHB.java:489)- 
+@(WebAgent) young3 ResumeAgent and State Returned: 
+2018-03-05 13:47:29  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:29  INFO [pool-1-thread-1] (AgentHB.java:1472)- 
+@(WebAgent) young1 => ######### Getting AIC state ########
+2018-03-05 13:47:29  INFO [pool-1-thread-1] (Agent.java:988)- # getWebElement => webAgentStatusBox : for(sec) => 10
+2018-03-05 13:47:29  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => webAgentStatusBox
+2018-03-05 13:47:29  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[2]/div/span[3]
+2018-03-05 13:47:29  INFO [pool-1-thread-1] (AgentHB.java:1475)- 
+@(WebAgent) young1 => strWebElementGetText: Break
+2018-03-05 13:47:29  INFO [pool-1-thread-1] (AgentHB.java:505)- 
+@(WebAgent) young1: State is idle alreay => Break
+2018-03-05 13:47:29  INFO [pool-1-thread-1] (Agent.java:823)- 
+@(WebAgent) young1 => minimizing Browser
+2018-03-05 13:47:29  INFO [pool-1-thread-1] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:47:29  INFO [pool-1-thread-1] (Agent.java:787)- 
+@(WebAgent) young1 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:47:29  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:31  INFO [pool-1-thread-2] (AgentHB.java:1472)- 
+@(WebAgent) young3 => ######### Getting AIC state ########
+2018-03-05 13:47:31  INFO [pool-1-thread-2] (Agent.java:988)- # getWebElement => webAgentStatusBox : for(sec) => 10
+2018-03-05 13:47:31  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => webAgentStatusBox
+2018-03-05 13:47:31  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[2]/div/span[3]
+2018-03-05 13:47:31  INFO [pool-1-thread-2] (AgentHB.java:1475)- 
+@(WebAgent) young3 => strWebElementGetText: Break
+2018-03-05 13:47:31  INFO [pool-1-thread-2] (AgentHB.java:505)- 
+@(WebAgent) young3: State is idle alreay => Break
+2018-03-05 13:47:31  INFO [pool-1-thread-2] (Agent.java:823)- 
+@(WebAgent) young3 => minimizing Browser
+2018-03-05 13:47:31  INFO [pool-1-thread-2] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:47:31  INFO [pool-1-thread-2] (Agent.java:787)- 
+@(WebAgent) young3 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:47:31  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:31  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:47:31  INFO [pool-1-thread-1] (AgentHB.java:392)- 
+@(WebAgent) young1 #### Release agent. ####
+2018-03-05 13:47:31  INFO [pool-1-thread-1] (Agent.java:810)- 
+@(WebAgent) young1 => Maximizing Browser
+2018-03-05 13:47:32  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 1 seconds.
+2018-03-05 13:47:33  INFO [pool-1-thread-1] (Agent.java:879)- # waitUntilClickable => btnReleaseCodeSelect : for(sec) => 10
+2018-03-05 13:47:33  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => btnReleaseCodeSelect
+2018-03-05 13:47:33  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:47:33  INFO [pool-1-thread-1] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:47:33  INFO [pool-1-thread-1] (Agent.java:1117)- 
+@(WebAgent) young1 Clicked=> btnReleaseCodeSelect
+2018-03-05 13:47:33  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:33  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:47:33  INFO [pool-1-thread-2] (AgentHB.java:392)- 
+@(WebAgent) young3 #### Release agent. ####
+2018-03-05 13:47:33  INFO [pool-1-thread-2] (Agent.java:810)- 
+@(WebAgent) young3 => Maximizing Browser
+2018-03-05 13:47:34  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 1 seconds.
+2018-03-05 13:47:35  INFO [pool-1-thread-2] (Agent.java:879)- # waitUntilClickable => btnReleaseCodeSelect : for(sec) => 10
+2018-03-05 13:47:35  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => btnReleaseCodeSelect
+2018-03-05 13:47:35  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:47:35  INFO [pool-1-thread-2] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:47:35  INFO [pool-1-thread-2] (Agent.java:1117)- 
+@(WebAgent) young3 Clicked=> btnReleaseCodeSelect
+2018-03-05 13:47:35  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:35  INFO [pool-1-thread-1] (Agent.java:879)- # waitUntilClickable => thirdReleaseCode : for(sec) => 10
+2018-03-05 13:47:35  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => thirdReleaseCode
+2018-03-05 13:47:35  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='release-codes']/li[3]/a
+2018-03-05 13:47:35  INFO [pool-1-thread-1] (Agent.java:887)- XPath is : .//*[@id='release-codes']/li[3]/a
+2018-03-05 13:47:35  INFO [pool-1-thread-1] (Agent.java:1117)- 
+@(WebAgent) young1 Clicked=> thirdReleaseCode
+2018-03-05 13:47:35  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:37  INFO [pool-1-thread-2] (Agent.java:879)- # waitUntilClickable => thirdReleaseCode : for(sec) => 10
+2018-03-05 13:47:37  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => thirdReleaseCode
+2018-03-05 13:47:37  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='release-codes']/li[3]/a
+2018-03-05 13:47:37  INFO [pool-1-thread-2] (Agent.java:887)- XPath is : .//*[@id='release-codes']/li[3]/a
+2018-03-05 13:47:37  INFO [pool-1-thread-2] (Agent.java:1117)- 
+@(WebAgent) young3 Clicked=> thirdReleaseCode
+2018-03-05 13:47:37  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:37  INFO [pool-1-thread-1] (Agent.java:823)- 
+@(WebAgent) young1 => minimizing Browser
+2018-03-05 13:47:37  INFO [pool-1-thread-1] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:47:37  INFO [pool-1-thread-1] (Agent.java:787)- 
+@(WebAgent) young1 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:47:37  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:39  INFO [pool-1-thread-2] (Agent.java:823)- 
+@(WebAgent) young3 => minimizing Browser
+2018-03-05 13:47:39  INFO [pool-1-thread-2] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:47:39  INFO [pool-1-thread-2] (Agent.java:787)- 
+@(WebAgent) young3 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:47:39  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:39  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:47:39  INFO [pool-1-thread-1] (AgentHB.java:476)- 
+@(WebAgent) young1 #### Resume agent. ####
+2018-03-05 13:47:39  INFO [pool-1-thread-1] (Agent.java:810)- 
+@(WebAgent) young1 => Maximizing Browser
+2018-03-05 13:47:39  INFO [pool-1-thread-1] (Agent.java:1073)- 
+@(WebAgent) young1 => resumeAgent_PreCondition
+2018-03-05 13:47:39  INFO [pool-1-thread-1] (Agent.java:879)- # waitUntilClickable => btnResume : for(sec) => 60
+2018-03-05 13:47:39  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => btnResume
+2018-03-05 13:47:39  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:47:39  INFO [pool-1-thread-1] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:47:39  INFO [pool-1-thread-1] (Agent.java:1079)- 
+@(WebAgent) young1 => resumeAgent_PreCondition: Success
+2018-03-05 13:47:39  INFO [pool-1-thread-1] (AgentHB.java:489)- 
+@(WebAgent) young1 ResumeAgent and State Returned: 
+2018-03-05 13:47:39  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:41  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:47:41  INFO [pool-1-thread-2] (AgentHB.java:476)- 
+@(WebAgent) young3 #### Resume agent. ####
+2018-03-05 13:47:41  INFO [pool-1-thread-2] (Agent.java:810)- 
+@(WebAgent) young3 => Maximizing Browser
+2018-03-05 13:47:41  INFO [pool-1-thread-2] (Agent.java:1073)- 
+@(WebAgent) young3 => resumeAgent_PreCondition
+2018-03-05 13:47:41  INFO [pool-1-thread-2] (Agent.java:879)- # waitUntilClickable => btnResume : for(sec) => 60
+2018-03-05 13:47:41  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => btnResume
+2018-03-05 13:47:41  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:47:41  INFO [pool-1-thread-2] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:47:41  INFO [pool-1-thread-2] (Agent.java:1079)- 
+@(WebAgent) young3 => resumeAgent_PreCondition: Success
+2018-03-05 13:47:41  INFO [pool-1-thread-2] (AgentHB.java:489)- 
+@(WebAgent) young3 ResumeAgent and State Returned: 
+2018-03-05 13:47:41  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:41  INFO [pool-1-thread-1] (AgentHB.java:1472)- 
+@(WebAgent) young1 => ######### Getting AIC state ########
+2018-03-05 13:47:41  INFO [pool-1-thread-1] (Agent.java:988)- # getWebElement => webAgentStatusBox : for(sec) => 10
+2018-03-05 13:47:41  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => webAgentStatusBox
+2018-03-05 13:47:41  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[2]/div/span[3]
+2018-03-05 13:47:41  INFO [pool-1-thread-1] (AgentHB.java:1475)- 
+@(WebAgent) young1 => strWebElementGetText: Lunch
+2018-03-05 13:47:41  INFO [pool-1-thread-1] (AgentHB.java:505)- 
+@(WebAgent) young1: State is idle alreay => Lunch
+2018-03-05 13:47:41  INFO [pool-1-thread-1] (Agent.java:823)- 
+@(WebAgent) young1 => minimizing Browser
+2018-03-05 13:47:41  INFO [pool-1-thread-1] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:47:41  INFO [pool-1-thread-1] (Agent.java:787)- 
+@(WebAgent) young1 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:47:42  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:43  INFO [pool-1-thread-2] (AgentHB.java:1472)- 
+@(WebAgent) young3 => ######### Getting AIC state ########
+2018-03-05 13:47:43  INFO [pool-1-thread-2] (Agent.java:988)- # getWebElement => webAgentStatusBox : for(sec) => 10
+2018-03-05 13:47:43  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => webAgentStatusBox
+2018-03-05 13:47:43  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[2]/div/span[3]
+2018-03-05 13:47:43  INFO [pool-1-thread-2] (AgentHB.java:1475)- 
+@(WebAgent) young3 => strWebElementGetText: Lunch
+2018-03-05 13:47:43  INFO [pool-1-thread-2] (AgentHB.java:505)- 
+@(WebAgent) young3: State is idle alreay => Lunch
+2018-03-05 13:47:43  INFO [pool-1-thread-2] (Agent.java:823)- 
+@(WebAgent) young3 => minimizing Browser
+2018-03-05 13:47:43  INFO [pool-1-thread-2] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:47:43  INFO [pool-1-thread-2] (Agent.java:787)- 
+@(WebAgent) young3 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:47:44  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:44  INFO [pool-1-thread-1] (AgentHB.java:1306)- @young1: Just Finished Running =>  10003th times
+2018-03-05 13:47:44  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:47:44  INFO [pool-1-thread-1] (AgentHB.java:1268)- @10004@ young1: Thread on=>Load_ChangeState_ByThread
+2018-03-05 13:47:44  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:47:44  INFO [pool-1-thread-1] (AgentHB.java:352)- 
+@(WebAgent) young1 #### Release agent. ####
+2018-03-05 13:47:44  INFO [pool-1-thread-1] (Agent.java:810)- 
+@(WebAgent) young1 => Maximizing Browser
+2018-03-05 13:47:44  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 1 seconds.
+2018-03-05 13:47:45  INFO [pool-1-thread-1] (Agent.java:879)- # waitUntilClickable => btnReleaseCodeSelect : for(sec) => 10
+2018-03-05 13:47:45  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => btnReleaseCodeSelect
+2018-03-05 13:47:45  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:47:45  INFO [pool-1-thread-1] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:47:45  INFO [pool-1-thread-1] (Agent.java:1117)- 
+@(WebAgent) young1 Clicked=> btnReleaseCodeSelect
+2018-03-05 13:47:45  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:46  INFO [pool-1-thread-2] (AgentHB.java:1306)- @young3: Just Finished Running =>  10003th times
+2018-03-05 13:47:46  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:47:46  INFO [pool-1-thread-2] (AgentHB.java:1268)- @10004@ young3: Thread on=>Load_ChangeState_ByThread
+2018-03-05 13:47:46  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:47:46  INFO [pool-1-thread-2] (AgentHB.java:352)- 
+@(WebAgent) young3 #### Release agent. ####
+2018-03-05 13:47:46  INFO [pool-1-thread-2] (Agent.java:810)- 
+@(WebAgent) young3 => Maximizing Browser
+2018-03-05 13:47:46  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 1 seconds.
+2018-03-05 13:47:47  INFO [pool-1-thread-2] (Agent.java:879)- # waitUntilClickable => btnReleaseCodeSelect : for(sec) => 10
+2018-03-05 13:47:47  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => btnReleaseCodeSelect
+2018-03-05 13:47:47  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:47:47  INFO [pool-1-thread-2] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:47:47  INFO [pool-1-thread-2] (Agent.java:1117)- 
+@(WebAgent) young3 Clicked=> btnReleaseCodeSelect
+2018-03-05 13:47:47  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:47  INFO [pool-1-thread-1] (Agent.java:879)- # waitUntilClickable => secondReleaseCode : for(sec) => 10
+2018-03-05 13:47:47  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => secondReleaseCode
+2018-03-05 13:47:47  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='release-codes']/li[2]/a
+2018-03-05 13:47:47  INFO [pool-1-thread-1] (Agent.java:887)- XPath is : .//*[@id='release-codes']/li[2]/a
+2018-03-05 13:47:47  INFO [pool-1-thread-1] (Agent.java:1117)- 
+@(WebAgent) young1 Clicked=> secondReleaseCode
+2018-03-05 13:47:47  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:49  INFO [pool-1-thread-2] (Agent.java:879)- # waitUntilClickable => secondReleaseCode : for(sec) => 10
+2018-03-05 13:47:49  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => secondReleaseCode
+2018-03-05 13:47:49  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='release-codes']/li[2]/a
+2018-03-05 13:47:49  INFO [pool-1-thread-2] (Agent.java:887)- XPath is : .//*[@id='release-codes']/li[2]/a
+2018-03-05 13:47:49  INFO [pool-1-thread-2] (Agent.java:1117)- 
+@(WebAgent) young3 Clicked=> secondReleaseCode
+2018-03-05 13:47:49  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:49  INFO [pool-1-thread-1] (Agent.java:823)- 
+@(WebAgent) young1 => minimizing Browser
+2018-03-05 13:47:49  INFO [pool-1-thread-1] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:47:49  INFO [pool-1-thread-1] (Agent.java:787)- 
+@(WebAgent) young1 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:47:49  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:51  INFO [pool-1-thread-2] (Agent.java:823)- 
+@(WebAgent) young3 => minimizing Browser
+2018-03-05 13:47:51  INFO [pool-1-thread-2] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:47:51  INFO [pool-1-thread-2] (Agent.java:787)- 
+@(WebAgent) young3 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:47:51  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:51  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:47:51  INFO [pool-1-thread-1] (AgentHB.java:476)- 
+@(WebAgent) young1 #### Resume agent. ####
+2018-03-05 13:47:51  INFO [pool-1-thread-1] (Agent.java:810)- 
+@(WebAgent) young1 => Maximizing Browser
+2018-03-05 13:47:51  INFO [pool-1-thread-1] (Agent.java:1073)- 
+@(WebAgent) young1 => resumeAgent_PreCondition
+2018-03-05 13:47:51  INFO [pool-1-thread-1] (Agent.java:879)- # waitUntilClickable => btnResume : for(sec) => 60
+2018-03-05 13:47:51  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => btnResume
+2018-03-05 13:47:51  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:47:51  INFO [pool-1-thread-1] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:47:52  INFO [pool-1-thread-1] (Agent.java:1079)- 
+@(WebAgent) young1 => resumeAgent_PreCondition: Success
+2018-03-05 13:47:52  INFO [pool-1-thread-1] (AgentHB.java:489)- 
+@(WebAgent) young1 ResumeAgent and State Returned: 
+2018-03-05 13:47:52  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:53  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:47:53  INFO [pool-1-thread-2] (AgentHB.java:476)- 
+@(WebAgent) young3 #### Resume agent. ####
+2018-03-05 13:47:53  INFO [pool-1-thread-2] (Agent.java:810)- 
+@(WebAgent) young3 => Maximizing Browser
+2018-03-05 13:47:53  INFO [pool-1-thread-2] (Agent.java:1073)- 
+@(WebAgent) young3 => resumeAgent_PreCondition
+2018-03-05 13:47:53  INFO [pool-1-thread-2] (Agent.java:879)- # waitUntilClickable => btnResume : for(sec) => 60
+2018-03-05 13:47:53  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => btnResume
+2018-03-05 13:47:53  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:47:53  INFO [pool-1-thread-2] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:47:54  INFO [pool-1-thread-2] (Agent.java:1079)- 
+@(WebAgent) young3 => resumeAgent_PreCondition: Success
+2018-03-05 13:47:54  INFO [pool-1-thread-2] (AgentHB.java:489)- 
+@(WebAgent) young3 ResumeAgent and State Returned: 
+2018-03-05 13:47:54  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:54  INFO [pool-1-thread-1] (AgentHB.java:1472)- 
+@(WebAgent) young1 => ######### Getting AIC state ########
+2018-03-05 13:47:54  INFO [pool-1-thread-1] (Agent.java:988)- # getWebElement => webAgentStatusBox : for(sec) => 10
+2018-03-05 13:47:54  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => webAgentStatusBox
+2018-03-05 13:47:54  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[2]/div/span[3]
+2018-03-05 13:47:54  INFO [pool-1-thread-1] (AgentHB.java:1475)- 
+@(WebAgent) young1 => strWebElementGetText: Break
+2018-03-05 13:47:54  INFO [pool-1-thread-1] (AgentHB.java:505)- 
+@(WebAgent) young1: State is idle alreay => Break
+2018-03-05 13:47:54  INFO [pool-1-thread-1] (Agent.java:823)- 
+@(WebAgent) young1 => minimizing Browser
+2018-03-05 13:47:54  INFO [pool-1-thread-1] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:47:54  INFO [pool-1-thread-1] (Agent.java:787)- 
+@(WebAgent) young1 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:47:54  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:56  INFO [pool-1-thread-2] (AgentHB.java:1472)- 
+@(WebAgent) young3 => ######### Getting AIC state ########
+2018-03-05 13:47:56  INFO [pool-1-thread-2] (Agent.java:988)- # getWebElement => webAgentStatusBox : for(sec) => 10
+2018-03-05 13:47:56  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => webAgentStatusBox
+2018-03-05 13:47:56  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[2]/div/span[3]
+2018-03-05 13:47:56  INFO [pool-1-thread-2] (AgentHB.java:1475)- 
+@(WebAgent) young3 => strWebElementGetText: Break
+2018-03-05 13:47:56  INFO [pool-1-thread-2] (AgentHB.java:505)- 
+@(WebAgent) young3: State is idle alreay => Break
+2018-03-05 13:47:56  INFO [pool-1-thread-2] (Agent.java:823)- 
+@(WebAgent) young3 => minimizing Browser
+2018-03-05 13:47:56  INFO [pool-1-thread-2] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:47:56  INFO [pool-1-thread-2] (Agent.java:787)- 
+@(WebAgent) young3 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:47:56  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:56  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:47:56  INFO [pool-1-thread-1] (AgentHB.java:392)- 
+@(WebAgent) young1 #### Release agent. ####
+2018-03-05 13:47:56  INFO [pool-1-thread-1] (Agent.java:810)- 
+@(WebAgent) young1 => Maximizing Browser
+2018-03-05 13:47:56  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 1 seconds.
+2018-03-05 13:47:57  INFO [pool-1-thread-1] (Agent.java:879)- # waitUntilClickable => btnReleaseCodeSelect : for(sec) => 10
+2018-03-05 13:47:57  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => btnReleaseCodeSelect
+2018-03-05 13:47:57  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:47:57  INFO [pool-1-thread-1] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:47:57  INFO [pool-1-thread-1] (Agent.java:1117)- 
+@(WebAgent) young1 Clicked=> btnReleaseCodeSelect
+2018-03-05 13:47:57  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:58  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:47:58  INFO [pool-1-thread-2] (AgentHB.java:392)- 
+@(WebAgent) young3 #### Release agent. ####
+2018-03-05 13:47:58  INFO [pool-1-thread-2] (Agent.java:810)- 
+@(WebAgent) young3 => Maximizing Browser
+2018-03-05 13:47:58  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 1 seconds.
+2018-03-05 13:47:59  INFO [pool-1-thread-2] (Agent.java:879)- # waitUntilClickable => btnReleaseCodeSelect : for(sec) => 10
+2018-03-05 13:47:59  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => btnReleaseCodeSelect
+2018-03-05 13:47:59  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:47:59  INFO [pool-1-thread-2] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:47:59  INFO [pool-1-thread-2] (Agent.java:1117)- 
+@(WebAgent) young3 Clicked=> btnReleaseCodeSelect
+2018-03-05 13:47:59  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:47:59  INFO [pool-1-thread-1] (Agent.java:879)- # waitUntilClickable => thirdReleaseCode : for(sec) => 10
+2018-03-05 13:47:59  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => thirdReleaseCode
+2018-03-05 13:47:59  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='release-codes']/li[3]/a
+2018-03-05 13:47:59  INFO [pool-1-thread-1] (Agent.java:887)- XPath is : .//*[@id='release-codes']/li[3]/a
+2018-03-05 13:47:59  INFO [pool-1-thread-1] (Agent.java:1117)- 
+@(WebAgent) young1 Clicked=> thirdReleaseCode
+2018-03-05 13:47:59  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:01  INFO [pool-1-thread-2] (Agent.java:879)- # waitUntilClickable => thirdReleaseCode : for(sec) => 10
+2018-03-05 13:48:01  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => thirdReleaseCode
+2018-03-05 13:48:01  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='release-codes']/li[3]/a
+2018-03-05 13:48:01  INFO [pool-1-thread-2] (Agent.java:887)- XPath is : .//*[@id='release-codes']/li[3]/a
+2018-03-05 13:48:01  INFO [pool-1-thread-2] (Agent.java:1117)- 
+@(WebAgent) young3 Clicked=> thirdReleaseCode
+2018-03-05 13:48:01  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:01  INFO [pool-1-thread-1] (Agent.java:823)- 
+@(WebAgent) young1 => minimizing Browser
+2018-03-05 13:48:01  INFO [pool-1-thread-1] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:48:01  INFO [pool-1-thread-1] (Agent.java:787)- 
+@(WebAgent) young1 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:48:02  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:03  INFO [pool-1-thread-2] (Agent.java:823)- 
+@(WebAgent) young3 => minimizing Browser
+2018-03-05 13:48:03  INFO [pool-1-thread-2] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:48:03  INFO [pool-1-thread-2] (Agent.java:787)- 
+@(WebAgent) young3 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:48:03  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:04  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:48:04  INFO [pool-1-thread-1] (AgentHB.java:476)- 
+@(WebAgent) young1 #### Resume agent. ####
+2018-03-05 13:48:04  INFO [pool-1-thread-1] (Agent.java:810)- 
+@(WebAgent) young1 => Maximizing Browser
+2018-03-05 13:48:04  INFO [pool-1-thread-1] (Agent.java:1073)- 
+@(WebAgent) young1 => resumeAgent_PreCondition
+2018-03-05 13:48:04  INFO [pool-1-thread-1] (Agent.java:879)- # waitUntilClickable => btnResume : for(sec) => 60
+2018-03-05 13:48:04  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => btnResume
+2018-03-05 13:48:04  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:48:04  INFO [pool-1-thread-1] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:48:04  INFO [pool-1-thread-1] (Agent.java:1079)- 
+@(WebAgent) young1 => resumeAgent_PreCondition: Success
+2018-03-05 13:48:04  INFO [pool-1-thread-1] (AgentHB.java:489)- 
+@(WebAgent) young1 ResumeAgent and State Returned: 
+2018-03-05 13:48:04  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:06  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:48:06  INFO [pool-1-thread-2] (AgentHB.java:476)- 
+@(WebAgent) young3 #### Resume agent. ####
+2018-03-05 13:48:06  INFO [pool-1-thread-2] (Agent.java:810)- 
+@(WebAgent) young3 => Maximizing Browser
+2018-03-05 13:48:06  INFO [pool-1-thread-2] (Agent.java:1073)- 
+@(WebAgent) young3 => resumeAgent_PreCondition
+2018-03-05 13:48:06  INFO [pool-1-thread-2] (Agent.java:879)- # waitUntilClickable => btnResume : for(sec) => 60
+2018-03-05 13:48:06  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => btnResume
+2018-03-05 13:48:06  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:48:06  INFO [pool-1-thread-2] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:48:06  INFO [pool-1-thread-2] (Agent.java:1079)- 
+@(WebAgent) young3 => resumeAgent_PreCondition: Success
+2018-03-05 13:48:06  INFO [pool-1-thread-2] (AgentHB.java:489)- 
+@(WebAgent) young3 ResumeAgent and State Returned: 
+2018-03-05 13:48:06  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:06  INFO [pool-1-thread-1] (AgentHB.java:1472)- 
+@(WebAgent) young1 => ######### Getting AIC state ########
+2018-03-05 13:48:06  INFO [pool-1-thread-1] (Agent.java:988)- # getWebElement => webAgentStatusBox : for(sec) => 10
+2018-03-05 13:48:06  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => webAgentStatusBox
+2018-03-05 13:48:06  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[2]/div/span[3]
+2018-03-05 13:48:06  INFO [pool-1-thread-1] (AgentHB.java:1475)- 
+@(WebAgent) young1 => strWebElementGetText: Lunch
+2018-03-05 13:48:06  INFO [pool-1-thread-1] (AgentHB.java:505)- 
+@(WebAgent) young1: State is idle alreay => Lunch
+2018-03-05 13:48:06  INFO [pool-1-thread-1] (Agent.java:823)- 
+@(WebAgent) young1 => minimizing Browser
+2018-03-05 13:48:06  INFO [pool-1-thread-1] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:48:06  INFO [pool-1-thread-1] (Agent.java:787)- 
+@(WebAgent) young1 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:48:06  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:08  INFO [pool-1-thread-2] (AgentHB.java:1472)- 
+@(WebAgent) young3 => ######### Getting AIC state ########
+2018-03-05 13:48:08  INFO [pool-1-thread-2] (Agent.java:988)- # getWebElement => webAgentStatusBox : for(sec) => 10
+2018-03-05 13:48:08  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => webAgentStatusBox
+2018-03-05 13:48:08  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[2]/div/span[3]
+2018-03-05 13:48:08  INFO [pool-1-thread-2] (AgentHB.java:1475)- 
+@(WebAgent) young3 => strWebElementGetText: Lunch
+2018-03-05 13:48:08  INFO [pool-1-thread-2] (AgentHB.java:505)- 
+@(WebAgent) young3: State is idle alreay => Lunch
+2018-03-05 13:48:08  INFO [pool-1-thread-2] (Agent.java:823)- 
+@(WebAgent) young3 => minimizing Browser
+2018-03-05 13:48:08  INFO [pool-1-thread-2] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:48:08  INFO [pool-1-thread-2] (Agent.java:787)- 
+@(WebAgent) young3 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:48:08  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:08  INFO [pool-1-thread-1] (AgentHB.java:1306)- @young1: Just Finished Running =>  10004th times
+2018-03-05 13:48:08  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:48:08  INFO [pool-1-thread-1] (AgentHB.java:1268)- @10005@ young1: Thread on=>Load_ChangeState_ByThread
+2018-03-05 13:48:08  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:48:08  INFO [pool-1-thread-1] (AgentHB.java:352)- 
+@(WebAgent) young1 #### Release agent. ####
+2018-03-05 13:48:08  INFO [pool-1-thread-1] (Agent.java:810)- 
+@(WebAgent) young1 => Maximizing Browser
+2018-03-05 13:48:08  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 1 seconds.
+2018-03-05 13:48:09  INFO [pool-1-thread-1] (Agent.java:879)- # waitUntilClickable => btnReleaseCodeSelect : for(sec) => 10
+2018-03-05 13:48:09  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => btnReleaseCodeSelect
+2018-03-05 13:48:09  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:48:09  INFO [pool-1-thread-1] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:48:09  INFO [pool-1-thread-1] (Agent.java:1117)- 
+@(WebAgent) young1 Clicked=> btnReleaseCodeSelect
+2018-03-05 13:48:09  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:10  INFO [pool-1-thread-2] (AgentHB.java:1306)- @young3: Just Finished Running =>  10004th times
+2018-03-05 13:48:10  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:48:10  INFO [pool-1-thread-2] (AgentHB.java:1268)- @10005@ young3: Thread on=>Load_ChangeState_ByThread
+2018-03-05 13:48:10  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:48:10  INFO [pool-1-thread-2] (AgentHB.java:352)- 
+@(WebAgent) young3 #### Release agent. ####
+2018-03-05 13:48:10  INFO [pool-1-thread-2] (Agent.java:810)- 
+@(WebAgent) young3 => Maximizing Browser
+2018-03-05 13:48:10  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 1 seconds.
+2018-03-05 13:48:11  INFO [pool-1-thread-2] (Agent.java:879)- # waitUntilClickable => btnReleaseCodeSelect : for(sec) => 10
+2018-03-05 13:48:11  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => btnReleaseCodeSelect
+2018-03-05 13:48:11  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:48:11  INFO [pool-1-thread-2] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:48:11  INFO [pool-1-thread-2] (Agent.java:1117)- 
+@(WebAgent) young3 Clicked=> btnReleaseCodeSelect
+2018-03-05 13:48:11  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:11  INFO [pool-1-thread-1] (Agent.java:879)- # waitUntilClickable => secondReleaseCode : for(sec) => 10
+2018-03-05 13:48:11  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => secondReleaseCode
+2018-03-05 13:48:11  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='release-codes']/li[2]/a
+2018-03-05 13:48:11  INFO [pool-1-thread-1] (Agent.java:887)- XPath is : .//*[@id='release-codes']/li[2]/a
+2018-03-05 13:48:12  INFO [pool-1-thread-1] (Agent.java:1117)- 
+@(WebAgent) young1 Clicked=> secondReleaseCode
+2018-03-05 13:48:12  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:13  INFO [pool-1-thread-2] (Agent.java:879)- # waitUntilClickable => secondReleaseCode : for(sec) => 10
+2018-03-05 13:48:13  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => secondReleaseCode
+2018-03-05 13:48:13  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='release-codes']/li[2]/a
+2018-03-05 13:48:13  INFO [pool-1-thread-2] (Agent.java:887)- XPath is : .//*[@id='release-codes']/li[2]/a
+2018-03-05 13:48:14  INFO [pool-1-thread-2] (Agent.java:1117)- 
+@(WebAgent) young3 Clicked=> secondReleaseCode
+2018-03-05 13:48:14  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:14  INFO [pool-1-thread-1] (Agent.java:823)- 
+@(WebAgent) young1 => minimizing Browser
+2018-03-05 13:48:14  INFO [pool-1-thread-1] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:48:14  INFO [pool-1-thread-1] (Agent.java:787)- 
+@(WebAgent) young1 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:48:14  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:16  INFO [pool-1-thread-2] (Agent.java:823)- 
+@(WebAgent) young3 => minimizing Browser
+2018-03-05 13:48:16  INFO [pool-1-thread-2] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:48:16  INFO [pool-1-thread-2] (Agent.java:787)- 
+@(WebAgent) young3 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:48:16  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:16  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:48:16  INFO [pool-1-thread-1] (AgentHB.java:476)- 
+@(WebAgent) young1 #### Resume agent. ####
+2018-03-05 13:48:16  INFO [pool-1-thread-1] (Agent.java:810)- 
+@(WebAgent) young1 => Maximizing Browser
+2018-03-05 13:48:16  INFO [pool-1-thread-1] (Agent.java:1073)- 
+@(WebAgent) young1 => resumeAgent_PreCondition
+2018-03-05 13:48:16  INFO [pool-1-thread-1] (Agent.java:879)- # waitUntilClickable => btnResume : for(sec) => 60
+2018-03-05 13:48:16  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => btnResume
+2018-03-05 13:48:16  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:48:16  INFO [pool-1-thread-1] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:48:16  INFO [pool-1-thread-1] (Agent.java:1079)- 
+@(WebAgent) young1 => resumeAgent_PreCondition: Success
+2018-03-05 13:48:16  INFO [pool-1-thread-1] (AgentHB.java:489)- 
+@(WebAgent) young1 ResumeAgent and State Returned: 
+2018-03-05 13:48:16  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:18  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:48:18  INFO [pool-1-thread-2] (AgentHB.java:476)- 
+@(WebAgent) young3 #### Resume agent. ####
+2018-03-05 13:48:18  INFO [pool-1-thread-2] (Agent.java:810)- 
+@(WebAgent) young3 => Maximizing Browser
+2018-03-05 13:48:18  INFO [pool-1-thread-2] (Agent.java:1073)- 
+@(WebAgent) young3 => resumeAgent_PreCondition
+2018-03-05 13:48:18  INFO [pool-1-thread-2] (Agent.java:879)- # waitUntilClickable => btnResume : for(sec) => 60
+2018-03-05 13:48:18  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => btnResume
+2018-03-05 13:48:18  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:48:18  INFO [pool-1-thread-2] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:48:18  INFO [pool-1-thread-2] (Agent.java:1079)- 
+@(WebAgent) young3 => resumeAgent_PreCondition: Success
+2018-03-05 13:48:18  INFO [pool-1-thread-2] (AgentHB.java:489)- 
+@(WebAgent) young3 ResumeAgent and State Returned: 
+2018-03-05 13:48:18  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:18  INFO [pool-1-thread-1] (AgentHB.java:1472)- 
+@(WebAgent) young1 => ######### Getting AIC state ########
+2018-03-05 13:48:18  INFO [pool-1-thread-1] (Agent.java:988)- # getWebElement => webAgentStatusBox : for(sec) => 10
+2018-03-05 13:48:18  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => webAgentStatusBox
+2018-03-05 13:48:18  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[2]/div/span[3]
+2018-03-05 13:48:18  INFO [pool-1-thread-1] (AgentHB.java:1475)- 
+@(WebAgent) young1 => strWebElementGetText: Break
+2018-03-05 13:48:18  INFO [pool-1-thread-1] (AgentHB.java:505)- 
+@(WebAgent) young1: State is idle alreay => Break
+2018-03-05 13:48:18  INFO [pool-1-thread-1] (Agent.java:823)- 
+@(WebAgent) young1 => minimizing Browser
+2018-03-05 13:48:18  INFO [pool-1-thread-1] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:48:18  INFO [pool-1-thread-1] (Agent.java:787)- 
+@(WebAgent) young1 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:48:18  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:20  INFO [pool-1-thread-2] (AgentHB.java:1472)- 
+@(WebAgent) young3 => ######### Getting AIC state ########
+2018-03-05 13:48:20  INFO [pool-1-thread-2] (Agent.java:988)- # getWebElement => webAgentStatusBox : for(sec) => 10
+2018-03-05 13:48:20  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => webAgentStatusBox
+2018-03-05 13:48:20  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[2]/div/span[3]
+2018-03-05 13:48:20  INFO [pool-1-thread-2] (AgentHB.java:1475)- 
+@(WebAgent) young3 => strWebElementGetText: Break
+2018-03-05 13:48:20  INFO [pool-1-thread-2] (AgentHB.java:505)- 
+@(WebAgent) young3: State is idle alreay => Break
+2018-03-05 13:48:20  INFO [pool-1-thread-2] (Agent.java:823)- 
+@(WebAgent) young3 => minimizing Browser
+2018-03-05 13:48:20  INFO [pool-1-thread-2] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:48:20  INFO [pool-1-thread-2] (Agent.java:787)- 
+@(WebAgent) young3 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:48:20  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:21  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:48:21  INFO [pool-1-thread-1] (AgentHB.java:392)- 
+@(WebAgent) young1 #### Release agent. ####
+2018-03-05 13:48:21  INFO [pool-1-thread-1] (Agent.java:810)- 
+@(WebAgent) young1 => Maximizing Browser
+2018-03-05 13:48:21  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 1 seconds.
+2018-03-05 13:48:22  INFO [pool-1-thread-1] (Agent.java:879)- # waitUntilClickable => btnReleaseCodeSelect : for(sec) => 10
+2018-03-05 13:48:22  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => btnReleaseCodeSelect
+2018-03-05 13:48:22  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:48:22  INFO [pool-1-thread-1] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:48:22  INFO [pool-1-thread-1] (Agent.java:1117)- 
+@(WebAgent) young1 Clicked=> btnReleaseCodeSelect
+2018-03-05 13:48:22  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:22  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:48:22  INFO [pool-1-thread-2] (AgentHB.java:392)- 
+@(WebAgent) young3 #### Release agent. ####
+2018-03-05 13:48:22  INFO [pool-1-thread-2] (Agent.java:810)- 
+@(WebAgent) young3 => Maximizing Browser
+2018-03-05 13:48:23  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 1 seconds.
+2018-03-05 13:48:24  INFO [pool-1-thread-2] (Agent.java:879)- # waitUntilClickable => btnReleaseCodeSelect : for(sec) => 10
+2018-03-05 13:48:24  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => btnReleaseCodeSelect
+2018-03-05 13:48:24  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:48:24  INFO [pool-1-thread-2] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:48:24  INFO [pool-1-thread-2] (Agent.java:1117)- 
+@(WebAgent) young3 Clicked=> btnReleaseCodeSelect
+2018-03-05 13:48:24  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:24  INFO [pool-1-thread-1] (Agent.java:879)- # waitUntilClickable => thirdReleaseCode : for(sec) => 10
+2018-03-05 13:48:24  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => thirdReleaseCode
+2018-03-05 13:48:24  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='release-codes']/li[3]/a
+2018-03-05 13:48:24  INFO [pool-1-thread-1] (Agent.java:887)- XPath is : .//*[@id='release-codes']/li[3]/a
+2018-03-05 13:48:24  INFO [pool-1-thread-1] (Agent.java:1117)- 
+@(WebAgent) young1 Clicked=> thirdReleaseCode
+2018-03-05 13:48:24  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:26  INFO [pool-1-thread-2] (Agent.java:879)- # waitUntilClickable => thirdReleaseCode : for(sec) => 10
+2018-03-05 13:48:26  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => thirdReleaseCode
+2018-03-05 13:48:26  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='release-codes']/li[3]/a
+2018-03-05 13:48:26  INFO [pool-1-thread-2] (Agent.java:887)- XPath is : .//*[@id='release-codes']/li[3]/a
+2018-03-05 13:48:26  INFO [pool-1-thread-2] (Agent.java:1117)- 
+@(WebAgent) young3 Clicked=> thirdReleaseCode
+2018-03-05 13:48:26  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:26  INFO [pool-1-thread-1] (Agent.java:823)- 
+@(WebAgent) young1 => minimizing Browser
+2018-03-05 13:48:26  INFO [pool-1-thread-1] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:48:26  INFO [pool-1-thread-1] (Agent.java:787)- 
+@(WebAgent) young1 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:48:26  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:28  INFO [pool-1-thread-2] (Agent.java:823)- 
+@(WebAgent) young3 => minimizing Browser
+2018-03-05 13:48:28  INFO [pool-1-thread-2] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:48:28  INFO [pool-1-thread-2] (Agent.java:787)- 
+@(WebAgent) young3 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:48:28  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:28  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:48:28  INFO [pool-1-thread-1] (AgentHB.java:476)- 
+@(WebAgent) young1 #### Resume agent. ####
+2018-03-05 13:48:28  INFO [pool-1-thread-1] (Agent.java:810)- 
+@(WebAgent) young1 => Maximizing Browser
+2018-03-05 13:48:28  INFO [pool-1-thread-1] (Agent.java:1073)- 
+@(WebAgent) young1 => resumeAgent_PreCondition
+2018-03-05 13:48:28  INFO [pool-1-thread-1] (Agent.java:879)- # waitUntilClickable => btnResume : for(sec) => 60
+2018-03-05 13:48:28  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => btnResume
+2018-03-05 13:48:28  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:48:28  INFO [pool-1-thread-1] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:48:28  INFO [pool-1-thread-1] (Agent.java:1079)- 
+@(WebAgent) young1 => resumeAgent_PreCondition: Success
+2018-03-05 13:48:28  INFO [pool-1-thread-1] (AgentHB.java:489)- 
+@(WebAgent) young1 ResumeAgent and State Returned: 
+2018-03-05 13:48:28  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:30  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:48:30  INFO [pool-1-thread-2] (AgentHB.java:476)- 
+@(WebAgent) young3 #### Resume agent. ####
+2018-03-05 13:48:30  INFO [pool-1-thread-2] (Agent.java:810)- 
+@(WebAgent) young3 => Maximizing Browser
+2018-03-05 13:48:30  INFO [pool-1-thread-2] (Agent.java:1073)- 
+@(WebAgent) young3 => resumeAgent_PreCondition
+2018-03-05 13:48:30  INFO [pool-1-thread-2] (Agent.java:879)- # waitUntilClickable => btnResume : for(sec) => 60
+2018-03-05 13:48:30  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => btnResume
+2018-03-05 13:48:30  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:48:30  INFO [pool-1-thread-2] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:48:30  INFO [pool-1-thread-2] (Agent.java:1079)- 
+@(WebAgent) young3 => resumeAgent_PreCondition: Success
+2018-03-05 13:48:30  INFO [pool-1-thread-2] (AgentHB.java:489)- 
+@(WebAgent) young3 ResumeAgent and State Returned: 
+2018-03-05 13:48:30  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:30 ERROR [pool-1-thread-2] (TestObject.java:52)- java.lang.InterruptedException: sleep interrupted
+2018-03-05 13:48:30  INFO [pool-1-thread-2] (AgentHB.java:1472)- 
+@(WebAgent) young3 => ######### Getting AIC state ########
+2018-03-05 13:48:30  INFO [pool-1-thread-2] (Agent.java:988)- # getWebElement => webAgentStatusBox : for(sec) => 10
+2018-03-05 13:48:30  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => webAgentStatusBox
+2018-03-05 13:48:30 ERROR [pool-1-thread-1] (TestObject.java:52)- java.lang.InterruptedException: sleep interrupted
+2018-03-05 13:48:30  INFO [pool-1-thread-1] (AgentHB.java:1472)- 
+@(WebAgent) young1 => ######### Getting AIC state ########
+2018-03-05 13:48:30  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[2]/div/span[3]
+2018-03-05 13:48:30  INFO [pool-1-thread-1] (Agent.java:988)- # getWebElement => webAgentStatusBox : for(sec) => 10
+2018-03-05 13:48:30  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => webAgentStatusBox
+2018-03-05 13:48:30  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[2]/div/span[3]
+2018-03-05 13:48:30  INFO [pool-1-thread-2] (AgentHB.java:1475)- 
+@(WebAgent) young3 => strWebElementGetText: Lunch
+2018-03-05 13:48:30  INFO [pool-1-thread-2] (AgentHB.java:505)- 
+@(WebAgent) young3: State is idle alreay => Lunch
+2018-03-05 13:48:30  INFO [pool-1-thread-2] (Agent.java:823)- 
+@(WebAgent) young3 => minimizing Browser
+2018-03-05 13:48:30  INFO [pool-1-thread-1] (AgentHB.java:1475)- 
+@(WebAgent) young1 => strWebElementGetText: Lunch
+2018-03-05 13:48:30  INFO [pool-1-thread-1] (AgentHB.java:505)- 
+@(WebAgent) young1: State is idle alreay => Lunch
+2018-03-05 13:48:30  INFO [pool-1-thread-1] (Agent.java:823)- 
+@(WebAgent) young1 => minimizing Browser
+2018-03-05 13:48:30  INFO [pool-1-thread-2] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:48:30  INFO [pool-1-thread-2] (Agent.java:787)- 
+@(WebAgent) young3 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:48:30  INFO [pool-1-thread-1] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:48:30  INFO [pool-1-thread-1] (Agent.java:787)- 
+@(WebAgent) young1 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:48:31  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:31  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:33  INFO [pool-1-thread-1] (AgentHB.java:1306)- @young1: Just Finished Running =>  10005th times
+2018-03-05 13:48:33  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:48:33  INFO [pool-1-thread-1] (AgentHB.java:1268)- @10006@ young1: Thread on=>Load_ChangeState_ByThread
+2018-03-05 13:48:33  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:48:33  INFO [pool-1-thread-1] (AgentHB.java:352)- 
+@(WebAgent) young1 #### Release agent. ####
+2018-03-05 13:48:33  INFO [pool-1-thread-1] (Agent.java:810)- 
+@(WebAgent) young1 => Maximizing Browser
+2018-03-05 13:48:33  INFO [pool-1-thread-2] (AgentHB.java:1306)- @young3: Just Finished Running =>  10005th times
+2018-03-05 13:48:33  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:48:33  INFO [pool-1-thread-2] (AgentHB.java:1268)- @10006@ young3: Thread on=>Load_ChangeState_ByThread
+2018-03-05 13:48:33  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:48:33  INFO [pool-1-thread-2] (AgentHB.java:352)- 
+@(WebAgent) young3 #### Release agent. ####
+2018-03-05 13:48:33  INFO [pool-1-thread-2] (Agent.java:810)- 
+@(WebAgent) young3 => Maximizing Browser
+2018-03-05 13:48:33  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 1 seconds.
+2018-03-05 13:48:33  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 1 seconds.
+2018-03-05 13:48:34  INFO [pool-1-thread-1] (Agent.java:879)- # waitUntilClickable => btnReleaseCodeSelect : for(sec) => 10
+2018-03-05 13:48:34  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => btnReleaseCodeSelect
+2018-03-05 13:48:34  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:48:34  INFO [pool-1-thread-1] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:48:34  INFO [pool-1-thread-1] (Agent.java:1117)- 
+@(WebAgent) young1 Clicked=> btnReleaseCodeSelect
+2018-03-05 13:48:34  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:34  INFO [pool-1-thread-2] (Agent.java:879)- # waitUntilClickable => btnReleaseCodeSelect : for(sec) => 10
+2018-03-05 13:48:34  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => btnReleaseCodeSelect
+2018-03-05 13:48:34  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:48:34  INFO [pool-1-thread-2] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:48:34  INFO [pool-1-thread-2] (Agent.java:1117)- 
+@(WebAgent) young3 Clicked=> btnReleaseCodeSelect
+2018-03-05 13:48:34  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:35  INFO [main] (TestCaseObject.java:185)- 
+
+****************************************************************************************
+2018-03-05 13:48:35  INFO [main] (TestCaseObject.java:186)- ****************************************************************************************
+2018-03-05 13:48:35  INFO [main] (TestCaseObject.java:187)- $$$$$$$$$$ Class End:   Test_Load $$$$$$$$$$$$$$$$$$$$$$$$$
+2018-03-05 13:48:35  INFO [main] (TestCaseObject.java:188)- ****************************************************************************************
+2018-03-05 13:48:35  INFO [main] (TestCaseObject.java:189)- ****************************************************************************************
+2018-03-05 13:48:35  INFO [main] (Test_Initiate.java:78)- 
+
+
+2018-03-05 13:48:35  INFO [main] (Test_Initiate.java:79)- #######################################################
+2018-03-05 13:48:35  INFO [main] (Test_Initiate.java:80)- ########### Starting End of TestSuite  ###################
+2018-03-05 13:48:35  INFO [main] (Test_Initiate.java:81)- #########################################################
+
+
+2018-03-05 13:48:35  INFO [main] (AgentHB.java:1201)- 
+@(WebAgent) young1 #### Logout and Close FireFox ####
+2018-03-05 13:48:35  INFO [main] (AgentHB.java:229)- 
+@(WebAgent) young1 #### Logging out ####
+2018-03-05 13:48:35  INFO [main] (Agent.java:988)- # getWebElement => btnLogIntoGroup : for(sec) => 10
+2018-03-05 13:48:35  INFO [main] (Agent.java:1033)- # getXPath for  => btnLogIntoGroup
+2018-03-05 13:48:35  INFO [main] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[2]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[2]/button[1]
+2018-03-05 13:48:35  INFO [main] (AgentHB.java:237)- 
+@(WebAgent) young1 #### Agent is currently logged in=>Click Log out button ####
+2018-03-05 13:48:35  INFO [main] (Agent.java:879)- # waitUntilClickable => btnLogIntoGroup : for(sec) => 10
+2018-03-05 13:48:35  INFO [main] (Agent.java:1033)- # getXPath for  => btnLogIntoGroup
+2018-03-05 13:48:35  INFO [main] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[2]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[2]/button[1]
+2018-03-05 13:48:35  INFO [main] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[2]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[2]/button[1]
+2018-03-05 13:48:36  INFO [main] (Agent.java:1117)- 
+@(WebAgent) young1 Clicked=> btnLogIntoGroup
+2018-03-05 13:48:36  INFO [main] (TestObject.java:49)- * Wait : 1 seconds.
+2018-03-05 13:48:36  INFO [pool-1-thread-1] (Agent.java:879)- # waitUntilClickable => secondReleaseCode : for(sec) => 10
+2018-03-05 13:48:36  INFO [pool-1-thread-1] (Agent.java:1033)- # getXPath for  => secondReleaseCode
+2018-03-05 13:48:36  INFO [pool-1-thread-1] (Agent.java:1055)- XPath is : .//*[@id='release-codes']/li[2]/a
+2018-03-05 13:48:36  INFO [pool-1-thread-1] (Agent.java:887)- XPath is : .//*[@id='release-codes']/li[2]/a
+2018-03-05 13:48:36  INFO [pool-1-thread-2] (Agent.java:879)- # waitUntilClickable => secondReleaseCode : for(sec) => 10
+2018-03-05 13:48:36  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => secondReleaseCode
+2018-03-05 13:48:36  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='release-codes']/li[2]/a
+2018-03-05 13:48:36  INFO [pool-1-thread-2] (Agent.java:887)- XPath is : .//*[@id='release-codes']/li[2]/a
+2018-03-05 13:48:36  INFO [pool-1-thread-2] (Agent.java:1117)- 
+@(WebAgent) young3 Clicked=> secondReleaseCode
+2018-03-05 13:48:36  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:37  INFO [main] (Agent.java:823)- 
+@(WebAgent) young1 => minimizing Browser
+2018-03-05 13:48:37  INFO [main] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:48:37  INFO [main] (Agent.java:787)- 
+@(WebAgent) young1 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:48:37  INFO [main] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:38  INFO [pool-1-thread-2] (Agent.java:823)- 
+@(WebAgent) young3 => minimizing Browser
+2018-03-05 13:48:38  INFO [pool-1-thread-2] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:48:38  INFO [pool-1-thread-2] (Agent.java:787)- 
+@(WebAgent) young3 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:48:38  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:39  INFO [main] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:41  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:48:41  INFO [pool-1-thread-2] (AgentHB.java:476)- 
+@(WebAgent) young3 #### Resume agent. ####
+2018-03-05 13:48:41  INFO [pool-1-thread-2] (Agent.java:810)- 
+@(WebAgent) young3 => Maximizing Browser
+2018-03-05 13:48:41  INFO [pool-1-thread-2] (Agent.java:1073)- 
+@(WebAgent) young3 => resumeAgent_PreCondition
+2018-03-05 13:48:41  INFO [pool-1-thread-2] (Agent.java:879)- # waitUntilClickable => btnResume : for(sec) => 60
+2018-03-05 13:48:41  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => btnResume
+2018-03-05 13:48:41  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:48:41  INFO [pool-1-thread-2] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[4]/button[1]
+2018-03-05 13:48:41  INFO [pool-1-thread-2] (Agent.java:1079)- 
+@(WebAgent) young3 => resumeAgent_PreCondition: Success
+2018-03-05 13:48:41  INFO [pool-1-thread-2] (AgentHB.java:489)- 
+@(WebAgent) young3 ResumeAgent and State Returned: 
+2018-03-05 13:48:41  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:41  INFO [main] (TestObject.java:49)- * Wait : 1 seconds.
+2018-03-05 13:48:41 ERROR [pool-1-thread-1] (Agent.java:1139)- 
+@(WebAgent) young1 =>@@@@ Exception on secondReleaseCode org.openqa.selenium.remote.SessionNotFoundException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '2.52.0', revision: '4c2593c', time: '2016-02-11 19:06:42'
+System info: host: 'ynohW8-64b-one', ip: '10.23.176.230', os.name: 'Windows 8', os.arch: 'amd64', os.version: '6.2', java.version: '1.8.0_65'
+Driver info: driver.version: RemoteWebDriver
+2018-03-05 13:48:41  INFO [pool-1-thread-1] (AgentHB.java:374)- I am handling General exception=>org.openqa.selenium.remote.SessionNotFoundException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '2.52.0', revision: '4c2593c', time: '2016-02-11 19:06:42'
+System info: host: 'ynohW8-64b-one', ip: '10.23.176.230', os.name: 'Windows 8', os.arch: 'amd64', os.version: '6.2', java.version: '1.8.0_65'
+Driver info: driver.version: RemoteWebDriver
+2018-03-05 13:48:41  INFO [pool-1-thread-1] (Agent.java:823)- 
+@(WebAgent) young1 => minimizing Browser
+2018-03-05 13:48:41  INFO [pool-1-thread-1] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:48:41  INFO [pool-1-thread-1] (Agent.java:787)- 
+@(WebAgent) young1 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:48:41  INFO [pool-1-thread-1] (Agent.java:796)- I am handling General exception on setSizeAndLocation=>java.lang.NullPointerException
+2018-03-05 13:48:41  INFO [pool-1-thread-1] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:48:41  INFO [pool-1-thread-1] (AgentHB.java:476)- 
+@(WebAgent) young1 #### Resume agent. ####
+2018-03-05 13:48:41  INFO [pool-1-thread-1] (Agent.java:810)- 
+@(WebAgent) young1 => Maximizing Browser
+2018-03-05 13:48:41 ERROR [pool-1-thread-1] (AgentHB.java:1322)- @young1: @@@@@ Exception happens on run()
+2018-03-05 13:48:42  INFO [main] (AgentHB.java:1201)- 
+@(WebAgent) young3 #### Logout and Close FireFox ####
+2018-03-05 13:48:42  INFO [main] (AgentHB.java:229)- 
+@(WebAgent) young3 #### Logging out ####
+2018-03-05 13:48:42  INFO [main] (Agent.java:988)- # getWebElement => btnLogIntoGroup : for(sec) => 10
+2018-03-05 13:48:42  INFO [main] (Agent.java:1033)- # getXPath for  => btnLogIntoGroup
+2018-03-05 13:48:42  INFO [main] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[2]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[2]/button[1]
+2018-03-05 13:48:42  INFO [main] (AgentHB.java:237)- 
+@(WebAgent) young3 #### Agent is currently logged in=>Click Log out button ####
+2018-03-05 13:48:42  INFO [main] (Agent.java:879)- # waitUntilClickable => btnLogIntoGroup : for(sec) => 10
+2018-03-05 13:48:42  INFO [main] (Agent.java:1033)- # getXPath for  => btnLogIntoGroup
+2018-03-05 13:48:42  INFO [main] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[2]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[2]/button[1]
+2018-03-05 13:48:42  INFO [main] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[2]/div[1]/div[1]/div/div|.//*[@id='header']/div/ng-include/div[3]/div[2]/button[1]
+2018-03-05 13:48:42  INFO [main] (Agent.java:1117)- 
+@(WebAgent) young3 Clicked=> btnLogIntoGroup
+2018-03-05 13:48:42  INFO [main] (TestObject.java:49)- * Wait : 1 seconds.
+2018-03-05 13:48:43  INFO [pool-1-thread-2] (AgentHB.java:1472)- 
+@(WebAgent) young3 => ######### Getting AIC state ########
+2018-03-05 13:48:43  INFO [pool-1-thread-2] (Agent.java:988)- # getWebElement => webAgentStatusBox : for(sec) => 10
+2018-03-05 13:48:43  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => webAgentStatusBox
+2018-03-05 13:48:43  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[2]/div/span[3]
+2018-03-05 13:48:43  INFO [pool-1-thread-2] (AgentHB.java:1475)- 
+@(WebAgent) young3 => strWebElementGetText: Break
+2018-03-05 13:48:43  INFO [pool-1-thread-2] (AgentHB.java:505)- 
+@(WebAgent) young3: State is idle alreay => Break
+2018-03-05 13:48:43  INFO [pool-1-thread-2] (Agent.java:823)- 
+@(WebAgent) young3 => minimizing Browser
+2018-03-05 13:48:43  INFO [pool-1-thread-2] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:48:43  INFO [pool-1-thread-2] (Agent.java:787)- 
+@(WebAgent) young3 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:48:43  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:43  INFO [main] (Agent.java:823)- 
+@(WebAgent) young3 => minimizing Browser
+2018-03-05 13:48:43  INFO [main] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:48:43  INFO [main] (Agent.java:787)- 
+@(WebAgent) young3 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:48:43  INFO [main] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:45  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:48:45  INFO [pool-1-thread-2] (AgentHB.java:392)- 
+@(WebAgent) young3 #### Release agent. ####
+2018-03-05 13:48:45  INFO [pool-1-thread-2] (Agent.java:810)- 
+@(WebAgent) young3 => Maximizing Browser
+2018-03-05 13:48:45  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 1 seconds.
+2018-03-05 13:48:46  INFO [main] (TestObject.java:49)- * Wait : 2 seconds.
+2018-03-05 13:48:46  INFO [pool-1-thread-2] (Agent.java:879)- # waitUntilClickable => btnReleaseCodeSelect : for(sec) => 10
+2018-03-05 13:48:46  INFO [pool-1-thread-2] (Agent.java:1033)- # getXPath for  => btnReleaseCodeSelect
+2018-03-05 13:48:46  INFO [pool-1-thread-2] (Agent.java:1055)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:48:46  INFO [pool-1-thread-2] (Agent.java:887)- XPath is : .//*[@id='header']/div/ng-include/div[3]/div[4]/div[1]/div[2]/span
+2018-03-05 13:48:48  INFO [main] (TestObject.java:49)- * Wait : 1 seconds.
+2018-03-05 13:48:48 ERROR [pool-1-thread-2] (Agent.java:1139)- 
+@(WebAgent) young3 =>@@@@ Exception on btnReleaseCodeSelect org.openqa.selenium.remote.SessionNotFoundException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '2.52.0', revision: '4c2593c', time: '2016-02-11 19:06:42'
+System info: host: 'ynohW8-64b-one', ip: '10.23.176.230', os.name: 'Windows 8', os.arch: 'amd64', os.version: '6.2', java.version: '1.8.0_65'
+Driver info: driver.version: RemoteWebDriver
+2018-03-05 13:48:48  INFO [pool-1-thread-2] (AgentHB.java:413)- I am handling General exception=>org.openqa.selenium.remote.SessionNotFoundException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '2.52.0', revision: '4c2593c', time: '2016-02-11 19:06:42'
+System info: host: 'ynohW8-64b-one', ip: '10.23.176.230', os.name: 'Windows 8', os.arch: 'amd64', os.version: '6.2', java.version: '1.8.0_65'
+Driver info: driver.version: RemoteWebDriver
+2018-03-05 13:48:48  INFO [pool-1-thread-2] (Agent.java:823)- 
+@(WebAgent) young3 => minimizing Browser
+2018-03-05 13:48:48  INFO [pool-1-thread-2] (Agent.java:827)- Dimension ==> 10/10/950/800
+2018-03-05 13:48:48  INFO [pool-1-thread-2] (Agent.java:787)- 
+@(WebAgent) young3 => Setting size to: W(10), H(10), X(950), Y(800)
+2018-03-05 13:48:48  INFO [pool-1-thread-2] (Agent.java:796)- I am handling General exception on setSizeAndLocation=>java.lang.NullPointerException
+2018-03-05 13:48:48  INFO [pool-1-thread-2] (TestObject.java:49)- * Wait : 0 seconds.
+2018-03-05 13:48:48  INFO [pool-1-thread-2] (AgentHB.java:476)- 
+@(WebAgent) young3 #### Resume agent. ####
+2018-03-05 13:48:48  INFO [pool-1-thread-2] (Agent.java:810)- 
+@(WebAgent) young3 => Maximizing Browser
+2018-03-05 13:48:48 ERROR [pool-1-thread-2] (AgentHB.java:1322)- @young3: @@@@@ Exception happens on run()

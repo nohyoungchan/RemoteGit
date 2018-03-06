@@ -1,8 +1,8 @@
 #### This is for C1HB1 ####
 
 [URL]
-agentHBURL=http://cc-twi2.sit.shoretel.com/ecc
-hbDirectorURL=https://ccdirector-twi2.sit.shoretel.com/ccd
+agentHBURL=https://cc-twi2.sit.shoretel.com/ecc
+hbDirectorURL=http://ccdirector-twi2.sit.shoretel.com/ccd
 hbDirectorURLAfterLogIn=http://ccdirector-twi2.sit.shoretel.com/cc_admin
 chatURL=https://chat-twi2.sit.shoretel.com/chat?token=U2FsdGVkX1%2B%2BxtjKq1MDg%2B%2BoqIGK%2FerlFcdlyem3i%2BMABzImg79Kv45aUXhUMM0XFds%2BU3DHdzNGdKsBGnjpmA%3D%3D
 webCBURL=https://chat-twi2.sit.shoretel.com/webcallback?token=U2FsdGVkX1%2Bw9v%2BYoO7V1o331AUZYhSsTuLT5Rg8O8Pyx1MwCfyLMhfXPjOvk71Q
@@ -16,14 +16,14 @@ emailContent=This_is_Email_Content for C1HB1
 
 
 [CustomerVoice]
-max=0
+max=1
 CustomerVoice1.name=customer1@rickandmorty.twi.ucc1.com
 CustomerVoice1.password=Shoreadmin1#
 CustomerVoice1.extension=6104
 CustomerVoice1.did=14085856104
 
 [CustomerChat]
-max=1
+max=0
 tenantPrefix=80005
 chatIRN=5555
 stOrMt=st
@@ -40,7 +40,7 @@ CustomerEmail1.domain=qa
 [CCD]
 max=1
 supervisor1.name=super1@rickandmorty.twi.ucc1.com
-supervisor1.password=Shoreadmin1#
+supervisor1.password=Shoreadmin2#
 
 
 [Agent]

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="1" total="1" passed="0">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Java_Selenium LoadTest" duration-ms="125556" started-at="2018-03-05T21:46:30Z" finished-at="2018-03-05T21:48:35Z">
+    <groups>
+      <group name="Test_Load_ClassLevel">
+        <method signature="Test_Load.Load_ChangeState_ByThread()[pri:0, instance:Thread[Thread-1,5,main]]" name="Load_ChangeState_ByThread" class="TestCases.Test_Load"/>
+      </group> <!-- Test_Load_ClassLevel -->
+    </groups>
+    <test name="VoiceACD Scenarios" duration-ms="125556" started-at="2018-03-05T21:46:30Z" finished-at="2018-03-05T21:48:35Z">
+      <class name="TestCases.Test_Initiate">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:Thread[Thread-0,5,main]]" name="beforeSuite" is-config="true" duration-ms="36178" started-at="2018-03-05T13:45:54Z" finished-at="2018-03-05T13:46:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method status="FAIL" signature="afterSuite()[pri:0, instance:Thread[Thread-0,5,main]]" name="afterSuite" is-config="true" duration-ms="0" started-at="2018-03-05T13:48:35Z" finished-at="2018-03-05T13:48:35Z">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+	at TestCases.Test_Initiate.afterSuite(Test_Initiate.java:157)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- TestCases.Test_Initiate -->
+      <class name="TestCases.Test_Load">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:Thread[Thread-1,5,main]]" name="beforeClass" is-config="true" duration-ms="2" started-at="2018-03-05T13:46:30Z" finished-at="2018-03-05T13:46:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="FAIL" signature="Load_ChangeState_ByThread()[pri:0, instance:Thread[Thread-1,5,main]]" name="Load_ChangeState_ByThread" duration-ms="125543" started-at="2018-03-05T13:46:30Z" finished-at="2018-03-05T13:48:35Z">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+	at BaseObjects.TestCaseObject.endTestCase(TestCaseObject.java:254)
+	at TestCases.Test_Load.Load_ChangeState_ByThread(Test_Load.java:239)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Load_ChangeState_ByThread -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:Thread[Thread-1,5,main]]" name="afterClass" is-config="true" duration-ms="1" started-at="2018-03-05T13:48:35Z" finished-at="2018-03-05T13:48:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- TestCases.Test_Load -->
+    </test> <!-- VoiceACD Scenarios -->
+  </suite> <!-- Java_Selenium LoadTest -->
+</testng-results>

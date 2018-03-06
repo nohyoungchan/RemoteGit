@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />  
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-Java_Selenium_LoadTest">
+              <span class="suite-name border-failed">Java_Selenium LoadTest</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-Java_Selenium_LoadTest">
+                    <span>C:\Users\Admin\eclipse-workspace2\Java_Load\test_Config_Files\testNG_Load.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-Java_Selenium_LoadTest">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-Java_Selenium_LoadTest">
+                    <span>1 group</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-Java_Selenium_LoadTest">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-Java_Selenium_LoadTest">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-Java_Selenium_LoadTest">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-Java_Selenium_LoadTest">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">1 method, 1 failed,   </span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Java_Selenium_LoadTest" class="hide-methods failed suite-Java_Selenium_LoadTest"> (hide)</a> <!-- hide-methods failed suite-Java_Selenium_LoadTest -->
+                      <a href="#" panel-name="suite-Java_Selenium_LoadTest" class="show-methods failed suite-Java_Selenium_LoadTest"> (show)</a> <!-- show-methods failed suite-Java_Selenium_LoadTest -->
+                    </span>
+                    <div class="method-list-content failed suite-Java_Selenium_LoadTest">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Java_Selenium_LoadTest" title="TestCases.Test_Load" hash-for-method="Load_ChangeState_ByThread">Load_ChangeState_ByThread</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Java_Selenium_LoadTest -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Java_Selenium_LoadTest" class="panel Java_Selenium_LoadTest">
+          <div class="suite-Java_Selenium_LoadTest-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">TestCases.Test_Load</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Load_ChangeState_ByThread">
+                  </a> <!-- Load_ChangeState_ByThread -->
+                  <span class="method-name">Load_ChangeState_ByThread</span>
+                  <div class="stack-trace">java.lang.NullPointerException
+	at BaseObjects.TestCaseObject.endTestCase(TestCaseObject.java:254)
+	at TestCases.Test_Load.Load_ChangeState_ByThread(Test_Load.java:239)
+... Removed 24 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Java_Selenium_LoadTest-class-failed -->
+        </div> <!-- panel Java_Selenium_LoadTest -->
+        <div panel-name="test-xml-Java_Selenium_LoadTest" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\Admin\eclipse-workspace2\Java_Load\test_Config_Files\testNG_Load.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Java_Selenium LoadTest&quot;&gt;
+  &lt;parameter name=&quot;tearDownOrNot&quot; value=&quot;yes&quot;/&gt;
+  &lt;parameter name=&quot;waitUntilOneAm&quot; value=&quot;no&quot;/&gt;
+  &lt;test name=&quot;VoiceACD Scenarios&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;TestCases.Test_Initiate&quot;/&gt;
+      &lt;class name=&quot;TestCases.Test_Load&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;Load_ChangeState_ByThread&quot;/&gt;
+          &lt;exclude name=&quot;Load&quot;/&gt;
+          &lt;exclude name=&quot;Load_ChangeState&quot;/&gt;
+          &lt;exclude name=&quot;Load_Chat_SendAndAnswer_ByThread&quot;/&gt;
+          &lt;exclude name=&quot;Load_Email_Answer_ByThread&quot;/&gt;
+          &lt;exclude name=&quot;Load_Email_LogInFortheFirstTime&quot;/&gt;
+          &lt;exclude name=&quot;Load_Email_logIntoEmailClient_DeleteAllEmails&quot;/&gt;
+          &lt;exclude name=&quot;Load_Email_Send_ByThread&quot;/&gt;
+          &lt;exclude name=&quot;Load_Email_SendAndAnswer_ByThread&quot;/&gt;
+          &lt;exclude name=&quot;Load_LogAndReLogInAfterMin_ByThread&quot;/&gt;
+          &lt;exclude name=&quot;Load_LogAndSignoutCloseAfterMin_ByThread&quot;/&gt;
+          &lt;exclude name=&quot;Load_LogInOnly_ByThread&quot;/&gt;
+          &lt;exclude name=&quot;Load_Mix&quot;/&gt;
+          &lt;exclude name=&quot;Load_VoiceACD_Answer_ByThread&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- TestCases.Test_Load --&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- VoiceACD Scenarios --&gt;
+&lt;/suite&gt; &lt;!-- Java_Selenium LoadTest --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Java_Selenium_LoadTest" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Java_Selenium LoadTest</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">VoiceACD Scenarios (2 classes)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Java_Selenium_LoadTest" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Java_Selenium LoadTest</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">Test_Load_ClassLevel</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">Load_ChangeState_ByThread</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Java_Selenium_LoadTest" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Java_Selenium LoadTest</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Java_Selenium_LoadTest');
+function tableData_Java_Selenium_LoadTest() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(1);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'Load_ChangeState_ByThread')
+data.setCell(0, 2, 'TestCases.Test_Load')
+data.setCell(0, 3, 125543);
+window.suiteTableData['Java_Selenium_LoadTest']= { tableData: data, tableDiv: 'times-div-Java_Selenium_LoadTest'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
+              <div id="times-div-Java_Selenium_LoadTest">
+              </div> <!-- times-div-Java_Selenium_LoadTest -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Java_Selenium_LoadTest" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Java_Selenium LoadTest</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Java_Selenium_LoadTest" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">12 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">TestCases.Test_Load</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">Load_LogAndSignoutCloseAfterMin_ByThread</span>
+                <br/>
+                <span class="ignored-method-name">Load_Email_logIntoEmailClient_DeleteAllEmails</span>
+                <br/>
+                <span class="ignored-method-name">Load_Email_SendAndAnswer_ByThread</span>
+                <br/>
+                <span class="ignored-method-name">Load_VoiceACD_Answer_ByThread</span>
+                <br/>
+                <span class="ignored-method-name">Load_Email_Answer_ByThread</span>
+                <br/>
+                <span class="ignored-method-name">Load_LogAndReLogInAfterMin_ByThread</span>
+                <br/>
+                <span class="ignored-method-name">Load_Email_LogInFortheFirstTime</span>
+                <br/>
+                <span class="ignored-method-name">Load_Email_Send_ByThread</span>
+                <br/>
+                <span class="ignored-method-name">Load_ChangeState</span>
+                <br/>
+                <span class="ignored-method-name">Load_Mix</span>
+                <br/>
+                <span class="ignored-method-name">Load_Chat_SendAndAnswer_ByThread</span>
+                <br/>
+                <span class="ignored-method-name">Load_LogInOnly_ByThread</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Java_Selenium_LoadTest" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">TestCases.Test_Initiate</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <span class="method-name">beforeSuite</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-suite before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">TestCases.Test_Load</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">beforeClass</span>
+                <span class="method-start">36184 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">Load_ChangeState_ByThread</span>
+                <span class="method-start">36188 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">afterClass</span>
+                <span class="method-start">161733 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">TestCases.Test_Initiate</div> <!-- chronological-class-name -->
+              <div class="configuration-suite after">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">afterSuite</span>
+                <span class="method-start">161753 ms</span>
+              </div> <!-- configuration-suite after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>

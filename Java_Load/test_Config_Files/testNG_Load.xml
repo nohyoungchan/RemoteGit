@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Java_Selenium LoadTest" verbose="1">
+  <parameter name="waitUntilOneAm" value="no"></parameter>  <!--## yes: waits until 1 am tomorrow, no: starts immediately ##-->
+  <parameter name="tearDownOrNot" value="yes"></parameter>  <!--## yes: close all WebBrowsers, no: Don't close ##-->
+  
+  <test name="VoiceACD Scenarios"> <!--### This is VoiceACD scenarios ### -->
+	  
+      <classes>
+	  <class name="TestCases.Test_Initiate">
+	  </class>
+	  
+	   <class name="TestCases.Test_Load">
+        <methods>  
+          <exclude name="Load" /> <!--### This applies for all load scenarios ### -->
+          <exclude name="Load_ChangeState" />
+          <include name="Load_ChangeState_ByThread" />
+          <exclude name="Load_Chat_SendAndAnswer_ByThread" />
+          <exclude name="Load_Email_Answer_ByThread" />
+          <exclude name="Load_Email_LogInFortheFirstTime" />
+          <exclude name="Load_Email_logIntoEmailClient_DeleteAllEmails" />
+          <exclude name="Load_Email_Send_ByThread" />
+          <exclude name="Load_Email_SendAndAnswer_ByThread" />
+          <exclude name="Load_LogAndReLogInAfterMin_ByThread" />
+          <exclude name="Load_LogAndSignoutCloseAfterMin_ByThread" />
+          <exclude name="Load_LogInOnly_ByThread" />
+          <exclude name="Load_Mix" />
+          <exclude name="Load_VoiceACD_Answer_ByThread" />
+        </methods>
+      </class>
+      
+   
+       
+    </classes>
+  </test>
+</suite> 

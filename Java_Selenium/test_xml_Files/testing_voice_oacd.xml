@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test HB Suite" verbose="1">
+  <parameter name="qT1" value="10"></parameter> 
+  <parameter name="rT1" value="10"></parameter>          
+  <parameter name="tT1" value="10"></parameter>
+  <parameter name="wT1" value="10"></parameter>
+  <parameter name="rT2" value="10"></parameter>
+  <parameter name="tT2" value="10"></parameter> 
+  <parameter name="wT2" value="10"></parameter> 
+
+  <test name="VoiceACD Scenarios"> <!--### This is VoiceACD scenarios without Reverse scenarios### -->
+	  
+    <classes>
+	  <class name="HBTestesNG.TestCases.Test_Initiate">
+	  </class>
+	      
+	    <!--### OACD call is finally disconnected by manhattan #### -->
+        <class name="HBTestesNG.TestCases.Test_VoiceOACD_ByAbandon_Conference_WrapTimeZero">
+       	 <methods>      
+      	  <exclude name="VoiceOACD_ByAbandon_CConference_ToExt_DifferentGroup" />
+          <exclude name="VoiceOACD_ByAbandon_CConference_ToExt_SameGroup" /> 
+          <exclude name="VoiceOACD_ByAbandon_CConference_ToIRN_DifferentGroup" /> 
+          <exclude name="VoiceOACD_ByAbandon_CConference_ToIRN_SameGroup" /> <!--# Not supported except PCM/Physical Phone # -->
+          <exclude name="VoiceOACD_ByAbandon_CConference_ToExternal" />   
+          <exclude name="VoiceOACD_ByAbandon_CConference_ToExt_DifferentGroup_byName" />
+          <exclude name="VoiceOACD_ByAbandon_CConference_ToExt_SameGroup_byName" />      
+        </methods>
+       </class>
+       
+       <!--### OACD call is finally disconnected by manhattan #### -->
+        <class name="HBTestesNG.TestCases.Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero">
+       	 <methods>   
+      	  <exclude name="VoiceOACD_ByAbandon_BTransfer_ToExt_DifferentGroup" />
+          <exclude name="VoiceOACD_ByAbandon_BTransfer_ToExt_SameGroup" /> 
+          <exclude name="VoiceOACD_ByAbandon_BTransfer_ToIRN_DifferentGroup" /> 
+          <exclude name="VoiceOACD_ByAbandon_BTransfer_ToIRN_SameGroup" /> <!--# Not supported except PCM/Physical Phone # -->
+          <exclude name="VoiceOACD_ByAbandon_BTransfer_ToExternal" />   
+          <exclude name="VoiceOACD_ByAbandon_BTransfer_ToExt_DifferentGroup_byName" />
+          <exclude name="VoiceOACD_ByAbandon_BTransfer_ToExt_SameGroup_byName" />
+          <exclude name="VoiceOACD_ByAbandon_CTransfer_ToExt_DifferentGroup" />
+          <exclude name="VoiceOACD_ByAbandon_CTransfer_ToExt_SameGroup" /> 
+          <exclude name="VoiceOACD_ByAbandon_CTransfer_ToIRN_DifferentGroup" /> 
+          <exclude name="VoiceOACD_ByAbandon_CTransfer_ToIRN_SameGroup" /> <!--# Not supported except PCM/Physical Phone # -->
+          <exclude name="VoiceOACD_ByAbandon_CTransfer_ToExternal" />   
+          <exclude name="VoiceOACD_ByAbandon_CTransfer_ToExt_DifferentGroup_byName" />
+          <exclude name="VoiceOACD_ByAbandon_CTransfer_ToExt_SameGroup_byName" />      
+        </methods>
+       </class>
+       
+       <!--### OACD call is finally disconnected by AIC #### -->
+       <class name="HBTestesNG.TestCases.Test_VoiceOACD_ByAbandon_Transfer_WrapTimeZero_DisconnectByAIC">
+       	 <methods>   
+      	  <exclude name="VoiceOACD_ByAbandon_BTransfer_ToExt_DifferentGroup_DisconnectByAIC" />
+          <exclude name="VoiceOACD_ByAbandon_BTransfer_ToExt_SameGroup_DisconnectByAIC" /> 
+          <exclude name="VoiceOACD_ByAbandon_BTransfer_ToIRN_DifferentGroup_DisconnectByAIC" /> 
+          <exclude name="VoiceOACD_ByAbandon_BTransfer_ToIRN_SameGroup_DisconnectByAIC" /> <!--# Not supported except PCM/Physical Phone # -->
+          <exclude name="VoiceOACD_ByAbandon_BTransfer_ToExternal_DisconnectByAIC" />   
+          <exclude name="VoiceOACD_ByAbandon_BTransfer_ToExt_DifferentGroup_byName_DisconnectByAIC" />
+          <exclude name="VoiceOACD_ByAbandon_BTransfer_ToExt_SameGroup_byName_DisconnectByAIC" />
+          <include name="VoiceOACD_ByAbandon_CTransfer_ToExt_DifferentGroup_DisconnectByAIC" />
+          <exclude name="VoiceOACD_ByAbandon_CTransfer_ToExt_SameGroup_DisconnectByAIC" /> 
+          <exclude name="VoiceOACD_ByAbandon_CTransfer_ToIRN_DifferentGroup_DisconnectByAIC" /> 
+          <exclude name="VoiceOACD_ByAbandon_CTransfer_ToIRN_SameGroup_DisconnectByAIC" /> <!--# Not supported except PCM/Physical Phone # -->
+          <exclude name="VoiceOACD_ByAbandon_CTransfer_ToExternal_DisconnectByAIC" />   
+          <include name="VoiceOACD_ByAbandon_CTransfer_ToExt_DifferentGroup_byName_DisconnectByAIC" />
+          <exclude name="VoiceOACD_ByAbandon_CTransfer_ToExt_SameGroup_byName_DisconnectByAIC" />      
+        </methods>
+       </class>
+       
+    </classes>
+  </test>
+</suite> 

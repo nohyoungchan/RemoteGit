@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Java_Selenium LoadTest]">
+  <parameter name="tearDownOrNot" value="yes"/>
+  <parameter name="waitUntilOneAm" value="no"/>
+  <test name="VoiceACD Scenarios(failed)">
+    <classes>
+      <class name="TestCases.Test_Initiate">
+        <methods>
+          <include name="afterSuite"/>
+          <include name="beforeSuite"/>
+        </methods>
+      </class> <!-- TestCases.Test_Initiate -->
+      <class name="TestCases.Test_Load">
+        <methods>
+          <include name="Load_ChangeState_ByThread"/>
+          <include name="beforeClass"/>
+          <include name="afterClass"/>
+        </methods>
+      </class> <!-- TestCases.Test_Load -->
+    </classes>
+  </test> <!-- VoiceACD Scenarios(failed) -->
+</suite> <!-- Failed suite [Java_Selenium LoadTest] -->

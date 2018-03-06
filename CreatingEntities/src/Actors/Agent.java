@@ -729,23 +729,29 @@ public class Agent extends TestBaseObject {
 	 }
 	 
 	 //Wait until xpath component is clickable.
+	 /**
+	  * 
+	  * @param strXPath   This is a raw xpath.
+	  * @param intTimeOutSec
+	  * @return
+	  * @throws Exception
+	  */
 	  public WebElement waitUntilClickable(String strXPath, int intTimeOutSec) throws Exception {
 
-		 String xPath;
+
 		 WebElement webElement;
-		 xPath="Not_Initialized_Yet";
 		 webElement =null;
 
-		 xPath = AllEntities.gCCDXPathHash.get(strXPath);	 
+
 		 try{
-			webElement = driver.findElement(By.xpath(xPath));
+			webElement = driver.findElement(By.xpath(strXPath));
 			WebDriverWait wait = new WebDriverWait(driver, intTimeOutSec);
 			wait.ignoring(NoSuchElementException.class);
 			wait.ignoring(ElementNotVisibleException.class);
 			wait.ignoring(StaleElementReferenceException.class);
 			wait.until(ExpectedConditions.elementToBeClickable(webElement));
-			log.info("XPath is : " + xPath);
-			//wait.until(ExpectedConditions.visibilityOf(res));
+			//log.info("XPath is : " + strXPath);
+
 		 }catch(TimeoutException e){
 			 log.error("\n@ " + username + " => Timeout on waitUntilClickable");
 			 webElement = null;
@@ -801,7 +807,12 @@ public class Agent extends TestBaseObject {
 
 	  }
 	  
-	  
+	  /**
+	   * 
+	   * @param strXPath  This is raw xpath
+	   * @return
+	   * @throws Exception
+	   */
 	  public boolean click_XPath(String strXPath) throws Exception {
 		 WebElement webElement;
 		 boolean returnResult;

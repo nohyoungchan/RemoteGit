@@ -19,7 +19,7 @@
        <class name="HBTestesNG.TestCases.Test_Chat_All">
        <methods>      
       	  <include name="Chat_NoQ_Answer" />
-          <include name="Chat_NoQ_Answer_NoWrapTime" /> 
+          <exclude name="Chat_NoQ_Answer_NoWrapTime" /> 
           <include name="Chat_Q_Answer" /> 
           <include name="Chat_Queue_Abandon" />  
           <include name="Chat_Ring_Abandon" />      

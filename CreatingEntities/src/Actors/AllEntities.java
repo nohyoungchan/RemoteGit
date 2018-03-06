@@ -17,15 +17,15 @@ import org.ini4j.Wini;
 public class AllEntities extends TestBaseObject{
 
 
-    public static Hashtable<String, String> gVariableHash;
-    public static Hashtable<String, String> gCCDXPathHash;
-    public static Hashtable<String, String> gHBAgentHash;
+//    public static Hashtable<String, String> gVariableHash;
+//    public static Hashtable<String, String> gCCDXPathHash;
+//    public static Hashtable<String, String> gHBAgentHash;
     public static ArrayList<CCSupervisor> ccSupers;
     public static ArrayList<CCAgent> ccAgents;
     public static AllEntities allEntities;
     public static HBDirector CCD; 
-    public static Properties configFile;
-    public static Wini wini;
+//    public static Properties configFile;
+    public static Wini wini, pini;  //wini for testData.ini,  pini for testProperty.ini
   
     
     public AllEntities() throws Exception{
@@ -39,19 +39,12 @@ public class AllEntities extends TestBaseObject{
 		
 		ccAgents = new ArrayList<CCAgent>();
 		ccSupers = new ArrayList<CCSupervisor>();
-		gVariableHash = new Hashtable<String, String>();
-		gCCDXPathHash = new Hashtable<String, String>();
-		gHBAgentHash = new Hashtable<String, String>();
-		
-		
-		
-		configFile = new Properties();
-		
+	
+	
 		readTestPropertyINI_ForHBAgent();
 		readTestPropertyINI_ForHBSuper();
-		//gVariableHash = readTestDataINI();
-		gCCDXPathHash = readTestPropertyINI_ForHBDirector();
 		read_testDataINI();
+		read_testPropertyINI();
 		TestBaseObject.useWhichWebDriver = wini.get("Supervisor", "webDriver");
 
 		CCD = new HBDirector();
@@ -170,62 +163,16 @@ public class AllEntities extends TestBaseObject{
 	}
 	
 	
-
-
-	public Hashtable<String, String> readTestDataINI(){
-		log.info("## Reading testData.ini ##");
-		Hashtable<String, String> gHash;
-		gHash = new Hashtable<String, String>();
-		
-		int max, i, j;
-		
-	    try{
-	
-	      //#### Read Global Variable from testData.ini
-	        configFile.load(new FileInputStream("testData.ini"));
-	        max = Integer.parseInt(configFile.getProperty("globalVariableMax"));
-	        //log.info("max is => " + max);
-	        for(i=0; i < max; i++){
-	        	j = i+1;
-	        	gHash.put(configFile.getProperty("globalVariable" + j+ ".name"), configFile.getProperty("globalVariable" + j+ ".value"));
-	        	//log.info("## this ==> " + gHash.get(configFile.getProperty("globalVariable" + j+ ".name")));
-	        }
-	        
-	        //#### Assign Global Variable from testData.ini (Main)
-	        TestBaseObject.useWhichWebDriver = gHash.get("webDriver");
-	      
-	     }
-	     catch (Exception e) {
-	        log.error(e);
-	     }
-		 return gHash;    
-	}
-	
-	public Hashtable<String, String> readTestPropertyINI_ForHBDirector(){
-		log.info("## Reading testProperty.ini ##");
-		int max, i, j;
-		Hashtable<String, String> gCCDXPathHash = new Hashtable<String, String>();
-		
-	    try{
-	
-	      //#### Read Global Variable from testData.ini
-	        configFile.load(new FileInputStream("testProperty.ini"));
-	        max = Integer.parseInt(configFile.getProperty("directorMax"));
-	        for(i=0; i < max; i++){
-	        	j = i+1;
-	        	gCCDXPathHash.put(configFile.getProperty("director" + j+ ".name"), configFile.getProperty("director" + j+ ".value"));
-	        }
-	      
-	     }
-	     catch (Exception e) {
-	        log.error(e);
-	     }
-		 return gCCDXPathHash;    
-	}
 	
     public static void read_testDataINI() throws FileNotFoundException, IOException{
 		log.info("#### Reading testData.ini file ");
 		wini = new Wini(new File("testData.ini"));
+        //log("Port info => " + ini.get("SuperLoadServer_Config", "port"));
+	}
+    
+    public static void read_testPropertyINI() throws FileNotFoundException, IOException{
+		log.info("#### Reading testProperty.ini file ");
+		pini = new Wini(new File("testProperty.ini"));
         //log("Port info => " + ini.get("SuperLoadServer_Config", "port"));
 	}
 	

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test HB Suite" verbose="1">
+  <parameter name="qT1" value="10"></parameter> 
+  <parameter name="rT1" value="10"></parameter>          
+  <parameter name="tT1" value="10"></parameter>
+  <parameter name="wT1" value="10"></parameter>
+  <parameter name="rT2" value="10"></parameter>
+  <parameter name="tT2" value="10"></parameter> 
+  <parameter name="wT2" value="10"></parameter> 
+
+  <test name="VoiceACD Scenarios"> <!--### This is VoiceACD scenarios without Reverse scenarios### -->
+	  
+    <classes>
+	  <class name="HBTestesNG.TestCases.Test_Initiate">
+	  </class>
+	  
+	  <class name="HBTestesNG.TestCases.Test_Preparation">
+        <methods>   	
+          <include name="VoiceACD_Q_Abandon" />     <!--### This is an workaround for acd work. skip it once the problem is gone## -->
+          <include name="VoiceACD_Q_Answer" /> 
+        </methods>
+      </class>
+	  
+      <class name="HBTestesNG.TestCases.Test_VoiceACD_Basic">
+        <methods>   	
+          <include name="VoiceACD_NoQ_Answer" />     
+          <include name="VoiceACD_Q_Answer" />     	
+          <exclude name="VoiceACD_NoQ_Answer_NoWrapTime" />       	 
+        </methods>
+      </class>
+       
+       <class name="HBTestesNG.TestCases.Test_VoiceACD_Transfer">
+        <methods>  
+          <include name="VoiceACD_BTransfer_ToExt_SameGroup" />       	 
+          <include name="VoiceACD_BTransfer_ToExt_DifferentGroup" /> 
+          <include name="VoiceACD_BTransfer_ToExternal" />
+          <include name="VoiceACD_BTransfer_ToIRN_SameGroup" /> 
+          <include name="VoiceACD_BTransfer_ToIRN_DifferentGroup" /> 
+          <include name="VoiceACD_BTransfer_ToIRN_AQ" />   <!--## Defect ##-->     	 
+          <include name="VoiceACD_CTransfer_ToExt_SameGroup" />
+          <include name="VoiceACD_CTransfer_ToExt_DifferentGroup" /> 
+          <include name="VoiceACD_CTransfer_ToExternal" />
+          <include name="VoiceACD_CTransfer_ToIRN_SameGroup" /> <!--## Defect ##--> 
+          <include name="VoiceACD_CTransfer_ToIRN_DifferentGroup" />  <!--## Defect ##-->
+          <include name="VoiceACD_BTransfer_ToExt_SameGroup_byName" />      	 
+          <include name="VoiceACD_BTransfer_ToExt_DifferentGroup_byName" /> 
+          <include name="VoiceACD_CTransfer_ToExt_SameGroup_byName" /> <!--## Defect ##-->
+          <include name="VoiceACD_CTransfer_ToExt_DifferentGroup_byName" />      
+        </methods>
+       </class>
+       
+       <class name="HBTestesNG.TestCases.Test_VoiceACD_Transfer_WrapTimeZero">
+        <methods>  
+          <exclude name="VoiceACD_BTransfer_ToExt_SameGroup" />       	 
+          <exclude name="VoiceACD_BTransfer_ToExt_DifferentGroup" /> 
+          <exclude name="VoiceACD_BTransfer_ToExternal" />
+          <exclude name="VoiceACD_BTransfer_ToIRN_SameGroup" /> 
+          <exclude name="VoiceACD_BTransfer_ToIRN_DifferentGroup" />         	 
+          <exclude name="VoiceACD_CTransfer_ToExt_SameGroup" />
+          <exclude name="VoiceACD_CTransfer_ToExt_DifferentGroup" /> 
+          <exclude name="VoiceACD_CTransfer_ToExternal" /> 
+          <exclude name="VoiceACD_CTransfer_ToIRN_SameGroup" /> 
+          <exclude name="VoiceACD_CTransfer_ToIRN_DifferentGroup" />      
+        </methods>
+       </class>
+       
+       <class name="HBTestesNG.TestCases.Test_VoiceACD_Conference">
+       <methods>      
+      	  <include name="VoiceACD_CConference_ToExt_DifferentGroup" />
+          <include name="VoiceACD_CConference_ToExt_SameGroup" /> 
+          <include name="VoiceACD_CConference_ToIRN_DifferentGroup" /> 
+          <include name="VoiceACD_CConference_ToIRN_SameGroup" />  <!--# Not supported except PCM/Physical Phone # -->
+          <include name="VoiceACD_CConference_ToExternal" />     
+          <include name="VoiceACD_CConference_ToExt_DifferentGroup_byName" />
+          <include name="VoiceACD_CConference_ToExt_SameGroup_byName" />    
+          <include name="VoiceACD_CConference_All" /> 
+        </methods>
+       </class>
+       
+       <class name="HBTestesNG.TestCases.Test_VoiceACD_Conference_WrapTimeZero">
+       	 <methods>      
+      	  <exclude name="VoiceACD_CConference_ToExt_DifferentGroup" />
+          <exclude name="VoiceACD_CConference_ToExt_SameGroup" /> 
+          <exclude name="VoiceACD_CConference_ToIRN_DifferentGroup" /> 
+          <exclude name="VoiceACD_CConference_ToIRN_SameGroup" /> <!--# Not supported except PCM/Physical Phone # -->
+          <exclude name="VoiceACD_CConference_ToExternal" />        
+        </methods>
+       </class>
+       
+       
+       
+    </classes>
+  </test>
+</suite> 

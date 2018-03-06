@@ -17,8 +17,6 @@ public class HBDirector extends Agent{
 
 	public HBDirector() throws Exception {
 		super();
-		gVariableHash = AllEntities.gVariableHash;
-		gCCDXPathHash = AllEntities.gCCDXPathHash;
 		inic= AllEntities.wini;
 		supUserName = inic.get("Supervisor", "supUserName");
 		supPassword = inic.get("Supervisor", "supPassword");

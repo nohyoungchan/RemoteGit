@@ -1,8 +1,9 @@
 package TestCases;
 
-import org.testng.annotations.Parameters;
+
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
+import org.ini4j.Wini;
 import org.testng.annotations.AfterClass;
 
 import Actors.*;
@@ -11,6 +12,7 @@ import Actors.*;
 public class Test_HBDirector extends TestCaseBaseObject {
 	private HBDirector ccd2;
 	private AllEntities allEntities;
+	private Wini pini;
 	
 
 	Test_HBDirector() throws Exception{
@@ -24,6 +26,7 @@ public class Test_HBDirector extends TestCaseBaseObject {
 		log.info("* Before Class: Test_HBDirector");
 		//InitializeAllVariables(); 
 		ccd2 = AllEntities.CCD;
+		pini = AllEntities.pini;
     }
 	
 	@AfterClass
@@ -44,6 +47,31 @@ public class Test_HBDirector extends TestCaseBaseObject {
 			ccd2.waitUntilMainTitle("Agents");
 
 
+			/*
+			for (i = 0 ; i < AllEntities.ccAgents.size(); i++){
+				j = i+1;
+				ccAgent = AllEntities.ccAgents.get(i);
+
+				log.info("\n###### Creating : " + ccAgent.agentName + " ########");
+
+				//ccd2.clickXPath(pini.get("CCD", "agentNewBtn"));
+				ccd2.click_XPath("agentNewBtn");
+				ccd2.typeElementXPath(pini.get("CCD", "agentNameTxtBox"), ccAgent.agentName);
+				ccd2.typeElementXPath(pini.get("CCD", "agentUserNameTxtBox"), ccAgent.agentUserName); 
+				ccd2.typeElementXPath(pini.get("CCD", "agentIDTxtBox"), ccAgent.agentID);
+				ccd2.typeElementXPath(pini.get("CCD", "agentExtenstionTxtBox"), ccAgent.agenExtension);
+				ccd2.selectFromComboBox(pini.get("CCD", "agentCOS"), ccAgent.agentCOS);
+				ccd2.typeElementXPath(pini.get("CCD", "agentCorporateEmailAddress"), ccAgent.agentEmailAddress);
+				//ccd2.click_XPath(pini.get("CCD", "autoAnswer_voiceACD"));
+				ccd2.click_XPath("autoAnswer_voiceACD");
+	
+				wait(2);
+				//ccd2.clickXPath(pini.get("CCD", "agentCreateBtn"));
+				ccd2.click_XPath("agentCreateBtn");
+				wait(2);
+				//ccd2.createOneAgent(agentName, agentUserName, agentID, agentExtension, agentEmail);
+			}
+			*/
 			
 			for (i = 0 ; i < AllEntities.ccAgents.size(); i++){
 				j = i+1;
@@ -51,29 +79,20 @@ public class Test_HBDirector extends TestCaseBaseObject {
 
 				log.info("\n###### Creating : " + ccAgent.agentName + " ########");
 
-				//ccd2.clickXPath(AllEntities.gCCDXPathHash.get("agentNewBtn"));
-				ccd2.click_XPath("agentNewBtn");
-				ccd2.typeElementXPath(AllEntities.gCCDXPathHash.get("agentNameTxtBox"), ccAgent.agentName);
-				ccd2.typeElementXPath(AllEntities.gCCDXPathHash.get("agentUserNameTxtBox"), ccAgent.agentUserName); 
-				ccd2.typeElementXPath(AllEntities.gCCDXPathHash.get("agentIDTxtBox"), ccAgent.agentID);
-				ccd2.typeElementXPath(AllEntities.gCCDXPathHash.get("agentExtenstionTxtBox"), ccAgent.agenExtension);
-				ccd2.selectFromComboBox(AllEntities.gCCDXPathHash.get("agentCOS"), ccAgent.agentCOS);
-				ccd2.typeElementXPath(AllEntities.gCCDXPathHash.get("agentCorporateEmailAddress"), ccAgent.agentEmailAddress);
-				//ccd2.click_XPath(AllEntities.gCCDXPathHash.get("autoAnswer_voiceACD"));
-				ccd2.click_XPath("autoAnswer_voiceACD");
+				ccd2.click_XPath(pini.get("CCD", "newBtn"));
+				ccd2.typeElementXPath(pini.get("CCD", "agentNameTxtBox"), ccAgent.agentName);
+				ccd2.typeElementXPath(pini.get("CCD", "agentUserNameTxtBox"), ccAgent.agentUserName); 
+				ccd2.typeElementXPath(pini.get("CCD", "agentIDTxtBox"), ccAgent.agentID);
+				ccd2.typeElementXPath(pini.get("CCD", "agentExtenstionTxtBox"), ccAgent.agenExtension);
+				ccd2.selectFromComboBox(pini.get("CCD", "agentCOS"), ccAgent.agentCOS);
+				ccd2.typeElementXPath(pini.get("CCD", "agentCorporateEmailAddress"), ccAgent.agentEmailAddress);
+				ccd2.click_XPath(pini.get("CCD", "autoAnswer_voiceACD"));
 	
 				wait(2);
-				//ccd2.clickXPath(AllEntities.gCCDXPathHash.get("agentCreateBtn"));
-				ccd2.click_XPath("agentCreateBtn");
+				ccd2.click_XPath(pini.get("CCD", "createBtn"));
 				wait(2);
-				//ccd2.createOneAgent(agentName, agentUserName, agentID, agentExtension, agentEmail);
 			}
-			//ccd2.logOutHBDirector();;
-	
-			//##########################
 
-			
-			//############################
 
 		}catch(Exception e){
 			log.info("I am handling General exception=>"+ e.toString());
@@ -103,16 +122,16 @@ public class Test_HBDirector extends TestCaseBaseObject {
 
 				log.info("\n###### Creating : " + ccAgent.agentName + " ########");
 
-				ccd2.clickXPath(AllEntities.gCCDXPathHash.get("agentNewBtn"));
-				ccd2.typeElementXPath(AllEntities.gCCDXPathHash.get("agentNameTxtBox"), ccAgent.agentName);
-				ccd2.typeElementXPath(AllEntities.gCCDXPathHash.get("agentIDTxtBox"), ccAgent.agentID);
+				ccd2.clickXPath(pini.get("CCD", "agentNewBtn"));
+				ccd2.typeElementXPath(pini.get("CCD", "agentNameTxtBox"), ccAgent.agentName);
+				ccd2.typeElementXPath(pini.get("CCD", "agentIDTxtBox"), ccAgent.agentID);
 				//TODO:  This field is lackig in Fortuna
-				//ccd2.typeElementXPath(AllEntities.gCCDXPathHash.get("agentPasswordTxtBox"), ccAgent.agentPassword);
-				ccd2.selectFromComboBox(AllEntities.gCCDXPathHash.get("agentCOS"), ccAgent.agentCOS);
-				ccd2.typeElementXPath(AllEntities.gCCDXPathHash.get("agentCorporateEmailAddress"), ccAgent.agentEmailAddress);
+				//ccd2.typeElementXPath(pini.get("CCD", "agentPasswordTxtBox"), ccAgent.agentPassword);
+				ccd2.selectFromComboBox(pini.get("CCD", "agentCOS"), ccAgent.agentCOS);
+				ccd2.typeElementXPath(pini.get("CCD", "agentCorporateEmailAddress"), ccAgent.agentEmailAddress);
 				wait(2);
-				//ccd2.clickXPath(AllEntities.gCCDXPathHash.get("agentAutoAnswerFlag"));
-				ccd2.clickXPath(AllEntities.gCCDXPathHash.get("agentCreateBtn"));
+				//ccd2.clickXPath(pini.get("CCD", "agentAutoAnswerFlag"));
+				ccd2.clickXPath(pini.get("CCD", "agentCreateBtn"));
 				wait(2);
 				//ccd2.createOneAgent(agentName, agentUserName, agentID, agentExtension, agentEmail);
 			}
@@ -162,17 +181,17 @@ public class Test_HBDirector extends TestCaseBaseObject {
 				log.info("\n###### Updating : " + agentEmail + " ########");
 
 				
-				ccd2.typeElementXPath(AllEntities.gCCDXPathHash.get("searchBox"), agentUserName); 
-				//ccd2.clickXPath(AllEntities.gCCDXPathHash.get("agentNewBtn"));
-				//ccd2.typeElementXPath(AllEntities.gCCDXPathHash.get("agentNameTxtBox"), agentName);
-				//ccd2.typeElementXPath(AllEntities.gCCDXPathHash.get("agentUserNameTxtBox"), agentUserName); 
-				//ccd2.typeElementXPath(AllEntities.gCCDXPathHash.get("agentIDTxtBox"), agentID);
-				//ccd2.typeElementXPath(AllEntities.gCCDXPathHash.get("agentExtenstionTxtBox"), agentExtension);
-				//ccd2.selectFromComboBox(AllEntities.gCCDXPathHash.get("agentCOS"), "LOAD_COS");
-				ccd2.typeElementXPath(AllEntities.gCCDXPathHash.get("agentCorporateEmailAddress"), agentEmail);
+				ccd2.typeElementXPath(pini.get("CCD", "searchBox"), agentUserName); 
+				//ccd2.clickXPath(pini.get("CCD", "agentNewBtn"));
+				//ccd2.typeElementXPath(pini.get("CCD", "agentNameTxtBox"), agentName);
+				//ccd2.typeElementXPath(pini.get("CCD", "agentUserNameTxtBox"), agentUserName); 
+				//ccd2.typeElementXPath(pini.get("CCD", "agentIDTxtBox"), agentID);
+				//ccd2.typeElementXPath(pini.get("CCD", "agentExtenstionTxtBox"), agentExtension);
+				//ccd2.selectFromComboBox(pini.get("CCD", "agentCOS"), "LOAD_COS");
+				ccd2.typeElementXPath(pini.get("CCD", "agentCorporateEmailAddress"), agentEmail);
 				
 				wait(1);
-				ccd2.clickXPath(AllEntities.gCCDXPathHash.get("submitButton"));
+				ccd2.clickXPath(pini.get("CCD", "submitButton"));
 				wait(2);
 			}
 			ccd2.logOutHBDirector();;
@@ -213,14 +232,14 @@ public class Test_HBDirector extends TestCaseBaseObject {
 				ccSup = AllEntities.ccSupers.get(i);
 				log.info("\n###### Creating : " + ccSup.supName + " ########");
 
-				ccd2.clickXPath(AllEntities.gCCDXPathHash.get("agentNewBtn"));
-				ccd2.typeElementXPath(AllEntities.gCCDXPathHash.get("supName"), ccSup.supName);
-				ccd2.typeElementXPath(AllEntities.gCCDXPathHash.get("supUsername"), ccSup.supUserName); 
-				ccd2.selectFromComboBox(AllEntities.gCCDXPathHash.get("supCOS"), ccSup.supCOS);
-				ccd2.selectFromComboBox(AllEntities.gCCDXPathHash.get("supAgentName"), ccSup.supAgentName);
-				ccd2.clickXPath(AllEntities.gCCDXPathHash.get("supPermission_SupAdmin"));
+				ccd2.clickXPath(pini.get("CCD", "agentNewBtn"));
+				ccd2.typeElementXPath(pini.get("CCD", "supName"), ccSup.supName);
+				ccd2.typeElementXPath(pini.get("CCD", "supUsername"), ccSup.supUserName); 
+				ccd2.selectFromComboBox(pini.get("CCD", "supCOS"), ccSup.supCOS);
+				ccd2.selectFromComboBox(pini.get("CCD", "supAgentName"), ccSup.supAgentName);
+				ccd2.clickXPath(pini.get("CCD", "supPermission_SupAdmin"));
 				wait(2);
-				ccd2.clickXPath(AllEntities.gCCDXPathHash.get("createBtn"));
+				ccd2.clickXPath(pini.get("CCD", "createBtn"));
 				wait(2);
 			}
 			//ccd2.logOutHBDirector();;

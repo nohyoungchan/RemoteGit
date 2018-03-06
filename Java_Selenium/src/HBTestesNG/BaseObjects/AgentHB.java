@@ -262,7 +262,7 @@ public class AgentHB extends Agent {
 		  	}
 		  	
 		  	try{
-				  String txtReturned;
+				  String txtReturned, strAICState;
 				  WebElement webElement;
 				  maximizeBrowser();
 		
@@ -271,7 +271,8 @@ public class AgentHB extends Agent {
 				  wait(2);
 				  
 				  //if (txtReturned.contains("Stop taking requests") || getAICState().contains("")) //If agent is idle, release.
-				  if (getAICState().contains(""))
+				  strAICState = getAICState();
+				  if (!strAICState.contains("Release"))
 				  {
 					  if (txtReturned.contains("Stop taking requests")) {
 						  TestStatus.errorReason.add(username + ": AIC shows idle but still reads \" Stop taking requests \"");
@@ -281,7 +282,7 @@ public class AgentHB extends Agent {
 				      click_XPath(("btnResume"));
 				      wait(2);
 				  }else{
-				  	log.info("\n@(" + agentType + ") " +  username + ": State=> " + txtReturned);
+				  	log.info("\n@(" + agentType + ") " +  username + ": State is already released=> " + strAICState);
 				  }
 			}catch(InterruptedException e){
 				//log.info("I am handling Interrupted Exceptionj=>"+ e.toString());
@@ -293,8 +294,50 @@ public class AgentHB extends Agent {
 				state = "weird";
 				throw e;
 			}finally{
-				  minimizeBrowser();
+				minimizeBrowser();
 			  }
+	  }
+	  
+	  public void releaseAgent_problem() throws Exception{
+		  	log.info("\n@(" + agentType + ") " +  username + " #### Release agent. ####");
+		  	if (state.contains("weird")) {
+		  		log.info("@" + username + ": The state is $$$$ weird $$$$. So skip this step");
+		  		return;
+		  	}
+		  	
+		  	try{
+				  String txtReturned;
+				  WebElement webElement;
+				  maximizeBrowser();
+				    webElement=conditonClickable_XPath("resumeAgent_PreCondition", "btnResume", 60);
+					if(webElement != null){
+
+						  txtReturned = webElement.getText();	  	
+						  log.info("\n@(" + agentType + ") " +  username+ " ResumeAgent and State Returned: " + txtReturned);
+						  wait(2);
+						  
+						  if (txtReturned.contains("Stop taking requests")) //If agent is released
+						  {
+						      log.info("\n@(" + agentType + ") " +  username+ " #### Agent is idle>Click resume button ####");
+						      click_XPath(("btnResume"));
+						      wait(2);
+						  }else{
+						  	log.info("\n@(" + agentType + ") " +  username+ ": State=> Released");
+						  }
+					}
+
+			}catch(InterruptedException e){
+				//log.info("I am handling Interrupted Exceptionj=>"+ e.toString());
+				throw e;
+				//state = "weird";
+			}
+		  	catch(Exception e){
+				log.info("I am handling General exception=>"+ e.toString());
+				state = "weird";
+				throw e;
+			}finally{
+				  minimizeBrowser();
+			}
 	  }
 	  
 	  public void releaseAgentSecondCode() throws Exception{
@@ -379,7 +422,7 @@ public class AgentHB extends Agent {
 	  
 	  
 	  
-	  public boolean resumeAgent() throws Exception{
+	  public boolean resumeAgent_problem() throws Exception{
 		    log.info("\n@(" + agentType + ") " +  username + " #### Resume agent. ####");
 		    WebElement webElement;
 		    boolean actionResult;
@@ -396,9 +439,61 @@ public class AgentHB extends Agent {
 					  log.info("\n@(" + agentType + ") " +  username+ " ResumeAgent and State Returned: " + txtReturned);
 					  wait(2);
 					  
+					  if (txtReturned.contains("Start taking requests")) //If agent is released
+					  {
+					      log.info("\n@(" + agentType + ") " +  username+ " #### Agent is released=>Click resume button ####");
+					      click_XPath(("btnResume"));
+					      wait(2);
+					  }else{
+					  	log.info("\n@(" + agentType + ") " +  username+ ": State=> Idle");
+					  }
+					  
+				}catch(InterruptedException e){
+					log.error("\n@(" + agentType + ") " +  username + " I am handling Interrupted exception=> resumeAgent(), and throw again");
+					actionResult = false;
+					//errorCount++;
+					TestStatus.errorReason.add(username + ": failed  to resume");
+					throw e;
+					//state = "weird";
+				}
+			  	catch(Exception e){
+			  		log.error("\n@(" + agentType + ") " +  username + "I am handling General exception=> resumeAgent()");
+					state = "weird";
+					//errorCount++;
+					TestStatus.errorReason.add(username + ": failed  to resume");
+					actionResult = false;
+			  	}
+			}else{
+				log.info("\n@(" + agentType + ") " +  username +" Precondtion is not met=> resumeAgent()");
+			  	actionResult = false;
+			}
+			
+			minimizeBrowser();
+			return actionResult;
+	  }
+	  
+	  public boolean resumeAgent() throws Exception{
+		    log.info("\n@(" + agentType + ") " +  username + " #### Resume agent. ####");
+		    WebElement webElement;
+		    boolean actionResult;
+		    String txtReturned, strAICState;
+		    webElement = null;
+		    actionResult = true;
+
+		    maximizeBrowser();
+		    webElement=conditonClickable_XPath("resumeAgent_PreCondition", "btnResume", 60);
+			if(webElement != null){
+		  	
+			  	try{	
+					  txtReturned = webElement.getText();	  	
+					  log.info("\n@(" + agentType + ") " +  username+ " ResumeAgent and State Returned: " + txtReturned);
+					  wait(2);
+					  
 					  //if (txtReturned.contains("Start taking requests") || txtReturned.contains("Commencer à prendre les appels")) //If agent is idle, release.
 					  //{
-					  if (getAICState().contains("Release")) //If agent is Release, resume
+					  //if (getAICState().contains("Release")) //If agent is Release, resume: This is old way
+					  strAICState = getAICState();
+					  if (strAICState.contains("Release")) //If agent is Release, resume
 					  {
 						  if (txtReturned.contains("Start taking requests")) {
 							  TestStatus.errorReason.add(username + ": AIC shows Released but still reads \" Start taking reauests \"");
@@ -407,7 +502,7 @@ public class AgentHB extends Agent {
 					      click_XPath(("btnResume"));
 					      wait(2);
 					  }else{
-					  	log.info("\n@(" + agentType + ") " +  username+ ": State=> Idle");
+					  	log.info("\n@(" + agentType + ") " +  username+ ": State is idle alreay => " + strAICState);
 					  }
 					  
 				}catch(InterruptedException e){
@@ -1349,6 +1444,18 @@ public class AgentHB extends Agent {
 	   * @throws Exception
 	   */
 	  public String getAICStateAfterDisconnect() throws Exception
+	  {
+		  String strWebElementGetText;
+
+	      log.info("\n@(" + agentType + ") " + username + " => ######### Getting AIC state ########");
+	      WebElement webElement = getWebElement("webAgentStatusBox", 10);     
+	      strWebElementGetText = webElement.getText();
+	      log.info("\n@(" + agentType + ") " + username + " => strWebElementGetText: " + strWebElementGetText);
+	      return strWebElementGetText;
+	        
+	  }
+	  
+	  public String getAICState_old() throws Exception
 	  {
 		  String strWebElementGetText;
 

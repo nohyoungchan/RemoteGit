@@ -83,6 +83,43 @@ public class TestCaseObject extends TestObject{
 		
 	}
 	
+	
+public static void refreshAllWebBrowsers() throws Exception {
+		
+		//Do this because of trying to prevent org.openqa.selenium.WebDriverException
+		log.info("* Refresh all variables");
+		aa = Test_Initiate.allActors;
+		if (aa.agents.size() > 0)
+		{
+			agent1 = aa.agents.get(0);
+			agent1.refreshPage();
+			agent2 = aa.agents.get(1);
+			agent2.refreshPage();
+			agent3 = aa.agents.get(2);
+			agent3.refreshPage();
+		}
+		
+		
+		if (aa.chatCustomers.size() > 0)
+		{
+			chatCustomer1=aa.chatCustomers.get(0);
+			chatCustomer1.refreshPage();
+		}
+		
+		if (aa.emailCustomers.size() > 0)
+		{
+			emailCustomer1=aa.emailCustomers.get(0);
+			emailCustomer1.refreshPage();
+		}
+		
+		if (aa.supervisors.size() > 0)
+		{
+			sup1 = aa.supervisors.get(0);
+			sup1.refreshPage();
+		}
+		
+	}
+	
 		
 	public static void startTestSuitMessage(){
 		 
@@ -228,6 +265,8 @@ public class TestCaseObject extends TestObject{
 		    if (userInputString.contains("yes")) stopTest = "yes"; 
 			
 		}
+		
+		//refreshAllWebBrowsers();
 		
 	
    }

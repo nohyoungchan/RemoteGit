@@ -37,7 +37,7 @@ public class Test_Chat_All extends TestCaseObject {
 		//#########################
 		//resetAllActors(testName);
 		agent1.resumeAgent();
-		agent2.releaseAgentSecondCode();
+		agent2.releaseAgent();
 		agent3.resumeAgent();
 
 		try{
@@ -63,7 +63,7 @@ public class Test_Chat_All extends TestCaseObject {
 		//#########################
 		//resetAllActors(testName);
 		agent1.releaseAgent();
-		agent2.releaseAgentSecondCode();
+		agent2.releaseAgent();
 		agent3.resumeAgent();
 
 		try{
@@ -89,11 +89,13 @@ public class Test_Chat_All extends TestCaseObject {
 		//#########################
 		//resetAllActors(testName);
 		agent1.resumeAgent();
-		agent2.releaseAgentSecondCode();
-		agent3.releaseAgentThirdCode();
+		agent2.releaseAgent();
+		agent3.releaseAgent();
 
 		try{
+			log.info("I am here1");
 			if(!chatCustomer1.startChat()) Assert.fail("@@ Failed since I cannot send chat at all") ;
+			log.info("I am here2");
 			
 			//##########################
 			agent1.answerACDCall(rT1, tT1);
@@ -120,8 +122,8 @@ public class Test_Chat_All extends TestCaseObject {
 		if(startTestCase(testName).contains("no")) skipTest(testName, "Skipping because user want to end test => " + testName);
 		//#########################
 		agent1.releaseAgent();
-		agent2.releaseAgentSecondCode();
-		agent3.releaseAgentThirdCode();
+		agent2.releaseAgent();
+		agent3.releaseAgent();
 		
 		try{
 			if(!chatCustomer1.startChat()) Assert.fail("@@ Failed since I cannot send chat at all") ;
@@ -151,7 +153,7 @@ public class Test_Chat_All extends TestCaseObject {
 		 
 		//#########################
 		agent1.resumeAgent();
-		agent2.releaseAgentSecondCode();
+		agent2.releaseAgent();
 		agent3.resumeAgent();
 	
 		try{
@@ -181,7 +183,7 @@ public class Test_Chat_All extends TestCaseObject {
 		
 		try{
 			agent1.resumeAgent();
-			agent2.releaseAgentSecondCode();
+			agent2.releaseAgent();
 			agent3.resumeAgent();
 
 			//###########################
@@ -217,7 +219,7 @@ public class Test_Chat_All extends TestCaseObject {
 		
 		try{
 			agent1.resumeAgent();
-			agent2.releaseAgentSecondCode();
+			agent2.releaseAgent();
 			agent3.resumeAgent();
 
 			//###########################
@@ -254,7 +256,7 @@ public class Test_Chat_All extends TestCaseObject {
 		
 		try{
 			agent1.resumeAgent();
-			agent2.releaseAgentSecondCode();
+			agent2.releaseAgent();
 			agent3.resumeAgent();;
 
 			//###########################
@@ -286,8 +288,8 @@ public class Test_Chat_All extends TestCaseObject {
 		
 		try{
 			agent1.resumeAgent();
-			agent2.releaseAgentSecondCode();
-			agent3.releaseAgentThirdCode();
+			agent2.releaseAgent();
+			agent3.releaseAgent();
 
 			//###########################
 			if(!chatCustomer1.startChat()) Assert.fail("@@ Failed since I cannot send chat at all") ;
@@ -320,7 +322,7 @@ public class Test_Chat_All extends TestCaseObject {
 		
 		try{
 			agent1.releaseAgent();
-			agent2.releaseAgentSecondCode();
+			agent2.releaseAgent();
 			agent3.resumeAgent();;
 
 			//###########################
@@ -351,8 +353,8 @@ public class Test_Chat_All extends TestCaseObject {
 		
 		try{
 			agent1.releaseAgent();
-			agent2.releaseAgentSecondCode();
-			agent3.releaseAgentThirdCode();
+			agent2.releaseAgent();
+			agent3.releaseAgent();
 
 			//###########################
 			if(!chatCustomer1.startChat()) Assert.fail("@@ Failed since I cannot send chat at all") ;
@@ -385,8 +387,8 @@ public class Test_Chat_All extends TestCaseObject {
 		
 		try{
 			agent1.releaseAgent();
-			agent2.releaseAgentSecondCode();
-			agent3.releaseAgentThirdCode();;
+			agent2.releaseAgent();
+			agent3.releaseAgent();
 
 			//###########################
 			if(!chatCustomer1.startChat()) Assert.fail("@@ Failed since I cannot send chat at all") ;
